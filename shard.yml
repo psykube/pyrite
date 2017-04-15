@@ -1,0 +1,9 @@
+name: kubernetes
+version: 0.1.0
+
+authors:
+  - jwaldrip <jason@waldrip.net>
+
+crystal: 0.21.1
+
+license: MIT
