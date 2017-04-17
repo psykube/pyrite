@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,7 +31,6 @@ class K8S::V1_6_1::Kubernetes::Api::V1::ComponentStatusList
   end
 
   # list objects of kind ComponentStatus
-  def self.get
-    Kubernetes.client.get
+  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

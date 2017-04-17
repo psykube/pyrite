@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -33,16 +35,34 @@ class K8S::V1_6_0::Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRe
   end
 
   # list or watch objects of kind CertificateSigningRequest
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a CertificateSigningRequest
-  def self.create(metadata = nil, spec = nil, status = nil)
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete collection of CertificateSigningRequest
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified CertificateSigningRequest
-  def self.get(name : String)
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String)
+  end
+
+  # replace the specified CertificateSigningRequest
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete a CertificateSigningRequest
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  end
+
+  # replace approval of the specified CertificateSigningRequest
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # replace status of the specified CertificateSigningRequest
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
   end
 end

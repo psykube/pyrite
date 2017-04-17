@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,18 @@ class K8S::V1_6_0::Kubernetes::Api::V1::ConfigMapList
   end
 
   # list or watch objects of kind ConfigMap
-  def self.get
-    Kubernetes.client.get
+  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # list or watch objects of kind ConfigMap
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create a ConfigMap
-  def self.create(data = nil, metadata = nil, namespace : String = "default")
+  def self.create(pretty : String?, data = nil, metadata = nil, namespace : String = "default")
+  end
+
+  # delete collection of ConfigMap
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 end

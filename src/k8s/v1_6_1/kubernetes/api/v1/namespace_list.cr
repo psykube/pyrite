@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,11 +31,14 @@ class K8S::V1_6_1::Kubernetes::Api::V1::NamespaceList
   end
 
   # list or watch objects of kind Namespace
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a Namespace
-  def self.create(metadata = nil, spec = nil, status = nil)
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete collection of Namespace
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

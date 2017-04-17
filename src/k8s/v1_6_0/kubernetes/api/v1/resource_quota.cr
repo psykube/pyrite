@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -34,21 +36,34 @@ class K8S::V1_6_0::Kubernetes::Api::V1::ResourceQuota
   end
 
   # list or watch objects of kind ResourceQuota
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create a ResourceQuota
-  def self.create(metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  end
+
+  # delete collection of ResourceQuota
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified ResourceQuota
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  end
+
+  # replace the specified ResourceQuota
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete a ResourceQuota
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified ResourceQuota
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, name : String, namespace : String = "default")
+  end
+
+  # replace status of the specified ResourceQuota
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
   end
 end

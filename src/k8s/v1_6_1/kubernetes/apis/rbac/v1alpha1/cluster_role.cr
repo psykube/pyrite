@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,26 @@ class K8S::V1_6_1::Kubernetes::Apis::Rbac::V1alpha1::ClusterRole
   end
 
   # list or watch objects of kind ClusterRole
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a ClusterRole
-  def self.create(rules, metadata = nil)
+  def self.create(rules, pretty : String?, metadata = nil)
+  end
+
+  # delete collection of ClusterRole
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified ClusterRole
-  def self.get(name : String)
-    Kubernetes.client.get
+  def self.get(pretty : String?, name : String)
+  end
+
+  # replace the specified ClusterRole
+  def replace(rules, pretty : String?, metadata = nil)
+  end
+
+  # delete a ClusterRole
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

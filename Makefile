@@ -1,5 +1,5 @@
 generate:
-	@rm -rf ./src/kubernetes
+	@rm -rf ./src/k8s
 	@crystal run ./vendor/generator/src/generator.cr
 
 docs: generate

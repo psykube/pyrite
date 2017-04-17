@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,18 @@ class K8S::V1_6_0::Kubernetes::Api::V1::EventList
   end
 
   # list or watch objects of kind Event
-  def self.get
-    Kubernetes.client.get
+  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # list or watch objects of kind Event
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create an Event
-  def self.create(involved_object, metadata, count = nil, first_timestamp = nil, last_timestamp = nil, message = nil, reason = nil, source = nil, type = nil, namespace : String = "default")
+  def self.create(involved_object, metadata, pretty : String?, count = nil, first_timestamp = nil, last_timestamp = nil, message = nil, reason = nil, source = nil, type = nil, namespace : String = "default")
+  end
+
+  # delete collection of Event
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 end

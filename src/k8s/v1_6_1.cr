@@ -1,3 +1,6 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
+# Kubernetes vv1.6.1
 class K8S::V1_6_1
   def self.get_definition(name : String)
     case name

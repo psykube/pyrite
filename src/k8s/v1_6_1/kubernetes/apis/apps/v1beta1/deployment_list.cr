@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,18 @@ class K8S::V1_6_1::Kubernetes::Apis::Apps::V1beta1::DeploymentList
   end
 
   # list or watch objects of kind Deployment
-  def self.get
-    Kubernetes.client.get
+  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # list or watch objects of kind Deployment
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create a Deployment
-  def self.create(metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  end
+
+  # delete collection of Deployment
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 end

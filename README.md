@@ -1,6 +1,6 @@
-# Kubernetes for Crystal
+# Kubernetes API – A Crystal Implementation
 
-Kubernetes Object Mappings for Crystal-lang.
+Kubernetes API and Object Mappings for Crystal-lang.
 
 ## Installation
 
@@ -8,14 +8,14 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  kubernetes:
-    github: jwaldrip/kubernetes.cr
+  k8s:
+    github: jwaldrip/crystal-k8s
 ```
 
 ## Usage
 
 ```crystal
-require "kubernetes"
+require "k8s"
 ```
 
 TODO: Write usage instructions here
@@ -34,4 +34,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) jwaldrip - creator, maintainer
+- [[jwaldrip]](https://github.com/jwaldrip) Jason Waldrip - creator, maintainer

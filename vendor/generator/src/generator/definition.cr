@@ -34,6 +34,8 @@ class Generator::Definition
 
   def generate
     STDOUT.puts "Writing: #{filename}"
+    puts "# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC"
+    puts ""
     load_requires
     open_class
     define_properties
@@ -42,7 +44,7 @@ class Generator::Definition
     define_actions
     _end
     file.close
-    return filename
+    self
   end
 
   private def definition_ref(ref : String?)
@@ -55,7 +57,6 @@ class Generator::Definition
   end
 
   private def get_ref(ref : String?)
-    STDOUT.puts ref
     return unless ref
     _, kind, name = ref.split("/")
     case kind
@@ -121,6 +122,10 @@ class Generator::Definition
     RESOURCE_KEYS.includes? name
   end
 
+  def is_resource?
+    is_resource? @definition
+  end
+
   private def is_resource?(definition : Swagger::Definition)
     RESOURCE_KEYS.all? { |p| definition.properties[p]? }
   end
@@ -133,78 +138,82 @@ class Generator::Definition
     end
 
     paths.each do |path_name, path|
-      file << define_action(path_name, path, path.get, "get", true) do
-        file.puts "Kubernetes.client.get"
-      end
+      # Class Actions
+      define_action(path_name, path, :options, "options", true)
+      define_action(path_name, path, :head, "head", true)
+      define_action(path_name, path, :get, "get", true)
+      define_action(path_name, path, :post, "create", true)
 
-      file << define_action(path_name, path, path.post, "create", true) do
-      end
+      # Instance Actions
+      define_action(path_name, path, :options, "options")
+      define_action(path_name, path, :head, "head")
+      define_action(path_name, path, :put, "replace")
+      define_action(path_name, path, :patch, "update")
+      define_action(path_name, path, :delete, "delete")
     end unless name.starts_with?("io.k8s.apimachinery")
   end
 
-  private def define_action(path_name : String, path : Swagger::Path, action : Swagger::Path::Action?, name : String, toplevel : Bool = false, &block)
-    if action
-      generate_description(action.description)
-      params = (path.parameters + action.parameters).select(&.in.== "query")
-      req_body_params = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
-      path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
-      params = path_params if toplevel
+  private def define_action(path_name : String, path : Swagger::Path, action_name : Symbol, name : String, toplevel : Bool = false)
+    action = path.action_map[action_name]?
+    return unless action
+    generate_description(action.description)
+    params = (path.parameters + action.parameters).select(&.in.== "query")
+    toplevel ||= params.map(&.name).includes? "labelSelector"
+    req_body_params = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
+    path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
+    params += path_params if toplevel
 
-      # Define function
-      print "def #{"self." if toplevel}#{name}("
-      first_arg = true
+    # Define function
+    print "def #{"self." if toplevel}#{name}("
+    first_arg = true
 
-      req_body_params.each do |param|
-        if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
-          required = ref.required
-          ref.properties.select { |name, _| required.includes?(name) }.each do |name, property|
-            next if params.map(&.name).includes? name
-            next if is_resource?(ref) && resource_property?(name)
-            crystal_name = crystalize_name(name)
-            print ", " unless first_arg
-            print "#{crystal_name}"
-            first_arg = false
-          end
+    req_body_params.each do |param|
+      if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
+        required = ref.required
+        ref.properties.select { |name, _| required.includes?(name) }.each do |name, property|
+          next if params.map(&.name).includes? name
+          next if is_resource?(ref) && resource_property?(name)
+          crystal_name = crystalize_name(name)
+          print ", " unless first_arg
+          print "#{crystal_name}"
+          first_arg = false
         end
       end
-
-      # Add the non namespace params
-      params.reject(&.name.== "namespace").each do |param|
-        print ", " unless first_arg
-        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-        first_arg = false
-      end
-
-      # Add the non-required body params
-      req_body_params.each do |param|
-        if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
-          required = ref.required
-          ref.properties.reject { |name, _| required.includes?(name) }.each do |name, property|
-            next if params.map(&.name).includes? name
-            next if is_resource?(ref) && resource_property?(name)
-            crystal_name = crystalize_name(name)
-            print ", " unless first_arg
-            print "#{crystal_name} = nil"
-            first_arg = false
-          end
-        end
-      end
-
-      # Add the namespace param
-      params.select(&.name.== "namespace").each do |param|
-        print ", " unless first_arg
-        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-        print " = \"default\""
-        first_arg = false
-      end
-      puts ")"
-
-      # Define the body
-      block.call
-
-      # Close the function
-      _end
     end
+
+    # Add the non namespace params
+    params.reject(&.name.== "namespace").each do |param|
+      print ", " unless first_arg
+      print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
+      first_arg = false
+    end
+
+    # Add the non-required body params
+    req_body_params.each do |param|
+      if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
+        required = ref.required
+        ref.properties.reject { |name, _| required.includes?(name) }.each do |name, property|
+          next if params.map(&.name).includes? name
+          next if is_resource?(ref) && resource_property?(name)
+          crystal_name = crystalize_name(name)
+          print ", " unless first_arg
+          print "#{crystal_name} = nil"
+          first_arg = false
+        end
+      end
+    end
+
+    # Add the namespace param
+    params.select(&.name.== "namespace").each do |param|
+      print ", " unless first_arg
+      print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
+      print " = \"default\""
+      first_arg = false
+    end
+    puts ")"
+
+    # Close the function
+    _end
   end
 
   private def load_requires
@@ -229,7 +238,7 @@ class Generator::Definition
 
   private def define_properties
     properties.each do |name, property|
-      next if is_resource?(definition) && resource_property?(name)
+      next if is_resource? && resource_property?(name)
       crystal_name = crystalize_name(name)
       prop_type = property.type
       prop_ref = property._ref
@@ -250,20 +259,20 @@ class Generator::Definition
     print "def initialize("
     first_arg = true
     properties.select { |name, _| required.includes?(name) }.each_with_index do |(name, property), index|
-      next if is_resource?(definition) && resource_property?(name)
+      next if is_resource? && resource_property?(name)
       crystal_name = crystalize_name(name)
       print "#{"," unless first_arg} @#{crystal_name}"
       first_arg = false
     end
 
     properties.reject { |name, _| required.includes?(name) }.each_with_index do |(name, property), index|
-      next if is_resource?(definition) && resource_property?(name)
+      next if is_resource? && resource_property?(name)
       crystal_name = crystalize_name(name)
       print "#{"," unless first_arg} @#{crystal_name} = nil"
       first_arg = false
     end
     puts ")"
-    if is_resource?(definition)
+    if is_resource?
       puts "@api_version = #{self.name.split(".")[-1].inspect}"
       puts "@kind = #{self.name.split(".")[-2].inspect}"
     end
@@ -274,14 +283,14 @@ class Generator::Definition
     {"YAML", "JSON"}.each do |t|
       print "#{t}.mapping({ "
       first_arg = true
-      if is_resource?(definition)
+      if is_resource?
         puts
         puts "api_version: { type: String, default: #{name.split(".")[-1].inspect}, key: apiVersion, getter: false, setter: false },"
         print "kind: { type: String, default: #{name.split(".")[-2].inspect}, getter: false, setter: false }"
         first_arg = false
       end
       properties.each do |name, property|
-        next if is_resource?(definition) && resource_property?(name)
+        next if is_resource? && resource_property?(name)
         crystal_name = crystalize_name(name)
         puts "," unless first_arg
         print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name}, getter: false, setter: false }"

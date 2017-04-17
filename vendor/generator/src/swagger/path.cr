@@ -13,7 +13,19 @@ class Swagger::Path
   })
 
   def actions
-    [get, post, delete, patch, put, head, options].compact
+    action_map.values.reject(&.nil?).map(&.as Action)
+  end
+
+  def action_map
+    {
+      options: options,
+      head:    head,
+      post:    post,
+      get:     get,
+      put:     put,
+      path:    patch,
+      delete:  delete,
+    }
   end
 end
 

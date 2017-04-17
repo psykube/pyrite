@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,6 +31,6 @@ class K8S::V1_6_0::Kubernetes::Apis::Policy::V1beta1::Eviction
   end
 
   # create eviction of an Eviction
-  def self.create(name : String, delete_options = nil, metadata = nil, namespace : String = "default")
+  def self.create(pretty : String?, name : String, delete_options = nil, metadata = nil, namespace : String = "default")
   end
 end

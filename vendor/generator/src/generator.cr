@@ -18,7 +18,7 @@ class Generator
   end
 
   def generate
-    files = @definitions.keys.map do |name|
+    definitions = @definitions.keys.map do |name|
       Definition.generate(@schema, @definitions, name)
     end
     class_name = [ROOT_NAME, @schema.info.version.gsub(".", "_").upcase].join("::")
@@ -26,6 +26,9 @@ class Generator
     filename = dirname + ".cr"
     puts "Writing: #{filename}"
     File.open(filename, "w+") do |file|
+      file.puts "# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC"
+      file.puts ""
+      file.puts "# Kubernetes v#{@schema.info.version}"
       file.puts "class #{class_name}"
       file.puts "  def self.get_definition(name : String)"
       file.puts "    case name"
@@ -39,7 +42,7 @@ class Generator
       file.puts "  end"
       file.puts "end"
       file.puts ""
-      files.each { |r| file.puts "require \"#{r.sub(dirname, "./#{File.basename(dirname)}")}\"" }
+      definitions.map(&.filename).each { |r| file.puts "require \"#{r.sub(dirname, "./#{File.basename(dirname)}")}\"" }
     end
   end
 end

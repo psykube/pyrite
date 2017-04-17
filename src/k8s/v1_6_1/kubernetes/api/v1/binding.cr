@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,10 +31,10 @@ class K8S::V1_6_1::Kubernetes::Api::V1::Binding
   end
 
   # create a Binding
-  def self.create(target, metadata = nil, namespace : String = "default")
+  def self.create(target, pretty : String?, metadata = nil, namespace : String = "default")
   end
 
   # create binding of a Binding
-  def self.create(target, name : String, metadata = nil, namespace : String = "default")
+  def self.create(target, pretty : String?, name : String, metadata = nil, namespace : String = "default")
   end
 end

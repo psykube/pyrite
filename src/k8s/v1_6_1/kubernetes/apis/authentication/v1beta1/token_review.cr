@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -33,6 +35,6 @@ class K8S::V1_6_1::Kubernetes::Apis::Authentication::V1beta1::TokenReview
   end
 
   # create a TokenReview
-  def self.create(spec, metadata = nil, status = nil)
+  def self.create(spec, pretty : String?, metadata = nil, status = nil)
   end
 end

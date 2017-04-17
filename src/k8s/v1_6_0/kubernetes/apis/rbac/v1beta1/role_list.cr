@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,18 @@ class K8S::V1_6_0::Kubernetes::Apis::Rbac::V1beta1::RoleList
   end
 
   # list or watch objects of kind Role
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create a Role
-  def self.create(rules, metadata = nil, namespace : String = "default")
+  def self.create(rules, pretty : String?, metadata = nil, namespace : String = "default")
+  end
+
+  # delete collection of Role
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # list or watch objects of kind Role
-  def self.get
-    Kubernetes.client.get
+  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

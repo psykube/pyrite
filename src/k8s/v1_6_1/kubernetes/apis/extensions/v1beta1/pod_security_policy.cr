@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,16 +31,26 @@ class K8S::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicy
   end
 
   # list or watch objects of kind PodSecurityPolicy
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a PodSecurityPolicy
-  def self.create(metadata = nil, spec = nil)
+  def self.create(pretty : String?, metadata = nil, spec = nil)
+  end
+
+  # delete collection of PodSecurityPolicy
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified PodSecurityPolicy
-  def self.get(name : String)
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String)
+  end
+
+  # replace the specified PodSecurityPolicy
+  def replace(pretty : String?, metadata = nil, spec = nil)
+  end
+
+  # delete a PodSecurityPolicy
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

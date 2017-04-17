@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -34,7 +36,10 @@ class K8S::V1_6_0::Kubernetes::Apis::Apps::V1beta1::Scale
   end
 
   # read scale of the specified Scale
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, name : String, namespace : String = "default")
+  end
+
+  # replace scale of the specified Scale
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
   end
 end

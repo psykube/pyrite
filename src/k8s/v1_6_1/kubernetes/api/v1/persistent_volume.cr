@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -34,21 +36,34 @@ class K8S::V1_6_1::Kubernetes::Api::V1::PersistentVolume
   end
 
   # list or watch objects of kind PersistentVolume
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a PersistentVolume
-  def self.create(metadata = nil, spec = nil, status = nil)
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete collection of PersistentVolume
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified PersistentVolume
-  def self.get(name : String)
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String)
+  end
+
+  # replace the specified PersistentVolume
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete a PersistentVolume
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified PersistentVolume
-  def self.get(name : String)
-    Kubernetes.client.get
+  def self.get(pretty : String?, name : String)
+  end
+
+  # replace status of the specified PersistentVolume
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
   end
 end

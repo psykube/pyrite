@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,11 +31,14 @@ class K8S::V1_6_1::Kubernetes::Apis::Storage::V1::StorageClassList
   end
 
   # list or watch objects of kind StorageClass
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a StorageClass
-  def self.create(provisioner, metadata = nil, parameters = nil)
+  def self.create(provisioner, pretty : String?, metadata = nil, parameters = nil)
+  end
+
+  # delete collection of StorageClass
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

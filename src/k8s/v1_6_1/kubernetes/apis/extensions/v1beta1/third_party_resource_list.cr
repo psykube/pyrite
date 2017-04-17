@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,11 +31,14 @@ class K8S::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResourceList
   end
 
   # list or watch objects of kind ThirdPartyResource
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a ThirdPartyResource
-  def self.create(description = nil, metadata = nil, versions = nil)
+  def self.create(pretty : String?, description = nil, metadata = nil, versions = nil)
+  end
+
+  # delete collection of ThirdPartyResource
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

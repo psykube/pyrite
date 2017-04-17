@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -40,16 +42,26 @@ class K8S::V1_6_0::Kubernetes::Api::V1::Endpoints
   end
 
   # list or watch objects of kind Endpoints
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create Endpoints
-  def self.create(subsets, metadata = nil, namespace : String = "default")
+  def self.create(subsets, pretty : String?, metadata = nil, namespace : String = "default")
+  end
+
+  # delete collection of Endpoints
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified Endpoints
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  end
+
+  # replace the specified Endpoints
+  def replace(subsets, pretty : String?, metadata = nil)
+  end
+
+  # delete Endpoints
+  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

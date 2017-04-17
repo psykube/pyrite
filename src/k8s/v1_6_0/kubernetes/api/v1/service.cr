@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -34,21 +36,30 @@ class K8S::V1_6_0::Kubernetes::Api::V1::Service
   end
 
   # list or watch objects of kind Service
-  def self.get(namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # create a Service
-  def self.create(metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
   end
 
   # read the specified Service
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  end
+
+  # replace the specified Service
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete a Service
+  def delete(pretty : String?)
   end
 
   # read status of the specified Service
-  def self.get(name : String, namespace : String = "default")
-    Kubernetes.client.get
+  def self.get(pretty : String?, name : String, namespace : String = "default")
+  end
+
+  # replace status of the specified Service
+  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
   end
 end

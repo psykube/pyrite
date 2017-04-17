@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,11 +31,14 @@ class K8S::V1_6_1::Kubernetes::Apis::Rbac::V1alpha1::ClusterRoleBindingList
   end
 
   # list or watch objects of kind ClusterRoleBinding
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a ClusterRoleBinding
-  def self.create(role_ref, subjects, metadata = nil)
+  def self.create(role_ref, subjects, pretty : String?, metadata = nil)
+  end
+
+  # delete collection of ClusterRoleBinding
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

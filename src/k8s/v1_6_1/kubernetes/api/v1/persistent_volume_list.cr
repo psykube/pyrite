@@ -1,3 +1,5 @@
+# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC
+
 require "yaml"
 require "json"
 
@@ -29,11 +31,14 @@ class K8S::V1_6_1::Kubernetes::Api::V1::PersistentVolumeList
   end
 
   # list or watch objects of kind PersistentVolume
-  def self.get
-    Kubernetes.client.get
+  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a PersistentVolume
-  def self.create(metadata = nil, spec = nil, status = nil)
+  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil)
+  end
+
+  # delete collection of PersistentVolume
+  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end
