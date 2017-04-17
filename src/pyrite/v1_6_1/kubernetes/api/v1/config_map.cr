@@ -30,27 +30,31 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ConfigMap
     @kind = "v1"
   end
 
-  # list or watch objects of kind ConfigMap
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a ConfigMap
+  def create
   end
 
-  # create a ConfigMap
-  def self.create(pretty : String?, data = nil, metadata = nil, namespace : String = "default")
+  # list or watch objects of kind ConfigMap
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of ConfigMap
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified ConfigMap
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified ConfigMap
-  def replace(pretty : String?, data = nil, metadata = nil)
+  def replace
+  end
+
+  # partially update the specified ConfigMap
+  def patch
   end
 
   # delete a ConfigMap
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

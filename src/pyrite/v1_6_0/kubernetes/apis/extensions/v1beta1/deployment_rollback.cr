@@ -36,6 +36,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::DeploymentRollback
   end
 
   # create rollback of a DeploymentRollback
-  def self.create(rollback_to, pretty : String?, name : String, updated_annotations = nil, namespace : String = "default")
+  def create_rollback
   end
 end

@@ -30,15 +30,15 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Storage::V1beta1::StorageClassList
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind StorageClass
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a StorageClass
+  def create(metadata = nil, parameters = nil)
   end
 
-  # create a StorageClass
-  def self.create(provisioner, pretty : String?, metadata = nil, parameters = nil)
+  # list or watch objects of kind StorageClass
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of StorageClass
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

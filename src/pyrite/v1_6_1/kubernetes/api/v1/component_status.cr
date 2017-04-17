@@ -31,6 +31,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ComponentStatus
   end
 
   # read the specified ComponentStatus
-  def self.get(pretty : String?, name : String)
+  def self.read(name : String)
   end
 end

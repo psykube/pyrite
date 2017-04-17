@@ -35,6 +35,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authentication::V1beta1::TokenReview
   end
 
   # create a TokenReview
-  def self.create(spec, pretty : String?, metadata = nil, status = nil)
+  def create
   end
 end

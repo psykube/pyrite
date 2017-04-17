@@ -30,15 +30,15 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResourceL
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind ThirdPartyResource
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a ThirdPartyResource
+  def create(description = nil, metadata = nil, versions = nil)
   end
 
-  # create a ThirdPartyResource
-  def self.create(pretty : String?, description = nil, metadata = nil, versions = nil)
+  # list or watch objects of kind ThirdPartyResource
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of ThirdPartyResource
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

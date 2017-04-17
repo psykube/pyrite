@@ -30,19 +30,19 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::SecretList
     @kind = "v1"
   end
 
-  # list or watch objects of kind Secret
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a Secret
+  def create(data = nil, metadata = nil, string_data = nil, type = nil)
   end
 
-  # create a Secret
-  def self.create(pretty : String?, data = nil, metadata = nil, string_data = nil, type = nil, namespace : String = "default")
+  # list or watch objects of kind Secret
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of Secret
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # list or watch objects of kind Secret
-  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

@@ -35,27 +35,31 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Rbac::V1alpha1::ClusterRoleBinding
     @kind = "v1alpha1"
   end
 
-  # list or watch objects of kind ClusterRoleBinding
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a ClusterRoleBinding
+  def create_rbac_authorization_v1alpha1cluster_role_binding
   end
 
-  # create a ClusterRoleBinding
-  def self.create(role_ref, subjects, pretty : String?, metadata = nil)
+  # list or watch objects of kind ClusterRoleBinding
+  def self.list_rbac_authorization_v1alpha1cluster_role_binding(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of ClusterRoleBinding
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete_rbac_authorization_v1alpha1cluster_role_binding(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified ClusterRoleBinding
-  def self.get(pretty : String?, name : String)
+  def self.read_rbac_authorization_v1alpha1cluster_role_binding(name : String)
   end
 
   # replace the specified ClusterRoleBinding
-  def replace(role_ref, subjects, pretty : String?, metadata = nil)
+  def replace_rbac_authorization_v1alpha1cluster_role_binding
+  end
+
+  # partially update the specified ClusterRoleBinding
+  def patch_rbac_authorization_v1alpha1cluster_role_binding
   end
 
   # delete a ClusterRoleBinding
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete_rbac_authorization_v1alpha1cluster_role_binding(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

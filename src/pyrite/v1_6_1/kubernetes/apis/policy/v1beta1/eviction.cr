@@ -31,6 +31,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Policy::V1beta1::Eviction
   end
 
   # create eviction of an Eviction
-  def self.create(pretty : String?, name : String, delete_options = nil, metadata = nil, namespace : String = "default")
+  def create_core_v1eviction_eviction
   end
 end

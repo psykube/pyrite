@@ -31,10 +31,10 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::Binding
   end
 
   # create a Binding
-  def self.create(target, pretty : String?, metadata = nil, namespace : String = "default")
+  def create
   end
 
   # create binding of a Binding
-  def self.create(target, pretty : String?, name : String, metadata = nil, namespace : String = "default")
+  def create_binding
   end
 end

@@ -30,19 +30,19 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1beta1::RoleList
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind Role
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a Role
+  def create_rbac_authorization_v1beta1role(metadata = nil)
   end
 
-  # create a Role
-  def self.create(rules, pretty : String?, metadata = nil, namespace : String = "default")
+  # list or watch objects of kind Role
+  def self.list_rbac_authorization_v1beta1role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of Role
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete_rbac_authorization_v1beta1role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # list or watch objects of kind Role
-  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list_rbac_authorization_v1beta1role_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

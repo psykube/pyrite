@@ -31,18 +31,18 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::LimitRangeList
   end
 
   # list or watch objects of kind LimitRange
-  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
-  end
-
-  # list or watch objects of kind LimitRange
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # create a LimitRange
-  def self.create(pretty : String?, metadata = nil, spec = nil, namespace : String = "default")
+  def create(metadata = nil, spec = nil)
+  end
+
+  # list or watch objects of kind LimitRange
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of LimitRange
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 end

@@ -30,15 +30,15 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1alpha1::ClusterRoleList
     @kind = "v1alpha1"
   end
 
-  # list or watch objects of kind ClusterRole
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a ClusterRole
+  def create_rbac_authorization_v1alpha1cluster_role(metadata = nil)
   end
 
-  # create a ClusterRole
-  def self.create(rules, pretty : String?, metadata = nil)
+  # list or watch objects of kind ClusterRole
+  def self.list_rbac_authorization_v1alpha1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of ClusterRole
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete_rbac_authorization_v1alpha1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

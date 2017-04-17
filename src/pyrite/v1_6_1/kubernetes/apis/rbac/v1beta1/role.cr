@@ -30,27 +30,31 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1beta1::Role
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind Role
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a Role
+  def create_rbac_authorization_v1beta1role
   end
 
-  # create a Role
-  def self.create(rules, pretty : String?, metadata = nil, namespace : String = "default")
+  # list or watch objects of kind Role
+  def self.list_rbac_authorization_v1beta1role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of Role
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete_rbac_authorization_v1beta1role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified Role
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_rbac_authorization_v1beta1role(name : String, namespace : String = "default")
   end
 
   # replace the specified Role
-  def replace(rules, pretty : String?, metadata = nil)
+  def replace_rbac_authorization_v1beta1role
+  end
+
+  # partially update the specified Role
+  def patch_rbac_authorization_v1beta1role
   end
 
   # delete a Role
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete_rbac_authorization_v1beta1role(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

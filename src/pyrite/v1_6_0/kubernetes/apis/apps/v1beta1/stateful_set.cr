@@ -37,35 +37,43 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Apps::V1beta1::StatefulSet
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind StatefulSet
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a StatefulSet
+  def create
   end
 
-  # create a StatefulSet
-  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  # list or watch objects of kind StatefulSet
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of StatefulSet
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified StatefulSet
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified StatefulSet
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace
+  end
+
+  # partially update the specified StatefulSet
+  def patch
   end
 
   # delete a StatefulSet
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified StatefulSet
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_status(name : String, namespace : String = "default")
   end
 
   # replace status of the specified StatefulSet
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_status
+  end
+
+  # partially update status of the specified StatefulSet
+  def patch_status
   end
 end

@@ -30,27 +30,31 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Rbac::V1beta1::ClusterRole
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind ClusterRole
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a ClusterRole
+  def create_rbac_authorization_v1beta1cluster_role
   end
 
-  # create a ClusterRole
-  def self.create(rules, pretty : String?, metadata = nil)
+  # list or watch objects of kind ClusterRole
+  def self.list_rbac_authorization_v1beta1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of ClusterRole
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete_rbac_authorization_v1beta1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified ClusterRole
-  def self.get(pretty : String?, name : String)
+  def self.read_rbac_authorization_v1beta1cluster_role(name : String)
   end
 
   # replace the specified ClusterRole
-  def replace(rules, pretty : String?, metadata = nil)
+  def replace_rbac_authorization_v1beta1cluster_role
+  end
+
+  # partially update the specified ClusterRole
+  def patch_rbac_authorization_v1beta1cluster_role
   end
 
   # delete a ClusterRole
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete_rbac_authorization_v1beta1cluster_role(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

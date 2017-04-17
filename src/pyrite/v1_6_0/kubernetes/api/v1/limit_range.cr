@@ -30,27 +30,31 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::LimitRange
     @kind = "v1"
   end
 
-  # list or watch objects of kind LimitRange
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a LimitRange
+  def create
   end
 
-  # create a LimitRange
-  def self.create(pretty : String?, metadata = nil, spec = nil, namespace : String = "default")
+  # list or watch objects of kind LimitRange
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of LimitRange
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified LimitRange
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified LimitRange
-  def replace(pretty : String?, metadata = nil, spec = nil)
+  def replace
+  end
+
+  # partially update the specified LimitRange
+  def patch
   end
 
   # delete a LimitRange
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

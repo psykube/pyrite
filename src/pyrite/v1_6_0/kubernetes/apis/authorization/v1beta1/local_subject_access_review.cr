@@ -35,6 +35,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Authorization::V1beta1::LocalSubjectAcce
   end
 
   # create a LocalSubjectAccessReview
-  def self.create(spec, pretty : String?, metadata = nil, status = nil, namespace : String = "default")
+  def create
   end
 end

@@ -31,6 +31,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ComponentStatusList
   end
 
   # list objects of kind ComponentStatus
-  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

@@ -36,26 +36,38 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::Scale
   end
 
   # read scale of the specified Scale
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1deployments_scale(name : String, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_extensions_v1beta1deployments_scale
+  end
+
+  # partially update scale of the specified Scale
+  def patch_extensions_v1beta1deployments_scale
   end
 
   # read scale of the specified Scale
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1replicasets_scale(name : String, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_extensions_v1beta1replicasets_scale
+  end
+
+  # partially update scale of the specified Scale
+  def patch_extensions_v1beta1replicasets_scale
   end
 
   # read scale of the specified Scale
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1replicationcontrollers_scale(name : String, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_extensions_v1beta1replicationcontrollers_scale
+  end
+
+  # partially update scale of the specified Scale
+  def patch_extensions_v1beta1replicationcontrollers_scale
   end
 end

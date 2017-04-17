@@ -138,82 +138,92 @@ class Generator::Definition
     end
 
     paths.each do |path_name, path|
-      # Class Actions
-      define_action(path_name, path, :options, "options", true)
-      define_action(path_name, path, :head, "head", true)
-      define_action(path_name, path, :get, "get", true)
-      define_action(path_name, path, :post, "create", true)
-
-      # Instance Actions
-      define_action(path_name, path, :options, "options")
-      define_action(path_name, path, :head, "head")
-      define_action(path_name, path, :put, "replace")
-      define_action(path_name, path, :patch, "update")
-      define_action(path_name, path, :delete, "delete")
+      define_operations(path_name, path)
     end unless name.starts_with?("io.k8s.apimachinery")
   end
 
-  private def define_action(path_name : String, path : Swagger::Path, action_name : Symbol, name : String, toplevel : Bool = false)
-    action = path.action_map[action_name]?
-    return unless action
-    generate_description(action.description)
-    params = (path.parameters + action.parameters).select(&.in.== "query")
-    toplevel ||= params.map(&.name).includes? "labelSelector"
-    req_body_params = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
-    path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
-    params += path_params if toplevel
+  private def define_operations(path_name : String, path : Swagger::Path)
+    path.action_map.each do |verb, action|
+      next unless action
+      STDOUT.puts "----"
+      STDOUT.puts "Core" + @class_name.chomp("List").split("::").last(2).join, ""
+      name = action.operationId
+      STDOUT.puts name
+      name = name.sub("Namespaced", "")
+      STDOUT.puts name
+      name = name.sub("List", "")
+      STDOUT.puts name
+      name = name.sub("Collection", "")
+      STDOUT.puts name
+      name = name.sub("Core" + @class_name.chomp("List").split("::").last(2).join, "")
+      STDOUT.puts name
+      name = name.sub(@class_name.chomp("List").split("::").last(3).join, "")
+      STDOUT.puts name
+      name = name.underscore
+      STDOUT.puts name
+      generate_description(action.description)
+      params = (path.parameters + action.parameters).select(&.in.== "query")
+      req_body_params = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
+      path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
+      toplevel = params.map(&.name).includes?("labelSelector")
+      toplevel ||= path_params.map(&.name).includes?("name") && verb == :get
+      params += path_params if toplevel
 
-    # Define function
-    print "def #{"self." if toplevel}#{name}("
-    first_arg = true
+      # Define function
+      print "def #{"self." if toplevel}#{name}("
+      first_arg = true
 
-    req_body_params.each do |param|
-      if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
-        required = ref.required
-        ref.properties.select { |name, _| required.includes?(name) }.each do |name, property|
-          next if params.map(&.name).includes? name
-          next if is_resource?(ref) && resource_property?(name)
-          crystal_name = crystalize_name(name)
-          print ", " unless first_arg
-          print "#{crystal_name}"
-          first_arg = false
+      req_body_params.each do |param|
+        ref = get_ref(param.schema.try(&._ref))
+        if ref.is_a?(Swagger::Definition) && (toplevel || ref != @definition)
+          required = ref.required
+          ref.properties.select { |name, _| required.includes?(name) }.each do |name, property|
+            next if params.map(&.name).includes? name
+            next if is_resource?(ref) && resource_property?(name)
+            crystal_name = crystalize_name(name)
+            print ", " unless first_arg
+            print "#{crystal_name}"
+            first_arg = false
+          end
+        end
+      end if toplevel
+
+      # Add the non namespace params
+      params.reject(&.name.== "namespace").each do |param|
+        next if param.name == "pretty"
+        print ", " unless first_arg
+        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
+        first_arg = false
+      end
+
+      # Add the non-required body params
+      req_body_params.each do |param|
+        ref = get_ref(param.schema.try(&._ref))
+        if ref.is_a?(Swagger::Definition) && (toplevel || ref != @definition)
+          required = ref.required
+          ref.properties.reject { |name, _| required.includes?(name) }.each do |name, property|
+            next if params.map(&.name).includes? name
+            next if is_resource?(ref) && resource_property?(name)
+            crystal_name = crystalize_name(name)
+            print ", " unless first_arg
+            print "#{crystal_name} = nil"
+            first_arg = false
+          end
         end
       end
-    end
 
-    # Add the non namespace params
-    params.reject(&.name.== "namespace").each do |param|
-      print ", " unless first_arg
-      print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-      first_arg = false
-    end
-
-    # Add the non-required body params
-    req_body_params.each do |param|
-      if (ref = get_ref(param.schema.try(&._ref))) && ref.is_a?(Swagger::Definition)
-        required = ref.required
-        ref.properties.reject { |name, _| required.includes?(name) }.each do |name, property|
-          next if params.map(&.name).includes? name
-          next if is_resource?(ref) && resource_property?(name)
-          crystal_name = crystalize_name(name)
-          print ", " unless first_arg
-          print "#{crystal_name} = nil"
-          first_arg = false
-        end
+      # Add the namespace param
+      params.select(&.name.== "namespace").each do |param|
+        print ", " unless first_arg
+        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
+        print " = \"default\""
+        first_arg = false
       end
-    end
+      puts ")"
 
-    # Add the namespace param
-    params.select(&.name.== "namespace").each do |param|
-      print ", " unless first_arg
-      print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-      print " = \"default\""
-      first_arg = false
+      # Close the function
+      _end
     end
-    puts ")"
-
-    # Close the function
-    _end
   end
 
   private def load_requires

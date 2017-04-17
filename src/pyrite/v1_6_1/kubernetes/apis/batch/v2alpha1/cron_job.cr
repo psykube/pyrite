@@ -35,67 +35,83 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Batch::V2alpha1::CronJob
     @kind = "v2alpha1"
   end
 
-  # list or watch objects of kind CronJob
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a CronJob
+  def create
   end
 
-  # create a CronJob
-  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  # list or watch objects of kind CronJob
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of CronJob
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified CronJob
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified CronJob
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace
+  end
+
+  # partially update the specified CronJob
+  def patch
   end
 
   # delete a CronJob
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified CronJob
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_status(name : String, namespace : String = "default")
   end
 
   # replace status of the specified CronJob
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_status
   end
 
-  # list or watch objects of kind ScheduledJob
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # partially update status of the specified CronJob
+  def patch_status
   end
 
   # create a ScheduledJob
-  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  def create_batch_v2alpha1scheduled_job
+  end
+
+  # list or watch objects of kind ScheduledJob
+  def self.list_batch_v2alpha1scheduled_job(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of ScheduledJob
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete_batch_v2alpha1scheduled_job(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified ScheduledJob
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read_batch_v2alpha1scheduled_job(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified ScheduledJob
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_batch_v2alpha1scheduled_job
+  end
+
+  # partially update the specified ScheduledJob
+  def patch_batch_v2alpha1scheduled_job
   end
 
   # delete a ScheduledJob
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete_batch_v2alpha1scheduled_job(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified ScheduledJob
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_batch_v2alpha1scheduled_job_status(name : String, namespace : String = "default")
   end
 
   # replace status of the specified ScheduledJob
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_batch_v2alpha1scheduled_job_status
+  end
+
+  # partially update status of the specified ScheduledJob
+  def patch_batch_v2alpha1scheduled_job_status
   end
 end

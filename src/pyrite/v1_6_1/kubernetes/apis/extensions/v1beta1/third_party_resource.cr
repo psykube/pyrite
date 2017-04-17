@@ -35,27 +35,31 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResource
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind ThirdPartyResource
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a ThirdPartyResource
+  def create
   end
 
-  # create a ThirdPartyResource
-  def self.create(pretty : String?, description = nil, metadata = nil, versions = nil)
+  # list or watch objects of kind ThirdPartyResource
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of ThirdPartyResource
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified ThirdPartyResource
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String)
+  def self.read(exact : Bool?, export : Bool?, name : String)
   end
 
   # replace the specified ThirdPartyResource
-  def replace(pretty : String?, description = nil, metadata = nil, versions = nil)
+  def replace
+  end
+
+  # partially update the specified ThirdPartyResource
+  def patch
   end
 
   # delete a ThirdPartyResource
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

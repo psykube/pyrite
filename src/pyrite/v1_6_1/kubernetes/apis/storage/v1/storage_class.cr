@@ -37,27 +37,31 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Storage::V1::StorageClass
     @kind = "v1"
   end
 
-  # list or watch objects of kind StorageClass
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a StorageClass
+  def create
   end
 
-  # create a StorageClass
-  def self.create(provisioner, pretty : String?, metadata = nil, parameters = nil)
+  # list or watch objects of kind StorageClass
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of StorageClass
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # read the specified StorageClass
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String)
+  def self.read(exact : Bool?, export : Bool?, name : String)
   end
 
   # replace the specified StorageClass
-  def replace(provisioner, pretty : String?, metadata = nil, parameters = nil)
+  def replace
+  end
+
+  # partially update the specified StorageClass
+  def patch
   end
 
   # delete a StorageClass
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

@@ -30,15 +30,15 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicyLi
     @kind = "v1beta1"
   end
 
-  # list or watch objects of kind PodSecurityPolicy
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  # create a PodSecurityPolicy
+  def create(metadata = nil, spec = nil)
   end
 
-  # create a PodSecurityPolicy
-  def self.create(pretty : String?, metadata = nil, spec = nil)
+  # list or watch objects of kind PodSecurityPolicy
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 
   # delete collection of PodSecurityPolicy
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

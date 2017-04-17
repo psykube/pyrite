@@ -36,10 +36,14 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Apps::V1beta1::Scale
   end
 
   # read scale of the specified Scale
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_scale(name : String, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_scale
+  end
+
+  # partially update scale of the specified Scale
+  def patch_scale
   end
 end

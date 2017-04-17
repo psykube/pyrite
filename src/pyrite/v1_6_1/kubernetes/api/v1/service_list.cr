@@ -30,15 +30,15 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ServiceList
     @kind = "v1"
   end
 
-  # list or watch objects of kind Service
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
-  end
-
   # create a Service
-  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  def create(metadata = nil, spec = nil, status = nil)
   end
 
   # list or watch objects of kind Service
-  def self.get(field_selector : String?, label_selector : String?, pretty : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  end
+
+  # list or watch objects of kind Service
+  def self.list_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
   end
 end

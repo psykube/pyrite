@@ -35,6 +35,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAcces
   end
 
   # create a SelfSubjectAccessReview
-  def self.create(spec, pretty : String?, metadata = nil, status = nil)
+  def create
   end
 end

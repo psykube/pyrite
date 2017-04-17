@@ -30,27 +30,31 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::PodTemplate
     @kind = "v1"
   end
 
-  # list or watch objects of kind PodTemplate
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a PodTemplate
+  def create
   end
 
-  # create a PodTemplate
-  def self.create(pretty : String?, metadata = nil, template = nil, namespace : String = "default")
+  # list or watch objects of kind PodTemplate
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of PodTemplate
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified PodTemplate
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified PodTemplate
-  def replace(pretty : String?, metadata = nil, template = nil)
+  def replace
+  end
+
+  # partially update the specified PodTemplate
+  def patch
   end
 
   # delete a PodTemplate
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 end

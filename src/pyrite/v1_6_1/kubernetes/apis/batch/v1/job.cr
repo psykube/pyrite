@@ -35,35 +35,43 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Batch::V1::Job
     @kind = "v1"
   end
 
-  # list or watch objects of kind Job
-  def self.get(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  # create a Job
+  def create
   end
 
-  # create a Job
-  def self.create(pretty : String?, metadata = nil, spec = nil, status = nil, namespace : String = "default")
+  # list or watch objects of kind Job
+  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # delete collection of Job
-  def self.delete(pretty : String?, field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
   end
 
   # read the specified Job
-  def self.get(pretty : String?, exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
   end
 
   # replace the specified Job
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace
+  end
+
+  # partially update the specified Job
+  def patch
   end
 
   # delete a Job
-  def delete(pretty : String?, grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
   end
 
   # read status of the specified Job
-  def self.get(pretty : String?, name : String, namespace : String = "default")
+  def self.read_status(name : String, namespace : String = "default")
   end
 
   # replace status of the specified Job
-  def replace(pretty : String?, metadata = nil, spec = nil, status = nil)
+  def replace_status
+  end
+
+  # partially update status of the specified Job
+  def patch_status
   end
 end
