@@ -1,6 +1,6 @@
-# Kubernetes API – A Crystal Implementation
+# Pyrite
 
-Kubernetes API and Object Mappings for Crystal-lang.
+A Kubernetes Client for Crystal-lang
 
 ## Installation
 
@@ -9,13 +9,13 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   k8s:
-    github: jwaldrip/crystal-k8s
+    github: jwaldrip/pyrite
 ```
 
 ## Usage
 
 ```crystal
-require "k8s"
+require "pyrite"
 ```
 
 TODO: Write usage instructions here
@@ -26,7 +26,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/kubernetes/fork )
+1. Fork it ( https://github.com/jwaldrip/pyrite/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)

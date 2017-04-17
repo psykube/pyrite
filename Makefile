@@ -1,5 +1,5 @@
 generate:
-	@rm -rf ./src/k8s
+	@rm -rf ./src/*/
 	@crystal run ./vendor/generator/src/generator.cr
 
 docs: generate

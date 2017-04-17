@@ -1,7 +1,7 @@
 require "./swagger"
 
 class Generator
-  ROOT_NAME = "K8S"
+  ROOT_NAME = "Pyrite"
   @definitions : Hash(String, String)
 
   def self.generate(file)
