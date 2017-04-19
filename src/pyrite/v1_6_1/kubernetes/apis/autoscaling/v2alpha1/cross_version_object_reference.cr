@@ -5,7 +5,7 @@ require "json"
 
 # CrossVersionObjectReference contains enough information to let you identify the referred resource.
 class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference
-  # Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  # Name of the referent; More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
   property name : String
 
   YAML.mapping({
@@ -20,7 +20,7 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjec
     name:        {type: String, nilable: false, key: name, getter: false, setter: false},
   }, true)
 
-  def initialize(@name)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @name : String? = nil)
     @api_version = "CrossVersionObjectReference"
     @kind = "v2alpha1"
   end

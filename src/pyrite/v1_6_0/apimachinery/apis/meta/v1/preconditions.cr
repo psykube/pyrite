@@ -12,6 +12,6 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions
 
   JSON.mapping({uid: {type: String, nilable: true, key: uid, getter: false, setter: false}}, true)
 
-  def initialize(@uid = nil)
+  def initialize(@uid : String? = nil)
   end
 end

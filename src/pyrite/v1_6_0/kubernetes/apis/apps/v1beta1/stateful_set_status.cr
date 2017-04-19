@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus
   JSON.mapping({observed_generation: {type: Int32, nilable: true, key: observedGeneration, getter: false, setter: false},
                 replicas:            {type: Int32, nilable: false, key: replicas, getter: false, setter: false}}, true)
 
-  def initialize(@replicas, @observed_generation = nil)
+  def initialize(@observed_generation : Int32? = nil, @replicas : Int32? = nil)
   end
 end

@@ -8,16 +8,16 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Batch::V1::JobStatus
   # Active is the number of actively running pods.
   property active : Int32?
 
-  # CompletionTime represents time when the job was completed.It is not guaranteed to be set in happens-before order across separate operations.It is represented in RFC3339 form and is in UTC.
+  # CompletionTime represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
   property completion_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time
 
-  # Conditions represent the latest available observations of an object's current state.More info: http://kubernetes.io/docs/user-guide/jobs
+  # Conditions represent the latest available observations of an object's current state. More info: [http://kubernetes.io/docs/user-guide/jobs](http://kubernetes.io/docs/user-guide/jobs)
   property conditions : Array(::Pyrite::V1_6_1::Kubernetes::Apis::Batch::V1::JobCondition)?
 
   # Failed is the number of pods which reached Phase Failed.
   property failed : Int32?
 
-  # StartTime represents time when the job was acknowledged by the Job Manager.It is not guaranteed to be set in happens-before order across separate operations.It is represented in RFC3339 form and is in UTC.
+  # StartTime represents time when the job was acknowledged by the Job Manager. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
   property start_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time
 
   # Succeeded is the number of pods which reached Phase Succeeded.
@@ -37,6 +37,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Batch::V1::JobStatus
                 start_time:      {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: startTime, getter: false, setter: false},
                 succeeded:       {type: Int32, nilable: true, key: succeeded, getter: false, setter: false}}, true)
 
-  def initialize(@active = nil, @completion_time = nil, @conditions = nil, @failed = nil, @start_time = nil, @succeeded = nil)
+  def initialize(@active : Int32? = nil, @completion_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @conditions : Array? = nil, @failed : Int32? = nil, @start_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @succeeded : Int32? = nil)
   end
 end

@@ -5,7 +5,7 @@ require "json"
 
 # NodeSpec describes the attributes that a node is created with.
 class Pyrite::V1_6_0::Kubernetes::Api::V1::NodeSpec
-  # External ID of the node assigned by some machine database (e.g.a cloud provider).Deprecated.
+  # External ID of the node assigned by some machine database (e.g. a cloud provider). Deprecated.
   property external_id : String?
 
   # PodCIDR represents the pod IP range assigned to the node.
@@ -17,7 +17,7 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::NodeSpec
   # If specified, the node's taints.
   property taints : Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::Taint)?
 
-  # Unschedulable controls node schedulability of new pods.By default, node is schedulable.More info: http://releases.k8s.io/HEAD/docs/admin/node.md#manual-node-administration
+  # Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: [http://releases.k8s.io/HEAD/docs/admin/node.md#manual-node-administration](http://releases.k8s.io/HEAD/docs/admin/node.md#manual-node-administration)
   property unschedulable : Bool?
 
   YAML.mapping({external_id:   {type: String, nilable: true, key: externalID, getter: false, setter: false},
@@ -32,6 +32,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::NodeSpec
                 taints:        {type: Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::Taint), nilable: true, key: taints, getter: false, setter: false},
                 unschedulable: {type: Bool, nilable: true, key: unschedulable, getter: false, setter: false}}, true)
 
-  def initialize(@external_id = nil, @pod_cidr = nil, @provider_id = nil, @taints = nil, @unschedulable = nil)
+  def initialize(@external_id : String? = nil, @pod_cidr : String? = nil, @provider_id : String? = nil, @taints : Array? = nil, @unschedulable : Bool? = nil)
   end
 end

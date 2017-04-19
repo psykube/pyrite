@@ -27,6 +27,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler
                 scale_target_ref:                  {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: scaleTargetRef, getter: false, setter: false},
                 target_cpu_utilization_percentage: {type: Int32, nilable: true, key: targetCPUUtilizationPercentage, getter: false, setter: false}}, true)
 
-  def initialize(@max_replicas, @scale_target_ref, @min_replicas = nil, @target_cpu_utilization_percentage = nil)
+  def initialize(@max_replicas : Int32? = nil, @min_replicas : Int32? = nil, @scale_target_ref : ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference = nil, @target_cpu_utilization_percentage : Int32? = nil)
   end
 end

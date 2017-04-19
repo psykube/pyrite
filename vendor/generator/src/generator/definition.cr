@@ -2,6 +2,31 @@ require "file_utils"
 require "../swagger"
 
 class Generator::Definition
+  URL_REGEX = /(?<url>((http[s]?):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?)/
+
+  class FunctionArgument
+    getter name : String
+    getter type : String?
+    getter ref : String? = nil
+    getter required : Bool = false
+    property default : String? = nil
+
+    def initialize(name : String, prop : Swagger::Definition::Property, definition : Swagger::Definition)
+      initialize name: name, required: definition.required.includes?(name), type: prop.type.to_s, ref: prop._ref
+    end
+
+    def initialize(param : Swagger::Path::Parameter)
+      initialize name: param.name, required: param.required, type: param.type, ref: param.schema.try(&._ref)
+    end
+
+    def initialize(@name : String, @type : String?, @required : Bool = false, @default : String? = nil, @ref : String? = nil)
+    end
+
+    def first_value?
+      required && !default
+    end
+  end
+
   RESOURCE_KEYS = %w(apiVersion kind)
 
   getter class_name : String
@@ -13,8 +38,6 @@ class Generator::Definition
   getter definition : Swagger::Definition
 
   delegate required, properties, to: definition
-
-  delegate puts, print, to: file
 
   macro write(&block)
     file.print block.body + "\n"
@@ -34,8 +57,8 @@ class Generator::Definition
 
   def generate
     STDOUT.puts "Writing: #{filename}"
-    puts "# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC"
-    puts ""
+    file.puts "# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC"
+    file.puts ""
     load_requires
     open_class
     define_properties
@@ -67,7 +90,26 @@ class Generator::Definition
     end
   end
 
-  private def convert_type(param : Swagger::Path::Parameter, required : Bool = true)
+  private def convert_type(arg : FunctionArgument)
+    t = if ref = definition_ref(arg.ref)
+          return ref
+        else
+          case arg.type.to_s
+          when "object"
+            "Hash(String, String)"
+          when "boolean"
+            "Bool"
+          when "integer"
+            "Int32"
+          else
+            arg.type.to_s.camelcase
+          end
+        end
+    t += "?" unless arg.required
+    t
+  end
+
+  private def convert_type(param : Swagger::Path::Parameter)
     t = if ref = definition_ref(param.schema.try(&._ref))
           return ref
         else
@@ -82,7 +124,7 @@ class Generator::Definition
             param.type.to_s.camelcase
           end
         end
-    t += "?" unless required
+    t += "?" unless param.required
     t
   end
 
@@ -113,8 +155,8 @@ class Generator::Definition
 
   private def generate_description(description : String?)
     return unless description
-    description.split(". ").join(".").lines.each do |line|
-      file.puts "# #{line}"
+    description.lines.each do |line|
+      file.puts "# #{line.gsub(URL_REGEX, "[\\k<url>](\\k<url>)")}"
     end
   end
 
@@ -142,95 +184,71 @@ class Generator::Definition
     end unless name.starts_with?("io.k8s.apimachinery")
   end
 
+  private def params_to_refs(params = Array(Swagger::Path::Parameter))
+    ([] of Swagger::Definition).tap do |refs|
+      params.each do |param|
+        ref = get_ref(param.schema.try(&._ref))
+        refs << ref if ref.is_a? Swagger::Definition
+      end
+    end
+  end
+
+  private def define_function(name : String, arg_map : Hash(String, FunctionArgument), toplevel : Bool = false)
+    file.print "def #{"self." if toplevel}#{name}("
+    args = arg_map.values.select(&.first_value?) + arg_map.values.reject(&.first_value?)
+    arg_list = args.map do |a|
+      arg = crystalize_name(a.name)
+      arg += " : #{convert_type(a)}"
+      arg += " = #{a.default.inspect}" if !a.required || a.default
+      arg
+    end
+    file.print arg_list.join(", ")
+    file.puts ")"
+    yield
+    file.puts "end"
+    file.puts
+  end
+
   private def define_operations(path_name : String, path : Swagger::Path)
     path.action_map.each do |verb, action|
       next unless action
-      STDOUT.puts "----"
-      STDOUT.puts "Core" + @class_name.chomp("List").split("::").last(2).join, ""
-      name = action.operationId
-      STDOUT.puts name
-      name = name.sub("Namespaced", "")
-      STDOUT.puts name
-      name = name.sub("List", "")
-      STDOUT.puts name
-      name = name.sub("Collection", "")
-      STDOUT.puts name
-      name = name.sub("Core" + @class_name.chomp("List").split("::").last(2).join, "")
-      STDOUT.puts name
-      name = name.sub(@class_name.chomp("List").split("::").last(3).join, "")
-      STDOUT.puts name
-      name = name.underscore
-      STDOUT.puts name
       generate_description(action.description)
+
+      function_name = action.operationId
+                            .sub("Namespaced", "")
+                            .sub("List", "")
+                            .sub("Collection", "")
+                            .sub("Core" + @class_name.chomp("List").split("::").last(2).join, "")
+                            .sub(@class_name.chomp("List").split("::").last(3).join, "")
+                            .underscore
+
       params = (path.parameters + action.parameters).select(&.in.== "query")
-      req_body_params = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
+      body = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
       path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
       toplevel = params.map(&.name).includes?("labelSelector")
       toplevel ||= path_params.map(&.name).includes?("name") && verb == :get
       params += path_params if toplevel
 
-      # Define function
-      print "def #{"self." if toplevel}#{name}("
-      first_arg = true
-
-      req_body_params.each do |param|
-        ref = get_ref(param.schema.try(&._ref))
-        if ref.is_a?(Swagger::Definition) && (toplevel || ref != @definition)
-          required = ref.required
-          ref.properties.select { |name, _| required.includes?(name) }.each do |name, property|
-            next if params.map(&.name).includes? name
-            next if is_resource?(ref) && resource_property?(name)
-            crystal_name = crystalize_name(name)
-            print ", " unless first_arg
-            print "#{crystal_name}"
-            first_arg = false
-          end
-        end
-      end if toplevel
-
-      # Add the non namespace params
-      params.reject(&.name.== "namespace").each do |param|
-        next if param.name == "pretty"
-        print ", " unless first_arg
-        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-        first_arg = false
-      end
-
-      # Add the non-required body params
-      req_body_params.each do |param|
-        ref = get_ref(param.schema.try(&._ref))
-        if ref.is_a?(Swagger::Definition) && (toplevel || ref != @definition)
-          required = ref.required
-          ref.properties.reject { |name, _| required.includes?(name) }.each do |name, property|
-            next if params.map(&.name).includes? name
-            next if is_resource?(ref) && resource_property?(name)
-            crystal_name = crystalize_name(name)
-            print ", " unless first_arg
-            print "#{crystal_name} = nil"
-            first_arg = false
-          end
+      args = {} of String => FunctionArgument
+      params_to_refs(body).reject(&.== @definition).each do |ref|
+        ref.properties.reject { |name, _| is_resource?(ref) && resource_property?(name) }.each do |name, prop|
+          args[name] = FunctionArgument.new(name, prop, ref)
         end
       end
-
-      # Add the namespace param
-      params.select(&.name.== "namespace").each do |param|
-        print ", " unless first_arg
-        print "#{crystalize_name(param.name)} : #{convert_type(param, param.required)}"
-        print " = \"default\""
-        first_arg = false
+      args["context"] = FunctionArgument.new("context", "string")
+      params.each { |param| args[param.name] = FunctionArgument.new(param) }
+      args["namespace"].default = "default" if args["namespace"]?
+      args.delete("pretty")
+      define_function(function_name, args, toplevel: toplevel) do
       end
-      puts ")"
-
-      # Close the function
-      _end
     end
   end
 
   private def load_requires
-    %w(yaml json).each do |file|
-      puts "require #{file.inspect}"
+    %w(yaml json).each do |req|
+      file.puts "require #{req.inspect}"
     end
-    puts
+    file.puts
   end
 
   private def open_class
@@ -238,12 +256,12 @@ class Generator::Definition
     generate_description definition.description
 
     # Open the class
-    puts "class #{class_name.lchop("::")}"
+    file.puts "class #{class_name.lchop("::")}"
   end
 
   private def _end
-    puts "end"
-    puts
+    file.puts "end"
+    file.puts
   end
 
   private def define_properties
@@ -266,48 +284,40 @@ class Generator::Definition
   end
 
   private def define_initializer
-    print "def initialize("
-    first_arg = true
-    properties.select { |name, _| required.includes?(name) }.each_with_index do |(name, property), index|
-      next if is_resource? && resource_property?(name)
-      crystal_name = crystalize_name(name)
-      print "#{"," unless first_arg} @#{crystal_name}"
-      first_arg = false
+    arg_map = properties.each_with_object({} of String => FunctionArgument) do |(name, prop), memo|
+      memo["@" + name] = FunctionArgument.new("@" + name, prop, definition)
     end
-
-    properties.reject { |name, _| required.includes?(name) }.each_with_index do |(name, property), index|
-      next if is_resource? && resource_property?(name)
-      crystal_name = crystalize_name(name)
-      print "#{"," unless first_arg} @#{crystal_name} = nil"
-      first_arg = false
+    # arg_map["name"] = FunctionArgument.new("name", arg_map["@spec"].required) if is_resource? && arg_map["@spec"]
+    define_function("initialize", arg_map) do
+      # if arg_map["name"]
+      #   "@spec = if name"
+      # end
+      if is_resource?
+        file.puts "@api_version = #{self.name.split(".")[-1].inspect}"
+        file.puts "@kind = #{self.name.split(".")[-2].inspect}"
+      end
     end
-    puts ")"
-    if is_resource?
-      puts "@api_version = #{self.name.split(".")[-1].inspect}"
-      puts "@kind = #{self.name.split(".")[-2].inspect}"
-    end
-    _end
   end
 
   private def define_mappings
     {"YAML", "JSON"}.each do |t|
-      print "#{t}.mapping({ "
+      file.print "#{t}.mapping({ "
       first_arg = true
       if is_resource?
-        puts
-        puts "api_version: { type: String, default: #{name.split(".")[-1].inspect}, key: apiVersion, getter: false, setter: false },"
-        print "kind: { type: String, default: #{name.split(".")[-2].inspect}, getter: false, setter: false }"
+        file.puts
+        file.puts "api_version: { type: String, default: #{name.split(".")[-1].inspect}, key: apiVersion, getter: false, setter: false },"
+        file.print "kind: { type: String, default: #{name.split(".")[-2].inspect}, getter: false, setter: false }"
         first_arg = false
       end
       properties.each do |name, property|
         next if is_resource? && resource_property?(name)
         crystal_name = crystalize_name(name)
-        puts "," unless first_arg
-        print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name}, getter: false, setter: false }"
+        file.puts "," unless first_arg
+        file.print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name}, getter: false, setter: false }"
         first_arg = false
       end
       file.puts "}, true)"
-      puts
+      file.puts
     end unless properties.empty?
   end
 end

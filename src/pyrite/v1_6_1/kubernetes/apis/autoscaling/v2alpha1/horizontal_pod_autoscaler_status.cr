@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAuto
                 last_scale_time:     {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: lastScaleTime, getter: false, setter: false},
                 observed_generation: {type: Int32, nilable: true, key: observedGeneration, getter: false, setter: false}}, true)
 
-  def initialize(@current_metrics, @current_replicas, @desired_replicas, @last_scale_time = nil, @observed_generation = nil)
+  def initialize(@current_metrics : Array? = nil, @current_replicas : Int32? = nil, @desired_replicas : Int32? = nil, @last_scale_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @observed_generation : Int32? = nil)
   end
 end

@@ -12,6 +12,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::NodeDaemonEndpoints
 
   JSON.mapping({kubelet_endpoint: {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::DaemonEndpoint, nilable: true, key: kubeletEndpoint, getter: false, setter: false}}, true)
 
-  def initialize(@kubelet_endpoint = nil)
+  def initialize(@kubelet_endpoint : ::Pyrite::V1_6_1::Kubernetes::Api::V1::DaemonEndpoint = nil)
   end
 end

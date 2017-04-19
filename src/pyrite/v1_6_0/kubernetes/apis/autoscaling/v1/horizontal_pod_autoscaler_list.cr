@@ -25,24 +25,24 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler
     metadata:    {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@items, @metadata = nil)
+  def initialize(@api_version : String? = nil, @items : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta = nil)
     @api_version = "HorizontalPodAutoscalerList"
     @kind = "v1"
   end
 
   # list or watch objects of kind HorizontalPodAutoscaler
-  def self.list_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list_for_all_namespaces(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # create a HorizontalPodAutoscaler
-  def create(metadata = nil, spec = nil, status = nil)
+  def create(metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, spec : ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerSpec = nil, status : ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerStatus = nil, context : String? = nil)
   end
 
   # list or watch objects of kind HorizontalPodAutoscaler
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # delete collection of HorizontalPodAutoscaler
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 end

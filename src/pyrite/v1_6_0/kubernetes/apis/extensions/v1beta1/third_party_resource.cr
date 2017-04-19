@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# A ThirdPartyResource is a generic representation of a resource, it is used by add-ons and plugins to add new resource types to the API. It consists of one or more Versions of the api.
+# A ThirdPartyResource is a generic representation of a resource, it is used by add-ons and plugins to add new resource types to the API.  It consists of one or more Versions of the api.
 class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResource
   # Description is the description of this object.
   property description : String?
@@ -30,36 +30,36 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResource
     versions:    {type: Array(::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: versions, getter: false, setter: false},
   }, true)
 
-  def initialize(@description = nil, @metadata = nil, @versions = nil)
+  def initialize(@api_version : String? = nil, @description : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @versions : Array? = nil)
     @api_version = "ThirdPartyResource"
     @kind = "v1beta1"
   end
 
   # create a ThirdPartyResource
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind ThirdPartyResource
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # delete collection of ThirdPartyResource
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # read the specified ThirdPartyResource
-  def self.read(exact : Bool?, export : Bool?, name : String)
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil)
   end
 
   # replace the specified ThirdPartyResource
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified ThirdPartyResource
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete a ThirdPartyResource
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 end

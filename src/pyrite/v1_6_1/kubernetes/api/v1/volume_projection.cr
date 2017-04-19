@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::VolumeProjection
                 downward_api: {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: downwardAPI, getter: false, setter: false},
                 secret:       {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::SecretProjection, nilable: true, key: secret, getter: false, setter: false}}, true)
 
-  def initialize(@config_map = nil, @downward_api = nil, @secret = nil)
+  def initialize(@config_map : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ConfigMapProjection = nil, @downward_api : ::Pyrite::V1_6_1::Kubernetes::Api::V1::DownwardAPIProjection = nil, @secret : ::Pyrite::V1_6_1::Kubernetes::Api::V1::SecretProjection = nil)
   end
 end

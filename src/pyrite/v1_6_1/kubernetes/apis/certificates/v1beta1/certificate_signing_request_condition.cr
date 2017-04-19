@@ -26,6 +26,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Certificates::V1beta1::CertificateSignin
                 reason:           {type: String, nilable: true, key: reason, getter: false, setter: false},
                 type:             {type: String, nilable: false, key: type, getter: false, setter: false}}, true)
 
-  def initialize(@type, @last_update_time = nil, @message = nil, @reason = nil)
+  def initialize(@last_update_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @message : String? = nil, @reason : String? = nil, @type : String? = nil)
   end
 end

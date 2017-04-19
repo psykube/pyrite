@@ -20,7 +20,7 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::APIGroupList
     groups:      {type: Array(::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: groups, getter: false, setter: false},
   }, true)
 
-  def initialize(@groups)
+  def initialize(@api_version : String? = nil, @groups : Array? = nil, @kind : String? = nil)
     @api_version = "APIGroupList"
     @kind = "v1"
   end

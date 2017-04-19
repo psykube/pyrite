@@ -29,12 +29,12 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Authorization::V1::SubjectAccessReview
     status:      {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@spec, @metadata = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_0::Kubernetes::Apis::Authorization::V1::SubjectAccessReviewSpec = nil, @status : ::Pyrite::V1_6_0::Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus = nil)
     @api_version = "SubjectAccessReview"
     @kind = "v1"
   end
 
   # create a SubjectAccessReview
-  def create
+  def create(context : String? = nil)
   end
 end

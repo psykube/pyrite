@@ -27,6 +27,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::SELinuxOptions
                 type:  {type: String, nilable: true, key: type, getter: false, setter: false},
                 user:  {type: String, nilable: true, key: user, getter: false, setter: false}}, true)
 
-  def initialize(@level = nil, @role = nil, @type = nil, @user = nil)
+  def initialize(@level : String? = nil, @role : String? = nil, @type : String? = nil, @user : String? = nil)
   end
 end

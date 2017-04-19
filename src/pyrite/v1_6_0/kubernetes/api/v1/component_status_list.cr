@@ -8,7 +8,7 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ComponentStatusList
   # List of ComponentStatus objects.
   property items : Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::ComponentStatus)
 
-  # Standard list metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds
+  # Standard list metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds)
   property metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta
 
   YAML.mapping({
@@ -25,12 +25,12 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ComponentStatusList
     metadata:    {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@items, @metadata = nil)
+  def initialize(@api_version : String? = nil, @items : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta = nil)
     @api_version = "ComponentStatusList"
     @kind = "v1"
   end
 
   # list objects of kind ComponentStatus
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 end

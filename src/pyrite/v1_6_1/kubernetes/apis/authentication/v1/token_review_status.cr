@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authentication::V1::TokenReviewStatus
                 error:         {type: String, nilable: true, key: error, getter: false, setter: false},
                 user:          {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Authentication::V1::UserInfo, nilable: true, key: user, getter: false, setter: false}}, true)
 
-  def initialize(@authenticated = nil, @error = nil, @user = nil)
+  def initialize(@authenticated : Bool? = nil, @error : String? = nil, @user : ::Pyrite::V1_6_1::Kubernetes::Apis::Authentication::V1::UserInfo = nil)
   end
 end

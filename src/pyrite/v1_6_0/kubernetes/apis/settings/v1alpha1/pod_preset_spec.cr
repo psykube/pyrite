@@ -11,7 +11,7 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Settings::V1alpha1::PodPresetSpec
   # EnvFrom defines the collection of EnvFromSource to inject into containers.
   property env_from : Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::EnvFromSource)?
 
-  # Selector is a label query over a set of resources, in this case pods.Required.
+  # Selector is a label query over a set of resources, in this case pods. Required.
   property selector : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::LabelSelector
 
   # VolumeMounts defines the collection of VolumeMount to inject into containers.
@@ -32,6 +32,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Settings::V1alpha1::PodPresetSpec
                 volume_mounts: {type: Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::VolumeMount), nilable: true, key: volumeMounts, getter: false, setter: false},
                 volumes:       {type: Array(::Pyrite::V1_6_0::Kubernetes::Api::V1::Volume), nilable: true, key: volumes, getter: false, setter: false}}, true)
 
-  def initialize(@env = nil, @env_from = nil, @selector = nil, @volume_mounts = nil, @volumes = nil)
+  def initialize(@env : Array? = nil, @env_from : Array? = nil, @selector : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::LabelSelector = nil, @volume_mounts : Array? = nil, @volumes : Array? = nil)
   end
 end

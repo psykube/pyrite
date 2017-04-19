@@ -22,6 +22,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricStatu
                 metric_name:   {type: String, nilable: false, key: metricName, getter: false, setter: false},
                 target:        {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: target, getter: false, setter: false}}, true)
 
-  def initialize(@current_value, @metric_name, @target)
+  def initialize(@current_value : ::Pyrite::V1_6_0::Apimachinery::Api::Resource::Quantity = nil, @metric_name : String? = nil, @target : ::Pyrite::V1_6_0::Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference = nil)
   end
 end

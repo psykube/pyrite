@@ -5,28 +5,28 @@ require "json"
 
 # Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
 class Pyrite::V1_6_0::Kubernetes::Api::V1::Probe
-  # One and only one of the following should be specified.Exec specifies the action to take.
+  # One and only one of the following should be specified. Exec specifies the action to take.
   property exec : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ExecAction
 
-  # Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3.Minimum value is 1.
+  # Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
   property failure_threshold : Int32?
 
   # HTTPGet specifies the http request to perform.
   property http_get : ::Pyrite::V1_6_0::Kubernetes::Api::V1::HTTPGetAction
 
-  # Number of seconds after the container has started before liveness probes are initiated.More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  # Number of seconds after the container has started before liveness probes are initiated. More info: [http://kubernetes.io/docs/user-guide/pod-states#container-probes](http://kubernetes.io/docs/user-guide/pod-states#container-probes)
   property initial_delay_seconds : Int32?
 
-  # How often (in seconds) to perform the probe.Default to 10 seconds.Minimum value is 1.
+  # How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
   property period_seconds : Int32?
 
-  # Minimum consecutive successes for the probe to be considered successful after having failed.Defaults to 1.Must be 1 for liveness.Minimum value is 1.
+  # Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.
   property success_threshold : Int32?
 
-  # TCPSocket specifies an action involving a TCP port.TCP hooks not yet supported
+  # TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
   property tcp_socket : ::Pyrite::V1_6_0::Kubernetes::Api::V1::TCPSocketAction
 
-  # Number of seconds after which the probe times out.Defaults to 1 second.Minimum value is 1.More info: http://kubernetes.io/docs/user-guide/pod-states#container-probes
+  # Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: [http://kubernetes.io/docs/user-guide/pod-states#container-probes](http://kubernetes.io/docs/user-guide/pod-states#container-probes)
   property timeout_seconds : Int32?
 
   YAML.mapping({exec:                  {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::ExecAction, nilable: true, key: exec, getter: false, setter: false},
@@ -47,6 +47,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Probe
                 tcp_socket:            {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: tcpSocket, getter: false, setter: false},
                 timeout_seconds:       {type: Int32, nilable: true, key: timeoutSeconds, getter: false, setter: false}}, true)
 
-  def initialize(@exec = nil, @failure_threshold = nil, @http_get = nil, @initial_delay_seconds = nil, @period_seconds = nil, @success_threshold = nil, @tcp_socket = nil, @timeout_seconds = nil)
+  def initialize(@exec : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ExecAction = nil, @failure_threshold : Int32? = nil, @http_get : ::Pyrite::V1_6_0::Kubernetes::Api::V1::HTTPGetAction = nil, @initial_delay_seconds : Int32? = nil, @period_seconds : Int32? = nil, @success_threshold : Int32? = nil, @tcp_socket : ::Pyrite::V1_6_0::Kubernetes::Api::V1::TCPSocketAction = nil, @timeout_seconds : Int32? = nil)
   end
 end

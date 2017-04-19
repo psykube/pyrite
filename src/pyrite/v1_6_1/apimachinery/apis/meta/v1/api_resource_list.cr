@@ -25,7 +25,7 @@ class Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::APIResourceList
     resources:     {type: Array(::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: resources, getter: false, setter: false},
   }, true)
 
-  def initialize(@group_version, @resources)
+  def initialize(@api_version : String? = nil, @group_version : String? = nil, @kind : String? = nil, @resources : Array? = nil)
     @api_version = "APIResourceList"
     @kind = "v1"
   end

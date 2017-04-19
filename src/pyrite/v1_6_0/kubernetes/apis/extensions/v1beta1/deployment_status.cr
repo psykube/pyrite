@@ -42,6 +42,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::DeploymentStatus
                 unavailable_replicas: {type: Int32, nilable: true, key: unavailableReplicas, getter: false, setter: false},
                 updated_replicas:     {type: Int32, nilable: true, key: updatedReplicas, getter: false, setter: false}}, true)
 
-  def initialize(@available_replicas = nil, @conditions = nil, @observed_generation = nil, @ready_replicas = nil, @replicas = nil, @unavailable_replicas = nil, @updated_replicas = nil)
+  def initialize(@available_replicas : Int32? = nil, @conditions : Array? = nil, @observed_generation : Int32? = nil, @ready_replicas : Int32? = nil, @replicas : Int32? = nil, @unavailable_replicas : Int32? = nil, @updated_replicas : Int32? = nil)
   end
 end

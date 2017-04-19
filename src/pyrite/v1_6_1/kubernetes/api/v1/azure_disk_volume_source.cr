@@ -14,10 +14,10 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::AzureDiskVolumeSource
   # The URI the data disk in the blob storage
   property disk_uri : String
 
-  # Filesystem type to mount.Must be a filesystem type supported by the host operating system.Ex."ext4", "xfs", "ntfs".Implicitly inferred to be "ext4" if unspecified.
+  # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   property fs_type : String?
 
-  # Defaults to false (read/write).ReadOnly here will force the ReadOnly setting in VolumeMounts.
+  # Defaults to false [(read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.]((read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.)
   property read_only : Bool?
 
   YAML.mapping({caching_mode: {type: String, nilable: true, key: cachingMode, getter: false, setter: false},
@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::AzureDiskVolumeSource
                 fs_type:      {type: String, nilable: true, key: fsType, getter: false, setter: false},
                 read_only:    {type: Bool, nilable: true, key: readOnly, getter: false, setter: false}}, true)
 
-  def initialize(@disk_name, @disk_uri, @caching_mode = nil, @fs_type = nil, @read_only = nil)
+  def initialize(@caching_mode : String? = nil, @disk_name : String? = nil, @disk_uri : String? = nil, @fs_type : String? = nil, @read_only : Bool? = nil)
   end
 end

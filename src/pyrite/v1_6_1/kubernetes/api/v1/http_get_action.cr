@@ -5,19 +5,19 @@ require "json"
 
 # HTTPGetAction describes an action based on HTTP Get requests.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::HTTPGetAction
-  # Host name to connect to, defaults to the pod IP.You probably want to set "Host" in httpHeaders instead.
+  # Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
   property host : String?
 
-  # Custom headers to set in the request.HTTP allows repeated headers.
+  # Custom headers to set in the request. HTTP allows repeated headers.
   property http_headers : Array(::Pyrite::V1_6_1::Kubernetes::Api::V1::HTTPHeader)?
 
   # Path to access on the HTTP server.
   property path : String?
 
-  # Name or number of the port to access on the container.Number must be in the range 1 to 65535.Name must be an IANA_SVC_NAME.
+  # Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
   property port : ::Pyrite::V1_6_1::Apimachinery::Util::Intstr::IntOrString
 
-  # Scheme to use for connecting to the host.Defaults to HTTP.
+  # Scheme to use for connecting to the host. Defaults to HTTP.
   property scheme : String?
 
   YAML.mapping({host:         {type: String, nilable: true, key: host, getter: false, setter: false},
@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::HTTPGetAction
                 port:         {type: ::Pyrite::V1_6_1::Apimachinery::Util::Intstr::IntOrString, nilable: false, key: port, getter: false, setter: false},
                 scheme:       {type: String, nilable: true, key: scheme, getter: false, setter: false}}, true)
 
-  def initialize(@port, @host = nil, @http_headers = nil, @path = nil, @scheme = nil)
+  def initialize(@host : String? = nil, @http_headers : Array? = nil, @path : String? = nil, @port : ::Pyrite::V1_6_1::Apimachinery::Util::Intstr::IntOrString = nil, @scheme : String? = nil)
   end
 end

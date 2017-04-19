@@ -8,10 +8,10 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::LabelSelectorRequirement
   # key is the label key that the selector applies to.
   property key : String
 
-  # operator represents a key's relationship to a set of values.Valid operators ard In, NotIn, Exists and DoesNotExist.
+  # operator represents a key's relationship to a set of values. Valid operators ard In, NotIn, Exists and DoesNotExist.
   property operator : String
 
-  # values is an array of string values.If the operator is In or NotIn, the values array must be non-empty.If the operator is Exists or DoesNotExist, the values array must be empty.This array is replaced during a strategic merge patch.
+  # values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.
   property values : Array(String)?
 
   YAML.mapping({key:      {type: String, nilable: false, key: key, getter: false, setter: false},
@@ -22,6 +22,6 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::LabelSelectorRequirement
                 operator: {type: String, nilable: false, key: operator, getter: false, setter: false},
                 values:   {type: Array(String), nilable: true, key: values, getter: false, setter: false}}, true)
 
-  def initialize(@key, @operator, @values = nil)
+  def initialize(@key : String? = nil, @operator : String? = nil, @values : Array? = nil)
   end
 end

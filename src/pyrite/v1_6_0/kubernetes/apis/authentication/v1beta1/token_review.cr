@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# TokenReview attempts to authenticate a token to a known user.Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
+# TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
 class Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1beta1::TokenReview
   property metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta
 
@@ -29,12 +29,12 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1beta1::TokenReview
     status:      {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@spec, @metadata = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec = nil, @status : ::Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus = nil)
     @api_version = "TokenReview"
     @kind = "v1beta1"
   end
 
   # create a TokenReview
-  def create
+  def create(context : String? = nil)
   end
 end

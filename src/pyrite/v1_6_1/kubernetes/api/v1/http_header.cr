@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::HTTPHeader
   JSON.mapping({name:  {type: String, nilable: false, key: name, getter: false, setter: false},
                 value: {type: String, nilable: false, key: value, getter: false, setter: false}}, true)
 
-  def initialize(@name, @value)
+  def initialize(@name : String? = nil, @value : String? = nil)
   end
 end

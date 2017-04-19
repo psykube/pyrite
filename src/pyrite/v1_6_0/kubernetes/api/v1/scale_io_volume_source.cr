@@ -5,7 +5,7 @@ require "json"
 
 # ScaleIOVolumeSource represents a persistent ScaleIO volume
 class Pyrite::V1_6_0::Kubernetes::Api::V1::ScaleIOVolumeSource
-  # Filesystem type to mount.Must be a filesystem type supported by the host operating system.Ex."ext4", "xfs", "ntfs".Implicitly inferred to be "ext4" if unspecified.
+  # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   property fs_type : String?
 
   # The host address of the ScaleIO API Gateway.
@@ -14,13 +14,13 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ScaleIOVolumeSource
   # The name of the Protection Domain for the configured storage (defaults to "default").
   property protection_domain : String?
 
-  # Defaults to false (read/write).ReadOnly here will force the ReadOnly setting in VolumeMounts.
+  # Defaults to false [(read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.]((read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.)
   property read_only : Bool?
 
-  # SecretRef references to the secret for ScaleIO user and other sensitive information.If this is not provided, Login operation will fail.
+  # SecretRef references to the secret for ScaleIO user and other sensitive information. If this is not provided, Login operation will fail.
   property secret_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::LocalObjectReference
 
-  # Flag to enable/disable SSL communication with Gateway, default false
+  # Flag to [enable/disable SSL communication with Gateway, default false](enable/disable SSL communication with Gateway, default false)
   property ssl_enabled : Bool?
 
   # Indicates whether the storage for a volume should be thick or thin (defaults to "thin").
@@ -57,6 +57,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ScaleIOVolumeSource
                 system:            {type: String, nilable: false, key: system, getter: false, setter: false},
                 volume_name:       {type: String, nilable: true, key: volumeName, getter: false, setter: false}}, true)
 
-  def initialize(@gateway, @secret_ref, @system, @fs_type = nil, @protection_domain = nil, @read_only = nil, @ssl_enabled = nil, @storage_mode = nil, @storage_pool = nil, @volume_name = nil)
+  def initialize(@fs_type : String? = nil, @gateway : String? = nil, @protection_domain : String? = nil, @read_only : Bool? = nil, @secret_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::LocalObjectReference = nil, @ssl_enabled : Bool? = nil, @storage_mode : String? = nil, @storage_pool : String? = nil, @system : String? = nil, @volume_name : String? = nil)
   end
 end

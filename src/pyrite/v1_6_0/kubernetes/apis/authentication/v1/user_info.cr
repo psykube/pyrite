@@ -11,7 +11,7 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1::UserInfo
   # The names of groups this user is a part of.
   property groups : Array(String)?
 
-  # A unique value that identifies this user across time.If this user is deleted and another user by the same name is added, they will have different UIDs.
+  # A unique value that identifies this user across time. If this user is deleted and another user by the same name is added, they will have different UIDs.
   property uid : String?
 
   # The name that uniquely identifies this user among all active users.
@@ -27,6 +27,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Authentication::V1::UserInfo
                 uid:      {type: String, nilable: true, key: uid, getter: false, setter: false},
                 username: {type: String, nilable: true, key: username, getter: false, setter: false}}, true)
 
-  def initialize(@extra = nil, @groups = nil, @uid = nil, @username = nil)
+  def initialize(@extra : Hash(String, String)? = nil, @groups : Array? = nil, @uid : String? = nil, @username : String? = nil)
   end
 end

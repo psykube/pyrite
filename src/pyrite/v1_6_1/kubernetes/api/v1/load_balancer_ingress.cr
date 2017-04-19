@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::LoadBalancerIngress
   JSON.mapping({hostname: {type: String, nilable: true, key: hostname, getter: false, setter: false},
                 ip:       {type: String, nilable: true, key: ip, getter: false, setter: false}}, true)
 
-  def initialize(@hostname = nil, @ip = nil)
+  def initialize(@hostname : String? = nil, @ip : String? = nil)
   end
 end

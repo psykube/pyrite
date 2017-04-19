@@ -5,25 +5,25 @@ require "json"
 
 # ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
 class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1::ResourceAttributes
-  # Group is the API Group of the Resource. "*" means all.
+  # Group is the API Group of the Resource.  "*" means all.
   property group : String?
 
-  # Name is the name of the resource being requested for a "get" or deleted for a "delete"."" (empty) means all.
+  # Name is the name of the resource being requested for a "get" or deleted for a "delete". "" (empty) means all.
   property name : String?
 
-  # Namespace is the namespace of the action being requested. Currently, there is no distinction between no namespace and all namespaces "" (empty) is defaulted for LocalSubjectAccessReviews "" (empty) is empty for cluster-scoped resources "" (empty) means "all" for namespace scoped resources from a SubjectAccessReview or SelfSubjectAccessReview
+  # Namespace is the namespace of the action being requested.  Currently, there is no distinction between no namespace and all namespaces "" (empty) is defaulted for LocalSubjectAccessReviews "" (empty) is empty for cluster-scoped resources "" (empty) means "all" for namespace scoped resources from a SubjectAccessReview or SelfSubjectAccessReview
   property namespace : String?
 
-  # Resource is one of the existing resource types. "*" means all.
+  # Resource is one of the existing resource types.  "*" means all.
   property resource : String?
 
-  # Subresource is one of the existing resource types. "" means none.
+  # Subresource is one of the existing resource types.  "" means none.
   property subresource : String?
 
-  # Verb is a kubernetes resource API verb, like: get, list, watch, create, update, delete, proxy. "*" means all.
+  # Verb is a kubernetes resource API verb, like: get, list, watch, create, update, delete, proxy.  "*" means all.
   property verb : String?
 
-  # Version is the API Version of the Resource. "*" means all.
+  # Version is the API Version of the Resource.  "*" means all.
   property version : String?
 
   YAML.mapping({group:       {type: String, nilable: true, key: group, getter: false, setter: false},
@@ -42,6 +42,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1::ResourceAttributes
                 verb:        {type: String, nilable: true, key: verb, getter: false, setter: false},
                 version:     {type: String, nilable: true, key: version, getter: false, setter: false}}, true)
 
-  def initialize(@group = nil, @name = nil, @namespace = nil, @resource = nil, @subresource = nil, @verb = nil, @version = nil)
+  def initialize(@group : String? = nil, @name : String? = nil, @namespace : String? = nil, @resource : String? = nil, @subresource : String? = nil, @verb : String? = nil, @version : String? = nil)
   end
 end

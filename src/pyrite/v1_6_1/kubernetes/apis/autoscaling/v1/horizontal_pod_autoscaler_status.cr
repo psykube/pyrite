@@ -5,7 +5,7 @@ require "json"
 
 # current status of a horizontal pod autoscaler
 class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerStatus
-  # current average CPU utilization over all pods, represented as a percentage of requested CPU, e.g.70 means that an average pod is using now 70% of its requested CPU.
+  # current average CPU utilization over all pods, represented as a percentage of requested CPU, e.g. 70 means that an average pod is using now 70% of its requested CPU.
   property current_cpu_utilization_percentage : Int32?
 
   # current number of replicas of pods managed by this autoscaler.
@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler
                 last_scale_time:                    {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: lastScaleTime, getter: false, setter: false},
                 observed_generation:                {type: Int32, nilable: true, key: observedGeneration, getter: false, setter: false}}, true)
 
-  def initialize(@current_replicas, @desired_replicas, @current_cpu_utilization_percentage = nil, @last_scale_time = nil, @observed_generation = nil)
+  def initialize(@current_cpu_utilization_percentage : Int32? = nil, @current_replicas : Int32? = nil, @desired_replicas : Int32? = nil, @last_scale_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @observed_generation : Int32? = nil)
   end
 end

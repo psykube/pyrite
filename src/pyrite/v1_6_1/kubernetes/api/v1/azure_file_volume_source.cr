@@ -5,7 +5,7 @@ require "json"
 
 # AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::AzureFileVolumeSource
-  # Defaults to false (read/write).ReadOnly here will force the ReadOnly setting in VolumeMounts.
+  # Defaults to false [(read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.]((read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.)
   property read_only : Bool?
 
   # the name of secret that contains Azure Storage Account Name and Key
@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::AzureFileVolumeSource
                 secret_name: {type: String, nilable: false, key: secretName, getter: false, setter: false},
                 share_name:  {type: String, nilable: false, key: shareName, getter: false, setter: false}}, true)
 
-  def initialize(@secret_name, @share_name, @read_only = nil)
+  def initialize(@read_only : Bool? = nil, @secret_name : String? = nil, @share_name : String? = nil)
   end
 end

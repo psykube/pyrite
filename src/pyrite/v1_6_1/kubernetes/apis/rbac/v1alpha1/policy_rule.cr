@@ -5,19 +5,19 @@ require "json"
 
 # PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
 class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1alpha1::PolicyRule
-  # APIGroups is the name of the APIGroup that contains the resources. If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
+  # APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
   property api_groups : Array(String)?
 
-  # NonResourceURLs is a set of partial urls that a user should have access to. *s are allowed, but only as the full, final step in the path This name is intentionally different than the internal type so that the DefaultConvert works nicely and because the ordering may be different.Since non-resource URLs are not namespaced, this field is only applicable for ClusterRoles referenced from a ClusterRoleBinding.Rules can either apply to API resources (such as "pods" or "secrets") or non-resource URL paths (such as "/api"),  but not both.
+  # NonResourceURLs is a set of partial urls that a user should have access to.  *s are allowed, but only as the full, final step in the path This name is intentionally different than the internal type so that the DefaultConvert works nicely and because the ordering may be different. Since non-resource URLs are not namespaced, this field is only applicable for ClusterRoles referenced from a ClusterRoleBinding. Rules can either apply to API resources (such as "pods" or "secrets") or non-resource URL paths (such as ["/api"),  but not both.]("/api"),  but not both.)
   property non_resource_ur_ls : Array(String)?
 
-  # ResourceNames is an optional white list of names that the rule applies to. An empty set means that everything is allowed.
+  # ResourceNames is an optional white list of names that the rule applies to.  An empty set means that everything is allowed.
   property resource_names : Array(String)?
 
-  # Resources is a list of resources this rule applies to. ResourceAll represents all resources.
+  # Resources is a list of resources this rule applies to.  ResourceAll represents all resources.
   property resources : Array(String)?
 
-  # Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule. VerbAll represents all kinds.
+  # Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule.  VerbAll represents all kinds.
   property verbs : Array(String)
 
   YAML.mapping({api_groups:         {type: Array(String), nilable: true, key: apiGroups, getter: false, setter: false},
@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1alpha1::PolicyRule
                 resources:          {type: Array(String), nilable: true, key: resources, getter: false, setter: false},
                 verbs:              {type: Array(String), nilable: false, key: verbs, getter: false, setter: false}}, true)
 
-  def initialize(@verbs, @api_groups = nil, @non_resource_ur_ls = nil, @resource_names = nil, @resources = nil)
+  def initialize(@api_groups : Array? = nil, @non_resource_ur_ls : Array? = nil, @resource_names : Array? = nil, @resources : Array? = nil, @verbs : Array? = nil)
   end
 end

@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
+# LimitRangeItem defines a [min/max usage limit for any resource that matches on kind.](min/max usage limit for any resource that matches on kind.)
 class Pyrite::V1_6_1::Kubernetes::Api::V1::LimitRangeItem
   # Default resource requirement limit value by resource name if resource limit is omitted.
   property default : Hash(String, String)?
@@ -37,6 +37,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::LimitRangeItem
                 min:                     {type: Hash(String, String), nilable: true, key: min, getter: false, setter: false},
                 type:                    {type: String, nilable: true, key: type, getter: false, setter: false}}, true)
 
-  def initialize(@default = nil, @default_request = nil, @max = nil, @max_limit_request_ratio = nil, @min = nil, @type = nil)
+  def initialize(@default : Hash(String, String)? = nil, @default_request : Hash(String, String)? = nil, @max : Hash(String, String)? = nil, @max_limit_request_ratio : Hash(String, String)? = nil, @min : Hash(String, String)? = nil, @type : String? = nil)
   end
 end

@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Rbac::V1beta1::RoleRef
                 kind:      {type: String, nilable: false, key: kind, getter: false, setter: false},
                 name:      {type: String, nilable: false, key: name, getter: false, setter: false}}, true)
 
-  def initialize(@api_group, @kind, @name)
+  def initialize(@api_group : String? = nil, @kind : String? = nil, @name : String? = nil)
   end
 end

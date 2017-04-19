@@ -8,7 +8,7 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ComponentStatus
   # List of component conditions observed
   property conditions : Array(::Pyrite::V1_6_1::Kubernetes::Api::V1::ComponentCondition)?
 
-  # Standard object's metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
   YAML.mapping({
@@ -25,12 +25,12 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ComponentStatus
     metadata:    {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@conditions = nil, @metadata = nil)
+  def initialize(@api_version : String? = nil, @conditions : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil)
     @api_version = "ComponentStatus"
     @kind = "v1"
   end
 
   # read the specified ComponentStatus
-  def self.read(name : String)
+  def self.read(name : String, context : String? = nil)
   end
 end

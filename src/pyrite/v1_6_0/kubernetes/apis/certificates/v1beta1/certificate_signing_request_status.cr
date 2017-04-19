@@ -16,6 +16,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Certificates::V1beta1::CertificateSignin
   JSON.mapping({certificate: {type: String, nilable: true, key: certificate, getter: false, setter: false},
                 conditions:  {type: Array(::Pyrite::V1_6_0::Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequestCondition), nilable: true, key: conditions, getter: false, setter: false}}, true)
 
-  def initialize(@certificate = nil, @conditions = nil)
+  def initialize(@certificate : String? = nil, @conditions : Array? = nil)
   end
 end

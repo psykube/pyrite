@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Capabilities
   JSON.mapping({add:  {type: Array(String), nilable: true, key: add, getter: false, setter: false},
                 drop: {type: Array(String), nilable: true, key: drop, getter: false, setter: false}}, true)
 
-  def initialize(@add = nil, @drop = nil)
+  def initialize(@add : Array? = nil, @drop : Array? = nil)
   end
 end

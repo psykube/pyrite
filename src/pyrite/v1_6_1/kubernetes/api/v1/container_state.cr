@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# ContainerState holds a possible state of container.Only one of its members may be specified.If none of them is specified, the default one is ContainerStateWaiting.
+# ContainerState holds a possible state of container. Only one of its members may be specified. If none of them is specified, the default one is ContainerStateWaiting.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerState
   # Details about a running container
   property running : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateRunning
@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerState
                 terminated: {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: terminated, getter: false, setter: false},
                 waiting:    {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: waiting, getter: false, setter: false}}, true)
 
-  def initialize(@running = nil, @terminated = nil, @waiting = nil)
+  def initialize(@running : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateRunning = nil, @terminated : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateTerminated = nil, @waiting : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ContainerStateWaiting = nil)
   end
 end

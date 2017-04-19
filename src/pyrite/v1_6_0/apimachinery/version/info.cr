@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# Info contains versioning information.how we'll want to distribute that information.
+# Info contains versioning information. how we'll want to distribute that information.
 class Pyrite::V1_6_0::Apimachinery::Version::Info
   property build_date : String
 
@@ -43,6 +43,6 @@ class Pyrite::V1_6_0::Apimachinery::Version::Info
                 minor:          {type: String, nilable: false, key: minor, getter: false, setter: false},
                 platform:       {type: String, nilable: false, key: platform, getter: false, setter: false}}, true)
 
-  def initialize(@build_date, @compiler, @git_commit, @git_tree_state, @git_version, @go_version, @major, @minor, @platform)
+  def initialize(@build_date : String? = nil, @compiler : String? = nil, @git_commit : String? = nil, @git_tree_state : String? = nil, @git_version : String? = nil, @go_version : String? = nil, @major : String? = nil, @minor : String? = nil, @platform : String? = nil)
   end
 end

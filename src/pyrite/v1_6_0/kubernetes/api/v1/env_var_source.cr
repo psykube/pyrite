@@ -27,6 +27,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::EnvVarSource
                 resource_field_ref: {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: resourceFieldRef, getter: false, setter: false},
                 secret_key_ref:     {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::SecretKeySelector, nilable: true, key: secretKeyRef, getter: false, setter: false}}, true)
 
-  def initialize(@config_map_key_ref = nil, @field_ref = nil, @resource_field_ref = nil, @secret_key_ref = nil)
+  def initialize(@config_map_key_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ConfigMapKeySelector = nil, @field_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ObjectFieldSelector = nil, @resource_field_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ResourceFieldSelector = nil, @secret_key_ref : ::Pyrite::V1_6_0::Kubernetes::Api::V1::SecretKeySelector = nil)
   end
 end

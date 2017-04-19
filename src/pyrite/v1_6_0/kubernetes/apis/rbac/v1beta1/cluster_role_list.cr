@@ -25,20 +25,20 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Rbac::V1beta1::ClusterRoleList
     metadata:    {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@items, @metadata = nil)
+  def initialize(@api_version : String? = nil, @items : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta = nil)
     @api_version = "ClusterRoleList"
     @kind = "v1beta1"
   end
 
   # create a ClusterRole
-  def create_rbac_authorization_v1beta1cluster_role(metadata = nil)
+  def create_rbac_authorization_v1beta1cluster_role(rules : Array, metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, context : String? = nil)
   end
 
   # list or watch objects of kind ClusterRole
-  def self.list_rbac_authorization_v1beta1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list_rbac_authorization_v1beta1cluster_role(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # delete collection of ClusterRole
-  def self.delete_rbac_authorization_v1beta1cluster_role(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete_rbac_authorization_v1beta1cluster_role(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 end

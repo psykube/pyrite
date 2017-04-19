@@ -12,6 +12,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authentication::V1::TokenReviewSpec
 
   JSON.mapping({token: {type: String, nilable: true, key: token, getter: false, setter: false}}, true)
 
-  def initialize(@token = nil)
+  def initialize(@token : String? = nil)
   end
 end

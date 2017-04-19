@@ -5,10 +5,10 @@ require "json"
 
 # SecretKeySelector selects a key of a Secret.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::SecretKeySelector
-  # The key of the secret to select from. Must be a valid secret key.
+  # The key of the secret to select from.  Must be a valid secret key.
   property key : String
 
-  # Name of the referent.More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
   property name : String?
 
   # Specify whether the Secret or it's key must be defined
@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::SecretKeySelector
                 name:     {type: String, nilable: true, key: name, getter: false, setter: false},
                 optional: {type: Bool, nilable: true, key: optional, getter: false, setter: false}}, true)
 
-  def initialize(@key, @name = nil, @optional = nil)
+  def initialize(@key : String? = nil, @name : String? = nil, @optional : Bool? = nil)
   end
 end

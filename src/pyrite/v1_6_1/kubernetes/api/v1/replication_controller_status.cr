@@ -20,7 +20,7 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ReplicationControllerStatus
   # The number of ready replicas for this replication controller.
   property ready_replicas : Int32?
 
-  # Replicas is the most recently oberved number of replicas.More info: http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller
+  # Replicas is the most recently oberved number of replicas. More info: [http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller](http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller)
   property replicas : Int32
 
   YAML.mapping({available_replicas:     {type: Int32, nilable: true, key: availableReplicas, getter: false, setter: false},
@@ -37,6 +37,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ReplicationControllerStatus
                 ready_replicas:         {type: Int32, nilable: true, key: readyReplicas, getter: false, setter: false},
                 replicas:               {type: Int32, nilable: false, key: replicas, getter: false, setter: false}}, true)
 
-  def initialize(@replicas, @available_replicas = nil, @conditions = nil, @fully_labeled_replicas = nil, @observed_generation = nil, @ready_replicas = nil)
+  def initialize(@available_replicas : Int32? = nil, @conditions : Array? = nil, @fully_labeled_replicas : Int32? = nil, @observed_generation : Int32? = nil, @ready_replicas : Int32? = nil, @replicas : Int32? = nil)
   end
 end

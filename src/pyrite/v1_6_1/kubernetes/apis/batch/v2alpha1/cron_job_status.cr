@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Batch::V2alpha1::CronJobStatus
   JSON.mapping({active:             {type: Array(::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference), nilable: true, key: active, getter: false, setter: false},
                 last_schedule_time: {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: lastScheduleTime, getter: false, setter: false}}, true)
 
-  def initialize(@active = nil, @last_schedule_time = nil)
+  def initialize(@active : Array? = nil, @last_schedule_time : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil)
   end
 end

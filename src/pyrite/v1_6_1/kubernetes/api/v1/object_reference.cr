@@ -5,19 +5,19 @@ require "json"
 
 # ObjectReference contains enough information to let you inspect or modify the referred object.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference
-  # If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2].For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod).This syntax is chosen only to have some well-defined way of referencing a part of an object.
+  # If referring to a piece of an object instead of an entire object, this string should contain a valid [JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.](JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.)
   property field_path : String?
 
-  # Name of the referent.More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
   property name : String?
 
-  # Namespace of the referent.More info: http://kubernetes.io/docs/user-guide/namespaces
+  # Namespace of the referent. More info: [http://kubernetes.io/docs/user-guide/namespaces](http://kubernetes.io/docs/user-guide/namespaces)
   property namespace : String?
 
-  # Specific resourceVersion to which this reference is made, if any.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#concurrency-control-and-consistency
+  # Specific resourceVersion to which this reference is made, if any. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#concurrency-control-and-consistency](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#concurrency-control-and-consistency)
   property resource_version : String?
 
-  # UID of the referent.More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+  # UID of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
   property uid : String?
 
   YAML.mapping({
@@ -40,7 +40,7 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference
     uid:              {type: String, nilable: true, key: uid, getter: false, setter: false},
   }, true)
 
-  def initialize(@field_path = nil, @name = nil, @namespace = nil, @resource_version = nil, @uid = nil)
+  def initialize(@api_version : String? = nil, @field_path : String? = nil, @kind : String? = nil, @name : String? = nil, @namespace : String? = nil, @resource_version : String? = nil, @uid : String? = nil)
     @api_version = "ObjectReference"
     @kind = "v1"
   end

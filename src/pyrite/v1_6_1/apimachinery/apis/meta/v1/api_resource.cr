@@ -5,7 +5,7 @@ require "json"
 
 # APIResource specifies the name of a resource and whether it is namespaced.
 class Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::APIResource
-  # kind is the kind for the resource (e.g.'Foo' is the kind for a resource 'foo')
+  # kind is the kind for the resource (e.g. 'Foo' is the kind for a resource 'foo')
   property kind : String
 
   # name is the name of the resource.
@@ -32,6 +32,6 @@ class Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::APIResource
                 short_names: {type: Array(String), nilable: true, key: shortNames, getter: false, setter: false},
                 verbs:       {type: Array(String), nilable: false, key: verbs, getter: false, setter: false}}, true)
 
-  def initialize(@kind, @name, @namespaced, @verbs, @short_names = nil)
+  def initialize(@kind : String? = nil, @name : String? = nil, @namespaced : Bool? = nil, @short_names : Array? = nil, @verbs : Array? = nil)
   end
 end

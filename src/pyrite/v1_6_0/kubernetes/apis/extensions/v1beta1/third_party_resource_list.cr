@@ -25,20 +25,20 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResourceL
     metadata:    {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@items, @metadata = nil)
+  def initialize(@api_version : String? = nil, @items : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta = nil)
     @api_version = "ThirdPartyResourceList"
     @kind = "v1beta1"
   end
 
   # create a ThirdPartyResource
-  def create(description = nil, metadata = nil, versions = nil)
+  def create(description : String? = nil, metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, versions : Array? = nil, context : String? = nil)
   end
 
   # list or watch objects of kind ThirdPartyResource
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # delete collection of ThirdPartyResource
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 end

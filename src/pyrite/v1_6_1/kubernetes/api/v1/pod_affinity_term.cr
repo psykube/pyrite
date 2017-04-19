@@ -11,7 +11,7 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::PodAffinityTerm
   # namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means "this pod's namespace"
   property namespaces : Array(String)?
 
-  # This pod should be co-located (affinity) or not co-located (anti-affinity) with the pods matching the labelSelector in the specified namespaces, where co-located is defined as running on a node whose value of the label with key topologyKey matches that of any node on which any of the selected pods is running.For PreferredDuringScheduling pod anti-affinity, empty topologyKey is interpreted as "all topologies" ("all topologies" here means all the topologyKeys indicated by scheduler command-line argument --failure-domains); for affinity and for RequiredDuringScheduling pod anti-affinity, empty topologyKey is not allowed.
+  # This pod should be co-located (affinity) or not co-located (anti-affinity) with the pods matching the labelSelector in the specified namespaces, where co-located is defined as running on a node whose value of the label with key topologyKey matches that of any node on which any of the selected pods is running. For PreferredDuringScheduling pod anti-affinity, empty topologyKey is interpreted as "all topologies" ("all topologies" here means all the topologyKeys indicated by scheduler command-line argument --failure-domains); for affinity and for RequiredDuringScheduling pod anti-affinity, empty topologyKey is not allowed.
   property topology_key : String?
 
   YAML.mapping({label_selector: {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: labelSelector, getter: false, setter: false},
@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::PodAffinityTerm
                 namespaces:     {type: Array(String), nilable: true, key: namespaces, getter: false, setter: false},
                 topology_key:   {type: String, nilable: true, key: topologyKey, getter: false, setter: false}}, true)
 
-  def initialize(@label_selector = nil, @namespaces = nil, @topology_key = nil)
+  def initialize(@label_selector : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::LabelSelector = nil, @namespaces : Array? = nil, @topology_key : String? = nil)
   end
 end

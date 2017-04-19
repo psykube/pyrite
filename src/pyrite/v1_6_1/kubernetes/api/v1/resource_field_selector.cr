@@ -22,6 +22,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::ResourceFieldSelector
                 divisor:        {type: ::Pyrite::V1_6_1::Apimachinery::Api::Resource::Quantity, nilable: true, key: divisor, getter: false, setter: false},
                 resource:       {type: String, nilable: false, key: resource, getter: false, setter: false}}, true)
 
-  def initialize(@resource, @container_name = nil, @divisor = nil)
+  def initialize(@container_name : String? = nil, @divisor : ::Pyrite::V1_6_1::Apimachinery::Api::Resource::Quantity = nil, @resource : String? = nil)
   end
 end

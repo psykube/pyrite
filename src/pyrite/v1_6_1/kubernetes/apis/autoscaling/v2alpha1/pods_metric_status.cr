@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricStatus
   JSON.mapping({current_average_value: {type: ::Pyrite::V1_6_1::Apimachinery::Api::Resource::Quantity, nilable: false, key: currentAverageValue, getter: false, setter: false},
                 metric_name:           {type: String, nilable: false, key: metricName, getter: false, setter: false}}, true)
 
-  def initialize(@current_average_value, @metric_name)
+  def initialize(@current_average_value : ::Pyrite::V1_6_1::Apimachinery::Api::Resource::Quantity = nil, @metric_name : String? = nil)
   end
 end

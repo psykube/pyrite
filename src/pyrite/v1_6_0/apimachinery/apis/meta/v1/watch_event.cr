@@ -20,6 +20,6 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::WatchEvent
   JSON.mapping({object: {type: ::Pyrite::V1_6_0::Apimachinery::Runtime::RawExtension, nilable: false, key: object, getter: false, setter: false},
                 type:   {type: String, nilable: false, key: type, getter: false, setter: false}}, true)
 
-  def initialize(@object, @type)
+  def initialize(@object : ::Pyrite::V1_6_0::Apimachinery::Runtime::RawExtension = nil, @type : String? = nil)
   end
 end

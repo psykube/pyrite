@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# SelfSubjectAccessReviewSpec is a description of the access request. Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+# SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
 class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAccessReviewSpec
   # NonResourceAttributes describes information for a non-resource access request
   property non_resource_attributes : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes
@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAcces
   JSON.mapping({non_resource_attributes: {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: nonResourceAttributes, getter: false, setter: false},
                 resource_attributes:     {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: resourceAttributes, getter: false, setter: false}}, true)
 
-  def initialize(@non_resource_attributes = nil, @resource_attributes = nil)
+  def initialize(@non_resource_attributes : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes = nil, @resource_attributes : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes = nil)
   end
 end

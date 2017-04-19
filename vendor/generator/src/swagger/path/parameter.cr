@@ -12,7 +12,6 @@ class Swagger::Path::Parameter
     schema:      Schema?,
   }, true)
 
-  def initialize(@name : String, @type = "string")
-    @required = true
+  def initialize(@name : String, @type = "string", @required = true)
   end
 end

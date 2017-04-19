@@ -30,48 +30,48 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::Deployment
     status:      {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::DeploymentStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@metadata = nil, @spec = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::DeploymentSpec = nil, @status : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::DeploymentStatus = nil)
     @api_version = "Deployment"
     @kind = "v1beta1"
   end
 
   # create a Deployment
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind Deployment
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # delete collection of Deployment
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # read the specified Deployment
-  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil, namespace : String = "default")
   end
 
   # replace the specified Deployment
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified Deployment
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete a Deployment
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 
   # read status of the specified Deployment
-  def self.read_status(name : String, namespace : String = "default")
+  def self.read_status(name : String, context : String? = nil, namespace : String = "default")
   end
 
   # replace status of the specified Deployment
-  def replace_status
+  def replace_status(context : String? = nil)
   end
 
   # partially update status of the specified Deployment
-  def patch_status
+  def patch_status(context : String? = nil)
   end
 end

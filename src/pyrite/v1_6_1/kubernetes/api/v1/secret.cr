@@ -3,15 +3,15 @@
 require "yaml"
 require "json"
 
-# Secret holds secret data of a certain type.The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
+# Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
 class Pyrite::V1_6_1::Kubernetes::Api::V1::Secret
-  # Data contains the secret data.Each key must be a valid DNS_SUBDOMAIN or leading dot followed by valid DNS_SUBDOMAIN.The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here.Described in https://tools.ietf.org/html/rfc4648#section-4
+  # Data contains the secret data. Each key must be a valid DNS_SUBDOMAIN or leading dot followed by valid DNS_SUBDOMAIN. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in [https://tools.ietf.org/html/rfc4648#section-4](https://tools.ietf.org/html/rfc4648#section-4)
   property data : Hash(String, String)?
 
-  # Standard object's metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
-  # stringData allows specifying non-binary secret data in string form.It is provided as a write-only convenience method.All keys and values are merged into the data field on write, overwriting any existing values.It is never output when reading from the API.
+  # stringData allows specifying non-binary secret data in string form. It is provided as a write-only convenience method. All keys and values are merged into the data field on write, overwriting any existing values. It is never output when reading from the API.
   property string_data : Hash(String, String)?
 
   # Used to facilitate programmatic handling of secret data.
@@ -35,36 +35,36 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::Secret
     type:        {type: String, nilable: true, key: type, getter: false, setter: false},
   }, true)
 
-  def initialize(@data = nil, @metadata = nil, @string_data = nil, @type = nil)
+  def initialize(@api_version : String? = nil, @data : Hash(String, String)? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @string_data : Hash(String, String)? = nil, @type : String? = nil)
     @api_version = "Secret"
     @kind = "v1"
   end
 
   # create a Secret
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind Secret
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # delete collection of Secret
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # read the specified Secret
-  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil, namespace : String = "default")
   end
 
   # replace the specified Secret
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified Secret
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete a Secret
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 end

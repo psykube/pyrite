@@ -32,6 +32,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ReplicationControllerCondition
                 status:               {type: String, nilable: false, key: status, getter: false, setter: false},
                 type:                 {type: String, nilable: false, key: type, getter: false, setter: false}}, true)
 
-  def initialize(@status, @type, @last_transition_time = nil, @message = nil, @reason = nil)
+  def initialize(@last_transition_time : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time = nil, @message : String? = nil, @reason : String? = nil, @status : String? = nil, @type : String? = nil)
   end
 end

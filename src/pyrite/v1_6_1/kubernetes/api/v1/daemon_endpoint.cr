@@ -12,6 +12,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::DaemonEndpoint
 
   JSON.mapping({port: {type: Int32, nilable: false, key: Port, getter: false, setter: false}}, true)
 
-  def initialize(@port)
+  def initialize(@port : Int32? = nil)
   end
 end

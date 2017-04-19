@@ -5,7 +5,7 @@ require "json"
 
 # Represents a Photon Controller persistent disk resource.
 class Pyrite::V1_6_0::Kubernetes::Api::V1::PhotonPersistentDiskVolumeSource
-  # Filesystem type to mount.Must be a filesystem type supported by the host operating system.Ex."ext4", "xfs", "ntfs".Implicitly inferred to be "ext4" if unspecified.
+  # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
   property fs_type : String?
 
   # ID that identifies Photon Controller persistent disk
@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::PhotonPersistentDiskVolumeSource
   JSON.mapping({fs_type: {type: String, nilable: true, key: fsType, getter: false, setter: false},
                 pd_id:   {type: String, nilable: false, key: pdID, getter: false, setter: false}}, true)
 
-  def initialize(@pd_id, @fs_type = nil)
+  def initialize(@fs_type : String? = nil, @pd_id : String? = nil)
   end
 end

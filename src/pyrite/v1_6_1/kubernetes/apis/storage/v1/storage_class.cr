@@ -7,7 +7,7 @@ require "json"
 #
 # StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
 class Pyrite::V1_6_1::Kubernetes::Apis::Storage::V1::StorageClass
-  # Standard object's metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
   # Parameters holds the parameters for the provisioner that should create volumes of this storage class.
@@ -32,36 +32,36 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Storage::V1::StorageClass
     provisioner: {type: String, nilable: false, key: provisioner, getter: false, setter: false},
   }, true)
 
-  def initialize(@provisioner, @metadata = nil, @parameters = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @parameters : Hash(String, String)? = nil, @provisioner : String? = nil)
     @api_version = "StorageClass"
     @kind = "v1"
   end
 
   # create a StorageClass
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind StorageClass
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # delete collection of StorageClass
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # read the specified StorageClass
-  def self.read(exact : Bool?, export : Bool?, name : String)
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil)
   end
 
   # replace the specified StorageClass
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified StorageClass
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete a StorageClass
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 end

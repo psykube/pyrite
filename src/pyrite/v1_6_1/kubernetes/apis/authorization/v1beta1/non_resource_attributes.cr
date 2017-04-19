@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::NonResourceAttri
   JSON.mapping({path: {type: String, nilable: true, key: path, getter: false, setter: false},
                 verb: {type: String, nilable: true, key: verb, getter: false, setter: false}}, true)
 
-  def initialize(@path = nil, @verb = nil)
+  def initialize(@path : String? = nil, @verb : String? = nil)
   end
 end

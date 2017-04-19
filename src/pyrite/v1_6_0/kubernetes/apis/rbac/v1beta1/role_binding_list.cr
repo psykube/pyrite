@@ -25,24 +25,24 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Rbac::V1beta1::RoleBindingList
     metadata:    {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: metadata, getter: false, setter: false},
   }, true)
 
-  def initialize(@items, @metadata = nil)
+  def initialize(@api_version : String? = nil, @items : Array? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ListMeta = nil)
     @api_version = "RoleBindingList"
     @kind = "v1beta1"
   end
 
   # create a RoleBinding
-  def create_rbac_authorization_v1beta1role_binding(metadata = nil)
+  def create_rbac_authorization_v1beta1role_binding(role_ref : ::Pyrite::V1_6_0::Kubernetes::Apis::Rbac::V1beta1::RoleRef, subjects : Array, metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, context : String? = nil)
   end
 
   # list or watch objects of kind RoleBinding
-  def self.list_rbac_authorization_v1beta1role_binding(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list_rbac_authorization_v1beta1role_binding(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # delete collection of RoleBinding
-  def self.delete_rbac_authorization_v1beta1role_binding(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete_rbac_authorization_v1beta1role_binding(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # list or watch objects of kind RoleBinding
-  def self.list_rbac_authorization_v1beta1role_binding_for_all_namespaces(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list_rbac_authorization_v1beta1role_binding_for_all_namespaces(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 end

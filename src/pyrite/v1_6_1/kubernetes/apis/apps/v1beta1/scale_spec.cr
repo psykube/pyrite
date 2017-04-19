@@ -12,6 +12,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Apps::V1beta1::ScaleSpec
 
   JSON.mapping({replicas: {type: Int32, nilable: true, key: replicas, getter: false, setter: false}}, true)
 
-  def initialize(@replicas = nil)
+  def initialize(@replicas : Int32? = nil)
   end
 end

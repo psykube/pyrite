@@ -30,12 +30,12 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::DeploymentRollback
     updated_annotations: {type: Hash(String, String), nilable: true, key: updatedAnnotations, getter: false, setter: false},
   }, true)
 
-  def initialize(@name, @rollback_to, @updated_annotations = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @name : String? = nil, @rollback_to : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::RollbackConfig = nil, @updated_annotations : Hash(String, String)? = nil)
     @api_version = "DeploymentRollback"
     @kind = "v1beta1"
   end
 
   # create rollback of a DeploymentRollback
-  def create_rollback
+  def create_rollback(context : String? = nil)
   end
 end

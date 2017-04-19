@@ -12,6 +12,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ServiceStatus
 
   JSON.mapping({load_balancer: {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: loadBalancer, getter: false, setter: false}}, true)
 
-  def initialize(@load_balancer = nil)
+  def initialize(@load_balancer : ::Pyrite::V1_6_0::Kubernetes::Api::V1::LoadBalancerStatus = nil)
   end
 end

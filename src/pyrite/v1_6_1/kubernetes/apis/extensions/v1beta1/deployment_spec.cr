@@ -5,25 +5,25 @@ require "json"
 
 # DeploymentSpec is the specification of the desired behavior of the Deployment.
 class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::DeploymentSpec
-  # Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available.Defaults to 0 (pod will be considered available as soon as it is ready)
+  # Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
   property min_ready_seconds : Int32?
 
   # Indicates that the deployment is paused and will not be processed by the deployment controller.
   property paused : Bool?
 
-  # The maximum time in seconds for a deployment to make progress before it is considered to be failed.The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status.Once autoRollback is implemented, the deployment controller will automatically rollback failed deployments.Note that progress will not be estimated during the time a deployment is paused.This is not set by default.
+  # The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Once autoRollback is implemented, the deployment controller will automatically rollback failed deployments. Note that progress will not be estimated during the time a deployment is paused. This is not set by default.
   property progress_deadline_seconds : Int32?
 
-  # Number of desired pods.This is a pointer to distinguish between explicit zero and not specified.Defaults to 1.
+  # Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.
   property replicas : Int32?
 
-  # The number of old ReplicaSets to retain to allow rollback.This is a pointer to distinguish between explicit zero and not specified.
+  # The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified.
   property revision_history_limit : Int32?
 
-  # The config this deployment is rolling back to.Will be cleared after rollback is done.
+  # The config this deployment is rolling back to. Will be cleared after rollback is done.
   property rollback_to : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::RollbackConfig
 
-  # Label selector for pods.Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.
+  # Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.
   property selector : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::LabelSelector
 
   # The deployment strategy to use to replace existing pods with new ones.
@@ -52,6 +52,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::DeploymentSpec
                 strategy:                  {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy, nilable: true, key: strategy, getter: false, setter: false},
                 template:                  {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: template, getter: false, setter: false}}, true)
 
-  def initialize(@template, @min_ready_seconds = nil, @paused = nil, @progress_deadline_seconds = nil, @replicas = nil, @revision_history_limit = nil, @rollback_to = nil, @selector = nil, @strategy = nil)
+  def initialize(@min_ready_seconds : Int32? = nil, @paused : Bool? = nil, @progress_deadline_seconds : Int32? = nil, @replicas : Int32? = nil, @revision_history_limit : Int32? = nil, @rollback_to : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::RollbackConfig = nil, @selector : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::LabelSelector = nil, @strategy : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy = nil, @template : ::Pyrite::V1_6_1::Kubernetes::Api::V1::PodTemplateSpec = nil)
   end
 end

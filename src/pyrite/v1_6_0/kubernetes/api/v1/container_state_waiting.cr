@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ContainerStateWaiting
   JSON.mapping({message: {type: String, nilable: true, key: message, getter: false, setter: false},
                 reason:  {type: String, nilable: true, key: reason, getter: false, setter: false}}, true)
 
-  def initialize(@message = nil, @reason = nil)
+  def initialize(@message : String? = nil, @reason : String? = nil)
   end
 end

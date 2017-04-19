@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::AttachedVolume
   JSON.mapping({device_path: {type: String, nilable: false, key: devicePath, getter: false, setter: false},
                 name:        {type: String, nilable: false, key: name, getter: false, setter: false}}, true)
 
-  def initialize(@device_path, @name)
+  def initialize(@device_path : String? = nil, @name : String? = nil)
   end
 end

@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# Host Port Range defines a range of host ports that will be enabled by a policy for pods to use. It requires both the start and end to be defined.
+# Host Port Range defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined.
 class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::HostPortRange
   # max is the end of the range, inclusive.
   property max : Int32
@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::HostPortRange
   JSON.mapping({max: {type: Int32, nilable: false, key: max, getter: false, setter: false},
                 min: {type: Int32, nilable: false, key: min, getter: false, setter: false}}, true)
 
-  def initialize(@max, @min)
+  def initialize(@max : Int32? = nil, @min : Int32? = nil)
   end
 end

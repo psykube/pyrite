@@ -5,13 +5,13 @@ require "json"
 
 # represents a scaling request for a resource.
 class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::Scale
-  # Standard object metadata; More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.
+  # Standard object metadata; More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata.)
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
-  # defines the behavior of the scale.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.
+  # defines the behavior of the scale. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.)
   property spec : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ScaleSpec
 
-  # current status of the scale.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.Read-only.
+  # current status of the scale. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status. Read-only.)
   property status : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ScaleStatus
 
   YAML.mapping({
@@ -30,44 +30,44 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::Scale
     status:      {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ScaleStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@metadata = nil, @spec = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ScaleSpec = nil, @status : ::Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::ScaleStatus = nil)
     @api_version = "Scale"
     @kind = "v1beta1"
   end
 
   # read scale of the specified Scale
-  def self.read_extensions_v1beta1deployments_scale(name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1deployments_scale(name : String, context : String? = nil, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace_extensions_v1beta1deployments_scale
+  def replace_extensions_v1beta1deployments_scale(context : String? = nil)
   end
 
   # partially update scale of the specified Scale
-  def patch_extensions_v1beta1deployments_scale
+  def patch_extensions_v1beta1deployments_scale(context : String? = nil)
   end
 
   # read scale of the specified Scale
-  def self.read_extensions_v1beta1replicasets_scale(name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1replicasets_scale(name : String, context : String? = nil, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace_extensions_v1beta1replicasets_scale
+  def replace_extensions_v1beta1replicasets_scale(context : String? = nil)
   end
 
   # partially update scale of the specified Scale
-  def patch_extensions_v1beta1replicasets_scale
+  def patch_extensions_v1beta1replicasets_scale(context : String? = nil)
   end
 
   # read scale of the specified Scale
-  def self.read_extensions_v1beta1replicationcontrollers_scale(name : String, namespace : String = "default")
+  def self.read_extensions_v1beta1replicationcontrollers_scale(name : String, context : String? = nil, namespace : String = "default")
   end
 
   # replace scale of the specified Scale
-  def replace_extensions_v1beta1replicationcontrollers_scale
+  def replace_extensions_v1beta1replicationcontrollers_scale(context : String? = nil)
   end
 
   # partially update scale of the specified Scale
-  def patch_extensions_v1beta1replicationcontrollers_scale
+  def patch_extensions_v1beta1replicationcontrollers_scale(context : String? = nil)
   end
 end

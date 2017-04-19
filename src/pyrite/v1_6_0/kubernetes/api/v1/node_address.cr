@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::NodeAddress
   JSON.mapping({address: {type: String, nilable: false, key: address, getter: false, setter: false},
                 type:    {type: String, nilable: false, key: type, getter: false, setter: false}}, true)
 
-  def initialize(@address, @type)
+  def initialize(@address : String? = nil, @type : String? = nil)
   end
 end

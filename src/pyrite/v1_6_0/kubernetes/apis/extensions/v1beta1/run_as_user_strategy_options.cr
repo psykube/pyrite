@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::RunAsUserStrategyOp
   JSON.mapping({ranges: {type: Array(::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: ranges, getter: false, setter: false},
                 rule:   {type: String, nilable: false, key: rule, getter: false, setter: false}}, true)
 
-  def initialize(@rule, @ranges = nil)
+  def initialize(@ranges : Array? = nil, @rule : String? = nil)
   end
 end

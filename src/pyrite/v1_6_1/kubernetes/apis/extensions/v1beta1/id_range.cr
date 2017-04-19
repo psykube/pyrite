@@ -3,7 +3,7 @@
 require "yaml"
 require "json"
 
-# ID Range provides a min/max of an allowed range of IDs.
+# ID Range provides a [min/max of an allowed range of IDs.](min/max of an allowed range of IDs.)
 class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::IDRange
   # Max is the end of the range, inclusive.
   property max : Int32
@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::IDRange
   JSON.mapping({max: {type: Int32, nilable: false, key: max, getter: false, setter: false},
                 min: {type: Int32, nilable: false, key: min, getter: false, setter: false}}, true)
 
-  def initialize(@max, @min)
+  def initialize(@max : Int32? = nil, @min : Int32? = nil)
   end
 end

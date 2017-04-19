@@ -8,7 +8,7 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::Event
   # The number of times this event has occurred.
   property count : Int32?
 
-  # The time at which the event was first recorded.(Time of server receipt is in TypeMeta.)
+  # The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)
   property first_timestamp : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time
 
   # The object that this event is about.
@@ -20,13 +20,13 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::Event
   # A human-readable description of the status of this operation.
   property message : String?
 
-  # Standard object's metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
   # This should be a short, machine understandable string that gives the reason for the transition into the object's current status.
   property reason : String?
 
-  # The component reporting this event.Should be a short machine understandable string.
+  # The component reporting this event. Should be a short machine understandable string.
   property source : ::Pyrite::V1_6_1::Kubernetes::Api::V1::EventSource
 
   # Type of this event (Normal, Warning), new types could be added in the future
@@ -60,36 +60,36 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::Event
     type:            {type: String, nilable: true, key: type, getter: false, setter: false},
   }, true)
 
-  def initialize(@involved_object, @metadata, @count = nil, @first_timestamp = nil, @last_timestamp = nil, @message = nil, @reason = nil, @source = nil, @type = nil)
+  def initialize(@api_version : String? = nil, @count : Int32? = nil, @first_timestamp : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @involved_object : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference = nil, @kind : String? = nil, @last_timestamp : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Time = nil, @message : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @reason : String? = nil, @source : ::Pyrite::V1_6_1::Kubernetes::Api::V1::EventSource = nil, @type : String? = nil)
     @api_version = "Event"
     @kind = "v1"
   end
 
   # create an Event
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind Event
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # delete collection of Event
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?, namespace : String = "default")
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil, namespace : String = "default")
   end
 
   # read the specified Event
-  def self.read(exact : Bool?, export : Bool?, name : String, namespace : String = "default")
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil, namespace : String = "default")
   end
 
   # replace the specified Event
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified Event
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete an Event
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 end

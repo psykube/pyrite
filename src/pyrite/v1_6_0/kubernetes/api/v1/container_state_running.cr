@@ -12,6 +12,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ContainerStateRunning
 
   JSON.mapping({started_at: {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: startedAt, getter: false, setter: false}}, true)
 
-  def initialize(@started_at = nil)
+  def initialize(@started_at : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time = nil)
   end
 end

@@ -5,7 +5,7 @@ require "json"
 
 # ResourceQuotaStatus defines the enforced hard limits and observed use.
 class Pyrite::V1_6_0::Kubernetes::Api::V1::ResourceQuotaStatus
-  # Hard is the set of enforced hard limits for each named resource.More info: http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota
+  # Hard is the set of enforced hard limits for each named resource. More info: [http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota](http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota)
   property hard : Hash(String, String)?
 
   # Used is the current observed total usage of the resource in the namespace.
@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ResourceQuotaStatus
   JSON.mapping({hard: {type: Hash(String, String), nilable: true, key: hard, getter: false, setter: false},
                 used: {type: Hash(String, String), nilable: true, key: used, getter: false, setter: false}}, true)
 
-  def initialize(@hard = nil, @used = nil)
+  def initialize(@hard : Hash(String, String)? = nil, @used : Hash(String, String)? = nil)
   end
 end

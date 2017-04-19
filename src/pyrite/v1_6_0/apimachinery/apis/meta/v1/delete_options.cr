@@ -5,16 +5,16 @@ require "json"
 
 # DeleteOptions may be provided when deleting an API object.
 class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::DeleteOptions
-  # The duration in seconds before the object should be deleted.Value must be non-negative integer.The value zero indicates delete immediately.If this value is nil, the default grace period for the specified type will be used.Defaults to a per object value if not specified.zero means delete immediately.
+  # The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   property grace_period_seconds : Int32?
 
-  # Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7.Should the dependent objects be orphaned.If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.Either this field or PropagationPolicy may be set, but not both.
+  # Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If [true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.](true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.)
   property orphan_dependents : Bool?
 
-  # Must be fulfilled before a deletion is carried out.If not possible, a 409 Conflict status will be returned.
+  # Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.
   property preconditions : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions
 
-  # Whether and how garbage collection will be performed.Either this field or OrphanDependents may be set, but not both.The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+  # Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
   property propagation_policy : String?
 
   YAML.mapping({
@@ -35,7 +35,7 @@ class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::DeleteOptions
     propagation_policy:   {type: String, nilable: true, key: propagationPolicy, getter: false, setter: false},
   }, true)
 
-  def initialize(@grace_period_seconds = nil, @orphan_dependents = nil, @preconditions = nil, @propagation_policy = nil)
+  def initialize(@api_version : String? = nil, @grace_period_seconds : Int32? = nil, @kind : String? = nil, @orphan_dependents : Bool? = nil, @preconditions : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions = nil, @propagation_policy : String? = nil)
     @api_version = "DeleteOptions"
     @kind = "v1"
   end

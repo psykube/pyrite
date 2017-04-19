@@ -42,6 +42,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ContainerStateTerminated
                 signal:       {type: Int32, nilable: true, key: signal, getter: false, setter: false},
                 started_at:   {type: ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time, nilable: true, key: startedAt, getter: false, setter: false}}, true)
 
-  def initialize(@exit_code, @container_id = nil, @finished_at = nil, @message = nil, @reason = nil, @signal = nil, @started_at = nil)
+  def initialize(@container_id : String? = nil, @exit_code : Int32? = nil, @finished_at : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time = nil, @message : String? = nil, @reason : String? = nil, @signal : Int32? = nil, @started_at : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time = nil)
   end
 end

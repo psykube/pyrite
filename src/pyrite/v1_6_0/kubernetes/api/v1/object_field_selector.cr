@@ -17,6 +17,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::ObjectFieldSelector
   JSON.mapping({api_version: {type: String, nilable: true, key: apiVersion, getter: false, setter: false},
                 field_path:  {type: String, nilable: false, key: fieldPath, getter: false, setter: false}}, true)
 
-  def initialize(@field_path, @api_version = nil)
+  def initialize(@api_version : String? = nil, @field_path : String? = nil)
   end
 end

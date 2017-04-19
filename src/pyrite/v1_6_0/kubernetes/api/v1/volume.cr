@@ -5,7 +5,7 @@ require "json"
 
 # Volume represents a named volume in a pod that may be accessed by any container in the pod.
 class Pyrite::V1_6_0::Kubernetes::Api::V1::Volume
-  # AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod.More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+  # AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: [http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore](http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore)
   property aws_elastic_block_store : ::Pyrite::V1_6_0::Kubernetes::Api::V1::AWSElasticBlockStoreVolumeSource
 
   # AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
@@ -17,7 +17,7 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Volume
   # CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
   property cephfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::CephFSVolumeSource
 
-  # Cinder represents a cinder volume attached and mounted on kubelets host machine More info: http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
+  # Cinder represents a cinder volume attached and mounted on kubelets host machine More info: [http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md](http://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md)
   property cinder : ::Pyrite::V1_6_0::Kubernetes::Api::V1::CinderVolumeSource
 
   # ConfigMap represents a configMap that should populate this volume
@@ -26,40 +26,40 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Volume
   # DownwardAPI represents downward API about the pod that should populate this volume
   property downward_api : ::Pyrite::V1_6_0::Kubernetes::Api::V1::DownwardAPIVolumeSource
 
-  # EmptyDir represents a temporary directory that shares a pod's lifetime.More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
+  # EmptyDir represents a temporary directory that shares a pod's lifetime. More info: [http://kubernetes.io/docs/user-guide/volumes#emptydir](http://kubernetes.io/docs/user-guide/volumes#emptydir)
   property empty_dir : ::Pyrite::V1_6_0::Kubernetes::Api::V1::EmptyDirVolumeSource
 
   # FC represents a Fibre Channel resource that is attached to a kubelet's host machine and then exposed to the pod.
   property fc : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FCVolumeSource
 
-  # FlexVolume represents a generic volume resource that is provisioned/attached using an exec based plugin.This is an alpha feature and may change in future.
+  # FlexVolume represents a generic volume resource that is [provisioned/attached using an exec based plugin. This is an alpha feature and may change in future.](provisioned/attached using an exec based plugin. This is an alpha feature and may change in future.)
   property flex_volume : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FlexVolumeSource
 
-  # Flocker represents a Flocker volume attached to a kubelet's host machine.This depends on the Flocker control service being running
+  # Flocker represents a Flocker volume attached to a kubelet's host machine. This depends on the Flocker control service being running
   property flocker : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FlockerVolumeSource
 
-  # GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod.More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+  # GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: [http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk](http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk)
   property gce_persistent_disk : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GCEPersistentDiskVolumeSource
 
   # GitRepo represents a git repository at a particular revision.
   property git_repo : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GitRepoVolumeSource
 
-  # Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime.More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md
+  # Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: [http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md](http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md)
   property glusterfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GlusterfsVolumeSource
 
-  # HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container.This is generally used for system agents or other privileged things that are allowed to see the host machine.Most containers will NOT need this.More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
+  # HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: [http://kubernetes.io/docs/user-guide/volumes#hostpath](http://kubernetes.io/docs/user-guide/volumes#hostpath)
   property host_path : ::Pyrite::V1_6_0::Kubernetes::Api::V1::HostPathVolumeSource
 
-  # ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod.More info: http://releases.k8s.io/HEAD/examples/volumes/iscsi/README.md
+  # ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: [http://releases.k8s.io/HEAD/examples/volumes/iscsi/README.md](http://releases.k8s.io/HEAD/examples/volumes/iscsi/README.md)
   property iscsi : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ISCSIVolumeSource
 
-  # Volume's name.Must be a DNS_LABEL and unique within the pod.More info: http://kubernetes.io/docs/user-guide/identifiers#names
+  # Volume's name. Must be a DNS_LABEL and unique within the pod. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
   property name : String
 
-  # NFS represents an NFS mount on the host that shares a pod's lifetime More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+  # NFS represents an NFS mount on the host that shares a pod's lifetime More info: [http://kubernetes.io/docs/user-guide/volumes#nfs](http://kubernetes.io/docs/user-guide/volumes#nfs)
   property nfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NFSVolumeSource
 
-  # PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace.More info: http://kubernetes.io/docs/user-guide/persistent-volumes#persistentvolumeclaims
+  # PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: [http://kubernetes.io/docs/user-guide/persistent-volumes#persistentvolumeclaims](http://kubernetes.io/docs/user-guide/persistent-volumes#persistentvolumeclaims)
   property persistent_volume_claim : ::Pyrite::V1_6_0::Kubernetes::Api::V1::PersistentVolumeClaimVolumeSource
 
   # PhotonPersistentDisk represents a PhotonController persistent disk attached and mounted on kubelets host machine
@@ -74,13 +74,13 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Volume
   # Quobyte represents a Quobyte mount on the host that shares a pod's lifetime
   property quobyte : ::Pyrite::V1_6_0::Kubernetes::Api::V1::QuobyteVolumeSource
 
-  # RBD represents a Rados Block Device mount on the host that shares a pod's lifetime.More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md
+  # RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: [http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md](http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md)
   property rbd : ::Pyrite::V1_6_0::Kubernetes::Api::V1::RBDVolumeSource
 
   # ScaleIO represents a ScaleIO persistent volume attached and mounted on Kubernetes nodes.
   property scale_io : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ScaleIOVolumeSource
 
-  # Secret represents a secret that should populate this volume.More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+  # Secret represents a secret that should populate this volume. More info: [http://kubernetes.io/docs/user-guide/volumes#secrets](http://kubernetes.io/docs/user-guide/volumes#secrets)
   property secret : ::Pyrite::V1_6_0::Kubernetes::Api::V1::SecretVolumeSource
 
   # VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
@@ -142,6 +142,6 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Volume
                 secret:                  {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::SecretVolumeSource, nilable: true, key: secret, getter: false, setter: false},
                 vsphere_volume:          {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::VsphereVirtualDiskVolumeSource, nilable: true, key: vsphereVolume, getter: false, setter: false}}, true)
 
-  def initialize(@name, @aws_elastic_block_store = nil, @azure_disk = nil, @azure_file = nil, @cephfs = nil, @cinder = nil, @config_map = nil, @downward_api = nil, @empty_dir = nil, @fc = nil, @flex_volume = nil, @flocker = nil, @gce_persistent_disk = nil, @git_repo = nil, @glusterfs = nil, @host_path = nil, @iscsi = nil, @nfs = nil, @persistent_volume_claim = nil, @photon_persistent_disk = nil, @portworx_volume = nil, @projected = nil, @quobyte = nil, @rbd = nil, @scale_io = nil, @secret = nil, @vsphere_volume = nil)
+  def initialize(@aws_elastic_block_store : ::Pyrite::V1_6_0::Kubernetes::Api::V1::AWSElasticBlockStoreVolumeSource = nil, @azure_disk : ::Pyrite::V1_6_0::Kubernetes::Api::V1::AzureDiskVolumeSource = nil, @azure_file : ::Pyrite::V1_6_0::Kubernetes::Api::V1::AzureFileVolumeSource = nil, @cephfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::CephFSVolumeSource = nil, @cinder : ::Pyrite::V1_6_0::Kubernetes::Api::V1::CinderVolumeSource = nil, @config_map : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ConfigMapVolumeSource = nil, @downward_api : ::Pyrite::V1_6_0::Kubernetes::Api::V1::DownwardAPIVolumeSource = nil, @empty_dir : ::Pyrite::V1_6_0::Kubernetes::Api::V1::EmptyDirVolumeSource = nil, @fc : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FCVolumeSource = nil, @flex_volume : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FlexVolumeSource = nil, @flocker : ::Pyrite::V1_6_0::Kubernetes::Api::V1::FlockerVolumeSource = nil, @gce_persistent_disk : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GCEPersistentDiskVolumeSource = nil, @git_repo : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GitRepoVolumeSource = nil, @glusterfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::GlusterfsVolumeSource = nil, @host_path : ::Pyrite::V1_6_0::Kubernetes::Api::V1::HostPathVolumeSource = nil, @iscsi : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ISCSIVolumeSource = nil, @name : String? = nil, @nfs : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NFSVolumeSource = nil, @persistent_volume_claim : ::Pyrite::V1_6_0::Kubernetes::Api::V1::PersistentVolumeClaimVolumeSource = nil, @photon_persistent_disk : ::Pyrite::V1_6_0::Kubernetes::Api::V1::PhotonPersistentDiskVolumeSource = nil, @portworx_volume : ::Pyrite::V1_6_0::Kubernetes::Api::V1::PortworxVolumeSource = nil, @projected : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ProjectedVolumeSource = nil, @quobyte : ::Pyrite::V1_6_0::Kubernetes::Api::V1::QuobyteVolumeSource = nil, @rbd : ::Pyrite::V1_6_0::Kubernetes::Api::V1::RBDVolumeSource = nil, @scale_io : ::Pyrite::V1_6_0::Kubernetes::Api::V1::ScaleIOVolumeSource = nil, @secret : ::Pyrite::V1_6_0::Kubernetes::Api::V1::SecretVolumeSource = nil, @vsphere_volume : ::Pyrite::V1_6_0::Kubernetes::Api::V1::VsphereVirtualDiskVolumeSource = nil)
   end
 end

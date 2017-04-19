@@ -3,15 +3,15 @@
 require "yaml"
 require "json"
 
-# Node is a worker node in Kubernetes.Each node will have a unique identifier in the cache (i.e.in etcd).
+# Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
 class Pyrite::V1_6_0::Kubernetes::Api::V1::Node
-  # Standard object's metadata.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata
+  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
   property metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta
 
-  # Spec defines the behavior of a node.http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+  # Spec defines the behavior of a node. [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status)
   property spec : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NodeSpec
 
-  # Most recently observed status of the node.Populated by the system.Read-only.More info: http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status
+  # Most recently observed status of the node. Populated by the system. Read-only. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status)
   property status : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NodeStatus
 
   YAML.mapping({
@@ -30,48 +30,48 @@ class Pyrite::V1_6_0::Kubernetes::Api::V1::Node
     status:      {type: ::Pyrite::V1_6_0::Kubernetes::Api::V1::NodeStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@metadata = nil, @spec = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NodeSpec = nil, @status : ::Pyrite::V1_6_0::Kubernetes::Api::V1::NodeStatus = nil)
     @api_version = "Node"
     @kind = "v1"
   end
 
   # create a Node
-  def create
+  def create(context : String? = nil)
   end
 
   # list or watch objects of kind Node
-  def self.list(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.list(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # delete collection of Node
-  def self.delete(field_selector : String?, label_selector : String?, resource_version : String?, timeout_seconds : Int32?, watch : Bool?)
+  def self.delete(context : String? = nil, field_selector : String? = nil, label_selector : String? = nil, resource_version : String? = nil, timeout_seconds : Int32? = nil, watch : Bool? = nil)
   end
 
   # read the specified Node
-  def self.read(exact : Bool?, export : Bool?, name : String)
+  def self.read(name : String, context : String? = nil, exact : Bool? = nil, export : Bool? = nil)
   end
 
   # replace the specified Node
-  def replace
+  def replace(context : String? = nil)
   end
 
   # partially update the specified Node
-  def patch
+  def patch(context : String? = nil)
   end
 
   # delete a Node
-  def delete(grace_period_seconds : Int32?, orphan_dependents : Bool?, propagation_policy : String?, preconditions = nil)
+  def delete(grace_period_seconds : Int32? = nil, orphan_dependents : Bool? = nil, preconditions : ::Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions = nil, propagation_policy : String? = nil, context : String? = nil)
   end
 
   # read status of the specified Node
-  def self.read_status(name : String)
+  def self.read_status(name : String, context : String? = nil)
   end
 
   # replace status of the specified Node
-  def replace_status
+  def replace_status(context : String? = nil)
   end
 
   # partially update status of the specified Node
-  def patch_status
+  def patch_status(context : String? = nil)
   end
 end

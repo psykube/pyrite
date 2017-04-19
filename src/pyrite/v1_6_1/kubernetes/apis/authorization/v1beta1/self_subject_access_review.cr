@@ -3,11 +3,11 @@
 require "yaml"
 require "json"
 
-# SelfSubjectAccessReview checks whether or the current user can perform an action. Not filling in a spec.namespace means "in all namespaces". Self is a special case, because users should always be able to check whether they can perform an action
+# SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
 class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAccessReview
   property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
 
-  # Spec holds information about the request being evaluated. user and groups must be empty
+  # Spec holds information about the request being evaluated.  user and groups must be empty
   property spec : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAccessReviewSpec
 
   # Status is filled in by the server and indicates whether the request is allowed or not
@@ -29,12 +29,12 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAcces
     status:      {type: ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SubjectAccessReviewStatus, nilable: true, key: status, getter: false, setter: false},
   }, true)
 
-  def initialize(@spec, @metadata = nil, @status = nil)
+  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @spec : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SelfSubjectAccessReviewSpec = nil, @status : ::Pyrite::V1_6_1::Kubernetes::Apis::Authorization::V1beta1::SubjectAccessReviewStatus = nil)
     @api_version = "SelfSubjectAccessReview"
     @kind = "v1beta1"
   end
 
   # create a SelfSubjectAccessReview
-  def create
+  def create(context : String? = nil)
   end
 end

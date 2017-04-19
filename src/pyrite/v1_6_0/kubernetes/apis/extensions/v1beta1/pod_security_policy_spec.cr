@@ -5,10 +5,10 @@ require "json"
 
 # Pod Security Policy Spec defines the policy enforced.
 class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySpec
-  # AllowedCapabilities is a list of capabilities that can be requested to add to the container.Capabilities in this field may be added at the pod author's discretion.You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities.
+  # AllowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities.
   property allowed_capabilities : Array(String)?
 
-  # DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability. You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.
+  # DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability.  You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.
   property default_add_capabilities : Array(String)?
 
   # FSGroup is the strategy that will dictate what fs group is used by the SecurityContext.
@@ -29,10 +29,10 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySp
   # privileged determines if a pod can request to be run as privileged.
   property privileged : Bool?
 
-  # ReadOnlyRootFilesystem when set to true will force containers to run with a read only root file system. If the container specifically requests to run with a non-read only root file system the PSP should deny the pod.If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
+  # ReadOnlyRootFilesystem when set to true will force containers to run with a read only root file system.  If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.
   property read_only_root_filesystem : Bool?
 
-  # RequiredDropCapabilities are the capabilities that will be dropped from the container. These are required to be dropped and cannot be added.
+  # RequiredDropCapabilities are the capabilities that will be dropped from the container.  These are required to be dropped and cannot be added.
   property required_drop_capabilities : Array(String)?
 
   # runAsUser is the strategy that will dictate the allowable RunAsUser values that may be set.
@@ -44,7 +44,7 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySp
   # SupplementalGroups is the strategy that will dictate what supplemental groups are used by the SecurityContext.
   property supplemental_groups : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::SupplementalGroupsStrategyOptions
 
-  # volumes is a white list of allowed volume plugins. Empty indicates that all plugins may be used.
+  # volumes is a white list of allowed volume plugins.  Empty indicates that all plugins may be used.
   property volumes : Array(String)?
 
   YAML.mapping({allowed_capabilities:       {type: Array(String), nilable: true, key: allowedCapabilities, getter: false, setter: false},
@@ -77,6 +77,6 @@ class Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySp
                 supplemental_groups:        {type: ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::SupplementalGroupsStrategyOptions, nilable: false, key: supplementalGroups, getter: false, setter: false},
                 volumes:                    {type: Array(String), nilable: true, key: volumes, getter: false, setter: false}}, true)
 
-  def initialize(@fs_group, @run_as_user, @se_linux, @supplemental_groups, @allowed_capabilities = nil, @default_add_capabilities = nil, @host_ipc = nil, @host_network = nil, @host_pid = nil, @host_ports = nil, @privileged = nil, @read_only_root_filesystem = nil, @required_drop_capabilities = nil, @volumes = nil)
+  def initialize(@allowed_capabilities : Array? = nil, @default_add_capabilities : Array? = nil, @fs_group : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::FSGroupStrategyOptions = nil, @host_ipc : Bool? = nil, @host_network : Bool? = nil, @host_pid : Bool? = nil, @host_ports : Array? = nil, @privileged : Bool? = nil, @read_only_root_filesystem : Bool? = nil, @required_drop_capabilities : Array? = nil, @run_as_user : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::RunAsUserStrategyOptions = nil, @se_linux : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::SELinuxStrategyOptions = nil, @supplemental_groups : ::Pyrite::V1_6_0::Kubernetes::Apis::Extensions::V1beta1::SupplementalGroupsStrategyOptions = nil, @volumes : Array? = nil)
   end
 end

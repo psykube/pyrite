@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Api::V1::EventSource
   JSON.mapping({component: {type: String, nilable: true, key: component, getter: false, setter: false},
                 host:      {type: String, nilable: true, key: host, getter: false, setter: false}}, true)
 
-  def initialize(@component = nil, @host = nil)
+  def initialize(@component : String? = nil, @host : String? = nil)
   end
 end

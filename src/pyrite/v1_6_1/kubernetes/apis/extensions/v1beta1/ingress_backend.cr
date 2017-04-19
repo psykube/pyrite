@@ -17,6 +17,6 @@ class Pyrite::V1_6_1::Kubernetes::Apis::Extensions::V1beta1::IngressBackend
   JSON.mapping({service_name: {type: String, nilable: false, key: serviceName, getter: false, setter: false},
                 service_port: {type: ::Pyrite::V1_6_1::Apimachinery::Util::Intstr::IntOrString, nilable: false, key: servicePort, getter: false, setter: false}}, true)
 
-  def initialize(@service_name, @service_port)
+  def initialize(@service_name : String? = nil, @service_port : ::Pyrite::V1_6_1::Apimachinery::Util::Intstr::IntOrString = nil)
   end
 end
