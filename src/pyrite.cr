@@ -1,5 +1,7 @@
 require "json"
 require "yaml"
+require "http/client"
+require "./kube_config"
 
 module Pyrite
   # Parse the version from the shard.yml
@@ -12,11 +14,15 @@ module Pyrite
   def self.client
     @@client
   end
+
+  def self.headers
+    HTTP::Headers.new
+  end
 end
 
-if File.exists("~/.kube/config")
-  File.read("~/.kube/config")
-  Kubernetes.url = ""
+if File.exists?("~/.kube/config")
+  Pyrite::KubeConfig.from_yaml(File.read("~/.kube/config"))
+  Pyrite.url = ""
 end
 
 require "./pyrite/*"

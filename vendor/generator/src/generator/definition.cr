@@ -240,6 +240,8 @@ class Generator::Definition
       args["namespace"].default = "default" if args["namespace"]?
       args.delete("pretty")
       define_function(function_name, args, toplevel: toplevel) do
+        puts "body = nil"
+        puts "Pyrite.client.#{verb}(#{path_name}, Pyrite.headers, body)"
       end
     end
   end
