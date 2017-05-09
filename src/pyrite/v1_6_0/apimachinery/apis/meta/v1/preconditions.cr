@@ -3,15 +3,17 @@
 require "yaml"
 require "json"
 
-# Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
-class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Preconditions
-  # Specifies the target UID.
-  property uid : String?
+module Pyrite::V1_6_0
+  # Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
+  class Definitions::Apimachinery::Apis::Meta::V1::Preconditions
+    # Specifies the target UID.
+    property uid : String?
 
-  YAML.mapping({uid: {type: String, nilable: true, key: uid, getter: false, setter: false}}, true)
+    YAML.mapping({uid: {type: String, nilable: true, key: uid, getter: false, setter: false}}, true)
 
-  JSON.mapping({uid: {type: String, nilable: true, key: uid, getter: false, setter: false}}, true)
+    JSON.mapping({uid: {type: String, nilable: true, key: uid, getter: false, setter: false}}, true)
 
-  def initialize(@uid : String? = nil)
+    def initialize(@uid : String? = nil)
+    end
   end
 end

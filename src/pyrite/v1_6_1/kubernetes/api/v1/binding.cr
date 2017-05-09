@@ -3,38 +3,37 @@
 require "yaml"
 require "json"
 
-# Binding ties one object to another. For example, a pod is bound to a node by a scheduler.
-class Pyrite::V1_6_1::Kubernetes::Api::V1::Binding
-  # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
-  property metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta
+module Pyrite::V1_6_1
+  # Binding ties one object to another. For example, a pod is bound to a node by a scheduler.
+  class Definitions::Kubernetes::Api::V1::Binding
+    # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
+    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta
 
-  # The target object that you want to bind to the standard object.
-  property target : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference
+    # The target object that you want to bind to the standard object.
+    property target : Kubernetes::Api::V1::ObjectReference
 
-  YAML.mapping({
-    api_version: {type: String, default: "Binding", key: apiVersion, getter: false, setter: false},
-    kind:        {type: String, default: "v1", getter: false, setter: false},
-    metadata:    {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: metadata, getter: false, setter: false},
-    target:      {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference, nilable: false, key: target, getter: false, setter: false},
-  }, true)
+    YAML.mapping({
+      api_version: {type: String, default: "Binding", key: apiVersion, getter: false, setter: false},
+      kind:        {type: String, default: "v1", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: metadata, getter: false, setter: false},
+      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: target, getter: false, setter: false},
+    }, true)
 
-  JSON.mapping({
-    api_version: {type: String, default: "Binding", key: apiVersion, getter: false, setter: false},
-    kind:        {type: String, default: "v1", getter: false, setter: false},
-    metadata:    {type: ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: metadata, getter: false, setter: false},
-    target:      {type: ::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference, nilable: false, key: target, getter: false, setter: false},
-  }, true)
+    JSON.mapping({
+      api_version: {type: String, default: "Binding", key: apiVersion, getter: false, setter: false},
+      kind:        {type: String, default: "v1", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: metadata, getter: false, setter: false},
+      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: target, getter: false, setter: false},
+    }, true)
 
-  def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : ::Pyrite::V1_6_1::Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @target : ::Pyrite::V1_6_1::Kubernetes::Api::V1::ObjectReference = nil)
-    @api_version = "Binding"
-    @kind = "v1"
+    def initialize(@api_version : String? = nil, @kind : String? = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta = nil, @target : Kubernetes::Api::V1::ObjectReference = nil)
+      @api_version = "v1"
+      @kind = "Binding"
+    end
   end
 
-  # create a Binding
-  def create(context : String? = nil)
-  end
-
-  # create binding of a Binding
-  def create_binding(context : String? = nil)
+  module Resources::V1
+    include Resource
+    alias Binding = Definitions::Kubernetes::Api::V1::Binding
   end
 end

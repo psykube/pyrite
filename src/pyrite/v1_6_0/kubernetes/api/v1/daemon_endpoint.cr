@@ -3,15 +3,17 @@
 require "yaml"
 require "json"
 
-# DaemonEndpoint contains information about a single Daemon endpoint.
-class Pyrite::V1_6_0::Kubernetes::Api::V1::DaemonEndpoint
-  # Port number of the given endpoint.
-  property port : Int32
+module Pyrite::V1_6_0
+  # DaemonEndpoint contains information about a single Daemon endpoint.
+  class Definitions::Kubernetes::Api::V1::DaemonEndpoint
+    # Port number of the given endpoint.
+    property port : Int32
 
-  YAML.mapping({port: {type: Int32, nilable: false, key: Port, getter: false, setter: false}}, true)
+    YAML.mapping({port: {type: Int32, nilable: false, key: Port, getter: false, setter: false}}, true)
 
-  JSON.mapping({port: {type: Int32, nilable: false, key: Port, getter: false, setter: false}}, true)
+    JSON.mapping({port: {type: Int32, nilable: false, key: Port, getter: false, setter: false}}, true)
 
-  def initialize(@port : Int32? = nil)
+    def initialize(@port : Int32? = nil)
+    end
   end
 end

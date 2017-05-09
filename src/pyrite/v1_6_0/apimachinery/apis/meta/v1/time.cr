@@ -3,7 +3,9 @@
 require "yaml"
 require "json"
 
-class Pyrite::V1_6_0::Apimachinery::Apis::Meta::V1::Time
-  def initialize
+module Pyrite::V1_6_0
+  class Definitions::Apimachinery::Apis::Meta::V1::Time
+    def initialize
+    end
   end
 end

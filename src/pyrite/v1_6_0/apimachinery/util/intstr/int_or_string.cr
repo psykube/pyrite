@@ -3,7 +3,9 @@
 require "yaml"
 require "json"
 
-class Pyrite::V1_6_0::Apimachinery::Util::Intstr::IntOrString
-  def initialize
+module Pyrite::V1_6_0
+  class Definitions::Apimachinery::Util::Intstr::IntOrString
+    def initialize
+    end
   end
 end

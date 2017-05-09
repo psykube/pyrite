@@ -3,7 +3,9 @@
 require "yaml"
 require "json"
 
-class Pyrite::V1_6_0::Apimachinery::Api::Resource::Quantity
-  def initialize
+module Pyrite::V1_6_0
+  class Definitions::Apimachinery::Api::Resource::Quantity
+    def initialize
+    end
   end
 end

@@ -29,9 +29,9 @@ class Generator::Definition
 
   RESOURCE_KEYS = %w(apiVersion kind)
 
+  delegate schema, definitions, base, base_dir, base_class, to: @generator
+
   getter class_name : String
-  getter schema : Swagger
-  getter definitions : Hash(String, String)
   getter name : String
   getter file : IO::FileDescriptor
   getter filename : String
@@ -47,10 +47,11 @@ class Generator::Definition
     new(*args).generate
   end
 
-  def initialize(@schema : Swagger, @definitions : Hash(String, String), @name : String)
-    @class_name = definitions[name]
-    @definition = schema.definitions[name]
-    @filename = File.join(".", "src", @class_name.split("::").map(&.underscore).join("/")) + ".cr"
+  def initialize(@generator : Generator, @name : String)
+    @class_name = generator.definitions[name]
+    @definition = generator.schema.definitions[name]
+    path = @class_name.split("::").map(&.underscore).join("/")
+    @filename = File.join(base_dir, path) + ".cr"
     FileUtils.mkdir_p(File.dirname(@filename))
     @file = File.open(@filename, "w+")
   end
@@ -60,11 +61,9 @@ class Generator::Definition
     file.puts "# THIS FILE WAS AUTO GENERATED FROM THE SWAGGER SPEC"
     file.puts ""
     load_requires
-    open_class
-    define_properties
-    define_mappings
-    define_initializer
-    define_actions
+    file.puts "module #{base_class.lchop("::")}"
+    define_class
+    define_alias if is_resource?
     _end
     file.close
     self
@@ -75,8 +74,32 @@ class Generator::Definition
     _, kind, name = ref.split("/")
     case kind
     when "definitions"
-      @definitions[name]
+      definitions[name]
     end
+  end
+
+  private def open_class
+    # Class Description
+    generate_description definition.description
+
+    # Open the class
+    file.puts "class Definitions::#{class_name.lchop("::")}"
+  end
+
+  private def define_class
+    open_class
+    define_properties
+    define_mappings
+    define_initializer
+    # define_actions
+    _end
+  end
+
+  private def define_alias
+    file.puts "module Resources::#{api_module}"
+    file.puts "include Resource"
+    file.puts "alias #{kind} = Definitions::#{class_name.lchop("::")}"
+    _end
   end
 
   private def get_ref(ref : String?)
@@ -165,7 +188,11 @@ class Generator::Definition
   end
 
   def is_resource?
-    is_resource? @definition
+    is_resource?(@definition)
+  end
+
+  def is_list?
+    name.ends_with? "List"
   end
 
   private def is_resource?(definition : Swagger::Definition)
@@ -253,14 +280,6 @@ class Generator::Definition
     file.puts
   end
 
-  private def open_class
-    # Class Description
-    generate_description definition.description
-
-    # Open the class
-    file.puts "class #{class_name.lchop("::")}"
-  end
-
   private def _end
     file.puts "end"
     file.puts
@@ -295,10 +314,22 @@ class Generator::Definition
       #   "@spec = if name"
       # end
       if is_resource?
-        file.puts "@api_version = #{self.name.split(".")[-1].inspect}"
-        file.puts "@kind = #{self.name.split(".")[-2].inspect}"
+        file.puts "@api_version = #{api_version.inspect}"
+        file.puts "@kind = #{kind.inspect}"
       end
     end
+  end
+
+  private def api_version
+    self.name.sub(/^io\.k8s\.[a-z]+\.pkg\.apis?\./, "").split(".")[0..-2].join("/")
+  end
+
+  private def api_module
+    api_version.split("/").map(&.capitalize).join("::")
+  end
+
+  private def kind
+    self.name.split(".")[-1]
   end
 
   private def define_mappings

@@ -1,5 +1,5 @@
 generate:
-	@rm -rf ./src/*/
+	@rm -rf ./src/pyrite/*/
 	@crystal run ./vendor/generator/src/generator.cr
 
 format:
