@@ -1,9 +1,8 @@
 generate:
-	@rm -rf ./src/pyrite/*/
-	@crystal run ./vendor/generator/src/generator.cr
+	@crystal run ./src/pyrite-generator.cr
 
 format:
-	@crystal tool format
+	@crystal tool format kube-versions
 
 docs: build
 	@rm -rf doc
