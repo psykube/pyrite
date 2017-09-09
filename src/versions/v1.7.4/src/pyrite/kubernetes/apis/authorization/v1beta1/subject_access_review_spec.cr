@@ -1,0 +1,43 @@
+# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
+
+require "yaml"
+require "json"
+
+module Pyrite
+  # SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+  class Kubernetes::Apis::Authorization::V1beta1::SubjectAccessReviewSpec
+    # Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
+    property extra : Hash(String, String) | Nil
+
+    # Groups is the groups you're testing for.
+    property group : Array(String) | Nil
+
+    # NonResourceAttributes describes information for a non-resource access request
+    property non_resource_attributes : Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes | Nil
+
+    # ResourceAuthorizationAttributes describes information for a resource access request
+    property resource_attributes : Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes | Nil
+
+    # User is the user you're testing for. If you specify "User" but not "Group", then is it interpreted as "What if User were not a member of any groups
+    property user : String | Nil
+
+    YAML.mapping({
+      extra:                   {type: Hash(String, String), nilable: true, key: "extra"},
+      group:                   {type: Array(String), nilable: true, key: "group"},
+      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes"},
+      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes"},
+      user:                    {type: String, nilable: true, key: "user"},
+    }, true)
+
+    JSON.mapping({
+      extra:                   {type: Hash(String, String), nilable: true, key: "extra"},
+      group:                   {type: Array(String), nilable: true, key: "group"},
+      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes"},
+      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes"},
+      user:                    {type: String, nilable: true, key: "user"},
+    }, true)
+
+    def initialize(*, @extra : Hash(String, String) | Nil = nil, @group : Array | Nil = nil, @non_resource_attributes : Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes | Nil = nil, @resource_attributes : Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes | Nil = nil, @user : String | Nil = nil)
+    end
+  end
+end

@@ -1,0 +1,28 @@
+# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
+
+require "yaml"
+require "json"
+
+module Pyrite
+  # ServiceReference holds a reference to Service.legacy.k8s.io
+  class KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference
+    # Name is the name of the service
+    property name : String | Nil
+
+    # Namespace is the namespace of the service
+    property namespace : String | Nil
+
+    YAML.mapping({
+      name:      {type: String, nilable: true, key: "name"},
+      namespace: {type: String, nilable: true, key: "namespace"},
+    }, true)
+
+    JSON.mapping({
+      name:      {type: String, nilable: true, key: "name"},
+      namespace: {type: String, nilable: true, key: "namespace"},
+    }, true)
+
+    def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)
+    end
+  end
+end
