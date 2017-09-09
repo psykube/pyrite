@@ -2,11 +2,9 @@ require "yaml"
 require "http/client"
 require "./swagger"
 
-VERSION = "1.0.0"
-
 class Generator
   ROOT_NAME    = "Pyrite"
-  VERSIONS_DIR = "kube-versions"
+  VERSIONS_DIR = "src/versions"
   getter filename : String
   getter definitions : Hash(String, String)
   getter base_class : String
@@ -72,7 +70,6 @@ class Generator
           "  end",
           "end"
       end
-      File.write("shard.yml", "name: #{base_class.downcase}\nversion: #{VERSION}")
     end
   end
 

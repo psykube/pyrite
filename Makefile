@@ -2,7 +2,7 @@ generate:
 	@crystal run ./src/pyrite-generator.cr
 
 format:
-	@crystal tool format kube-versions
+	@crystal tool format src
 
 docs: build
 	@rm -rf doc

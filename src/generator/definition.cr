@@ -133,14 +133,14 @@ class Generator::Definition
 
   private def convert_type(arg : FunctionArgument)
     t = definition_ref(arg.ref) ||
-      convert_type(arg.type.to_s, true)
+        convert_type(arg.type.to_s, true)
     t += " | Nil" unless arg.required?
     t
   end
 
   private def convert_type(param : Swagger::Path::Parameter)
     t = definition_ref(param.schema.try(&._ref)) ||
-      convert_type(param.type.to_s, true)
+        convert_type(param.type.to_s, true)
     t += " | Nil" unless param.required
     t
   end
