@@ -1,5 +1,5 @@
 generate:
-	@crystal run ./src/pyrite-generator.cr
+	@crystal run ./src/generator.cr
 
 format:
 	@crystal tool format src
