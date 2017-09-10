@@ -8,7 +8,7 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  k8s:
+  pyrite:
     github: jwaldrip/pyrite
 ```
 
