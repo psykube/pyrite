@@ -13,13 +13,13 @@ module Pyrite
     property pd_id : String
 
     YAML.mapping({
-      fs_type: {type: String, nilable: true, key: "fsType"},
-      pd_id:   {type: String, nilable: false, key: "pdID"},
+      fs_type: {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      pd_id:   {type: String, nilable: false, key: "pdID", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type: {type: String, nilable: true, key: "fsType"},
-      pd_id:   {type: String, nilable: false, key: "pdID"},
+      fs_type: {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      pd_id:   {type: String, nilable: false, key: "pdID", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @pd_id : String | Nil = nil)

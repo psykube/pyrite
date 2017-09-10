@@ -13,13 +13,13 @@ module Pyrite
     property reason : String | Nil
 
     YAML.mapping({
-      message: {type: String, nilable: true, key: "message"},
-      reason:  {type: String, nilable: true, key: "reason"},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      message: {type: String, nilable: true, key: "message"},
-      reason:  {type: String, nilable: true, key: "reason"},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     def initialize(*, @message : String | Nil = nil, @reason : String | Nil = nil)

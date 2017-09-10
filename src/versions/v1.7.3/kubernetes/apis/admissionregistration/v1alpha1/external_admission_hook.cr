@@ -19,17 +19,17 @@ module Pyrite
     property rules : Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations) | Nil
 
     YAML.mapping({
-      client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig"},
-      failure_policy: {type: String, nilable: true, key: "failurePolicy"},
-      name:           {type: String, nilable: false, key: "name"},
-      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules"},
+      client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
+      failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
+      name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig"},
-      failure_policy: {type: String, nilable: true, key: "failurePolicy"},
-      name:           {type: String, nilable: false, key: "name"},
-      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules"},
+      client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
+      failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
+      name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
     def initialize(*, @client_config : Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig | Nil = nil, @failure_policy : String | Nil = nil, @name : String | Nil = nil, @rules : Array | Nil = nil)

@@ -13,13 +13,13 @@ module Pyrite
     property size_limit : Int32 | Nil
 
     YAML.mapping({
-      medium:     {type: String, nilable: true, key: "medium"},
-      size_limit: {type: Int32, nilable: true, key: "sizeLimit"},
+      medium:     {type: String, nilable: true, key: "medium", getter: false, setter: false},
+      size_limit: {type: Int32, nilable: true, key: "sizeLimit", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      medium:     {type: String, nilable: true, key: "medium"},
-      size_limit: {type: Int32, nilable: true, key: "sizeLimit"},
+      medium:     {type: String, nilable: true, key: "medium", getter: false, setter: false},
+      size_limit: {type: Int32, nilable: true, key: "sizeLimit", getter: false, setter: false},
     }, true)
 
     def initialize(*, @medium : String | Nil = nil, @size_limit : Int32 | Nil = nil)

@@ -10,11 +10,11 @@ module Pyrite
     property kubelet_endpoint : Kubernetes::Api::V1::DaemonEndpoint | Nil
 
     YAML.mapping({
-      kubelet_endpoint: {type: Kubernetes::Api::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint"},
+      kubelet_endpoint: {type: Kubernetes::Api::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      kubelet_endpoint: {type: Kubernetes::Api::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint"},
+      kubelet_endpoint: {type: Kubernetes::Api::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint", getter: false, setter: false},
     }, true)
 
     def initialize(*, @kubelet_endpoint : Kubernetes::Api::V1::DaemonEndpoint | Nil = nil)

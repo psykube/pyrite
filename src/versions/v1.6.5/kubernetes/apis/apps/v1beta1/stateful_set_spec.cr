@@ -22,19 +22,19 @@ module Pyrite
     property volume_claim_templates : Array(Kubernetes::Api::V1::PersistentVolumeClaim) | Nil
 
     YAML.mapping({
-      replicas:               {type: Int32, nilable: true, key: "replicas"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      service_name:           {type: String, nilable: false, key: "serviceName"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates"},
+      replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      service_name:           {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      replicas:               {type: Int32, nilable: true, key: "replicas"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      service_name:           {type: String, nilable: false, key: "serviceName"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates"},
+      replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      service_name:           {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
     def initialize(*, @replicas : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @service_name : String | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil, @volume_claim_templates : Array | Nil = nil)

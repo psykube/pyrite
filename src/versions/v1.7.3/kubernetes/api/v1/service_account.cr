@@ -23,19 +23,19 @@ module Pyrite
     YAML.mapping({
       api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
-      automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken"},
-      image_pull_secrets:              {type: Array(Kubernetes::Api::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets"},
-      metadata:                        {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      secrets:                         {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "secrets"},
+      automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
+      image_pull_secrets:              {type: Array(Kubernetes::Api::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets", getter: false, setter: false},
+      metadata:                        {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      secrets:                         {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "secrets", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
-      automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken"},
-      image_pull_secrets:              {type: Array(Kubernetes::Api::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets"},
-      metadata:                        {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      secrets:                         {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "secrets"},
+      automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
+      image_pull_secrets:              {type: Array(Kubernetes::Api::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets", getter: false, setter: false},
+      metadata:                        {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      secrets:                         {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "secrets", getter: false, setter: false},
     }, true)
 
     def initialize(*, @automount_service_account_token : Bool | Nil = nil, @image_pull_secrets : Array | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @secrets : Array | Nil = nil)

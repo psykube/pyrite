@@ -37,29 +37,29 @@ module Pyrite
     property target_portal : String
 
     YAML.mapping({
-      chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery"},
-      chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession"},
-      fs_type:             {type: String, nilable: true, key: "fsType"},
-      iqn:                 {type: String, nilable: false, key: "iqn"},
-      iscsi_interface:     {type: String, nilable: true, key: "iscsiInterface"},
-      lun:                 {type: Int32, nilable: false, key: "lun"},
-      portals:             {type: Array(String), nilable: true, key: "portals"},
-      read_only:           {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:          {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      target_portal:       {type: String, nilable: false, key: "targetPortal"},
+      chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery", getter: false, setter: false},
+      chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession", getter: false, setter: false},
+      fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      iqn:                 {type: String, nilable: false, key: "iqn", getter: false, setter: false},
+      iscsi_interface:     {type: String, nilable: true, key: "iscsiInterface", getter: false, setter: false},
+      lun:                 {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      portals:             {type: Array(String), nilable: true, key: "portals", getter: false, setter: false},
+      read_only:           {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:          {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      target_portal:       {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery"},
-      chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession"},
-      fs_type:             {type: String, nilable: true, key: "fsType"},
-      iqn:                 {type: String, nilable: false, key: "iqn"},
-      iscsi_interface:     {type: String, nilable: true, key: "iscsiInterface"},
-      lun:                 {type: Int32, nilable: false, key: "lun"},
-      portals:             {type: Array(String), nilable: true, key: "portals"},
-      read_only:           {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:          {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      target_portal:       {type: String, nilable: false, key: "targetPortal"},
+      chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery", getter: false, setter: false},
+      chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession", getter: false, setter: false},
+      fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      iqn:                 {type: String, nilable: false, key: "iqn", getter: false, setter: false},
+      iscsi_interface:     {type: String, nilable: true, key: "iscsiInterface", getter: false, setter: false},
+      lun:                 {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      portals:             {type: Array(String), nilable: true, key: "portals", getter: false, setter: false},
+      read_only:           {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:          {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      target_portal:       {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
     def initialize(*, @chap_auth_discovery : Bool | Nil = nil, @chap_auth_session : Bool | Nil = nil, @fs_type : String | Nil = nil, @iqn : String | Nil = nil, @iscsi_interface : String | Nil = nil, @lun : Int32 | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @target_portal : String | Nil = nil)

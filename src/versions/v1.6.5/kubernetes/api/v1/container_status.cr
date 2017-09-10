@@ -31,25 +31,25 @@ module Pyrite
     property state : Kubernetes::Api::V1::ContainerState | Nil
 
     YAML.mapping({
-      container_id:  {type: String, nilable: true, key: "containerID"},
-      image:         {type: String, nilable: false, key: "image"},
-      image_id:      {type: String, nilable: false, key: "imageID"},
-      last_state:    {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "lastState"},
-      name:          {type: String, nilable: false, key: "name"},
-      ready:         {type: Bool, nilable: false, key: "ready"},
-      restart_count: {type: Int32, nilable: false, key: "restartCount"},
-      state:         {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "state"},
+      container_id:  {type: String, nilable: true, key: "containerID", getter: false, setter: false},
+      image:         {type: String, nilable: false, key: "image", getter: false, setter: false},
+      image_id:      {type: String, nilable: false, key: "imageID", getter: false, setter: false},
+      last_state:    {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "lastState", getter: false, setter: false},
+      name:          {type: String, nilable: false, key: "name", getter: false, setter: false},
+      ready:         {type: Bool, nilable: false, key: "ready", getter: false, setter: false},
+      restart_count: {type: Int32, nilable: false, key: "restartCount", getter: false, setter: false},
+      state:         {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      container_id:  {type: String, nilable: true, key: "containerID"},
-      image:         {type: String, nilable: false, key: "image"},
-      image_id:      {type: String, nilable: false, key: "imageID"},
-      last_state:    {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "lastState"},
-      name:          {type: String, nilable: false, key: "name"},
-      ready:         {type: Bool, nilable: false, key: "ready"},
-      restart_count: {type: Int32, nilable: false, key: "restartCount"},
-      state:         {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "state"},
+      container_id:  {type: String, nilable: true, key: "containerID", getter: false, setter: false},
+      image:         {type: String, nilable: false, key: "image", getter: false, setter: false},
+      image_id:      {type: String, nilable: false, key: "imageID", getter: false, setter: false},
+      last_state:    {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "lastState", getter: false, setter: false},
+      name:          {type: String, nilable: false, key: "name", getter: false, setter: false},
+      ready:         {type: Bool, nilable: false, key: "ready", getter: false, setter: false},
+      restart_count: {type: Int32, nilable: false, key: "restartCount", getter: false, setter: false},
+      state:         {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
     def initialize(*, @container_id : String | Nil = nil, @image : String | Nil = nil, @image_id : String | Nil = nil, @last_state : Kubernetes::Api::V1::ContainerState | Nil = nil, @name : String | Nil = nil, @ready : Bool | Nil = nil, @restart_count : Int32 | Nil = nil, @state : Kubernetes::Api::V1::ContainerState | Nil = nil)

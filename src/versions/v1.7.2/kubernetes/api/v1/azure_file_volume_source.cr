@@ -16,15 +16,15 @@ module Pyrite
     property share_name : String
 
     YAML.mapping({
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      secret_name: {type: String, nilable: false, key: "secretName"},
-      share_name:  {type: String, nilable: false, key: "shareName"},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_name: {type: String, nilable: false, key: "secretName", getter: false, setter: false},
+      share_name:  {type: String, nilable: false, key: "shareName", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      secret_name: {type: String, nilable: false, key: "secretName"},
-      share_name:  {type: String, nilable: false, key: "shareName"},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_name: {type: String, nilable: false, key: "secretName", getter: false, setter: false},
+      share_name:  {type: String, nilable: false, key: "shareName", getter: false, setter: false},
     }, true)
 
     def initialize(*, @read_only : Bool | Nil = nil, @secret_name : String | Nil = nil, @share_name : String | Nil = nil)

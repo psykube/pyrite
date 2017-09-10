@@ -10,11 +10,11 @@ module Pyrite
     property items : Array(Kubernetes::Api::V1::DownwardAPIVolumeFile) | Nil
 
     YAML.mapping({
-      items: {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items"},
+      items: {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      items: {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items"},
+      items: {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
     def initialize(*, @items : Array | Nil = nil)

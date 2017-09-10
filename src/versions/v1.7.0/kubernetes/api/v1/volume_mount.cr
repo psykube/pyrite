@@ -19,17 +19,17 @@ module Pyrite
     property sub_path : String | Nil
 
     YAML.mapping({
-      mount_path: {type: String, nilable: false, key: "mountPath"},
-      name:       {type: String, nilable: false, key: "name"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      sub_path:   {type: String, nilable: true, key: "subPath"},
+      mount_path: {type: String, nilable: false, key: "mountPath", getter: false, setter: false},
+      name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      sub_path:   {type: String, nilable: true, key: "subPath", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      mount_path: {type: String, nilable: false, key: "mountPath"},
-      name:       {type: String, nilable: false, key: "name"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      sub_path:   {type: String, nilable: true, key: "subPath"},
+      mount_path: {type: String, nilable: false, key: "mountPath", getter: false, setter: false},
+      name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      sub_path:   {type: String, nilable: true, key: "subPath", getter: false, setter: false},
     }, true)
 
     def initialize(*, @mount_path : String | Nil = nil, @name : String | Nil = nil, @read_only : Bool | Nil = nil, @sub_path : String | Nil = nil)

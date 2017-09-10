@@ -37,29 +37,29 @@ module Pyrite
     property volumes_in_use : Array(String) | Nil
 
     YAML.mapping({
-      addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses"},
-      allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable"},
-      capacity:         {type: Hash(String, String), nilable: true, key: "capacity"},
-      conditions:       {type: Array(Kubernetes::Api::V1::NodeCondition), nilable: true, key: "conditions"},
-      daemon_endpoints: {type: Kubernetes::Api::V1::NodeDaemonEndpoints, nilable: true, key: "daemonEndpoints"},
-      images:           {type: Array(Kubernetes::Api::V1::ContainerImage), nilable: true, key: "images"},
-      node_info:        {type: Kubernetes::Api::V1::NodeSystemInfo, nilable: true, key: "nodeInfo"},
-      phase:            {type: String, nilable: true, key: "phase"},
-      volumes_attached: {type: Array(Kubernetes::Api::V1::AttachedVolume), nilable: true, key: "volumesAttached"},
-      volumes_in_use:   {type: Array(String), nilable: true, key: "volumesInUse"},
+      addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses", getter: false, setter: false},
+      allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable", getter: false, setter: false},
+      capacity:         {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
+      conditions:       {type: Array(Kubernetes::Api::V1::NodeCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      daemon_endpoints: {type: Kubernetes::Api::V1::NodeDaemonEndpoints, nilable: true, key: "daemonEndpoints", getter: false, setter: false},
+      images:           {type: Array(Kubernetes::Api::V1::ContainerImage), nilable: true, key: "images", getter: false, setter: false},
+      node_info:        {type: Kubernetes::Api::V1::NodeSystemInfo, nilable: true, key: "nodeInfo", getter: false, setter: false},
+      phase:            {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      volumes_attached: {type: Array(Kubernetes::Api::V1::AttachedVolume), nilable: true, key: "volumesAttached", getter: false, setter: false},
+      volumes_in_use:   {type: Array(String), nilable: true, key: "volumesInUse", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses"},
-      allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable"},
-      capacity:         {type: Hash(String, String), nilable: true, key: "capacity"},
-      conditions:       {type: Array(Kubernetes::Api::V1::NodeCondition), nilable: true, key: "conditions"},
-      daemon_endpoints: {type: Kubernetes::Api::V1::NodeDaemonEndpoints, nilable: true, key: "daemonEndpoints"},
-      images:           {type: Array(Kubernetes::Api::V1::ContainerImage), nilable: true, key: "images"},
-      node_info:        {type: Kubernetes::Api::V1::NodeSystemInfo, nilable: true, key: "nodeInfo"},
-      phase:            {type: String, nilable: true, key: "phase"},
-      volumes_attached: {type: Array(Kubernetes::Api::V1::AttachedVolume), nilable: true, key: "volumesAttached"},
-      volumes_in_use:   {type: Array(String), nilable: true, key: "volumesInUse"},
+      addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses", getter: false, setter: false},
+      allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable", getter: false, setter: false},
+      capacity:         {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
+      conditions:       {type: Array(Kubernetes::Api::V1::NodeCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      daemon_endpoints: {type: Kubernetes::Api::V1::NodeDaemonEndpoints, nilable: true, key: "daemonEndpoints", getter: false, setter: false},
+      images:           {type: Array(Kubernetes::Api::V1::ContainerImage), nilable: true, key: "images", getter: false, setter: false},
+      node_info:        {type: Kubernetes::Api::V1::NodeSystemInfo, nilable: true, key: "nodeInfo", getter: false, setter: false},
+      phase:            {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      volumes_attached: {type: Array(Kubernetes::Api::V1::AttachedVolume), nilable: true, key: "volumesAttached", getter: false, setter: false},
+      volumes_in_use:   {type: Array(String), nilable: true, key: "volumesInUse", getter: false, setter: false},
     }, true)
 
     def initialize(*, @addresses : Array | Nil = nil, @allocatable : Hash(String, String) | Nil = nil, @capacity : Hash(String, String) | Nil = nil, @conditions : Array | Nil = nil, @daemon_endpoints : Kubernetes::Api::V1::NodeDaemonEndpoints | Nil = nil, @images : Array | Nil = nil, @node_info : Kubernetes::Api::V1::NodeSystemInfo | Nil = nil, @phase : String | Nil = nil, @volumes_attached : Array | Nil = nil, @volumes_in_use : Array | Nil = nil)

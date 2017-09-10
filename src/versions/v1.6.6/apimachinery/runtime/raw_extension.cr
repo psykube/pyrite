@@ -37,11 +37,11 @@ module Pyrite
     property raw : String
 
     YAML.mapping({
-      raw: {type: String, nilable: false, key: "Raw"},
+      raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      raw: {type: String, nilable: false, key: "Raw"},
+      raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 
     def initialize(*, @raw : String | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property read_only : Bool | Nil
 
     YAML.mapping({
-      caching_mode: {type: String, nilable: true, key: "cachingMode"},
-      disk_name:    {type: String, nilable: false, key: "diskName"},
-      disk_uri:     {type: String, nilable: false, key: "diskURI"},
-      fs_type:      {type: String, nilable: true, key: "fsType"},
-      read_only:    {type: Bool, nilable: true, key: "readOnly"},
+      caching_mode: {type: String, nilable: true, key: "cachingMode", getter: false, setter: false},
+      disk_name:    {type: String, nilable: false, key: "diskName", getter: false, setter: false},
+      disk_uri:     {type: String, nilable: false, key: "diskURI", getter: false, setter: false},
+      fs_type:      {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      read_only:    {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      caching_mode: {type: String, nilable: true, key: "cachingMode"},
-      disk_name:    {type: String, nilable: false, key: "diskName"},
-      disk_uri:     {type: String, nilable: false, key: "diskURI"},
-      fs_type:      {type: String, nilable: true, key: "fsType"},
-      read_only:    {type: Bool, nilable: true, key: "readOnly"},
+      caching_mode: {type: String, nilable: true, key: "cachingMode", getter: false, setter: false},
+      disk_name:    {type: String, nilable: false, key: "diskName", getter: false, setter: false},
+      disk_uri:     {type: String, nilable: false, key: "diskURI", getter: false, setter: false},
+      fs_type:      {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      read_only:    {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
     def initialize(*, @caching_mode : String | Nil = nil, @disk_name : String | Nil = nil, @disk_uri : String | Nil = nil, @fs_type : String | Nil = nil, @read_only : Bool | Nil = nil)

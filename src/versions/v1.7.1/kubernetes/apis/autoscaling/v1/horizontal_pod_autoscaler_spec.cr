@@ -19,17 +19,17 @@ module Pyrite
     property target_cpu_utilization_percentage : Int32 | Nil
 
     YAML.mapping({
-      max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas"},
-      min_replicas:                      {type: Int32, nilable: true, key: "minReplicas"},
-      scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef"},
-      target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage"},
+      max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
+      min_replicas:                      {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
+      scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
+      target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas"},
-      min_replicas:                      {type: Int32, nilable: true, key: "minReplicas"},
-      scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef"},
-      target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage"},
+      max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
+      min_replicas:                      {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
+      scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
+      target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage", getter: false, setter: false},
     }, true)
 
     def initialize(*, @max_replicas : Int32 | Nil = nil, @min_replicas : Int32 | Nil = nil, @scale_target_ref : Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference | Nil = nil, @target_cpu_utilization_percentage : Int32 | Nil = nil)

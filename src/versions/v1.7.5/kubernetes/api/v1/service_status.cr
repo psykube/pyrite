@@ -10,11 +10,11 @@ module Pyrite
     property load_balancer : Kubernetes::Api::V1::LoadBalancerStatus | Nil
 
     YAML.mapping({
-      load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer"},
+      load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer"},
+      load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer", getter: false, setter: false},
     }, true)
 
     def initialize(*, @load_balancer : Kubernetes::Api::V1::LoadBalancerStatus | Nil = nil)

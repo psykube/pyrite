@@ -22,19 +22,19 @@ module Pyrite
     property retry_after_seconds : Int32 | Nil
 
     YAML.mapping({
-      causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes"},
-      group:               {type: String, nilable: true, key: "group"},
-      kind:                {type: String, nilable: true, key: "kind"},
-      name:                {type: String, nilable: true, key: "name"},
-      retry_after_seconds: {type: Int32, nilable: true, key: "retryAfterSeconds"},
+      causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
+      group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
+      kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                {type: String, nilable: true, key: "name", getter: false, setter: false},
+      retry_after_seconds: {type: Int32, nilable: true, key: "retryAfterSeconds", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes"},
-      group:               {type: String, nilable: true, key: "group"},
-      kind:                {type: String, nilable: true, key: "kind"},
-      name:                {type: String, nilable: true, key: "name"},
-      retry_after_seconds: {type: Int32, nilable: true, key: "retryAfterSeconds"},
+      causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
+      group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
+      kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                {type: String, nilable: true, key: "name", getter: false, setter: false},
+      retry_after_seconds: {type: Int32, nilable: true, key: "retryAfterSeconds", getter: false, setter: false},
     }, true)
 
     def initialize(*, @causes : Array | Nil = nil, @group : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @retry_after_seconds : Int32 | Nil = nil)

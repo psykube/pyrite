@@ -16,15 +16,15 @@ module Pyrite
     property name : String
 
     YAML.mapping({
-      current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization"},
-      current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue"},
-      name:                        {type: String, nilable: false, key: "name"},
+      current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization", getter: false, setter: false},
+      current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
+      name:                        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization"},
-      current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue"},
-      name:                        {type: String, nilable: false, key: "name"},
+      current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization", getter: false, setter: false},
+      current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
+      name:                        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     def initialize(*, @current_average_utilization : Int32 | Nil = nil, @current_average_value : Int32 | Nil = nil, @name : String | Nil = nil)

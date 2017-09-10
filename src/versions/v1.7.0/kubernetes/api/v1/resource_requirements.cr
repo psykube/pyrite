@@ -13,13 +13,13 @@ module Pyrite
     property requests : Hash(String, String) | Nil
 
     YAML.mapping({
-      limits:   {type: Hash(String, String), nilable: true, key: "limits"},
-      requests: {type: Hash(String, String), nilable: true, key: "requests"},
+      limits:   {type: Hash(String, String), nilable: true, key: "limits", getter: false, setter: false},
+      requests: {type: Hash(String, String), nilable: true, key: "requests", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      limits:   {type: Hash(String, String), nilable: true, key: "limits"},
-      requests: {type: Hash(String, String), nilable: true, key: "requests"},
+      limits:   {type: Hash(String, String), nilable: true, key: "limits", getter: false, setter: false},
+      requests: {type: Hash(String, String), nilable: true, key: "requests", getter: false, setter: false},
     }, true)
 
     def initialize(*, @limits : Hash(String, String) | Nil = nil, @requests : Hash(String, String) | Nil = nil)

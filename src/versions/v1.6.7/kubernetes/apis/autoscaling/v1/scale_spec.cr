@@ -10,11 +10,11 @@ module Pyrite
     property replicas : Int32 | Nil
 
     YAML.mapping({
-      replicas: {type: Int32, nilable: true, key: "replicas"},
+      replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      replicas: {type: Int32, nilable: true, key: "replicas"},
+      replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
     }, true)
 
     def initialize(*, @replicas : Int32 | Nil = nil)

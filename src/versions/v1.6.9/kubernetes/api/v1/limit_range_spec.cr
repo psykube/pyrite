@@ -10,11 +10,11 @@ module Pyrite
     property limits : Array(Kubernetes::Api::V1::LimitRangeItem)
 
     YAML.mapping({
-      limits: {type: Array(Kubernetes::Api::V1::LimitRangeItem), nilable: false, key: "limits"},
+      limits: {type: Array(Kubernetes::Api::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      limits: {type: Array(Kubernetes::Api::V1::LimitRangeItem), nilable: false, key: "limits"},
+      limits: {type: Array(Kubernetes::Api::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
     }, true)
 
     def initialize(*, @limits : Array | Nil = nil)

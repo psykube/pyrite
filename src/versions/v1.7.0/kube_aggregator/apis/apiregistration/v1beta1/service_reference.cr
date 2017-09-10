@@ -13,13 +13,13 @@ module Pyrite
     property namespace : String | Nil
 
     YAML.mapping({
-      name:      {type: String, nilable: true, key: "name"},
-      namespace: {type: String, nilable: true, key: "namespace"},
+      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      name:      {type: String, nilable: true, key: "name"},
-      namespace: {type: String, nilable: true, key: "namespace"},
+      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
     def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)

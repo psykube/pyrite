@@ -16,15 +16,15 @@ module Pyrite
     property secret_ref : Kubernetes::Api::V1::SecretEnvSource | Nil
 
     YAML.mapping({
-      config_map_ref: {type: Kubernetes::Api::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef"},
-      prefix:         {type: String, nilable: true, key: "prefix"},
-      secret_ref:     {type: Kubernetes::Api::V1::SecretEnvSource, nilable: true, key: "secretRef"},
+      config_map_ref: {type: Kubernetes::Api::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef", getter: false, setter: false},
+      prefix:         {type: String, nilable: true, key: "prefix", getter: false, setter: false},
+      secret_ref:     {type: Kubernetes::Api::V1::SecretEnvSource, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      config_map_ref: {type: Kubernetes::Api::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef"},
-      prefix:         {type: String, nilable: true, key: "prefix"},
-      secret_ref:     {type: Kubernetes::Api::V1::SecretEnvSource, nilable: true, key: "secretRef"},
+      config_map_ref: {type: Kubernetes::Api::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef", getter: false, setter: false},
+      prefix:         {type: String, nilable: true, key: "prefix", getter: false, setter: false},
+      secret_ref:     {type: Kubernetes::Api::V1::SecretEnvSource, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @config_map_ref : Kubernetes::Api::V1::ConfigMapEnvSource | Nil = nil, @prefix : String | Nil = nil, @secret_ref : Kubernetes::Api::V1::SecretEnvSource | Nil = nil)

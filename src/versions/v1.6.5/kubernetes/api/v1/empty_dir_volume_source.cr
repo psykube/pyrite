@@ -10,11 +10,11 @@ module Pyrite
     property medium : String | Nil
 
     YAML.mapping({
-      medium: {type: String, nilable: true, key: "medium"},
+      medium: {type: String, nilable: true, key: "medium", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      medium: {type: String, nilable: true, key: "medium"},
+      medium: {type: String, nilable: true, key: "medium", getter: false, setter: false},
     }, true)
 
     def initialize(*, @medium : String | Nil = nil)

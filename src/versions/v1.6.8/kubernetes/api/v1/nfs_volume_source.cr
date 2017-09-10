@@ -16,15 +16,15 @@ module Pyrite
     property server : String
 
     YAML.mapping({
-      path:      {type: String, nilable: false, key: "path"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      server:    {type: String, nilable: false, key: "server"},
+      path:      {type: String, nilable: false, key: "path", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      server:    {type: String, nilable: false, key: "server", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      path:      {type: String, nilable: false, key: "path"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      server:    {type: String, nilable: false, key: "server"},
+      path:      {type: String, nilable: false, key: "path", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      server:    {type: String, nilable: false, key: "server", getter: false, setter: false},
     }, true)
 
     def initialize(*, @path : String | Nil = nil, @read_only : Bool | Nil = nil, @server : String | Nil = nil)

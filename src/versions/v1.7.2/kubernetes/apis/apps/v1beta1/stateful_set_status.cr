@@ -28,23 +28,23 @@ module Pyrite
     property updated_replicas : Int32 | Nil
 
     YAML.mapping({
-      current_replicas:    {type: Int32, nilable: true, key: "currentReplicas"},
-      current_revision:    {type: String, nilable: true, key: "currentRevision"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
-      ready_replicas:      {type: Int32, nilable: true, key: "readyReplicas"},
-      replicas:            {type: Int32, nilable: false, key: "replicas"},
-      update_revision:     {type: String, nilable: true, key: "updateRevision"},
-      updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas"},
+      current_replicas:    {type: Int32, nilable: true, key: "currentReplicas", getter: false, setter: false},
+      current_revision:    {type: String, nilable: true, key: "currentRevision", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      ready_replicas:      {type: Int32, nilable: true, key: "readyReplicas", getter: false, setter: false},
+      replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      update_revision:     {type: String, nilable: true, key: "updateRevision", getter: false, setter: false},
+      updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      current_replicas:    {type: Int32, nilable: true, key: "currentReplicas"},
-      current_revision:    {type: String, nilable: true, key: "currentRevision"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
-      ready_replicas:      {type: Int32, nilable: true, key: "readyReplicas"},
-      replicas:            {type: Int32, nilable: false, key: "replicas"},
-      update_revision:     {type: String, nilable: true, key: "updateRevision"},
-      updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas"},
+      current_replicas:    {type: Int32, nilable: true, key: "currentReplicas", getter: false, setter: false},
+      current_revision:    {type: String, nilable: true, key: "currentRevision", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      ready_replicas:      {type: Int32, nilable: true, key: "readyReplicas", getter: false, setter: false},
+      replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      update_revision:     {type: String, nilable: true, key: "updateRevision", getter: false, setter: false},
+      updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas", getter: false, setter: false},
     }, true)
 
     def initialize(*, @current_replicas : Int32 | Nil = nil, @current_revision : String | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @update_revision : String | Nil = nil, @updated_replicas : Int32 | Nil = nil)

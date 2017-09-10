@@ -13,13 +13,13 @@ module Pyrite
     property read_only : Bool | Nil
 
     YAML.mapping({
-      claim_name: {type: String, nilable: false, key: "claimName"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
+      claim_name: {type: String, nilable: false, key: "claimName", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      claim_name: {type: String, nilable: false, key: "claimName"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
+      claim_name: {type: String, nilable: false, key: "claimName", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
     def initialize(*, @claim_name : String | Nil = nil, @read_only : Bool | Nil = nil)

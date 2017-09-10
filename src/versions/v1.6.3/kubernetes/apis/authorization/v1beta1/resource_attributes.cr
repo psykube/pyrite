@@ -28,23 +28,23 @@ module Pyrite
     property version : String | Nil
 
     YAML.mapping({
-      group:       {type: String, nilable: true, key: "group"},
-      name:        {type: String, nilable: true, key: "name"},
-      namespace:   {type: String, nilable: true, key: "namespace"},
-      resource:    {type: String, nilable: true, key: "resource"},
-      subresource: {type: String, nilable: true, key: "subresource"},
-      verb:        {type: String, nilable: true, key: "verb"},
-      version:     {type: String, nilable: true, key: "version"},
+      group:       {type: String, nilable: true, key: "group", getter: false, setter: false},
+      name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace:   {type: String, nilable: true, key: "namespace", getter: false, setter: false},
+      resource:    {type: String, nilable: true, key: "resource", getter: false, setter: false},
+      subresource: {type: String, nilable: true, key: "subresource", getter: false, setter: false},
+      verb:        {type: String, nilable: true, key: "verb", getter: false, setter: false},
+      version:     {type: String, nilable: true, key: "version", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      group:       {type: String, nilable: true, key: "group"},
-      name:        {type: String, nilable: true, key: "name"},
-      namespace:   {type: String, nilable: true, key: "namespace"},
-      resource:    {type: String, nilable: true, key: "resource"},
-      subresource: {type: String, nilable: true, key: "subresource"},
-      verb:        {type: String, nilable: true, key: "verb"},
-      version:     {type: String, nilable: true, key: "version"},
+      group:       {type: String, nilable: true, key: "group", getter: false, setter: false},
+      name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace:   {type: String, nilable: true, key: "namespace", getter: false, setter: false},
+      resource:    {type: String, nilable: true, key: "resource", getter: false, setter: false},
+      subresource: {type: String, nilable: true, key: "subresource", getter: false, setter: false},
+      verb:        {type: String, nilable: true, key: "verb", getter: false, setter: false},
+      version:     {type: String, nilable: true, key: "version", getter: false, setter: false},
     }, true)
 
     def initialize(*, @group : String | Nil = nil, @name : String | Nil = nil, @namespace : String | Nil = nil, @resource : String | Nil = nil, @subresource : String | Nil = nil, @verb : String | Nil = nil, @version : String | Nil = nil)

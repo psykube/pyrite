@@ -25,21 +25,21 @@ module Pyrite
     property uid : String
 
     YAML.mapping({
-      api_version:          {type: String, nilable: false, key: "apiVersion"},
-      block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion"},
-      controller:           {type: Bool, nilable: true, key: "controller"},
-      kind:                 {type: String, nilable: false, key: "kind"},
-      name:                 {type: String, nilable: false, key: "name"},
-      uid:                  {type: String, nilable: false, key: "uid"},
+      api_version:          {type: String, nilable: false, key: "apiVersion", getter: false, setter: false},
+      block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion", getter: false, setter: false},
+      controller:           {type: Bool, nilable: true, key: "controller", getter: false, setter: false},
+      kind:                 {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:                 {type: String, nilable: false, key: "name", getter: false, setter: false},
+      uid:                  {type: String, nilable: false, key: "uid", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:          {type: String, nilable: false, key: "apiVersion"},
-      block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion"},
-      controller:           {type: Bool, nilable: true, key: "controller"},
-      kind:                 {type: String, nilable: false, key: "kind"},
-      name:                 {type: String, nilable: false, key: "name"},
-      uid:                  {type: String, nilable: false, key: "uid"},
+      api_version:          {type: String, nilable: false, key: "apiVersion", getter: false, setter: false},
+      block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion", getter: false, setter: false},
+      controller:           {type: Bool, nilable: true, key: "controller", getter: false, setter: false},
+      kind:                 {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:                 {type: String, nilable: false, key: "name", getter: false, setter: false},
+      uid:                  {type: String, nilable: false, key: "uid", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @block_owner_deletion : Bool | Nil = nil, @controller : Bool | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @uid : String | Nil = nil)

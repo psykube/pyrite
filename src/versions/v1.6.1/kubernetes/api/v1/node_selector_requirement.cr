@@ -16,15 +16,15 @@ module Pyrite
     property values : Array(String) | Nil
 
     YAML.mapping({
-      key:      {type: String, nilable: false, key: "key"},
-      operator: {type: String, nilable: false, key: "operator"},
-      values:   {type: Array(String), nilable: true, key: "values"},
+      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
+      operator: {type: String, nilable: false, key: "operator", getter: false, setter: false},
+      values:   {type: Array(String), nilable: true, key: "values", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      key:      {type: String, nilable: false, key: "key"},
-      operator: {type: String, nilable: false, key: "operator"},
-      values:   {type: Array(String), nilable: true, key: "values"},
+      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
+      operator: {type: String, nilable: false, key: "operator", getter: false, setter: false},
+      values:   {type: Array(String), nilable: true, key: "values", getter: false, setter: false},
     }, true)
 
     def initialize(*, @key : String | Nil = nil, @operator : String | Nil = nil, @values : Array | Nil = nil)

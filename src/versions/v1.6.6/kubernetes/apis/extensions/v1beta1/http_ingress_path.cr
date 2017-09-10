@@ -13,13 +13,13 @@ module Pyrite
     property path : String | Nil
 
     YAML.mapping({
-      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: false, key: "backend"},
-      path:    {type: String, nilable: true, key: "path"},
+      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: false, key: "backend", getter: false, setter: false},
+      path:    {type: String, nilable: true, key: "path", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: false, key: "backend"},
-      path:    {type: String, nilable: true, key: "path"},
+      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: false, key: "backend", getter: false, setter: false},
+      path:    {type: String, nilable: true, key: "path", getter: false, setter: false},
     }, true)
 
     def initialize(*, @backend : Kubernetes::Apis::Extensions::V1beta1::IngressBackend | Nil = nil, @path : String | Nil = nil)

@@ -25,21 +25,21 @@ module Pyrite
     property template : Kubernetes::Api::V1::PodTemplateSpec
 
     YAML.mapping({
-      active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds"},
-      completions:             {type: Int32, nilable: true, key: "completions"},
-      manual_selector:         {type: Bool, nilable: true, key: "manualSelector"},
-      parallelism:             {type: Int32, nilable: true, key: "parallelism"},
-      selector:                {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:                {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
+      active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
+      completions:             {type: Int32, nilable: true, key: "completions", getter: false, setter: false},
+      manual_selector:         {type: Bool, nilable: true, key: "manualSelector", getter: false, setter: false},
+      parallelism:             {type: Int32, nilable: true, key: "parallelism", getter: false, setter: false},
+      selector:                {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:                {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds"},
-      completions:             {type: Int32, nilable: true, key: "completions"},
-      manual_selector:         {type: Bool, nilable: true, key: "manualSelector"},
-      parallelism:             {type: Int32, nilable: true, key: "parallelism"},
-      selector:                {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:                {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
+      active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
+      completions:             {type: Int32, nilable: true, key: "completions", getter: false, setter: false},
+      manual_selector:         {type: Bool, nilable: true, key: "manualSelector", getter: false, setter: false},
+      parallelism:             {type: Int32, nilable: true, key: "parallelism", getter: false, setter: false},
+      selector:                {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:                {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
     def initialize(*, @active_deadline_seconds : Int32 | Nil = nil, @completions : Int32 | Nil = nil, @manual_selector : Bool | Nil = nil, @parallelism : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil)

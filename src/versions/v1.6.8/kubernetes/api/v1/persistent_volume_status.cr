@@ -16,15 +16,15 @@ module Pyrite
     property reason : String | Nil
 
     YAML.mapping({
-      message: {type: String, nilable: true, key: "message"},
-      phase:   {type: String, nilable: true, key: "phase"},
-      reason:  {type: String, nilable: true, key: "reason"},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      phase:   {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      message: {type: String, nilable: true, key: "message"},
-      phase:   {type: String, nilable: true, key: "phase"},
-      reason:  {type: String, nilable: true, key: "reason"},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      phase:   {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     def initialize(*, @message : String | Nil = nil, @phase : String | Nil = nil, @reason : String | Nil = nil)

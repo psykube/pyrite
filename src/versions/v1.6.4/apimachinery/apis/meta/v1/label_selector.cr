@@ -13,13 +13,13 @@ module Pyrite
     property match_labels : Hash(String, String) | Nil
 
     YAML.mapping({
-      match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions"},
-      match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels"},
+      match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions", getter: false, setter: false},
+      match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions"},
-      match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels"},
+      match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions", getter: false, setter: false},
+      match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels", getter: false, setter: false},
     }, true)
 
     def initialize(*, @match_expressions : Array | Nil = nil, @match_labels : Hash(String, String) | Nil = nil)

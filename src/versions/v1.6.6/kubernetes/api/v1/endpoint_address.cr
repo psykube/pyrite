@@ -19,17 +19,17 @@ module Pyrite
     property target_ref : Kubernetes::Api::V1::ObjectReference | Nil
 
     YAML.mapping({
-      hostname:   {type: String, nilable: true, key: "hostname"},
-      ip:         {type: String, nilable: false, key: "ip"},
-      node_name:  {type: String, nilable: true, key: "nodeName"},
-      target_ref: {type: Kubernetes::Api::V1::ObjectReference, nilable: true, key: "targetRef"},
+      hostname:   {type: String, nilable: true, key: "hostname", getter: false, setter: false},
+      ip:         {type: String, nilable: false, key: "ip", getter: false, setter: false},
+      node_name:  {type: String, nilable: true, key: "nodeName", getter: false, setter: false},
+      target_ref: {type: Kubernetes::Api::V1::ObjectReference, nilable: true, key: "targetRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      hostname:   {type: String, nilable: true, key: "hostname"},
-      ip:         {type: String, nilable: false, key: "ip"},
-      node_name:  {type: String, nilable: true, key: "nodeName"},
-      target_ref: {type: Kubernetes::Api::V1::ObjectReference, nilable: true, key: "targetRef"},
+      hostname:   {type: String, nilable: true, key: "hostname", getter: false, setter: false},
+      ip:         {type: String, nilable: false, key: "ip", getter: false, setter: false},
+      node_name:  {type: String, nilable: true, key: "nodeName", getter: false, setter: false},
+      target_ref: {type: Kubernetes::Api::V1::ObjectReference, nilable: true, key: "targetRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @hostname : String | Nil = nil, @ip : String | Nil = nil, @node_name : String | Nil = nil, @target_ref : Kubernetes::Api::V1::ObjectReference | Nil = nil)

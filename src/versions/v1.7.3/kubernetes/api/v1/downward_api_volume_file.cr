@@ -19,17 +19,17 @@ module Pyrite
     property resource_field_ref : Kubernetes::Api::V1::ResourceFieldSelector | Nil
 
     YAML.mapping({
-      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef"},
-      mode:               {type: Int32, nilable: true, key: "mode"},
-      path:               {type: String, nilable: false, key: "path"},
-      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef"},
+      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
+      mode:               {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
+      path:               {type: String, nilable: false, key: "path", getter: false, setter: false},
+      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef"},
-      mode:               {type: Int32, nilable: true, key: "mode"},
-      path:               {type: String, nilable: false, key: "path"},
-      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef"},
+      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
+      mode:               {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
+      path:               {type: String, nilable: false, key: "path", getter: false, setter: false},
+      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @field_ref : Kubernetes::Api::V1::ObjectFieldSelector | Nil = nil, @mode : Int32 | Nil = nil, @path : String | Nil = nil, @resource_field_ref : Kubernetes::Api::V1::ResourceFieldSelector | Nil = nil)

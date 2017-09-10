@@ -10,11 +10,11 @@ module Pyrite
     property started_at : Time | Nil
 
     YAML.mapping({
-      started_at: {type: Time, nilable: true, key: "startedAt"},
+      started_at: {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      started_at: {type: Time, nilable: true, key: "startedAt"},
+      started_at: {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
     def initialize(*, @started_at : Time | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property volume_name : String | Nil
 
     YAML.mapping({
-      access_modes:       {type: Array(String), nilable: true, key: "accessModes"},
-      resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources"},
-      selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      storage_class_name: {type: String, nilable: true, key: "storageClassName"},
-      volume_name:        {type: String, nilable: true, key: "volumeName"},
+      access_modes:       {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
+      resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources", getter: false, setter: false},
+      selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      storage_class_name: {type: String, nilable: true, key: "storageClassName", getter: false, setter: false},
+      volume_name:        {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      access_modes:       {type: Array(String), nilable: true, key: "accessModes"},
-      resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources"},
-      selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      storage_class_name: {type: String, nilable: true, key: "storageClassName"},
-      volume_name:        {type: String, nilable: true, key: "volumeName"},
+      access_modes:       {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
+      resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources", getter: false, setter: false},
+      selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      storage_class_name: {type: String, nilable: true, key: "storageClassName", getter: false, setter: false},
+      volume_name:        {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
     def initialize(*, @access_modes : Array | Nil = nil, @resources : Kubernetes::Api::V1::ResourceRequirements | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @storage_class_name : String | Nil = nil, @volume_name : String | Nil = nil)

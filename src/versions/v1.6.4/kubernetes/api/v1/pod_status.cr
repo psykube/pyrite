@@ -37,29 +37,29 @@ module Pyrite
     property start_time : Time | Nil
 
     YAML.mapping({
-      conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions"},
-      container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses"},
-      host_ip:                 {type: String, nilable: true, key: "hostIP"},
-      init_container_statuses: {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "initContainerStatuses"},
-      message:                 {type: String, nilable: true, key: "message"},
-      phase:                   {type: String, nilable: true, key: "phase"},
-      pod_ip:                  {type: String, nilable: true, key: "podIP"},
-      qos_class:               {type: String, nilable: true, key: "qosClass"},
-      reason:                  {type: String, nilable: true, key: "reason"},
-      start_time:              {type: Time, nilable: true, key: "startTime"},
+      conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses", getter: false, setter: false},
+      host_ip:                 {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
+      init_container_statuses: {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "initContainerStatuses", getter: false, setter: false},
+      message:                 {type: String, nilable: true, key: "message", getter: false, setter: false},
+      phase:                   {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      pod_ip:                  {type: String, nilable: true, key: "podIP", getter: false, setter: false},
+      qos_class:               {type: String, nilable: true, key: "qosClass", getter: false, setter: false},
+      reason:                  {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      start_time:              {type: Time, nilable: true, key: "startTime", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions"},
-      container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses"},
-      host_ip:                 {type: String, nilable: true, key: "hostIP"},
-      init_container_statuses: {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "initContainerStatuses"},
-      message:                 {type: String, nilable: true, key: "message"},
-      phase:                   {type: String, nilable: true, key: "phase"},
-      pod_ip:                  {type: String, nilable: true, key: "podIP"},
-      qos_class:               {type: String, nilable: true, key: "qosClass"},
-      reason:                  {type: String, nilable: true, key: "reason"},
-      start_time:              {type: Time, nilable: true, key: "startTime"},
+      conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses", getter: false, setter: false},
+      host_ip:                 {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
+      init_container_statuses: {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "initContainerStatuses", getter: false, setter: false},
+      message:                 {type: String, nilable: true, key: "message", getter: false, setter: false},
+      phase:                   {type: String, nilable: true, key: "phase", getter: false, setter: false},
+      pod_ip:                  {type: String, nilable: true, key: "podIP", getter: false, setter: false},
+      qos_class:               {type: String, nilable: true, key: "qosClass", getter: false, setter: false},
+      reason:                  {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      start_time:              {type: Time, nilable: true, key: "startTime", getter: false, setter: false},
     }, true)
 
     def initialize(*, @conditions : Array | Nil = nil, @container_statuses : Array | Nil = nil, @host_ip : String | Nil = nil, @init_container_statuses : Array | Nil = nil, @message : String | Nil = nil, @phase : String | Nil = nil, @pod_ip : String | Nil = nil, @qos_class : String | Nil = nil, @reason : String | Nil = nil, @start_time : Time | Nil = nil)

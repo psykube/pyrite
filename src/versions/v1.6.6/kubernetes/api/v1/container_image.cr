@@ -13,13 +13,13 @@ module Pyrite
     property size_bytes : Int32 | Nil
 
     YAML.mapping({
-      names:      {type: Array(String), nilable: false, key: "names"},
-      size_bytes: {type: Int32, nilable: true, key: "sizeBytes"},
+      names:      {type: Array(String), nilable: false, key: "names", getter: false, setter: false},
+      size_bytes: {type: Int32, nilable: true, key: "sizeBytes", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      names:      {type: Array(String), nilable: false, key: "names"},
-      size_bytes: {type: Int32, nilable: true, key: "sizeBytes"},
+      names:      {type: Array(String), nilable: false, key: "names", getter: false, setter: false},
+      size_bytes: {type: Int32, nilable: true, key: "sizeBytes", getter: false, setter: false},
     }, true)
 
     def initialize(*, @names : Array | Nil = nil, @size_bytes : Int32 | Nil = nil)

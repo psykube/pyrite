@@ -16,15 +16,15 @@ module Pyrite
     property tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil
 
     YAML.mapping({
-      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec"},
-      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet"},
-      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket"},
+      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
+      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
+      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec"},
-      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet"},
-      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket"},
+      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
+      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
+      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},
     }, true)
 
     def initialize(*, @exec : Kubernetes::Api::V1::ExecAction | Nil = nil, @http_get : Kubernetes::Api::V1::HTTPGetAction | Nil = nil, @tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property unschedulable : Bool | Nil
 
     YAML.mapping({
-      external_id:   {type: String, nilable: true, key: "externalID"},
-      pod_cid_r:     {type: String, nilable: true, key: "podCIDR"},
-      provider_id:   {type: String, nilable: true, key: "providerID"},
-      taints:        {type: Array(Kubernetes::Api::V1::Taint), nilable: true, key: "taints"},
-      unschedulable: {type: Bool, nilable: true, key: "unschedulable"},
+      external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
+      pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
+      provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},
+      taints:        {type: Array(Kubernetes::Api::V1::Taint), nilable: true, key: "taints", getter: false, setter: false},
+      unschedulable: {type: Bool, nilable: true, key: "unschedulable", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      external_id:   {type: String, nilable: true, key: "externalID"},
-      pod_cid_r:     {type: String, nilable: true, key: "podCIDR"},
-      provider_id:   {type: String, nilable: true, key: "providerID"},
-      taints:        {type: Array(Kubernetes::Api::V1::Taint), nilable: true, key: "taints"},
-      unschedulable: {type: Bool, nilable: true, key: "unschedulable"},
+      external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
+      pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
+      provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},
+      taints:        {type: Array(Kubernetes::Api::V1::Taint), nilable: true, key: "taints", getter: false, setter: false},
+      unschedulable: {type: Bool, nilable: true, key: "unschedulable", getter: false, setter: false},
     }, true)
 
     def initialize(*, @external_id : String | Nil = nil, @pod_cid_r : String | Nil = nil, @provider_id : String | Nil = nil, @taints : Array | Nil = nil, @unschedulable : Bool | Nil = nil)

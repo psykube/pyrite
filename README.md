@@ -18,11 +18,13 @@ dependencies:
 require "pyrite"
 ```
 
-TODO: Write usage instructions here
+Pyrite should support Kubernetes API from 1.6.0 and beyond. In order to use 
+pyrite, you will want to include the VERSION that best maps to your k8s api version.
+Requiring more than one version at this time will result in an error.
 
-## Development
-
-TODO: Write development instructions here
+```crystal
+require "pyrite/versions/v1.7.5"
+```
 
 ## Contributing
 

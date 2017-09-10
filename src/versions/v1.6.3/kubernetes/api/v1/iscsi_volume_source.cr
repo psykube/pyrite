@@ -28,23 +28,23 @@ module Pyrite
     property target_portal : String
 
     YAML.mapping({
-      fs_type:         {type: String, nilable: true, key: "fsType"},
-      iqn:             {type: String, nilable: false, key: "iqn"},
-      iscsi_interface: {type: String, nilable: true, key: "iscsiInterface"},
-      lun:             {type: Int32, nilable: false, key: "lun"},
-      portals:         {type: Array(String), nilable: true, key: "portals"},
-      read_only:       {type: Bool, nilable: true, key: "readOnly"},
-      target_portal:   {type: String, nilable: false, key: "targetPortal"},
+      fs_type:         {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      iqn:             {type: String, nilable: false, key: "iqn", getter: false, setter: false},
+      iscsi_interface: {type: String, nilable: true, key: "iscsiInterface", getter: false, setter: false},
+      lun:             {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      portals:         {type: Array(String), nilable: true, key: "portals", getter: false, setter: false},
+      read_only:       {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      target_portal:   {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:         {type: String, nilable: true, key: "fsType"},
-      iqn:             {type: String, nilable: false, key: "iqn"},
-      iscsi_interface: {type: String, nilable: true, key: "iscsiInterface"},
-      lun:             {type: Int32, nilable: false, key: "lun"},
-      portals:         {type: Array(String), nilable: true, key: "portals"},
-      read_only:       {type: Bool, nilable: true, key: "readOnly"},
-      target_portal:   {type: String, nilable: false, key: "targetPortal"},
+      fs_type:         {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      iqn:             {type: String, nilable: false, key: "iqn", getter: false, setter: false},
+      iscsi_interface: {type: String, nilable: true, key: "iscsiInterface", getter: false, setter: false},
+      lun:             {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      portals:         {type: Array(String), nilable: true, key: "portals", getter: false, setter: false},
+      read_only:       {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      target_portal:   {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @iqn : String | Nil = nil, @iscsi_interface : String | Nil = nil, @lun : Int32 | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil, @target_portal : String | Nil = nil)

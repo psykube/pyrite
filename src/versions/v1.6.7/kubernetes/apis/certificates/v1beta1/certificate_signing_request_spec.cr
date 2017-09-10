@@ -26,21 +26,21 @@ module Pyrite
     property username : String | Nil
 
     YAML.mapping({
-      extra:    {type: Hash(String, String), nilable: true, key: "extra"},
-      groups:   {type: Array(String), nilable: true, key: "groups"},
-      request:  {type: String, nilable: false, key: "request"},
-      uid:      {type: String, nilable: true, key: "uid"},
-      usages:   {type: Array(String), nilable: true, key: "usages"},
-      username: {type: String, nilable: true, key: "username"},
+      extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
+      groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
+      request:  {type: String, nilable: false, key: "request", getter: false, setter: false},
+      uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},
+      usages:   {type: Array(String), nilable: true, key: "usages", getter: false, setter: false},
+      username: {type: String, nilable: true, key: "username", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      extra:    {type: Hash(String, String), nilable: true, key: "extra"},
-      groups:   {type: Array(String), nilable: true, key: "groups"},
-      request:  {type: String, nilable: false, key: "request"},
-      uid:      {type: String, nilable: true, key: "uid"},
-      usages:   {type: Array(String), nilable: true, key: "usages"},
-      username: {type: String, nilable: true, key: "username"},
+      extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
+      groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
+      request:  {type: String, nilable: false, key: "request", getter: false, setter: false},
+      uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},
+      usages:   {type: Array(String), nilable: true, key: "usages", getter: false, setter: false},
+      username: {type: String, nilable: true, key: "username", getter: false, setter: false},
     }, true)
 
     def initialize(*, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @request : String | Nil = nil, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)

@@ -13,13 +13,13 @@ module Pyrite
     property pre_stop : Kubernetes::Api::V1::Handler | Nil
 
     YAML.mapping({
-      post_start: {type: Kubernetes::Api::V1::Handler, nilable: true, key: "postStart"},
-      pre_stop:   {type: Kubernetes::Api::V1::Handler, nilable: true, key: "preStop"},
+      post_start: {type: Kubernetes::Api::V1::Handler, nilable: true, key: "postStart", getter: false, setter: false},
+      pre_stop:   {type: Kubernetes::Api::V1::Handler, nilable: true, key: "preStop", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      post_start: {type: Kubernetes::Api::V1::Handler, nilable: true, key: "postStart"},
-      pre_stop:   {type: Kubernetes::Api::V1::Handler, nilable: true, key: "preStop"},
+      post_start: {type: Kubernetes::Api::V1::Handler, nilable: true, key: "postStart", getter: false, setter: false},
+      pre_stop:   {type: Kubernetes::Api::V1::Handler, nilable: true, key: "preStop", getter: false, setter: false},
     }, true)
 
     def initialize(*, @post_start : Kubernetes::Api::V1::Handler | Nil = nil, @pre_stop : Kubernetes::Api::V1::Handler | Nil = nil)

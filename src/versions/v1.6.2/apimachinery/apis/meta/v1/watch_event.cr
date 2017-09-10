@@ -16,13 +16,13 @@ module Pyrite
     property type : String
 
     YAML.mapping({
-      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object"},
-      type:   {type: String, nilable: false, key: "type"},
+      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
+      type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object"},
-      type:   {type: String, nilable: false, key: "type"},
+      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
+      type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @object : Apimachinery::Runtime::RawExtension | Nil = nil, @type : String | Nil = nil)

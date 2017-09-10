@@ -13,13 +13,13 @@ module Pyrite
     property verb : String | Nil
 
     YAML.mapping({
-      path: {type: String, nilable: true, key: "path"},
-      verb: {type: String, nilable: true, key: "verb"},
+      path: {type: String, nilable: true, key: "path", getter: false, setter: false},
+      verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      path: {type: String, nilable: true, key: "path"},
-      verb: {type: String, nilable: true, key: "verb"},
+      path: {type: String, nilable: true, key: "path", getter: false, setter: false},
+      verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
     }, true)
 
     def initialize(*, @path : String | Nil = nil, @verb : String | Nil = nil)

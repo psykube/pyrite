@@ -16,15 +16,15 @@ module Pyrite
     property resource : String
 
     YAML.mapping({
-      container_name: {type: String, nilable: true, key: "containerName"},
-      divisor:        {type: Int32, nilable: true, key: "divisor"},
-      resource:       {type: String, nilable: false, key: "resource"},
+      container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
+      divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
+      resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      container_name: {type: String, nilable: true, key: "containerName"},
-      divisor:        {type: Int32, nilable: true, key: "divisor"},
-      resource:       {type: String, nilable: false, key: "resource"},
+      container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
+      divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
+      resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
     }, true)
 
     def initialize(*, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil, @resource : String | Nil = nil)

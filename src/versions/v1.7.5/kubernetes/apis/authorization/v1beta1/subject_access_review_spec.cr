@@ -22,19 +22,19 @@ module Pyrite
     property user : String | Nil
 
     YAML.mapping({
-      extra:                   {type: Hash(String, String), nilable: true, key: "extra"},
-      group:                   {type: Array(String), nilable: true, key: "group"},
-      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes"},
-      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes"},
-      user:                    {type: String, nilable: true, key: "user"},
+      extra:                   {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
+      group:                   {type: Array(String), nilable: true, key: "group", getter: false, setter: false},
+      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes", getter: false, setter: false},
+      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes", getter: false, setter: false},
+      user:                    {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      extra:                   {type: Hash(String, String), nilable: true, key: "extra"},
-      group:                   {type: Array(String), nilable: true, key: "group"},
-      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes"},
-      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes"},
-      user:                    {type: String, nilable: true, key: "user"},
+      extra:                   {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
+      group:                   {type: Array(String), nilable: true, key: "group", getter: false, setter: false},
+      non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes", getter: false, setter: false},
+      resource_attributes:     {type: Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes, nilable: true, key: "resourceAttributes", getter: false, setter: false},
+      user:                    {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     def initialize(*, @extra : Hash(String, String) | Nil = nil, @group : Array | Nil = nil, @non_resource_attributes : Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes | Nil = nil, @resource_attributes : Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes | Nil = nil, @user : String | Nil = nil)

@@ -13,13 +13,13 @@ module Pyrite
     property weight : Int32
 
     YAML.mapping({
-      preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference"},
-      weight:     {type: Int32, nilable: false, key: "weight"},
+      preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference", getter: false, setter: false},
+      weight:     {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference"},
-      weight:     {type: Int32, nilable: false, key: "weight"},
+      preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference", getter: false, setter: false},
+      weight:     {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
     def initialize(*, @preference : Kubernetes::Api::V1::NodeSelectorTerm | Nil = nil, @weight : Int32 | Nil = nil)

@@ -16,15 +16,15 @@ module Pyrite
     property value_from : Kubernetes::Api::V1::EnvVarSource | Nil
 
     YAML.mapping({
-      name:       {type: String, nilable: false, key: "name"},
-      value:      {type: String, nilable: true, key: "value"},
-      value_from: {type: Kubernetes::Api::V1::EnvVarSource, nilable: true, key: "valueFrom"},
+      name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
+      value_from: {type: Kubernetes::Api::V1::EnvVarSource, nilable: true, key: "valueFrom", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      name:       {type: String, nilable: false, key: "name"},
-      value:      {type: String, nilable: true, key: "value"},
-      value_from: {type: Kubernetes::Api::V1::EnvVarSource, nilable: true, key: "valueFrom"},
+      name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
+      value_from: {type: Kubernetes::Api::V1::EnvVarSource, nilable: true, key: "valueFrom", getter: false, setter: false},
     }, true)
 
     def initialize(*, @name : String | Nil = nil, @value : String | Nil = nil, @value_from : Kubernetes::Api::V1::EnvVarSource | Nil = nil)

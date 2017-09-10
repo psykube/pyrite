@@ -23,15 +23,15 @@ module Pyrite
     property ports : Array(Kubernetes::Api::V1::EndpointPort) | Nil
 
     YAML.mapping({
-      addresses:           {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "addresses"},
-      not_ready_addresses: {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "notReadyAddresses"},
-      ports:               {type: Array(Kubernetes::Api::V1::EndpointPort), nilable: true, key: "ports"},
+      addresses:           {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "addresses", getter: false, setter: false},
+      not_ready_addresses: {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "notReadyAddresses", getter: false, setter: false},
+      ports:               {type: Array(Kubernetes::Api::V1::EndpointPort), nilable: true, key: "ports", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      addresses:           {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "addresses"},
-      not_ready_addresses: {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "notReadyAddresses"},
-      ports:               {type: Array(Kubernetes::Api::V1::EndpointPort), nilable: true, key: "ports"},
+      addresses:           {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "addresses", getter: false, setter: false},
+      not_ready_addresses: {type: Array(Kubernetes::Api::V1::EndpointAddress), nilable: true, key: "notReadyAddresses", getter: false, setter: false},
+      ports:               {type: Array(Kubernetes::Api::V1::EndpointPort), nilable: true, key: "ports", getter: false, setter: false},
     }, true)
 
     def initialize(*, @addresses : Array | Nil = nil, @not_ready_addresses : Array | Nil = nil, @ports : Array | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property verbs : Array(String)
 
     YAML.mapping({
-      api_groups:        {type: Array(String), nilable: true, key: "apiGroups"},
-      non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs"},
-      resource_names:    {type: Array(String), nilable: true, key: "resourceNames"},
-      resources:         {type: Array(String), nilable: true, key: "resources"},
-      verbs:             {type: Array(String), nilable: false, key: "verbs"},
+      api_groups:        {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
+      non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
+      resource_names:    {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},
+      resources:         {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
+      verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_groups:        {type: Array(String), nilable: true, key: "apiGroups"},
-      non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs"},
-      resource_names:    {type: Array(String), nilable: true, key: "resourceNames"},
-      resources:         {type: Array(String), nilable: true, key: "resources"},
-      verbs:             {type: Array(String), nilable: false, key: "verbs"},
+      api_groups:        {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
+      non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
+      resource_names:    {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},
+      resources:         {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
+      verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_groups : Array | Nil = nil, @non_resource_urls : Array | Nil = nil, @resource_names : Array | Nil = nil, @resources : Array | Nil = nil, @verbs : Array | Nil = nil)

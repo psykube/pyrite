@@ -16,15 +16,15 @@ module Pyrite
     property tls : Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS) | Nil
 
     YAML.mapping({
-      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend"},
-      rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules"},
-      tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls"},
+      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend", getter: false, setter: false},
+      rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules", getter: false, setter: false},
+      tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend"},
-      rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules"},
-      tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls"},
+      backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend", getter: false, setter: false},
+      rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules", getter: false, setter: false},
+      tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls", getter: false, setter: false},
     }, true)
 
     def initialize(*, @backend : Kubernetes::Apis::Extensions::V1beta1::IngressBackend | Nil = nil, @rules : Array | Nil = nil, @tls : Array | Nil = nil)

@@ -16,15 +16,15 @@ module Pyrite
     property target_average_value : Int32 | Nil
 
     YAML.mapping({
-      name:                       {type: String, nilable: false, key: "name"},
-      target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization"},
-      target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue"},
+      name:                       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization", getter: false, setter: false},
+      target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      name:                       {type: String, nilable: false, key: "name"},
-      target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization"},
-      target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue"},
+      name:                       {type: String, nilable: false, key: "name", getter: false, setter: false},
+      target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization", getter: false, setter: false},
+      target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue", getter: false, setter: false},
     }, true)
 
     def initialize(*, @name : String | Nil = nil, @target_average_utilization : Int32 | Nil = nil, @target_average_value : Int32 | Nil = nil)

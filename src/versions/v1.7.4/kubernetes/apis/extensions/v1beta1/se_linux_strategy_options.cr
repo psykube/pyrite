@@ -13,13 +13,13 @@ module Pyrite
     property se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil
 
     YAML.mapping({
-      rule:             {type: String, nilable: false, key: "rule"},
-      se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
+      rule:             {type: String, nilable: false, key: "rule", getter: false, setter: false},
+      se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      rule:             {type: String, nilable: false, key: "rule"},
-      se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
+      rule:             {type: String, nilable: false, key: "rule", getter: false, setter: false},
+      se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
     def initialize(*, @rule : String | Nil = nil, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil)

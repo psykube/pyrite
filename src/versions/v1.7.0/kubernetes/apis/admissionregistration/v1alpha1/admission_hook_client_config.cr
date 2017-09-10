@@ -13,13 +13,13 @@ module Pyrite
     property service : Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference
 
     YAML.mapping({
-      ca_bundle: {type: String, nilable: false, key: "caBundle"},
-      service:   {type: Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference, nilable: false, key: "service"},
+      ca_bundle: {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
+      service:   {type: Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference, nilable: false, key: "service", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      ca_bundle: {type: String, nilable: false, key: "caBundle"},
-      service:   {type: Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference, nilable: false, key: "service"},
+      ca_bundle: {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
+      service:   {type: Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference, nilable: false, key: "service", getter: false, setter: false},
     }, true)
 
     def initialize(*, @ca_bundle : String | Nil = nil, @service : Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference | Nil = nil)

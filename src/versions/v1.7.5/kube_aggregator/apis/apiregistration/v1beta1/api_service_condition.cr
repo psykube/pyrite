@@ -21,19 +21,19 @@ module Pyrite
     property type : String
 
     YAML.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime"},
-      message:              {type: String, nilable: true, key: "message"},
-      reason:               {type: String, nilable: true, key: "reason"},
-      status:               {type: String, nilable: false, key: "status"},
-      type:                 {type: String, nilable: false, key: "type"},
+      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
+      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      status:               {type: String, nilable: false, key: "status", getter: false, setter: false},
+      type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime"},
-      message:              {type: String, nilable: true, key: "message"},
-      reason:               {type: String, nilable: true, key: "reason"},
-      status:               {type: String, nilable: false, key: "status"},
-      type:                 {type: String, nilable: false, key: "type"},
+      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
+      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      status:               {type: String, nilable: false, key: "status", getter: false, setter: false},
+      type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @status : String | Nil = nil, @type : String | Nil = nil)

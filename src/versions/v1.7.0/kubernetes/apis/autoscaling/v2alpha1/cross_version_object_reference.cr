@@ -16,15 +16,15 @@ module Pyrite
     property name : String
 
     YAML.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      kind:        {type: String, nilable: false, key: "kind"},
-      name:        {type: String, nilable: false, key: "name"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      kind:        {type: String, nilable: false, key: "kind"},
-      name:        {type: String, nilable: false, key: "name"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil)

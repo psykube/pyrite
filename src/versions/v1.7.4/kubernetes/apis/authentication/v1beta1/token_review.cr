@@ -19,17 +19,17 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "authentication/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "TokenReview", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      spec:        {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec, nilable: false, key: "spec"},
-      status:      {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: "status"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      spec:        {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
+      status:      {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "authentication/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "TokenReview", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      spec:        {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec, nilable: false, key: "spec"},
-      status:      {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: "status"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      spec:        {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
+      status:      {type: Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec | Nil = nil, @status : Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus | Nil = nil)

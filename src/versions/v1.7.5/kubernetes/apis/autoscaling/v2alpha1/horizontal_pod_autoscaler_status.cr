@@ -25,21 +25,21 @@ module Pyrite
     property observed_generation : Int32 | Nil
 
     YAML.mapping({
-      conditions:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition), nilable: false, key: "conditions"},
-      current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics"},
-      current_replicas:    {type: Int32, nilable: false, key: "currentReplicas"},
-      desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas"},
-      last_scale_time:     {type: Time, nilable: true, key: "lastScaleTime"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
+      conditions:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition), nilable: false, key: "conditions", getter: false, setter: false},
+      current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics", getter: false, setter: false},
+      current_replicas:    {type: Int32, nilable: false, key: "currentReplicas", getter: false, setter: false},
+      desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas", getter: false, setter: false},
+      last_scale_time:     {type: Time, nilable: true, key: "lastScaleTime", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      conditions:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition), nilable: false, key: "conditions"},
-      current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics"},
-      current_replicas:    {type: Int32, nilable: false, key: "currentReplicas"},
-      desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas"},
-      last_scale_time:     {type: Time, nilable: true, key: "lastScaleTime"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
+      conditions:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition), nilable: false, key: "conditions", getter: false, setter: false},
+      current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics", getter: false, setter: false},
+      current_replicas:    {type: Int32, nilable: false, key: "currentReplicas", getter: false, setter: false},
+      desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas", getter: false, setter: false},
+      last_scale_time:     {type: Time, nilable: true, key: "lastScaleTime", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
     def initialize(*, @conditions : Array | Nil = nil, @current_metrics : Array | Nil = nil, @current_replicas : Int32 | Nil = nil, @desired_replicas : Int32 | Nil = nil, @last_scale_time : Time | Nil = nil, @observed_generation : Int32 | Nil = nil)

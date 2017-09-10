@@ -22,19 +22,19 @@ module Pyrite
     property updated_annotations : Hash(String, String) | Nil
 
     YAML.mapping({
-      api_version:         {type: String, nilable: true, key: "apiVersion"},
-      kind:                {type: String, nilable: true, key: "kind"},
-      name:                {type: String, nilable: false, key: "name"},
-      rollback_to:         {type: Kubernetes::Apis::Apps::V1beta1::RollbackConfig, nilable: false, key: "rollbackTo"},
-      updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations"},
+      api_version:         {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rollback_to:         {type: Kubernetes::Apis::Apps::V1beta1::RollbackConfig, nilable: false, key: "rollbackTo", getter: false, setter: false},
+      updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:         {type: String, nilable: true, key: "apiVersion"},
-      kind:                {type: String, nilable: true, key: "kind"},
-      name:                {type: String, nilable: false, key: "name"},
-      rollback_to:         {type: Kubernetes::Apis::Apps::V1beta1::RollbackConfig, nilable: false, key: "rollbackTo"},
-      updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations"},
+      api_version:         {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rollback_to:         {type: Kubernetes::Apis::Apps::V1beta1::RollbackConfig, nilable: false, key: "rollbackTo", getter: false, setter: false},
+      updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @rollback_to : Kubernetes::Apis::Apps::V1beta1::RollbackConfig | Nil = nil, @updated_annotations : Hash(String, String) | Nil = nil)

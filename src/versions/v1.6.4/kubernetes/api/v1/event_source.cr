@@ -13,13 +13,13 @@ module Pyrite
     property host : String | Nil
 
     YAML.mapping({
-      component: {type: String, nilable: true, key: "component"},
-      host:      {type: String, nilable: true, key: "host"},
+      component: {type: String, nilable: true, key: "component", getter: false, setter: false},
+      host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      component: {type: String, nilable: true, key: "component"},
-      host:      {type: String, nilable: true, key: "host"},
+      component: {type: String, nilable: true, key: "component", getter: false, setter: false},
+      host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
     }, true)
 
     def initialize(*, @component : String | Nil = nil, @host : String | Nil = nil)

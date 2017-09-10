@@ -28,23 +28,23 @@ module Pyrite
     property version_priority : Int32
 
     YAML.mapping({
-      ca_bundle:                {type: String, nilable: false, key: "caBundle"},
-      group:                    {type: String, nilable: true, key: "group"},
-      group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum"},
-      insecure_skip_tls_verify: {type: Bool, nilable: true, key: "insecureSkipTLSVerify"},
-      service:                  {type: KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference, nilable: false, key: "service"},
-      version:                  {type: String, nilable: true, key: "version"},
-      version_priority:         {type: Int32, nilable: false, key: "versionPriority"},
+      ca_bundle:                {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
+      group:                    {type: String, nilable: true, key: "group", getter: false, setter: false},
+      group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum", getter: false, setter: false},
+      insecure_skip_tls_verify: {type: Bool, nilable: true, key: "insecureSkipTLSVerify", getter: false, setter: false},
+      service:                  {type: KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference, nilable: false, key: "service", getter: false, setter: false},
+      version:                  {type: String, nilable: true, key: "version", getter: false, setter: false},
+      version_priority:         {type: Int32, nilable: false, key: "versionPriority", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      ca_bundle:                {type: String, nilable: false, key: "caBundle"},
-      group:                    {type: String, nilable: true, key: "group"},
-      group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum"},
-      insecure_skip_tls_verify: {type: Bool, nilable: true, key: "insecureSkipTLSVerify"},
-      service:                  {type: KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference, nilable: false, key: "service"},
-      version:                  {type: String, nilable: true, key: "version"},
-      version_priority:         {type: Int32, nilable: false, key: "versionPriority"},
+      ca_bundle:                {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
+      group:                    {type: String, nilable: true, key: "group", getter: false, setter: false},
+      group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum", getter: false, setter: false},
+      insecure_skip_tls_verify: {type: Bool, nilable: true, key: "insecureSkipTLSVerify", getter: false, setter: false},
+      service:                  {type: KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference, nilable: false, key: "service", getter: false, setter: false},
+      version:                  {type: String, nilable: true, key: "version", getter: false, setter: false},
+      version_priority:         {type: Int32, nilable: false, key: "versionPriority", getter: false, setter: false},
     }, true)
 
     def initialize(*, @ca_bundle : String | Nil = nil, @group : String | Nil = nil, @group_priority_minimum : Int32 | Nil = nil, @insecure_skip_tls_verify : Bool | Nil = nil, @service : KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference | Nil = nil, @version : String | Nil = nil, @version_priority : Int32 | Nil = nil)

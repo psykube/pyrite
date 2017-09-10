@@ -10,11 +10,11 @@ module Pyrite
     property command : Array(String) | Nil
 
     YAML.mapping({
-      command: {type: Array(String), nilable: true, key: "command"},
+      command: {type: Array(String), nilable: true, key: "command", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      command: {type: Array(String), nilable: true, key: "command"},
+      command: {type: Array(String), nilable: true, key: "command", getter: false, setter: false},
     }, true)
 
     def initialize(*, @command : Array | Nil = nil)

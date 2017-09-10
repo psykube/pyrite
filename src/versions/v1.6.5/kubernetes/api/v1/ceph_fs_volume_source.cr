@@ -25,21 +25,21 @@ module Pyrite
     property user : String | Nil
 
     YAML.mapping({
-      monitors:    {type: Array(String), nilable: false, key: "monitors"},
-      path:        {type: String, nilable: true, key: "path"},
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      secret_file: {type: String, nilable: true, key: "secretFile"},
-      secret_ref:  {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      user:        {type: String, nilable: true, key: "user"},
+      monitors:    {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
+      path:        {type: String, nilable: true, key: "path", getter: false, setter: false},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_file: {type: String, nilable: true, key: "secretFile", getter: false, setter: false},
+      secret_ref:  {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      user:        {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      monitors:    {type: Array(String), nilable: false, key: "monitors"},
-      path:        {type: String, nilable: true, key: "path"},
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      secret_file: {type: String, nilable: true, key: "secretFile"},
-      secret_ref:  {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      user:        {type: String, nilable: true, key: "user"},
+      monitors:    {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
+      path:        {type: String, nilable: true, key: "path", getter: false, setter: false},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_file: {type: String, nilable: true, key: "secretFile", getter: false, setter: false},
+      secret_ref:  {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      user:        {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     def initialize(*, @monitors : Array | Nil = nil, @path : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_file : String | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @user : String | Nil = nil)

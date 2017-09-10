@@ -21,17 +21,17 @@ module Pyrite
     property volume_id : String
 
     YAML.mapping({
-      fs_type:   {type: String, nilable: true, key: "fsType"},
-      partition: {type: Int32, nilable: true, key: "partition"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      volume_id: {type: String, nilable: false, key: "volumeID"},
+      fs_type:   {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      volume_id: {type: String, nilable: false, key: "volumeID", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:   {type: String, nilable: true, key: "fsType"},
-      partition: {type: Int32, nilable: true, key: "partition"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      volume_id: {type: String, nilable: false, key: "volumeID"},
+      fs_type:   {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      volume_id: {type: String, nilable: false, key: "volumeID", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @partition : Int32 | Nil = nil, @read_only : Bool | Nil = nil, @volume_id : String | Nil = nil)

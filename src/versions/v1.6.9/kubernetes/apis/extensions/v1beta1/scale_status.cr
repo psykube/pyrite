@@ -16,15 +16,15 @@ module Pyrite
     property target_selector : String | Nil
 
     YAML.mapping({
-      replicas:        {type: Int32, nilable: false, key: "replicas"},
-      selector:        {type: Hash(String, String), nilable: true, key: "selector"},
-      target_selector: {type: String, nilable: true, key: "targetSelector"},
+      replicas:        {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      selector:        {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
+      target_selector: {type: String, nilable: true, key: "targetSelector", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      replicas:        {type: Int32, nilable: false, key: "replicas"},
-      selector:        {type: Hash(String, String), nilable: true, key: "selector"},
-      target_selector: {type: String, nilable: true, key: "targetSelector"},
+      replicas:        {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      selector:        {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
+      target_selector: {type: String, nilable: true, key: "targetSelector", getter: false, setter: false},
     }, true)
 
     def initialize(*, @replicas : Int32 | Nil = nil, @selector : Hash(String, String) | Nil = nil, @target_selector : String | Nil = nil)

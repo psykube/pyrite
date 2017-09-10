@@ -10,11 +10,11 @@ module Pyrite
     property node_selector_terms : Array(Kubernetes::Api::V1::NodeSelectorTerm)
 
     YAML.mapping({
-      node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms"},
+      node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms"},
+      node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms", getter: false, setter: false},
     }, true)
 
     def initialize(*, @node_selector_terms : Array | Nil = nil)

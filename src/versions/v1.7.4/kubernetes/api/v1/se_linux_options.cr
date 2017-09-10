@@ -19,17 +19,17 @@ module Pyrite
     property user : String | Nil
 
     YAML.mapping({
-      level: {type: String, nilable: true, key: "level"},
-      role:  {type: String, nilable: true, key: "role"},
-      type:  {type: String, nilable: true, key: "type"},
-      user:  {type: String, nilable: true, key: "user"},
+      level: {type: String, nilable: true, key: "level", getter: false, setter: false},
+      role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
+      type:  {type: String, nilable: true, key: "type", getter: false, setter: false},
+      user:  {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      level: {type: String, nilable: true, key: "level"},
-      role:  {type: String, nilable: true, key: "role"},
-      type:  {type: String, nilable: true, key: "type"},
-      user:  {type: String, nilable: true, key: "user"},
+      level: {type: String, nilable: true, key: "level", getter: false, setter: false},
+      role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
+      type:  {type: String, nilable: true, key: "type", getter: false, setter: false},
+      user:  {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     def initialize(*, @level : String | Nil = nil, @role : String | Nil = nil, @type : String | Nil = nil, @user : String | Nil = nil)

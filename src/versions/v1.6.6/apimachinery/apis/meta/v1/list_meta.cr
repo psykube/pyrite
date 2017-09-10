@@ -13,13 +13,13 @@ module Pyrite
     property self_link : String | Nil
 
     YAML.mapping({
-      resource_version: {type: String, nilable: true, key: "resourceVersion"},
-      self_link:        {type: String, nilable: true, key: "selfLink"},
+      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
+      self_link:        {type: String, nilable: true, key: "selfLink", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      resource_version: {type: String, nilable: true, key: "resourceVersion"},
-      self_link:        {type: String, nilable: true, key: "selfLink"},
+      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
+      self_link:        {type: String, nilable: true, key: "selfLink", getter: false, setter: false},
     }, true)
 
     def initialize(*, @resource_version : String | Nil = nil, @self_link : String | Nil = nil)

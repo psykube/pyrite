@@ -16,15 +16,15 @@ module Pyrite
     property target_value : Int32
 
     YAML.mapping({
-      metric_name:  {type: String, nilable: false, key: "metricName"},
-      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target"},
-      target_value: {type: Int32, nilable: false, key: "targetValue"},
+      metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
+      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
+      target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      metric_name:  {type: String, nilable: false, key: "metricName"},
-      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target"},
-      target_value: {type: Int32, nilable: false, key: "targetValue"},
+      metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
+      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
+      target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
     }, true)
 
     def initialize(*, @metric_name : String | Nil = nil, @target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference | Nil = nil, @target_value : Int32 | Nil = nil)

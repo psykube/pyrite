@@ -19,17 +19,17 @@ module Pyrite
     property template : Kubernetes::Api::V1::PodTemplateSpec | Nil
 
     YAML.mapping({
-      min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds"},
-      replicas:          {type: Int32, nilable: true, key: "replicas"},
-      selector:          {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:          {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: true, key: "template"},
+      min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      replicas:          {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      selector:          {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:          {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds"},
-      replicas:          {type: Int32, nilable: true, key: "replicas"},
-      selector:          {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:          {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: true, key: "template"},
+      min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      replicas:          {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      selector:          {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:          {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
     }, true)
 
     def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil)

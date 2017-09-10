@@ -34,27 +34,27 @@ module Pyrite
     property template : Kubernetes::Api::V1::PodTemplateSpec
 
     YAML.mapping({
-      min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds"},
-      paused:                    {type: Bool, nilable: true, key: "paused"},
-      progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds"},
-      replicas:                  {type: Int32, nilable: true, key: "replicas"},
-      revision_history_limit:    {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      rollback_to:               {type: Kubernetes::Apis::Extensions::V1beta1::RollbackConfig, nilable: true, key: "rollbackTo"},
-      selector:                  {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      strategy:                  {type: Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy, nilable: true, key: "strategy"},
-      template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
+      min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      paused:                    {type: Bool, nilable: true, key: "paused", getter: false, setter: false},
+      progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds", getter: false, setter: false},
+      replicas:                  {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      revision_history_limit:    {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      rollback_to:               {type: Kubernetes::Apis::Extensions::V1beta1::RollbackConfig, nilable: true, key: "rollbackTo", getter: false, setter: false},
+      selector:                  {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      strategy:                  {type: Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy, nilable: true, key: "strategy", getter: false, setter: false},
+      template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds"},
-      paused:                    {type: Bool, nilable: true, key: "paused"},
-      progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds"},
-      replicas:                  {type: Int32, nilable: true, key: "replicas"},
-      revision_history_limit:    {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      rollback_to:               {type: Kubernetes::Apis::Extensions::V1beta1::RollbackConfig, nilable: true, key: "rollbackTo"},
-      selector:                  {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      strategy:                  {type: Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy, nilable: true, key: "strategy"},
-      template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
+      min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      paused:                    {type: Bool, nilable: true, key: "paused", getter: false, setter: false},
+      progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds", getter: false, setter: false},
+      replicas:                  {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      revision_history_limit:    {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      rollback_to:               {type: Kubernetes::Apis::Extensions::V1beta1::RollbackConfig, nilable: true, key: "rollbackTo", getter: false, setter: false},
+      selector:                  {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      strategy:                  {type: Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy, nilable: true, key: "strategy", getter: false, setter: false},
+      template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
     def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @paused : Bool | Nil = nil, @progress_deadline_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @rollback_to : Kubernetes::Apis::Extensions::V1beta1::RollbackConfig | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @strategy : Kubernetes::Apis::Extensions::V1beta1::DeploymentStrategy | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil)

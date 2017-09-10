@@ -22,19 +22,19 @@ module Pyrite
     property value : String | Nil
 
     YAML.mapping({
-      effect:             {type: String, nilable: true, key: "effect"},
-      key:                {type: String, nilable: true, key: "key"},
-      operator:           {type: String, nilable: true, key: "operator"},
-      toleration_seconds: {type: Int32, nilable: true, key: "tolerationSeconds"},
-      value:              {type: String, nilable: true, key: "value"},
+      effect:             {type: String, nilable: true, key: "effect", getter: false, setter: false},
+      key:                {type: String, nilable: true, key: "key", getter: false, setter: false},
+      operator:           {type: String, nilable: true, key: "operator", getter: false, setter: false},
+      toleration_seconds: {type: Int32, nilable: true, key: "tolerationSeconds", getter: false, setter: false},
+      value:              {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      effect:             {type: String, nilable: true, key: "effect"},
-      key:                {type: String, nilable: true, key: "key"},
-      operator:           {type: String, nilable: true, key: "operator"},
-      toleration_seconds: {type: Int32, nilable: true, key: "tolerationSeconds"},
-      value:              {type: String, nilable: true, key: "value"},
+      effect:             {type: String, nilable: true, key: "effect", getter: false, setter: false},
+      key:                {type: String, nilable: true, key: "key", getter: false, setter: false},
+      operator:           {type: String, nilable: true, key: "operator", getter: false, setter: false},
+      toleration_seconds: {type: Int32, nilable: true, key: "tolerationSeconds", getter: false, setter: false},
+      value:              {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
     def initialize(*, @effect : String | Nil = nil, @key : String | Nil = nil, @operator : String | Nil = nil, @toleration_seconds : Int32 | Nil = nil, @value : String | Nil = nil)

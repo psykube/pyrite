@@ -25,17 +25,17 @@ module Pyrite
     property resources : Array(String) | Nil
 
     YAML.mapping({
-      api_groups:   {type: Array(String), nilable: true, key: "apiGroups"},
-      api_versions: {type: Array(String), nilable: true, key: "apiVersions"},
-      operations:   {type: Array(String), nilable: true, key: "operations"},
-      resources:    {type: Array(String), nilable: true, key: "resources"},
+      api_groups:   {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
+      api_versions: {type: Array(String), nilable: true, key: "apiVersions", getter: false, setter: false},
+      operations:   {type: Array(String), nilable: true, key: "operations", getter: false, setter: false},
+      resources:    {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_groups:   {type: Array(String), nilable: true, key: "apiGroups"},
-      api_versions: {type: Array(String), nilable: true, key: "apiVersions"},
-      operations:   {type: Array(String), nilable: true, key: "operations"},
-      resources:    {type: Array(String), nilable: true, key: "resources"},
+      api_groups:   {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
+      api_versions: {type: Array(String), nilable: true, key: "apiVersions", getter: false, setter: false},
+      operations:   {type: Array(String), nilable: true, key: "operations", getter: false, setter: false},
+      resources:    {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_groups : Array | Nil = nil, @api_versions : Array | Nil = nil, @operations : Array | Nil = nil, @resources : Array | Nil = nil)

@@ -13,13 +13,13 @@ module Pyrite
     property port : Int32 | String
 
     YAML.mapping({
-      host: {type: String, nilable: true, key: "host"},
-      port: {type: Int32 | String, nilable: false, key: "port"},
+      host: {type: String, nilable: true, key: "host", getter: false, setter: false},
+      port: {type: Int32 | String, nilable: false, key: "port", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      host: {type: String, nilable: true, key: "host"},
-      port: {type: Int32 | String, nilable: false, key: "port"},
+      host: {type: String, nilable: true, key: "host", getter: false, setter: false},
+      port: {type: Int32 | String, nilable: false, key: "port", getter: false, setter: false},
     }, true)
 
     def initialize(*, @host : String | Nil = nil, @port : Int32 | String | Nil = nil)

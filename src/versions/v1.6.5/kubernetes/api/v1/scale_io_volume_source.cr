@@ -37,29 +37,29 @@ module Pyrite
     property volume_name : String | Nil
 
     YAML.mapping({
-      fs_type:           {type: String, nilable: true, key: "fsType"},
-      gateway:           {type: String, nilable: false, key: "gateway"},
-      protection_domain: {type: String, nilable: true, key: "protectionDomain"},
-      read_only:         {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:        {type: Kubernetes::Api::V1::LocalObjectReference, nilable: false, key: "secretRef"},
-      ssl_enabled:       {type: Bool, nilable: true, key: "sslEnabled"},
-      storage_mode:      {type: String, nilable: true, key: "storageMode"},
-      storage_pool:      {type: String, nilable: true, key: "storagePool"},
-      system:            {type: String, nilable: false, key: "system"},
-      volume_name:       {type: String, nilable: true, key: "volumeName"},
+      fs_type:           {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      gateway:           {type: String, nilable: false, key: "gateway", getter: false, setter: false},
+      protection_domain: {type: String, nilable: true, key: "protectionDomain", getter: false, setter: false},
+      read_only:         {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:        {type: Kubernetes::Api::V1::LocalObjectReference, nilable: false, key: "secretRef", getter: false, setter: false},
+      ssl_enabled:       {type: Bool, nilable: true, key: "sslEnabled", getter: false, setter: false},
+      storage_mode:      {type: String, nilable: true, key: "storageMode", getter: false, setter: false},
+      storage_pool:      {type: String, nilable: true, key: "storagePool", getter: false, setter: false},
+      system:            {type: String, nilable: false, key: "system", getter: false, setter: false},
+      volume_name:       {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:           {type: String, nilable: true, key: "fsType"},
-      gateway:           {type: String, nilable: false, key: "gateway"},
-      protection_domain: {type: String, nilable: true, key: "protectionDomain"},
-      read_only:         {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:        {type: Kubernetes::Api::V1::LocalObjectReference, nilable: false, key: "secretRef"},
-      ssl_enabled:       {type: Bool, nilable: true, key: "sslEnabled"},
-      storage_mode:      {type: String, nilable: true, key: "storageMode"},
-      storage_pool:      {type: String, nilable: true, key: "storagePool"},
-      system:            {type: String, nilable: false, key: "system"},
-      volume_name:       {type: String, nilable: true, key: "volumeName"},
+      fs_type:           {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      gateway:           {type: String, nilable: false, key: "gateway", getter: false, setter: false},
+      protection_domain: {type: String, nilable: true, key: "protectionDomain", getter: false, setter: false},
+      read_only:         {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:        {type: Kubernetes::Api::V1::LocalObjectReference, nilable: false, key: "secretRef", getter: false, setter: false},
+      ssl_enabled:       {type: Bool, nilable: true, key: "sslEnabled", getter: false, setter: false},
+      storage_mode:      {type: String, nilable: true, key: "storageMode", getter: false, setter: false},
+      storage_pool:      {type: String, nilable: true, key: "storagePool", getter: false, setter: false},
+      system:            {type: String, nilable: false, key: "system", getter: false, setter: false},
+      volume_name:       {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @gateway : String | Nil = nil, @protection_domain : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @ssl_enabled : Bool | Nil = nil, @storage_mode : String | Nil = nil, @storage_pool : String | Nil = nil, @system : String | Nil = nil, @volume_name : String | Nil = nil)

@@ -10,11 +10,11 @@ module Pyrite
     property finalizers : Array(String) | Nil
 
     YAML.mapping({
-      finalizers: {type: Array(String), nilable: true, key: "finalizers"},
+      finalizers: {type: Array(String), nilable: true, key: "finalizers", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      finalizers: {type: Array(String), nilable: true, key: "finalizers"},
+      finalizers: {type: Array(String), nilable: true, key: "finalizers", getter: false, setter: false},
     }, true)
 
     def initialize(*, @finalizers : Array | Nil = nil)

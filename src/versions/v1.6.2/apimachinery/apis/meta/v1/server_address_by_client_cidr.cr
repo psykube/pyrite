@@ -13,13 +13,13 @@ module Pyrite
     property server_address : String
 
     YAML.mapping({
-      client_cid_r:   {type: String, nilable: false, key: "clientCIDR"},
-      server_address: {type: String, nilable: false, key: "serverAddress"},
+      client_cid_r:   {type: String, nilable: false, key: "clientCIDR", getter: false, setter: false},
+      server_address: {type: String, nilable: false, key: "serverAddress", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      client_cid_r:   {type: String, nilable: false, key: "clientCIDR"},
-      server_address: {type: String, nilable: false, key: "serverAddress"},
+      client_cid_r:   {type: String, nilable: false, key: "clientCIDR", getter: false, setter: false},
+      server_address: {type: String, nilable: false, key: "serverAddress", getter: false, setter: false},
     }, true)
 
     def initialize(*, @client_cid_r : String | Nil = nil, @server_address : String | Nil = nil)

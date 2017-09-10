@@ -22,19 +22,19 @@ module Pyrite
     property protocol : String | Nil
 
     YAML.mapping({
-      container_port: {type: Int32, nilable: false, key: "containerPort"},
-      host_ip:        {type: String, nilable: true, key: "hostIP"},
-      host_port:      {type: Int32, nilable: true, key: "hostPort"},
-      name:           {type: String, nilable: true, key: "name"},
-      protocol:       {type: String, nilable: true, key: "protocol"},
+      container_port: {type: Int32, nilable: false, key: "containerPort", getter: false, setter: false},
+      host_ip:        {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
+      host_port:      {type: Int32, nilable: true, key: "hostPort", getter: false, setter: false},
+      name:           {type: String, nilable: true, key: "name", getter: false, setter: false},
+      protocol:       {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      container_port: {type: Int32, nilable: false, key: "containerPort"},
-      host_ip:        {type: String, nilable: true, key: "hostIP"},
-      host_port:      {type: Int32, nilable: true, key: "hostPort"},
-      name:           {type: String, nilable: true, key: "name"},
-      protocol:       {type: String, nilable: true, key: "protocol"},
+      container_port: {type: Int32, nilable: false, key: "containerPort", getter: false, setter: false},
+      host_ip:        {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
+      host_port:      {type: Int32, nilable: true, key: "hostPort", getter: false, setter: false},
+      name:           {type: String, nilable: true, key: "name", getter: false, setter: false},
+      protocol:       {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
     def initialize(*, @container_port : Int32 | Nil = nil, @host_ip : String | Nil = nil, @host_port : Int32 | Nil = nil, @name : String | Nil = nil, @protocol : String | Nil = nil)

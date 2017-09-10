@@ -19,17 +19,17 @@ module Pyrite
     property scale_target_ref : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference
 
     YAML.mapping({
-      max_replicas:     {type: Int32, nilable: false, key: "maxReplicas"},
-      metrics:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricSpec), nilable: true, key: "metrics"},
-      min_replicas:     {type: Int32, nilable: true, key: "minReplicas"},
-      scale_target_ref: {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef"},
+      max_replicas:     {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
+      metrics:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricSpec), nilable: true, key: "metrics", getter: false, setter: false},
+      min_replicas:     {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
+      scale_target_ref: {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      max_replicas:     {type: Int32, nilable: false, key: "maxReplicas"},
-      metrics:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricSpec), nilable: true, key: "metrics"},
-      min_replicas:     {type: Int32, nilable: true, key: "minReplicas"},
-      scale_target_ref: {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef"},
+      max_replicas:     {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
+      metrics:          {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricSpec), nilable: true, key: "metrics", getter: false, setter: false},
+      min_replicas:     {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
+      scale_target_ref: {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @max_replicas : Int32 | Nil = nil, @metrics : Array | Nil = nil, @min_replicas : Int32 | Nil = nil, @scale_target_ref : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference | Nil = nil)

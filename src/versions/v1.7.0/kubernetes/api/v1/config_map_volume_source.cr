@@ -21,17 +21,17 @@ module Pyrite
     property optional : Bool | Nil
 
     YAML.mapping({
-      default_mode: {type: Int32, nilable: true, key: "defaultMode"},
-      items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items"},
-      name:         {type: String, nilable: true, key: "name"},
-      optional:     {type: Bool, nilable: true, key: "optional"},
+      default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
+      items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
+      name:         {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional:     {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      default_mode: {type: Int32, nilable: true, key: "defaultMode"},
-      items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items"},
-      name:         {type: String, nilable: true, key: "name"},
-      optional:     {type: Bool, nilable: true, key: "optional"},
+      default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
+      items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
+      name:         {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional:     {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     def initialize(*, @default_mode : Int32 | Nil = nil, @items : Array | Nil = nil, @name : String | Nil = nil, @optional : Bool | Nil = nil)

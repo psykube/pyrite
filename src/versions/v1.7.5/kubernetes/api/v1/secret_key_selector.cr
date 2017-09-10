@@ -16,15 +16,15 @@ module Pyrite
     property optional : Bool | Nil
 
     YAML.mapping({
-      key:      {type: String, nilable: false, key: "key"},
-      name:     {type: String, nilable: true, key: "name"},
-      optional: {type: Bool, nilable: true, key: "optional"},
+      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
+      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      key:      {type: String, nilable: false, key: "key"},
-      name:     {type: String, nilable: true, key: "name"},
-      optional: {type: Bool, nilable: true, key: "optional"},
+      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
+      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     def initialize(*, @key : String | Nil = nil, @name : String | Nil = nil, @optional : Bool | Nil = nil)

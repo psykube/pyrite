@@ -22,19 +22,19 @@ module Pyrite
     property target_port : Int32 | String | Nil
 
     YAML.mapping({
-      name:        {type: String, nilable: true, key: "name"},
-      node_port:   {type: Int32, nilable: true, key: "nodePort"},
-      port:        {type: Int32, nilable: false, key: "port"},
-      protocol:    {type: String, nilable: true, key: "protocol"},
-      target_port: {type: Int32 | String, nilable: true, key: "targetPort"},
+      name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
+      node_port:   {type: Int32, nilable: true, key: "nodePort", getter: false, setter: false},
+      port:        {type: Int32, nilable: false, key: "port", getter: false, setter: false},
+      protocol:    {type: String, nilable: true, key: "protocol", getter: false, setter: false},
+      target_port: {type: Int32 | String, nilable: true, key: "targetPort", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      name:        {type: String, nilable: true, key: "name"},
-      node_port:   {type: Int32, nilable: true, key: "nodePort"},
-      port:        {type: Int32, nilable: false, key: "port"},
-      protocol:    {type: String, nilable: true, key: "protocol"},
-      target_port: {type: Int32 | String, nilable: true, key: "targetPort"},
+      name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
+      node_port:   {type: Int32, nilable: true, key: "nodePort", getter: false, setter: false},
+      port:        {type: Int32, nilable: false, key: "port", getter: false, setter: false},
+      protocol:    {type: String, nilable: true, key: "protocol", getter: false, setter: false},
+      target_port: {type: Int32 | String, nilable: true, key: "targetPort", getter: false, setter: false},
     }, true)
 
     def initialize(*, @name : String | Nil = nil, @node_port : Int32 | Nil = nil, @port : Int32 | Nil = nil, @protocol : String | Nil = nil, @target_port : Int32 | String | Nil = nil)

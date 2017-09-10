@@ -28,23 +28,23 @@ module Pyrite
     property started_at : Time | Nil
 
     YAML.mapping({
-      container_id: {type: String, nilable: true, key: "containerID"},
-      exit_code:    {type: Int32, nilable: false, key: "exitCode"},
-      finished_at:  {type: Time, nilable: true, key: "finishedAt"},
-      message:      {type: String, nilable: true, key: "message"},
-      reason:       {type: String, nilable: true, key: "reason"},
-      signal:       {type: Int32, nilable: true, key: "signal"},
-      started_at:   {type: Time, nilable: true, key: "startedAt"},
+      container_id: {type: String, nilable: true, key: "containerID", getter: false, setter: false},
+      exit_code:    {type: Int32, nilable: false, key: "exitCode", getter: false, setter: false},
+      finished_at:  {type: Time, nilable: true, key: "finishedAt", getter: false, setter: false},
+      message:      {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:       {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      signal:       {type: Int32, nilable: true, key: "signal", getter: false, setter: false},
+      started_at:   {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      container_id: {type: String, nilable: true, key: "containerID"},
-      exit_code:    {type: Int32, nilable: false, key: "exitCode"},
-      finished_at:  {type: Time, nilable: true, key: "finishedAt"},
-      message:      {type: String, nilable: true, key: "message"},
-      reason:       {type: String, nilable: true, key: "reason"},
-      signal:       {type: Int32, nilable: true, key: "signal"},
-      started_at:   {type: Time, nilable: true, key: "startedAt"},
+      container_id: {type: String, nilable: true, key: "containerID", getter: false, setter: false},
+      exit_code:    {type: Int32, nilable: false, key: "exitCode", getter: false, setter: false},
+      finished_at:  {type: Time, nilable: true, key: "finishedAt", getter: false, setter: false},
+      message:      {type: String, nilable: true, key: "message", getter: false, setter: false},
+      reason:       {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      signal:       {type: Int32, nilable: true, key: "signal", getter: false, setter: false},
+      started_at:   {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
     def initialize(*, @container_id : String | Nil = nil, @exit_code : Int32 | Nil = nil, @finished_at : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @signal : Int32 | Nil = nil, @started_at : Time | Nil = nil)

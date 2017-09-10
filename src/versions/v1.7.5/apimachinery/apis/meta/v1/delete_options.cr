@@ -25,21 +25,21 @@ module Pyrite
     property propagation_policy : String | Nil
 
     YAML.mapping({
-      api_version:          {type: String, nilable: true, key: "apiVersion"},
-      grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds"},
-      kind:                 {type: String, nilable: true, key: "kind"},
-      orphan_dependents:    {type: Bool, nilable: true, key: "orphanDependents"},
-      preconditions:        {type: Apimachinery::Apis::Meta::V1::Preconditions, nilable: true, key: "preconditions"},
-      propagation_policy:   {type: String, nilable: true, key: "propagationPolicy"},
+      api_version:          {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds", getter: false, setter: false},
+      kind:                 {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      orphan_dependents:    {type: Bool, nilable: true, key: "orphanDependents", getter: false, setter: false},
+      preconditions:        {type: Apimachinery::Apis::Meta::V1::Preconditions, nilable: true, key: "preconditions", getter: false, setter: false},
+      propagation_policy:   {type: String, nilable: true, key: "propagationPolicy", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:          {type: String, nilable: true, key: "apiVersion"},
-      grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds"},
-      kind:                 {type: String, nilable: true, key: "kind"},
-      orphan_dependents:    {type: Bool, nilable: true, key: "orphanDependents"},
-      preconditions:        {type: Apimachinery::Apis::Meta::V1::Preconditions, nilable: true, key: "preconditions"},
-      propagation_policy:   {type: String, nilable: true, key: "propagationPolicy"},
+      api_version:          {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds", getter: false, setter: false},
+      kind:                 {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      orphan_dependents:    {type: Bool, nilable: true, key: "orphanDependents", getter: false, setter: false},
+      preconditions:        {type: Apimachinery::Apis::Meta::V1::Preconditions, nilable: true, key: "preconditions", getter: false, setter: false},
+      propagation_policy:   {type: String, nilable: true, key: "propagationPolicy", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @grace_period_seconds : Int32 | Nil = nil, @kind : String | Nil = nil, @orphan_dependents : Bool | Nil = nil, @preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, @propagation_policy : String | Nil = nil)

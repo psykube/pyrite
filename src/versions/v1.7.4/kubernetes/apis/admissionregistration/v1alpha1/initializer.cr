@@ -16,15 +16,15 @@ module Pyrite
     property rules : Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule) | Nil
 
     YAML.mapping({
-      failure_policy: {type: String, nilable: true, key: "failurePolicy"},
-      name:           {type: String, nilable: false, key: "name"},
-      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules"},
+      failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
+      name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      failure_policy: {type: String, nilable: true, key: "failurePolicy"},
-      name:           {type: String, nilable: false, key: "name"},
-      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules"},
+      failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
+      name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
     def initialize(*, @failure_policy : String | Nil = nil, @name : String | Nil = nil, @rules : Array | Nil = nil)

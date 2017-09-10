@@ -23,19 +23,19 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
-      data:        {type: Hash(String, String), nilable: true, key: "data"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      string_data: {type: Hash(String, String), nilable: true, key: "stringData"},
-      type:        {type: String, nilable: true, key: "type"},
+      data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      string_data: {type: Hash(String, String), nilable: true, key: "stringData", getter: false, setter: false},
+      type:        {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
-      data:        {type: Hash(String, String), nilable: true, key: "data"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      string_data: {type: Hash(String, String), nilable: true, key: "stringData"},
-      type:        {type: String, nilable: true, key: "type"},
+      data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      string_data: {type: Hash(String, String), nilable: true, key: "stringData", getter: false, setter: false},
+      type:        {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @data : Hash(String, String) | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @string_data : Hash(String, String) | Nil = nil, @type : String | Nil = nil)

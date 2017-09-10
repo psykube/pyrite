@@ -13,13 +13,13 @@ module Pyrite
     property required_during_scheduling_ignored_during_execution : Array(Kubernetes::Api::V1::PodAffinityTerm) | Nil
 
     YAML.mapping({
-      preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::WeightedPodAffinityTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution"},
-      required_during_scheduling_ignored_during_execution:  {type: Array(Kubernetes::Api::V1::PodAffinityTerm), nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution"},
+      preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::WeightedPodAffinityTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
+      required_during_scheduling_ignored_during_execution:  {type: Array(Kubernetes::Api::V1::PodAffinityTerm), nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::WeightedPodAffinityTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution"},
-      required_during_scheduling_ignored_during_execution:  {type: Array(Kubernetes::Api::V1::PodAffinityTerm), nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution"},
+      preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::WeightedPodAffinityTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
+      required_during_scheduling_ignored_during_execution:  {type: Array(Kubernetes::Api::V1::PodAffinityTerm), nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
     }, true)
 
     def initialize(*, @preferred_during_scheduling_ignored_during_execution : Array | Nil = nil, @required_during_scheduling_ignored_during_execution : Array | Nil = nil)

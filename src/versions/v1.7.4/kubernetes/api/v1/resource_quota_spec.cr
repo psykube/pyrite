@@ -13,13 +13,13 @@ module Pyrite
     property scopes : Array(String) | Nil
 
     YAML.mapping({
-      hard:   {type: Hash(String, String), nilable: true, key: "hard"},
-      scopes: {type: Array(String), nilable: true, key: "scopes"},
+      hard:   {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
+      scopes: {type: Array(String), nilable: true, key: "scopes", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      hard:   {type: Hash(String, String), nilable: true, key: "hard"},
-      scopes: {type: Array(String), nilable: true, key: "scopes"},
+      hard:   {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
+      scopes: {type: Array(String), nilable: true, key: "scopes", getter: false, setter: false},
     }, true)
 
     def initialize(*, @hard : Hash(String, String) | Nil = nil, @scopes : Array | Nil = nil)

@@ -16,15 +16,15 @@ module Pyrite
     property kind : String | Nil
 
     YAML.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups"},
-      kind:        {type: String, nilable: true, key: "kind"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups", getter: false, setter: false},
+      kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups"},
-      kind:        {type: String, nilable: true, key: "kind"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups", getter: false, setter: false},
+      kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @groups : Array | Nil = nil, @kind : String | Nil = nil)

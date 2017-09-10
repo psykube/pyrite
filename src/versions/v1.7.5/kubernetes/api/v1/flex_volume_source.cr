@@ -22,19 +22,19 @@ module Pyrite
     property secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil
 
     YAML.mapping({
-      driver:     {type: String, nilable: false, key: "driver"},
-      fs_type:    {type: String, nilable: true, key: "fsType"},
-      options:    {type: Hash(String, String), nilable: true, key: "options"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
+      driver:     {type: String, nilable: false, key: "driver", getter: false, setter: false},
+      fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      options:    {type: Hash(String, String), nilable: true, key: "options", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      driver:     {type: String, nilable: false, key: "driver"},
-      fs_type:    {type: String, nilable: true, key: "fsType"},
-      options:    {type: Hash(String, String), nilable: true, key: "options"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
+      driver:     {type: String, nilable: false, key: "driver", getter: false, setter: false},
+      fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      options:    {type: Hash(String, String), nilable: true, key: "options", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @driver : String | Nil = nil, @fs_type : String | Nil = nil, @options : Hash(String, String) | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil)

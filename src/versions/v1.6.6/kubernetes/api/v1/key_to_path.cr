@@ -16,15 +16,15 @@ module Pyrite
     property path : String
 
     YAML.mapping({
-      key:  {type: String, nilable: false, key: "key"},
-      mode: {type: Int32, nilable: true, key: "mode"},
-      path: {type: String, nilable: false, key: "path"},
+      key:  {type: String, nilable: false, key: "key", getter: false, setter: false},
+      mode: {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
+      path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      key:  {type: String, nilable: false, key: "key"},
-      mode: {type: Int32, nilable: true, key: "mode"},
-      path: {type: String, nilable: false, key: "path"},
+      key:  {type: String, nilable: false, key: "key", getter: false, setter: false},
+      mode: {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
+      path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
     def initialize(*, @key : String | Nil = nil, @mode : Int32 | Nil = nil, @path : String | Nil = nil)

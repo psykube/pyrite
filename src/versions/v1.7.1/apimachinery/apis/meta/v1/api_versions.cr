@@ -19,17 +19,17 @@ module Pyrite
     property versions : Array(String)
 
     YAML.mapping({
-      api_version:                     {type: String, nilable: true, key: "apiVersion"},
-      kind:                            {type: String, nilable: true, key: "kind"},
-      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs"},
-      versions:                        {type: Array(String), nilable: false, key: "versions"},
+      api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs", getter: false, setter: false},
+      versions:                        {type: Array(String), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:                     {type: String, nilable: true, key: "apiVersion"},
-      kind:                            {type: String, nilable: true, key: "kind"},
-      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs"},
-      versions:                        {type: Array(String), nilable: false, key: "versions"},
+      api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs", getter: false, setter: false},
+      versions:                        {type: Array(String), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @server_address_by_client_cid_rs : Array | Nil = nil, @versions : Array | Nil = nil)

@@ -26,19 +26,19 @@ module Pyrite
     property supplemental_groups : Array(Int32) | Nil
 
     YAML.mapping({
-      fs_group:            {type: Int32, nilable: true, key: "fsGroup"},
-      run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot"},
-      run_as_user:         {type: Int32, nilable: true, key: "runAsUser"},
-      se_linux_options:    {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
-      supplemental_groups: {type: Array(Int32), nilable: true, key: "supplementalGroups"},
+      fs_group:            {type: Int32, nilable: true, key: "fsGroup", getter: false, setter: false},
+      run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
+      run_as_user:         {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},
+      se_linux_options:    {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
+      supplemental_groups: {type: Array(Int32), nilable: true, key: "supplementalGroups", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_group:            {type: Int32, nilable: true, key: "fsGroup"},
-      run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot"},
-      run_as_user:         {type: Int32, nilable: true, key: "runAsUser"},
-      se_linux_options:    {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
-      supplemental_groups: {type: Array(Int32), nilable: true, key: "supplementalGroups"},
+      fs_group:            {type: Int32, nilable: true, key: "fsGroup", getter: false, setter: false},
+      run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
+      run_as_user:         {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},
+      se_linux_options:    {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
+      supplemental_groups: {type: Array(Int32), nilable: true, key: "supplementalGroups", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_group : Int32 | Nil = nil, @run_as_non_root : Bool | Nil = nil, @run_as_user : Int32 | Nil = nil, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil, @supplemental_groups : Array | Nil = nil)

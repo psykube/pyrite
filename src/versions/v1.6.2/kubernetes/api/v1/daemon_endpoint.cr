@@ -10,11 +10,11 @@ module Pyrite
     property port : Int32
 
     YAML.mapping({
-      port: {type: Int32, nilable: false, key: "Port"},
+      port: {type: Int32, nilable: false, key: "Port", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      port: {type: Int32, nilable: false, key: "Port"},
+      port: {type: Int32, nilable: false, key: "Port", getter: false, setter: false},
     }, true)
 
     def initialize(*, @port : Int32 | Nil = nil)

@@ -13,13 +13,13 @@ module Pyrite
     property items : Array(Kubernetes::Api::V1::DownwardAPIVolumeFile) | Nil
 
     YAML.mapping({
-      default_mode: {type: Int32, nilable: true, key: "defaultMode"},
-      items:        {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items"},
+      default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
+      items:        {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      default_mode: {type: Int32, nilable: true, key: "defaultMode"},
-      items:        {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items"},
+      default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
+      items:        {type: Array(Kubernetes::Api::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
     def initialize(*, @default_mode : Int32 | Nil = nil, @items : Array | Nil = nil)

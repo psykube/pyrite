@@ -13,13 +13,13 @@ module Pyrite
     property dataset_uui_d : String | Nil
 
     YAML.mapping({
-      dataset_name:  {type: String, nilable: true, key: "datasetName"},
-      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID"},
+      dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
+      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      dataset_name:  {type: String, nilable: true, key: "datasetName"},
-      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID"},
+      dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
+      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)
 
     def initialize(*, @dataset_name : String | Nil = nil, @dataset_uui_d : String | Nil = nil)

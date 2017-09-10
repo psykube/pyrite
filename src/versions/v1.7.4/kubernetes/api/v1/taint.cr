@@ -19,17 +19,17 @@ module Pyrite
     property value : String | Nil
 
     YAML.mapping({
-      effect:     {type: String, nilable: false, key: "effect"},
-      key:        {type: String, nilable: false, key: "key"},
-      time_added: {type: Time, nilable: true, key: "timeAdded"},
-      value:      {type: String, nilable: true, key: "value"},
+      effect:     {type: String, nilable: false, key: "effect", getter: false, setter: false},
+      key:        {type: String, nilable: false, key: "key", getter: false, setter: false},
+      time_added: {type: Time, nilable: true, key: "timeAdded", getter: false, setter: false},
+      value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      effect:     {type: String, nilable: false, key: "effect"},
-      key:        {type: String, nilable: false, key: "key"},
-      time_added: {type: Time, nilable: true, key: "timeAdded"},
-      value:      {type: String, nilable: true, key: "value"},
+      effect:     {type: String, nilable: false, key: "effect", getter: false, setter: false},
+      key:        {type: String, nilable: false, key: "key", getter: false, setter: false},
+      time_added: {type: Time, nilable: true, key: "timeAdded", getter: false, setter: false},
+      value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
     def initialize(*, @effect : String | Nil = nil, @key : String | Nil = nil, @time_added : Time | Nil = nil, @value : String | Nil = nil)

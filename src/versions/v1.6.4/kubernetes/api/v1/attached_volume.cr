@@ -13,13 +13,13 @@ module Pyrite
     property name : String
 
     YAML.mapping({
-      device_path: {type: String, nilable: false, key: "devicePath"},
-      name:        {type: String, nilable: false, key: "name"},
+      device_path: {type: String, nilable: false, key: "devicePath", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      device_path: {type: String, nilable: false, key: "devicePath"},
-      name:        {type: String, nilable: false, key: "name"},
+      device_path: {type: String, nilable: false, key: "devicePath", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     def initialize(*, @device_path : String | Nil = nil, @name : String | Nil = nil)

@@ -10,11 +10,11 @@ module Pyrite
     property phase : String | Nil
 
     YAML.mapping({
-      phase: {type: String, nilable: true, key: "phase"},
+      phase: {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      phase: {type: String, nilable: true, key: "phase"},
+      phase: {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
     def initialize(*, @phase : String | Nil = nil)

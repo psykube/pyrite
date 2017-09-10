@@ -22,19 +22,19 @@ module Pyrite
     property volume_namespace : String | Nil
 
     YAML.mapping({
-      fs_type:          {type: String, nilable: true, key: "fsType"},
-      read_only:        {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:       {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      volume_name:      {type: String, nilable: true, key: "volumeName"},
-      volume_namespace: {type: String, nilable: true, key: "volumeNamespace"},
+      fs_type:          {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:       {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      volume_name:      {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
+      volume_namespace: {type: String, nilable: true, key: "volumeNamespace", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:          {type: String, nilable: true, key: "fsType"},
-      read_only:        {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref:       {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      volume_name:      {type: String, nilable: true, key: "volumeName"},
-      volume_namespace: {type: String, nilable: true, key: "volumeNamespace"},
+      fs_type:          {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref:       {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      volume_name:      {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
+      volume_namespace: {type: String, nilable: true, key: "volumeNamespace", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @volume_name : String | Nil = nil, @volume_namespace : String | Nil = nil)

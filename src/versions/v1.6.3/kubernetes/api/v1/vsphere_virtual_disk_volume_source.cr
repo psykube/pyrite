@@ -13,13 +13,13 @@ module Pyrite
     property volume_path : String
 
     YAML.mapping({
-      fs_type:     {type: String, nilable: true, key: "fsType"},
-      volume_path: {type: String, nilable: false, key: "volumePath"},
+      fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      volume_path: {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:     {type: String, nilable: true, key: "fsType"},
-      volume_path: {type: String, nilable: false, key: "volumePath"},
+      fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      volume_path: {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @volume_path : String | Nil = nil)

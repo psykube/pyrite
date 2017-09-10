@@ -16,15 +16,15 @@ module Pyrite
     property reason : String | Nil
 
     YAML.mapping({
-      allowed:          {type: Bool, nilable: false, key: "allowed"},
-      evaluation_error: {type: String, nilable: true, key: "evaluationError"},
-      reason:           {type: String, nilable: true, key: "reason"},
+      allowed:          {type: Bool, nilable: false, key: "allowed", getter: false, setter: false},
+      evaluation_error: {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
+      reason:           {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      allowed:          {type: Bool, nilable: false, key: "allowed"},
-      evaluation_error: {type: String, nilable: true, key: "evaluationError"},
-      reason:           {type: String, nilable: true, key: "reason"},
+      allowed:          {type: Bool, nilable: false, key: "allowed", getter: false, setter: false},
+      evaluation_error: {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
+      reason:           {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
     def initialize(*, @allowed : Bool | Nil = nil, @evaluation_error : String | Nil = nil, @reason : String | Nil = nil)

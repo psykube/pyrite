@@ -9,11 +9,11 @@ module Pyrite
     property revision : Int32 | Nil
 
     YAML.mapping({
-      revision: {type: Int32, nilable: true, key: "revision"},
+      revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      revision: {type: Int32, nilable: true, key: "revision"},
+      revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
     def initialize(*, @revision : Int32 | Nil = nil)

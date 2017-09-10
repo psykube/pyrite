@@ -25,21 +25,21 @@ module Pyrite
     property se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil
 
     YAML.mapping({
-      capabilities:              {type: Kubernetes::Api::V1::Capabilities, nilable: true, key: "capabilities"},
-      privileged:                {type: Bool, nilable: true, key: "privileged"},
-      read_only_root_filesystem: {type: Bool, nilable: true, key: "readOnlyRootFilesystem"},
-      run_as_non_root:           {type: Bool, nilable: true, key: "runAsNonRoot"},
-      run_as_user:               {type: Int32, nilable: true, key: "runAsUser"},
-      se_linux_options:          {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
+      capabilities:              {type: Kubernetes::Api::V1::Capabilities, nilable: true, key: "capabilities", getter: false, setter: false},
+      privileged:                {type: Bool, nilable: true, key: "privileged", getter: false, setter: false},
+      read_only_root_filesystem: {type: Bool, nilable: true, key: "readOnlyRootFilesystem", getter: false, setter: false},
+      run_as_non_root:           {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
+      run_as_user:               {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},
+      se_linux_options:          {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      capabilities:              {type: Kubernetes::Api::V1::Capabilities, nilable: true, key: "capabilities"},
-      privileged:                {type: Bool, nilable: true, key: "privileged"},
-      read_only_root_filesystem: {type: Bool, nilable: true, key: "readOnlyRootFilesystem"},
-      run_as_non_root:           {type: Bool, nilable: true, key: "runAsNonRoot"},
-      run_as_user:               {type: Int32, nilable: true, key: "runAsUser"},
-      se_linux_options:          {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions"},
+      capabilities:              {type: Kubernetes::Api::V1::Capabilities, nilable: true, key: "capabilities", getter: false, setter: false},
+      privileged:                {type: Bool, nilable: true, key: "privileged", getter: false, setter: false},
+      read_only_root_filesystem: {type: Bool, nilable: true, key: "readOnlyRootFilesystem", getter: false, setter: false},
+      run_as_non_root:           {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
+      run_as_user:               {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},
+      se_linux_options:          {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
     def initialize(*, @capabilities : Kubernetes::Api::V1::Capabilities | Nil = nil, @privileged : Bool | Nil = nil, @read_only_root_filesystem : Bool | Nil = nil, @run_as_non_root : Bool | Nil = nil, @run_as_user : Int32 | Nil = nil, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil)

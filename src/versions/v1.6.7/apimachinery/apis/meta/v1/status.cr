@@ -31,25 +31,25 @@ module Pyrite
     property status : String | Nil
 
     YAML.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      code:        {type: Int32, nilable: true, key: "code"},
-      details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details"},
-      kind:        {type: String, nilable: true, key: "kind"},
-      message:     {type: String, nilable: true, key: "message"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata"},
-      reason:      {type: String, nilable: true, key: "reason"},
-      status:      {type: String, nilable: true, key: "status"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      code:        {type: Int32, nilable: true, key: "code", getter: false, setter: false},
+      details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details", getter: false, setter: false},
+      kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      message:     {type: String, nilable: true, key: "message", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      reason:      {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      status:      {type: String, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion"},
-      code:        {type: Int32, nilable: true, key: "code"},
-      details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details"},
-      kind:        {type: String, nilable: true, key: "kind"},
-      message:     {type: String, nilable: true, key: "message"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata"},
-      reason:      {type: String, nilable: true, key: "reason"},
-      status:      {type: String, nilable: true, key: "status"},
+      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      code:        {type: Int32, nilable: true, key: "code", getter: false, setter: false},
+      details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details", getter: false, setter: false},
+      kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      message:     {type: String, nilable: true, key: "message", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      reason:      {type: String, nilable: true, key: "reason", getter: false, setter: false},
+      status:      {type: String, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @code : Int32 | Nil = nil, @details : Apimachinery::Apis::Meta::V1::StatusDetails | Nil = nil, @kind : String | Nil = nil, @message : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil, @reason : String | Nil = nil, @status : String | Nil = nil)

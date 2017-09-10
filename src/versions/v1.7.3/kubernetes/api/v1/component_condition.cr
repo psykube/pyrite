@@ -19,17 +19,17 @@ module Pyrite
     property type : String
 
     YAML.mapping({
-      error:   {type: String, nilable: true, key: "error"},
-      message: {type: String, nilable: true, key: "message"},
-      status:  {type: String, nilable: false, key: "status"},
-      type:    {type: String, nilable: false, key: "type"},
+      error:   {type: String, nilable: true, key: "error", getter: false, setter: false},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      status:  {type: String, nilable: false, key: "status", getter: false, setter: false},
+      type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      error:   {type: String, nilable: true, key: "error"},
-      message: {type: String, nilable: true, key: "message"},
-      status:  {type: String, nilable: false, key: "status"},
-      type:    {type: String, nilable: false, key: "type"},
+      error:   {type: String, nilable: true, key: "error", getter: false, setter: false},
+      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
+      status:  {type: String, nilable: false, key: "status", getter: false, setter: false},
+      type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @error : String | Nil = nil, @message : String | Nil = nil, @status : String | Nil = nil, @type : String | Nil = nil)

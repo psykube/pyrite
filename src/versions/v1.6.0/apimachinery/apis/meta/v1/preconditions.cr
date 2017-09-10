@@ -10,11 +10,11 @@ module Pyrite
     property uid : String | Nil
 
     YAML.mapping({
-      uid: {type: String, nilable: true, key: "uid"},
+      uid: {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      uid: {type: String, nilable: true, key: "uid"},
+      uid: {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
     def initialize(*, @uid : String | Nil = nil)

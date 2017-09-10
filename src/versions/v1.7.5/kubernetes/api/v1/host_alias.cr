@@ -13,13 +13,13 @@ module Pyrite
     property ip : String | Nil
 
     YAML.mapping({
-      hostnames: {type: Array(String), nilable: true, key: "hostnames"},
-      ip:        {type: String, nilable: true, key: "ip"},
+      hostnames: {type: Array(String), nilable: true, key: "hostnames", getter: false, setter: false},
+      ip:        {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      hostnames: {type: Array(String), nilable: true, key: "hostnames"},
-      ip:        {type: String, nilable: true, key: "ip"},
+      hostnames: {type: Array(String), nilable: true, key: "hostnames", getter: false, setter: false},
+      ip:        {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)
 
     def initialize(*, @hostnames : Array | Nil = nil, @ip : String | Nil = nil)

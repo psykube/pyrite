@@ -16,15 +16,15 @@ module Pyrite
     property phase : String | Nil
 
     YAML.mapping({
-      access_modes: {type: Array(String), nilable: true, key: "accessModes"},
-      capacity:     {type: Hash(String, String), nilable: true, key: "capacity"},
-      phase:        {type: String, nilable: true, key: "phase"},
+      access_modes: {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
+      capacity:     {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
+      phase:        {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      access_modes: {type: Array(String), nilable: true, key: "accessModes"},
-      capacity:     {type: Hash(String, String), nilable: true, key: "capacity"},
-      phase:        {type: String, nilable: true, key: "phase"},
+      access_modes: {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
+      capacity:     {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
+      phase:        {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
     def initialize(*, @access_modes : Array | Nil = nil, @capacity : Hash(String, String) | Nil = nil, @phase : String | Nil = nil)

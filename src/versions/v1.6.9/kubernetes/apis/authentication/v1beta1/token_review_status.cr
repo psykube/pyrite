@@ -16,15 +16,15 @@ module Pyrite
     property user : Kubernetes::Apis::Authentication::V1beta1::UserInfo | Nil
 
     YAML.mapping({
-      authenticated: {type: Bool, nilable: true, key: "authenticated"},
-      error:         {type: String, nilable: true, key: "error"},
-      user:          {type: Kubernetes::Apis::Authentication::V1beta1::UserInfo, nilable: true, key: "user"},
+      authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
+      error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
+      user:          {type: Kubernetes::Apis::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      authenticated: {type: Bool, nilable: true, key: "authenticated"},
-      error:         {type: String, nilable: true, key: "error"},
-      user:          {type: Kubernetes::Apis::Authentication::V1beta1::UserInfo, nilable: true, key: "user"},
+      authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
+      error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
+      user:          {type: Kubernetes::Apis::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     def initialize(*, @authenticated : Bool | Nil = nil, @error : String | Nil = nil, @user : Kubernetes::Apis::Authentication::V1beta1::UserInfo | Nil = nil)

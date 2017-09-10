@@ -31,25 +31,25 @@ module Pyrite
     property updated_number_scheduled : Int32 | Nil
 
     YAML.mapping({
-      current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled"},
-      desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled"},
-      number_available:         {type: Int32, nilable: true, key: "numberAvailable"},
-      number_misscheduled:      {type: Int32, nilable: false, key: "numberMisscheduled"},
-      number_ready:             {type: Int32, nilable: false, key: "numberReady"},
-      number_unavailable:       {type: Int32, nilable: true, key: "numberUnavailable"},
-      observed_generation:      {type: Int32, nilable: true, key: "observedGeneration"},
-      updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled"},
+      current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled", getter: false, setter: false},
+      desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled", getter: false, setter: false},
+      number_available:         {type: Int32, nilable: true, key: "numberAvailable", getter: false, setter: false},
+      number_misscheduled:      {type: Int32, nilable: false, key: "numberMisscheduled", getter: false, setter: false},
+      number_ready:             {type: Int32, nilable: false, key: "numberReady", getter: false, setter: false},
+      number_unavailable:       {type: Int32, nilable: true, key: "numberUnavailable", getter: false, setter: false},
+      observed_generation:      {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled"},
-      desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled"},
-      number_available:         {type: Int32, nilable: true, key: "numberAvailable"},
-      number_misscheduled:      {type: Int32, nilable: false, key: "numberMisscheduled"},
-      number_ready:             {type: Int32, nilable: false, key: "numberReady"},
-      number_unavailable:       {type: Int32, nilable: true, key: "numberUnavailable"},
-      observed_generation:      {type: Int32, nilable: true, key: "observedGeneration"},
-      updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled"},
+      current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled", getter: false, setter: false},
+      desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled", getter: false, setter: false},
+      number_available:         {type: Int32, nilable: true, key: "numberAvailable", getter: false, setter: false},
+      number_misscheduled:      {type: Int32, nilable: false, key: "numberMisscheduled", getter: false, setter: false},
+      number_ready:             {type: Int32, nilable: false, key: "numberReady", getter: false, setter: false},
+      number_unavailable:       {type: Int32, nilable: true, key: "numberUnavailable", getter: false, setter: false},
+      observed_generation:      {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled", getter: false, setter: false},
     }, true)
 
     def initialize(*, @current_number_scheduled : Int32 | Nil = nil, @desired_number_scheduled : Int32 | Nil = nil, @number_available : Int32 | Nil = nil, @number_misscheduled : Int32 | Nil = nil, @number_ready : Int32 | Nil = nil, @number_unavailable : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @updated_number_scheduled : Int32 | Nil = nil)

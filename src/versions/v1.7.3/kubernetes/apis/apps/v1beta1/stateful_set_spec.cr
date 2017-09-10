@@ -31,25 +31,25 @@ module Pyrite
     property volume_claim_templates : Array(Kubernetes::Api::V1::PersistentVolumeClaim) | Nil
 
     YAML.mapping({
-      pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy"},
-      replicas:               {type: Int32, nilable: true, key: "replicas"},
-      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      service_name:           {type: String, nilable: false, key: "serviceName"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      update_strategy:        {type: Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy, nilable: true, key: "updateStrategy"},
-      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates"},
+      pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy", getter: false, setter: false},
+      replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      service_name:           {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      update_strategy:        {type: Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
+      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy"},
-      replicas:               {type: Int32, nilable: true, key: "replicas"},
-      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      service_name:           {type: String, nilable: false, key: "serviceName"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      update_strategy:        {type: Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy, nilable: true, key: "updateStrategy"},
-      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates"},
+      pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy", getter: false, setter: false},
+      replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
+      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      service_name:           {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      update_strategy:        {type: Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
+      volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
     def initialize(*, @pod_management_policy : String | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @service_name : String | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil, @update_strategy : Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy | Nil = nil, @volume_claim_templates : Array | Nil = nil)

@@ -18,15 +18,15 @@ module Pyrite
     property optional : Bool | Nil
 
     YAML.mapping({
-      items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items"},
-      name:     {type: String, nilable: true, key: "name"},
-      optional: {type: Bool, nilable: true, key: "optional"},
+      items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
+      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items"},
-      name:     {type: String, nilable: true, key: "name"},
-      optional: {type: Bool, nilable: true, key: "optional"},
+      items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
+      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
+      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
     def initialize(*, @items : Array | Nil = nil, @name : String | Nil = nil, @optional : Bool | Nil = nil)

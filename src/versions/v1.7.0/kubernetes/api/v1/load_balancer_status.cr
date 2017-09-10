@@ -10,11 +10,11 @@ module Pyrite
     property ingress : Array(Kubernetes::Api::V1::LoadBalancerIngress) | Nil
 
     YAML.mapping({
-      ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress"},
+      ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress"},
+      ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress", getter: false, setter: false},
     }, true)
 
     def initialize(*, @ingress : Array | Nil = nil)

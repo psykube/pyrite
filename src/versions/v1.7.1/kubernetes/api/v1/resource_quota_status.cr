@@ -13,13 +13,13 @@ module Pyrite
     property used : Hash(String, String) | Nil
 
     YAML.mapping({
-      hard: {type: Hash(String, String), nilable: true, key: "hard"},
-      used: {type: Hash(String, String), nilable: true, key: "used"},
+      hard: {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
+      used: {type: Hash(String, String), nilable: true, key: "used", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      hard: {type: Hash(String, String), nilable: true, key: "hard"},
-      used: {type: Hash(String, String), nilable: true, key: "used"},
+      hard: {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
+      used: {type: Hash(String, String), nilable: true, key: "used", getter: false, setter: false},
     }, true)
 
     def initialize(*, @hard : Hash(String, String) | Nil = nil, @used : Hash(String, String) | Nil = nil)

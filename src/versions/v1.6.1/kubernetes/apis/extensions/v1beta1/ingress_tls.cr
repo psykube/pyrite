@@ -13,13 +13,13 @@ module Pyrite
     property secret_name : String | Nil
 
     YAML.mapping({
-      hosts:       {type: Array(String), nilable: true, key: "hosts"},
-      secret_name: {type: String, nilable: true, key: "secretName"},
+      hosts:       {type: Array(String), nilable: true, key: "hosts", getter: false, setter: false},
+      secret_name: {type: String, nilable: true, key: "secretName", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      hosts:       {type: Array(String), nilable: true, key: "hosts"},
-      secret_name: {type: String, nilable: true, key: "secretName"},
+      hosts:       {type: Array(String), nilable: true, key: "hosts", getter: false, setter: false},
+      secret_name: {type: String, nilable: true, key: "secretName", getter: false, setter: false},
     }, true)
 
     def initialize(*, @hosts : Array | Nil = nil, @secret_name : String | Nil = nil)

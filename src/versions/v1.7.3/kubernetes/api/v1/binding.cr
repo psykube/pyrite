@@ -17,15 +17,15 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Binding", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: "target"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Binding", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: "target"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @target : Kubernetes::Api::V1::ObjectReference | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property verbs : Array(String)
 
     YAML.mapping({
-      kind:        {type: String, nilable: false, key: "kind"},
-      name:        {type: String, nilable: false, key: "name"},
-      namespaced:  {type: Bool, nilable: false, key: "namespaced"},
-      short_names: {type: Array(String), nilable: true, key: "shortNames"},
-      verbs:       {type: Array(String), nilable: false, key: "verbs"},
+      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
+      namespaced:  {type: Bool, nilable: false, key: "namespaced", getter: false, setter: false},
+      short_names: {type: Array(String), nilable: true, key: "shortNames", getter: false, setter: false},
+      verbs:       {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      kind:        {type: String, nilable: false, key: "kind"},
-      name:        {type: String, nilable: false, key: "name"},
-      namespaced:  {type: Bool, nilable: false, key: "namespaced"},
-      short_names: {type: Array(String), nilable: true, key: "shortNames"},
-      verbs:       {type: Array(String), nilable: false, key: "verbs"},
+      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
+      namespaced:  {type: Bool, nilable: false, key: "namespaced", getter: false, setter: false},
+      short_names: {type: Array(String), nilable: true, key: "shortNames", getter: false, setter: false},
+      verbs:       {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     def initialize(*, @kind : String | Nil = nil, @name : String | Nil = nil, @namespaced : Bool | Nil = nil, @short_names : Array | Nil = nil, @verbs : Array | Nil = nil)

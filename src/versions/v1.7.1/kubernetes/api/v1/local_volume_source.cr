@@ -10,11 +10,11 @@ module Pyrite
     property path : String
 
     YAML.mapping({
-      path: {type: String, nilable: false, key: "path"},
+      path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      path: {type: String, nilable: false, key: "path"},
+      path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
     def initialize(*, @path : String | Nil = nil)

@@ -25,21 +25,21 @@ module Pyrite
     property replicas : Int32
 
     YAML.mapping({
-      available_replicas:     {type: Int32, nilable: true, key: "availableReplicas"},
-      conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions"},
-      fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas"},
-      observed_generation:    {type: Int32, nilable: true, key: "observedGeneration"},
-      ready_replicas:         {type: Int32, nilable: true, key: "readyReplicas"},
-      replicas:               {type: Int32, nilable: false, key: "replicas"},
+      available_replicas:     {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
+      conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas", getter: false, setter: false},
+      observed_generation:    {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      ready_replicas:         {type: Int32, nilable: true, key: "readyReplicas", getter: false, setter: false},
+      replicas:               {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      available_replicas:     {type: Int32, nilable: true, key: "availableReplicas"},
-      conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions"},
-      fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas"},
-      observed_generation:    {type: Int32, nilable: true, key: "observedGeneration"},
-      ready_replicas:         {type: Int32, nilable: true, key: "readyReplicas"},
-      replicas:               {type: Int32, nilable: false, key: "replicas"},
+      available_replicas:     {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
+      conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas", getter: false, setter: false},
+      observed_generation:    {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
+      ready_replicas:         {type: Int32, nilable: true, key: "readyReplicas", getter: false, setter: false},
+      replicas:               {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)
 
     def initialize(*, @available_replicas : Int32 | Nil = nil, @conditions : Array | Nil = nil, @fully_labeled_replicas : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil, @replicas : Int32 | Nil = nil)

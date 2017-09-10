@@ -10,11 +10,11 @@ module Pyrite
     property conditions : Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition) | Nil
 
     YAML.mapping({
-      conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions"},
+      conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions"},
+      conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)
 
     def initialize(*, @conditions : Array | Nil = nil)

@@ -25,21 +25,21 @@ module Pyrite
     property update_strategy : Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy | Nil
 
     YAML.mapping({
-      min_ready_seconds:      {type: Int32, nilable: true, key: "minReadySeconds"},
-      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      template_generation:    {type: Int32, nilable: true, key: "templateGeneration"},
-      update_strategy:        {type: Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy"},
+      min_ready_seconds:      {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      template_generation:    {type: Int32, nilable: true, key: "templateGeneration", getter: false, setter: false},
+      update_strategy:        {type: Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      min_ready_seconds:      {type: Int32, nilable: true, key: "minReadySeconds"},
-      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit"},
-      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template"},
-      template_generation:    {type: Int32, nilable: true, key: "templateGeneration"},
-      update_strategy:        {type: Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy"},
+      min_ready_seconds:      {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
+      revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
+      selector:               {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      template:               {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
+      template_generation:    {type: Int32, nilable: true, key: "templateGeneration", getter: false, setter: false},
+      update_strategy:        {type: Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
     }, true)
 
     def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil, @template_generation : Int32 | Nil = nil, @update_strategy : Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy | Nil = nil)

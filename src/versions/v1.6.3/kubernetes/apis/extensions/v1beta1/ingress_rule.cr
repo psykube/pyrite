@@ -17,13 +17,13 @@ module Pyrite
     property http : Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue | Nil
 
     YAML.mapping({
-      host: {type: String, nilable: true, key: "host"},
-      http: {type: Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http"},
+      host: {type: String, nilable: true, key: "host", getter: false, setter: false},
+      http: {type: Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      host: {type: String, nilable: true, key: "host"},
-      http: {type: Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http"},
+      host: {type: String, nilable: true, key: "host", getter: false, setter: false},
+      http: {type: Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http", getter: false, setter: false},
     }, true)
 
     def initialize(*, @host : String | Nil = nil, @http : Kubernetes::Apis::Extensions::V1beta1::HTTPIngressRuleValue | Nil = nil)

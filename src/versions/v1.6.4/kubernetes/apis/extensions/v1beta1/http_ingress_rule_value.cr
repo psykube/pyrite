@@ -10,11 +10,11 @@ module Pyrite
     property paths : Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath)
 
     YAML.mapping({
-      paths: {type: Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath), nilable: false, key: "paths"},
+      paths: {type: Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath), nilable: false, key: "paths", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      paths: {type: Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath), nilable: false, key: "paths"},
+      paths: {type: Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath), nilable: false, key: "paths", getter: false, setter: false},
     }, true)
 
     def initialize(*, @paths : Array | Nil = nil)

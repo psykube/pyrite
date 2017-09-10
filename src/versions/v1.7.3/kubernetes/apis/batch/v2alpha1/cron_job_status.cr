@@ -13,13 +13,13 @@ module Pyrite
     property last_schedule_time : Time | Nil
 
     YAML.mapping({
-      active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active"},
-      last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime"},
+      active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active", getter: false, setter: false},
+      last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active"},
-      last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime"},
+      active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active", getter: false, setter: false},
+      last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime", getter: false, setter: false},
     }, true)
 
     def initialize(*, @active : Array | Nil = nil, @last_schedule_time : Time | Nil = nil)

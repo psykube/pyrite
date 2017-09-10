@@ -31,25 +31,25 @@ module Pyrite
     property user : String | Nil
 
     YAML.mapping({
-      fs_type:    {type: String, nilable: true, key: "fsType"},
-      image:      {type: String, nilable: false, key: "image"},
-      keyring:    {type: String, nilable: true, key: "keyring"},
-      monitors:   {type: Array(String), nilable: false, key: "monitors"},
-      pool:       {type: String, nilable: true, key: "pool"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      user:       {type: String, nilable: true, key: "user"},
+      fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      image:      {type: String, nilable: false, key: "image", getter: false, setter: false},
+      keyring:    {type: String, nilable: true, key: "keyring", getter: false, setter: false},
+      monitors:   {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
+      pool:       {type: String, nilable: true, key: "pool", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      user:       {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:    {type: String, nilable: true, key: "fsType"},
-      image:      {type: String, nilable: false, key: "image"},
-      keyring:    {type: String, nilable: true, key: "keyring"},
-      monitors:   {type: Array(String), nilable: false, key: "monitors"},
-      pool:       {type: String, nilable: true, key: "pool"},
-      read_only:  {type: Bool, nilable: true, key: "readOnly"},
-      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef"},
-      user:       {type: String, nilable: true, key: "user"},
+      fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      image:      {type: String, nilable: false, key: "image", getter: false, setter: false},
+      keyring:    {type: String, nilable: true, key: "keyring", getter: false, setter: false},
+      monitors:   {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
+      pool:       {type: String, nilable: true, key: "pool", getter: false, setter: false},
+      read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
+      user:       {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @image : String | Nil = nil, @keyring : String | Nil = nil, @monitors : Array | Nil = nil, @pool : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @user : String | Nil = nil)

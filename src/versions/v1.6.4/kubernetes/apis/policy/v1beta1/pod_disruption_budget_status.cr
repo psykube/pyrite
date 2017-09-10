@@ -25,21 +25,21 @@ module Pyrite
     property observed_generation : Int32 | Nil
 
     YAML.mapping({
-      current_healthy:     {type: Int32, nilable: false, key: "currentHealthy"},
-      desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy"},
-      disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods"},
-      disruptions_allowed: {type: Int32, nilable: false, key: "disruptionsAllowed"},
-      expected_pods:       {type: Int32, nilable: false, key: "expectedPods"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
+      current_healthy:     {type: Int32, nilable: false, key: "currentHealthy", getter: false, setter: false},
+      desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy", getter: false, setter: false},
+      disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods", getter: false, setter: false},
+      disruptions_allowed: {type: Int32, nilable: false, key: "disruptionsAllowed", getter: false, setter: false},
+      expected_pods:       {type: Int32, nilable: false, key: "expectedPods", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      current_healthy:     {type: Int32, nilable: false, key: "currentHealthy"},
-      desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy"},
-      disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods"},
-      disruptions_allowed: {type: Int32, nilable: false, key: "disruptionsAllowed"},
-      expected_pods:       {type: Int32, nilable: false, key: "expectedPods"},
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration"},
+      current_healthy:     {type: Int32, nilable: false, key: "currentHealthy", getter: false, setter: false},
+      desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy", getter: false, setter: false},
+      disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods", getter: false, setter: false},
+      disruptions_allowed: {type: Int32, nilable: false, key: "disruptionsAllowed", getter: false, setter: false},
+      expected_pods:       {type: Int32, nilable: false, key: "expectedPods", getter: false, setter: false},
+      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
     def initialize(*, @current_healthy : Int32 | Nil = nil, @desired_healthy : Int32 | Nil = nil, @disrupted_pods : Hash(String, String) | Nil = nil, @disruptions_allowed : Int32 | Nil = nil, @expected_pods : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil)

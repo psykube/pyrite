@@ -13,13 +13,13 @@ module Pyrite
     property selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
     YAML.mapping({
-      min_available: {type: Int32 | String, nilable: true, key: "minAvailable"},
-      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
+      min_available: {type: Int32 | String, nilable: true, key: "minAvailable", getter: false, setter: false},
+      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      min_available: {type: Int32 | String, nilable: true, key: "minAvailable"},
-      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
+      min_available: {type: Int32 | String, nilable: true, key: "minAvailable", getter: false, setter: false},
+      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
     def initialize(*, @min_available : Int32 | String | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)

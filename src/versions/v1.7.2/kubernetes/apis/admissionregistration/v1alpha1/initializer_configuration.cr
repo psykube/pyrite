@@ -17,15 +17,15 @@ module Pyrite
     YAML.mapping({
       api_version:  {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:         {type: String, default: "InitializerConfiguration", key: "kind", setter: false},
-      initializers: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Initializer), nilable: true, key: "initializers"},
-      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
+      initializers: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Initializer), nilable: true, key: "initializers", getter: false, setter: false},
+      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version:  {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:         {type: String, default: "InitializerConfiguration", key: "kind", setter: false},
-      initializers: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Initializer), nilable: true, key: "initializers"},
-      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
+      initializers: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Initializer), nilable: true, key: "initializers", getter: false, setter: false},
+      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     def initialize(*, @initializers : Array | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)

@@ -19,17 +19,17 @@ module Pyrite
     property target_wwns : Array(String)
 
     YAML.mapping({
-      fs_type:     {type: String, nilable: true, key: "fsType"},
-      lun:         {type: Int32, nilable: false, key: "lun"},
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      target_wwns: {type: Array(String), nilable: false, key: "targetWWNs"},
+      fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      lun:         {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      target_wwns: {type: Array(String), nilable: false, key: "targetWWNs", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:     {type: String, nilable: true, key: "fsType"},
-      lun:         {type: Int32, nilable: false, key: "lun"},
-      read_only:   {type: Bool, nilable: true, key: "readOnly"},
-      target_wwns: {type: Array(String), nilable: false, key: "targetWWNs"},
+      fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      lun:         {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
+      read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      target_wwns: {type: Array(String), nilable: false, key: "targetWWNs", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @lun : Int32 | Nil = nil, @read_only : Bool | Nil = nil, @target_wwns : Array | Nil = nil)

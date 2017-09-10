@@ -19,17 +19,17 @@ module Pyrite
     property type : String
 
     YAML.mapping({
-      object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource, nilable: true, key: "object"},
-      pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricSource, nilable: true, key: "pods"},
-      resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricSource, nilable: true, key: "resource"},
-      type:     {type: String, nilable: false, key: "type"},
+      object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource, nilable: true, key: "object", getter: false, setter: false},
+      pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricSource, nilable: true, key: "pods", getter: false, setter: false},
+      resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricSource, nilable: true, key: "resource", getter: false, setter: false},
+      type:     {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource, nilable: true, key: "object"},
-      pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricSource, nilable: true, key: "pods"},
-      resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricSource, nilable: true, key: "resource"},
-      type:     {type: String, nilable: false, key: "type"},
+      object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource, nilable: true, key: "object", getter: false, setter: false},
+      pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricSource, nilable: true, key: "pods", getter: false, setter: false},
+      resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricSource, nilable: true, key: "resource", getter: false, setter: false},
+      type:     {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @object : Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource | Nil = nil, @pods : Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricSource | Nil = nil, @resource : Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricSource | Nil = nil, @type : String | Nil = nil)

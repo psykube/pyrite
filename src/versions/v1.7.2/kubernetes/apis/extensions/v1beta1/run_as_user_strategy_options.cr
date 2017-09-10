@@ -13,13 +13,13 @@ module Pyrite
     property rule : String
 
     YAML.mapping({
-      ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges"},
-      rule:   {type: String, nilable: false, key: "rule"},
+      ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
+      rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges"},
-      rule:   {type: String, nilable: false, key: "rule"},
+      ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
+      rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
     }, true)
 
     def initialize(*, @ranges : Array | Nil = nil, @rule : String | Nil = nil)

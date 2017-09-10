@@ -10,11 +10,11 @@ module Pyrite
     property max_unavailable : Int32 | String | Nil
 
     YAML.mapping({
-      max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable"},
+      max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable"},
+      max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable", getter: false, setter: false},
     }, true)
 
     def initialize(*, @max_unavailable : Int32 | String | Nil = nil)

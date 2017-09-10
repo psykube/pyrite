@@ -16,15 +16,15 @@ module Pyrite
     property topology_key : String | Nil
 
     YAML.mapping({
-      label_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "labelSelector"},
-      namespaces:     {type: Array(String), nilable: true, key: "namespaces"},
-      topology_key:   {type: String, nilable: true, key: "topologyKey"},
+      label_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "labelSelector", getter: false, setter: false},
+      namespaces:     {type: Array(String), nilable: true, key: "namespaces", getter: false, setter: false},
+      topology_key:   {type: String, nilable: true, key: "topologyKey", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      label_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "labelSelector"},
-      namespaces:     {type: Array(String), nilable: true, key: "namespaces"},
-      topology_key:   {type: String, nilable: true, key: "topologyKey"},
+      label_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "labelSelector", getter: false, setter: false},
+      namespaces:     {type: Array(String), nilable: true, key: "namespaces", getter: false, setter: false},
+      topology_key:   {type: String, nilable: true, key: "topologyKey", getter: false, setter: false},
     }, true)
 
     def initialize(*, @label_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @namespaces : Array | Nil = nil, @topology_key : String | Nil = nil)

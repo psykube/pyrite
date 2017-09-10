@@ -13,13 +13,13 @@ module Pyrite
     property type : String
 
     YAML.mapping({
-      address: {type: String, nilable: false, key: "address"},
-      type:    {type: String, nilable: false, key: "type"},
+      address: {type: String, nilable: false, key: "address", getter: false, setter: false},
+      type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      address: {type: String, nilable: false, key: "address"},
-      type:    {type: String, nilable: false, key: "type"},
+      address: {type: String, nilable: false, key: "address", getter: false, setter: false},
+      type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @address : String | Nil = nil, @type : String | Nil = nil)

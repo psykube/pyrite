@@ -13,13 +13,13 @@ module Pyrite
     property selector : String | Nil
 
     YAML.mapping({
-      replicas: {type: Int32, nilable: false, key: "replicas"},
-      selector: {type: String, nilable: true, key: "selector"},
+      replicas: {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      selector: {type: String, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      replicas: {type: Int32, nilable: false, key: "replicas"},
-      selector: {type: String, nilable: true, key: "selector"},
+      replicas: {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
+      selector: {type: String, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
     def initialize(*, @replicas : Int32 | Nil = nil, @selector : String | Nil = nil)

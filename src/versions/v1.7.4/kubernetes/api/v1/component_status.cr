@@ -17,15 +17,15 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ComponentStatus", key: "kind", setter: false},
-      conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
+      conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ComponentStatus", key: "kind", setter: false},
-      conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
+      conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     def initialize(*, @conditions : Array | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)

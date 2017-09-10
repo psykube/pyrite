@@ -332,7 +332,7 @@ class Generator::Definition
         next if is_resource? && resource_property?(name)
         crystal_name = crystalize_name(name)
         file.puts "," unless first_arg
-        file.print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name.inspect}}"
+        file.print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name.inspect}, getter: false, setter: false }"
         first_arg = false
       end
       file.puts "", "}, true)"

@@ -13,13 +13,13 @@ module Pyrite
     property pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector
 
     YAML.mapping({
-      ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress"},
-      pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector"},
+      ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress", getter: false, setter: false},
+      pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress"},
-      pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector"},
+      ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress", getter: false, setter: false},
+      pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector", getter: false, setter: false},
     }, true)
 
     def initialize(*, @ingress : Array | Nil = nil, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)

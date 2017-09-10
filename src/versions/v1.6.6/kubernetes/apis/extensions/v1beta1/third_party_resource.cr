@@ -20,17 +20,17 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ThirdPartyResource", key: "kind", setter: false},
-      description: {type: String, nilable: true, key: "description"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      versions:    {type: Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: "versions"},
+      description: {type: String, nilable: true, key: "description", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      versions:    {type: Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: "versions", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ThirdPartyResource", key: "kind", setter: false},
-      description: {type: String, nilable: true, key: "description"},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      versions:    {type: Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: "versions"},
+      description: {type: String, nilable: true, key: "description", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      versions:    {type: Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: "versions", getter: false, setter: false},
     }, true)
 
     def initialize(*, @description : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @versions : Array | Nil = nil)

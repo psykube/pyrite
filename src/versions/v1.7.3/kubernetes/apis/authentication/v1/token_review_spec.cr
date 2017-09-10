@@ -10,11 +10,11 @@ module Pyrite
     property token : String | Nil
 
     YAML.mapping({
-      token: {type: String, nilable: true, key: "token"},
+      token: {type: String, nilable: true, key: "token", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      token: {type: String, nilable: true, key: "token"},
+      token: {type: String, nilable: true, key: "token", getter: false, setter: false},
     }, true)
 
     def initialize(*, @token : String | Nil = nil)

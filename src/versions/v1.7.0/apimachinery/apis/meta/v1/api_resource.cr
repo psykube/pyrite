@@ -28,23 +28,23 @@ module Pyrite
     property verbs : Array(String)
 
     YAML.mapping({
-      categories:    {type: Array(String), nilable: true, key: "categories"},
-      kind:          {type: String, nilable: false, key: "kind"},
-      name:          {type: String, nilable: false, key: "name"},
-      namespaced:    {type: Bool, nilable: false, key: "namespaced"},
-      short_names:   {type: Array(String), nilable: true, key: "shortNames"},
-      singular_name: {type: String, nilable: false, key: "singularName"},
-      verbs:         {type: Array(String), nilable: false, key: "verbs"},
+      categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
+      kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:          {type: String, nilable: false, key: "name", getter: false, setter: false},
+      namespaced:    {type: Bool, nilable: false, key: "namespaced", getter: false, setter: false},
+      short_names:   {type: Array(String), nilable: true, key: "shortNames", getter: false, setter: false},
+      singular_name: {type: String, nilable: false, key: "singularName", getter: false, setter: false},
+      verbs:         {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      categories:    {type: Array(String), nilable: true, key: "categories"},
-      kind:          {type: String, nilable: false, key: "kind"},
-      name:          {type: String, nilable: false, key: "name"},
-      namespaced:    {type: Bool, nilable: false, key: "namespaced"},
-      short_names:   {type: Array(String), nilable: true, key: "shortNames"},
-      singular_name: {type: String, nilable: false, key: "singularName"},
-      verbs:         {type: Array(String), nilable: false, key: "verbs"},
+      categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
+      kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},
+      name:          {type: String, nilable: false, key: "name", getter: false, setter: false},
+      namespaced:    {type: Bool, nilable: false, key: "namespaced", getter: false, setter: false},
+      short_names:   {type: Array(String), nilable: true, key: "shortNames", getter: false, setter: false},
+      singular_name: {type: String, nilable: false, key: "singularName", getter: false, setter: false},
+      verbs:         {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
     def initialize(*, @categories : Array | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @namespaced : Bool | Nil = nil, @short_names : Array | Nil = nil, @singular_name : String | Nil = nil, @verbs : Array | Nil = nil)

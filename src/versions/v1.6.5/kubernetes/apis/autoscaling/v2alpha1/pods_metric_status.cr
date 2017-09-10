@@ -13,13 +13,13 @@ module Pyrite
     property metric_name : String
 
     YAML.mapping({
-      current_average_value: {type: Int32, nilable: false, key: "currentAverageValue"},
-      metric_name:           {type: String, nilable: false, key: "metricName"},
+      current_average_value: {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
+      metric_name:           {type: String, nilable: false, key: "metricName", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      current_average_value: {type: Int32, nilable: false, key: "currentAverageValue"},
-      metric_name:           {type: String, nilable: false, key: "metricName"},
+      current_average_value: {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
+      metric_name:           {type: String, nilable: false, key: "metricName", getter: false, setter: false},
     }, true)
 
     def initialize(*, @current_average_value : Int32 | Nil = nil, @metric_name : String | Nil = nil)

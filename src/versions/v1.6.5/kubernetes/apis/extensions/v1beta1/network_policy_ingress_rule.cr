@@ -13,13 +13,13 @@ module Pyrite
     property ports : Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPort) | Nil
 
     YAML.mapping({
-      from:  {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPeer), nilable: true, key: "from"},
-      ports: {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPort), nilable: true, key: "ports"},
+      from:  {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPeer), nilable: true, key: "from", getter: false, setter: false},
+      ports: {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPort), nilable: true, key: "ports", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      from:  {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPeer), nilable: true, key: "from"},
-      ports: {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPort), nilable: true, key: "ports"},
+      from:  {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPeer), nilable: true, key: "from", getter: false, setter: false},
+      ports: {type: Array(Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPort), nilable: true, key: "ports", getter: false, setter: false},
     }, true)
 
     def initialize(*, @from : Array | Nil = nil, @ports : Array | Nil = nil)

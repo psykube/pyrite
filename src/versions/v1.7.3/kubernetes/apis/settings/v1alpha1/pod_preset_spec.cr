@@ -22,19 +22,19 @@ module Pyrite
     property volumes : Array(Kubernetes::Api::V1::Volume) | Nil
 
     YAML.mapping({
-      env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env"},
-      env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom"},
-      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      volume_mounts: {type: Array(Kubernetes::Api::V1::VolumeMount), nilable: true, key: "volumeMounts"},
-      volumes:       {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes"},
+      env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},
+      env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom", getter: false, setter: false},
+      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      volume_mounts: {type: Array(Kubernetes::Api::V1::VolumeMount), nilable: true, key: "volumeMounts", getter: false, setter: false},
+      volumes:       {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env"},
-      env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom"},
-      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector"},
-      volume_mounts: {type: Array(Kubernetes::Api::V1::VolumeMount), nilable: true, key: "volumeMounts"},
-      volumes:       {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes"},
+      env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},
+      env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom", getter: false, setter: false},
+      selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
+      volume_mounts: {type: Array(Kubernetes::Api::V1::VolumeMount), nilable: true, key: "volumeMounts", getter: false, setter: false},
+      volumes:       {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
     def initialize(*, @env : Array | Nil = nil, @env_from : Array | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @volume_mounts : Array | Nil = nil, @volumes : Array | Nil = nil)

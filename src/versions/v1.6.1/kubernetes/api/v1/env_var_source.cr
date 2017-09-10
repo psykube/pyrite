@@ -19,17 +19,17 @@ module Pyrite
     property secret_key_ref : Kubernetes::Api::V1::SecretKeySelector | Nil
 
     YAML.mapping({
-      config_map_key_ref: {type: Kubernetes::Api::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef"},
-      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef"},
-      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef"},
-      secret_key_ref:     {type: Kubernetes::Api::V1::SecretKeySelector, nilable: true, key: "secretKeyRef"},
+      config_map_key_ref: {type: Kubernetes::Api::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef", getter: false, setter: false},
+      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
+      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
+      secret_key_ref:     {type: Kubernetes::Api::V1::SecretKeySelector, nilable: true, key: "secretKeyRef", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      config_map_key_ref: {type: Kubernetes::Api::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef"},
-      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef"},
-      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef"},
-      secret_key_ref:     {type: Kubernetes::Api::V1::SecretKeySelector, nilable: true, key: "secretKeyRef"},
+      config_map_key_ref: {type: Kubernetes::Api::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef", getter: false, setter: false},
+      field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
+      resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
+      secret_key_ref:     {type: Kubernetes::Api::V1::SecretKeySelector, nilable: true, key: "secretKeyRef", getter: false, setter: false},
     }, true)
 
     def initialize(*, @config_map_key_ref : Kubernetes::Api::V1::ConfigMapKeySelector | Nil = nil, @field_ref : Kubernetes::Api::V1::ObjectFieldSelector | Nil = nil, @resource_field_ref : Kubernetes::Api::V1::ResourceFieldSelector | Nil = nil, @secret_key_ref : Kubernetes::Api::V1::SecretKeySelector | Nil = nil)

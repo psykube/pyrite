@@ -37,29 +37,29 @@ module Pyrite
     property type : String | Nil
 
     YAML.mapping({
-      cluster_ip:                  {type: String, nilable: true, key: "clusterIP"},
-      deprecated_public_ips:       {type: Array(String), nilable: true, key: "deprecatedPublicIPs"},
-      external_ips:                {type: Array(String), nilable: true, key: "externalIPs"},
-      external_name:               {type: String, nilable: true, key: "externalName"},
-      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP"},
-      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges"},
-      ports:                       {type: Array(Kubernetes::Api::V1::ServicePort), nilable: true, key: "ports"},
-      selector:                    {type: Hash(String, String), nilable: true, key: "selector"},
-      session_affinity:            {type: String, nilable: true, key: "sessionAffinity"},
-      type:                        {type: String, nilable: true, key: "type"},
+      cluster_ip:                  {type: String, nilable: true, key: "clusterIP", getter: false, setter: false},
+      deprecated_public_ips:       {type: Array(String), nilable: true, key: "deprecatedPublicIPs", getter: false, setter: false},
+      external_ips:                {type: Array(String), nilable: true, key: "externalIPs", getter: false, setter: false},
+      external_name:               {type: String, nilable: true, key: "externalName", getter: false, setter: false},
+      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP", getter: false, setter: false},
+      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges", getter: false, setter: false},
+      ports:                       {type: Array(Kubernetes::Api::V1::ServicePort), nilable: true, key: "ports", getter: false, setter: false},
+      selector:                    {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
+      session_affinity:            {type: String, nilable: true, key: "sessionAffinity", getter: false, setter: false},
+      type:                        {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      cluster_ip:                  {type: String, nilable: true, key: "clusterIP"},
-      deprecated_public_ips:       {type: Array(String), nilable: true, key: "deprecatedPublicIPs"},
-      external_ips:                {type: Array(String), nilable: true, key: "externalIPs"},
-      external_name:               {type: String, nilable: true, key: "externalName"},
-      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP"},
-      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges"},
-      ports:                       {type: Array(Kubernetes::Api::V1::ServicePort), nilable: true, key: "ports"},
-      selector:                    {type: Hash(String, String), nilable: true, key: "selector"},
-      session_affinity:            {type: String, nilable: true, key: "sessionAffinity"},
-      type:                        {type: String, nilable: true, key: "type"},
+      cluster_ip:                  {type: String, nilable: true, key: "clusterIP", getter: false, setter: false},
+      deprecated_public_ips:       {type: Array(String), nilable: true, key: "deprecatedPublicIPs", getter: false, setter: false},
+      external_ips:                {type: Array(String), nilable: true, key: "externalIPs", getter: false, setter: false},
+      external_name:               {type: String, nilable: true, key: "externalName", getter: false, setter: false},
+      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP", getter: false, setter: false},
+      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges", getter: false, setter: false},
+      ports:                       {type: Array(Kubernetes::Api::V1::ServicePort), nilable: true, key: "ports", getter: false, setter: false},
+      selector:                    {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
+      session_affinity:            {type: String, nilable: true, key: "sessionAffinity", getter: false, setter: false},
+      type:                        {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @cluster_ip : String | Nil = nil, @deprecated_public_ips : Array | Nil = nil, @external_ips : Array | Nil = nil, @external_name : String | Nil = nil, @load_balancer_ip : String | Nil = nil, @load_balancer_source_ranges : Array | Nil = nil, @ports : Array | Nil = nil, @selector : Hash(String, String) | Nil = nil, @session_affinity : String | Nil = nil, @type : String | Nil = nil)

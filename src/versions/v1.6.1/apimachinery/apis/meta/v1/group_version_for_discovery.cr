@@ -13,13 +13,13 @@ module Pyrite
     property version : String
 
     YAML.mapping({
-      group_version: {type: String, nilable: false, key: "groupVersion"},
-      version:       {type: String, nilable: false, key: "version"},
+      group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
+      version:       {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      group_version: {type: String, nilable: false, key: "groupVersion"},
-      version:       {type: String, nilable: false, key: "version"},
+      group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
+      version:       {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)
 
     def initialize(*, @group_version : String | Nil = nil, @version : String | Nil = nil)

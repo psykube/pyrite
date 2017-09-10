@@ -16,15 +16,15 @@ module Pyrite
     property waiting : Kubernetes::Api::V1::ContainerStateWaiting | Nil
 
     YAML.mapping({
-      running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running"},
-      terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated"},
-      waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting"},
+      running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running", getter: false, setter: false},
+      terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated", getter: false, setter: false},
+      waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running"},
-      terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated"},
-      waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting"},
+      running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running", getter: false, setter: false},
+      terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated", getter: false, setter: false},
+      waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting", getter: false, setter: false},
     }, true)
 
     def initialize(*, @running : Kubernetes::Api::V1::ContainerStateRunning | Nil = nil, @terminated : Kubernetes::Api::V1::ContainerStateTerminated | Nil = nil, @waiting : Kubernetes::Api::V1::ContainerStateWaiting | Nil = nil)

@@ -19,17 +19,17 @@ module Pyrite
     property volume_path : String
 
     YAML.mapping({
-      fs_type:             {type: String, nilable: true, key: "fsType"},
-      storage_policy_id:   {type: String, nilable: true, key: "storagePolicyID"},
-      storage_policy_name: {type: String, nilable: true, key: "storagePolicyName"},
-      volume_path:         {type: String, nilable: false, key: "volumePath"},
+      fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      storage_policy_id:   {type: String, nilable: true, key: "storagePolicyID", getter: false, setter: false},
+      storage_policy_name: {type: String, nilable: true, key: "storagePolicyName", getter: false, setter: false},
+      volume_path:         {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      fs_type:             {type: String, nilable: true, key: "fsType"},
-      storage_policy_id:   {type: String, nilable: true, key: "storagePolicyID"},
-      storage_policy_name: {type: String, nilable: true, key: "storagePolicyName"},
-      volume_path:         {type: String, nilable: false, key: "volumePath"},
+      fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},
+      storage_policy_id:   {type: String, nilable: true, key: "storagePolicyID", getter: false, setter: false},
+      storage_policy_name: {type: String, nilable: true, key: "storagePolicyName", getter: false, setter: false},
+      volume_path:         {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
     def initialize(*, @fs_type : String | Nil = nil, @storage_policy_id : String | Nil = nil, @storage_policy_name : String | Nil = nil, @volume_path : String | Nil = nil)

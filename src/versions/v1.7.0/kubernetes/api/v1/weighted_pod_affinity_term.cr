@@ -13,13 +13,13 @@ module Pyrite
     property weight : Int32
 
     YAML.mapping({
-      pod_affinity_term: {type: Kubernetes::Api::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm"},
-      weight:            {type: Int32, nilable: false, key: "weight"},
+      pod_affinity_term: {type: Kubernetes::Api::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm", getter: false, setter: false},
+      weight:            {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      pod_affinity_term: {type: Kubernetes::Api::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm"},
-      weight:            {type: Int32, nilable: false, key: "weight"},
+      pod_affinity_term: {type: Kubernetes::Api::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm", getter: false, setter: false},
+      weight:            {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
     def initialize(*, @pod_affinity_term : Kubernetes::Api::V1::PodAffinityTerm | Nil = nil, @weight : Int32 | Nil = nil)

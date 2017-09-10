@@ -16,15 +16,15 @@ module Pyrite
     property secret : Kubernetes::Api::V1::SecretProjection | Nil
 
     YAML.mapping({
-      config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap"},
-      downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI"},
-      secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret"},
+      config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap", getter: false, setter: false},
+      downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI", getter: false, setter: false},
+      secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap"},
-      downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI"},
-      secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret"},
+      config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap", getter: false, setter: false},
+      downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI", getter: false, setter: false},
+      secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret", getter: false, setter: false},
     }, true)
 
     def initialize(*, @config_map : Kubernetes::Api::V1::ConfigMapProjection | Nil = nil, @downward_api : Kubernetes::Api::V1::DownwardAPIProjection | Nil = nil, @secret : Kubernetes::Api::V1::SecretProjection | Nil = nil)

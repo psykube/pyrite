@@ -10,11 +10,11 @@ module Pyrite
     property partition : Int32 | Nil
 
     YAML.mapping({
-      partition: {type: Int32, nilable: true, key: "partition"},
+      partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      partition: {type: Int32, nilable: true, key: "partition"},
+      partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
     }, true)
 
     def initialize(*, @partition : Int32 | Nil = nil)

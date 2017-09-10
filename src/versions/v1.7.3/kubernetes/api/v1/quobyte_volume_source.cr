@@ -22,19 +22,19 @@ module Pyrite
     property volume : String
 
     YAML.mapping({
-      group:     {type: String, nilable: true, key: "group"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      registry:  {type: String, nilable: false, key: "registry"},
-      user:      {type: String, nilable: true, key: "user"},
-      volume:    {type: String, nilable: false, key: "volume"},
+      group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},
+      user:      {type: String, nilable: true, key: "user", getter: false, setter: false},
+      volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      group:     {type: String, nilable: true, key: "group"},
-      read_only: {type: Bool, nilable: true, key: "readOnly"},
-      registry:  {type: String, nilable: false, key: "registry"},
-      user:      {type: String, nilable: true, key: "user"},
-      volume:    {type: String, nilable: false, key: "volume"},
+      group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
+      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
+      registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},
+      user:      {type: String, nilable: true, key: "user", getter: false, setter: false},
+      volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
     }, true)
 
     def initialize(*, @group : String | Nil = nil, @read_only : Bool | Nil = nil, @registry : String | Nil = nil, @user : String | Nil = nil, @volume : String | Nil = nil)

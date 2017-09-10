@@ -16,15 +16,15 @@ module Pyrite
     property revision : String | Nil
 
     YAML.mapping({
-      directory:  {type: String, nilable: true, key: "directory"},
-      repository: {type: String, nilable: false, key: "repository"},
-      revision:   {type: String, nilable: true, key: "revision"},
+      directory:  {type: String, nilable: true, key: "directory", getter: false, setter: false},
+      repository: {type: String, nilable: false, key: "repository", getter: false, setter: false},
+      revision:   {type: String, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      directory:  {type: String, nilable: true, key: "directory"},
-      repository: {type: String, nilable: false, key: "repository"},
-      revision:   {type: String, nilable: true, key: "revision"},
+      directory:  {type: String, nilable: true, key: "directory", getter: false, setter: false},
+      repository: {type: String, nilable: false, key: "repository", getter: false, setter: false},
+      revision:   {type: String, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
     def initialize(*, @directory : String | Nil = nil, @repository : String | Nil = nil, @revision : String | Nil = nil)

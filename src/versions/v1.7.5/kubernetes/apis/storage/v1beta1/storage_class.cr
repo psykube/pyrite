@@ -22,17 +22,17 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "storage/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StorageClass", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      parameters:  {type: Hash(String, String), nilable: true, key: "parameters"},
-      provisioner: {type: String, nilable: false, key: "provisioner"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      parameters:  {type: Hash(String, String), nilable: true, key: "parameters", getter: false, setter: false},
+      provisioner: {type: String, nilable: false, key: "provisioner", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "storage/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StorageClass", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      parameters:  {type: Hash(String, String), nilable: true, key: "parameters"},
-      provisioner: {type: String, nilable: false, key: "provisioner"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      parameters:  {type: Hash(String, String), nilable: true, key: "parameters", getter: false, setter: false},
+      provisioner: {type: String, nilable: false, key: "provisioner", getter: false, setter: false},
     }, true)
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String | Nil = nil)

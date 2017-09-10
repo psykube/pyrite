@@ -28,23 +28,23 @@ module Pyrite
     property suspend : Bool | Nil
 
     YAML.mapping({
-      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy"},
-      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit"},
-      job_template:                  {type: Kubernetes::Apis::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate"},
-      schedule:                      {type: String, nilable: false, key: "schedule"},
-      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds"},
-      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit"},
-      suspend:                       {type: Bool, nilable: true, key: "suspend"},
+      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
+      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
+      job_template:                  {type: Kubernetes::Apis::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},
+      schedule:                      {type: String, nilable: false, key: "schedule", getter: false, setter: false},
+      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds", getter: false, setter: false},
+      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit", getter: false, setter: false},
+      suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy"},
-      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit"},
-      job_template:                  {type: Kubernetes::Apis::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate"},
-      schedule:                      {type: String, nilable: false, key: "schedule"},
-      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds"},
-      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit"},
-      suspend:                       {type: Bool, nilable: true, key: "suspend"},
+      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
+      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
+      job_template:                  {type: Kubernetes::Apis::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},
+      schedule:                      {type: String, nilable: false, key: "schedule", getter: false, setter: false},
+      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds", getter: false, setter: false},
+      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit", getter: false, setter: false},
+      suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
     }, true)
 
     def initialize(*, @concurrency_policy : String | Nil = nil, @failed_jobs_history_limit : Int32 | Nil = nil, @job_template : Kubernetes::Apis::Batch::V2alpha1::JobTemplateSpec | Nil = nil, @schedule : String | Nil = nil, @starting_deadline_seconds : Int32 | Nil = nil, @successful_jobs_history_limit : Int32 | Nil = nil, @suspend : Bool | Nil = nil)

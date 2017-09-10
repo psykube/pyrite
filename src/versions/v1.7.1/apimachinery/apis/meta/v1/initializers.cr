@@ -13,13 +13,13 @@ module Pyrite
     property result : Apimachinery::Apis::Meta::V1::Status | Nil
 
     YAML.mapping({
-      pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending"},
-      result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result"},
+      pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending", getter: false, setter: false},
+      result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending"},
-      result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result"},
+      pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending", getter: false, setter: false},
+      result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result", getter: false, setter: false},
     }, true)
 
     def initialize(*, @pending : Array | Nil = nil, @result : Apimachinery::Apis::Meta::V1::Status | Nil = nil)

@@ -37,29 +37,29 @@ module Pyrite
     property system_uui_d : String
 
     YAML.mapping({
-      architecture:              {type: String, nilable: false, key: "architecture"},
-      boot_id:                   {type: String, nilable: false, key: "bootID"},
-      container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion"},
-      kernel_version:            {type: String, nilable: false, key: "kernelVersion"},
-      kube_proxy_version:        {type: String, nilable: false, key: "kubeProxyVersion"},
-      kubelet_version:           {type: String, nilable: false, key: "kubeletVersion"},
-      machine_id:                {type: String, nilable: false, key: "machineID"},
-      operating_system:          {type: String, nilable: false, key: "operatingSystem"},
-      os_image:                  {type: String, nilable: false, key: "osImage"},
-      system_uui_d:              {type: String, nilable: false, key: "systemUUID"},
+      architecture:              {type: String, nilable: false, key: "architecture", getter: false, setter: false},
+      boot_id:                   {type: String, nilable: false, key: "bootID", getter: false, setter: false},
+      container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion", getter: false, setter: false},
+      kernel_version:            {type: String, nilable: false, key: "kernelVersion", getter: false, setter: false},
+      kube_proxy_version:        {type: String, nilable: false, key: "kubeProxyVersion", getter: false, setter: false},
+      kubelet_version:           {type: String, nilable: false, key: "kubeletVersion", getter: false, setter: false},
+      machine_id:                {type: String, nilable: false, key: "machineID", getter: false, setter: false},
+      operating_system:          {type: String, nilable: false, key: "operatingSystem", getter: false, setter: false},
+      os_image:                  {type: String, nilable: false, key: "osImage", getter: false, setter: false},
+      system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      architecture:              {type: String, nilable: false, key: "architecture"},
-      boot_id:                   {type: String, nilable: false, key: "bootID"},
-      container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion"},
-      kernel_version:            {type: String, nilable: false, key: "kernelVersion"},
-      kube_proxy_version:        {type: String, nilable: false, key: "kubeProxyVersion"},
-      kubelet_version:           {type: String, nilable: false, key: "kubeletVersion"},
-      machine_id:                {type: String, nilable: false, key: "machineID"},
-      operating_system:          {type: String, nilable: false, key: "operatingSystem"},
-      os_image:                  {type: String, nilable: false, key: "osImage"},
-      system_uui_d:              {type: String, nilable: false, key: "systemUUID"},
+      architecture:              {type: String, nilable: false, key: "architecture", getter: false, setter: false},
+      boot_id:                   {type: String, nilable: false, key: "bootID", getter: false, setter: false},
+      container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion", getter: false, setter: false},
+      kernel_version:            {type: String, nilable: false, key: "kernelVersion", getter: false, setter: false},
+      kube_proxy_version:        {type: String, nilable: false, key: "kubeProxyVersion", getter: false, setter: false},
+      kubelet_version:           {type: String, nilable: false, key: "kubeletVersion", getter: false, setter: false},
+      machine_id:                {type: String, nilable: false, key: "machineID", getter: false, setter: false},
+      operating_system:          {type: String, nilable: false, key: "operatingSystem", getter: false, setter: false},
+      os_image:                  {type: String, nilable: false, key: "osImage", getter: false, setter: false},
+      system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
     def initialize(*, @architecture : String | Nil = nil, @boot_id : String | Nil = nil, @container_runtime_version : String | Nil = nil, @kernel_version : String | Nil = nil, @kube_proxy_version : String | Nil = nil, @kubelet_version : String | Nil = nil, @machine_id : String | Nil = nil, @operating_system : String | Nil = nil, @os_image : String | Nil = nil, @system_uui_d : String | Nil = nil)

@@ -10,11 +10,11 @@ module Pyrite
     property name : String
 
     YAML.mapping({
-      name: {type: String, nilable: false, key: "name"},
+      name: {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      name: {type: String, nilable: false, key: "name"},
+      name: {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
     def initialize(*, @name : String | Nil = nil)

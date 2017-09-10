@@ -28,23 +28,23 @@ module Pyrite
     property uid : String | Nil
 
     YAML.mapping({
-      api_version:      {type: String, nilable: true, key: "apiVersion"},
-      field_path:       {type: String, nilable: true, key: "fieldPath"},
-      kind:             {type: String, nilable: true, key: "kind"},
-      name:             {type: String, nilable: true, key: "name"},
-      namespace:        {type: String, nilable: true, key: "namespace"},
-      resource_version: {type: String, nilable: true, key: "resourceVersion"},
-      uid:              {type: String, nilable: true, key: "uid"},
+      api_version:      {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      field_path:       {type: String, nilable: true, key: "fieldPath", getter: false, setter: false},
+      kind:             {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:             {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace:        {type: String, nilable: true, key: "namespace", getter: false, setter: false},
+      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
+      uid:              {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:      {type: String, nilable: true, key: "apiVersion"},
-      field_path:       {type: String, nilable: true, key: "fieldPath"},
-      kind:             {type: String, nilable: true, key: "kind"},
-      name:             {type: String, nilable: true, key: "name"},
-      namespace:        {type: String, nilable: true, key: "namespace"},
-      resource_version: {type: String, nilable: true, key: "resourceVersion"},
-      uid:              {type: String, nilable: true, key: "uid"},
+      api_version:      {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      field_path:       {type: String, nilable: true, key: "fieldPath", getter: false, setter: false},
+      kind:             {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:             {type: String, nilable: true, key: "name", getter: false, setter: false},
+      namespace:        {type: String, nilable: true, key: "namespace", getter: false, setter: false},
+      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
+      uid:              {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @field_path : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @namespace : String | Nil = nil, @resource_version : String | Nil = nil, @uid : String | Nil = nil)

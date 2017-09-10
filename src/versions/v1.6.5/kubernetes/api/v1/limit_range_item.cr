@@ -25,21 +25,21 @@ module Pyrite
     property type : String | Nil
 
     YAML.mapping({
-      default:                 {type: Hash(String, String), nilable: true, key: "default"},
-      default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest"},
-      max:                     {type: Hash(String, String), nilable: true, key: "max"},
-      max_limit_request_ratio: {type: Hash(String, String), nilable: true, key: "maxLimitRequestRatio"},
-      min:                     {type: Hash(String, String), nilable: true, key: "min"},
-      type:                    {type: String, nilable: true, key: "type"},
+      default:                 {type: Hash(String, String), nilable: true, key: "default", getter: false, setter: false},
+      default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest", getter: false, setter: false},
+      max:                     {type: Hash(String, String), nilable: true, key: "max", getter: false, setter: false},
+      max_limit_request_ratio: {type: Hash(String, String), nilable: true, key: "maxLimitRequestRatio", getter: false, setter: false},
+      min:                     {type: Hash(String, String), nilable: true, key: "min", getter: false, setter: false},
+      type:                    {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      default:                 {type: Hash(String, String), nilable: true, key: "default"},
-      default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest"},
-      max:                     {type: Hash(String, String), nilable: true, key: "max"},
-      max_limit_request_ratio: {type: Hash(String, String), nilable: true, key: "maxLimitRequestRatio"},
-      min:                     {type: Hash(String, String), nilable: true, key: "min"},
-      type:                    {type: String, nilable: true, key: "type"},
+      default:                 {type: Hash(String, String), nilable: true, key: "default", getter: false, setter: false},
+      default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest", getter: false, setter: false},
+      max:                     {type: Hash(String, String), nilable: true, key: "max", getter: false, setter: false},
+      max_limit_request_ratio: {type: Hash(String, String), nilable: true, key: "maxLimitRequestRatio", getter: false, setter: false},
+      min:                     {type: Hash(String, String), nilable: true, key: "min", getter: false, setter: false},
+      type:                    {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
     def initialize(*, @default : Hash(String, String) | Nil = nil, @default_request : Hash(String, String) | Nil = nil, @max : Hash(String, String) | Nil = nil, @max_limit_request_ratio : Hash(String, String) | Nil = nil, @min : Hash(String, String) | Nil = nil, @type : String | Nil = nil)

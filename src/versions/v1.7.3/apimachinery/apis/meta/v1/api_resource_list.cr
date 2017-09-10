@@ -19,17 +19,17 @@ module Pyrite
     property resources : Array(Apimachinery::Apis::Meta::V1::APIResource)
 
     YAML.mapping({
-      api_version:   {type: String, nilable: true, key: "apiVersion"},
-      group_version: {type: String, nilable: false, key: "groupVersion"},
-      kind:          {type: String, nilable: true, key: "kind"},
-      resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources"},
+      api_version:   {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
+      kind:          {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      api_version:   {type: String, nilable: true, key: "apiVersion"},
-      group_version: {type: String, nilable: false, key: "groupVersion"},
-      kind:          {type: String, nilable: true, key: "kind"},
-      resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources"},
+      api_version:   {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
+      kind:          {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources", getter: false, setter: false},
     }, true)
 
     def initialize(*, @api_version : String | Nil = nil, @group_version : String | Nil = nil, @kind : String | Nil = nil, @resources : Array | Nil = nil)

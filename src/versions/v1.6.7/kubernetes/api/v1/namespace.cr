@@ -20,17 +20,17 @@ module Pyrite
     YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Namespace", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      spec:        {type: Kubernetes::Api::V1::NamespaceSpec, nilable: true, key: "spec"},
-      status:      {type: Kubernetes::Api::V1::NamespaceStatus, nilable: true, key: "status"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      spec:        {type: Kubernetes::Api::V1::NamespaceSpec, nilable: true, key: "spec", getter: false, setter: false},
+      status:      {type: Kubernetes::Api::V1::NamespaceStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Namespace", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata"},
-      spec:        {type: Kubernetes::Api::V1::NamespaceSpec, nilable: true, key: "spec"},
-      status:      {type: Kubernetes::Api::V1::NamespaceStatus, nilable: true, key: "status"},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
+      spec:        {type: Kubernetes::Api::V1::NamespaceSpec, nilable: true, key: "spec", getter: false, setter: false},
+      status:      {type: Kubernetes::Api::V1::NamespaceStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Api::V1::NamespaceSpec | Nil = nil, @status : Kubernetes::Api::V1::NamespaceStatus | Nil = nil)

@@ -22,19 +22,19 @@ module Pyrite
     property scheme : String | Nil
 
     YAML.mapping({
-      host:         {type: String, nilable: true, key: "host"},
-      http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders"},
-      path:         {type: String, nilable: true, key: "path"},
-      port:         {type: Int32 | String, nilable: false, key: "port"},
-      scheme:       {type: String, nilable: true, key: "scheme"},
+      host:         {type: String, nilable: true, key: "host", getter: false, setter: false},
+      http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders", getter: false, setter: false},
+      path:         {type: String, nilable: true, key: "path", getter: false, setter: false},
+      port:         {type: Int32 | String, nilable: false, key: "port", getter: false, setter: false},
+      scheme:       {type: String, nilable: true, key: "scheme", getter: false, setter: false},
     }, true)
 
     JSON.mapping({
-      host:         {type: String, nilable: true, key: "host"},
-      http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders"},
-      path:         {type: String, nilable: true, key: "path"},
-      port:         {type: Int32 | String, nilable: false, key: "port"},
-      scheme:       {type: String, nilable: true, key: "scheme"},
+      host:         {type: String, nilable: true, key: "host", getter: false, setter: false},
+      http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders", getter: false, setter: false},
+      path:         {type: String, nilable: true, key: "path", getter: false, setter: false},
+      port:         {type: Int32 | String, nilable: false, key: "port", getter: false, setter: false},
+      scheme:       {type: String, nilable: true, key: "scheme", getter: false, setter: false},
     }, true)
 
     def initialize(*, @host : String | Nil = nil, @http_headers : Array | Nil = nil, @path : String | Nil = nil, @port : Int32 | String | Nil = nil, @scheme : String | Nil = nil)
