@@ -67,6 +67,7 @@ class Generator
       File.open(File.join(version, "kubernetes.cr"), "w+") do |file|
         file.puts "",
           "module #{base_class}::Kubernetes",
+          "VERSION = #{version.lchop("v").inspect}",
           "alias Resource =",
           definitions.select(&.is_resource?).reject(&.is_list?).map { |r| "#{r.resource_alias}::#{r.kind}" }.join(" |\n"),
           "",
