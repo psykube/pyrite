@@ -157,7 +157,7 @@ class Generator::Definition
   end
 
   private def crystalize_name(name : String)
-    name.gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_")
+    name.gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
   end
 
   private def generate_description(description : String?)

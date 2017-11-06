@@ -6,9 +6,9 @@ require "json"
 module Pyrite
 # JSONSchemaProps is a JSON-Schema following Specification Draft 4 (http://json-schema.org/).
 class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps
-property $ref : String | Nil
+property ref : String | Nil
 
-property $schema : String | Nil
+property schema : String | Nil
 
 property additional_items : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool | Nil
 
@@ -79,8 +79,8 @@ property type : String | Nil
 property unique_items : Bool | Nil
 
 YAML.mapping({ 
-$ref: { type: String, nilable: true, key: "$ref", getter: false, setter: false },
-$schema: { type: String, nilable: true, key: "$schema", getter: false, setter: false },
+ref: { type: String, nilable: true, key: "$ref", getter: false, setter: false },
+schema: { type: String, nilable: true, key: "$schema", getter: false, setter: false },
 additional_items: { type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalItems", getter: false, setter: false },
 additional_properties: { type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalProperties", getter: false, setter: false },
 all_of: { type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: true, key: "allOf", getter: false, setter: false },
@@ -118,8 +118,8 @@ unique_items: { type: Bool, nilable: true, key: "uniqueItems", getter: false, se
 }, true)
 
 JSON.mapping({ 
-$ref: { type: String, nilable: true, key: "$ref", getter: false, setter: false },
-$schema: { type: String, nilable: true, key: "$schema", getter: false, setter: false },
+ref: { type: String, nilable: true, key: "$ref", getter: false, setter: false },
+schema: { type: String, nilable: true, key: "$schema", getter: false, setter: false },
 additional_items: { type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalItems", getter: false, setter: false },
 additional_properties: { type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalProperties", getter: false, setter: false },
 all_of: { type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: true, key: "allOf", getter: false, setter: false },
