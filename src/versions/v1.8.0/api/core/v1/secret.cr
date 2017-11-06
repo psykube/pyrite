@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
   class Api::Core::V1::Secret
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "Secret"
     # Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in [https://tools.ietf.org/html/rfc4648#section-4](https://tools.ietf.org/html/rfc4648#section-4)
     property data : Hash(String, String) | Nil
@@ -21,7 +21,7 @@ module Pyrite
     property type : String | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
       data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -30,7 +30,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
       data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -42,7 +42,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias Secret = ::Pyrite::Api::Core::V1::Secret
   end
 end

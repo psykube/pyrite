@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ExternalAdmissionHookConfiguration describes the configuration of initializers.
   class Api::Admissionregistration::V1alpha1::ExternalAdmissionHookConfiguration
-    getter api_version : String = "io/k8s/api/admissionregistration/v1alpha1"
+    getter api_version : String = "admissionregistration/v1alpha1"
     getter kind : String = "ExternalAdmissionHookConfiguration"
     # ExternalAdmissionHooks is a list of external admission webhooks and the affected resources and operations.
     property external_admission_hooks : Array(Api::Admissionregistration::V1alpha1::ExternalAdmissionHook) | Nil
@@ -15,14 +15,14 @@ module Pyrite
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     ::YAML.mapping({
-      api_version:              {type: String, default: "io/k8s/api/admissionregistration/v1alpha1", key: "apiVersion", setter: false},
+      api_version:              {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:                     {type: String, default: "ExternalAdmissionHookConfiguration", key: "kind", setter: false},
       external_admission_hooks: {type: Array(Api::Admissionregistration::V1alpha1::ExternalAdmissionHook), nilable: true, key: "externalAdmissionHooks", getter: false, setter: false},
       metadata:                 {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version:              {type: String, default: "io/k8s/api/admissionregistration/v1alpha1", key: "apiVersion", setter: false},
+      api_version:              {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:                     {type: String, default: "ExternalAdmissionHookConfiguration", key: "kind", setter: false},
       external_admission_hooks: {type: Array(Api::Admissionregistration::V1alpha1::ExternalAdmissionHook), nilable: true, key: "externalAdmissionHooks", getter: false, setter: false},
       metadata:                 {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -32,7 +32,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Admissionregistration::V1alpha1
+  module Resources::Admissionregistration::V1alpha1
     alias ExternalAdmissionHookConfiguration = ::Pyrite::Api::Admissionregistration::V1alpha1::ExternalAdmissionHookConfiguration
   end
 end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
   class Api::Core::V1::PersistentVolumeClaimList
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "List"
     # A list of persistent volume claims. More info: [https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims](https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims)
     property items : Array(Api::Core::V1::PersistentVolumeClaim)
@@ -15,14 +15,14 @@ module Pyrite
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Api::Core::V1::PersistentVolumeClaim), nilable: false, key: "items", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Api::Core::V1::PersistentVolumeClaim), nilable: false, key: "items", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},

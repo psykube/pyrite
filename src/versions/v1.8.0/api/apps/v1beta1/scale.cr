@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Scale represents a scaling request for a resource.
   class Api::Apps::V1beta1::Scale
-    getter api_version : String = "io/k8s/api/apps/v1beta1"
+    getter api_version : String = "apps/v1beta1"
     getter kind : String = "Scale"
     # Standard object metadata; More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Apps::V1beta1::ScaleStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Scale", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta1::ScaleSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Scale", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta1::ScaleSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Apps::V1beta1
+  module Resources::Apps::V1beta1
     alias Scale = ::Pyrite::Api::Apps::V1beta1::Scale
   end
 end

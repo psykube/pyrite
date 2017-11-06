@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ClusterRoleList is a collection of ClusterRoles
   class Api::Rbac::V1alpha1::ClusterRoleList
-    getter api_version : String = "io/k8s/api/rbac/v1alpha1"
+    getter api_version : String = "v1"
     getter kind : String = "List"
     # Items is a list of ClusterRoles
     property items : Array(Api::Rbac::V1alpha1::ClusterRole)
@@ -15,14 +15,14 @@ module Pyrite
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/rbac/v1alpha1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Api::Rbac::V1alpha1::ClusterRole), nilable: false, key: "items", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/rbac/v1alpha1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Api::Rbac::V1alpha1::ClusterRole), nilable: false, key: "items", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},

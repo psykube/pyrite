@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # PodTemplate describes a template for creating copies of a predefined pod.
   class Api::Core::V1::PodTemplate
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "PodTemplate"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -15,14 +15,14 @@ module Pyrite
     property template : Api::Core::V1::PodTemplateSpec | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodTemplate", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       template:    {type: Api::Core::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodTemplate", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       template:    {type: Api::Core::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
@@ -32,7 +32,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias PodTemplate = ::Pyrite::Api::Core::V1::PodTemplate
   end
 end

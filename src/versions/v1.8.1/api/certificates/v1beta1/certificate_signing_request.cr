@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Describes a certificate signing request
   class Api::Certificates::V1beta1::CertificateSigningRequest
-    getter api_version : String = "io/k8s/api/certificates/v1beta1"
+    getter api_version : String = "certificates/v1beta1"
     getter kind : String = "CertificateSigningRequest"
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -17,7 +17,7 @@ module Pyrite
     property status : Api::Certificates::V1beta1::CertificateSigningRequestStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/certificates/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "certificates/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CertificateSigningRequest", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Certificates::V1beta1::CertificateSigningRequestSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/certificates/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "certificates/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CertificateSigningRequest", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Certificates::V1beta1::CertificateSigningRequestSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -36,7 +36,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Certificates::V1beta1
+  module Resources::Certificates::V1beta1
     alias CertificateSigningRequest = ::Pyrite::Api::Certificates::V1beta1::CertificateSigningRequest
   end
 end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
   class Api::Authorization::V1beta1::LocalSubjectAccessReview
-    getter api_version : String = "io/k8s/api/authorization/v1beta1"
+    getter api_version : String = "authorization/v1beta1"
     getter kind : String = "LocalSubjectAccessReview"
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -17,7 +17,7 @@ module Pyrite
     property status : Api::Authorization::V1beta1::SubjectAccessReviewStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "LocalSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Authorization::V1beta1::SubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "LocalSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Authorization::V1beta1::SubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
@@ -36,7 +36,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Authorization::V1beta1
+  module Resources::Authorization::V1beta1
     alias LocalSubjectAccessReview = ::Pyrite::Api::Authorization::V1beta1::LocalSubjectAccessReview
   end
 end

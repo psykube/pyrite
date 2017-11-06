@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ReplicaSet represents the configuration of a ReplicaSet.
   class Api::Apps::V1beta2::ReplicaSet
-    getter api_version : String = "io/k8s/api/apps/v1beta2"
+    getter api_version : String = "apps/v1beta2"
     getter kind : String = "ReplicaSet"
     # If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Apps::V1beta2::ReplicaSetStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ReplicaSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::ReplicaSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ReplicaSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::ReplicaSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Apps::V1beta2
+  module Resources::Apps::V1beta2
     alias ReplicaSet = ::Pyrite::Api::Apps::V1beta2::ReplicaSet
   end
 end

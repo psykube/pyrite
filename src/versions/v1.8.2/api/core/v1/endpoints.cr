@@ -17,7 +17,7 @@ module Pyrite
   #     },
   #  ]
   class Api::Core::V1::Endpoints
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "Endpoints"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -26,14 +26,14 @@ module Pyrite
     property subsets : Array(Api::Core::V1::EndpointSubset)
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       subsets:     {type: Array(Api::Core::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       subsets:     {type: Array(Api::Core::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
@@ -43,7 +43,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias Endpoints = ::Pyrite::Api::Core::V1::Endpoints
   end
 end

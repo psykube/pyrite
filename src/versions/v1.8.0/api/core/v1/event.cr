@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Event is a report of an event somewhere in the cluster.
   class Api::Core::V1::Event
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "Event"
     # The number of times this event has occurred.
     property count : Int32 | Nil
@@ -36,7 +36,7 @@ module Pyrite
     property type : String | Nil
 
     ::YAML.mapping({
-      api_version:     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version:     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:            {type: String, default: "Event", key: "kind", setter: false},
       count:           {type: Int32, nilable: true, key: "count", getter: false, setter: false},
       first_timestamp: {type: Time, nilable: true, key: "firstTimestamp", getter: false, setter: false},
@@ -50,7 +50,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version:     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version:     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:            {type: String, default: "Event", key: "kind", setter: false},
       count:           {type: Int32, nilable: true, key: "count", getter: false, setter: false},
       first_timestamp: {type: Time, nilable: true, key: "firstTimestamp", getter: false, setter: false},
@@ -67,7 +67,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias Event = ::Pyrite::Api::Core::V1::Event
   end
 end

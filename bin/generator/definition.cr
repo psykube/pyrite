@@ -308,7 +308,7 @@ class Generator::Definition
   end
 
   def api_version
-    name.sub(/^io\.k8s\.([-a-z]+\.)+pkg\.apis?\./, "").split(".")[0..-2].join("/")
+    is_list? ? "v1" : name.sub(/^io\.k8s(\.[-a-z]+\.pkg)?\.apis?(\.core)?\./, "").split(".")[0..-2].join("/")
   end
 
   private def api_module

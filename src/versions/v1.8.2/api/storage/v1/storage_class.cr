@@ -8,7 +8,7 @@ module Pyrite
   #
   # StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
   class Api::Storage::V1::StorageClass
-    getter api_version : String = "io/k8s/api/storage/v1"
+    getter api_version : String = "storage/v1"
     getter kind : String = "StorageClass"
     # AllowVolumeExpansion shows whether the storage class allow volume expand
     property allow_volume_expansion : Bool | Nil
@@ -29,7 +29,7 @@ module Pyrite
     property reclaim_policy : String | Nil
 
     ::YAML.mapping({
-      api_version:            {type: String, default: "io/k8s/api/storage/v1", key: "apiVersion", setter: false},
+      api_version:            {type: String, default: "storage/v1", key: "apiVersion", setter: false},
       kind:                   {type: String, default: "StorageClass", key: "kind", setter: false},
       allow_volume_expansion: {type: Bool, nilable: true, key: "allowVolumeExpansion", getter: false, setter: false},
       metadata:               {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -40,7 +40,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version:            {type: String, default: "io/k8s/api/storage/v1", key: "apiVersion", setter: false},
+      api_version:            {type: String, default: "storage/v1", key: "apiVersion", setter: false},
       kind:                   {type: String, default: "StorageClass", key: "kind", setter: false},
       allow_volume_expansion: {type: Bool, nilable: true, key: "allowVolumeExpansion", getter: false, setter: false},
       metadata:               {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -54,7 +54,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Storage::V1
+  module Resources::Storage::V1
     alias StorageClass = ::Pyrite::Api::Storage::V1::StorageClass
   end
 end

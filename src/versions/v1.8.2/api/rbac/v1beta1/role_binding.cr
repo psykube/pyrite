@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
   class Api::Rbac::V1beta1::RoleBinding
-    getter api_version : String = "io/k8s/api/rbac/v1beta1"
+    getter api_version : String = "rbac/v1beta1"
     getter kind : String = "RoleBinding"
     # Standard object's metadata.
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property subjects : Array(Api::Rbac::V1beta1::Subject)
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/rbac/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "RoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       role_ref:    {type: Api::Rbac::V1beta1::RoleRef, nilable: false, key: "roleRef", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/rbac/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "RoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       role_ref:    {type: Api::Rbac::V1beta1::RoleRef, nilable: false, key: "roleRef", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Rbac::V1beta1
+  module Resources::Rbac::V1beta1
     alias RoleBinding = ::Pyrite::Api::Rbac::V1beta1::RoleBinding
   end
 end

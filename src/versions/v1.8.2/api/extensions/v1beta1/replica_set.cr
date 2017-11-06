@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # DEPRECATED - This group version of ReplicaSet is deprecated by [apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet represents the configuration of a ReplicaSet.](apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet represents the configuration of a ReplicaSet.)
   class Api::Extensions::V1beta1::ReplicaSet
-    getter api_version : String = "io/k8s/api/extensions/v1beta1"
+    getter api_version : String = "extensions/v1beta1"
     getter kind : String = "ReplicaSet"
     # If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Extensions::V1beta1::ReplicaSetStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/extensions/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ReplicaSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Extensions::V1beta1::ReplicaSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/extensions/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ReplicaSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Extensions::V1beta1::ReplicaSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Extensions::V1beta1
+  module Resources::Extensions::V1beta1
     alias ReplicaSet = ::Pyrite::Api::Extensions::V1beta1::ReplicaSet
   end
 end

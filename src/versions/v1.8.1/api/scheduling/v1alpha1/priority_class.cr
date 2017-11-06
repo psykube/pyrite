@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
   class Api::Scheduling::V1alpha1::PriorityClass
-    getter api_version : String = "io/k8s/api/scheduling/v1alpha1"
+    getter api_version : String = "scheduling/v1alpha1"
     getter kind : String = "PriorityClass"
     # description is an arbitrary string that usually provides guidelines on when this priority class should be used.
     property description : String | Nil
@@ -21,7 +21,7 @@ module Pyrite
     property value : Int32
 
     ::YAML.mapping({
-      api_version:    {type: String, default: "io/k8s/api/scheduling/v1alpha1", key: "apiVersion", setter: false},
+      api_version:    {type: String, default: "scheduling/v1alpha1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "PriorityClass", key: "kind", setter: false},
       description:    {type: String, nilable: true, key: "description", getter: false, setter: false},
       global_default: {type: Bool, nilable: true, key: "globalDefault", getter: false, setter: false},
@@ -30,7 +30,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version:    {type: String, default: "io/k8s/api/scheduling/v1alpha1", key: "apiVersion", setter: false},
+      api_version:    {type: String, default: "scheduling/v1alpha1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "PriorityClass", key: "kind", setter: false},
       description:    {type: String, nilable: true, key: "description", getter: false, setter: false},
       global_default: {type: Bool, nilable: true, key: "globalDefault", getter: false, setter: false},
@@ -42,7 +42,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Scheduling::V1alpha1
+  module Resources::Scheduling::V1alpha1
     alias PriorityClass = ::Pyrite::Api::Scheduling::V1alpha1::PriorityClass
   end
 end

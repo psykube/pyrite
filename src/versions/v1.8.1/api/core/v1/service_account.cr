@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
   class Api::Core::V1::ServiceAccount
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "ServiceAccount"
     # AutomountServiceAccountToken indicates whether pods running as this service account should have an API token automatically mounted. Can be overridden at the pod level.
     property automount_service_account_token : Bool | Nil
@@ -21,7 +21,7 @@ module Pyrite
     property secrets : Array(Api::Core::V1::ObjectReference) | Nil
 
     ::YAML.mapping({
-      api_version:                     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
       automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
       image_pull_secrets:              {type: Array(Api::Core::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets", getter: false, setter: false},
@@ -30,7 +30,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version:                     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
       automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
       image_pull_secrets:              {type: Array(Api::Core::V1::LocalObjectReference), nilable: true, key: "imagePullSecrets", getter: false, setter: false},
@@ -42,7 +42,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias ServiceAccount = ::Pyrite::Api::Core::V1::ServiceAccount
   end
 end

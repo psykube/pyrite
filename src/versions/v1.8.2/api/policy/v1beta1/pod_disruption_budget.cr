@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods
   class Api::Policy::V1beta1::PodDisruptionBudget
-    getter api_version : String = "io/k8s/api/policy/v1beta1"
+    getter api_version : String = "policy/v1beta1"
     getter kind : String = "PodDisruptionBudget"
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -17,7 +17,7 @@ module Pyrite
     property status : Api::Policy::V1beta1::PodDisruptionBudgetStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/policy/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodDisruptionBudget", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Policy::V1beta1::PodDisruptionBudgetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/policy/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodDisruptionBudget", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Policy::V1beta1::PodDisruptionBudgetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -36,7 +36,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Policy::V1beta1
+  module Resources::Policy::V1beta1
     alias PodDisruptionBudget = ::Pyrite::Api::Policy::V1beta1::PodDisruptionBudget
   end
 end

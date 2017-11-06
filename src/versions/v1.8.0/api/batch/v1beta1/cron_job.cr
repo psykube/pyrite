@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # CronJob represents the configuration of a single cron job.
   class Api::Batch::V1beta1::CronJob
-    getter api_version : String = "io/k8s/api/batch/v1beta1"
+    getter api_version : String = "batch/v1beta1"
     getter kind : String = "CronJob"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Batch::V1beta1::CronJobStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/batch/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "batch/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CronJob", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Batch::V1beta1::CronJobSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/batch/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "batch/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CronJob", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Batch::V1beta1::CronJobSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Batch::V1beta1
+  module Resources::Batch::V1beta1
     alias CronJob = ::Pyrite::Api::Batch::V1beta1::CronJob
   end
 end

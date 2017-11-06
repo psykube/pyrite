@@ -9,7 +9,7 @@ module Pyrite
   #  - Storage: As many VolumeClaims as requested.
   # The StatefulSet guarantees that a given network identity will always map to the same storage identity.
   class Api::Apps::V1beta2::StatefulSet
-    getter api_version : String = "io/k8s/api/apps/v1beta2"
+    getter api_version : String = "apps/v1beta2"
     getter kind : String = "StatefulSet"
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -20,7 +20,7 @@ module Pyrite
     property status : Api::Apps::V1beta2::StatefulSetStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StatefulSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::StatefulSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -28,7 +28,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StatefulSet", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::StatefulSetSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -39,7 +39,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Apps::V1beta2
+  module Resources::Apps::V1beta2
     alias StatefulSet = ::Pyrite::Api::Apps::V1beta2::StatefulSet
   end
 end

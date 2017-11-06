@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Deployment enables declarative updates for Pods and ReplicaSets.
   class Api::Apps::V1beta2::Deployment
-    getter api_version : String = "io/k8s/api/apps/v1beta2"
+    getter api_version : String = "apps/v1beta2"
     getter kind : String = "Deployment"
     # Standard object metadata.
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Apps::V1beta2::DeploymentStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Deployment", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::DeploymentSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/apps/v1beta2", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "apps/v1beta2", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Deployment", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Apps::V1beta2::DeploymentSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Apps::V1beta2
+  module Resources::Apps::V1beta2
     alias Deployment = ::Pyrite::Api::Apps::V1beta2::Deployment
   end
 end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # LimitRange sets resource usage limits for each kind of resource in a Namespace.
   class Api::Core::V1::LimitRange
-    getter api_version : String = "io/k8s/api/core/v1"
+    getter api_version : String = "v1"
     getter kind : String = "LimitRange"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -15,14 +15,14 @@ module Pyrite
     property spec : Api::Core::V1::LimitRangeSpec | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "LimitRange", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Core::V1::LimitRangeSpec, nilable: true, key: "spec", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "LimitRange", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Core::V1::LimitRangeSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -32,7 +32,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Core::V1
+  module Resources::V1
     alias LimitRange = ::Pyrite::Api::Core::V1::LimitRange
   end
 end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
   class Api::Authorization::V1beta1::SelfSubjectAccessReview
-    getter api_version : String = "io/k8s/api/authorization/v1beta1"
+    getter api_version : String = "authorization/v1beta1"
     getter kind : String = "SelfSubjectAccessReview"
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -17,7 +17,7 @@ module Pyrite
     property status : Api::Authorization::V1beta1::SubjectAccessReviewStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "SelfSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Authorization::V1beta1::SelfSubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "SelfSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Authorization::V1beta1::SelfSubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
@@ -36,7 +36,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Authorization::V1beta1
+  module Resources::Authorization::V1beta1
     alias SelfSubjectAccessReview = ::Pyrite::Api::Authorization::V1beta1::SelfSubjectAccessReview
   end
 end

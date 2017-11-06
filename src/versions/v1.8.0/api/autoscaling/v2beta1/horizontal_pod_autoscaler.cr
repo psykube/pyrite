@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
   class Api::Autoscaling::V2beta1::HorizontalPodAutoscaler
-    getter api_version : String = "io/k8s/api/autoscaling/v2beta1"
+    getter api_version : String = "autoscaling/v2beta1"
     getter kind : String = "HorizontalPodAutoscaler"
     # metadata is the standard object metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property status : Api::Autoscaling::V2beta1::HorizontalPodAutoscalerStatus | Nil
 
     ::YAML.mapping({
-      api_version: {type: String, default: "io/k8s/api/autoscaling/v2beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "autoscaling/v2beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "HorizontalPodAutoscaler", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Autoscaling::V2beta1::HorizontalPodAutoscalerSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "io/k8s/api/autoscaling/v2beta1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "autoscaling/v2beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "HorizontalPodAutoscaler", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Autoscaling::V2beta1::HorizontalPodAutoscalerSpec, nilable: true, key: "spec", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
     end
   end
 
-  module Resources::Io::K8s::Api::Autoscaling::V2beta1
+  module Resources::Autoscaling::V2beta1
     alias HorizontalPodAutoscaler = ::Pyrite::Api::Autoscaling::V2beta1::HorizontalPodAutoscaler
   end
 end
