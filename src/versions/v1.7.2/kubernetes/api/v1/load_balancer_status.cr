@@ -9,11 +9,11 @@ module Pyrite
     # Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.
     property ingress : Array(Kubernetes::Api::V1::LoadBalancerIngress) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ingress: {type: Array(Kubernetes::Api::V1::LoadBalancerIngress), nilable: true, key: "ingress", getter: false, setter: false},
     }, true)
 

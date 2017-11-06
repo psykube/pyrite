@@ -15,13 +15,13 @@ module Pyrite
     # Server is the hostname or IP address of the NFS server. More info: [http://kubernetes.io/docs/user-guide/volumes#nfs](http://kubernetes.io/docs/user-guide/volumes#nfs)
     property server : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       path:      {type: String, nilable: false, key: "path", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       server:    {type: String, nilable: false, key: "server", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path:      {type: String, nilable: false, key: "path", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       server:    {type: String, nilable: false, key: "server", getter: false, setter: false},

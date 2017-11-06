@@ -17,7 +17,7 @@ module Pyrite
     # Subjects holds references to the objects the role applies to.
     property subjects : Array(Api::Rbac::V1::Subject)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/rbac/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "RoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       subjects:    {type: Array(Api::Rbac::V1::Subject), nilable: false, key: "subjects", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/rbac/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "RoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

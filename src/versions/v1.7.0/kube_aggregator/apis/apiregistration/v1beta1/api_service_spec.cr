@@ -27,7 +27,7 @@ module Pyrite
     # VersionPriority controls the ordering of this API version inside of its group.  Must be greater than zero. The primary sort is based on VersionPriority, ordered highest to lowest (20 before 10). The secondary sort is based on the alphabetical comparison of the name of the object.  (v1.bar before v1.foo) Since it's inside of a group, the number can be small, probably in the 10s.
     property version_priority : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       ca_bundle:                {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
       group:                    {type: String, nilable: true, key: "group", getter: false, setter: false},
       group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       version_priority:         {type: Int32, nilable: false, key: "versionPriority", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ca_bundle:                {type: String, nilable: false, key: "caBundle", getter: false, setter: false},
       group:                    {type: String, nilable: true, key: "group", getter: false, setter: false},
       group_priority_minimum:   {type: Int32, nilable: false, key: "groupPriorityMinimum", getter: false, setter: false},

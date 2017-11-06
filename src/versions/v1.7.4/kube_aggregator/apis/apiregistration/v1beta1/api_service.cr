@@ -16,7 +16,7 @@ module Pyrite
     # Status contains derived information about an API server
     property status : KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "apiregistration/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "APIService", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -24,7 +24,7 @@ module Pyrite
       status:      {type: KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "apiregistration/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "APIService", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

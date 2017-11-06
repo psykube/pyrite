@@ -18,14 +18,14 @@ module Pyrite
     # resources contains the name of the resources and if they are namespaced.
     property resources : Array(Apimachinery::Apis::Meta::V1::APIResource)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:   {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
       kind:          {type: String, nilable: true, key: "kind", getter: false, setter: false},
       resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:   {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
       kind:          {type: String, nilable: true, key: "kind", getter: false, setter: false},

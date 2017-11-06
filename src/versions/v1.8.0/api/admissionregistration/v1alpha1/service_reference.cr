@@ -12,12 +12,12 @@ module Pyrite
     # Namespace is the namespace of the service Required
     property namespace : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
       namespace: {type: String, nilable: false, key: "namespace", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
       namespace: {type: String, nilable: false, key: "namespace", getter: false, setter: false},
     }, true)

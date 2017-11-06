@@ -24,7 +24,7 @@ module Pyrite
     # Type of resource that this limit applies to.
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       default:                 {type: Hash(String, String), nilable: true, key: "default", getter: false, setter: false},
       default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest", getter: false, setter: false},
       max:                     {type: Hash(String, String), nilable: true, key: "max", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       type:                    {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       default:                 {type: Hash(String, String), nilable: true, key: "default", getter: false, setter: false},
       default_request:         {type: Hash(String, String), nilable: true, key: "defaultRequest", getter: false, setter: false},
       max:                     {type: Hash(String, String), nilable: true, key: "max", getter: false, setter: false},

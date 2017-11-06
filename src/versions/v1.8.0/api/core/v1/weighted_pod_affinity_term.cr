@@ -12,12 +12,12 @@ module Pyrite
     # weight associated with matching the corresponding podAffinityTerm, in the range 1-100.
     property weight : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       pod_affinity_term: {type: Api::Core::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm", getter: false, setter: false},
       weight:            {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       pod_affinity_term: {type: Api::Core::V1::PodAffinityTerm, nilable: false, key: "podAffinityTerm", getter: false, setter: false},
       weight:            {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)

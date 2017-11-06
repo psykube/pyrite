@@ -12,12 +12,12 @@ module Pyrite
     # Path of the field to select in the specified API version.
     property field_path : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       field_path:  {type: String, nilable: false, key: "fieldPath", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       field_path:  {type: String, nilable: false, key: "fieldPath", getter: false, setter: false},
     }, true)

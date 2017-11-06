@@ -18,14 +18,14 @@ module Pyrite
     # ResourceRules is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
     property resource_rules : Array(Api::Authorization::V1::ResourceRule)
 
-    YAML.mapping({
+    ::YAML.mapping({
       evaluation_error:   {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
       incomplete:         {type: Bool, nilable: false, key: "incomplete", getter: false, setter: false},
       non_resource_rules: {type: Array(Api::Authorization::V1::NonResourceRule), nilable: false, key: "nonResourceRules", getter: false, setter: false},
       resource_rules:     {type: Array(Api::Authorization::V1::ResourceRule), nilable: false, key: "resourceRules", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       evaluation_error:   {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
       incomplete:         {type: Bool, nilable: false, key: "incomplete", getter: false, setter: false},
       non_resource_rules: {type: Array(Api::Authorization::V1::NonResourceRule), nilable: false, key: "nonResourceRules", getter: false, setter: false},

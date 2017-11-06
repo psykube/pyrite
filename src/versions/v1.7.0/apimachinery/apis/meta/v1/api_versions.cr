@@ -18,14 +18,14 @@ module Pyrite
     # versions are the api versions that are available.
     property versions : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
       server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs", getter: false, setter: false},
       versions:                        {type: Array(String), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
       server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: false, key: "serverAddressByClientCIDRs", getter: false, setter: false},

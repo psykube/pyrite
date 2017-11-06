@@ -15,13 +15,13 @@ module Pyrite
     # The Secret to select from
     property secret_ref : Api::Core::V1::SecretEnvSource | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       config_map_ref: {type: Api::Core::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef", getter: false, setter: false},
       prefix:         {type: String, nilable: true, key: "prefix", getter: false, setter: false},
       secret_ref:     {type: Api::Core::V1::SecretEnvSource, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       config_map_ref: {type: Api::Core::V1::ConfigMapEnvSource, nilable: true, key: "configMapRef", getter: false, setter: false},
       prefix:         {type: String, nilable: true, key: "prefix", getter: false, setter: false},
       secret_ref:     {type: Api::Core::V1::SecretEnvSource, nilable: true, key: "secretRef", getter: false, setter: false},

@@ -11,12 +11,12 @@ module Pyrite
     # Conditions applied to the request, such as approval or denial.
     property conditions : Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       certificate: {type: String, nilable: true, key: "certificate", getter: false, setter: false},
       conditions:  {type: Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       certificate: {type: String, nilable: true, key: "certificate", getter: false, setter: false},
       conditions:  {type: Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)

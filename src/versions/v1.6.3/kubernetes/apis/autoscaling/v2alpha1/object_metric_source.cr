@@ -15,13 +15,13 @@ module Pyrite
     # targetValue is the target value of the metric (as a quantity).
     property target_value : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
       target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
       target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},

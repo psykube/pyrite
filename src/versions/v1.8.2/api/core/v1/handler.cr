@@ -15,13 +15,13 @@ module Pyrite
     # TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
     property tcp_socket : Api::Core::V1::TCPSocketAction | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       exec:       {type: Api::Core::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
       http_get:   {type: Api::Core::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
       tcp_socket: {type: Api::Core::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       exec:       {type: Api::Core::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
       http_get:   {type: Api::Core::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
       tcp_socket: {type: Api::Core::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},

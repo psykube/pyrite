@@ -21,7 +21,7 @@ module Pyrite
     # observedGeneration is the most recent generation observed by this autoscaler.
     property observed_generation : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics", getter: false, setter: false},
       current_replicas:    {type: Int32, nilable: false, key: "currentReplicas", getter: false, setter: false},
       desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_metrics:     {type: Array(Kubernetes::Apis::Autoscaling::V2alpha1::MetricStatus), nilable: false, key: "currentMetrics", getter: false, setter: false},
       current_replicas:    {type: Int32, nilable: false, key: "currentReplicas", getter: false, setter: false},
       desired_replicas:    {type: Int32, nilable: false, key: "desiredReplicas", getter: false, setter: false},

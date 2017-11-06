@@ -9,11 +9,11 @@ module Pyrite
     # Path of the directory on the host. More info: [http://kubernetes.io/docs/user-guide/volumes#hostpath](http://kubernetes.io/docs/user-guide/volumes#hostpath)
     property path : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 

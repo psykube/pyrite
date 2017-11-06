@@ -18,14 +18,14 @@ module Pyrite
     # Selects a key of a secret in the pod's namespace
     property secret_key_ref : Api::Core::V1::SecretKeySelector | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       config_map_key_ref: {type: Api::Core::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef", getter: false, setter: false},
       field_ref:          {type: Api::Core::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
       resource_field_ref: {type: Api::Core::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
       secret_key_ref:     {type: Api::Core::V1::SecretKeySelector, nilable: true, key: "secretKeyRef", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       config_map_key_ref: {type: Api::Core::V1::ConfigMapKeySelector, nilable: true, key: "configMapKeyRef", getter: false, setter: false},
       field_ref:          {type: Api::Core::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
       resource_field_ref: {type: Api::Core::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},

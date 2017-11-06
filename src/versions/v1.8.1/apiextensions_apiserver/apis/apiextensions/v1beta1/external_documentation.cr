@@ -10,12 +10,12 @@ module Pyrite
 
     property url : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       description: {type: String, nilable: true, key: "description", getter: false, setter: false},
       url:         {type: String, nilable: true, key: "url", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       description: {type: String, nilable: true, key: "description", getter: false, setter: false},
       url:         {type: String, nilable: true, key: "url", getter: false, setter: false},
     }, true)

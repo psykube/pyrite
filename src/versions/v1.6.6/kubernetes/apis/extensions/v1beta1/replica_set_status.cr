@@ -24,7 +24,7 @@ module Pyrite
     # Replicas is the most recently oberved number of replicas. More info: [http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller](http://kubernetes.io/docs/user-guide/replication-controller#what-is-a-replication-controller)
     property replicas : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       available_replicas:     {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
       conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions", getter: false, setter: false},
       fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       replicas:               {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       available_replicas:     {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
       conditions:             {type: Array(Kubernetes::Apis::Extensions::V1beta1::ReplicaSetCondition), nilable: true, key: "conditions", getter: false, setter: false},
       fully_labeled_replicas: {type: Int32, nilable: true, key: "fullyLabeledReplicas", getter: false, setter: false},

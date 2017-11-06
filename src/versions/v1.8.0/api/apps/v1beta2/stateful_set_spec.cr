@@ -30,7 +30,7 @@ module Pyrite
     # volumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.
     property volume_claim_templates : Array(Api::Core::V1::PersistentVolumeClaim) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy", getter: false, setter: false},
       replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
       revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       volume_claim_templates: {type: Array(Api::Core::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       pod_management_policy:  {type: String, nilable: true, key: "podManagementPolicy", getter: false, setter: false},
       replicas:               {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
       revision_history_limit: {type: Int32, nilable: true, key: "revisionHistoryLimit", getter: false, setter: false},

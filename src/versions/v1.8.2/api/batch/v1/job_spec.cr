@@ -27,7 +27,7 @@ module Pyrite
     # Describes the pod that will be created when executing a job. More info: [https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
     property template : Api::Core::V1::PodTemplateSpec
 
-    YAML.mapping({
+    ::YAML.mapping({
       active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
       backoff_limit:           {type: Int32, nilable: true, key: "backoffLimit", getter: false, setter: false},
       completions:             {type: Int32, nilable: true, key: "completions", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       template:                {type: Api::Core::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       active_deadline_seconds: {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
       backoff_limit:           {type: Int32, nilable: true, key: "backoffLimit", getter: false, setter: false},
       completions:             {type: Int32, nilable: true, key: "completions", getter: false, setter: false},

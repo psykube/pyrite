@@ -18,14 +18,14 @@ module Pyrite
     # The name that uniquely identifies this user among all active users.
     property username : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
       groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
       uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},
       username: {type: String, nilable: true, key: "username", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
       groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
       uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},

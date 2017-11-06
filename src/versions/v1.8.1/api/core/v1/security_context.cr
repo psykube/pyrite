@@ -27,7 +27,7 @@ module Pyrite
     # The SELinux context to be applied to the container. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
     property se_linux_options : Api::Core::V1::SELinuxOptions | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       allow_privilege_escalation: {type: Bool, nilable: true, key: "allowPrivilegeEscalation", getter: false, setter: false},
       capabilities:               {type: Api::Core::V1::Capabilities, nilable: true, key: "capabilities", getter: false, setter: false},
       privileged:                 {type: Bool, nilable: true, key: "privileged", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       se_linux_options:           {type: Api::Core::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       allow_privilege_escalation: {type: Bool, nilable: true, key: "allowPrivilegeEscalation", getter: false, setter: false},
       capabilities:               {type: Api::Core::V1::Capabilities, nilable: true, key: "capabilities", getter: false, setter: false},
       privileged:                 {type: Bool, nilable: true, key: "privileged", getter: false, setter: false},

@@ -21,7 +21,7 @@ module Pyrite
     # VolumeNamespace specifies the scope of the volume within StorageOS.  If no namespace is specified then the Pod's namespace will be used.  This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.
     property volume_namespace : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:          {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       secret_ref:       {type: Api::Core::V1::ObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       volume_namespace: {type: String, nilable: true, key: "volumeNamespace", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:          {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       secret_ref:       {type: Api::Core::V1::ObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},

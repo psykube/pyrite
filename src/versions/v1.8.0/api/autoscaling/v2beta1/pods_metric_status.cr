@@ -12,12 +12,12 @@ module Pyrite
     # metricName is the name of the metric in question
     property metric_name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_average_value: {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
       metric_name:           {type: String, nilable: false, key: "metricName", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_average_value: {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
       metric_name:           {type: String, nilable: false, key: "metricName", getter: false, setter: false},
     }, true)

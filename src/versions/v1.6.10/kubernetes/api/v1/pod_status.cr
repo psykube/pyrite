@@ -36,7 +36,7 @@ module Pyrite
     # RFC 3339 date and time at which the object was acknowledged by the Kubelet. This is before the Kubelet pulled the container image(s) for the pod.
     property start_time : Time | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions", getter: false, setter: false},
       container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses", getter: false, setter: false},
       host_ip:                 {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       start_time:              {type: Time, nilable: true, key: "startTime", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       conditions:              {type: Array(Kubernetes::Api::V1::PodCondition), nilable: true, key: "conditions", getter: false, setter: false},
       container_statuses:      {type: Array(Kubernetes::Api::V1::ContainerStatus), nilable: true, key: "containerStatuses", getter: false, setter: false},
       host_ip:                 {type: String, nilable: true, key: "hostIP", getter: false, setter: false},

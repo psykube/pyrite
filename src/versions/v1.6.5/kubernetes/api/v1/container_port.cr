@@ -21,7 +21,7 @@ module Pyrite
     # Protocol for port. Must be UDP or TCP. Defaults to "TCP".
     property protocol : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       container_port: {type: Int32, nilable: false, key: "containerPort", getter: false, setter: false},
       host_ip:        {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
       host_port:      {type: Int32, nilable: true, key: "hostPort", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       protocol:       {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       container_port: {type: Int32, nilable: false, key: "containerPort", getter: false, setter: false},
       host_ip:        {type: String, nilable: true, key: "hostIP", getter: false, setter: false},
       host_port:      {type: Int32, nilable: true, key: "hostPort", getter: false, setter: false},

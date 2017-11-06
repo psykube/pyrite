@@ -12,12 +12,12 @@ module Pyrite
     # Namespace defines the space within which the secret name must be unique.
     property namespace : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)

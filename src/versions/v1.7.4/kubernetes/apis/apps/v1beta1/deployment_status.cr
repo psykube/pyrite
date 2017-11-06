@@ -30,7 +30,7 @@ module Pyrite
     # Total number of non-terminated pods targeted by this deployment that have the desired template spec.
     property updated_replicas : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       available_replicas:   {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
       collision_count:      {type: Int32, nilable: true, key: "collisionCount", getter: false, setter: false},
       conditions:           {type: Array(Kubernetes::Apis::Apps::V1beta1::DeploymentCondition), nilable: true, key: "conditions", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       updated_replicas:     {type: Int32, nilable: true, key: "updatedReplicas", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       available_replicas:   {type: Int32, nilable: true, key: "availableReplicas", getter: false, setter: false},
       collision_count:      {type: Int32, nilable: true, key: "collisionCount", getter: false, setter: false},
       conditions:           {type: Array(Kubernetes::Apis::Apps::V1beta1::DeploymentCondition), nilable: true, key: "conditions", getter: false, setter: false},

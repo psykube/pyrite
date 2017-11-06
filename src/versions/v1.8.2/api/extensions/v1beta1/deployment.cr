@@ -17,7 +17,7 @@ module Pyrite
     # Most recently observed status of the Deployment.
     property status : Api::Extensions::V1beta1::DeploymentStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Deployment", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       status:      {type: Api::Extensions::V1beta1::DeploymentStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Deployment", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

@@ -18,14 +18,14 @@ module Pyrite
     # Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
     property resource_field_ref : Kubernetes::Api::V1::ResourceFieldSelector | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
       mode:               {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
       path:               {type: String, nilable: false, key: "path", getter: false, setter: false},
       resource_field_ref: {type: Kubernetes::Api::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       field_ref:          {type: Kubernetes::Api::V1::ObjectFieldSelector, nilable: true, key: "fieldRef", getter: false, setter: false},
       mode:               {type: Int32, nilable: true, key: "mode", getter: false, setter: false},
       path:               {type: String, nilable: false, key: "path", getter: false, setter: false},

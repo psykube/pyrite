@@ -27,7 +27,7 @@ module Pyrite
     # UID of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
     property uid : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:      {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       field_path:       {type: String, nilable: true, key: "fieldPath", getter: false, setter: false},
       kind:             {type: String, nilable: true, key: "kind", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       uid:              {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:      {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       field_path:       {type: String, nilable: true, key: "fieldPath", getter: false, setter: false},
       kind:             {type: String, nilable: true, key: "kind", getter: false, setter: false},

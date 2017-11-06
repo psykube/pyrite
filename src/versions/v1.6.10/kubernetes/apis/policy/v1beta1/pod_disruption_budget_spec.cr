@@ -12,12 +12,12 @@ module Pyrite
     # Label query over pods whose evictions are managed by the disruption budget.
     property selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       min_available: {type: Int32 | String, nilable: true, key: "minAvailable", getter: false, setter: false},
       selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       min_available: {type: Int32 | String, nilable: true, key: "minAvailable", getter: false, setter: false},
       selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
     }, true)

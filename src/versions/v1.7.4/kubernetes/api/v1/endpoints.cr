@@ -25,14 +25,14 @@ module Pyrite
     # The set of all endpoints is the union of all subsets. Addresses are placed into subsets according to the IPs they share. A single address with multiple ports, some of which are ready and some of which are not (because they come from different containers) will result in the address being displayed in different subsets for the different ports. No address will appear in both Addresses and NotReadyAddresses in the same subset. Sets of addresses and ports that comprise a service.
     property subsets : Array(Kubernetes::Api::V1::EndpointSubset)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       subsets:     {type: Array(Kubernetes::Api::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

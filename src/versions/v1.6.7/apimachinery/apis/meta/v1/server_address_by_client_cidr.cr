@@ -12,12 +12,12 @@ module Pyrite
     # Address of this server, suitable for a client that matches the above CIDR. This can be a hostname, hostname:port, IP or IP:port.
     property server_address : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       client_cid_r:   {type: String, nilable: false, key: "clientCIDR", getter: false, setter: false},
       server_address: {type: String, nilable: false, key: "serverAddress", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       client_cid_r:   {type: String, nilable: false, key: "clientCIDR", getter: false, setter: false},
       server_address: {type: String, nilable: false, key: "serverAddress", getter: false, setter: false},
     }, true)

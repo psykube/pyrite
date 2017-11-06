@@ -21,7 +21,7 @@ module Pyrite
     # Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: [https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration](https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration)
     property unschedulable : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
       pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
       provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       unschedulable: {type: Bool, nilable: true, key: "unschedulable", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
       pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
       provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},

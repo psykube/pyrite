@@ -27,7 +27,7 @@ module Pyrite
     # Version is the API Version of the Resource.  "*" means all.
     property version : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       group:       {type: String, nilable: true, key: "group", getter: false, setter: false},
       name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
       namespace:   {type: String, nilable: true, key: "namespace", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       version:     {type: String, nilable: true, key: "version", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       group:       {type: String, nilable: true, key: "group", getter: false, setter: false},
       name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
       namespace:   {type: String, nilable: true, key: "namespace", getter: false, setter: false},

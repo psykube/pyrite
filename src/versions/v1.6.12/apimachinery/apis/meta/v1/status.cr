@@ -30,7 +30,7 @@ module Pyrite
     # Status of the operation. One of: "Success" or "Failure". More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status)
     property status : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       code:        {type: Int32, nilable: true, key: "code", getter: false, setter: false},
       details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       status:      {type: String, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       code:        {type: Int32, nilable: true, key: "code", getter: false, setter: false},
       details:     {type: Apimachinery::Apis::Meta::V1::StatusDetails, nilable: true, key: "details", getter: false, setter: false},

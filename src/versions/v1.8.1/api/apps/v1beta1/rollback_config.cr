@@ -9,11 +9,11 @@ module Pyrite
     # The revision to rollback to. If set to 0, rollback to the last revision.
     property revision : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 

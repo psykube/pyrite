@@ -30,7 +30,7 @@ module Pyrite
     # The rados user name. Default is admin. More info: [http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it](http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it)
     property user : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       image:      {type: String, nilable: false, key: "image", getter: false, setter: false},
       keyring:    {type: String, nilable: true, key: "keyring", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       user:       {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       image:      {type: String, nilable: false, key: "image", getter: false, setter: false},
       keyring:    {type: String, nilable: true, key: "keyring", getter: false, setter: false},

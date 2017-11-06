@@ -15,13 +15,13 @@ module Pyrite
     # The IP protocol for this port. Must be UDP or TCP. Default is TCP.
     property protocol : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       port:     {type: Int32, nilable: false, key: "port", getter: false, setter: false},
       protocol: {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       port:     {type: Int32, nilable: false, key: "port", getter: false, setter: false},
       protocol: {type: String, nilable: true, key: "protocol", getter: false, setter: false},

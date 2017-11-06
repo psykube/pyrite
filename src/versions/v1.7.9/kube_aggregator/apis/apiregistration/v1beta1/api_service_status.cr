@@ -9,11 +9,11 @@ module Pyrite
     # Current service state of apiService.
     property conditions : Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       conditions: {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition), nilable: true, key: "conditions", getter: false, setter: false},
     }, true)
 

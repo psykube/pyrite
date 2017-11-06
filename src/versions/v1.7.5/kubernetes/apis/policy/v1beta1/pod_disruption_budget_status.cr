@@ -24,7 +24,7 @@ module Pyrite
     # Most recent generation observed when updating this PDB status. PodDisruptionsAllowed and other status informatio is valid only if observedGeneration equals to PDB's object generation.
     property observed_generation : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_healthy:     {type: Int32, nilable: false, key: "currentHealthy", getter: false, setter: false},
       desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy", getter: false, setter: false},
       disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_healthy:     {type: Int32, nilable: false, key: "currentHealthy", getter: false, setter: false},
       desired_healthy:     {type: Int32, nilable: false, key: "desiredHealthy", getter: false, setter: false},
       disrupted_pods:      {type: Hash(String, String), nilable: false, key: "disruptedPods", getter: false, setter: false},

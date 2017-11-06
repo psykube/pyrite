@@ -12,12 +12,12 @@ module Pyrite
     # Path that identifies vSphere volume vmdk
     property volume_path : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       volume_path: {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       volume_path: {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)

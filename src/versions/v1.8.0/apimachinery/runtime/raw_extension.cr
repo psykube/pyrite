@@ -36,11 +36,11 @@ module Pyrite
     # Raw is the underlying serialization of this object.
     property raw : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 

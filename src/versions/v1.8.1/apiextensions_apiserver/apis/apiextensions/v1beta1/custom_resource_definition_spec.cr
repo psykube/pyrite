@@ -21,7 +21,7 @@ module Pyrite
     # Version is the version this resource belongs in
     property version : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       group:      {type: String, nilable: false, key: "group", getter: false, setter: false},
       names:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "names", getter: false, setter: false},
       scope:      {type: String, nilable: false, key: "scope", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       version:    {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       group:      {type: String, nilable: false, key: "group", getter: false, setter: false},
       names:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "names", getter: false, setter: false},
       scope:      {type: String, nilable: false, key: "scope", getter: false, setter: false},

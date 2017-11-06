@@ -9,11 +9,11 @@ module Pyrite
     # Required. A list of node selector requirements. The requirements are ANDed.
     property match_expressions : Array(Api::Core::V1::NodeSelectorRequirement)
 
-    YAML.mapping({
+    ::YAML.mapping({
       match_expressions: {type: Array(Api::Core::V1::NodeSelectorRequirement), nilable: false, key: "matchExpressions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       match_expressions: {type: Array(Api::Core::V1::NodeSelectorRequirement), nilable: false, key: "matchExpressions", getter: false, setter: false},
     }, true)
 

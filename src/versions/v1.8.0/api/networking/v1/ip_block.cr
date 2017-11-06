@@ -12,12 +12,12 @@ module Pyrite
     # Except is a slice of CIDRs that should not be included within an IP Block Valid examples are ["192.168.1.1/24" Except values will be rejected if they are outside the CIDR range]("192.168.1.1/24" Except values will be rejected if they are outside the CIDR range)
     property except : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       cidr:   {type: String, nilable: false, key: "cidr", getter: false, setter: false},
       except: {type: Array(String), nilable: true, key: "except", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       cidr:   {type: String, nilable: false, key: "cidr", getter: false, setter: false},
       except: {type: Array(String), nilable: true, key: "except", getter: false, setter: false},
     }, true)

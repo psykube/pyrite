@@ -16,7 +16,7 @@ module Pyrite
     # Status is filled in by the server and indicates whether the request is allowed or not
     property status : Api::Authorization::V1beta1::SubjectAccessReviewStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "SelfSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -24,7 +24,7 @@ module Pyrite
       status:      {type: Api::Authorization::V1beta1::SubjectAccessReviewStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/authorization/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "SelfSubjectAccessReview", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

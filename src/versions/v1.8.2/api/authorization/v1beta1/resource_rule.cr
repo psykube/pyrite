@@ -18,14 +18,14 @@ module Pyrite
     # Verb is a list of kubernetes resource API verbs, like: get, list, watch, create, update, delete, proxy.  "*" means all.
     property verbs : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_groups:     {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       resource_names: {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},
       resources:      {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
       verbs:          {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_groups:     {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       resource_names: {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},
       resources:      {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},

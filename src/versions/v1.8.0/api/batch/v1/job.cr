@@ -17,7 +17,7 @@ module Pyrite
     # Current status of a job. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status](https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status)
     property status : Api::Batch::V1::JobStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/batch/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Job", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       status:      {type: Api::Batch::V1::JobStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/batch/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Job", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

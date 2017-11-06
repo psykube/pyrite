@@ -36,7 +36,7 @@ module Pyrite
     # List of attachable volumes in use (mounted) by the node.
     property volumes_in_use : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses", getter: false, setter: false},
       allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable", getter: false, setter: false},
       capacity:         {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       volumes_in_use:   {type: Array(String), nilable: true, key: "volumesInUse", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       addresses:        {type: Array(Kubernetes::Api::V1::NodeAddress), nilable: true, key: "addresses", getter: false, setter: false},
       allocatable:      {type: Hash(String, String), nilable: true, key: "allocatable", getter: false, setter: false},
       capacity:         {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},

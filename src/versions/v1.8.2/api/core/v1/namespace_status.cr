@@ -9,11 +9,11 @@ module Pyrite
     # Phase is the current lifecycle phase of the namespace. More info: [https://git.k8s.io/community/contributors/design-proposals/namespaces.md#phases](https://git.k8s.io/community/contributors/design-proposals/namespaces.md#phases)
     property phase : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       phase: {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       phase: {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 

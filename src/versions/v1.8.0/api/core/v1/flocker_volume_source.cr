@@ -12,12 +12,12 @@ module Pyrite
     # UUID of the dataset. This is unique identifier of a Flocker dataset
     property dataset_uui_d : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
       dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
       dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)

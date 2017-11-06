@@ -12,12 +12,12 @@ module Pyrite
     # Verb is a list of kubernetes non-resource API verbs, like: get, post, put, delete, patch, head, options.  "*" means all.
     property verbs : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
       verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
       verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)

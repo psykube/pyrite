@@ -14,14 +14,14 @@ module Pyrite
     # ObjectMeta describes the pod that is being evicted.
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:    {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "Eviction", key: "kind", setter: false},
       delete_options: {type: Apimachinery::Apis::Meta::V1::DeleteOptions, nilable: true, key: "deleteOptions", getter: false, setter: false},
       metadata:       {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:    {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "Eviction", key: "kind", setter: false},
       delete_options: {type: Apimachinery::Apis::Meta::V1::DeleteOptions, nilable: true, key: "deleteOptions", getter: false, setter: false},

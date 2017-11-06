@@ -21,7 +21,7 @@ module Pyrite
     # An update strategy to replace existing DaemonSet pods with new pods.
     property update_strategy : Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       min_ready_seconds:   {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       selector:            {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
       template:            {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       update_strategy:     {type: Kubernetes::Apis::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       min_ready_seconds:   {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       selector:            {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
       template:            {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},

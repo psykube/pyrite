@@ -9,11 +9,11 @@ module Pyrite
     # Token is the opaque bearer token.
     property token : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       token: {type: String, nilable: true, key: "token", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       token: {type: String, nilable: true, key: "token", getter: false, setter: false},
     }, true)
 

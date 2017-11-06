@@ -15,13 +15,13 @@ module Pyrite
     # Name of the referent; More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
     property name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:        {type: String, nilable: false, key: "name", getter: false, setter: false},

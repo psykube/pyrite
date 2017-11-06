@@ -12,12 +12,12 @@ module Pyrite
     # The size of the image in bytes.
     property size_bytes : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       names:      {type: Array(String), nilable: false, key: "names", getter: false, setter: false},
       size_bytes: {type: Int32, nilable: true, key: "sizeBytes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       names:      {type: Array(String), nilable: false, key: "names", getter: false, setter: false},
       size_bytes: {type: Int32, nilable: true, key: "sizeBytes", getter: false, setter: false},
     }, true)

@@ -12,12 +12,12 @@ module Pyrite
     # Specifies the port of the referenced service.
     property service_port : Int32 | String
 
-    YAML.mapping({
+    ::YAML.mapping({
       service_name: {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
       service_port: {type: Int32 | String, nilable: false, key: "servicePort", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       service_name: {type: String, nilable: false, key: "serviceName", getter: false, setter: false},
       service_port: {type: Int32 | String, nilable: false, key: "servicePort", getter: false, setter: false},
     }, true)

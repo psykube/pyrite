@@ -321,7 +321,7 @@ class Generator::Definition
 
   private def define_mappings
     {"YAML", "JSON"}.each do |t|
-      file.puts "#{t}.mapping({ "
+      file.puts "::#{t}.mapping({ "
       first_arg = true
       if is_resource?
         file.puts %(api_version: { type: String, default: #{api_version.inspect}, key: "apiVersion", setter: false },)

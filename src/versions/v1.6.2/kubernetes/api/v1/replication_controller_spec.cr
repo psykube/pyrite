@@ -18,14 +18,14 @@ module Pyrite
     # Template is the object that describes the pod that will be created if insufficient replicas are detected. This takes precedence over a TemplateRef. More info: [http://kubernetes.io/docs/user-guide/replication-controller#pod-template](http://kubernetes.io/docs/user-guide/replication-controller#pod-template)
     property template : Kubernetes::Api::V1::PodTemplateSpec | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       replicas:          {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
       selector:          {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
       template:          {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       min_ready_seconds: {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       replicas:          {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
       selector:          {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},

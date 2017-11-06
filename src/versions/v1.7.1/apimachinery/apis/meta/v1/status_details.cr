@@ -24,7 +24,7 @@ module Pyrite
     # UID of the resource. (when there is a single resource which can be described). More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
     property uid : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
       group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       uid:                 {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
       group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},

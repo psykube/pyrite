@@ -17,7 +17,7 @@ module Pyrite
     # Most recently observed status of the node. Populated by the system. Read-only. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status)
     property status : Kubernetes::Api::V1::NodeStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Node", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       status:      {type: Kubernetes::Api::V1::NodeStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Node", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

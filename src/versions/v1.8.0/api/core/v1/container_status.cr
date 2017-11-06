@@ -30,7 +30,7 @@ module Pyrite
     # Details about the container's current condition.
     property state : Api::Core::V1::ContainerState | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       container_id:  {type: String, nilable: true, key: "containerID", getter: false, setter: false},
       image:         {type: String, nilable: false, key: "image", getter: false, setter: false},
       image_id:      {type: String, nilable: false, key: "imageID", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       state:         {type: Api::Core::V1::ContainerState, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       container_id:  {type: String, nilable: true, key: "containerID", getter: false, setter: false},
       image:         {type: String, nilable: false, key: "image", getter: false, setter: false},
       image_id:      {type: String, nilable: false, key: "imageID", getter: false, setter: false},

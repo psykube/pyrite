@@ -12,12 +12,12 @@ module Pyrite
     # Verb is the standard HTTP verb
     property verb : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       path: {type: String, nilable: true, key: "path", getter: false, setter: false},
       verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path: {type: String, nilable: true, key: "path", getter: false, setter: false},
       verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
     }, true)

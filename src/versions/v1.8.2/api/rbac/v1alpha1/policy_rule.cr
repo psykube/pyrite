@@ -21,7 +21,7 @@ module Pyrite
     # Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule.  VerbAll represents all kinds.
     property verbs : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_groups:        {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
       resource_names:    {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_groups:        {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       non_resource_urls: {type: Array(String), nilable: true, key: "nonResourceURLs", getter: false, setter: false},
       resource_names:    {type: Array(String), nilable: true, key: "resourceNames", getter: false, setter: false},

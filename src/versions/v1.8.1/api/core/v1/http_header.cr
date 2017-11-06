@@ -12,12 +12,12 @@ module Pyrite
     # The header field value
     property value : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
       value: {type: String, nilable: false, key: "value", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
       value: {type: String, nilable: false, key: "value", getter: false, setter: false},
     }, true)

@@ -33,7 +33,7 @@ module Pyrite
     # Template describes the pods that will be created.
     property template : Kubernetes::Api::V1::PodTemplateSpec
 
-    YAML.mapping({
+    ::YAML.mapping({
       min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       paused:                    {type: Bool, nilable: true, key: "paused", getter: false, setter: false},
       progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds", getter: false, setter: false},
@@ -45,7 +45,7 @@ module Pyrite
       template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       min_ready_seconds:         {type: Int32, nilable: true, key: "minReadySeconds", getter: false, setter: false},
       paused:                    {type: Bool, nilable: true, key: "paused", getter: false, setter: false},
       progress_deadline_seconds: {type: Int32, nilable: true, key: "progressDeadlineSeconds", getter: false, setter: false},

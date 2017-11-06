@@ -9,11 +9,11 @@ module Pyrite
     # name of the process that is responsible for initializing this object.
     property name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       name: {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name: {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 

@@ -9,11 +9,11 @@ module Pyrite
     # list of resources
     property items : Array(Kubernetes::Resource) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       items: {type: Array(Kubernetes::Resource), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       items: {type: Array(Kubernetes::Resource), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 

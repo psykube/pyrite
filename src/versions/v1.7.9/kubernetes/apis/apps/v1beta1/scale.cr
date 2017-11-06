@@ -17,7 +17,7 @@ module Pyrite
     # current status of the scale. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status. Read-only.](https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status. Read-only.)
     property status : Kubernetes::Apis::Apps::V1beta1::ScaleStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Scale", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       status:      {type: Kubernetes::Apis::Apps::V1beta1::ScaleStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Scale", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

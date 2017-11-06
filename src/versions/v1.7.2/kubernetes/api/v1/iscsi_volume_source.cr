@@ -36,7 +36,7 @@ module Pyrite
     # iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
     property target_portal : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery", getter: false, setter: false},
       chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession", getter: false, setter: false},
       fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       target_portal:       {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       chap_auth_discovery: {type: Bool, nilable: true, key: "chapAuthDiscovery", getter: false, setter: false},
       chap_auth_session:   {type: Bool, nilable: true, key: "chapAuthSession", getter: false, setter: false},
       fs_type:             {type: String, nilable: true, key: "fsType", getter: false, setter: false},

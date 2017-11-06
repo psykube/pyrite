@@ -18,14 +18,14 @@ module Pyrite
     # Required. The taint value corresponding to the taint key.
     property value : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       effect:     {type: String, nilable: false, key: "effect", getter: false, setter: false},
       key:        {type: String, nilable: false, key: "key", getter: false, setter: false},
       time_added: {type: Time, nilable: true, key: "timeAdded", getter: false, setter: false},
       value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       effect:     {type: String, nilable: false, key: "effect", getter: false, setter: false},
       key:        {type: String, nilable: false, key: "key", getter: false, setter: false},
       time_added: {type: Time, nilable: true, key: "timeAdded", getter: false, setter: false},

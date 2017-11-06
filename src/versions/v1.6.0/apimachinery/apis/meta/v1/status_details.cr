@@ -21,7 +21,7 @@ module Pyrite
     # If specified, the time in seconds before the operation should be retried.
     property retry_after_seconds : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
       group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       retry_after_seconds: {type: Int32, nilable: true, key: "retryAfterSeconds", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       causes:              {type: Array(Apimachinery::Apis::Meta::V1::StatusCause), nilable: true, key: "causes", getter: false, setter: false},
       group:               {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},

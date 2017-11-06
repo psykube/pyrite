@@ -12,12 +12,12 @@ module Pyrite
     # Items is a list of downward API volume file
     property items : Array(Api::Core::V1::DownwardAPIVolumeFile) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       items:        {type: Array(Api::Core::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       items:        {type: Array(Api::Core::V1::DownwardAPIVolumeFile), nilable: true, key: "items", getter: false, setter: false},
     }, true)

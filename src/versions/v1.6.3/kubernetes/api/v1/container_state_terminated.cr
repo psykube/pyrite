@@ -27,7 +27,7 @@ module Pyrite
     # Time at which previous execution of the container started
     property started_at : Time | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       container_id: {type: String, nilable: true, key: "containerID", getter: false, setter: false},
       exit_code:    {type: Int32, nilable: false, key: "exitCode", getter: false, setter: false},
       finished_at:  {type: Time, nilable: true, key: "finishedAt", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       started_at:   {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       container_id: {type: String, nilable: true, key: "containerID", getter: false, setter: false},
       exit_code:    {type: Int32, nilable: false, key: "exitCode", getter: false, setter: false},
       finished_at:  {type: Time, nilable: true, key: "finishedAt", getter: false, setter: false},

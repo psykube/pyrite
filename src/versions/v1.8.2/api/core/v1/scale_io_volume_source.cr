@@ -36,7 +36,7 @@ module Pyrite
     # The name of a volume already created in the ScaleIO system that is associated with this volume source.
     property volume_name : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:           {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       gateway:           {type: String, nilable: false, key: "gateway", getter: false, setter: false},
       protection_domain: {type: String, nilable: true, key: "protectionDomain", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       volume_name:       {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:           {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       gateway:           {type: String, nilable: false, key: "gateway", getter: false, setter: false},
       protection_domain: {type: String, nilable: true, key: "protectionDomain", getter: false, setter: false},

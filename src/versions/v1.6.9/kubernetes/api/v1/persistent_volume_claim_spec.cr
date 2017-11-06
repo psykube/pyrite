@@ -21,7 +21,7 @@ module Pyrite
     # VolumeName is the binding reference to the PersistentVolume backing this claim.
     property volume_name : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       access_modes:       {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
       resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources", getter: false, setter: false},
       selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       volume_name:        {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       access_modes:       {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
       resources:          {type: Kubernetes::Api::V1::ResourceRequirements, nilable: true, key: "resources", getter: false, setter: false},
       selector:           {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},

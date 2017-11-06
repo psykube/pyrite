@@ -18,14 +18,14 @@ module Pyrite
     # type is the type of metric source.  It will match one of the fields below.
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricStatus, nilable: true, key: "object", getter: false, setter: false},
       pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricStatus, nilable: true, key: "pods", getter: false, setter: false},
       resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricStatus, nilable: true, key: "resource", getter: false, setter: false},
       type:     {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       object:   {type: Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricStatus, nilable: true, key: "object", getter: false, setter: false},
       pods:     {type: Kubernetes::Apis::Autoscaling::V2alpha1::PodsMetricStatus, nilable: true, key: "pods", getter: false, setter: false},
       resource: {type: Kubernetes::Apis::Autoscaling::V2alpha1::ResourceMetricStatus, nilable: true, key: "resource", getter: false, setter: false},

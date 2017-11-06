@@ -24,7 +24,7 @@ module Pyrite
     # Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
     property propagation_policy : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:          {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds", getter: false, setter: false},
       kind:                 {type: String, nilable: true, key: "kind", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       propagation_policy:   {type: String, nilable: true, key: "propagationPolicy", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:          {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       grace_period_seconds: {type: Int32, nilable: true, key: "gracePeriodSeconds", getter: false, setter: false},
       kind:                 {type: String, nilable: true, key: "kind", getter: false, setter: false},

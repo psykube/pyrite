@@ -27,7 +27,7 @@ module Pyrite
     # verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)
     property verbs : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
       kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:          {type: String, nilable: false, key: "name", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       verbs:         {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
       kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:          {type: String, nilable: false, key: "name", getter: false, setter: false},

@@ -20,7 +20,7 @@ module Pyrite
     # The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
     property value : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:    {type: String, default: "io/k8s/api/scheduling/v1alpha1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "PriorityClass", key: "kind", setter: false},
       description:    {type: String, nilable: true, key: "description", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       value:          {type: Int32, nilable: false, key: "value", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:    {type: String, default: "io/k8s/api/scheduling/v1alpha1", key: "apiVersion", setter: false},
       kind:           {type: String, default: "PriorityClass", key: "kind", setter: false},
       description:    {type: String, nilable: true, key: "description", getter: false, setter: false},

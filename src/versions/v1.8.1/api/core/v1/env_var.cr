@@ -15,13 +15,13 @@ module Pyrite
     # Source for the environment variable's value. Cannot be used if value is not empty.
     property value_from : Api::Core::V1::EnvVarSource | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
       value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
       value_from: {type: Api::Core::V1::EnvVarSource, nilable: true, key: "valueFrom", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:       {type: String, nilable: false, key: "name", getter: false, setter: false},
       value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
       value_from: {type: Api::Core::V1::EnvVarSource, nilable: true, key: "valueFrom", getter: false, setter: false},

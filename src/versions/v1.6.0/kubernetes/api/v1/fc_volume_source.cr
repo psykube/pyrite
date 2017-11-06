@@ -18,14 +18,14 @@ module Pyrite
     # Required: FC target worldwide names (WWNs)
     property target_wwns : Array(String)
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       lun:         {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       target_wwns: {type: Array(String), nilable: false, key: "targetWWNs", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       lun:         {type: Int32, nilable: false, key: "lun", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},

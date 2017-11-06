@@ -21,7 +21,7 @@ module Pyrite
     # Optional: SecretRef is reference to the secret object containing sensitive information to pass to the plugin scripts. This may be empty if no secret object is specified. If the secret object contains more than one secret, all secrets are passed to the plugin scripts.
     property secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       driver:     {type: String, nilable: false, key: "driver", getter: false, setter: false},
       fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       options:    {type: Hash(String, String), nilable: true, key: "options", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       driver:     {type: String, nilable: false, key: "driver", getter: false, setter: false},
       fs_type:    {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       options:    {type: Hash(String, String), nilable: true, key: "options", getter: false, setter: false},

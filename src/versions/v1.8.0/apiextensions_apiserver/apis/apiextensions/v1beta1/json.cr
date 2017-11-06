@@ -8,11 +8,11 @@ module Pyrite
   class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON
     property raw : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 

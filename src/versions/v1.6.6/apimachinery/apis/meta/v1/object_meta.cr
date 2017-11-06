@@ -65,7 +65,7 @@ module Pyrite
     # Populated by the system. Read-only. More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
     property uid : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       annotations:                   {type: Hash(String, String), nilable: true, key: "annotations", getter: false, setter: false},
       cluster_name:                  {type: String, nilable: true, key: "clusterName", getter: false, setter: false},
       creation_timestamp:            {type: Time, nilable: true, key: "creationTimestamp", getter: false, setter: false},
@@ -83,7 +83,7 @@ module Pyrite
       uid:                           {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       annotations:                   {type: Hash(String, String), nilable: true, key: "annotations", getter: false, setter: false},
       cluster_name:                  {type: String, nilable: true, key: "clusterName", getter: false, setter: false},
       creation_timestamp:            {type: Time, nilable: true, key: "creationTimestamp", getter: false, setter: false},

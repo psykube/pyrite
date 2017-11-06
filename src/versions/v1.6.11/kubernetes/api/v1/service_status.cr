@@ -9,11 +9,11 @@ module Pyrite
     # LoadBalancer contains the current status of the load-balancer, if one is present.
     property load_balancer : Kubernetes::Api::V1::LoadBalancerStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       load_balancer: {type: Kubernetes::Api::V1::LoadBalancerStatus, nilable: true, key: "loadBalancer", getter: false, setter: false},
     }, true)
 

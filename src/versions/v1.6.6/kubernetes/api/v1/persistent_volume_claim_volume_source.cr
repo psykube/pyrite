@@ -12,12 +12,12 @@ module Pyrite
     # Will force the ReadOnly setting in VolumeMounts. Default false.
     property read_only : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       claim_name: {type: String, nilable: false, key: "claimName", getter: false, setter: false},
       read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       claim_name: {type: String, nilable: false, key: "claimName", getter: false, setter: false},
       read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)

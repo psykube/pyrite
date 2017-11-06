@@ -48,7 +48,7 @@ module Pyrite
     # volumes is a white list of allowed volume plugins.  Empty indicates that all plugins may be used.
     property volumes : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       allowed_capabilities:       {type: Array(String), nilable: true, key: "allowedCapabilities", getter: false, setter: false},
       default_add_capabilities:   {type: Array(String), nilable: true, key: "defaultAddCapabilities", getter: false, setter: false},
       fs_group:                   {type: Kubernetes::Apis::Extensions::V1beta1::FSGroupStrategyOptions, nilable: false, key: "fsGroup", getter: false, setter: false},
@@ -65,7 +65,7 @@ module Pyrite
       volumes:                    {type: Array(String), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       allowed_capabilities:       {type: Array(String), nilable: true, key: "allowedCapabilities", getter: false, setter: false},
       default_add_capabilities:   {type: Array(String), nilable: true, key: "defaultAddCapabilities", getter: false, setter: false},
       fs_group:                   {type: Kubernetes::Apis::Extensions::V1beta1::FSGroupStrategyOptions, nilable: false, key: "fsGroup", getter: false, setter: false},

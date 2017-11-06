@@ -15,13 +15,13 @@ module Pyrite
     # VolumeID uniquely identifies a Portworx volume
     property volume_id : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:   {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       volume_id: {type: String, nilable: false, key: "volumeID", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:   {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       volume_id: {type: String, nilable: false, key: "volumeID", getter: false, setter: false},

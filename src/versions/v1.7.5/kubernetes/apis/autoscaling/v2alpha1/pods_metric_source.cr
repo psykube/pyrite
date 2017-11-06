@@ -12,12 +12,12 @@ module Pyrite
     # targetAverageValue is the target value of the average of the metric across all relevant pods (as a quantity)
     property target_average_value : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       metric_name:          {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target_average_value: {type: Int32, nilable: false, key: "targetAverageValue", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       metric_name:          {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target_average_value: {type: Int32, nilable: false, key: "targetAverageValue", getter: false, setter: false},
     }, true)

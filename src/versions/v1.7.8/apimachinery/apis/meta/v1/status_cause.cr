@@ -19,13 +19,13 @@ module Pyrite
     # A machine-readable description of the cause of the error. If this value is empty there is no information available.
     property reason : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       field:   {type: String, nilable: true, key: "field", getter: false, setter: false},
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       field:   {type: String, nilable: true, key: "field", getter: false, setter: false},
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},

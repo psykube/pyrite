@@ -12,12 +12,12 @@ module Pyrite
     # Type indicates the type of the StatefulSetUpdateStrategy.
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       rolling_update: {type: Api::Apps::V1beta1::RollingUpdateStatefulSetStrategy, nilable: true, key: "rollingUpdate", getter: false, setter: false},
       type:           {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       rolling_update: {type: Api::Apps::V1beta1::RollingUpdateStatefulSetStrategy, nilable: true, key: "rollingUpdate", getter: false, setter: false},
       type:           {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)

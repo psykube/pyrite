@@ -21,7 +21,7 @@ module Pyrite
     # The annotations to be updated to a deployment
     property updated_annotations : Hash(String, String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:         {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
       name:                {type: String, nilable: false, key: "name", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:         {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                {type: String, nilable: true, key: "kind", getter: false, setter: false},
       name:                {type: String, nilable: false, key: "name", getter: false, setter: false},

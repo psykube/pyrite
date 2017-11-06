@@ -12,12 +12,12 @@ module Pyrite
     # IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)
     property ip : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       hostname: {type: String, nilable: true, key: "hostname", getter: false, setter: false},
       ip:       {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       hostname: {type: String, nilable: true, key: "hostname", getter: false, setter: false},
       ip:       {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)

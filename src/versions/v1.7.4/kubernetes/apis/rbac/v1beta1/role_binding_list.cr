@@ -14,14 +14,14 @@ module Pyrite
     # Standard object's metadata.
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Kubernetes::Apis::Rbac::V1beta1::RoleBinding), nilable: false, key: "items", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "List", key: "kind", setter: false},
       items:       {type: Array(Kubernetes::Apis::Rbac::V1beta1::RoleBinding), nilable: false, key: "items", getter: false, setter: false},

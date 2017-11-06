@@ -12,12 +12,12 @@ module Pyrite
     # ID that identifies Photon Controller persistent disk
     property pd_id : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type: {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       pd_id:   {type: String, nilable: false, key: "pdID", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type: {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       pd_id:   {type: String, nilable: false, key: "pdID", getter: false, setter: false},
     }, true)

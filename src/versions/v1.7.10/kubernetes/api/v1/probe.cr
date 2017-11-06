@@ -30,7 +30,7 @@ module Pyrite
     # Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: [https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes)
     property timeout_seconds : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       exec:                  {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
       failure_threshold:     {type: Int32, nilable: true, key: "failureThreshold", getter: false, setter: false},
       http_get:              {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       timeout_seconds:       {type: Int32, nilable: true, key: "timeoutSeconds", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       exec:                  {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
       failure_threshold:     {type: Int32, nilable: true, key: "failureThreshold", getter: false, setter: false},
       http_get:              {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},

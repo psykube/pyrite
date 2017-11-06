@@ -9,11 +9,11 @@ module Pyrite
     # Endpoint on which Kubelet is listening.
     property kubelet_endpoint : Api::Core::V1::DaemonEndpoint | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       kubelet_endpoint: {type: Api::Core::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       kubelet_endpoint: {type: Api::Core::V1::DaemonEndpoint, nilable: true, key: "kubeletEndpoint", getter: false, setter: false},
     }, true)
 

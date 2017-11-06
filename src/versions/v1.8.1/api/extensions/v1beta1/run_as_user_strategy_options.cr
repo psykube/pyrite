@@ -12,12 +12,12 @@ module Pyrite
     # Rule is the strategy that will dictate the allowable RunAsUser values that may be set.
     property rule : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       ranges: {type: Array(Api::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
       rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ranges: {type: Array(Api::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
       rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
     }, true)

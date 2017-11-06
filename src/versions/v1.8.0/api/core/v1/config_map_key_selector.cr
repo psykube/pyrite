@@ -15,13 +15,13 @@ module Pyrite
     # Specify whether the ConfigMap or it's key must be defined
     property optional : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},

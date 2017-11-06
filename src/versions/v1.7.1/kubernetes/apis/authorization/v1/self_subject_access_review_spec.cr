@@ -12,12 +12,12 @@ module Pyrite
     # ResourceAuthorizationAttributes describes information for a resource access request
     property resource_attributes : Kubernetes::Apis::Authorization::V1::ResourceAttributes | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes", getter: false, setter: false},
       resource_attributes:     {type: Kubernetes::Apis::Authorization::V1::ResourceAttributes, nilable: true, key: "resourceAttributes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       non_resource_attributes: {type: Kubernetes::Apis::Authorization::V1::NonResourceAttributes, nilable: true, key: "nonResourceAttributes", getter: false, setter: false},
       resource_attributes:     {type: Kubernetes::Apis::Authorization::V1::ResourceAttributes, nilable: true, key: "resourceAttributes", getter: false, setter: false},
     }, true)

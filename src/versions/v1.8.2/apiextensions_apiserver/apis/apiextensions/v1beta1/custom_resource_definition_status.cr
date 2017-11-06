@@ -12,12 +12,12 @@ module Pyrite
     # Conditions indicate state for particular aspects of a CustomResourceDefinition
     property conditions : Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionCondition)
 
-    YAML.mapping({
+    ::YAML.mapping({
       accepted_names: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "acceptedNames", getter: false, setter: false},
       conditions:     {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionCondition), nilable: false, key: "conditions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       accepted_names: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "acceptedNames", getter: false, setter: false},
       conditions:     {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionCondition), nilable: false, key: "conditions", getter: false, setter: false},
     }, true)

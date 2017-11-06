@@ -12,12 +12,12 @@ module Pyrite
     # Node address type, one of Hostname, ExternalIP or InternalIP.
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       address: {type: String, nilable: false, key: "address", getter: false, setter: false},
       type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       address: {type: String, nilable: false, key: "address", getter: false, setter: false},
       type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)

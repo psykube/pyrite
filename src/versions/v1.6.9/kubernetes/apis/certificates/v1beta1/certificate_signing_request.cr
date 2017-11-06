@@ -16,7 +16,7 @@ module Pyrite
     # Derived information about the request.
     property status : Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequestStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "certificates/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CertificateSigningRequest", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -24,7 +24,7 @@ module Pyrite
       status:      {type: Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequestStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "certificates/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "CertificateSigningRequest", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

@@ -12,12 +12,12 @@ module Pyrite
     # Min is the start of the range, inclusive.
     property min : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
       min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
       min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
     }, true)

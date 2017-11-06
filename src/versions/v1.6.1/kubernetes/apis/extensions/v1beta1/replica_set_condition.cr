@@ -21,7 +21,7 @@ module Pyrite
     # Type of replica set condition.
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
       message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
       reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
       message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
       reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},

@@ -12,12 +12,12 @@ module Pyrite
     # SelfLink is a URL representing this object. Populated by the system. Read-only.
     property self_link : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
       self_link:        {type: String, nilable: true, key: "selfLink", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
       self_link:        {type: String, nilable: true, key: "selfLink", getter: false, setter: false},
     }, true)

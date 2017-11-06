@@ -17,7 +17,7 @@ module Pyrite
     # Versions are versions for this third party object
     property versions : Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ThirdPartyResource", key: "kind", setter: false},
       description: {type: String, nilable: true, key: "description", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       versions:    {type: Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion), nilable: true, key: "versions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ThirdPartyResource", key: "kind", setter: false},
       description: {type: String, nilable: true, key: "description", getter: false, setter: false},

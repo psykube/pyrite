@@ -15,13 +15,13 @@ module Pyrite
     # Required: resource to select
     property resource : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
       divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
       resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
       divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
       resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},

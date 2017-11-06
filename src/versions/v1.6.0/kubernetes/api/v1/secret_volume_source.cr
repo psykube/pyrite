@@ -20,14 +20,14 @@ module Pyrite
     # Name of the secret in the pod's namespace to use. More info: [http://kubernetes.io/docs/user-guide/volumes#secrets](http://kubernetes.io/docs/user-guide/volumes#secrets)
     property secret_name : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
       optional:     {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
       secret_name:  {type: String, nilable: true, key: "secretName", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       items:        {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
       optional:     {type: Bool, nilable: true, key: "optional", getter: false, setter: false},

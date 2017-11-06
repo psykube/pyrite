@@ -15,13 +15,13 @@ module Pyrite
     # Details about a waiting container
     property waiting : Kubernetes::Api::V1::ContainerStateWaiting | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running", getter: false, setter: false},
       terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated", getter: false, setter: false},
       waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       running:    {type: Kubernetes::Api::V1::ContainerStateRunning, nilable: true, key: "running", getter: false, setter: false},
       terminated: {type: Kubernetes::Api::V1::ContainerStateTerminated, nilable: true, key: "terminated", getter: false, setter: false},
       waiting:    {type: Kubernetes::Api::V1::ContainerStateWaiting, nilable: true, key: "waiting", getter: false, setter: false},

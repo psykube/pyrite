@@ -9,11 +9,11 @@ module Pyrite
     # Partition indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0.
     property partition : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       partition: {type: Int32, nilable: true, key: "partition", getter: false, setter: false},
     }, true)
 

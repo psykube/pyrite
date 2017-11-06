@@ -12,12 +12,12 @@ module Pyrite
     # Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100.
     property weight : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference", getter: false, setter: false},
       weight:     {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       preference: {type: Kubernetes::Api::V1::NodeSelectorTerm, nilable: false, key: "preference", getter: false, setter: false},
       weight:     {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)

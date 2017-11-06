@@ -15,13 +15,13 @@ module Pyrite
     # target is the described Kubernetes object.
     property target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_value: {type: Int32, nilable: false, key: "currentValue", getter: false, setter: false},
       metric_name:   {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target:        {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_value: {type: Int32, nilable: false, key: "currentValue", getter: false, setter: false},
       metric_name:   {type: String, nilable: false, key: "metricName", getter: false, setter: false},
       target:        {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},

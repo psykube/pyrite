@@ -24,7 +24,7 @@ module Pyrite
     # UID of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
     property uid : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:          {type: String, nilable: false, key: "apiVersion", getter: false, setter: false},
       block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion", getter: false, setter: false},
       controller:           {type: Bool, nilable: true, key: "controller", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       uid:                  {type: String, nilable: false, key: "uid", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:          {type: String, nilable: false, key: "apiVersion", getter: false, setter: false},
       block_owner_deletion: {type: Bool, nilable: true, key: "blockOwnerDeletion", getter: false, setter: false},
       controller:           {type: Bool, nilable: true, key: "controller", getter: false, setter: false},

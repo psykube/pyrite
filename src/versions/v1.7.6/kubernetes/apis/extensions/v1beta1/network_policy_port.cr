@@ -11,12 +11,12 @@ module Pyrite
     # Optional.  The protocol (TCP or UDP) which traffic must match. If not specified, this field defaults to TCP.
     property protocol : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       port:     {type: Int32 | String, nilable: true, key: "port", getter: false, setter: false},
       protocol: {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       port:     {type: Int32 | String, nilable: true, key: "port", getter: false, setter: false},
       protocol: {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)

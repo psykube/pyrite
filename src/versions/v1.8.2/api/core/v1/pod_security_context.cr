@@ -25,7 +25,7 @@ module Pyrite
     # A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container.
     property supplemental_groups : Array(Int32) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_group:            {type: Int32, nilable: true, key: "fsGroup", getter: false, setter: false},
       run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
       run_as_user:         {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       supplemental_groups: {type: Array(Int32), nilable: true, key: "supplementalGroups", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_group:            {type: Int32, nilable: true, key: "fsGroup", getter: false, setter: false},
       run_as_non_root:     {type: Bool, nilable: true, key: "runAsNonRoot", getter: false, setter: false},
       run_as_user:         {type: Int32, nilable: true, key: "runAsUser", getter: false, setter: false},

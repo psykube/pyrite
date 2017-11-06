@@ -12,12 +12,12 @@ module Pyrite
     # Removed capabilities
     property drop : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       add:  {type: Array(String), nilable: true, key: "add", getter: false, setter: false},
       drop: {type: Array(String), nilable: true, key: "drop", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       add:  {type: Array(String), nilable: true, key: "add", getter: false, setter: false},
       drop: {type: Array(String), nilable: true, key: "drop", getter: false, setter: false},
     }, true)

@@ -18,14 +18,14 @@ module Pyrite
     # scaleTargetRef points to the target resource to scale, and is used to the pods for which metrics should be collected, as well as to actually change the replica count.
     property scale_target_ref : Api::Autoscaling::V2beta1::CrossVersionObjectReference
 
-    YAML.mapping({
+    ::YAML.mapping({
       max_replicas:     {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
       metrics:          {type: Array(Api::Autoscaling::V2beta1::MetricSpec), nilable: true, key: "metrics", getter: false, setter: false},
       min_replicas:     {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
       scale_target_ref: {type: Api::Autoscaling::V2beta1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       max_replicas:     {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
       metrics:          {type: Array(Api::Autoscaling::V2beta1::MetricSpec), nilable: true, key: "metrics", getter: false, setter: false},
       min_replicas:     {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},

@@ -66,7 +66,7 @@ module Pyrite
     # Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
     property working_dir : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       args:                       {type: Array(String), nilable: true, key: "args", getter: false, setter: false},
       command:                    {type: Array(String), nilable: true, key: "command", getter: false, setter: false},
       env:                        {type: Array(Api::Core::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},
@@ -89,7 +89,7 @@ module Pyrite
       working_dir:                {type: String, nilable: true, key: "workingDir", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       args:                       {type: Array(String), nilable: true, key: "args", getter: false, setter: false},
       command:                    {type: Array(String), nilable: true, key: "command", getter: false, setter: false},
       env:                        {type: Array(Api::Core::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},

@@ -21,7 +21,7 @@ module Pyrite
     # Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.
     property wwids : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       lun:         {type: Int32, nilable: true, key: "lun", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       wwids:       {type: Array(String), nilable: true, key: "wwids", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       fs_type:     {type: String, nilable: true, key: "fsType", getter: false, setter: false},
       lun:         {type: Int32, nilable: true, key: "lun", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},

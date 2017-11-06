@@ -18,14 +18,14 @@ module Pyrite
     # Share Name
     property share_name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       secret_name:      {type: String, nilable: false, key: "secretName", getter: false, setter: false},
       secret_namespace: {type: String, nilable: true, key: "secretNamespace", getter: false, setter: false},
       share_name:       {type: String, nilable: false, key: "shareName", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       read_only:        {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       secret_name:      {type: String, nilable: false, key: "secretName", getter: false, setter: false},
       secret_namespace: {type: String, nilable: true, key: "secretNamespace", getter: false, setter: false},

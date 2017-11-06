@@ -12,12 +12,12 @@ module Pyrite
     # Rules describes what [resources/subresources the initializer cares about. The initializer cares about an operation if it matches _any_ Rule. Rule.Resources must not include subresources.](resources/subresources the initializer cares about. The initializer cares about an operation if it matches _any_ Rule. Rule.Resources must not include subresources.)
     property rules : Array(Api::Admissionregistration::V1alpha1::Rule) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
       rules: {type: Array(Api::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
       rules: {type: Array(Api::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)

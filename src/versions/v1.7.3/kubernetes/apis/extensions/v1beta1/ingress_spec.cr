@@ -15,13 +15,13 @@ module Pyrite
     # TLS configuration. Currently the Ingress only supports a single TLS port, 443. If multiple members of this list specify different hosts, they will be multiplexed on the same port according to the hostname specified through the SNI TLS extension, if the ingress controller fulfilling the ingress supports SNI.
     property tls : Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend", getter: false, setter: false},
       rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules", getter: false, setter: false},
       tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       backend: {type: Kubernetes::Apis::Extensions::V1beta1::IngressBackend, nilable: true, key: "backend", getter: false, setter: false},
       rules:   {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressRule), nilable: true, key: "rules", getter: false, setter: false},
       tls:     {type: Array(Kubernetes::Apis::Extensions::V1beta1::IngressTLS), nilable: true, key: "tls", getter: false, setter: false},

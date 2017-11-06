@@ -9,11 +9,11 @@ module Pyrite
     # OpenAPIV3Schema is the OpenAPI v3 schema to be validated against.
     property open_api_v3_schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       open_api_v3_schema: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: true, key: "openAPIV3Schema", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       open_api_v3_schema: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: true, key: "openAPIV3Schema", getter: false, setter: false},
     }, true)
 

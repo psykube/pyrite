@@ -12,12 +12,12 @@ module Pyrite
     # Type for HostPath Volume Defaults to "" More info: [https://kubernetes.io/docs/concepts/storage/volumes#hostpath](https://kubernetes.io/docs/concepts/storage/volumes#hostpath)
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
       type: {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
       type: {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)

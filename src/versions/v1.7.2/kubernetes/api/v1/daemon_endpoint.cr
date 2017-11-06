@@ -9,11 +9,11 @@ module Pyrite
     # Port number of the given endpoint.
     property port : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       port: {type: Int32, nilable: false, key: "Port", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       port: {type: Int32, nilable: false, key: "Port", getter: false, setter: false},
     }, true)
 

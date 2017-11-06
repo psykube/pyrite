@@ -35,7 +35,7 @@ module Pyrite
     # Type of this event (Normal, Warning), new types could be added in the future
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
       kind:            {type: String, default: "Event", key: "kind", setter: false},
       count:           {type: Int32, nilable: true, key: "count", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       type:            {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:     {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
       kind:            {type: String, default: "Event", key: "kind", setter: false},
       count:           {type: Int32, nilable: true, key: "count", getter: false, setter: false},

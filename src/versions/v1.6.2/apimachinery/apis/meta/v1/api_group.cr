@@ -24,7 +24,7 @@ module Pyrite
     # versions are the versions supported in this group.
     property versions : Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
       name:                            {type: String, nilable: false, key: "name", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       versions:                        {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
       name:                            {type: String, nilable: false, key: "name", getter: false, setter: false},

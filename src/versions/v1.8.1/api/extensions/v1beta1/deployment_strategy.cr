@@ -12,12 +12,12 @@ module Pyrite
     # Type of deployment. Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       rolling_update: {type: Api::Extensions::V1beta1::RollingUpdateDeployment, nilable: true, key: "rollingUpdate", getter: false, setter: false},
       type:           {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       rolling_update: {type: Api::Extensions::V1beta1::RollingUpdateDeployment, nilable: true, key: "rollingUpdate", getter: false, setter: false},
       type:           {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)

@@ -15,13 +15,13 @@ module Pyrite
     # name is the name of the resource in question.
     property name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization", getter: false, setter: false},
       current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
       name:                        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_average_utilization: {type: Int32, nilable: true, key: "currentAverageUtilization", getter: false, setter: false},
       current_average_value:       {type: Int32, nilable: false, key: "currentAverageValue", getter: false, setter: false},
       name:                        {type: String, nilable: false, key: "name", getter: false, setter: false},

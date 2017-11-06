@@ -9,11 +9,11 @@ module Pyrite
     # Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: [https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers](https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers)
     property finalizers : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       finalizers: {type: Array(String), nilable: true, key: "finalizers", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       finalizers: {type: Array(String), nilable: true, key: "finalizers", getter: false, setter: false},
     }, true)
 

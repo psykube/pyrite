@@ -15,13 +15,13 @@ module Pyrite
     # User is the UserInfo associated with the provided token.
     property user : Api::Authentication::V1beta1::UserInfo | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
       error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
       user:          {type: Api::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
       error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
       user:          {type: Api::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},

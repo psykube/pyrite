@@ -19,7 +19,7 @@ module Pyrite
     # Provisioner indicates the type of the provisioner.
     property provisioner : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "storage/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StorageClass", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -27,7 +27,7 @@ module Pyrite
       provisioner: {type: String, nilable: false, key: "provisioner", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "storage/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "StorageClass", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

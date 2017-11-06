@@ -15,13 +15,13 @@ module Pyrite
     # information about the secret data to project
     property secret : Kubernetes::Api::V1::SecretProjection | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap", getter: false, setter: false},
       downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI", getter: false, setter: false},
       secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       config_map:   {type: Kubernetes::Api::V1::ConfigMapProjection, nilable: true, key: "configMap", getter: false, setter: false},
       downward_api: {type: Kubernetes::Api::V1::DownwardAPIProjection, nilable: true, key: "downwardAPI", getter: false, setter: false},
       secret:       {type: Kubernetes::Api::V1::SecretProjection, nilable: true, key: "secret", getter: false, setter: false},

@@ -15,13 +15,13 @@ module Pyrite
     # Commit hash for the specified revision.
     property revision : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       directory:  {type: String, nilable: true, key: "directory", getter: false, setter: false},
       repository: {type: String, nilable: false, key: "repository", getter: false, setter: false},
       revision:   {type: String, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       directory:  {type: String, nilable: true, key: "directory", getter: false, setter: false},
       repository: {type: String, nilable: false, key: "repository", getter: false, setter: false},
       revision:   {type: String, nilable: true, key: "revision", getter: false, setter: false},

@@ -12,12 +12,12 @@ module Pyrite
     # version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.
     property version : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
       version:       {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       group_version: {type: String, nilable: false, key: "groupVersion", getter: false, setter: false},
       version:       {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)

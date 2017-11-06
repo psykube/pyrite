@@ -9,11 +9,11 @@ module Pyrite
     # Time at which the container was last (re-)started
     property started_at : Time | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       started_at: {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       started_at: {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 

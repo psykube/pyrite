@@ -12,12 +12,12 @@ module Pyrite
     # Rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.
     property rule : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
       rule:   {type: String, nilable: true, key: "rule", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ranges: {type: Array(Kubernetes::Apis::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
       rule:   {type: String, nilable: true, key: "rule", getter: false, setter: false},
     }, true)

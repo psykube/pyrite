@@ -12,12 +12,12 @@ module Pyrite
     # IP address of the host file entry.
     property ip : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       hostnames: {type: Array(String), nilable: true, key: "hostnames", getter: false, setter: false},
       ip:        {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       hostnames: {type: Array(String), nilable: true, key: "hostnames", getter: false, setter: false},
       ip:        {type: String, nilable: true, key: "ip", getter: false, setter: false},
     }, true)

@@ -9,11 +9,11 @@ module Pyrite
     # Specifies the target UID.
     property uid : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       uid: {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       uid: {type: String, nilable: true, key: "uid", getter: false, setter: false},
     }, true)
 

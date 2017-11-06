@@ -12,12 +12,12 @@ module Pyrite
     # List of destinations for outgoing traffic of pods selected for this rule. Items in this list are combined using a logical OR operation. If this field is empty or missing, this rule matches all destinations (traffic not restricted by destination). If this field is present and contains at least one item, this rule allows traffic only if the traffic matches at least one item in the to list.
     property to : Array(Api::Networking::V1::NetworkPolicyPeer) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       ports: {type: Array(Api::Networking::V1::NetworkPolicyPort), nilable: true, key: "ports", getter: false, setter: false},
       to:    {type: Array(Api::Networking::V1::NetworkPolicyPeer), nilable: true, key: "to", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ports: {type: Array(Api::Networking::V1::NetworkPolicyPort), nilable: true, key: "ports", getter: false, setter: false},
       to:    {type: Array(Api::Networking::V1::NetworkPolicyPeer), nilable: true, key: "to", getter: false, setter: false},
     }, true)

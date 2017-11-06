@@ -18,14 +18,14 @@ module Pyrite
     # target average CPU utilization (represented as a percentage of requested CPU) over all the pods; if not specified the default autoscaling policy will be used.
     property target_cpu_utilization_percentage : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
       min_replicas:                      {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
       scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
       target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       max_replicas:                      {type: Int32, nilable: false, key: "maxReplicas", getter: false, setter: false},
       min_replicas:                      {type: Int32, nilable: true, key: "minReplicas", getter: false, setter: false},
       scale_target_ref:                  {type: Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},

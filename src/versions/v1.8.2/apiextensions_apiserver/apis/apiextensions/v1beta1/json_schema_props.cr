@@ -78,7 +78,7 @@ module Pyrite
 
     property unique_items : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       ref:                   {type: String, nilable: true, key: "$ref", getter: false, setter: false},
       schema:                {type: String, nilable: true, key: "$schema", getter: false, setter: false},
       additional_items:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalItems", getter: false, setter: false},
@@ -117,7 +117,7 @@ module Pyrite
       unique_items:          {type: Bool, nilable: true, key: "uniqueItems", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ref:                   {type: String, nilable: true, key: "$ref", getter: false, setter: false},
       schema:                {type: String, nilable: true, key: "$schema", getter: false, setter: false},
       additional_items:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool, nilable: true, key: "additionalItems", getter: false, setter: false},

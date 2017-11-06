@@ -12,12 +12,12 @@ module Pyrite
     # matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
     property match_labels : Hash(String, String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions", getter: false, setter: false},
       match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       match_expressions: {type: Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement), nilable: true, key: "matchExpressions", getter: false, setter: false},
       match_labels:      {type: Hash(String, String), nilable: true, key: "matchLabels", getter: false, setter: false},
     }, true)

@@ -12,12 +12,12 @@ module Pyrite
     # list of volume projections
     property sources : Array(Api::Core::V1::VolumeProjection)
 
-    YAML.mapping({
+    ::YAML.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       sources:      {type: Array(Api::Core::V1::VolumeProjection), nilable: false, key: "sources", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       default_mode: {type: Int32, nilable: true, key: "defaultMode", getter: false, setter: false},
       sources:      {type: Array(Api::Core::V1::VolumeProjection), nilable: false, key: "sources", getter: false, setter: false},
     }, true)

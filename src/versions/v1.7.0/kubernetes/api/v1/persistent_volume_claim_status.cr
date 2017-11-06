@@ -15,13 +15,13 @@ module Pyrite
     # Phase represents the current phase of PersistentVolumeClaim.
     property phase : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       access_modes: {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
       capacity:     {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
       phase:        {type: String, nilable: true, key: "phase", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       access_modes: {type: Array(String), nilable: true, key: "accessModes", getter: false, setter: false},
       capacity:     {type: Hash(String, String), nilable: true, key: "capacity", getter: false, setter: false},
       phase:        {type: String, nilable: true, key: "phase", getter: false, setter: false},

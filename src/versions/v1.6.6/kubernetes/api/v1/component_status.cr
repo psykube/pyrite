@@ -14,14 +14,14 @@ module Pyrite
     # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ComponentStatus", key: "kind", setter: false},
       conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions", getter: false, setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ComponentStatus", key: "kind", setter: false},
       conditions:  {type: Array(Kubernetes::Api::V1::ComponentCondition), nilable: true, key: "conditions", getter: false, setter: false},

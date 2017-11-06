@@ -14,13 +14,13 @@ module Pyrite
     # This is a label selector which selects Pods in this namespace. This field follows standard label selector semantics. If present but empty, this selector selects all pods in this namespace.
     property pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       ip_block:           {type: Api::Extensions::V1beta1::IPBlock, nilable: true, key: "ipBlock", getter: false, setter: false},
       namespace_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "namespaceSelector", getter: false, setter: false},
       pod_selector:       {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "podSelector", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ip_block:           {type: Api::Extensions::V1beta1::IPBlock, nilable: true, key: "ipBlock", getter: false, setter: false},
       namespace_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "namespaceSelector", getter: false, setter: false},
       pod_selector:       {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "podSelector", getter: false, setter: false},

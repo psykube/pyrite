@@ -9,11 +9,11 @@ module Pyrite
     # Required. A list of node selector terms. The terms are ORed.
     property node_selector_terms : Array(Kubernetes::Api::V1::NodeSelectorTerm)
 
-    YAML.mapping({
+    ::YAML.mapping({
       node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       node_selector_terms: {type: Array(Kubernetes::Api::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms", getter: false, setter: false},
     }, true)
 

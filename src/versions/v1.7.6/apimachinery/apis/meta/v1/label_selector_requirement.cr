@@ -15,13 +15,13 @@ module Pyrite
     # values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.
     property values : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
       operator: {type: String, nilable: false, key: "operator", getter: false, setter: false},
       values:   {type: Array(String), nilable: true, key: "values", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
       operator: {type: String, nilable: false, key: "operator", getter: false, setter: false},
       values:   {type: Array(String), nilable: true, key: "values", getter: false, setter: false},

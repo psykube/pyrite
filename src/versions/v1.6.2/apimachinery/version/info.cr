@@ -24,7 +24,7 @@ module Pyrite
 
     property platform : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       build_date:     {type: String, nilable: false, key: "buildDate", getter: false, setter: false},
       compiler:       {type: String, nilable: false, key: "compiler", getter: false, setter: false},
       git_commit:     {type: String, nilable: false, key: "gitCommit", getter: false, setter: false},
@@ -36,7 +36,7 @@ module Pyrite
       platform:       {type: String, nilable: false, key: "platform", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       build_date:     {type: String, nilable: false, key: "buildDate", getter: false, setter: false},
       compiler:       {type: String, nilable: false, key: "compiler", getter: false, setter: false},
       git_commit:     {type: String, nilable: false, key: "gitCommit", getter: false, setter: false},

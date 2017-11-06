@@ -21,7 +21,7 @@ module Pyrite
     # Singular is the singular name of the resource.  It must be all lowercase  Defaults to lowercased <kind>
     property singular : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
       list_kind:   {type: String, nilable: true, key: "listKind", getter: false, setter: false},
       plural:      {type: String, nilable: false, key: "plural", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       singular:    {type: String, nilable: true, key: "singular", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
       list_kind:   {type: String, nilable: true, key: "listKind", getter: false, setter: false},
       plural:      {type: String, nilable: false, key: "plural", getter: false, setter: false},

@@ -12,12 +12,12 @@ module Pyrite
     # Replicas is the number of actual replicas.
     property replicas : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
       replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
       replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)

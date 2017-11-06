@@ -12,12 +12,12 @@ module Pyrite
     # Name of the attached volume
     property name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       device_path: {type: String, nilable: false, key: "devicePath", getter: false, setter: false},
       name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       device_path: {type: String, nilable: false, key: "devicePath", getter: false, setter: false},
       name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)

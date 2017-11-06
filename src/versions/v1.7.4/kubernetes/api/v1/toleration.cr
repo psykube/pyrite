@@ -21,7 +21,7 @@ module Pyrite
     # Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
     property value : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       effect:             {type: String, nilable: true, key: "effect", getter: false, setter: false},
       key:                {type: String, nilable: true, key: "key", getter: false, setter: false},
       operator:           {type: String, nilable: true, key: "operator", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       value:              {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       effect:             {type: String, nilable: true, key: "effect", getter: false, setter: false},
       key:                {type: String, nilable: true, key: "key", getter: false, setter: false},
       operator:           {type: String, nilable: true, key: "operator", getter: false, setter: false},

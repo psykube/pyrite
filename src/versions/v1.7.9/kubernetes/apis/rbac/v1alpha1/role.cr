@@ -14,14 +14,14 @@ module Pyrite
     # Rules holds all the PolicyRules for this Role
     property rules : Array(Kubernetes::Apis::Rbac::V1alpha1::PolicyRule)
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "rbac/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Role", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       rules:       {type: Array(Kubernetes::Apis::Rbac::V1alpha1::PolicyRule), nilable: false, key: "rules", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "rbac/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Role", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

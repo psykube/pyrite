@@ -9,11 +9,11 @@ module Pyrite
     # clientIP contains the configurations of Client IP based session affinity.
     property client_ip : Api::Core::V1::ClientIPConfig | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       client_ip: {type: Api::Core::V1::ClientIPConfig, nilable: true, key: "clientIP", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       client_ip: {type: Api::Core::V1::ClientIPConfig, nilable: true, key: "clientIP", getter: false, setter: false},
     }, true)
 

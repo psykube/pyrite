@@ -72,7 +72,7 @@ module Pyrite
     # List of volumes that can be mounted by containers belonging to the pod. More info: [http://kubernetes.io/docs/user-guide/volumes](http://kubernetes.io/docs/user-guide/volumes)
     property volumes : Array(Kubernetes::Api::V1::Volume) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       active_deadline_seconds:          {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
       affinity:                         {type: Kubernetes::Api::V1::Affinity, nilable: true, key: "affinity", getter: false, setter: false},
       automount_service_account_token:  {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
@@ -97,7 +97,7 @@ module Pyrite
       volumes:                          {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       active_deadline_seconds:          {type: Int32, nilable: true, key: "activeDeadlineSeconds", getter: false, setter: false},
       affinity:                         {type: Kubernetes::Api::V1::Affinity, nilable: true, key: "affinity", getter: false, setter: false},
       automount_service_account_token:  {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},

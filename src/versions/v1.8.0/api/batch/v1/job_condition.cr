@@ -24,7 +24,7 @@ module Pyrite
     # Type of job condition, Complete or Failed.
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       last_probe_time:      {type: Time, nilable: true, key: "lastProbeTime", getter: false, setter: false},
       last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
       message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       last_probe_time:      {type: Time, nilable: true, key: "lastProbeTime", getter: false, setter: false},
       last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
       message:              {type: String, nilable: true, key: "message", getter: false, setter: false},

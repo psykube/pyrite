@@ -9,11 +9,11 @@ module Pyrite
     # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
     property name : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name: {type: String, nilable: true, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name: {type: String, nilable: true, key: "name", getter: false, setter: false},
     }, true)
 

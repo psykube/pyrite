@@ -9,11 +9,11 @@ module Pyrite
     # desired number of instances for the scaled object.
     property replicas : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
     }, true)
 

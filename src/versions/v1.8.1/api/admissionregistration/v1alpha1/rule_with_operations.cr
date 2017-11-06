@@ -24,14 +24,14 @@ module Pyrite
     # Depending on the enclosing object, subresources might not be allowed. Required.
     property resources : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_groups:   {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       api_versions: {type: Array(String), nilable: true, key: "apiVersions", getter: false, setter: false},
       operations:   {type: Array(String), nilable: true, key: "operations", getter: false, setter: false},
       resources:    {type: Array(String), nilable: true, key: "resources", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_groups:   {type: Array(String), nilable: true, key: "apiGroups", getter: false, setter: false},
       api_versions: {type: Array(String), nilable: true, key: "apiVersions", getter: false, setter: false},
       operations:   {type: Array(String), nilable: true, key: "operations", getter: false, setter: false},

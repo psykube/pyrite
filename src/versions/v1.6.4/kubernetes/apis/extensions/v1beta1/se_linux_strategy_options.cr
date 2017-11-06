@@ -12,12 +12,12 @@ module Pyrite
     # seLinuxOptions required to run as; required for MustRunAs More info: [http://releases.k8s.io/HEAD/docs/design/security_context.md#security-context](http://releases.k8s.io/HEAD/docs/design/security_context.md#security-context)
     property se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       rule:             {type: String, nilable: false, key: "rule", getter: false, setter: false},
       se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       rule:             {type: String, nilable: false, key: "rule", getter: false, setter: false},
       se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)

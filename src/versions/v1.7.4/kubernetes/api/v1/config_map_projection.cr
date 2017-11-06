@@ -17,13 +17,13 @@ module Pyrite
     # Specify whether the ConfigMap or it's keys must be defined
     property optional : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       items:    {type: Array(Kubernetes::Api::V1::KeyToPath), nilable: true, key: "items", getter: false, setter: false},
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},

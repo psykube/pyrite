@@ -12,12 +12,12 @@ module Pyrite
     # If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to an update), the system may or may not try to eventually evict the pod from its node.
     property required_during_scheduling_ignored_during_execution : Kubernetes::Api::V1::NodeSelector | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::PreferredSchedulingTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
       required_during_scheduling_ignored_during_execution:  {type: Kubernetes::Api::V1::NodeSelector, nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       preferred_during_scheduling_ignored_during_execution: {type: Array(Kubernetes::Api::V1::PreferredSchedulingTerm), nilable: true, key: "preferredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
       required_during_scheduling_ignored_during_execution:  {type: Kubernetes::Api::V1::NodeSelector, nilable: true, key: "requiredDuringSchedulingIgnoredDuringExecution", getter: false, setter: false},
     }, true)

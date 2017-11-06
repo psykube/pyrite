@@ -14,14 +14,14 @@ module Pyrite
     # Standard object metadata; More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.)
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:              {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:                     {type: String, default: "ExternalAdmissionHookConfiguration", key: "kind", setter: false},
       external_admission_hooks: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::ExternalAdmissionHook), nilable: true, key: "externalAdmissionHooks", getter: false, setter: false},
       metadata:                 {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:              {type: String, default: "admissionregistration/v1alpha1", key: "apiVersion", setter: false},
       kind:                     {type: String, default: "ExternalAdmissionHookConfiguration", key: "kind", setter: false},
       external_admission_hooks: {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::ExternalAdmissionHook), nilable: true, key: "externalAdmissionHooks", getter: false, setter: false},

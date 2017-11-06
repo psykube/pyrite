@@ -18,14 +18,14 @@ module Pyrite
     # Namespace of the referenced object.  If the object kind is non-namespace, such as "User" or "Group", and this value is not empty the Authorizer should report an error.
     property namespace : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_group: {type: String, nilable: true, key: "apiGroup", getter: false, setter: false},
       kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_group: {type: String, nilable: true, key: "apiGroup", getter: false, setter: false},
       kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},

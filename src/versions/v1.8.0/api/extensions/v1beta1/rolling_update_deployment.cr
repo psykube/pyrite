@@ -12,12 +12,12 @@ module Pyrite
     # The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. By default, a fixed value of 1 is used. Example: when this is set to 30%, the old RC can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old RC can be scaled down further, followed by scaling up the new RC, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
     property max_unavailable : Int32 | String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       max_surge:       {type: Int32 | String, nilable: true, key: "maxSurge", getter: false, setter: false},
       max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       max_surge:       {type: Int32 | String, nilable: true, key: "maxSurge", getter: false, setter: false},
       max_unavailable: {type: Int32 | String, nilable: true, key: "maxUnavailable", getter: false, setter: false},
     }, true)

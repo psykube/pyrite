@@ -15,13 +15,13 @@ module Pyrite
     # Rules describes what [resources/subresources the initializer cares about. The initializer cares about an operation if it matches _any_ Rule. Rule.Resources must not include subresources.](resources/subresources the initializer cares about. The initializer cares about an operation if it matches _any_ Rule. Rule.Resources must not include subresources.)
     property rules : Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
       name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
       rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
       name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
       rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},

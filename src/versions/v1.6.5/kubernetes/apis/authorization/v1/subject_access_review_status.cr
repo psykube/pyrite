@@ -15,13 +15,13 @@ module Pyrite
     # Reason is optional.  It indicates why a request was allowed or denied.
     property reason : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       allowed:          {type: Bool, nilable: false, key: "allowed", getter: false, setter: false},
       evaluation_error: {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
       reason:           {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       allowed:          {type: Bool, nilable: false, key: "allowed", getter: false, setter: false},
       evaluation_error: {type: String, nilable: true, key: "evaluationError", getter: false, setter: false},
       reason:           {type: String, nilable: true, key: "reason", getter: false, setter: false},

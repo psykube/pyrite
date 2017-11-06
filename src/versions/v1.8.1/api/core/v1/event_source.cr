@@ -12,12 +12,12 @@ module Pyrite
     # Node name on which the event is generated.
     property host : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       component: {type: String, nilable: true, key: "component", getter: false, setter: false},
       host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       component: {type: String, nilable: true, key: "component", getter: false, setter: false},
       host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
     }, true)

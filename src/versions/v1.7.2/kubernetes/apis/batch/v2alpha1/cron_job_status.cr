@@ -12,12 +12,12 @@ module Pyrite
     # Information when was the last time the job was successfully scheduled.
     property last_schedule_time : Time | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active", getter: false, setter: false},
       last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       active:             {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "active", getter: false, setter: false},
       last_schedule_time: {type: Time, nilable: true, key: "lastScheduleTime", getter: false, setter: false},
     }, true)

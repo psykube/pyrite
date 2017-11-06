@@ -21,7 +21,7 @@ module Pyrite
     # Volume is a string that references an already created Quobyte volume by name.
     property volume : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
       registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},

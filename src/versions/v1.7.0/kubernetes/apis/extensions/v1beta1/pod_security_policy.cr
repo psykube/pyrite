@@ -14,14 +14,14 @@ module Pyrite
     # spec defines the policy enforced.
     property spec : Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySpec | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodSecurityPolicy", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySpec, nilable: true, key: "spec", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "extensions/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodSecurityPolicy", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

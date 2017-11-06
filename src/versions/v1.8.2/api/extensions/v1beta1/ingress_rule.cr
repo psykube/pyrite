@@ -16,12 +16,12 @@ module Pyrite
 
     property http : Api::Extensions::V1beta1::HTTPIngressRuleValue | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       host: {type: String, nilable: true, key: "host", getter: false, setter: false},
       http: {type: Api::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       host: {type: String, nilable: true, key: "host", getter: false, setter: false},
       http: {type: Api::Extensions::V1beta1::HTTPIngressRuleValue, nilable: true, key: "http", getter: false, setter: false},
     }, true)

@@ -20,7 +20,7 @@ module Pyrite
     # Used to facilitate programmatic handling of secret data.
     property type : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
       data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       type:        {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/core/v1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "Secret", key: "kind", setter: false},
       data:        {type: Hash(String, String), nilable: true, key: "data", getter: false, setter: false},

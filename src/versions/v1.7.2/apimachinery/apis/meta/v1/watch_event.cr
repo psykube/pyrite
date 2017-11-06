@@ -15,12 +15,12 @@ module Pyrite
 
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
       type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
       type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)

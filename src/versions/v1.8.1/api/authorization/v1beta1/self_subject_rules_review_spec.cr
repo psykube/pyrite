@@ -8,11 +8,11 @@ module Pyrite
     # Namespace to evaluate rules for. Required.
     property namespace : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 

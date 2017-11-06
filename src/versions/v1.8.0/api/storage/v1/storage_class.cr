@@ -28,7 +28,7 @@ module Pyrite
     # Dynamically provisioned PersistentVolumes of this storage class are created with this reclaimPolicy. Defaults to Delete.
     property reclaim_policy : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:            {type: String, default: "io/k8s/api/storage/v1", key: "apiVersion", setter: false},
       kind:                   {type: String, default: "StorageClass", key: "kind", setter: false},
       allow_volume_expansion: {type: Bool, nilable: true, key: "allowVolumeExpansion", getter: false, setter: false},
@@ -39,7 +39,7 @@ module Pyrite
       reclaim_policy:         {type: String, nilable: true, key: "reclaimPolicy", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:            {type: String, default: "io/k8s/api/storage/v1", key: "apiVersion", setter: false},
       kind:                   {type: String, default: "StorageClass", key: "kind", setter: false},
       allow_volume_expansion: {type: Bool, nilable: true, key: "allowVolumeExpansion", getter: false, setter: false},

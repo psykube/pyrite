@@ -18,14 +18,14 @@ module Pyrite
     # Rules describes what operations on what [resources/subresources the webhook cares about. The webhook cares about an operation if it matches _any_ Rule.](resources/subresources the webhook cares about. The webhook cares about an operation if it matches _any_ Rule.)
     property rules : Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
       failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
       name:           {type: String, nilable: false, key: "name", getter: false, setter: false},
       rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       client_config:  {type: Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
       failure_policy: {type: String, nilable: true, key: "failurePolicy", getter: false, setter: false},
       name:           {type: String, nilable: false, key: "name", getter: false, setter: false},

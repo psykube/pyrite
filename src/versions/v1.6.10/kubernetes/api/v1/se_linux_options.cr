@@ -18,14 +18,14 @@ module Pyrite
     # User is a SELinux user label that applies to the container.
     property user : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       level: {type: String, nilable: true, key: "level", getter: false, setter: false},
       role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
       type:  {type: String, nilable: true, key: "type", getter: false, setter: false},
       user:  {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       level: {type: String, nilable: true, key: "level", getter: false, setter: false},
       role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
       type:  {type: String, nilable: true, key: "type", getter: false, setter: false},

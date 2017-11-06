@@ -21,7 +21,7 @@ module Pyrite
     # Scheme to use for connecting to the host. Defaults to HTTP.
     property scheme : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       host:         {type: String, nilable: true, key: "host", getter: false, setter: false},
       http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders", getter: false, setter: false},
       path:         {type: String, nilable: true, key: "path", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       scheme:       {type: String, nilable: true, key: "scheme", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       host:         {type: String, nilable: true, key: "host", getter: false, setter: false},
       http_headers: {type: Array(Kubernetes::Api::V1::HTTPHeader), nilable: true, key: "httpHeaders", getter: false, setter: false},
       path:         {type: String, nilable: true, key: "path", getter: false, setter: false},

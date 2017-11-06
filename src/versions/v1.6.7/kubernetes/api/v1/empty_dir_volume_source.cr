@@ -9,11 +9,11 @@ module Pyrite
     # What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: [http://kubernetes.io/docs/user-guide/volumes#emptydir](http://kubernetes.io/docs/user-guide/volumes#emptydir)
     property medium : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       medium: {type: String, nilable: true, key: "medium", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       medium: {type: String, nilable: true, key: "medium", getter: false, setter: false},
     }, true)
 

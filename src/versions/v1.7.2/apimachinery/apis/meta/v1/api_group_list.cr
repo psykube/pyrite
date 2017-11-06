@@ -15,13 +15,13 @@ module Pyrite
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds](https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds)
     property kind : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups", getter: false, setter: false},
       kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
       groups:      {type: Array(Apimachinery::Apis::Meta::V1::APIGroup), nilable: false, key: "groups", getter: false, setter: false},
       kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},

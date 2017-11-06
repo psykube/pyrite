@@ -9,11 +9,11 @@ module Pyrite
     # Limits is the list of LimitRangeItem objects that are enforced.
     property limits : Array(Api::Core::V1::LimitRangeItem)
 
-    YAML.mapping({
+    ::YAML.mapping({
       limits: {type: Array(Api::Core::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       limits: {type: Array(Api::Core::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
     }, true)
 

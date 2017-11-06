@@ -30,7 +30,7 @@ module Pyrite
     # The total number of nodes that are running updated daemon pod
     property updated_number_scheduled : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled", getter: false, setter: false},
       desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled", getter: false, setter: false},
       number_available:         {type: Int32, nilable: true, key: "numberAvailable", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       current_number_scheduled: {type: Int32, nilable: false, key: "currentNumberScheduled", getter: false, setter: false},
       desired_number_scheduled: {type: Int32, nilable: false, key: "desiredNumberScheduled", getter: false, setter: false},
       number_available:         {type: Int32, nilable: true, key: "numberAvailable", getter: false, setter: false},

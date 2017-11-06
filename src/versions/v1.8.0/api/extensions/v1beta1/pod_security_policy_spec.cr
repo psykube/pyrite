@@ -57,7 +57,7 @@ module Pyrite
     # volumes is a white list of allowed volume plugins.  Empty indicates that all plugins may be used.
     property volumes : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       allow_privilege_escalation:         {type: Bool, nilable: true, key: "allowPrivilegeEscalation", getter: false, setter: false},
       allowed_capabilities:               {type: Array(String), nilable: true, key: "allowedCapabilities", getter: false, setter: false},
       allowed_host_paths:                 {type: Array(Api::Extensions::V1beta1::AllowedHostPath), nilable: true, key: "allowedHostPaths", getter: false, setter: false},
@@ -77,7 +77,7 @@ module Pyrite
       volumes:                            {type: Array(String), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       allow_privilege_escalation:         {type: Bool, nilable: true, key: "allowPrivilegeEscalation", getter: false, setter: false},
       allowed_capabilities:               {type: Array(String), nilable: true, key: "allowedCapabilities", getter: false, setter: false},
       allowed_host_paths:                 {type: Array(Api::Extensions::V1beta1::AllowedHostPath), nilable: true, key: "allowedHostPaths", getter: false, setter: false},

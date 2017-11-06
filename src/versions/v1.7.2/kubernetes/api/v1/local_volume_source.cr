@@ -9,11 +9,11 @@ module Pyrite
     # The full path to the volume on the node For alpha, this path must be a directory Once block as a source is supported, then this path can point to a block device
     property path : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 

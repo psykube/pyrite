@@ -25,7 +25,7 @@ module Pyrite
     # Information about the requesting user. See user.Info interface for details.
     property username : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
       groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
       request:  {type: String, nilable: false, key: "request", getter: false, setter: false},
@@ -34,7 +34,7 @@ module Pyrite
       username: {type: String, nilable: true, key: "username", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
       groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
       request:  {type: String, nilable: false, key: "request", getter: false, setter: false},

@@ -15,13 +15,13 @@ module Pyrite
     # Name is the name of resource being referenced
     property name : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_group: {type: String, nilable: false, key: "apiGroup", getter: false, setter: false},
       kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_group: {type: String, nilable: false, key: "apiGroup", getter: false, setter: false},
       kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
       name:      {type: String, nilable: false, key: "name", getter: false, setter: false},

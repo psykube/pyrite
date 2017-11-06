@@ -9,11 +9,11 @@ module Pyrite
     # Name of this version (e.g. 'v1').
     property name : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name: {type: String, nilable: true, key: "name", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name: {type: String, nilable: true, key: "name", getter: false, setter: false},
     }, true)
 

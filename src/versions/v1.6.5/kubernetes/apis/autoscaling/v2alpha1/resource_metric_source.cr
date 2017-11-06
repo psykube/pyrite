@@ -15,13 +15,13 @@ module Pyrite
     # targetAverageValue is the the target value of the average of the resource metric across all relevant pods, as a raw value (instead of as a percentage of the request), similar to the "pods" metric source type.
     property target_average_value : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:                       {type: String, nilable: false, key: "name", getter: false, setter: false},
       target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization", getter: false, setter: false},
       target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:                       {type: String, nilable: false, key: "name", getter: false, setter: false},
       target_average_utilization: {type: Int32, nilable: true, key: "targetAverageUtilization", getter: false, setter: false},
       target_average_value:       {type: Int32, nilable: true, key: "targetAverageValue", getter: false, setter: false},

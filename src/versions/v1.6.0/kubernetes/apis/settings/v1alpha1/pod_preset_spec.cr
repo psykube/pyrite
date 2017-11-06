@@ -21,7 +21,7 @@ module Pyrite
     # Volumes defines the collection of Volume to inject into the pod.
     property volumes : Array(Kubernetes::Api::V1::Volume) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},
       env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom", getter: false, setter: false},
       selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       volumes:       {type: Array(Kubernetes::Api::V1::Volume), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       env:           {type: Array(Kubernetes::Api::V1::EnvVar), nilable: true, key: "env", getter: false, setter: false},
       env_from:      {type: Array(Kubernetes::Api::V1::EnvFromSource), nilable: true, key: "envFrom", getter: false, setter: false},
       selector:      {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "selector", getter: false, setter: false},

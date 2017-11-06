@@ -16,7 +16,7 @@ module Pyrite
     # Most recently observed status of the PodDisruptionBudget.
     property status : Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudgetStatus | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodDisruptionBudget", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -24,7 +24,7 @@ module Pyrite
       status:      {type: Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudgetStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "policy/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodDisruptionBudget", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

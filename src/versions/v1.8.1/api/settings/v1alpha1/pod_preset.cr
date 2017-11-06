@@ -12,14 +12,14 @@ module Pyrite
 
     property spec : Api::Settings::V1alpha1::PodPresetSpec | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/settings/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodPreset", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       spec:        {type: Api::Settings::V1alpha1::PodPresetSpec, nilable: true, key: "spec", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/settings/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "PodPreset", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},

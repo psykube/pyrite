@@ -18,14 +18,14 @@ module Pyrite
     # Type of condition for a component. Valid value: "Healthy"
     property type : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       error:   {type: String, nilable: true, key: "error", getter: false, setter: false},
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       status:  {type: String, nilable: false, key: "status", getter: false, setter: false},
       type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       error:   {type: String, nilable: true, key: "error", getter: false, setter: false},
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       status:  {type: String, nilable: false, key: "status", getter: false, setter: false},

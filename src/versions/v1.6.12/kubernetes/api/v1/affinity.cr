@@ -15,13 +15,13 @@ module Pyrite
     # Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the same node, zone, etc. as some other pod(s)).
     property pod_anti_affinity : Kubernetes::Api::V1::PodAntiAffinity | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       node_affinity:     {type: Kubernetes::Api::V1::NodeAffinity, nilable: true, key: "nodeAffinity", getter: false, setter: false},
       pod_affinity:      {type: Kubernetes::Api::V1::PodAffinity, nilable: true, key: "podAffinity", getter: false, setter: false},
       pod_anti_affinity: {type: Kubernetes::Api::V1::PodAntiAffinity, nilable: true, key: "podAntiAffinity", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       node_affinity:     {type: Kubernetes::Api::V1::NodeAffinity, nilable: true, key: "nodeAffinity", getter: false, setter: false},
       pod_affinity:      {type: Kubernetes::Api::V1::PodAffinity, nilable: true, key: "podAffinity", getter: false, setter: false},
       pod_anti_affinity: {type: Kubernetes::Api::V1::PodAntiAffinity, nilable: true, key: "podAntiAffinity", getter: false, setter: false},

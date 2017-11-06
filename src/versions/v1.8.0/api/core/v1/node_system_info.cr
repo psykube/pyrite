@@ -36,7 +36,7 @@ module Pyrite
     # SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts [https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html](https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html)
     property system_uui_d : String
 
-    YAML.mapping({
+    ::YAML.mapping({
       architecture:              {type: String, nilable: false, key: "architecture", getter: false, setter: false},
       boot_id:                   {type: String, nilable: false, key: "bootID", getter: false, setter: false},
       container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion", getter: false, setter: false},
@@ -49,7 +49,7 @@ module Pyrite
       system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       architecture:              {type: String, nilable: false, key: "architecture", getter: false, setter: false},
       boot_id:                   {type: String, nilable: false, key: "bootID", getter: false, setter: false},
       container_runtime_version: {type: String, nilable: false, key: "containerRuntimeVersion", getter: false, setter: false},

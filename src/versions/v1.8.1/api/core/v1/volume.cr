@@ -90,7 +90,7 @@ module Pyrite
     # VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
     property vsphere_volume : Api::Core::V1::VsphereVirtualDiskVolumeSource | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       aws_elastic_block_store: {type: Api::Core::V1::AWSElasticBlockStoreVolumeSource, nilable: true, key: "awsElasticBlockStore", getter: false, setter: false},
       azure_disk:              {type: Api::Core::V1::AzureDiskVolumeSource, nilable: true, key: "azureDisk", getter: false, setter: false},
       azure_file:              {type: Api::Core::V1::AzureFileVolumeSource, nilable: true, key: "azureFile", getter: false, setter: false},
@@ -121,7 +121,7 @@ module Pyrite
       vsphere_volume:          {type: Api::Core::V1::VsphereVirtualDiskVolumeSource, nilable: true, key: "vsphereVolume", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       aws_elastic_block_store: {type: Api::Core::V1::AWSElasticBlockStoreVolumeSource, nilable: true, key: "awsElasticBlockStore", getter: false, setter: false},
       azure_disk:              {type: Api::Core::V1::AzureDiskVolumeSource, nilable: true, key: "azureDisk", getter: false, setter: false},
       azure_file:              {type: Api::Core::V1::AzureFileVolumeSource, nilable: true, key: "azureFile", getter: false, setter: false},

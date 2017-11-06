@@ -15,13 +15,13 @@ module Pyrite
     # Reason is a brief CamelCase string that describes any failure and is meant for machine parsing and tidy display in the CLI.
     property reason : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       phase:   {type: String, nilable: true, key: "phase", getter: false, setter: false},
       reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       message: {type: String, nilable: true, key: "message", getter: false, setter: false},
       phase:   {type: String, nilable: true, key: "phase", getter: false, setter: false},
       reason:  {type: String, nilable: true, key: "reason", getter: false, setter: false},

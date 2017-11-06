@@ -24,7 +24,7 @@ module Pyrite
     # The number of pods which reached phase Succeeded.
     property succeeded : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       active:          {type: Int32, nilable: true, key: "active", getter: false, setter: false},
       completion_time: {type: Time, nilable: true, key: "completionTime", getter: false, setter: false},
       conditions:      {type: Array(Kubernetes::Apis::Batch::V1::JobCondition), nilable: true, key: "conditions", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       succeeded:       {type: Int32, nilable: true, key: "succeeded", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       active:          {type: Int32, nilable: true, key: "active", getter: false, setter: false},
       completion_time: {type: Time, nilable: true, key: "completionTime", getter: false, setter: false},
       conditions:      {type: Array(Kubernetes::Apis::Batch::V1::JobCondition), nilable: true, key: "conditions", getter: false, setter: false},

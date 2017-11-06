@@ -27,7 +27,7 @@ module Pyrite
     # This flag tells the controller to suspend subsequent executions, it does not apply to already started executions.  Defaults to false.
     property suspend : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
       failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
       job_template:                  {type: Api::Batch::V1beta1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},
@@ -37,7 +37,7 @@ module Pyrite
       suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
       failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
       job_template:                  {type: Api::Batch::V1beta1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},

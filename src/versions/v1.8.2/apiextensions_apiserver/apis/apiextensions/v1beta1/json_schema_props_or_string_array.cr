@@ -10,12 +10,12 @@ module Pyrite
 
     property schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps
 
-    YAML.mapping({
+    ::YAML.mapping({
       property: {type: Array(String), nilable: false, key: "Property", getter: false, setter: false},
       schema:   {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: false, key: "Schema", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       property: {type: Array(String), nilable: false, key: "Property", getter: false, setter: false},
       schema:   {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: false, key: "Schema", getter: false, setter: false},
     }, true)

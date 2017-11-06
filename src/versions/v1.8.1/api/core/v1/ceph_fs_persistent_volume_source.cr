@@ -24,7 +24,7 @@ module Pyrite
     # Optional: User is the rados user name, default is admin More info: [https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it](https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it)
     property user : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       monitors:    {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
       path:        {type: String, nilable: true, key: "path", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
@@ -33,7 +33,7 @@ module Pyrite
       user:        {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       monitors:    {type: Array(String), nilable: false, key: "monitors", getter: false, setter: false},
       path:        {type: String, nilable: true, key: "path", getter: false, setter: false},
       read_only:   {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},

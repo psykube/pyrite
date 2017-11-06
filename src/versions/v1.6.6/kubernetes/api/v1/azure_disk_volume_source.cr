@@ -21,7 +21,7 @@ module Pyrite
     # Defaults to false [(read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.]((read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.)
     property read_only : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       caching_mode: {type: String, nilable: true, key: "cachingMode", getter: false, setter: false},
       disk_name:    {type: String, nilable: false, key: "diskName", getter: false, setter: false},
       disk_uri:     {type: String, nilable: false, key: "diskURI", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       read_only:    {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       caching_mode: {type: String, nilable: true, key: "cachingMode", getter: false, setter: false},
       disk_name:    {type: String, nilable: false, key: "diskName", getter: false, setter: false},
       disk_uri:     {type: String, nilable: false, key: "diskURI", getter: false, setter: false},

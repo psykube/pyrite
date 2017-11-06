@@ -12,12 +12,12 @@ module Pyrite
     # A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
     property scopes : Array(String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       hard:   {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
       scopes: {type: Array(String), nilable: true, key: "scopes", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       hard:   {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
       scopes: {type: Array(String), nilable: true, key: "scopes", getter: false, setter: false},
     }, true)

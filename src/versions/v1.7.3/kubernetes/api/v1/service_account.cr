@@ -20,7 +20,7 @@ module Pyrite
     # Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: [https://kubernetes.io/docs/concepts/configuration/secret](https://kubernetes.io/docs/concepts/configuration/secret)
     property secrets : Array(Kubernetes::Api::V1::ObjectReference) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
       automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       secrets:                         {type: Array(Kubernetes::Api::V1::ObjectReference), nilable: true, key: "secrets", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version:                     {type: String, default: "v1", key: "apiVersion", setter: false},
       kind:                            {type: String, default: "ServiceAccount", key: "kind", setter: false},
       automount_service_account_token: {type: Bool, nilable: true, key: "automountServiceAccountToken", getter: false, setter: false},

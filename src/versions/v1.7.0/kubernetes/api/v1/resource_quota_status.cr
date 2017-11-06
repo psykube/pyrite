@@ -12,12 +12,12 @@ module Pyrite
     # Used is the current observed total usage of the resource in the namespace.
     property used : Hash(String, String) | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       hard: {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
       used: {type: Hash(String, String), nilable: true, key: "used", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       hard: {type: Hash(String, String), nilable: true, key: "hard", getter: false, setter: false},
       used: {type: Hash(String, String), nilable: true, key: "used", getter: false, setter: false},
     }, true)

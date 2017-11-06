@@ -21,7 +21,7 @@ module Pyrite
     # Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this is a string, it will be looked up as a named port in the target Pod's container ports. If this is not specified, the value of the 'port' field is used (an identity map). This field is ignored for services with clusterIP=None, and should be omitted or set equal to the 'port' field. More info: [http://kubernetes.io/docs/user-guide/services#defining-a-service](http://kubernetes.io/docs/user-guide/services#defining-a-service)
     property target_port : Int32 | String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
       node_port:   {type: Int32, nilable: true, key: "nodePort", getter: false, setter: false},
       port:        {type: Int32, nilable: false, key: "port", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       target_port: {type: Int32 | String, nilable: true, key: "targetPort", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:        {type: String, nilable: true, key: "name", getter: false, setter: false},
       node_port:   {type: Int32, nilable: true, key: "nodePort", getter: false, setter: false},
       port:        {type: Int32, nilable: false, key: "port", getter: false, setter: false},

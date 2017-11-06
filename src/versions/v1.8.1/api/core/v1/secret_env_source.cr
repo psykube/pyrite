@@ -14,12 +14,12 @@ module Pyrite
     # Specify whether the Secret must be defined
     property optional : Bool | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)

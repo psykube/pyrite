@@ -33,7 +33,7 @@ module Pyrite
     # version is the preferred version of the resource.  Empty implies the version of the containing resource list For subresources, this may have a different value, for example: v1 (while inside a v1beta1 version of the core resource's group)".
     property version : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
       group:         {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},
@@ -45,7 +45,7 @@ module Pyrite
       version:       {type: String, nilable: true, key: "version", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       categories:    {type: Array(String), nilable: true, key: "categories", getter: false, setter: false},
       group:         {type: String, nilable: true, key: "group", getter: false, setter: false},
       kind:          {type: String, nilable: false, key: "kind", getter: false, setter: false},

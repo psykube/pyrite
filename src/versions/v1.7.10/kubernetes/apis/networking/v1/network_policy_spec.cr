@@ -12,12 +12,12 @@ module Pyrite
     # Selects the pods to which this NetworkPolicy object applies. The array of ingress rules is applied to any pods selected by this field. Multiple network policies can select the same set of pods. In this case, the ingress rules for each are combined additively. This field is NOT optional and follows standard label selector semantics. An empty podSelector matches all pods in this namespace.
     property pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector
 
-    YAML.mapping({
+    ::YAML.mapping({
       ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress", getter: false, setter: false},
       pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       ingress:      {type: Array(Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule), nilable: true, key: "ingress", getter: false, setter: false},
       pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector", getter: false, setter: false},
     }, true)

@@ -9,11 +9,11 @@ module Pyrite
     # timeoutSeconds specifies the seconds of ClientIP type session sticky time. The value must be >0 && <=86400(for 1 day) if ServiceAffinity == "ClientIP". Default value is 10800(for 3 hours).
     property timeout_seconds : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       timeout_seconds: {type: Int32, nilable: true, key: "timeoutSeconds", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       timeout_seconds: {type: Int32, nilable: true, key: "timeoutSeconds", getter: false, setter: false},
     }, true)
 

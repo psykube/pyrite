@@ -21,7 +21,7 @@ module Pyrite
     # Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
     property sub_path : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       mount_path:        {type: String, nilable: false, key: "mountPath", getter: false, setter: false},
       mount_propagation: {type: String, nilable: true, key: "mountPropagation", getter: false, setter: false},
       name:              {type: String, nilable: false, key: "name", getter: false, setter: false},
@@ -29,7 +29,7 @@ module Pyrite
       sub_path:          {type: String, nilable: true, key: "subPath", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       mount_path:        {type: String, nilable: false, key: "mountPath", getter: false, setter: false},
       mount_propagation: {type: String, nilable: true, key: "mountPropagation", getter: false, setter: false},
       name:              {type: String, nilable: false, key: "name", getter: false, setter: false},

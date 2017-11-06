@@ -12,12 +12,12 @@ module Pyrite
     # If result is set with the Failure field, the object will be persisted to storage and then deleted, ensuring that other clients can observe the deletion.
     property result : Apimachinery::Apis::Meta::V1::Status | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending", getter: false, setter: false},
       result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       pending: {type: Array(Apimachinery::Apis::Meta::V1::Initializer), nilable: false, key: "pending", getter: false, setter: false},
       result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result", getter: false, setter: false},
     }, true)

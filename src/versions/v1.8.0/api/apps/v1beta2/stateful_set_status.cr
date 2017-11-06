@@ -30,7 +30,7 @@ module Pyrite
     # updatedReplicas is the number of Pods created by the StatefulSet controller from the StatefulSet version indicated by updateRevision.
     property updated_replicas : Int32 | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       collision_count:     {type: Int32, nilable: true, key: "collisionCount", getter: false, setter: false},
       current_replicas:    {type: Int32, nilable: true, key: "currentReplicas", getter: false, setter: false},
       current_revision:    {type: String, nilable: true, key: "currentRevision", getter: false, setter: false},
@@ -41,7 +41,7 @@ module Pyrite
       updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       collision_count:     {type: Int32, nilable: true, key: "collisionCount", getter: false, setter: false},
       current_replicas:    {type: Int32, nilable: true, key: "currentReplicas", getter: false, setter: false},
       current_revision:    {type: String, nilable: true, key: "currentRevision", getter: false, setter: false},

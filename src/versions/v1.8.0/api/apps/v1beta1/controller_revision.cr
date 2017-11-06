@@ -17,7 +17,7 @@ module Pyrite
     # Revision indicates the revision of the state represented by Data.
     property revision : Int32
 
-    YAML.mapping({
+    ::YAML.mapping({
       api_version: {type: String, default: "io/k8s/api/apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ControllerRevision", key: "kind", setter: false},
       data:        {type: Apimachinery::Runtime::RawExtension, nilable: true, key: "data", getter: false, setter: false},
@@ -25,7 +25,7 @@ module Pyrite
       revision:    {type: Int32, nilable: false, key: "revision", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       api_version: {type: String, default: "io/k8s/api/apps/v1beta1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ControllerRevision", key: "kind", setter: false},
       data:        {type: Apimachinery::Runtime::RawExtension, nilable: true, key: "data", getter: false, setter: false},

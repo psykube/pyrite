@@ -11,11 +11,11 @@ module Pyrite
     # Examples: [`/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`](`/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`)
     property path_prefix : String | Nil
 
-    YAML.mapping({
+    ::YAML.mapping({
       path_prefix: {type: String, nilable: true, key: "pathPrefix", getter: false, setter: false},
     }, true)
 
-    JSON.mapping({
+    ::JSON.mapping({
       path_prefix: {type: String, nilable: true, key: "pathPrefix", getter: false, setter: false},
     }, true)
 
