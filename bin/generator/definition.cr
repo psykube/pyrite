@@ -119,7 +119,7 @@ class Generator::Definition
           "Hash(String, String)"
         when "boolean"
           "Bool"
-        when "integer"
+        when "integer", "number"
           "Int32"
         when "resource"
           "Kubernetes::Resource"

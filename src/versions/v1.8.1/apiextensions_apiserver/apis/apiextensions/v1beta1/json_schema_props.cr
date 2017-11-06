@@ -48,7 +48,7 @@ module Pyrite
 
     property max_properties : Int32 | Nil
 
-    property maximum : Number | Nil
+    property maximum : Int32 | Nil
 
     property min_items : Int32 | Nil
 
@@ -56,9 +56,9 @@ module Pyrite
 
     property min_properties : Int32 | Nil
 
-    property minimum : Number | Nil
+    property minimum : Int32 | Nil
 
-    property multiple_of : Number | Nil
+    property multiple_of : Int32 | Nil
 
     property not : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps | Nil
 
@@ -100,12 +100,12 @@ module Pyrite
       max_items:             {type: Int32, nilable: true, key: "maxItems", getter: false, setter: false},
       max_length:            {type: Int32, nilable: true, key: "maxLength", getter: false, setter: false},
       max_properties:        {type: Int32, nilable: true, key: "maxProperties", getter: false, setter: false},
-      maximum:               {type: Number, nilable: true, key: "maximum", getter: false, setter: false},
+      maximum:               {type: Int32, nilable: true, key: "maximum", getter: false, setter: false},
       min_items:             {type: Int32, nilable: true, key: "minItems", getter: false, setter: false},
       min_length:            {type: Int32, nilable: true, key: "minLength", getter: false, setter: false},
       min_properties:        {type: Int32, nilable: true, key: "minProperties", getter: false, setter: false},
-      minimum:               {type: Number, nilable: true, key: "minimum", getter: false, setter: false},
-      multiple_of:           {type: Number, nilable: true, key: "multipleOf", getter: false, setter: false},
+      minimum:               {type: Int32, nilable: true, key: "minimum", getter: false, setter: false},
+      multiple_of:           {type: Int32, nilable: true, key: "multipleOf", getter: false, setter: false},
       not:                   {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: true, key: "not", getter: false, setter: false},
       one_of:                {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: true, key: "oneOf", getter: false, setter: false},
       pattern:               {type: String, nilable: true, key: "pattern", getter: false, setter: false},
@@ -139,12 +139,12 @@ module Pyrite
       max_items:             {type: Int32, nilable: true, key: "maxItems", getter: false, setter: false},
       max_length:            {type: Int32, nilable: true, key: "maxLength", getter: false, setter: false},
       max_properties:        {type: Int32, nilable: true, key: "maxProperties", getter: false, setter: false},
-      maximum:               {type: Number, nilable: true, key: "maximum", getter: false, setter: false},
+      maximum:               {type: Int32, nilable: true, key: "maximum", getter: false, setter: false},
       min_items:             {type: Int32, nilable: true, key: "minItems", getter: false, setter: false},
       min_length:            {type: Int32, nilable: true, key: "minLength", getter: false, setter: false},
       min_properties:        {type: Int32, nilable: true, key: "minProperties", getter: false, setter: false},
-      minimum:               {type: Number, nilable: true, key: "minimum", getter: false, setter: false},
-      multiple_of:           {type: Number, nilable: true, key: "multipleOf", getter: false, setter: false},
+      minimum:               {type: Int32, nilable: true, key: "minimum", getter: false, setter: false},
+      multiple_of:           {type: Int32, nilable: true, key: "multipleOf", getter: false, setter: false},
       not:                   {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: true, key: "not", getter: false, setter: false},
       one_of:                {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: true, key: "oneOf", getter: false, setter: false},
       pattern:               {type: String, nilable: true, key: "pattern", getter: false, setter: false},
@@ -156,7 +156,7 @@ module Pyrite
       unique_items:          {type: Bool, nilable: true, key: "uniqueItems", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ref : String | Nil = nil, @schema : String | Nil = nil, @additional_items : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool | Nil = nil, @additional_properties : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool | Nil = nil, @all_of : Array | Nil = nil, @any_of : Array | Nil = nil, @default : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON | Nil = nil, @definitions : Hash(String, String) | Nil = nil, @dependencies : Hash(String, String) | Nil = nil, @description : String | Nil = nil, @enum : Array | Nil = nil, @example : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON | Nil = nil, @exclusive_maximum : Bool | Nil = nil, @exclusive_minimum : Bool | Nil = nil, @external_docs : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::ExternalDocumentation | Nil = nil, @format : String | Nil = nil, @id : String | Nil = nil, @items : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrArray | Nil = nil, @max_items : Int32 | Nil = nil, @max_length : Int32 | Nil = nil, @max_properties : Int32 | Nil = nil, @maximum : Number | Nil = nil, @min_items : Int32 | Nil = nil, @min_length : Int32 | Nil = nil, @min_properties : Int32 | Nil = nil, @minimum : Number | Nil = nil, @multiple_of : Number | Nil = nil, @not : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps | Nil = nil, @one_of : Array | Nil = nil, @pattern : String | Nil = nil, @pattern_properties : Hash(String, String) | Nil = nil, @properties : Hash(String, String) | Nil = nil, @required : Array | Nil = nil, @title : String | Nil = nil, @type : String | Nil = nil, @unique_items : Bool | Nil = nil)
+    def initialize(*, @ref : String | Nil = nil, @schema : String | Nil = nil, @additional_items : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool | Nil = nil, @additional_properties : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrBool | Nil = nil, @all_of : Array | Nil = nil, @any_of : Array | Nil = nil, @default : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON | Nil = nil, @definitions : Hash(String, String) | Nil = nil, @dependencies : Hash(String, String) | Nil = nil, @description : String | Nil = nil, @enum : Array | Nil = nil, @example : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON | Nil = nil, @exclusive_maximum : Bool | Nil = nil, @exclusive_minimum : Bool | Nil = nil, @external_docs : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::ExternalDocumentation | Nil = nil, @format : String | Nil = nil, @id : String | Nil = nil, @items : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrArray | Nil = nil, @max_items : Int32 | Nil = nil, @max_length : Int32 | Nil = nil, @max_properties : Int32 | Nil = nil, @maximum : Int32 | Nil = nil, @min_items : Int32 | Nil = nil, @min_length : Int32 | Nil = nil, @min_properties : Int32 | Nil = nil, @minimum : Int32 | Nil = nil, @multiple_of : Int32 | Nil = nil, @not : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps | Nil = nil, @one_of : Array | Nil = nil, @pattern : String | Nil = nil, @pattern_properties : Hash(String, String) | Nil = nil, @properties : Hash(String, String) | Nil = nil, @required : Array | Nil = nil, @title : String | Nil = nil, @type : String | Nil = nil, @unique_items : Bool | Nil = nil)
     end
   end
 end
