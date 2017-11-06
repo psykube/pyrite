@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias ComponentStatus = Api::Core::V1::ComponentStatus
+    alias ComponentStatus = ::Pyrite::Api::Core::V1::ComponentStatus
   end
 end

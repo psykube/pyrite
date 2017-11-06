@@ -32,6 +32,6 @@ module Pyrite
   end
 
   module Resources::Extensions::V1beta1
-    alias NetworkPolicy = Kubernetes::Apis::Extensions::V1beta1::NetworkPolicy
+    alias NetworkPolicy = ::Pyrite::Kubernetes::Apis::Extensions::V1beta1::NetworkPolicy
   end
 end

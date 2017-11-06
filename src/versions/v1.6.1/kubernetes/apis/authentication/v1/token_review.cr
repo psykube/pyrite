@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Authentication::V1
-    alias TokenReview = Kubernetes::Apis::Authentication::V1::TokenReview
+    alias TokenReview = ::Pyrite::Kubernetes::Apis::Authentication::V1::TokenReview
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Node = Api::Core::V1::Node
+    alias Node = ::Pyrite::Api::Core::V1::Node
   end
 end

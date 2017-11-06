@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Extensions::V1beta1
-    alias Scale = Api::Extensions::V1beta1::Scale
+    alias Scale = ::Pyrite::Api::Extensions::V1beta1::Scale
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Extensions::V1beta1
-    alias ThirdPartyResource = Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResource
+    alias ThirdPartyResource = ::Pyrite::Kubernetes::Apis::Extensions::V1beta1::ThirdPartyResource
   end
 end

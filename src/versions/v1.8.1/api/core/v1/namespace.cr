@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Namespace = Api::Core::V1::Namespace
+    alias Namespace = ::Pyrite::Api::Core::V1::Namespace
   end
 end

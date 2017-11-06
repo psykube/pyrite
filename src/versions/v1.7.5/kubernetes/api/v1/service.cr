@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Service = Kubernetes::Api::V1::Service
+    alias Service = ::Pyrite::Kubernetes::Api::V1::Service
   end
 end

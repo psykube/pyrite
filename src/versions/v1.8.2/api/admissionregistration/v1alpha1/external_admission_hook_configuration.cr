@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Admissionregistration::V1alpha1
-    alias ExternalAdmissionHookConfiguration = Api::Admissionregistration::V1alpha1::ExternalAdmissionHookConfiguration
+    alias ExternalAdmissionHookConfiguration = ::Pyrite::Api::Admissionregistration::V1alpha1::ExternalAdmissionHookConfiguration
   end
 end

@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Policy::V1beta1
-    alias Eviction = Kubernetes::Apis::Policy::V1beta1::Eviction
+    alias Eviction = ::Pyrite::Kubernetes::Apis::Policy::V1beta1::Eviction
   end
 end

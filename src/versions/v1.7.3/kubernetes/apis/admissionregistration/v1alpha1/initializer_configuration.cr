@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Admissionregistration::V1alpha1
-    alias InitializerConfiguration = Kubernetes::Apis::Admissionregistration::V1alpha1::InitializerConfiguration
+    alias InitializerConfiguration = ::Pyrite::Kubernetes::Apis::Admissionregistration::V1alpha1::InitializerConfiguration
   end
 end

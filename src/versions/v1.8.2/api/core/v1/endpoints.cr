@@ -44,6 +44,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Endpoints = Api::Core::V1::Endpoints
+    alias Endpoints = ::Pyrite::Api::Core::V1::Endpoints
   end
 end

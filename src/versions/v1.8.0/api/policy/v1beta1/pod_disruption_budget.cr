@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Policy::V1beta1
-    alias PodDisruptionBudget = Api::Policy::V1beta1::PodDisruptionBudget
+    alias PodDisruptionBudget = ::Pyrite::Api::Policy::V1beta1::PodDisruptionBudget
   end
 end

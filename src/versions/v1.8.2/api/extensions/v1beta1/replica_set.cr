@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Extensions::V1beta1
-    alias ReplicaSet = Api::Extensions::V1beta1::ReplicaSet
+    alias ReplicaSet = ::Pyrite::Api::Extensions::V1beta1::ReplicaSet
   end
 end

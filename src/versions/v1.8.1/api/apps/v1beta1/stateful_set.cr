@@ -40,6 +40,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Apps::V1beta1
-    alias StatefulSet = Api::Apps::V1beta1::StatefulSet
+    alias StatefulSet = ::Pyrite::Api::Apps::V1beta1::StatefulSet
   end
 end

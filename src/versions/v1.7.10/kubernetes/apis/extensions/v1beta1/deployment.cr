@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Extensions::V1beta1
-    alias Deployment = Kubernetes::Apis::Extensions::V1beta1::Deployment
+    alias Deployment = ::Pyrite::Kubernetes::Apis::Extensions::V1beta1::Deployment
   end
 end

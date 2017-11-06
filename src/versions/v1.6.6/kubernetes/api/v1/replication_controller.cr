@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias ReplicationController = Kubernetes::Api::V1::ReplicationController
+    alias ReplicationController = ::Pyrite::Kubernetes::Api::V1::ReplicationController
   end
 end

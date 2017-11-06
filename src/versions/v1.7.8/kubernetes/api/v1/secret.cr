@@ -43,6 +43,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Secret = Kubernetes::Api::V1::Secret
+    alias Secret = ::Pyrite::Kubernetes::Api::V1::Secret
   end
 end

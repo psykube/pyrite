@@ -40,6 +40,6 @@ module Pyrite
   end
 
   module Resources::Storage::V1
-    alias StorageClass = Kubernetes::Apis::Storage::V1::StorageClass
+    alias StorageClass = ::Pyrite::Kubernetes::Apis::Storage::V1::StorageClass
   end
 end

@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Rbac::V1
-    alias Role = Api::Rbac::V1::Role
+    alias Role = ::Pyrite::Api::Rbac::V1::Role
   end
 end

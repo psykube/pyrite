@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias PersistentVolume = Kubernetes::Api::V1::PersistentVolume
+    alias PersistentVolume = ::Pyrite::Kubernetes::Api::V1::PersistentVolume
   end
 end

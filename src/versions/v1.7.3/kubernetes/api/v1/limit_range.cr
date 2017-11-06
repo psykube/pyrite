@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias LimitRange = Kubernetes::Api::V1::LimitRange
+    alias LimitRange = ::Pyrite::Kubernetes::Api::V1::LimitRange
   end
 end

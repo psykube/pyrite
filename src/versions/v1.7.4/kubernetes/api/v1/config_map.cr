@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias ConfigMap = Kubernetes::Api::V1::ConfigMap
+    alias ConfigMap = ::Pyrite::Kubernetes::Api::V1::ConfigMap
   end
 end

@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Apiregistration::V1beta1
-    alias APIService = KubeAggregator::Apis::Apiregistration::V1beta1::APIService
+    alias APIService = ::Pyrite::KubeAggregator::Apis::Apiregistration::V1beta1::APIService
   end
 end

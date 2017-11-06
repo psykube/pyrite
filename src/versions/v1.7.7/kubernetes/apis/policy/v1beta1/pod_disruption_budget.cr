@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Policy::V1beta1
-    alias PodDisruptionBudget = Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudget
+    alias PodDisruptionBudget = ::Pyrite::Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudget
   end
 end

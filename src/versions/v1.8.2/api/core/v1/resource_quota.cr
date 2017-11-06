@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias ResourceQuota = Api::Core::V1::ResourceQuota
+    alias ResourceQuota = ::Pyrite::Api::Core::V1::ResourceQuota
   end
 end

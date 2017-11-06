@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias ComponentStatus = Kubernetes::Api::V1::ComponentStatus
+    alias ComponentStatus = ::Pyrite::Kubernetes::Api::V1::ComponentStatus
   end
 end

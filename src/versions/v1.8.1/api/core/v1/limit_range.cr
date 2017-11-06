@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias LimitRange = Api::Core::V1::LimitRange
+    alias LimitRange = ::Pyrite::Api::Core::V1::LimitRange
   end
 end

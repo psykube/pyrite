@@ -43,6 +43,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias ServiceAccount = Api::Core::V1::ServiceAccount
+    alias ServiceAccount = ::Pyrite::Api::Core::V1::ServiceAccount
   end
 end

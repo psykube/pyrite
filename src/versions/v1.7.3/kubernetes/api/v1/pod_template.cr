@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias PodTemplate = Kubernetes::Api::V1::PodTemplate
+    alias PodTemplate = ::Pyrite::Kubernetes::Api::V1::PodTemplate
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Batch::V2alpha1
-    alias CronJob = Kubernetes::Apis::Batch::V2alpha1::CronJob
+    alias CronJob = ::Pyrite::Kubernetes::Apis::Batch::V2alpha1::CronJob
   end
 end

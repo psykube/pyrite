@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Policy::V1beta1
-    alias Eviction = Api::Policy::V1beta1::Eviction
+    alias Eviction = ::Pyrite::Api::Policy::V1beta1::Eviction
   end
 end

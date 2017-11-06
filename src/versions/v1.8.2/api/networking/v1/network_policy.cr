@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Networking::V1
-    alias NetworkPolicy = Api::Networking::V1::NetworkPolicy
+    alias NetworkPolicy = ::Pyrite::Api::Networking::V1::NetworkPolicy
   end
 end

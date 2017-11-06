@@ -68,6 +68,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Event = Kubernetes::Api::V1::Event
+    alias Event = ::Pyrite::Kubernetes::Api::V1::Event
   end
 end

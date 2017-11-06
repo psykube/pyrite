@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Binding = Api::Core::V1::Binding
+    alias Binding = ::Pyrite::Api::Core::V1::Binding
   end
 end

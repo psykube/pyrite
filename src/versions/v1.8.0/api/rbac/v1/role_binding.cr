@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Rbac::V1
-    alias RoleBinding = Api::Rbac::V1::RoleBinding
+    alias RoleBinding = ::Pyrite::Api::Rbac::V1::RoleBinding
   end
 end

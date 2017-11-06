@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Extensions::V1beta1
-    alias PodSecurityPolicy = Api::Extensions::V1beta1::PodSecurityPolicy
+    alias PodSecurityPolicy = ::Pyrite::Api::Extensions::V1beta1::PodSecurityPolicy
   end
 end

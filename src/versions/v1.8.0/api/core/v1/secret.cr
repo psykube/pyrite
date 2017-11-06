@@ -43,6 +43,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Secret = Api::Core::V1::Secret
+    alias Secret = ::Pyrite::Api::Core::V1::Secret
   end
 end

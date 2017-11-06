@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Rbac::V1beta1
-    alias ClusterRoleBinding = Kubernetes::Apis::Rbac::V1beta1::ClusterRoleBinding
+    alias ClusterRoleBinding = ::Pyrite::Kubernetes::Apis::Rbac::V1beta1::ClusterRoleBinding
   end
 end

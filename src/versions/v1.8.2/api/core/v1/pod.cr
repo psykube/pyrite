@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Pod = Api::Core::V1::Pod
+    alias Pod = ::Pyrite::Api::Core::V1::Pod
   end
 end

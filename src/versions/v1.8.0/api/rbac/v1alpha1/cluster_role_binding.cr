@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Rbac::V1alpha1
-    alias ClusterRoleBinding = Api::Rbac::V1alpha1::ClusterRoleBinding
+    alias ClusterRoleBinding = ::Pyrite::Api::Rbac::V1alpha1::ClusterRoleBinding
   end
 end

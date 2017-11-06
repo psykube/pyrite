@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Service = Api::Core::V1::Service
+    alias Service = ::Pyrite::Api::Core::V1::Service
   end
 end

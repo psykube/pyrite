@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias ResourceQuota = Kubernetes::Api::V1::ResourceQuota
+    alias ResourceQuota = ::Pyrite::Kubernetes::Api::V1::ResourceQuota
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Apps::V1beta2
-    alias ControllerRevision = Api::Apps::V1beta2::ControllerRevision
+    alias ControllerRevision = ::Pyrite::Api::Apps::V1beta2::ControllerRevision
   end
 end

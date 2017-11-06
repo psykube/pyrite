@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Authorization::V1beta1
-    alias SelfSubjectRulesReview = Api::Authorization::V1beta1::SelfSubjectRulesReview
+    alias SelfSubjectRulesReview = ::Pyrite::Api::Authorization::V1beta1::SelfSubjectRulesReview
   end
 end

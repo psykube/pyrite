@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Autoscaling::V1
-    alias HorizontalPodAutoscaler = Api::Autoscaling::V1::HorizontalPodAutoscaler
+    alias HorizontalPodAutoscaler = ::Pyrite::Api::Autoscaling::V1::HorizontalPodAutoscaler
   end
 end

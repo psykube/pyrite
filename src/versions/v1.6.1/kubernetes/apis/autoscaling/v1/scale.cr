@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Autoscaling::V1
-    alias Scale = Kubernetes::Apis::Autoscaling::V1::Scale
+    alias Scale = ::Pyrite::Kubernetes::Apis::Autoscaling::V1::Scale
   end
 end

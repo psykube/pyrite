@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Rbac::V1
-    alias ClusterRole = Api::Rbac::V1::ClusterRole
+    alias ClusterRole = ::Pyrite::Api::Rbac::V1::ClusterRole
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Namespace = Kubernetes::Api::V1::Namespace
+    alias Namespace = ::Pyrite::Kubernetes::Api::V1::Namespace
   end
 end

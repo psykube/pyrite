@@ -43,6 +43,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Scheduling::V1alpha1
-    alias PriorityClass = Api::Scheduling::V1alpha1::PriorityClass
+    alias PriorityClass = ::Pyrite::Api::Scheduling::V1alpha1::PriorityClass
   end
 end

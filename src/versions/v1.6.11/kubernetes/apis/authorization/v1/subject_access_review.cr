@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Authorization::V1
-    alias SubjectAccessReview = Kubernetes::Apis::Authorization::V1::SubjectAccessReview
+    alias SubjectAccessReview = ::Pyrite::Kubernetes::Apis::Authorization::V1::SubjectAccessReview
   end
 end

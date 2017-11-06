@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Certificates::V1beta1
-    alias CertificateSigningRequest = Api::Certificates::V1beta1::CertificateSigningRequest
+    alias CertificateSigningRequest = ::Pyrite::Api::Certificates::V1beta1::CertificateSigningRequest
   end
 end

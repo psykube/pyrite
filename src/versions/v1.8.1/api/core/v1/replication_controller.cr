@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias ReplicationController = Api::Core::V1::ReplicationController
+    alias ReplicationController = ::Pyrite::Api::Core::V1::ReplicationController
   end
 end

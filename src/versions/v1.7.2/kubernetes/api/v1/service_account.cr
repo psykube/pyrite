@@ -43,6 +43,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias ServiceAccount = Kubernetes::Api::V1::ServiceAccount
+    alias ServiceAccount = ::Pyrite::Kubernetes::Api::V1::ServiceAccount
   end
 end

@@ -31,6 +31,6 @@ module Pyrite
   end
 
   module Resources::Settings::V1alpha1
-    alias PodPreset = Kubernetes::Apis::Settings::V1alpha1::PodPreset
+    alias PodPreset = ::Pyrite::Kubernetes::Apis::Settings::V1alpha1::PodPreset
   end
 end

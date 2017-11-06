@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Node = Kubernetes::Api::V1::Node
+    alias Node = ::Pyrite::Kubernetes::Api::V1::Node
   end
 end

@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias PersistentVolumeClaim = Kubernetes::Api::V1::PersistentVolumeClaim
+    alias PersistentVolumeClaim = ::Pyrite::Kubernetes::Api::V1::PersistentVolumeClaim
   end
 end

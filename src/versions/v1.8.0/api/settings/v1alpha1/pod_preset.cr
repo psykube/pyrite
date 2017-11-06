@@ -31,6 +31,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Settings::V1alpha1
-    alias PodPreset = Api::Settings::V1alpha1::PodPreset
+    alias PodPreset = ::Pyrite::Api::Settings::V1alpha1::PodPreset
   end
 end

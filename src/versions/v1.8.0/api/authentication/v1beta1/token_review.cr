@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Authentication::V1beta1
-    alias TokenReview = Api::Authentication::V1beta1::TokenReview
+    alias TokenReview = ::Pyrite::Api::Authentication::V1beta1::TokenReview
   end
 end

@@ -55,6 +55,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Storage::V1
-    alias StorageClass = Api::Storage::V1::StorageClass
+    alias StorageClass = ::Pyrite::Api::Storage::V1::StorageClass
   end
 end

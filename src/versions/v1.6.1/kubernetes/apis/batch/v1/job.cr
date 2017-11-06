@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Batch::V1
-    alias Job = Kubernetes::Apis::Batch::V1::Job
+    alias Job = ::Pyrite::Kubernetes::Apis::Batch::V1::Job
   end
 end

@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias PodTemplate = Api::Core::V1::PodTemplate
+    alias PodTemplate = ::Pyrite::Api::Core::V1::PodTemplate
   end
 end

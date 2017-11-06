@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Extensions::V1beta1
-    alias Ingress = Api::Extensions::V1beta1::Ingress
+    alias Ingress = ::Pyrite::Api::Extensions::V1beta1::Ingress
   end
 end

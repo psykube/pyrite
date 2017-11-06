@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Extensions::V1beta1
-    alias Deployment = Api::Extensions::V1beta1::Deployment
+    alias Deployment = ::Pyrite::Api::Extensions::V1beta1::Deployment
   end
 end

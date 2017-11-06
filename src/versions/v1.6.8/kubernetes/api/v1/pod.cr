@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Pod = Kubernetes::Api::V1::Pod
+    alias Pod = ::Pyrite::Kubernetes::Api::V1::Pod
   end
 end

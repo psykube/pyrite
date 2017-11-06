@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Extensions::V1beta1
-    alias Scale = Kubernetes::Apis::Extensions::V1beta1::Scale
+    alias Scale = ::Pyrite::Kubernetes::Apis::Extensions::V1beta1::Scale
   end
 end

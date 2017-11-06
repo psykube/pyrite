@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Binding = Kubernetes::Api::V1::Binding
+    alias Binding = ::Pyrite::Kubernetes::Api::V1::Binding
   end
 end

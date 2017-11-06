@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Apps::V1beta1
-    alias Deployment = Kubernetes::Apis::Apps::V1beta1::Deployment
+    alias Deployment = ::Pyrite::Kubernetes::Apis::Apps::V1beta1::Deployment
   end
 end

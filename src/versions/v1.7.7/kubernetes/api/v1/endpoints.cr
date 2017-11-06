@@ -44,6 +44,6 @@ module Pyrite
   end
 
   module Resources::V1
-    alias Endpoints = Kubernetes::Api::V1::Endpoints
+    alias Endpoints = ::Pyrite::Kubernetes::Api::V1::Endpoints
   end
 end

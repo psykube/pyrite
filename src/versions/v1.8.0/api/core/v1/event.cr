@@ -68,6 +68,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias Event = Api::Core::V1::Event
+    alias Event = ::Pyrite::Api::Core::V1::Event
   end
 end

@@ -33,6 +33,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Core::V1
-    alias ConfigMap = Api::Core::V1::ConfigMap
+    alias ConfigMap = ::Pyrite::Api::Core::V1::ConfigMap
   end
 end

@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Apiextensions::V1beta1
-    alias CustomResourceDefinition = ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinition
+    alias CustomResourceDefinition = ::Pyrite::ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinition
   end
 end

@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Authorization::V1beta1
-    alias LocalSubjectAccessReview = Api::Authorization::V1beta1::LocalSubjectAccessReview
+    alias LocalSubjectAccessReview = ::Pyrite::Api::Authorization::V1beta1::LocalSubjectAccessReview
   end
 end

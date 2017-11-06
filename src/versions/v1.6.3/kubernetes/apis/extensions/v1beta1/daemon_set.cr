@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Extensions::V1beta1
-    alias DaemonSet = Kubernetes::Apis::Extensions::V1beta1::DaemonSet
+    alias DaemonSet = ::Pyrite::Kubernetes::Apis::Extensions::V1beta1::DaemonSet
   end
 end

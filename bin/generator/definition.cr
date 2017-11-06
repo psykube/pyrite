@@ -98,7 +98,7 @@ class Generator::Definition
 
   private def define_alias
     file.puts "module #{resource_alias}"
-    file.puts "alias #{kind} = #{class_name.lchop("::")}"
+    file.puts "alias #{kind} = ::Pyrite::#{class_name.lchop("::")}"
     _end
   end
 

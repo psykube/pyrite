@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Authorization::V1beta1
-    alias SubjectAccessReview = Api::Authorization::V1beta1::SubjectAccessReview
+    alias SubjectAccessReview = ::Pyrite::Api::Authorization::V1beta1::SubjectAccessReview
   end
 end

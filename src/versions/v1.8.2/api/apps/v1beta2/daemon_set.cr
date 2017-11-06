@@ -38,6 +38,6 @@ module Pyrite
   end
 
   module Resources::Io::K8s::Api::Apps::V1beta2
-    alias DaemonSet = Api::Apps::V1beta2::DaemonSet
+    alias DaemonSet = ::Pyrite::Api::Apps::V1beta2::DaemonSet
   end
 end

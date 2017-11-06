@@ -37,6 +37,6 @@ module Pyrite
   end
 
   module Resources::Authorization::V1beta1
-    alias LocalSubjectAccessReview = Kubernetes::Apis::Authorization::V1beta1::LocalSubjectAccessReview
+    alias LocalSubjectAccessReview = ::Pyrite::Kubernetes::Apis::Authorization::V1beta1::LocalSubjectAccessReview
   end
 end
