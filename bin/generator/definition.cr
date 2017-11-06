@@ -296,7 +296,7 @@ class Generator::Definition
   private def define_initializer
     args = properties.each_with_object({} of String => FunctionArgument) do |(name, prop), memo|
       next if is_resource? && resource_property?(name)
-      memo["@" + name] = FunctionArgument.new("@" + name, prop, definition)
+      memo["@" + name] = FunctionArgument.new("@" + crystalize_name(name), prop, definition)
     end
     # arg_map["name"] = FunctionArgument.new("name", arg_map["@spec"].required) if is_resource? && arg_map["@spec"]
 
