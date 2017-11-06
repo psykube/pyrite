@@ -13,15 +13,19 @@ class Generator
 
   def initialize(response : HTTP::Client::Response, fallback_version : String)
     @schema = Swagger.from_json(response.body)
-    Swagger::Definition.new.tap do |list_def|
+     Swagger::Definition.new.tap do |list_def|
+      template = @schema.definitions["io.k8s.api.core.v1.PodList"]?
+      defkey = "io.k8s.api.core.v1.List" if template
+      template ||= @schema.definitions["io.k8s.kubernetes.pkg.api.v1.PodList"]
+      defkey ||= "io.k8s.kubernetes.pkg.api.v1.List"
       list_def.description = "List is a generic list of resources"
-      list_def.properties = @schema.definitions["io.k8s.kubernetes.pkg.api.v1.PodList"].properties.dup
+      list_def.properties = template.properties.dup
       list_def.properties["items"] = Swagger::Definition::Property.new(
         description: "list of resources",
         type: "array",
         items: Swagger::Definition::Property.new(type: "resource")
       )
-      @schema.definitions["io.k8s.kubernetes.pkg.api.v1.List"] = list_def
+      @schema.definitions[defkey] = list_def
     end
     @schema.info.version = fallback_version if @schema.info.version == "unversioned"
     @base_class = ROOT_NAME
