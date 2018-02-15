@@ -38,6 +38,7 @@ class Generator
     @definitions["io.k8s.apimachinery.pkg.util.intstr.IntOrString"] = "Int32 | String"
     @definitions["io.k8s.apimachinery.pkg.api.resource.Quantity"] = "Int32"
     @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.Time"] = "Time"
+    @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"] = "Time"
   end
 
   def generate

@@ -10,24 +10,24 @@ module Pyrite
     property count : Int32 | Nil
 
     # Time of the last occurence observed
-    property last_observed_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil
+    property last_observed_time : Time | Nil
 
     # State of this Series: Ongoing or Finished
     property state : String | Nil
 
     ::YAML.mapping({
       count:              {type: Int32, nilable: true, key: "count", getter: false, setter: false},
-      last_observed_time: {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: true, key: "lastObservedTime", getter: false, setter: false},
+      last_observed_time: {type: Time, nilable: true, key: "lastObservedTime", getter: false, setter: false},
       state:              {type: String, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
       count:              {type: Int32, nilable: true, key: "count", getter: false, setter: false},
-      last_observed_time: {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: true, key: "lastObservedTime", getter: false, setter: false},
+      last_observed_time: {type: Time, nilable: true, key: "lastObservedTime", getter: false, setter: false},
       state:              {type: String, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil = nil, @state : String | Nil = nil)
+    def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Time | Nil = nil, @state : String | Nil = nil)
     end
   end
 end

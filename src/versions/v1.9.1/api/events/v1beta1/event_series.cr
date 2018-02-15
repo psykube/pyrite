@@ -10,24 +10,24 @@ module Pyrite
     property count : Int32
 
     # Time when last Event from the series was seen before last heartbeat.
-    property last_observed_time : Apimachinery::Apis::Meta::V1::MicroTime
+    property last_observed_time : Time
 
     # Information whether this series is ongoing or finished.
     property state : String
 
     ::YAML.mapping({
       count:              {type: Int32, nilable: false, key: "count", getter: false, setter: false},
-      last_observed_time: {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: false, key: "lastObservedTime", getter: false, setter: false},
+      last_observed_time: {type: Time, nilable: false, key: "lastObservedTime", getter: false, setter: false},
       state:              {type: String, nilable: false, key: "state", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
       count:              {type: Int32, nilable: false, key: "count", getter: false, setter: false},
-      last_observed_time: {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: false, key: "lastObservedTime", getter: false, setter: false},
+      last_observed_time: {type: Time, nilable: false, key: "lastObservedTime", getter: false, setter: false},
       state:              {type: String, nilable: false, key: "state", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil = nil, @state : String | Nil = nil)
+    def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Time | Nil = nil, @state : String | Nil = nil)
     end
   end
 end
