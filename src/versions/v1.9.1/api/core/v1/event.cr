@@ -15,7 +15,7 @@ module Pyrite
     property count : Int32 | Nil
 
     # Time when this Event was first observed.
-    property event_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil
+    property event_time : Time | Nil
 
     # The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)
     property first_timestamp : Time | Nil
@@ -58,7 +58,7 @@ module Pyrite
       kind:                {type: String, default: "Event", key: "kind", setter: false},
       action:              {type: String, nilable: true, key: "action", getter: false, setter: false},
       count:               {type: Int32, nilable: true, key: "count", getter: false, setter: false},
-      event_time:          {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: true, key: "eventTime", getter: false, setter: false},
+      event_time:          {type: Time, nilable: true, key: "eventTime", getter: false, setter: false},
       first_timestamp:     {type: Time, nilable: true, key: "firstTimestamp", getter: false, setter: false},
       involved_object:     {type: Api::Core::V1::ObjectReference, nilable: false, key: "involvedObject", getter: false, setter: false},
       last_timestamp:      {type: Time, nilable: true, key: "lastTimestamp", getter: false, setter: false},
@@ -78,7 +78,7 @@ module Pyrite
       kind:                {type: String, default: "Event", key: "kind", setter: false},
       action:              {type: String, nilable: true, key: "action", getter: false, setter: false},
       count:               {type: Int32, nilable: true, key: "count", getter: false, setter: false},
-      event_time:          {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: true, key: "eventTime", getter: false, setter: false},
+      event_time:          {type: Time, nilable: true, key: "eventTime", getter: false, setter: false},
       first_timestamp:     {type: Time, nilable: true, key: "firstTimestamp", getter: false, setter: false},
       involved_object:     {type: Api::Core::V1::ObjectReference, nilable: false, key: "involvedObject", getter: false, setter: false},
       last_timestamp:      {type: Time, nilable: true, key: "lastTimestamp", getter: false, setter: false},
@@ -93,7 +93,7 @@ module Pyrite
       type:                {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @action : String | Nil = nil, @count : Int32 | Nil = nil, @event_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil = nil, @first_timestamp : Time | Nil = nil, @involved_object : Api::Core::V1::ObjectReference | Nil = nil, @last_timestamp : Time | Nil = nil, @message : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @reason : String | Nil = nil, @related : Api::Core::V1::ObjectReference | Nil = nil, @reporting_component : String | Nil = nil, @reporting_instance : String | Nil = nil, @series : Api::Core::V1::EventSeries | Nil = nil, @source : Api::Core::V1::EventSource | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @action : String | Nil = nil, @count : Int32 | Nil = nil, @event_time : Time | Nil = nil, @first_timestamp : Time | Nil = nil, @involved_object : Api::Core::V1::ObjectReference | Nil = nil, @last_timestamp : Time | Nil = nil, @message : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @reason : String | Nil = nil, @related : Api::Core::V1::ObjectReference | Nil = nil, @reporting_component : String | Nil = nil, @reporting_instance : String | Nil = nil, @series : Api::Core::V1::EventSeries | Nil = nil, @source : Api::Core::V1::EventSource | Nil = nil, @type : String | Nil = nil)
     end
   end
 

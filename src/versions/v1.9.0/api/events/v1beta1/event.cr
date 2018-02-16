@@ -24,7 +24,7 @@ module Pyrite
     property deprecated_source : Api::Core::V1::EventSource | Nil
 
     # Required. Time when this Event was first observed.
-    property event_time : Apimachinery::Apis::Meta::V1::MicroTime
+    property event_time : Time
 
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
@@ -60,7 +60,7 @@ module Pyrite
       deprecated_first_timestamp: {type: Time, nilable: true, key: "deprecatedFirstTimestamp", getter: false, setter: false},
       deprecated_last_timestamp:  {type: Time, nilable: true, key: "deprecatedLastTimestamp", getter: false, setter: false},
       deprecated_source:          {type: Api::Core::V1::EventSource, nilable: true, key: "deprecatedSource", getter: false, setter: false},
-      event_time:                 {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: false, key: "eventTime", getter: false, setter: false},
+      event_time:                 {type: Time, nilable: false, key: "eventTime", getter: false, setter: false},
       metadata:                   {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       note:                       {type: String, nilable: true, key: "note", getter: false, setter: false},
       reason:                     {type: String, nilable: true, key: "reason", getter: false, setter: false},
@@ -80,7 +80,7 @@ module Pyrite
       deprecated_first_timestamp: {type: Time, nilable: true, key: "deprecatedFirstTimestamp", getter: false, setter: false},
       deprecated_last_timestamp:  {type: Time, nilable: true, key: "deprecatedLastTimestamp", getter: false, setter: false},
       deprecated_source:          {type: Api::Core::V1::EventSource, nilable: true, key: "deprecatedSource", getter: false, setter: false},
-      event_time:                 {type: Apimachinery::Apis::Meta::V1::MicroTime, nilable: false, key: "eventTime", getter: false, setter: false},
+      event_time:                 {type: Time, nilable: false, key: "eventTime", getter: false, setter: false},
       metadata:                   {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       note:                       {type: String, nilable: true, key: "note", getter: false, setter: false},
       reason:                     {type: String, nilable: true, key: "reason", getter: false, setter: false},
@@ -92,7 +92,7 @@ module Pyrite
       type:                       {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @action : String | Nil = nil, @deprecated_count : Int32 | Nil = nil, @deprecated_first_timestamp : Time | Nil = nil, @deprecated_last_timestamp : Time | Nil = nil, @deprecated_source : Api::Core::V1::EventSource | Nil = nil, @event_time : Apimachinery::Apis::Meta::V1::MicroTime | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @note : String | Nil = nil, @reason : String | Nil = nil, @regarding : Api::Core::V1::ObjectReference | Nil = nil, @related : Api::Core::V1::ObjectReference | Nil = nil, @reporting_controller : String | Nil = nil, @reporting_instance : String | Nil = nil, @series : Api::Events::V1beta1::EventSeries | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @action : String | Nil = nil, @deprecated_count : Int32 | Nil = nil, @deprecated_first_timestamp : Time | Nil = nil, @deprecated_last_timestamp : Time | Nil = nil, @deprecated_source : Api::Core::V1::EventSource | Nil = nil, @event_time : Time | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @note : String | Nil = nil, @reason : String | Nil = nil, @regarding : Api::Core::V1::ObjectReference | Nil = nil, @related : Api::Core::V1::ObjectReference | Nil = nil, @reporting_controller : String | Nil = nil, @reporting_instance : String | Nil = nil, @series : Api::Events::V1beta1::EventSeries | Nil = nil, @type : String | Nil = nil)
     end
   end
 
