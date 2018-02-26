@@ -9,14 +9,10 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   pyrite:
-    github: jwaldrip/pyrite
+    github: psykube/pyrite
 ```
 
 ## Usage
-
-```crystal
-require "pyrite"
-```
 
 Pyrite should support Kubernetes API from 1.6.0 and beyond. In order to use 
 pyrite, you will want to include the VERSION that best maps to your k8s api version.
