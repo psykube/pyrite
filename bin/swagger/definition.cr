@@ -8,6 +8,7 @@ class Swagger::Definition
     description: String?,
     required:    {type: Array(String), default: [] of String},
     properties:  {type: Hash(String, Property), default: {} of String => Property},
+    _ref:        {type: String, nilable: true, key: "$ref"}
   })
 
   def initialize

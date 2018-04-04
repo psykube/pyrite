@@ -32,6 +32,7 @@ class Generator
     @base_dir = File.join(".", VERSIONS_DIR, version)
     @filename = version + ".cr"
     @definitions = @schema.definitions.each_with_object({} of String => String) do |(name, definition), memo|
+      next if definition._ref
       parts = name.lchop("io.k8s.").sub(".pkg.", ".").split(".").map(&.gsub('-', '_').camelcase)
       memo[name] = parts.join("::")
     end
