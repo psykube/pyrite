@@ -76,7 +76,7 @@ class Generator
   end
 
   private def version
-    @schema.info.version.downcase
+    @schema.info.version.downcase.split('.').tap(&.pop).join('.')
   end
 end
 

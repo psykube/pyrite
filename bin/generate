@@ -10,21 +10,23 @@ last_bump = nil
 
 FileUtils.rm_rf File.join(".", Generator::VERSIONS_DIR)
 versions = [] of Generator
+last_res = nil
+last_version = nil
 while version = "v" + [major, minor, patch].map(&.to_s).join(".")
-  puts "Generating #{version}"
   res = HTTP::Client.get("https://raw.githubusercontent.com/kubernetes/kubernetes/#{version}/api/openapi-spec/swagger.json")
 
   if res.status_code == 200
-    versions << Generator.generate(res, version)
+    last_res = res
+    last_version = version
     patch += 1
     last_bump = "patch"
   else
-    puts "failed to get #{version}"
     patch = 0
     case last_bump
     when "patch"
       minor += 1
       last_bump = "minor"
+      versions << Generator.generate(last_res, last_version) if last_res && last_version
     when "minor"
       major += 1
       minor = 0
