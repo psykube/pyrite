@@ -28,7 +28,7 @@ module Pyrite
       target:      {type: Api::Core::V1::ObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @target : Api::Core::V1::ObjectReference | Nil = nil)
+    def initialize(*, @target : Api::Core::V1::ObjectReference, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

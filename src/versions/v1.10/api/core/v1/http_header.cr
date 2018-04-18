@@ -22,7 +22,7 @@ module Pyrite
       value: {type: String, nilable: false, key: "value", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String | Nil = nil, @value : String | Nil = nil)
+    def initialize(*, @name : String, @value : String)
     end
   end
 end

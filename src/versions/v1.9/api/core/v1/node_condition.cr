@@ -42,7 +42,7 @@ module Pyrite
       type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @last_heartbeat_time : Time | Nil = nil, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @status : String | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @status : String, @type : String, @last_heartbeat_time : Time | Nil = nil, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil)
     end
   end
 end

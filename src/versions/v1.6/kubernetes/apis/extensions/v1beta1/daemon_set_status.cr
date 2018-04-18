@@ -52,7 +52,7 @@ module Pyrite
       updated_number_scheduled: {type: Int32, nilable: true, key: "updatedNumberScheduled", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_number_scheduled : Int32 | Nil = nil, @desired_number_scheduled : Int32 | Nil = nil, @number_available : Int32 | Nil = nil, @number_misscheduled : Int32 | Nil = nil, @number_ready : Int32 | Nil = nil, @number_unavailable : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @updated_number_scheduled : Int32 | Nil = nil)
+    def initialize(*, @current_number_scheduled : Int32, @desired_number_scheduled : Int32, @number_misscheduled : Int32, @number_ready : Int32, @number_available : Int32 | Nil = nil, @number_unavailable : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @updated_number_scheduled : Int32 | Nil = nil)
     end
   end
 end

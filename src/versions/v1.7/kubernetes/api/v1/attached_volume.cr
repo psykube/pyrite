@@ -22,7 +22,7 @@ module Pyrite
       name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @device_path : String | Nil = nil, @name : String | Nil = nil)
+    def initialize(*, @device_path : String, @name : String)
     end
   end
 end

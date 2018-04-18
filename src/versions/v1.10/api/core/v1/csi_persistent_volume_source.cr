@@ -52,7 +52,7 @@ module Pyrite
       volume_handle:                 {type: String, nilable: false, key: "volumeHandle", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @controller_publish_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @driver : String | Nil = nil, @fs_type : String | Nil = nil, @node_publish_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @node_stage_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @read_only : Bool | Nil = nil, @volume_attributes : Hash(String, String) | Nil = nil, @volume_handle : String | Nil = nil)
+    def initialize(*, @driver : String, @volume_handle : String, @controller_publish_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @fs_type : String | Nil = nil, @node_publish_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @node_stage_secret_ref : Api::Core::V1::SecretReference | Nil = nil, @read_only : Bool | Nil = nil, @volume_attributes : Hash(String, String) | Nil = nil)
     end
   end
 end

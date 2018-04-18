@@ -32,7 +32,7 @@ module Pyrite
       resource_field_ref: {type: Api::Core::V1::ResourceFieldSelector, nilable: true, key: "resourceFieldRef", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @field_ref : Api::Core::V1::ObjectFieldSelector | Nil = nil, @mode : Int32 | Nil = nil, @path : String | Nil = nil, @resource_field_ref : Api::Core::V1::ResourceFieldSelector | Nil = nil)
+    def initialize(*, @path : String, @field_ref : Api::Core::V1::ObjectFieldSelector | Nil = nil, @mode : Int32 | Nil = nil, @resource_field_ref : Api::Core::V1::ResourceFieldSelector | Nil = nil)
     end
   end
 end

@@ -41,7 +41,7 @@ module Pyrite
       url:       {type: String, nilable: true, key: "url", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ca_bundle : String | Nil = nil, @service : Api::Admissionregistration::V1beta1::ServiceReference | Nil = nil, @url : String | Nil = nil)
+    def initialize(*, @ca_bundle : String, @service : Api::Admissionregistration::V1beta1::ServiceReference | Nil = nil, @url : String | Nil = nil)
     end
   end
 end

@@ -27,7 +27,7 @@ module Pyrite
       revision:   {type: String, nilable: true, key: "revision", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @directory : String | Nil = nil, @repository : String | Nil = nil, @revision : String | Nil = nil)
+    def initialize(*, @repository : String, @directory : String | Nil = nil, @revision : String | Nil = nil)
     end
   end
 end

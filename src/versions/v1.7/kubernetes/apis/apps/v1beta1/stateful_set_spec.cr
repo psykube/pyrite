@@ -52,7 +52,7 @@ module Pyrite
       volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @pod_management_policy : String | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @service_name : String | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil, @update_strategy : Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy | Nil = nil, @volume_claim_templates : Array | Nil = nil)
+    def initialize(*, @service_name : String, @template : Kubernetes::Api::V1::PodTemplateSpec, @pod_management_policy : String | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @update_strategy : Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy | Nil = nil, @volume_claim_templates : Array | Nil = nil)
     end
   end
 end

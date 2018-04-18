@@ -27,7 +27,7 @@ module Pyrite
       target_selector: {type: String, nilable: true, key: "targetSelector", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @replicas : Int32 | Nil = nil, @selector : Hash(String, String) | Nil = nil, @target_selector : String | Nil = nil)
+    def initialize(*, @replicas : Int32, @selector : Hash(String, String) | Nil = nil, @target_selector : String | Nil = nil)
     end
   end
 end

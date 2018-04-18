@@ -57,7 +57,7 @@ module Pyrite
       version:       {type: String, nilable: true, key: "version", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @categories : Array | Nil = nil, @group : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @namespaced : Bool | Nil = nil, @short_names : Array | Nil = nil, @singular_name : String | Nil = nil, @verbs : Array | Nil = nil, @version : String | Nil = nil)
+    def initialize(*, @kind : String, @name : String, @namespaced : Bool, @singular_name : String, @verbs : Array, @categories : Array | Nil = nil, @group : String | Nil = nil, @short_names : Array | Nil = nil, @version : String | Nil = nil)
     end
   end
 end

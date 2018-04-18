@@ -35,7 +35,7 @@ module Pyrite
       provisioner: {type: String, nilable: false, key: "provisioner", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String | Nil = nil)
+    def initialize(*, @provisioner : String, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @parameters : Hash(String, String) | Nil = nil)
     end
   end
 

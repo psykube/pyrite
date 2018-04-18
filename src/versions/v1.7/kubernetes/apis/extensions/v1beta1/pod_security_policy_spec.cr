@@ -82,7 +82,7 @@ module Pyrite
       volumes:                    {type: Array(String), nilable: true, key: "volumes", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @allowed_capabilities : Array | Nil = nil, @default_add_capabilities : Array | Nil = nil, @fs_group : Kubernetes::Apis::Extensions::V1beta1::FSGroupStrategyOptions | Nil = nil, @host_ipc : Bool | Nil = nil, @host_network : Bool | Nil = nil, @host_pid : Bool | Nil = nil, @host_ports : Array | Nil = nil, @privileged : Bool | Nil = nil, @read_only_root_filesystem : Bool | Nil = nil, @required_drop_capabilities : Array | Nil = nil, @run_as_user : Kubernetes::Apis::Extensions::V1beta1::RunAsUserStrategyOptions | Nil = nil, @se_linux : Kubernetes::Apis::Extensions::V1beta1::SELinuxStrategyOptions | Nil = nil, @supplemental_groups : Kubernetes::Apis::Extensions::V1beta1::SupplementalGroupsStrategyOptions | Nil = nil, @volumes : Array | Nil = nil)
+    def initialize(*, @fs_group : Kubernetes::Apis::Extensions::V1beta1::FSGroupStrategyOptions, @run_as_user : Kubernetes::Apis::Extensions::V1beta1::RunAsUserStrategyOptions, @se_linux : Kubernetes::Apis::Extensions::V1beta1::SELinuxStrategyOptions, @supplemental_groups : Kubernetes::Apis::Extensions::V1beta1::SupplementalGroupsStrategyOptions, @allowed_capabilities : Array | Nil = nil, @default_add_capabilities : Array | Nil = nil, @host_ipc : Bool | Nil = nil, @host_network : Bool | Nil = nil, @host_pid : Bool | Nil = nil, @host_ports : Array | Nil = nil, @privileged : Bool | Nil = nil, @read_only_root_filesystem : Bool | Nil = nil, @required_drop_capabilities : Array | Nil = nil, @volumes : Array | Nil = nil)
     end
   end
 end

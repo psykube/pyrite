@@ -27,7 +27,7 @@ module Pyrite
       values:   {type: Array(String), nilable: true, key: "values", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @key : String | Nil = nil, @operator : String | Nil = nil, @values : Array | Nil = nil)
+    def initialize(*, @key : String, @operator : String, @values : Array | Nil = nil)
     end
   end
 end

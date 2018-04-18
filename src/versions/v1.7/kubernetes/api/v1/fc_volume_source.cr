@@ -32,7 +32,7 @@ module Pyrite
       target_wwns: {type: Array(String), nilable: false, key: "targetWWNs", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @lun : Int32 | Nil = nil, @read_only : Bool | Nil = nil, @target_wwns : Array | Nil = nil)
+    def initialize(*, @lun : Int32, @target_wwns : Array, @fs_type : String | Nil = nil, @read_only : Bool | Nil = nil)
     end
   end
 end

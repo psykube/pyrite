@@ -42,7 +42,7 @@ module Pyrite
       observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_healthy : Int32 | Nil = nil, @desired_healthy : Int32 | Nil = nil, @disrupted_pods : Hash(String, String) | Nil = nil, @disruptions_allowed : Int32 | Nil = nil, @expected_pods : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil)
+    def initialize(*, @current_healthy : Int32, @desired_healthy : Int32, @disrupted_pods : Hash(String, String), @disruptions_allowed : Int32, @expected_pods : Int32, @observed_generation : Int32 | Nil = nil)
     end
   end
 end

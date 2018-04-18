@@ -31,7 +31,7 @@ module Pyrite
       policy_types: {type: Array(String), nilable: true, key: "policyTypes", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @egress : Array | Nil = nil, @ingress : Array | Nil = nil, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @policy_types : Array | Nil = nil)
+    def initialize(*, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector, @egress : Array | Nil = nil, @ingress : Array | Nil = nil, @policy_types : Array | Nil = nil)
     end
   end
 end

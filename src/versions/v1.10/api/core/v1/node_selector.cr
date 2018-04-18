@@ -17,7 +17,7 @@ module Pyrite
       node_selector_terms: {type: Array(Api::Core::V1::NodeSelectorTerm), nilable: false, key: "nodeSelectorTerms", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @node_selector_terms : Array | Nil = nil)
+    def initialize(*, @node_selector_terms : Array)
     end
   end
 end

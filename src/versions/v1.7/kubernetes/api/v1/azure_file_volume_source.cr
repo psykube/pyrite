@@ -27,7 +27,7 @@ module Pyrite
       share_name:  {type: String, nilable: false, key: "shareName", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @read_only : Bool | Nil = nil, @secret_name : String | Nil = nil, @share_name : String | Nil = nil)
+    def initialize(*, @secret_name : String, @share_name : String, @read_only : Bool | Nil = nil)
     end
   end
 end

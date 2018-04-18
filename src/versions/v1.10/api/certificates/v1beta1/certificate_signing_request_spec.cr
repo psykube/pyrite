@@ -43,7 +43,7 @@ module Pyrite
       username: {type: String, nilable: true, key: "username", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @request : String | Nil = nil, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)
+    def initialize(*, @request : String, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)
     end
   end
 end

@@ -37,7 +37,7 @@ module Pyrite
       read_only:    {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @caching_mode : String | Nil = nil, @disk_name : String | Nil = nil, @disk_uri : String | Nil = nil, @fs_type : String | Nil = nil, @read_only : Bool | Nil = nil)
+    def initialize(*, @disk_name : String, @disk_uri : String, @caching_mode : String | Nil = nil, @fs_type : String | Nil = nil, @read_only : Bool | Nil = nil)
     end
   end
 end

@@ -22,7 +22,7 @@ module Pyrite
       target_average_value: {type: Int32, nilable: false, key: "targetAverageValue", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metric_name : String | Nil = nil, @target_average_value : Int32 | Nil = nil)
+    def initialize(*, @metric_name : String, @target_average_value : Int32)
     end
   end
 end

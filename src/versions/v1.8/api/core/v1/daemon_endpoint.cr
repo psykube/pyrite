@@ -17,7 +17,7 @@ module Pyrite
       port: {type: Int32, nilable: false, key: "Port", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @port : Int32 | Nil = nil)
+    def initialize(*, @port : Int32)
     end
   end
 end

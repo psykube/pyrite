@@ -47,7 +47,7 @@ module Pyrite
       template:                {type: Api::Core::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @active_deadline_seconds : Int32 | Nil = nil, @backoff_limit : Int32 | Nil = nil, @completions : Int32 | Nil = nil, @manual_selector : Bool | Nil = nil, @parallelism : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Api::Core::V1::PodTemplateSpec | Nil = nil)
+    def initialize(*, @template : Api::Core::V1::PodTemplateSpec, @active_deadline_seconds : Int32 | Nil = nil, @backoff_limit : Int32 | Nil = nil, @completions : Int32 | Nil = nil, @manual_selector : Bool | Nil = nil, @parallelism : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
     end
   end
 end

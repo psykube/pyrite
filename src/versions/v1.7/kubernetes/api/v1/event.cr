@@ -63,7 +63,7 @@ module Pyrite
       type:            {type: String, nilable: true, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @count : Int32 | Nil = nil, @first_timestamp : Time | Nil = nil, @involved_object : Kubernetes::Api::V1::ObjectReference | Nil = nil, @last_timestamp : Time | Nil = nil, @message : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @reason : String | Nil = nil, @source : Kubernetes::Api::V1::EventSource | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @involved_object : Kubernetes::Api::V1::ObjectReference, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta, @count : Int32 | Nil = nil, @first_timestamp : Time | Nil = nil, @last_timestamp : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @source : Kubernetes::Api::V1::EventSource | Nil = nil, @type : String | Nil = nil)
     end
   end
 

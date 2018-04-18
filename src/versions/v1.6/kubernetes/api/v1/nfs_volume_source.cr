@@ -27,7 +27,7 @@ module Pyrite
       server:    {type: String, nilable: false, key: "server", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @path : String | Nil = nil, @read_only : Bool | Nil = nil, @server : String | Nil = nil)
+    def initialize(*, @path : String, @server : String, @read_only : Bool | Nil = nil)
     end
   end
 end

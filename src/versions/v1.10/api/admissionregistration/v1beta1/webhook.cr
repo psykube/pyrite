@@ -67,7 +67,7 @@ module Pyrite
       rules:              {type: Array(Api::Admissionregistration::V1beta1::RuleWithOperations), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @client_config : Api::Admissionregistration::V1beta1::WebhookClientConfig | Nil = nil, @failure_policy : String | Nil = nil, @name : String | Nil = nil, @namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @rules : Array | Nil = nil)
+    def initialize(*, @client_config : Api::Admissionregistration::V1beta1::WebhookClientConfig, @name : String, @failure_policy : String | Nil = nil, @namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @rules : Array | Nil = nil)
     end
   end
 end

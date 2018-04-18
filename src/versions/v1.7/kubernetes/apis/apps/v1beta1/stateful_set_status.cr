@@ -47,7 +47,7 @@ module Pyrite
       updated_replicas:    {type: Int32, nilable: true, key: "updatedReplicas", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_replicas : Int32 | Nil = nil, @current_revision : String | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @update_revision : String | Nil = nil, @updated_replicas : Int32 | Nil = nil)
+    def initialize(*, @replicas : Int32, @current_replicas : Int32 | Nil = nil, @current_revision : String | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil, @update_revision : String | Nil = nil, @updated_replicas : Int32 | Nil = nil)
     end
   end
 end

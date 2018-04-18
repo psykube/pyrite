@@ -32,7 +32,7 @@ module Pyrite
       namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_group : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @namespace : String | Nil = nil)
+    def initialize(*, @kind : String, @name : String, @api_group : String | Nil = nil, @namespace : String | Nil = nil)
     end
   end
 end

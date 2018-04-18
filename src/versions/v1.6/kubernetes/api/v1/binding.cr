@@ -28,7 +28,7 @@ module Pyrite
       target:      {type: Kubernetes::Api::V1::ObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @target : Kubernetes::Api::V1::ObjectReference | Nil = nil)
+    def initialize(*, @target : Kubernetes::Api::V1::ObjectReference, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

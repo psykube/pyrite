@@ -32,7 +32,7 @@ module Pyrite
       resources:     {type: Array(Apimachinery::Apis::Meta::V1::APIResource), nilable: false, key: "resources", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @group_version : String | Nil = nil, @kind : String | Nil = nil, @resources : Array | Nil = nil)
+    def initialize(*, @group_version : String, @resources : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil)
     end
   end
 end

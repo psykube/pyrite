@@ -42,7 +42,7 @@ module Pyrite
       update_strategy:        {type: Api::Extensions::V1beta1::DaemonSetUpdateStrategy, nilable: true, key: "updateStrategy", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Api::Core::V1::PodTemplateSpec | Nil = nil, @template_generation : Int32 | Nil = nil, @update_strategy : Api::Extensions::V1beta1::DaemonSetUpdateStrategy | Nil = nil)
+    def initialize(*, @template : Api::Core::V1::PodTemplateSpec, @min_ready_seconds : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template_generation : Int32 | Nil = nil, @update_strategy : Api::Extensions::V1beta1::DaemonSetUpdateStrategy | Nil = nil)
     end
   end
 end

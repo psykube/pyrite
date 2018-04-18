@@ -32,7 +32,7 @@ module Pyrite
       versions:                        {type: Array(String), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @server_address_by_client_cid_rs : Array | Nil = nil, @versions : Array | Nil = nil)
+    def initialize(*, @server_address_by_client_cid_rs : Array, @versions : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil)
     end
   end
 end

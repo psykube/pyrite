@@ -32,7 +32,7 @@ module Pyrite
       rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::RuleWithOperations), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @client_config : Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig | Nil = nil, @failure_policy : String | Nil = nil, @name : String | Nil = nil, @rules : Array | Nil = nil)
+    def initialize(*, @client_config : Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig, @name : String, @failure_policy : String | Nil = nil, @rules : Array | Nil = nil)
     end
   end
 end

@@ -27,7 +27,7 @@ module Pyrite
       reason:           {type: String, nilable: true, key: "reason", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @allowed : Bool | Nil = nil, @evaluation_error : String | Nil = nil, @reason : String | Nil = nil)
+    def initialize(*, @allowed : Bool, @evaluation_error : String | Nil = nil, @reason : String | Nil = nil)
     end
   end
 end

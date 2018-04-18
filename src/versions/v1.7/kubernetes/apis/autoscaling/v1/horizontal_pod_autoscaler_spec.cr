@@ -32,7 +32,7 @@ module Pyrite
       target_cpu_utilization_percentage: {type: Int32, nilable: true, key: "targetCPUUtilizationPercentage", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @max_replicas : Int32 | Nil = nil, @min_replicas : Int32 | Nil = nil, @scale_target_ref : Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference | Nil = nil, @target_cpu_utilization_percentage : Int32 | Nil = nil)
+    def initialize(*, @max_replicas : Int32, @scale_target_ref : Kubernetes::Apis::Autoscaling::V1::CrossVersionObjectReference, @min_replicas : Int32 | Nil = nil, @target_cpu_utilization_percentage : Int32 | Nil = nil)
     end
   end
 end

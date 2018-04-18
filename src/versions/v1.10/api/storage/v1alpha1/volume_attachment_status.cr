@@ -32,7 +32,7 @@ module Pyrite
       detach_error:        {type: Api::Storage::V1alpha1::VolumeError, nilable: true, key: "detachError", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @attach_error : Api::Storage::V1alpha1::VolumeError | Nil = nil, @attached : Bool | Nil = nil, @attachment_metadata : Hash(String, String) | Nil = nil, @detach_error : Api::Storage::V1alpha1::VolumeError | Nil = nil)
+    def initialize(*, @attached : Bool, @attach_error : Api::Storage::V1alpha1::VolumeError | Nil = nil, @attachment_metadata : Hash(String, String) | Nil = nil, @detach_error : Api::Storage::V1alpha1::VolumeError | Nil = nil)
     end
   end
 end

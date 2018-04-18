@@ -17,7 +17,7 @@ module Pyrite
       driver: {type: String, nilable: false, key: "driver", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @driver : String | Nil = nil)
+    def initialize(*, @driver : String)
     end
   end
 end

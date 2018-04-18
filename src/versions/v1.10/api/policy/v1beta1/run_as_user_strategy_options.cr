@@ -22,7 +22,7 @@ module Pyrite
       rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ranges : Array | Nil = nil, @rule : String | Nil = nil)
+    def initialize(*, @rule : String, @ranges : Array | Nil = nil)
     end
   end
 end

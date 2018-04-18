@@ -37,7 +37,7 @@ module Pyrite
       scheme:       {type: String, nilable: true, key: "scheme", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @host : String | Nil = nil, @http_headers : Array | Nil = nil, @path : String | Nil = nil, @port : Int32 | String | Nil = nil, @scheme : String | Nil = nil)
+    def initialize(*, @port : Int32 | String, @host : String | Nil = nil, @http_headers : Array | Nil = nil, @path : String | Nil = nil, @scheme : String | Nil = nil)
     end
   end
 end

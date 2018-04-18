@@ -17,7 +17,7 @@ module Pyrite
       name: {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String | Nil = nil)
+    def initialize(*, @name : String)
     end
   end
 end

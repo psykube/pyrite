@@ -17,7 +17,7 @@ module Pyrite
       match_expressions: {type: Array(Api::Core::V1::NodeSelectorRequirement), nilable: false, key: "matchExpressions", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @match_expressions : Array | Nil = nil)
+    def initialize(*, @match_expressions : Array)
     end
   end
 end

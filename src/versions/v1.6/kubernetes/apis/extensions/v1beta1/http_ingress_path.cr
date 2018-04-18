@@ -22,7 +22,7 @@ module Pyrite
       path:    {type: String, nilable: true, key: "path", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @backend : Kubernetes::Apis::Extensions::V1beta1::IngressBackend | Nil = nil, @path : String | Nil = nil)
+    def initialize(*, @backend : Kubernetes::Apis::Extensions::V1beta1::IngressBackend, @path : String | Nil = nil)
     end
   end
 end

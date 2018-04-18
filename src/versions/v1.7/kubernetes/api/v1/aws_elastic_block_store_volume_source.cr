@@ -34,7 +34,7 @@ module Pyrite
       volume_id: {type: String, nilable: false, key: "volumeID", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @partition : Int32 | Nil = nil, @read_only : Bool | Nil = nil, @volume_id : String | Nil = nil)
+    def initialize(*, @volume_id : String, @fs_type : String | Nil = nil, @partition : Int32 | Nil = nil, @read_only : Bool | Nil = nil)
     end
   end
 end

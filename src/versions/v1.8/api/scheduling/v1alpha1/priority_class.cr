@@ -38,7 +38,7 @@ module Pyrite
       value:          {type: Int32, nilable: false, key: "value", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @description : String | Nil = nil, @global_default : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @value : Int32 | Nil = nil)
+    def initialize(*, @value : Int32, @description : String | Nil = nil, @global_default : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

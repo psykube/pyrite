@@ -22,7 +22,7 @@ module Pyrite
       se_linux_options: {type: Kubernetes::Api::V1::SELinuxOptions, nilable: true, key: "seLinuxOptions", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @rule : String | Nil = nil, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil)
+    def initialize(*, @rule : String, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil)
     end
   end
 end

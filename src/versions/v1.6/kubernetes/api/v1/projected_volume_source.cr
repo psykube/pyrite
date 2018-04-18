@@ -22,7 +22,7 @@ module Pyrite
       sources:      {type: Array(Kubernetes::Api::V1::VolumeProjection), nilable: false, key: "sources", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @default_mode : Int32 | Nil = nil, @sources : Array | Nil = nil)
+    def initialize(*, @sources : Array, @default_mode : Int32 | Nil = nil)
     end
   end
 end

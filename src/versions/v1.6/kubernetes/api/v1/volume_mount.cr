@@ -32,7 +32,7 @@ module Pyrite
       sub_path:   {type: String, nilable: true, key: "subPath", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @mount_path : String | Nil = nil, @name : String | Nil = nil, @read_only : Bool | Nil = nil, @sub_path : String | Nil = nil)
+    def initialize(*, @mount_path : String, @name : String, @read_only : Bool | Nil = nil, @sub_path : String | Nil = nil)
     end
   end
 end

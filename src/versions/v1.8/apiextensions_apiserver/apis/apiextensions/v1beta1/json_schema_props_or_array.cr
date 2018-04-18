@@ -20,7 +20,7 @@ module Pyrite
       schema:       {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: false, key: "Schema", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @jso_nschemas : Array | Nil = nil, @schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps | Nil = nil)
+    def initialize(*, @jso_nschemas : Array, @schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)
     end
   end
 end

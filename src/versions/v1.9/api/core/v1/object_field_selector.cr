@@ -22,7 +22,7 @@ module Pyrite
       field_path:  {type: String, nilable: false, key: "fieldPath", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @field_path : String | Nil = nil)
+    def initialize(*, @field_path : String, @api_version : String | Nil = nil)
     end
   end
 end

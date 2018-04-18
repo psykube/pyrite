@@ -17,7 +17,7 @@ module Pyrite
       limits: {type: Array(Kubernetes::Api::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @limits : Array | Nil = nil)
+    def initialize(*, @limits : Array)
     end
   end
 end

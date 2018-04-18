@@ -22,7 +22,7 @@ module Pyrite
       result:  {type: Apimachinery::Apis::Meta::V1::Status, nilable: true, key: "result", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @pending : Array | Nil = nil, @result : Apimachinery::Apis::Meta::V1::Status | Nil = nil)
+    def initialize(*, @pending : Array, @result : Apimachinery::Apis::Meta::V1::Status | Nil = nil)
     end
   end
 end

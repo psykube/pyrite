@@ -32,7 +32,7 @@ module Pyrite
       target_value:         {type: Int32, nilable: true, key: "targetValue", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metric_name : String | Nil = nil, @metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @target_average_value : Int32 | Nil = nil, @target_value : Int32 | Nil = nil)
+    def initialize(*, @metric_name : String, @metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @target_average_value : Int32 | Nil = nil, @target_value : Int32 | Nil = nil)
     end
   end
 end

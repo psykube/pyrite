@@ -47,7 +47,7 @@ module Pyrite
       target_portal:   {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @iqn : String | Nil = nil, @iscsi_interface : String | Nil = nil, @lun : Int32 | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil, @target_portal : String | Nil = nil)
+    def initialize(*, @iqn : String, @lun : Int32, @target_portal : String, @fs_type : String | Nil = nil, @iscsi_interface : String | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil)
     end
   end
 end

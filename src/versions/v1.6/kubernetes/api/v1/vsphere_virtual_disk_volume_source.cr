@@ -22,7 +22,7 @@ module Pyrite
       volume_path: {type: String, nilable: false, key: "volumePath", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @volume_path : String | Nil = nil)
+    def initialize(*, @volume_path : String, @fs_type : String | Nil = nil)
     end
   end
 end

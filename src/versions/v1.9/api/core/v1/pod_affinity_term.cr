@@ -27,7 +27,7 @@ module Pyrite
       topology_key:   {type: String, nilable: false, key: "topologyKey", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @label_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @namespaces : Array | Nil = nil, @topology_key : String | Nil = nil)
+    def initialize(*, @topology_key : String, @label_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @namespaces : Array | Nil = nil)
     end
   end
 end

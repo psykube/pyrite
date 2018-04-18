@@ -22,7 +22,7 @@ module Pyrite
       size_bytes: {type: Int32, nilable: true, key: "sizeBytes", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @names : Array | Nil = nil, @size_bytes : Int32 | Nil = nil)
+    def initialize(*, @names : Array, @size_bytes : Int32 | Nil = nil)
     end
   end
 end

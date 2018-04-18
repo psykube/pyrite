@@ -32,7 +32,7 @@ module Pyrite
       type:    {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @error : String | Nil = nil, @message : String | Nil = nil, @status : String | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @status : String, @type : String, @error : String | Nil = nil, @message : String | Nil = nil)
     end
   end
 end

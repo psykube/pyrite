@@ -27,7 +27,7 @@ module Pyrite
       optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @key : String | Nil = nil, @name : String | Nil = nil, @optional : Bool | Nil = nil)
+    def initialize(*, @key : String, @name : String | Nil = nil, @optional : Bool | Nil = nil)
     end
   end
 end

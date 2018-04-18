@@ -52,7 +52,7 @@ module Pyrite
       user:       {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @image : String | Nil = nil, @keyring : String | Nil = nil, @monitors : Array | Nil = nil, @pool : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @user : String | Nil = nil)
+    def initialize(*, @image : String, @monitors : Array, @fs_type : String | Nil = nil, @keyring : String | Nil = nil, @pool : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @user : String | Nil = nil)
     end
   end
 end

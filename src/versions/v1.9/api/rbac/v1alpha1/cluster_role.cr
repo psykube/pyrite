@@ -33,7 +33,7 @@ module Pyrite
       rules:            {type: Array(Api::Rbac::V1alpha1::PolicyRule), nilable: false, key: "rules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @aggregation_rule : Api::Rbac::V1alpha1::AggregationRule | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @rules : Array | Nil = nil)
+    def initialize(*, @rules : Array, @aggregation_rule : Api::Rbac::V1alpha1::AggregationRule | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

@@ -22,7 +22,7 @@ module Pyrite
       pd_id:   {type: String, nilable: false, key: "pdID", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @pd_id : String | Nil = nil)
+    def initialize(*, @pd_id : String, @fs_type : String | Nil = nil)
     end
   end
 end

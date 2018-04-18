@@ -1,5 +1,9 @@
 require "file_utils"
 
+private def crystalize_name(name : String)
+  name.gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
+end
+
 class Generator::Definition
   URL_REGEX = /(?<url>((http[s]?):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?)/
 
@@ -10,15 +14,17 @@ class Generator::Definition
     getter? required : Bool = false
     property default : String? = nil
 
-    def initialize(name : String, prop : Swagger::Definition::Property, definition : Swagger::Definition)
-      initialize name: name, required: definition.required.includes?(name), type: prop.type.to_s, ref: prop._ref
+    def initialize(name : String, prop : Swagger::Definition::Property, definition : Swagger::Definition, *, ivar = false)
+      initialize name, required: definition.required.includes?(name), type: prop.type.to_s, ref: prop._ref, ivar: ivar
     end
 
     def initialize(param : Swagger::Path::Parameter)
       initialize name: param.name, required: param.required, type: param.type, ref: param.schema.try(&._ref)
     end
 
-    def initialize(@name : String, @type : String?, @required : Bool = false, @default : String? = nil, @ref : String? = nil)
+    def initialize(name : String, @type : String?, @required : Bool = false, @default : String? = nil, @ref : String? = nil, *, ivar = false)
+      name = crystalize_name(name)
+      @name = ivar ? "@#{name}" : name
     end
 
     def first_value?
@@ -156,10 +162,6 @@ class Generator::Definition
     t
   end
 
-  private def crystalize_name(name : String)
-    name.gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
-  end
-
   private def generate_description(description : String?)
     return unless description
     description.lines.each do |line|
@@ -208,8 +210,8 @@ class Generator::Definition
   private def define_function(*, name : String, args : Hash(String, FunctionArgument), toplevel : Bool = false, named_args : Bool = false)
     file.print "def #{"self." if toplevel}#{name}("
     file.print "*, " if named_args && !args.empty?
-    arg_list = args.values.select(&.first_value?) + args.values.reject(&.first_value?).map do |a|
-      arg = crystalize_name(a.name)
+    arg_list = (args.values.select(&.first_value?) + args.values.reject(&.first_value?)).map do |a|
+      arg = a.name
       arg += " : #{convert_type(a)}"
       arg += " = #{a.default.inspect}" if !a.required? || a.default
       arg
@@ -296,7 +298,7 @@ class Generator::Definition
   private def define_initializer
     args = properties.each_with_object({} of String => FunctionArgument) do |(name, prop), memo|
       next if is_resource? && resource_property?(name)
-      memo["@" + name] = FunctionArgument.new("@" + crystalize_name(name), prop, definition)
+      memo["@" + name] = FunctionArgument.new(name, prop, definition, ivar: true)
     end
     # arg_map["name"] = FunctionArgument.new("name", arg_map["@spec"].required) if is_resource? && arg_map["@spec"]
 

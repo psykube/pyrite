@@ -27,7 +27,7 @@ module Pyrite
       name:                        {type: String, nilable: false, key: "name", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_average_utilization : Int32 | Nil = nil, @current_average_value : Int32 | Nil = nil, @name : String | Nil = nil)
+    def initialize(*, @current_average_value : Int32, @name : String, @current_average_utilization : Int32 | Nil = nil)
     end
   end
 end

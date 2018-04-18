@@ -52,7 +52,7 @@ module Pyrite
       template:                  {type: Api::Core::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @paused : Bool | Nil = nil, @progress_deadline_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @strategy : Api::Apps::V1::DeploymentStrategy | Nil = nil, @template : Api::Core::V1::PodTemplateSpec | Nil = nil)
+    def initialize(*, @selector : Apimachinery::Apis::Meta::V1::LabelSelector, @template : Api::Core::V1::PodTemplateSpec, @min_ready_seconds : Int32 | Nil = nil, @paused : Bool | Nil = nil, @progress_deadline_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @strategy : Api::Apps::V1::DeploymentStrategy | Nil = nil)
     end
   end
 end

@@ -32,7 +32,7 @@ module Pyrite
       target_ref: {type: Kubernetes::Api::V1::ObjectReference, nilable: true, key: "targetRef", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @hostname : String | Nil = nil, @ip : String | Nil = nil, @node_name : String | Nil = nil, @target_ref : Kubernetes::Api::V1::ObjectReference | Nil = nil)
+    def initialize(*, @ip : String, @hostname : String | Nil = nil, @node_name : String | Nil = nil, @target_ref : Kubernetes::Api::V1::ObjectReference | Nil = nil)
     end
   end
 end

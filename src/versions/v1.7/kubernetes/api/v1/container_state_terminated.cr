@@ -47,7 +47,7 @@ module Pyrite
       started_at:   {type: Time, nilable: true, key: "startedAt", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @container_id : String | Nil = nil, @exit_code : Int32 | Nil = nil, @finished_at : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @signal : Int32 | Nil = nil, @started_at : Time | Nil = nil)
+    def initialize(*, @exit_code : Int32, @container_id : String | Nil = nil, @finished_at : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @signal : Int32 | Nil = nil, @started_at : Time | Nil = nil)
     end
   end
 end

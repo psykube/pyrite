@@ -47,7 +47,7 @@ module Pyrite
       verbs:         {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @categories : Array | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @namespaced : Bool | Nil = nil, @short_names : Array | Nil = nil, @singular_name : String | Nil = nil, @verbs : Array | Nil = nil)
+    def initialize(*, @kind : String, @name : String, @namespaced : Bool, @singular_name : String, @verbs : Array, @categories : Array | Nil = nil, @short_names : Array | Nil = nil)
     end
   end
 end

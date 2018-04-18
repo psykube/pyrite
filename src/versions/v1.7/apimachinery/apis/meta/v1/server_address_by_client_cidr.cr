@@ -22,7 +22,7 @@ module Pyrite
       server_address: {type: String, nilable: false, key: "serverAddress", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @client_cid_r : String | Nil = nil, @server_address : String | Nil = nil)
+    def initialize(*, @client_cid_r : String, @server_address : String)
     end
   end
 end

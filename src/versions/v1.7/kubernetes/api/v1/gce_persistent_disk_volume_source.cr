@@ -34,7 +34,7 @@ module Pyrite
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @partition : Int32 | Nil = nil, @pd_name : String | Nil = nil, @read_only : Bool | Nil = nil)
+    def initialize(*, @pd_name : String, @fs_type : String | Nil = nil, @partition : Int32 | Nil = nil, @read_only : Bool | Nil = nil)
     end
   end
 end

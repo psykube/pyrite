@@ -42,7 +42,7 @@ module Pyrite
       replicas:               {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @available_replicas : Int32 | Nil = nil, @conditions : Array | Nil = nil, @fully_labeled_replicas : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil, @replicas : Int32 | Nil = nil)
+    def initialize(*, @replicas : Int32, @available_replicas : Int32 | Nil = nil, @conditions : Array | Nil = nil, @fully_labeled_replicas : Int32 | Nil = nil, @observed_generation : Int32 | Nil = nil, @ready_replicas : Int32 | Nil = nil)
     end
   end
 end

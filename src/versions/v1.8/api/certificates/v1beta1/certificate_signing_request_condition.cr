@@ -31,7 +31,7 @@ module Pyrite
       type:             {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @last_update_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @type : String, @last_update_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil)
     end
   end
 end

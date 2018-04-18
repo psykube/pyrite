@@ -42,7 +42,7 @@ module Pyrite
       user:        {type: String, nilable: true, key: "user", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @monitors : Array | Nil = nil, @path : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_file : String | Nil = nil, @secret_ref : Api::Core::V1::SecretReference | Nil = nil, @user : String | Nil = nil)
+    def initialize(*, @monitors : Array, @path : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_file : String | Nil = nil, @secret_ref : Api::Core::V1::SecretReference | Nil = nil, @user : String | Nil = nil)
     end
   end
 end

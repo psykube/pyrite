@@ -37,7 +37,7 @@ module Pyrite
       updated_annotations: {type: Hash(String, String), nilable: true, key: "updatedAnnotations", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @rollback_to : Api::Apps::V1beta1::RollbackConfig | Nil = nil, @updated_annotations : Hash(String, String) | Nil = nil)
+    def initialize(*, @name : String, @rollback_to : Api::Apps::V1beta1::RollbackConfig, @api_version : String | Nil = nil, @kind : String | Nil = nil, @updated_annotations : Hash(String, String) | Nil = nil)
     end
   end
 end

@@ -27,7 +27,7 @@ module Pyrite
       source:    {type: Api::Storage::V1beta1::VolumeAttachmentSource, nilable: false, key: "source", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @attacher : String | Nil = nil, @node_name : String | Nil = nil, @source : Api::Storage::V1beta1::VolumeAttachmentSource | Nil = nil)
+    def initialize(*, @attacher : String, @node_name : String, @source : Api::Storage::V1beta1::VolumeAttachmentSource)
     end
   end
 end

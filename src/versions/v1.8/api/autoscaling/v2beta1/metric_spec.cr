@@ -32,7 +32,7 @@ module Pyrite
       type:     {type: String, nilable: false, key: "type", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @object : Api::Autoscaling::V2beta1::ObjectMetricSource | Nil = nil, @pods : Api::Autoscaling::V2beta1::PodsMetricSource | Nil = nil, @resource : Api::Autoscaling::V2beta1::ResourceMetricSource | Nil = nil, @type : String | Nil = nil)
+    def initialize(*, @type : String, @object : Api::Autoscaling::V2beta1::ObjectMetricSource | Nil = nil, @pods : Api::Autoscaling::V2beta1::PodsMetricSource | Nil = nil, @resource : Api::Autoscaling::V2beta1::ResourceMetricSource | Nil = nil)
     end
   end
 end

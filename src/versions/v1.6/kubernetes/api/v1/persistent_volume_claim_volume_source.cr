@@ -22,7 +22,7 @@ module Pyrite
       read_only:  {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @claim_name : String | Nil = nil, @read_only : Bool | Nil = nil)
+    def initialize(*, @claim_name : String, @read_only : Bool | Nil = nil)
     end
   end
 end

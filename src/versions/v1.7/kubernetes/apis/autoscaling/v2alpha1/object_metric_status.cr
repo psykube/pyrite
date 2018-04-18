@@ -27,7 +27,7 @@ module Pyrite
       target:        {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_value : Int32 | Nil = nil, @metric_name : String | Nil = nil, @target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference | Nil = nil)
+    def initialize(*, @current_value : Int32, @metric_name : String, @target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference)
     end
   end
 end

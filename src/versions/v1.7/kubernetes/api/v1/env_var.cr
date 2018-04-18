@@ -27,7 +27,7 @@ module Pyrite
       value_from: {type: Kubernetes::Api::V1::EnvVarSource, nilable: true, key: "valueFrom", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String | Nil = nil, @value : String | Nil = nil, @value_from : Kubernetes::Api::V1::EnvVarSource | Nil = nil)
+    def initialize(*, @name : String, @value : String | Nil = nil, @value_from : Kubernetes::Api::V1::EnvVarSource | Nil = nil)
     end
   end
 end

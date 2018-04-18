@@ -32,7 +32,7 @@ module Pyrite
       status:      {type: Api::Authentication::V1beta1::TokenReviewStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Authentication::V1beta1::TokenReviewSpec | Nil = nil, @status : Api::Authentication::V1beta1::TokenReviewStatus | Nil = nil)
+    def initialize(*, @spec : Api::Authentication::V1beta1::TokenReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Authentication::V1beta1::TokenReviewStatus | Nil = nil)
     end
   end
 

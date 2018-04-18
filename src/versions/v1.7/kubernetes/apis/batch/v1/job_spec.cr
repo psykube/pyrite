@@ -42,7 +42,7 @@ module Pyrite
       template:                {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @active_deadline_seconds : Int32 | Nil = nil, @completions : Int32 | Nil = nil, @manual_selector : Bool | Nil = nil, @parallelism : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil)
+    def initialize(*, @template : Kubernetes::Api::V1::PodTemplateSpec, @active_deadline_seconds : Int32 | Nil = nil, @completions : Int32 | Nil = nil, @manual_selector : Bool | Nil = nil, @parallelism : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
     end
   end
 end

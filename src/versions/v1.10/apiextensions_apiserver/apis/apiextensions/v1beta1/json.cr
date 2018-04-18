@@ -16,7 +16,7 @@ module Pyrite
       raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @raw : String | Nil = nil)
+    def initialize(*, @raw : String)
     end
   end
 end

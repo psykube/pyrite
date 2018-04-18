@@ -27,7 +27,7 @@ module Pyrite
       kind:        {type: String, nilable: true, key: "kind", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @groups : Array | Nil = nil, @kind : String | Nil = nil)
+    def initialize(*, @groups : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil)
     end
   end
 end

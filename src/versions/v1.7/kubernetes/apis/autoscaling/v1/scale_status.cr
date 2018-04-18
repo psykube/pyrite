@@ -22,7 +22,7 @@ module Pyrite
       selector: {type: String, nilable: true, key: "selector", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @replicas : Int32 | Nil = nil, @selector : String | Nil = nil)
+    def initialize(*, @replicas : Int32, @selector : String | Nil = nil)
     end
   end
 end

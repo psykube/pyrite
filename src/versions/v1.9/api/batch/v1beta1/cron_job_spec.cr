@@ -47,7 +47,7 @@ module Pyrite
       suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @concurrency_policy : String | Nil = nil, @failed_jobs_history_limit : Int32 | Nil = nil, @job_template : Api::Batch::V1beta1::JobTemplateSpec | Nil = nil, @schedule : String | Nil = nil, @starting_deadline_seconds : Int32 | Nil = nil, @successful_jobs_history_limit : Int32 | Nil = nil, @suspend : Bool | Nil = nil)
+    def initialize(*, @job_template : Api::Batch::V1beta1::JobTemplateSpec, @schedule : String, @concurrency_policy : String | Nil = nil, @failed_jobs_history_limit : Int32 | Nil = nil, @starting_deadline_seconds : Int32 | Nil = nil, @successful_jobs_history_limit : Int32 | Nil = nil, @suspend : Bool | Nil = nil)
     end
   end
 end

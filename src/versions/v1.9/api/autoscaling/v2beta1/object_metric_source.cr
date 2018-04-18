@@ -27,7 +27,7 @@ module Pyrite
       target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metric_name : String | Nil = nil, @target : Api::Autoscaling::V2beta1::CrossVersionObjectReference | Nil = nil, @target_value : Int32 | Nil = nil)
+    def initialize(*, @metric_name : String, @target : Api::Autoscaling::V2beta1::CrossVersionObjectReference, @target_value : Int32)
     end
   end
 end

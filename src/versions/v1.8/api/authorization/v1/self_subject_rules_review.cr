@@ -32,7 +32,7 @@ module Pyrite
       status:      {type: Api::Authorization::V1::SubjectRulesReviewStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Authorization::V1::SelfSubjectRulesReviewSpec | Nil = nil, @status : Api::Authorization::V1::SubjectRulesReviewStatus | Nil = nil)
+    def initialize(*, @spec : Api::Authorization::V1::SelfSubjectRulesReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Authorization::V1::SubjectRulesReviewStatus | Nil = nil)
     end
   end
 

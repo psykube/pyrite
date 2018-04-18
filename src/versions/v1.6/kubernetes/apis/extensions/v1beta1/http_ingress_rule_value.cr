@@ -17,7 +17,7 @@ module Pyrite
       paths: {type: Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath), nilable: false, key: "paths", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @paths : Array | Nil = nil)
+    def initialize(*, @paths : Array)
     end
   end
 end

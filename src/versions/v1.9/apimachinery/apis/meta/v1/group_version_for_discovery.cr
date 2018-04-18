@@ -22,7 +22,7 @@ module Pyrite
       version:       {type: String, nilable: false, key: "version", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @group_version : String | Nil = nil, @version : String | Nil = nil)
+    def initialize(*, @group_version : String, @version : String)
     end
   end
 end

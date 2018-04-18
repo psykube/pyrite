@@ -62,7 +62,7 @@ module Pyrite
       system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @architecture : String | Nil = nil, @boot_id : String | Nil = nil, @container_runtime_version : String | Nil = nil, @kernel_version : String | Nil = nil, @kube_proxy_version : String | Nil = nil, @kubelet_version : String | Nil = nil, @machine_id : String | Nil = nil, @operating_system : String | Nil = nil, @os_image : String | Nil = nil, @system_uui_d : String | Nil = nil)
+    def initialize(*, @architecture : String, @boot_id : String, @container_runtime_version : String, @kernel_version : String, @kube_proxy_version : String, @kubelet_version : String, @machine_id : String, @operating_system : String, @os_image : String, @system_uui_d : String)
     end
   end
 end

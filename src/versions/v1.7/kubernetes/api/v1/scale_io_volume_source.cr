@@ -62,7 +62,7 @@ module Pyrite
       volume_name:       {type: String, nilable: true, key: "volumeName", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @fs_type : String | Nil = nil, @gateway : String | Nil = nil, @protection_domain : String | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil, @ssl_enabled : Bool | Nil = nil, @storage_mode : String | Nil = nil, @storage_pool : String | Nil = nil, @system : String | Nil = nil, @volume_name : String | Nil = nil)
+    def initialize(*, @gateway : String, @secret_ref : Kubernetes::Api::V1::LocalObjectReference, @system : String, @fs_type : String | Nil = nil, @protection_domain : String | Nil = nil, @read_only : Bool | Nil = nil, @ssl_enabled : Bool | Nil = nil, @storage_mode : String | Nil = nil, @storage_pool : String | Nil = nil, @volume_name : String | Nil = nil)
     end
   end
 end

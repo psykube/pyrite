@@ -33,7 +33,7 @@ module Pyrite
       subjects:    {type: Array(Api::Rbac::V1alpha1::Subject), nilable: false, key: "subjects", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @role_ref : Api::Rbac::V1alpha1::RoleRef | Nil = nil, @subjects : Array | Nil = nil)
+    def initialize(*, @role_ref : Api::Rbac::V1alpha1::RoleRef, @subjects : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

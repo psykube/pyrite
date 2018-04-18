@@ -32,7 +32,7 @@ module Pyrite
       metric_selector:       {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "metricSelector", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_average_value : Int32 | Nil = nil, @current_value : Int32 | Nil = nil, @metric_name : String | Nil = nil, @metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
+    def initialize(*, @current_value : Int32, @metric_name : String, @current_average_value : Int32 | Nil = nil, @metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
     end
   end
 end

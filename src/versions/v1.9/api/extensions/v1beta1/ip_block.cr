@@ -22,7 +22,7 @@ module Pyrite
       except: {type: Array(String), nilable: true, key: "except", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @cidr : String | Nil = nil, @except : Array | Nil = nil)
+    def initialize(*, @cidr : String, @except : Array | Nil = nil)
     end
   end
 end

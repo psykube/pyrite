@@ -55,7 +55,7 @@ module Pyrite
       volume_binding_mode:    {type: String, nilable: true, key: "volumeBindingMode", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @allow_volume_expansion : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @mount_options : Array | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String | Nil = nil, @reclaim_policy : String | Nil = nil, @volume_binding_mode : String | Nil = nil)
+    def initialize(*, @provisioner : String, @allow_volume_expansion : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @mount_options : Array | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @reclaim_policy : String | Nil = nil, @volume_binding_mode : String | Nil = nil)
     end
   end
 

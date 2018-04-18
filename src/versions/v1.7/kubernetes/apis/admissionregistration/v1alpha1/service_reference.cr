@@ -22,7 +22,7 @@ module Pyrite
       namespace: {type: String, nilable: false, key: "namespace", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)
+    def initialize(*, @name : String, @namespace : String)
     end
   end
 end

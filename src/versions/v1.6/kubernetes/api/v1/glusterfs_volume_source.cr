@@ -27,7 +27,7 @@ module Pyrite
       read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @endpoints : String | Nil = nil, @path : String | Nil = nil, @read_only : Bool | Nil = nil)
+    def initialize(*, @endpoints : String, @path : String, @read_only : Bool | Nil = nil)
     end
   end
 end

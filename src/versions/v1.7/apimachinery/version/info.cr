@@ -48,7 +48,7 @@ module Pyrite
       platform:       {type: String, nilable: false, key: "platform", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @build_date : String | Nil = nil, @compiler : String | Nil = nil, @git_commit : String | Nil = nil, @git_tree_state : String | Nil = nil, @git_version : String | Nil = nil, @go_version : String | Nil = nil, @major : String | Nil = nil, @minor : String | Nil = nil, @platform : String | Nil = nil)
+    def initialize(*, @build_date : String, @compiler : String, @git_commit : String, @git_tree_state : String, @git_version : String, @go_version : String, @major : String, @minor : String, @platform : String)
     end
   end
 end

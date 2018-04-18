@@ -42,7 +42,7 @@ module Pyrite
       versions:                        {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @preferred_version : Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery | Nil = nil, @server_address_by_client_cid_rs : Array | Nil = nil, @versions : Array | Nil = nil)
+    def initialize(*, @name : String, @server_address_by_client_cid_rs : Array, @versions : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil, @preferred_version : Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery | Nil = nil)
     end
   end
 end

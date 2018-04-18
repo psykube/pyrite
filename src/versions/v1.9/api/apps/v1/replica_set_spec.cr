@@ -32,7 +32,7 @@ module Pyrite
       template:          {type: Api::Core::V1::PodTemplateSpec, nilable: true, key: "template", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @template : Api::Core::V1::PodTemplateSpec | Nil = nil)
+    def initialize(*, @selector : Apimachinery::Apis::Meta::V1::LabelSelector, @min_ready_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @template : Api::Core::V1::PodTemplateSpec | Nil = nil)
     end
   end
 end

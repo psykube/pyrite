@@ -22,7 +22,7 @@ module Pyrite
       verbs:             {type: Array(String), nilable: false, key: "verbs", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @non_resource_urls : Array | Nil = nil, @verbs : Array | Nil = nil)
+    def initialize(*, @verbs : Array, @non_resource_urls : Array | Nil = nil)
     end
   end
 end

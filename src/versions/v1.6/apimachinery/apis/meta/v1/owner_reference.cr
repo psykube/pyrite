@@ -42,7 +42,7 @@ module Pyrite
       uid:                  {type: String, nilable: false, key: "uid", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @api_version : String | Nil = nil, @block_owner_deletion : Bool | Nil = nil, @controller : Bool | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @uid : String | Nil = nil)
+    def initialize(*, @api_version : String, @kind : String, @name : String, @uid : String, @block_owner_deletion : Bool | Nil = nil, @controller : Bool | Nil = nil)
     end
   end
 end

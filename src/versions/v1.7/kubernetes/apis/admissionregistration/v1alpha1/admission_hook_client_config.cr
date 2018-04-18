@@ -22,7 +22,7 @@ module Pyrite
       service:   {type: Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference, nilable: false, key: "service", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ca_bundle : String | Nil = nil, @service : Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference | Nil = nil)
+    def initialize(*, @ca_bundle : String, @service : Kubernetes::Apis::Admissionregistration::V1alpha1::ServiceReference)
     end
   end
 end

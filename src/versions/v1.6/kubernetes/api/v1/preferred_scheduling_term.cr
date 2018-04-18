@@ -22,7 +22,7 @@ module Pyrite
       weight:     {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @preference : Kubernetes::Api::V1::NodeSelectorTerm | Nil = nil, @weight : Int32 | Nil = nil)
+    def initialize(*, @preference : Kubernetes::Api::V1::NodeSelectorTerm, @weight : Int32)
     end
   end
 end

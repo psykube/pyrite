@@ -47,7 +47,7 @@ module Pyrite
       version_priority:         {type: Int32, nilable: false, key: "versionPriority", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ca_bundle : String | Nil = nil, @group : String | Nil = nil, @group_priority_minimum : Int32 | Nil = nil, @insecure_skip_tls_verify : Bool | Nil = nil, @service : KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference | Nil = nil, @version : String | Nil = nil, @version_priority : Int32 | Nil = nil)
+    def initialize(*, @ca_bundle : String, @group_priority_minimum : Int32, @service : KubeAggregator::Apis::Apiregistration::V1beta1::ServiceReference, @version_priority : Int32, @group : String | Nil = nil, @insecure_skip_tls_verify : Bool | Nil = nil, @version : String | Nil = nil)
     end
   end
 end

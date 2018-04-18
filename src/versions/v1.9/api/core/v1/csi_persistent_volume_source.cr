@@ -27,7 +27,7 @@ module Pyrite
       volume_handle: {type: String, nilable: false, key: "volumeHandle", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @driver : String | Nil = nil, @read_only : Bool | Nil = nil, @volume_handle : String | Nil = nil)
+    def initialize(*, @driver : String, @volume_handle : String, @read_only : Bool | Nil = nil)
     end
   end
 end

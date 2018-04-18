@@ -32,7 +32,7 @@ module Pyrite
       resource_rules:     {type: Array(Api::Authorization::V1beta1::ResourceRule), nilable: false, key: "resourceRules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @evaluation_error : String | Nil = nil, @incomplete : Bool | Nil = nil, @non_resource_rules : Array | Nil = nil, @resource_rules : Array | Nil = nil)
+    def initialize(*, @incomplete : Bool, @non_resource_rules : Array, @resource_rules : Array, @evaluation_error : String | Nil = nil)
     end
   end
 end

@@ -17,7 +17,7 @@ module Pyrite
       path: {type: String, nilable: false, key: "path", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @path : String | Nil = nil)
+    def initialize(*, @path : String)
     end
   end
 end

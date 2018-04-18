@@ -22,7 +22,7 @@ module Pyrite
       weight:            {type: Int32, nilable: false, key: "weight", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @pod_affinity_term : Kubernetes::Api::V1::PodAffinityTerm | Nil = nil, @weight : Int32 | Nil = nil)
+    def initialize(*, @pod_affinity_term : Kubernetes::Api::V1::PodAffinityTerm, @weight : Int32)
     end
   end
 end

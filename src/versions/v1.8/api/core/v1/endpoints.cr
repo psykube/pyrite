@@ -39,7 +39,7 @@ module Pyrite
       subsets:     {type: Array(Api::Core::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @subsets : Array | Nil = nil)
+    def initialize(*, @subsets : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

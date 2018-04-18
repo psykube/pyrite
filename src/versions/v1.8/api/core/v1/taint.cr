@@ -32,7 +32,7 @@ module Pyrite
       value:      {type: String, nilable: true, key: "value", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @effect : String | Nil = nil, @key : String | Nil = nil, @time_added : Time | Nil = nil, @value : String | Nil = nil)
+    def initialize(*, @effect : String, @key : String, @time_added : Time | Nil = nil, @value : String | Nil = nil)
     end
   end
 end

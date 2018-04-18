@@ -37,7 +37,7 @@ module Pyrite
       volume_claim_templates: {type: Array(Kubernetes::Api::V1::PersistentVolumeClaim), nilable: true, key: "volumeClaimTemplates", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @replicas : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @service_name : String | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil, @volume_claim_templates : Array | Nil = nil)
+    def initialize(*, @service_name : String, @template : Kubernetes::Api::V1::PodTemplateSpec, @replicas : Int32 | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @volume_claim_templates : Array | Nil = nil)
     end
   end
 end

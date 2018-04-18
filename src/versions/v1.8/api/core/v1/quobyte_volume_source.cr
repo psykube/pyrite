@@ -37,7 +37,7 @@ module Pyrite
       volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @group : String | Nil = nil, @read_only : Bool | Nil = nil, @registry : String | Nil = nil, @user : String | Nil = nil, @volume : String | Nil = nil)
+    def initialize(*, @registry : String, @volume : String, @group : String | Nil = nil, @read_only : Bool | Nil = nil, @user : String | Nil = nil)
     end
   end
 end

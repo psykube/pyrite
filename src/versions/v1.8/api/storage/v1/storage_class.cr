@@ -50,7 +50,7 @@ module Pyrite
       reclaim_policy:         {type: String, nilable: true, key: "reclaimPolicy", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @allow_volume_expansion : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @mount_options : Array | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String | Nil = nil, @reclaim_policy : String | Nil = nil)
+    def initialize(*, @provisioner : String, @allow_volume_expansion : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @mount_options : Array | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @reclaim_policy : String | Nil = nil)
     end
   end
 

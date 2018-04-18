@@ -52,7 +52,7 @@ module Pyrite
       state:         {type: Kubernetes::Api::V1::ContainerState, nilable: true, key: "state", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @container_id : String | Nil = nil, @image : String | Nil = nil, @image_id : String | Nil = nil, @last_state : Kubernetes::Api::V1::ContainerState | Nil = nil, @name : String | Nil = nil, @ready : Bool | Nil = nil, @restart_count : Int32 | Nil = nil, @state : Kubernetes::Api::V1::ContainerState | Nil = nil)
+    def initialize(*, @image : String, @image_id : String, @name : String, @ready : Bool, @restart_count : Int32, @container_id : String | Nil = nil, @last_state : Kubernetes::Api::V1::ContainerState | Nil = nil, @state : Kubernetes::Api::V1::ContainerState | Nil = nil)
     end
   end
 end

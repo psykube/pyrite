@@ -27,7 +27,7 @@ module Pyrite
       rules:          {type: Array(Kubernetes::Apis::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @failure_policy : String | Nil = nil, @name : String | Nil = nil, @rules : Array | Nil = nil)
+    def initialize(*, @name : String, @failure_policy : String | Nil = nil, @rules : Array | Nil = nil)
     end
   end
 end

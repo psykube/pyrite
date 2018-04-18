@@ -35,7 +35,7 @@ module Pyrite
       status:      {type: Api::Storage::V1alpha1::VolumeAttachmentStatus, nilable: true, key: "status", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Storage::V1alpha1::VolumeAttachmentSpec | Nil = nil, @status : Api::Storage::V1alpha1::VolumeAttachmentStatus | Nil = nil)
+    def initialize(*, @spec : Api::Storage::V1alpha1::VolumeAttachmentSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Storage::V1alpha1::VolumeAttachmentStatus | Nil = nil)
     end
   end
 

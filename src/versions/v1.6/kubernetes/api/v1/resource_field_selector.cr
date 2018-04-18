@@ -27,7 +27,7 @@ module Pyrite
       resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil, @resource : String | Nil = nil)
+    def initialize(*, @resource : String, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil)
     end
   end
 end

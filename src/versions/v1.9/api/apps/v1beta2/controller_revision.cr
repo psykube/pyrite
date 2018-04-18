@@ -33,7 +33,7 @@ module Pyrite
       revision:    {type: Int32, nilable: false, key: "revision", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @data : Apimachinery::Runtime::RawExtension | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @revision : Int32 | Nil = nil)
+    def initialize(*, @revision : Int32, @data : Apimachinery::Runtime::RawExtension | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
   end
 

@@ -32,7 +32,7 @@ module Pyrite
       scale_target_ref: {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "scaleTargetRef", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @max_replicas : Int32 | Nil = nil, @metrics : Array | Nil = nil, @min_replicas : Int32 | Nil = nil, @scale_target_ref : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference | Nil = nil)
+    def initialize(*, @max_replicas : Int32, @scale_target_ref : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, @metrics : Array | Nil = nil, @min_replicas : Int32 | Nil = nil)
     end
   end
 end

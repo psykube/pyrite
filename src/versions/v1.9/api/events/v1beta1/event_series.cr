@@ -27,7 +27,7 @@ module Pyrite
       state:              {type: String, nilable: false, key: "state", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Time | Nil = nil, @state : String | Nil = nil)
+    def initialize(*, @count : Int32, @last_observed_time : Time, @state : String)
     end
   end
 end

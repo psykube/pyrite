@@ -22,7 +22,7 @@ module Pyrite
       service_port: {type: Int32 | String, nilable: false, key: "servicePort", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @service_name : String | Nil = nil, @service_port : Int32 | String | Nil = nil)
+    def initialize(*, @service_name : String, @service_port : Int32 | String)
     end
   end
 end

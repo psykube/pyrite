@@ -21,7 +21,7 @@ module Pyrite
       pod_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: false, key: "podSelector", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @ingress : Array | Nil = nil, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
+    def initialize(*, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector, @ingress : Array | Nil = nil)
     end
   end
 end

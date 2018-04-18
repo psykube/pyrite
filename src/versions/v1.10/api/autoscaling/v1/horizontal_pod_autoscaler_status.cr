@@ -37,7 +37,7 @@ module Pyrite
       observed_generation:                {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @current_cpu_utilization_percentage : Int32 | Nil = nil, @current_replicas : Int32 | Nil = nil, @desired_replicas : Int32 | Nil = nil, @last_scale_time : Time | Nil = nil, @observed_generation : Int32 | Nil = nil)
+    def initialize(*, @current_replicas : Int32, @desired_replicas : Int32, @current_cpu_utilization_percentage : Int32 | Nil = nil, @last_scale_time : Time | Nil = nil, @observed_generation : Int32 | Nil = nil)
     end
   end
 end

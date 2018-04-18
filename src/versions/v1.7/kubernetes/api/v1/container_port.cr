@@ -37,7 +37,7 @@ module Pyrite
       protocol:       {type: String, nilable: true, key: "protocol", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @container_port : Int32 | Nil = nil, @host_ip : String | Nil = nil, @host_port : Int32 | Nil = nil, @name : String | Nil = nil, @protocol : String | Nil = nil)
+    def initialize(*, @container_port : Int32, @host_ip : String | Nil = nil, @host_port : Int32 | Nil = nil, @name : String | Nil = nil, @protocol : String | Nil = nil)
     end
   end
 end

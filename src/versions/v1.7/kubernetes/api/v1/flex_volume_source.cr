@@ -37,7 +37,7 @@ module Pyrite
       secret_ref: {type: Kubernetes::Api::V1::LocalObjectReference, nilable: true, key: "secretRef", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @driver : String | Nil = nil, @fs_type : String | Nil = nil, @options : Hash(String, String) | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil)
+    def initialize(*, @driver : String, @fs_type : String | Nil = nil, @options : Hash(String, String) | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Kubernetes::Api::V1::LocalObjectReference | Nil = nil)
     end
   end
 end

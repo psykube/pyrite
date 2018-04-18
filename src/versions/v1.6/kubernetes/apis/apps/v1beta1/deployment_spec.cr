@@ -57,7 +57,7 @@ module Pyrite
       template:                  {type: Kubernetes::Api::V1::PodTemplateSpec, nilable: false, key: "template", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @min_ready_seconds : Int32 | Nil = nil, @paused : Bool | Nil = nil, @progress_deadline_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @rollback_to : Kubernetes::Apis::Apps::V1beta1::RollbackConfig | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @strategy : Kubernetes::Apis::Apps::V1beta1::DeploymentStrategy | Nil = nil, @template : Kubernetes::Api::V1::PodTemplateSpec | Nil = nil)
+    def initialize(*, @template : Kubernetes::Api::V1::PodTemplateSpec, @min_ready_seconds : Int32 | Nil = nil, @paused : Bool | Nil = nil, @progress_deadline_seconds : Int32 | Nil = nil, @replicas : Int32 | Nil = nil, @revision_history_limit : Int32 | Nil = nil, @rollback_to : Kubernetes::Apis::Apps::V1beta1::RollbackConfig | Nil = nil, @selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @strategy : Kubernetes::Apis::Apps::V1beta1::DeploymentStrategy | Nil = nil)
     end
   end
 end

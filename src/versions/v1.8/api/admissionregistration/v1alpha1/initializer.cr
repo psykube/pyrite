@@ -22,7 +22,7 @@ module Pyrite
       rules: {type: Array(Api::Admissionregistration::V1alpha1::Rule), nilable: true, key: "rules", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String | Nil = nil, @rules : Array | Nil = nil)
+    def initialize(*, @name : String, @rules : Array | Nil = nil)
     end
   end
 end

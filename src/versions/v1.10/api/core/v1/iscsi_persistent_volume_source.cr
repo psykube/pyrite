@@ -67,7 +67,7 @@ module Pyrite
       target_portal:       {type: String, nilable: false, key: "targetPortal", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @chap_auth_discovery : Bool | Nil = nil, @chap_auth_session : Bool | Nil = nil, @fs_type : String | Nil = nil, @initiator_name : String | Nil = nil, @iqn : String | Nil = nil, @iscsi_interface : String | Nil = nil, @lun : Int32 | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Api::Core::V1::SecretReference | Nil = nil, @target_portal : String | Nil = nil)
+    def initialize(*, @iqn : String, @lun : Int32, @target_portal : String, @chap_auth_discovery : Bool | Nil = nil, @chap_auth_session : Bool | Nil = nil, @fs_type : String | Nil = nil, @initiator_name : String | Nil = nil, @iscsi_interface : String | Nil = nil, @portals : Array | Nil = nil, @read_only : Bool | Nil = nil, @secret_ref : Api::Core::V1::SecretReference | Nil = nil)
     end
   end
 end
