@@ -40,6 +40,7 @@ class Generator
     @definitions["io.k8s.apimachinery.pkg.api.resource.Quantity"] = "Int32"
     @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.Time"] = "Time"
     @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"] = "Time"
+    @definitions.delete_if { |k, v| k.includes? "CustomResource" }
   end
 
   def generate

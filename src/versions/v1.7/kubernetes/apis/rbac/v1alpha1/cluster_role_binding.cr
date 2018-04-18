@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
   class Kubernetes::Apis::Rbac::V1alpha1::ClusterRoleBinding
-    getter api_version : String = "rbac/v1alpha1"
+    getter api_version : String = "rbac.authorization.k8s.io/v1alpha1"
     getter kind : String = "ClusterRoleBinding"
     # Standard object's metadata.
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property subjects : Array(Kubernetes::Apis::Rbac::V1alpha1::Subject)
 
     ::YAML.mapping({
-      api_version: {type: String, default: "rbac/v1alpha1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "rbac.authorization.k8s.io/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ClusterRoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       role_ref:    {type: Kubernetes::Apis::Rbac::V1alpha1::RoleRef, nilable: false, key: "roleRef", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version: {type: String, default: "rbac/v1alpha1", key: "apiVersion", setter: false},
+      api_version: {type: String, default: "rbac.authorization.k8s.io/v1alpha1", key: "apiVersion", setter: false},
       kind:        {type: String, default: "ClusterRoleBinding", key: "kind", setter: false},
       metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
       role_ref:    {type: Kubernetes::Apis::Rbac::V1alpha1::RoleRef, nilable: false, key: "roleRef", getter: false, setter: false},

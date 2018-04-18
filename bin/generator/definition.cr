@@ -272,7 +272,7 @@ class Generator::Definition
 
   private def define_properties
     if is_resource?
-      file.puts "getter api_version : String = #{api_version.inspect}"
+      file.puts "getter api_version : String = #{api_version_name.inspect}"
       file.puts "getter kind : String = #{kind.inspect}"
     end
     properties.each do |name, property|
@@ -311,6 +311,15 @@ class Generator::Definition
     is_list? ? "v1" : name.sub(/^io\.k8s(\.[-a-z]+\.pkg)?\.apis?(\.core)?\./, "").split(".")[0..-2].join("/")
   end
 
+  def api_version_name
+    case api_version
+    when .starts_with? "rbac/v1"
+      api_version.sub(/^rbac\/v1/, "rbac.authorization.k8s.io/v1")
+    else
+      api_version
+    end
+  end
+
   private def api_module
     api_version.split("/").map(&.gsub('-', '_').camelcase).join("::")
   end
@@ -324,7 +333,7 @@ class Generator::Definition
       file.puts "::#{t}.mapping({ "
       first_arg = true
       if is_resource?
-        file.puts %(api_version: { type: String, default: #{api_version.inspect}, key: "apiVersion", setter: false },)
+        file.puts %(api_version: { type: String, default: #{api_version_name.inspect}, key: "apiVersion", setter: false },)
         file.print %(kind: { type: String, default: #{kind.inspect}, key: "kind", setter: false })
         first_arg = false
       end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
   class Api::Rbac::V1beta1::ClusterRole
-    getter api_version : String = "rbac/v1beta1"
+    getter api_version : String = "rbac.authorization.k8s.io/v1beta1"
     getter kind : String = "ClusterRole"
     # AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.
     property aggregation_rule : Api::Rbac::V1beta1::AggregationRule | Nil
@@ -18,7 +18,7 @@ module Pyrite
     property rules : Array(Api::Rbac::V1beta1::PolicyRule)
 
     ::YAML.mapping({
-      api_version:      {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
+      api_version:      {type: String, default: "rbac.authorization.k8s.io/v1beta1", key: "apiVersion", setter: false},
       kind:             {type: String, default: "ClusterRole", key: "kind", setter: false},
       aggregation_rule: {type: Api::Rbac::V1beta1::AggregationRule, nilable: true, key: "aggregationRule", getter: false, setter: false},
       metadata:         {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
@@ -26,7 +26,7 @@ module Pyrite
     }, true)
 
     ::JSON.mapping({
-      api_version:      {type: String, default: "rbac/v1beta1", key: "apiVersion", setter: false},
+      api_version:      {type: String, default: "rbac.authorization.k8s.io/v1beta1", key: "apiVersion", setter: false},
       kind:             {type: String, default: "ClusterRole", key: "kind", setter: false},
       aggregation_rule: {type: Api::Rbac::V1beta1::AggregationRule, nilable: true, key: "aggregationRule", getter: false, setter: false},
       metadata:         {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
