@@ -1,38 +1,51 @@
 #!/usr/bin/env crystal
+
 require "http/client"
 require "./swagger"
 require "./generator"
 
+struct Range
+  def next
+    {{@type}}.new(self.end + 1, self.end + 1 + self.end - self.begin)
+  end
+end
+
+def latest_patch_for(prefix, patch_range = 0..20, last_res = nil)
+  last_patch = patch_range.bsearch do |patch|
+    version = "#{prefix}.#{patch}"
+    url = "https://raw.githubusercontent.com/kubernetes/kubernetes/#{version}/api/openapi-spec/swagger.json"
+    res = HTTP::Client.get(url)
+
+    case res.status_code
+    when 200
+      last_res = res
+      false
+    else
+      true
+    end
+  end
+
+  if last_patch
+    {last_res, last_patch - 1}
+  else
+    latest_patch_for(prefix, patch_range.next, last_res)
+  end
+end
+
 major = 1
 minor = 6
-patch = 0
-last_bump = nil
 
 FileUtils.rm_rf File.join(".", Generator::VERSIONS_DIR)
-versions = [] of Generator
-last_res = nil
-last_version = nil
-while version = "v" + [major, minor, patch].map(&.to_s).join(".")
-  res = HTTP::Client.get("https://raw.githubusercontent.com/kubernetes/kubernetes/#{version}/api/openapi-spec/swagger.json")
 
-  if res.status_code == 200
-    last_res = res
-    last_version = version
-    patch += 1
-    last_bump = "patch"
+loop do
+  prefix = "v#{major}.#{minor}"
+  last_res, patch = latest_patch_for(prefix)
+
+  if last_res && patch
+    version = "#{prefix}.#{patch}"
+    Generator.generate(last_res, version)
+    minor += 1
   else
-    patch = 0
-    case last_bump
-    when "patch"
-      minor += 1
-      last_bump = "minor"
-      versions << Generator.generate(last_res, last_version) if last_res && last_version
-    when "minor"
-      major += 1
-      minor = 0
-      last_bump = "major"
-    when "major"
-      break
-    end
+    break
   end
 end
