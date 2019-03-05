@@ -12,7 +12,7 @@ module Pyrite
     # Indicates that the deployment is paused and will not be processed by the deployment controller.
     property paused : Bool | Nil
 
-    # The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. This is not set by default.
+    # The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. This is set to the max value of int32 (i.e. 2147483647) by default, which means "no deadline".
     property progress_deadline_seconds : Int32 | Nil
 
     # Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.
