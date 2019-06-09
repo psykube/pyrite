@@ -19,7 +19,7 @@ pyrite, you will want to include the VERSION that best maps to your k8s api vers
 Requiring more than one version at this time will result in an error.
 
 ```crystal
-require "pyrite/versions/v1.7.5"
+require "pyrite/versions/v1.7"
 ```
 
 ## Contributing
