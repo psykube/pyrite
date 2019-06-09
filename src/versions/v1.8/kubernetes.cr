@@ -72,6 +72,7 @@ module Pyrite::Kubernetes
                    Resources::Settings::V1alpha1::PodPreset |
                    Resources::Storage::V1::StorageClass |
                    Resources::Storage::V1beta1::StorageClass |
+                   Resources::Apiextensions::V1beta1::CustomResourceDefinition |
                    Resources::Apiregistration::V1beta1::APIService
 
   def self.from_yaml(*args, **params)

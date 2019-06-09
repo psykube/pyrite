@@ -34,7 +34,7 @@ module Pyrite
     property os_image : String
 
     # SystemUUID reported by the node. For unique machine identification MachineID is prefered. This field is specific to Red Hat hosts [https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html](https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html)
-    property system_uui_d : String
+    property system_uuid : String
 
     ::YAML.mapping({
       architecture:              {type: String, nilable: false, key: "architecture", getter: false, setter: false},
@@ -46,7 +46,7 @@ module Pyrite
       machine_id:                {type: String, nilable: false, key: "machineID", getter: false, setter: false},
       operating_system:          {type: String, nilable: false, key: "operatingSystem", getter: false, setter: false},
       os_image:                  {type: String, nilable: false, key: "osImage", getter: false, setter: false},
-      system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
+      system_uuid:               {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
@@ -59,10 +59,10 @@ module Pyrite
       machine_id:                {type: String, nilable: false, key: "machineID", getter: false, setter: false},
       operating_system:          {type: String, nilable: false, key: "operatingSystem", getter: false, setter: false},
       os_image:                  {type: String, nilable: false, key: "osImage", getter: false, setter: false},
-      system_uui_d:              {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
+      system_uuid:               {type: String, nilable: false, key: "systemUUID", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @architecture : String, @boot_id : String, @container_runtime_version : String, @kernel_version : String, @kube_proxy_version : String, @kubelet_version : String, @machine_id : String, @operating_system : String, @os_image : String, @system_uui_d : String)
+    def initialize(*, @architecture : String, @boot_id : String, @container_runtime_version : String, @kernel_version : String, @kube_proxy_version : String, @kubelet_version : String, @machine_id : String, @operating_system : String, @os_image : String, @system_uuid : String)
     end
   end
 end

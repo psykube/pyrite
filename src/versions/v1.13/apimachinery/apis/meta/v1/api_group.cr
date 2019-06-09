@@ -19,30 +19,30 @@ module Pyrite
     property preferred_version : Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery | Nil
 
     # a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
-    property server_address_by_client_cid_rs : Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR) | Nil
+    property server_address_by_client_cidrs : Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR) | Nil
 
     # versions are the versions supported in this group.
     property versions : Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery)
 
     ::YAML.mapping({
-      api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
-      kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
-      name:                            {type: String, nilable: false, key: "name", getter: false, setter: false},
-      preferred_version:               {type: Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery, nilable: true, key: "preferredVersion", getter: false, setter: false},
-      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: true, key: "serverAddressByClientCIDRs", getter: false, setter: false},
-      versions:                        {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
+      api_version:                    {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                           {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      preferred_version:              {type: Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery, nilable: true, key: "preferredVersion", getter: false, setter: false},
+      server_address_by_client_cidrs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: true, key: "serverAddressByClientCIDRs", getter: false, setter: false},
+      versions:                       {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      api_version:                     {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
-      kind:                            {type: String, nilable: true, key: "kind", getter: false, setter: false},
-      name:                            {type: String, nilable: false, key: "name", getter: false, setter: false},
-      preferred_version:               {type: Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery, nilable: true, key: "preferredVersion", getter: false, setter: false},
-      server_address_by_client_cid_rs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: true, key: "serverAddressByClientCIDRs", getter: false, setter: false},
-      versions:                        {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
+      api_version:                    {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
+      kind:                           {type: String, nilable: true, key: "kind", getter: false, setter: false},
+      name:                           {type: String, nilable: false, key: "name", getter: false, setter: false},
+      preferred_version:              {type: Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery, nilable: true, key: "preferredVersion", getter: false, setter: false},
+      server_address_by_client_cidrs: {type: Array(Apimachinery::Apis::Meta::V1::ServerAddressByClientCIDR), nilable: true, key: "serverAddressByClientCIDRs", getter: false, setter: false},
+      versions:                       {type: Array(Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery), nilable: false, key: "versions", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @name : String, @versions : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil, @preferred_version : Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery | Nil = nil, @server_address_by_client_cid_rs : Array | Nil = nil)
+    def initialize(*, @name : String, @versions : Array, @api_version : String | Nil = nil, @kind : String | Nil = nil, @preferred_version : Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery | Nil = nil, @server_address_by_client_cidrs : Array | Nil = nil)
     end
   end
 end

@@ -13,7 +13,7 @@ module Pyrite
     property external_id : String | Nil
 
     # PodCIDR represents the pod IP range assigned to the node.
-    property pod_cid_r : String | Nil
+    property pod_cidr : String | Nil
 
     # ID of the node assigned by the cloud provider in the format: <ProviderName>://<ProviderSpecificNodeID>
     property provider_id : String | Nil
@@ -27,7 +27,7 @@ module Pyrite
     ::YAML.mapping({
       config_source: {type: Api::Core::V1::NodeConfigSource, nilable: true, key: "configSource", getter: false, setter: false},
       external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
-      pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
+      pod_cidr:      {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
       provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},
       taints:        {type: Array(Api::Core::V1::Taint), nilable: true, key: "taints", getter: false, setter: false},
       unschedulable: {type: Bool, nilable: true, key: "unschedulable", getter: false, setter: false},
@@ -36,13 +36,13 @@ module Pyrite
     ::JSON.mapping({
       config_source: {type: Api::Core::V1::NodeConfigSource, nilable: true, key: "configSource", getter: false, setter: false},
       external_id:   {type: String, nilable: true, key: "externalID", getter: false, setter: false},
-      pod_cid_r:     {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
+      pod_cidr:      {type: String, nilable: true, key: "podCIDR", getter: false, setter: false},
       provider_id:   {type: String, nilable: true, key: "providerID", getter: false, setter: false},
       taints:        {type: Array(Api::Core::V1::Taint), nilable: true, key: "taints", getter: false, setter: false},
       unschedulable: {type: Bool, nilable: true, key: "unschedulable", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @config_source : Api::Core::V1::NodeConfigSource | Nil = nil, @external_id : String | Nil = nil, @pod_cid_r : String | Nil = nil, @provider_id : String | Nil = nil, @taints : Array | Nil = nil, @unschedulable : Bool | Nil = nil)
+    def initialize(*, @config_source : Api::Core::V1::NodeConfigSource | Nil = nil, @external_id : String | Nil = nil, @pod_cidr : String | Nil = nil, @provider_id : String | Nil = nil, @taints : Array | Nil = nil, @unschedulable : Bool | Nil = nil)
     end
   end
 end

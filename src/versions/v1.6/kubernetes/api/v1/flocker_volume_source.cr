@@ -10,19 +10,19 @@ module Pyrite
     property dataset_name : String | Nil
 
     # UUID of the dataset. This is unique identifier of a Flocker dataset
-    property dataset_uui_d : String | Nil
+    property dataset_uuid : String | Nil
 
     ::YAML.mapping({
-      dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
-      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
+      dataset_name: {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
+      dataset_uuid: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)
 
     ::JSON.mapping({
-      dataset_name:  {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
-      dataset_uui_d: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
+      dataset_name: {type: String, nilable: true, key: "datasetName", getter: false, setter: false},
+      dataset_uuid: {type: String, nilable: true, key: "datasetUUID", getter: false, setter: false},
     }, true)
 
-    def initialize(*, @dataset_name : String | Nil = nil, @dataset_uui_d : String | Nil = nil)
+    def initialize(*, @dataset_name : String | Nil = nil, @dataset_uuid : String | Nil = nil)
     end
   end
 end
