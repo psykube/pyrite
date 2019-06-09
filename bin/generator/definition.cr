@@ -275,6 +275,10 @@ class Generator::Definition
   end
 
   private def define_properties
+    if properties.empty?
+      file.puts "include ::JSON::Serializable"
+      file.puts "include ::YAML::Serializable"
+    end
     if is_resource?
       file.puts "getter api_version : String = #{api_version_name.inspect}"
       file.puts "getter kind : String = #{kind.inspect}"
