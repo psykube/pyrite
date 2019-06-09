@@ -1,7 +1,9 @@
 require "file_utils"
 
 private def crystalize_name(name : String)
-  name.gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
+  name.gsub(/JSON/, "Json").gsub(/UUID/, "Uuid").gsub(/APIV3/, "Apiv3")
+    .gsub(/CIDR/, "Cidr").gsub(/CPU/, "Cpu").gsub(/CSI/, "Csi").gsub(/TLS/, "Tls")
+    .gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
 end
 
 class Generator::Definition
@@ -229,12 +231,12 @@ class Generator::Definition
       generate_description(action.description)
 
       function_name = action.operationId
-                            .sub("Namespaced", "")
-                            .sub("List", "")
-                            .sub("Collection", "")
-                            .sub("Core" + @class_name.chomp("List").split("::").last(2).join, "")
-                            .sub(@class_name.chomp("List").split("::").last(3).join, "")
-                            .underscore
+        .sub("Namespaced", "")
+        .sub("List", "")
+        .sub("Collection", "")
+        .sub("Core" + @class_name.chomp("List").split("::").last(2).join, "")
+        .sub(@class_name.chomp("List").split("::").last(3).join, "")
+        .underscore
 
       params = (path.parameters + action.parameters).select(&.in.== "query")
       body = (path.parameters + action.parameters).select { |param| param.required && param.in == "body" }
