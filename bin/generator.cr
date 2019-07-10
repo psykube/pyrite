@@ -13,7 +13,7 @@ class Generator
 
   def initialize(response : HTTP::Client::Response, fallback_version : String)
     @schema = Swagger.from_json(response.body)
-     Swagger::Definition.new.tap do |list_def|
+    Swagger::Definition.new.tap do |list_def|
       template = @schema.definitions["io.k8s.api.core.v1.PodList"]?
       defkey = "io.k8s.api.core.v1.List" if template
       template ||= @schema.definitions["io.k8s.kubernetes.pkg.api.v1.PodList"]
@@ -40,7 +40,6 @@ class Generator
     @definitions["io.k8s.apimachinery.pkg.api.resource.Quantity"] = "Int32"
     @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.Time"] = "Time"
     @definitions["io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"] = "Time"
-    @definitions.delete_if { |k, v| k.includes? "CustomResource" }
   end
 
   def generate
