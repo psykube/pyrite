@@ -87,6 +87,7 @@ module Pyrite::Kubernetes
                    Resources::Storage::V1alpha1::VolumeAttachment |
                    Resources::Storage::V1beta1::StorageClass |
                    Resources::Storage::V1beta1::VolumeAttachment |
+                   Resources::Apiextensions::V1beta1::CustomResourceDefinition |
                    Resources::Apiregistration::V1::APIService |
                    Resources::Apiregistration::V1beta1::APIService
 
