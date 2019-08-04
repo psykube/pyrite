@@ -4,6 +4,7 @@ private def crystalize_name(name : String)
   name.gsub(/JSON/, "Json").gsub(/UUID/, "Uuid").gsub(/APIV3/, "Apiv3")
     .gsub(/CIDR/, "Cidr").gsub(/CPU/, "Cpu").gsub(/CSI/, "Csi").gsub(/TLS/, "Tls")
     .gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
+    .gsub('-', '_')
 end
 
 class Generator::Definition
