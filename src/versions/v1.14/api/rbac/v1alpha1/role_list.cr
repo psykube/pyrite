@@ -30,5 +30,21 @@ module Pyrite
 
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
     end
+
+    # create a Role
+    def create_rbac_authorization_v1alpha1_role(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, rules : Array | Nil = nil, context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil)
+    end
+
+    # list or watch objects of kind Role
+    def self.list_rbac_authorization_v1alpha1_role(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of Role
+    def self.delete_rbac_authorization_v1alpha1_role(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # list or watch objects of kind Role
+    def self.list_rbac_authorization_v1alpha1_role_for_all_namespaces(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
   end
 end

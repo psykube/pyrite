@@ -35,6 +35,34 @@ module Pyrite
 
     def initialize(*, @description : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @versions : Array | Nil = nil)
     end
+
+    # create a ThirdPartyResource
+    def create(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ThirdPartyResource
+    def self.list(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of ThirdPartyResource
+    def self.delete(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified ThirdPartyResource
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil)
+    end
+
+    # replace the specified ThirdPartyResource
+    def replace(context : String | Nil = nil)
+    end
+
+    # partially update the specified ThirdPartyResource
+    def patch(context : String | Nil = nil)
+    end
+
+    # delete a ThirdPartyResource
+    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::Extensions::V1beta1

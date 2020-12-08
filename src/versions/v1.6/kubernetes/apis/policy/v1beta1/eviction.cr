@@ -30,6 +30,10 @@ module Pyrite
 
     def initialize(*, @delete_options : Apimachinery::Apis::Meta::V1::DeleteOptions | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create eviction of an Eviction
+    def create_core_v1_eviction_eviction(context : String | Nil = nil)
+    end
   end
 
   module Resources::Policy::V1beta1

@@ -34,6 +34,10 @@ module Pyrite
 
     def initialize(*, @spec : Api::Authorization::V1beta1::SelfSubjectAccessReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Authorization::V1beta1::SubjectAccessReviewStatus | Nil = nil)
     end
+
+    # create a SelfSubjectAccessReview
+    def create(context : String | Nil = nil, dry_run : String | Nil = nil, include_uninitialized : Bool | Nil = nil)
+    end
   end
 
   module Resources::Authorization::V1beta1

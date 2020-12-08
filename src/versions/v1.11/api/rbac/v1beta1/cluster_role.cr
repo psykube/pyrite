@@ -35,6 +35,34 @@ module Pyrite
 
     def initialize(*, @rules : Array, @aggregation_rule : Api::Rbac::V1beta1::AggregationRule | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create a ClusterRole
+    def create_rbac_authorization_v1beta1_cluster_role(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ClusterRole
+    def self.list_rbac_authorization_v1beta1_cluster_role(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of ClusterRole
+    def self.delete_rbac_authorization_v1beta1_cluster_role(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified ClusterRole
+    def self.read_rbac_authorization_v1beta1_cluster_role(name : String, context : String | Nil = nil)
+    end
+
+    # replace the specified ClusterRole
+    def replace_rbac_authorization_v1beta1_cluster_role(context : String | Nil = nil)
+    end
+
+    # partially update the specified ClusterRole
+    def patch_rbac_authorization_v1beta1_cluster_role(context : String | Nil = nil)
+    end
+
+    # delete a ClusterRole
+    def delete_rbac_authorization_v1beta1_cluster_role(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::Rbac::V1beta1

@@ -35,6 +35,42 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Extensions::V1beta1::ScaleSpec | Nil = nil, @status : Kubernetes::Apis::Extensions::V1beta1::ScaleStatus | Nil = nil)
     end
+
+    # read scale of the specified Scale
+    def self.read_extensions_v1beta1_deployments_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Scale
+    def replace_extensions_v1beta1_deployments_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Scale
+    def patch_extensions_v1beta1_deployments_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified Scale
+    def self.read_extensions_v1beta1_replicasets_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Scale
+    def replace_extensions_v1beta1_replicasets_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Scale
+    def patch_extensions_v1beta1_replicasets_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified Scale
+    def self.read_extensions_v1beta1_replicationcontrollers_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Scale
+    def replace_extensions_v1beta1_replicationcontrollers_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Scale
+    def patch_extensions_v1beta1_replicationcontrollers_scale(context : String | Nil = nil)
+    end
   end
 
   module Resources::Extensions::V1beta1

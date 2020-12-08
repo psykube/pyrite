@@ -30,6 +30,34 @@ module Pyrite
 
     def initialize(*, @rules : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create a Role
+    def create_rbac_authorization_v1alpha1_role(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # list or watch objects of kind Role
+    def self.list_rbac_authorization_v1alpha1_role(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of Role
+    def self.delete_rbac_authorization_v1alpha1_role(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # read the specified Role
+    def self.read_rbac_authorization_v1alpha1_role(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace the specified Role
+    def replace_rbac_authorization_v1alpha1_role(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update the specified Role
+    def patch_rbac_authorization_v1alpha1_role(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # delete a Role
+    def delete_rbac_authorization_v1alpha1_role(api_version : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::Rbac::V1alpha1

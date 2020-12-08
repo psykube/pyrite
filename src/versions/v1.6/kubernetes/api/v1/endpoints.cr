@@ -41,6 +41,34 @@ module Pyrite
 
     def initialize(*, @subsets : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create Endpoints
+    def create(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind Endpoints
+    def self.list(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of Endpoints
+    def self.delete(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # read the specified Endpoints
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # replace the specified Endpoints
+    def replace(context : String | Nil = nil)
+    end
+
+    # partially update the specified Endpoints
+    def patch(context : String | Nil = nil)
+    end
+
+    # delete Endpoints
+    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::V1

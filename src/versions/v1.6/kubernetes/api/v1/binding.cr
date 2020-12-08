@@ -30,6 +30,14 @@ module Pyrite
 
     def initialize(*, @target : Kubernetes::Api::V1::ObjectReference, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create a Binding
+    def create(context : String | Nil = nil)
+    end
+
+    # create binding of a Binding
+    def create_binding(context : String | Nil = nil)
+    end
   end
 
   module Resources::V1

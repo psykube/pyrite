@@ -30,5 +30,17 @@ module Pyrite
 
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
     end
+
+    # create a ClusterRoleBinding
+    def create_rbac_authorization_v1alpha1_cluster_role_binding(role_ref : Kubernetes::Apis::Rbac::V1alpha1::RoleRef, subjects : Array, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ClusterRoleBinding
+    def self.list_rbac_authorization_v1alpha1_cluster_role_binding(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of ClusterRoleBinding
+    def self.delete_rbac_authorization_v1alpha1_cluster_role_binding(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
   end
 end

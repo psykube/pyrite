@@ -34,6 +34,10 @@ module Pyrite
 
     def initialize(*, @spec : Kubernetes::Apis::Authentication::V1::TokenReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Kubernetes::Apis::Authentication::V1::TokenReviewStatus | Nil = nil)
     end
+
+    # create a TokenReview
+    def create(context : String | Nil = nil)
+    end
   end
 
   module Resources::Authentication::V1

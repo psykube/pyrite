@@ -35,6 +35,18 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Autoscaling::V1::ScaleSpec | Nil = nil, @status : Kubernetes::Apis::Autoscaling::V1::ScaleStatus | Nil = nil)
     end
+
+    # read scale of the specified ReplicationController
+    def self.read_core_v1_replication_controller_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified ReplicationController
+    def replace_core_v1_replication_controller_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified ReplicationController
+    def patch_core_v1_replication_controller_scale(context : String | Nil = nil)
+    end
   end
 
   module Resources::Autoscaling::V1

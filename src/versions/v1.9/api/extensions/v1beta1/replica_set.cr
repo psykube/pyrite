@@ -35,6 +35,46 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Extensions::V1beta1::ReplicaSetSpec | Nil = nil, @status : Api::Extensions::V1beta1::ReplicaSetStatus | Nil = nil)
     end
+
+    # create a ReplicaSet
+    def create(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ReplicaSet
+    def self.list(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of ReplicaSet
+    def self.delete(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # read the specified ReplicaSet
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # replace the specified ReplicaSet
+    def replace(context : String | Nil = nil)
+    end
+
+    # partially update the specified ReplicaSet
+    def patch(context : String | Nil = nil)
+    end
+
+    # delete a ReplicaSet
+    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
+
+    # read status of the specified ReplicaSet
+    def self.read_status(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace status of the specified ReplicaSet
+    def replace_status(context : String | Nil = nil)
+    end
+
+    # partially update status of the specified ReplicaSet
+    def patch_status(context : String | Nil = nil)
+    end
   end
 
   module Resources::Extensions::V1beta1

@@ -27,5 +27,17 @@ module Pyrite
 
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
     end
+
+    # create a CertificateSigningRequest
+    def create(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, spec : Api::Certificates::V1beta1::CertificateSigningRequestSpec | Nil = nil, status : Api::Certificates::V1beta1::CertificateSigningRequestStatus | Nil = nil, context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind CertificateSigningRequest
+    def self.list(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of CertificateSigningRequest
+    def self.delete(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
   end
 end

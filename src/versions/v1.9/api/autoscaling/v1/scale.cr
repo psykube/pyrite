@@ -35,6 +35,54 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Autoscaling::V1::ScaleSpec | Nil = nil, @status : Api::Autoscaling::V1::ScaleStatus | Nil = nil)
     end
+
+    # read scale of the specified ReplicationController
+    def self.read_core_v1_replication_controller_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified ReplicationController
+    def replace_core_v1_replication_controller_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified ReplicationController
+    def patch_core_v1_replication_controller_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified Deployment
+    def self.read_apps_v1_deployment_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Deployment
+    def replace_apps_v1_deployment_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Deployment
+    def patch_apps_v1_deployment_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified ReplicaSet
+    def self.read_apps_v1_replica_set_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified ReplicaSet
+    def replace_apps_v1_replica_set_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified ReplicaSet
+    def patch_apps_v1_replica_set_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified StatefulSet
+    def self.read_apps_v1_stateful_set_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified StatefulSet
+    def replace_apps_v1_stateful_set_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified StatefulSet
+    def patch_apps_v1_stateful_set_scale(context : String | Nil = nil)
+    end
   end
 
   module Resources::Autoscaling::V1

@@ -35,6 +35,46 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Core::V1::NodeSpec | Nil = nil, @status : Api::Core::V1::NodeStatus | Nil = nil)
     end
+
+    # create a Node
+    def create(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind Node
+    def self.list(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of Node
+    def self.delete(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified Node
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil)
+    end
+
+    # replace the specified Node
+    def replace(context : String | Nil = nil)
+    end
+
+    # partially update the specified Node
+    def patch(context : String | Nil = nil)
+    end
+
+    # delete a Node
+    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
+
+    # read status of the specified Node
+    def self.read_status(name : String, context : String | Nil = nil)
+    end
+
+    # replace status of the specified Node
+    def replace_status(context : String | Nil = nil)
+    end
+
+    # partially update status of the specified Node
+    def patch_status(context : String | Nil = nil)
+    end
   end
 
   module Resources::V1

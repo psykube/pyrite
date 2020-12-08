@@ -1,0 +1,50 @@
+# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
+
+require "yaml"
+require "json"
+
+module Pyrite
+  # RoleList is a collection of Roles. Deprecated in v1.17 in favor of [rbac.authorization.k8s.io/v1 RoleList, and will no longer be served in v1.22.](rbac.authorization.k8s.io/v1 RoleList, and will no longer be served in v1.22.)
+  class Api::Rbac::V1alpha1::RoleList
+    getter api_version : String = "v1"
+    getter kind : String = "List"
+    # Items is a list of Roles
+    property items : Array(Api::Rbac::V1alpha1::Role)
+
+    # Standard object's metadata.
+    property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
+
+    ::YAML.mapping({
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
+      kind:        {type: String, default: "List", key: "kind", setter: false},
+      items:       {type: Array(Api::Rbac::V1alpha1::Role), nilable: false, key: "items", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
+    }, true)
+
+    ::JSON.mapping({
+      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
+      kind:        {type: String, default: "List", key: "kind", setter: false},
+      items:       {type: Array(Api::Rbac::V1alpha1::Role), nilable: false, key: "items", getter: false, setter: false},
+      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
+    }, true)
+
+    def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
+    end
+
+    # create a Role
+    def create_rbac_authorization_v1alpha1_role(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, rules : Array | Nil = nil, context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil)
+    end
+
+    # list or watch objects of kind Role
+    def self.list_rbac_authorization_v1alpha1_role(context : String | Nil = nil, allow_watch_bookmarks : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, resource_version_match : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of Role
+    def self.delete_rbac_authorization_v1alpha1_role(context : String | Nil = nil, continue : String | Nil = nil, dry_run : String | Nil = nil, field_selector : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, orphan_dependents : Bool | Nil = nil, propagation_policy : String | Nil = nil, resource_version : String | Nil = nil, resource_version_match : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, namespace : String = "default")
+    end
+
+    # list or watch objects of kind Role
+    def self.list_rbac_authorization_v1alpha1_role_for_all_namespaces(context : String | Nil = nil, allow_watch_bookmarks : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, resource_version_match : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+  end
+end

@@ -30,6 +30,34 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Extensions::V1beta1::PodSecurityPolicySpec | Nil = nil)
     end
+
+    # create a PodSecurityPolicy
+    def create(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind PodSecurityPolicy
+    def self.list(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of PodSecurityPolicy
+    def self.delete(context : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified PodSecurityPolicy
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil)
+    end
+
+    # replace the specified PodSecurityPolicy
+    def replace(context : String | Nil = nil)
+    end
+
+    # partially update the specified PodSecurityPolicy
+    def patch(context : String | Nil = nil)
+    end
+
+    # delete a PodSecurityPolicy
+    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::Extensions::V1beta1

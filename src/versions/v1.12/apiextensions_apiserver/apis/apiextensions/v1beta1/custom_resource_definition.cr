@@ -34,6 +34,46 @@ module Pyrite
 
     def initialize(*, @spec : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionStatus | Nil = nil)
     end
+
+    # create a CustomResourceDefinition
+    def create(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # list or watch objects of kind CustomResourceDefinition
+    def self.list(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of CustomResourceDefinition
+    def self.delete(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified CustomResourceDefinition
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil)
+    end
+
+    # replace the specified CustomResourceDefinition
+    def replace(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update the specified CustomResourceDefinition
+    def patch(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # delete a CustomResourceDefinition
+    def delete(api_version : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
+
+    # read status of the specified CustomResourceDefinition
+    def self.read_status(name : String, context : String | Nil = nil)
+    end
+
+    # replace status of the specified CustomResourceDefinition
+    def replace_status(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update status of the specified CustomResourceDefinition
+    def patch_status(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
   end
 
   module Resources::Apiextensions::V1beta1

@@ -30,6 +30,34 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @webhooks : Array | Nil = nil)
     end
+
+    # create a ValidatingWebhookConfiguration
+    def create(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ValidatingWebhookConfiguration
+    def self.list(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of ValidatingWebhookConfiguration
+    def self.delete(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified ValidatingWebhookConfiguration
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil)
+    end
+
+    # replace the specified ValidatingWebhookConfiguration
+    def replace(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update the specified ValidatingWebhookConfiguration
+    def patch(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # delete a ValidatingWebhookConfiguration
+    def delete(context : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, orphan_dependents : Bool | Nil = nil, propagation_policy : String | Nil = nil)
+    end
   end
 
   module Resources::Admissionregistration::V1beta1

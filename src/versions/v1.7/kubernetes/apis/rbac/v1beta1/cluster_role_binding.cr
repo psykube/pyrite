@@ -35,6 +35,34 @@ module Pyrite
 
     def initialize(*, @role_ref : Kubernetes::Apis::Rbac::V1beta1::RoleRef, @subjects : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create a ClusterRoleBinding
+    def create_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind ClusterRoleBinding
+    def self.list_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of ClusterRoleBinding
+    def self.delete_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # read the specified ClusterRoleBinding
+    def self.read_rbac_authorization_v1beta1_cluster_role_binding(name : String, context : String | Nil = nil)
+    end
+
+    # replace the specified ClusterRoleBinding
+    def replace_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil)
+    end
+
+    # partially update the specified ClusterRoleBinding
+    def patch_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil)
+    end
+
+    # delete a ClusterRoleBinding
+    def delete_rbac_authorization_v1beta1_cluster_role_binding(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
   end
 
   module Resources::Rbac::V1beta1

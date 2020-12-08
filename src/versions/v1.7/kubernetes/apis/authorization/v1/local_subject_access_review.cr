@@ -34,6 +34,10 @@ module Pyrite
 
     def initialize(*, @spec : Kubernetes::Apis::Authorization::V1::SubjectAccessReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus | Nil = nil)
     end
+
+    # create a LocalSubjectAccessReview
+    def create(context : String | Nil = nil)
+    end
   end
 
   module Resources::Authorization::V1

@@ -30,6 +30,14 @@ module Pyrite
 
     def initialize(*, @target : Api::Core::V1::ObjectReference, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # create a Binding
+    def create(context : String | Nil = nil, dry_run : String | Nil = nil, include_uninitialized : Bool | Nil = nil)
+    end
+
+    # create binding of a Pod
+    def create_core_v1_pod_binding(context : String | Nil = nil, dry_run : String | Nil = nil, include_uninitialized : Bool | Nil = nil)
+    end
   end
 
   module Resources::V1

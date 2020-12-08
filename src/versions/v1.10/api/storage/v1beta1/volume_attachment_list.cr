@@ -30,5 +30,17 @@ module Pyrite
 
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
     end
+
+    # create a VolumeAttachment
+    def create(spec : Api::Storage::V1beta1::VolumeAttachmentSpec, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, status : Api::Storage::V1beta1::VolumeAttachmentStatus | Nil = nil, context : String | Nil = nil)
+    end
+
+    # list or watch objects of kind VolumeAttachment
+    def self.list(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
+
+    # delete collection of VolumeAttachment
+    def self.delete(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
+    end
   end
 end

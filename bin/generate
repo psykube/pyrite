@@ -1,8 +1,8 @@
 #!/usr/bin/env crystal
 
 require "http/client"
-require "./swagger"
-require "./generator"
+require "../src/swagger"
+require "../src/generator"
 
 struct Range
   def next

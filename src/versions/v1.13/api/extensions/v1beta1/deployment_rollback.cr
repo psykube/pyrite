@@ -39,5 +39,9 @@ module Pyrite
 
     def initialize(*, @name : String, @rollback_to : Api::Extensions::V1beta1::RollbackConfig, @api_version : String | Nil = nil, @kind : String | Nil = nil, @updated_annotations : Hash(String, String) | Nil = nil)
     end
+
+    # create rollback of a Deployment
+    def create(context : String | Nil = nil, dry_run : String | Nil = nil, include_uninitialized : Bool | Nil = nil)
+    end
   end
 end

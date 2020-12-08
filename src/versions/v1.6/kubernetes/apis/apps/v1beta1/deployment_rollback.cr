@@ -39,5 +39,9 @@ module Pyrite
 
     def initialize(*, @name : String, @rollback_to : Kubernetes::Apis::Apps::V1beta1::RollbackConfig, @api_version : String | Nil = nil, @kind : String | Nil = nil, @updated_annotations : Hash(String, String) | Nil = nil)
     end
+
+    # create rollback of a DeploymentRollback
+    def create_rollback(context : String | Nil = nil)
+    end
   end
 end

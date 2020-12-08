@@ -35,6 +35,46 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Autoscaling::V1::HorizontalPodAutoscalerSpec | Nil = nil, @status : Api::Autoscaling::V1::HorizontalPodAutoscalerStatus | Nil = nil)
     end
+
+    # create a HorizontalPodAutoscaler
+    def create(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # list or watch objects of kind HorizontalPodAutoscaler
+    def self.list(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # delete collection of HorizontalPodAutoscaler
+    def self.delete(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # read the specified HorizontalPodAutoscaler
+    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
+    end
+
+    # replace the specified HorizontalPodAutoscaler
+    def replace(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update the specified HorizontalPodAutoscaler
+    def patch(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # delete a HorizontalPodAutoscaler
+    def delete(api_version : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    end
+
+    # read status of the specified HorizontalPodAutoscaler
+    def self.read_status(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace status of the specified HorizontalPodAutoscaler
+    def replace_status(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update status of the specified HorizontalPodAutoscaler
+    def patch_status(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
   end
 
   module Resources::Autoscaling::V1

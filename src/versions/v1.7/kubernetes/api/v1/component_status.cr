@@ -30,6 +30,10 @@ module Pyrite
 
     def initialize(*, @conditions : Array | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
+
+    # read the specified ComponentStatus
+    def self.read(name : String, context : String | Nil = nil)
+    end
   end
 
   module Resources::V1

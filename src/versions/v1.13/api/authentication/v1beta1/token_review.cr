@@ -34,6 +34,10 @@ module Pyrite
 
     def initialize(*, @spec : Api::Authentication::V1beta1::TokenReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Authentication::V1beta1::TokenReviewStatus | Nil = nil)
     end
+
+    # create a TokenReview
+    def create(context : String | Nil = nil, dry_run : String | Nil = nil, include_uninitialized : Bool | Nil = nil)
+    end
   end
 
   module Resources::Authentication::V1beta1

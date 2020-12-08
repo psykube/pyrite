@@ -35,6 +35,42 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Extensions::V1beta1::ScaleSpec | Nil = nil, @status : Api::Extensions::V1beta1::ScaleStatus | Nil = nil)
     end
+
+    # read scale of the specified Deployment
+    def self.read_extensions_v1beta1_deployment_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Deployment
+    def replace_extensions_v1beta1_deployment_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Deployment
+    def patch_extensions_v1beta1_deployment_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified ReplicaSet
+    def self.read_extensions_v1beta1_replica_set_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified ReplicaSet
+    def replace_extensions_v1beta1_replica_set_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified ReplicaSet
+    def patch_extensions_v1beta1_replica_set_scale(context : String | Nil = nil)
+    end
+
+    # read scale of the specified ReplicationControllerDummy
+    def self.read_extensions_v1beta1_replication_controller_dummy_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified ReplicationControllerDummy
+    def replace_extensions_v1beta1_replication_controller_dummy_scale(context : String | Nil = nil)
+    end
+
+    # partially update scale of the specified ReplicationControllerDummy
+    def patch_extensions_v1beta1_replication_controller_dummy_scale(context : String | Nil = nil)
+    end
   end
 
   module Resources::Extensions::V1beta1

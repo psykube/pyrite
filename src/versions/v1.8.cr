@@ -1,5 +1,3 @@
-# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
-
 require "./v1.8/api/admissionregistration/v1alpha1/admission_hook_client_config.cr"
 require "./v1.8/api/admissionregistration/v1alpha1/external_admission_hook.cr"
 require "./v1.8/api/admissionregistration/v1alpha1/external_admission_hook_configuration.cr"
@@ -440,4 +438,6 @@ require "./v1.8/kube_aggregator/apis/apiregistration/v1beta1/api_service_spec.cr
 require "./v1.8/kube_aggregator/apis/apiregistration/v1beta1/api_service_status.cr"
 require "./v1.8/kube_aggregator/apis/apiregistration/v1beta1/service_reference.cr"
 require "./v1.8/api/core/v1/list.cr"
+# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
+
 require "./v1.8/kubernetes"

@@ -35,6 +35,30 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Apps::V1beta1::ScaleSpec | Nil = nil, @status : Api::Apps::V1beta1::ScaleStatus | Nil = nil)
     end
+
+    # read scale of the specified Deployment
+    def self.read_apps_v1beta1_deployment_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified Deployment
+    def replace_apps_v1beta1_deployment_scale(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update scale of the specified Deployment
+    def patch_apps_v1beta1_deployment_scale(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # read scale of the specified StatefulSet
+    def self.read_apps_v1beta1_stateful_set_scale(name : String, context : String | Nil = nil, namespace : String = "default")
+    end
+
+    # replace scale of the specified StatefulSet
+    def replace_apps_v1beta1_stateful_set_scale(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
+
+    # partially update scale of the specified StatefulSet
+    def patch_apps_v1beta1_stateful_set_scale(context : String | Nil = nil, dry_run : String | Nil = nil)
+    end
   end
 
   module Resources::Apps::V1beta1
