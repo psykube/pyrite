@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added
-    @[JSON::Field(key: "clusterRoleSelectors")]
-    @[YAML::Field(key: "clusterRoleSelectors")]
+    @[::JSON::Field(key: "clusterRoleSelectors")]
+    @[::YAML::Field(key: "clusterRoleSelectors")]
     property cluster_role_selectors : Array(Apimachinery::Apis::Meta::V1::LabelSelector) | Nil
 
     def initialize(*, @cluster_role_selectors : Array | Nil = nil)

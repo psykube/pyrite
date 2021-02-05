@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.
-    @[JSON::Field(key: "ingress")]
-    @[YAML::Field(key: "ingress")]
+    @[::JSON::Field(key: "ingress")]
+    @[::YAML::Field(key: "ingress")]
     property ingress : Array(Kubernetes::Api::V1::LoadBalancerIngress) | Nil
 
     def initialize(*, @ingress : Array | Nil = nil)

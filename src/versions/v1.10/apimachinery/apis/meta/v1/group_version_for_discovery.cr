@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # groupVersion specifies the API group and version in the form ["group/version"]("group/version")
-    @[JSON::Field(key: "groupVersion")]
-    @[YAML::Field(key: "groupVersion")]
+    @[::JSON::Field(key: "groupVersion")]
+    @[::YAML::Field(key: "groupVersion")]
     property group_version : String
 
     # version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.
-    @[JSON::Field(key: "version")]
-    @[YAML::Field(key: "version")]
+    @[::JSON::Field(key: "version")]
+    @[::YAML::Field(key: "version")]
     property version : String
 
     def initialize(*, @group_version : String, @version : String)

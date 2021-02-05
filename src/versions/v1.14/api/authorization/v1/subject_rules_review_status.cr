@@ -10,23 +10,23 @@ module Pyrite
     include ::YAML::Serializable
 
     # EvaluationError can appear in combination with Rules. It indicates an error occurred during rule evaluation, such as an authorizer that doesn't support rule evaluation, and that ResourceRules [and/or NonResourceRules may be incomplete.](and/or NonResourceRules may be incomplete.)
-    @[JSON::Field(key: "evaluationError")]
-    @[YAML::Field(key: "evaluationError")]
+    @[::JSON::Field(key: "evaluationError")]
+    @[::YAML::Field(key: "evaluationError")]
     property evaluation_error : String | Nil
 
     # Incomplete is true when the rules returned by this call are incomplete. This is most commonly encountered when an authorizer, such as an external authorizer, doesn't support rules evaluation.
-    @[JSON::Field(key: "incomplete")]
-    @[YAML::Field(key: "incomplete")]
+    @[::JSON::Field(key: "incomplete")]
+    @[::YAML::Field(key: "incomplete")]
     property incomplete : Bool
 
     # NonResourceRules is the list of actions the subject is allowed to perform on non-resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
-    @[JSON::Field(key: "nonResourceRules")]
-    @[YAML::Field(key: "nonResourceRules")]
+    @[::JSON::Field(key: "nonResourceRules")]
+    @[::YAML::Field(key: "nonResourceRules")]
     property non_resource_rules : Array(Api::Authorization::V1::NonResourceRule)
 
     # ResourceRules is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
-    @[JSON::Field(key: "resourceRules")]
-    @[YAML::Field(key: "resourceRules")]
+    @[::JSON::Field(key: "resourceRules")]
+    @[::YAML::Field(key: "resourceRules")]
     property resource_rules : Array(Api::Authorization::V1::ResourceRule)
 
     def initialize(*, @evaluation_error : String | Nil = nil, @incomplete : Bool, @non_resource_rules : Array, @resource_rules : Array)

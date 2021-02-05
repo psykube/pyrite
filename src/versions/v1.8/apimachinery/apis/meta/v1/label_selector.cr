@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # matchExpressions is a list of label selector requirements. The requirements are ANDed.
-    @[JSON::Field(key: "matchExpressions")]
-    @[YAML::Field(key: "matchExpressions")]
+    @[::JSON::Field(key: "matchExpressions")]
+    @[::YAML::Field(key: "matchExpressions")]
     property match_expressions : Array(Apimachinery::Apis::Meta::V1::LabelSelectorRequirement) | Nil
 
     # matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-    @[JSON::Field(key: "matchLabels")]
-    @[YAML::Field(key: "matchLabels")]
+    @[::JSON::Field(key: "matchLabels")]
+    @[::YAML::Field(key: "matchLabels")]
     property match_labels : Hash(String, String) | Nil
 
     def initialize(*, @match_expressions : Array | Nil = nil, @match_labels : Hash(String, String) | Nil = nil)

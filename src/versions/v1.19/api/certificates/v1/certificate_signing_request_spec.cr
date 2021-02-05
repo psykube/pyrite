@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # extra contains extra attributes of the user that created the CertificateSigningRequest. Populated by the API server on creation and immutable.
-    @[JSON::Field(key: "extra")]
-    @[YAML::Field(key: "extra")]
+    @[::JSON::Field(key: "extra")]
+    @[::YAML::Field(key: "extra")]
     property extra : Hash(String, String) | Nil
 
     # groups contains group membership of the user that created the CertificateSigningRequest. Populated by the API server on creation and immutable.
-    @[JSON::Field(key: "groups")]
-    @[YAML::Field(key: "groups")]
+    @[::JSON::Field(key: "groups")]
+    @[::YAML::Field(key: "groups")]
     property groups : Array(String) | Nil
 
     # request contains an x509 certificate signing request encoded in a "CERTIFICATE REQUEST" PEM block. When serialized as JSON or YAML, the data is additionally base64-encoded.
-    @[JSON::Field(key: "request")]
-    @[YAML::Field(key: "request")]
+    @[::JSON::Field(key: "request")]
+    @[::YAML::Field(key: "request")]
     property request : String
 
     # signerName indicates the requested signer, and is a qualified name.
@@ -45,13 +45,13 @@ module Pyrite
     #  4. Required, permitted, or forbidden key usages / extended key usages.
     #  5. [Expiration/certificate lifetime: whether it is fixed by the signer, configurable by the admin.](Expiration/certificate lifetime: whether it is fixed by the signer, configurable by the admin.)
     #  6. Whether or not requests for CA certificates are allowed.
-    @[JSON::Field(key: "signerName")]
-    @[YAML::Field(key: "signerName")]
+    @[::JSON::Field(key: "signerName")]
+    @[::YAML::Field(key: "signerName")]
     property signer_name : String
 
     # uid contains the uid of the user that created the CertificateSigningRequest. Populated by the API server on creation and immutable.
-    @[JSON::Field(key: "uid")]
-    @[YAML::Field(key: "uid")]
+    @[::JSON::Field(key: "uid")]
+    @[::YAML::Field(key: "uid")]
     property uid : String | Nil
 
     # usages specifies a set of key usages requested in the issued certificate.
@@ -68,13 +68,13 @@ module Pyrite
     #  "code signing", "email protection", ["s/mime",]("s/mime",)
     #  "ipsec end system", "ipsec tunnel", "ipsec user",
     #  "timestamping", "ocsp signing", "microsoft sgc", "netscape sgc"
-    @[JSON::Field(key: "usages")]
-    @[YAML::Field(key: "usages")]
+    @[::JSON::Field(key: "usages")]
+    @[::YAML::Field(key: "usages")]
     property usages : Array(String) | Nil
 
     # username contains the name of the user that created the CertificateSigningRequest. Populated by the API server on creation and immutable.
-    @[JSON::Field(key: "username")]
-    @[YAML::Field(key: "username")]
+    @[::JSON::Field(key: "username")]
+    @[::YAML::Field(key: "username")]
     property username : String | Nil
 
     def initialize(*, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @request : String, @signer_name : String, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)

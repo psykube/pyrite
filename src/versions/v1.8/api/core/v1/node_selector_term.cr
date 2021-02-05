@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Required. A list of node selector requirements. The requirements are ANDed.
-    @[JSON::Field(key: "matchExpressions")]
-    @[YAML::Field(key: "matchExpressions")]
+    @[::JSON::Field(key: "matchExpressions")]
+    @[::YAML::Field(key: "matchExpressions")]
     property match_expressions : Array(Api::Core::V1::NodeSelectorRequirement)
 
     def initialize(*, @match_expressions : Array)

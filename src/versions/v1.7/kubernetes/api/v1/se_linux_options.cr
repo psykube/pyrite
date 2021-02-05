@@ -10,23 +10,23 @@ module Pyrite
     include ::YAML::Serializable
 
     # Level is SELinux level label that applies to the container.
-    @[JSON::Field(key: "level")]
-    @[YAML::Field(key: "level")]
+    @[::JSON::Field(key: "level")]
+    @[::YAML::Field(key: "level")]
     property level : String | Nil
 
     # Role is a SELinux role label that applies to the container.
-    @[JSON::Field(key: "role")]
-    @[YAML::Field(key: "role")]
+    @[::JSON::Field(key: "role")]
+    @[::YAML::Field(key: "role")]
     property role : String | Nil
 
     # Type is a SELinux type label that applies to the container.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String | Nil
 
     # User is a SELinux user label that applies to the container.
-    @[JSON::Field(key: "user")]
-    @[YAML::Field(key: "user")]
+    @[::JSON::Field(key: "user")]
+    @[::YAML::Field(key: "user")]
     property user : String | Nil
 
     def initialize(*, @level : String | Nil = nil, @role : String | Nil = nil, @type : String | Nil = nil, @user : String | Nil = nil)

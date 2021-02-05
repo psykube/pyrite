@@ -9,26 +9,26 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "PersistentVolumeClaim"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Spec defines the desired characteristics of a volume requested by a pod author. More info: [https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims](https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims)
-    @[JSON::Field(key: "spec")]
-    @[YAML::Field(key: "spec")]
+    @[::JSON::Field(key: "spec")]
+    @[::YAML::Field(key: "spec")]
     property spec : Api::Core::V1::PersistentVolumeClaimSpec | Nil
 
     # Status represents the current [information/status of a persistent volume claim. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims](information/status of a persistent volume claim. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims)
-    @[JSON::Field(key: "status")]
-    @[YAML::Field(key: "status")]
+    @[::JSON::Field(key: "status")]
+    @[::YAML::Field(key: "status")]
     property status : Api::Core::V1::PersistentVolumeClaimStatus | Nil
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Core::V1::PersistentVolumeClaimSpec | Nil = nil, @status : Api::Core::V1::PersistentVolumeClaimStatus | Nil = nil)

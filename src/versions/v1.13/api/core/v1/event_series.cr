@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Number of occurrences in this series up to the last heartbeat time
-    @[JSON::Field(key: "count")]
-    @[YAML::Field(key: "count")]
+    @[::JSON::Field(key: "count")]
+    @[::YAML::Field(key: "count")]
     property count : Int32 | Nil
 
     # Time of the last occurrence observed
-    @[JSON::Field(key: "lastObservedTime")]
-    @[YAML::Field(key: "lastObservedTime")]
+    @[::JSON::Field(key: "lastObservedTime")]
+    @[::YAML::Field(key: "lastObservedTime")]
     property last_observed_time : Time | Nil
 
     # State of this Series: Ongoing or Finished
-    @[JSON::Field(key: "state")]
-    @[YAML::Field(key: "state")]
+    @[::JSON::Field(key: "state")]
+    @[::YAML::Field(key: "state")]
     property state : String | Nil
 
     def initialize(*, @count : Int32 | Nil = nil, @last_observed_time : Time | Nil = nil, @state : String | Nil = nil)

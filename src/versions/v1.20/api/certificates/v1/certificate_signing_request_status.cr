@@ -31,13 +31,13 @@ module Pyrite
     #     ...
     #     -----END CERTIFICATE-----
     #     )
-    @[JSON::Field(key: "certificate")]
-    @[YAML::Field(key: "certificate")]
+    @[::JSON::Field(key: "certificate")]
+    @[::YAML::Field(key: "certificate")]
     property certificate : String | Nil
 
     # conditions applied to the request. Known conditions are "Approved", "Denied", and "Failed".
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Api::Certificates::V1::CertificateSigningRequestCondition) | Nil
 
     def initialize(*, @certificate : String | Nil = nil, @conditions : Array | Nil = nil)

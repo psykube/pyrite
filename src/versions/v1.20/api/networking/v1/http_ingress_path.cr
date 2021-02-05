@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Backend defines the referenced service endpoint to which the traffic will be forwarded to.
-    @[JSON::Field(key: "backend")]
-    @[YAML::Field(key: "backend")]
+    @[::JSON::Field(key: "backend")]
+    @[::YAML::Field(key: "backend")]
     property backend : Api::Networking::V1::IngressBackend
 
     # Path is matched against the path of an incoming request. Currently it can contain characters disallowed from the conventional "path" part of a URL as defined by RFC 3986. Paths must begin with a '/'. When unspecified, all paths from incoming requests are matched.
-    @[JSON::Field(key: "path")]
-    @[YAML::Field(key: "path")]
+    @[::JSON::Field(key: "path")]
+    @[::YAML::Field(key: "path")]
     property path : String | Nil
 
     # PathType determines the interpretation of the Path matching. PathType can be one of the following values: * Exact: Matches the URL path exactly. * Prefix: Matches based on a URL path prefix split by '/'. Matching is
@@ -30,8 +30,8 @@ module Pyrite
     #   the IngressClass. Implementations can treat this as a separate PathType
     #   or treat it identically to Prefix or Exact path types.
     # Implementations are required to support all path types.
-    @[JSON::Field(key: "pathType")]
-    @[YAML::Field(key: "pathType")]
+    @[::JSON::Field(key: "pathType")]
+    @[::YAML::Field(key: "pathType")]
     property path_type : String | Nil
 
     def initialize(*, @backend : Api::Networking::V1::IngressBackend, @path : String | Nil = nil, @path_type : String | Nil = nil)

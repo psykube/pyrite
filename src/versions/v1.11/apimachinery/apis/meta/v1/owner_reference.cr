@@ -10,33 +10,33 @@ module Pyrite
     include ::YAML::Serializable
 
     # API version of the referent.
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     property api_version : String
 
     # If true, AND if the owner has the "foregroundDeletion" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs "delete" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.
-    @[JSON::Field(key: "blockOwnerDeletion")]
-    @[YAML::Field(key: "blockOwnerDeletion")]
+    @[::JSON::Field(key: "blockOwnerDeletion")]
+    @[::YAML::Field(key: "blockOwnerDeletion")]
     property block_owner_deletion : Bool | Nil
 
     # If true, this reference points to the managing controller.
-    @[JSON::Field(key: "controller")]
-    @[YAML::Field(key: "controller")]
+    @[::JSON::Field(key: "controller")]
+    @[::YAML::Field(key: "controller")]
     property controller : Bool | Nil
 
     # Kind of the referent. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds](https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds)
-    @[JSON::Field(key: "kind")]
-    @[YAML::Field(key: "kind")]
+    @[::JSON::Field(key: "kind")]
+    @[::YAML::Field(key: "kind")]
     property kind : String
 
     # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # UID of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#uids](http://kubernetes.io/docs/user-guide/identifiers#uids)
-    @[JSON::Field(key: "uid")]
-    @[YAML::Field(key: "uid")]
+    @[::JSON::Field(key: "uid")]
+    @[::YAML::Field(key: "uid")]
     property uid : String
 
     def initialize(*, @api_version : String, @block_owner_deletion : Bool | Nil = nil, @controller : Bool | Nil = nil, @kind : String, @name : String, @uid : String)

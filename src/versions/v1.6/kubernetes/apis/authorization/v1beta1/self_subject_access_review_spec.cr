@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # NonResourceAttributes describes information for a non-resource access request
-    @[JSON::Field(key: "nonResourceAttributes")]
-    @[YAML::Field(key: "nonResourceAttributes")]
+    @[::JSON::Field(key: "nonResourceAttributes")]
+    @[::YAML::Field(key: "nonResourceAttributes")]
     property non_resource_attributes : Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes | Nil
 
     # ResourceAuthorizationAttributes describes information for a resource access request
-    @[JSON::Field(key: "resourceAttributes")]
-    @[YAML::Field(key: "resourceAttributes")]
+    @[::JSON::Field(key: "resourceAttributes")]
+    @[::YAML::Field(key: "resourceAttributes")]
     property resource_attributes : Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes | Nil
 
     def initialize(*, @non_resource_attributes : Kubernetes::Apis::Authorization::V1beta1::NonResourceAttributes | Nil = nil, @resource_attributes : Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes | Nil = nil)

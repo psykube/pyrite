@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Current service state of apiService.
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceCondition) | Nil
 
     def initialize(*, @conditions : Array | Nil = nil)

@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
-    @[JSON::Field(key: "apiGroup")]
-    @[YAML::Field(key: "apiGroup")]
+    @[::JSON::Field(key: "apiGroup")]
+    @[::YAML::Field(key: "apiGroup")]
     property api_group : String | Nil
 
     # Kind is the type of resource being referenced
-    @[JSON::Field(key: "kind")]
-    @[YAML::Field(key: "kind")]
+    @[::JSON::Field(key: "kind")]
+    @[::YAML::Field(key: "kind")]
     property kind : String
 
     # Name is the name of resource being referenced
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @api_group : String | Nil = nil, @kind : String, @name : String)

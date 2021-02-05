@@ -10,33 +10,33 @@ module Pyrite
     include ::YAML::Serializable
 
     # The number of actively running pods.
-    @[JSON::Field(key: "active")]
-    @[YAML::Field(key: "active")]
+    @[::JSON::Field(key: "active")]
+    @[::YAML::Field(key: "active")]
     property active : Int32 | Nil
 
     # Represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
-    @[JSON::Field(key: "completionTime")]
-    @[YAML::Field(key: "completionTime")]
+    @[::JSON::Field(key: "completionTime")]
+    @[::YAML::Field(key: "completionTime")]
     property completion_time : Time | Nil
 
     # The latest available observations of an object's current state. More info: [https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Kubernetes::Apis::Batch::V1::JobCondition) | Nil
 
     # The number of pods which reached phase Failed.
-    @[JSON::Field(key: "failed")]
-    @[YAML::Field(key: "failed")]
+    @[::JSON::Field(key: "failed")]
+    @[::YAML::Field(key: "failed")]
     property failed : Int32 | Nil
 
     # Represents time when the job was acknowledged by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.
-    @[JSON::Field(key: "startTime")]
-    @[YAML::Field(key: "startTime")]
+    @[::JSON::Field(key: "startTime")]
+    @[::YAML::Field(key: "startTime")]
     property start_time : Time | Nil
 
     # The number of pods which reached phase Succeeded.
-    @[JSON::Field(key: "succeeded")]
-    @[YAML::Field(key: "succeeded")]
+    @[::JSON::Field(key: "succeeded")]
+    @[::YAML::Field(key: "succeeded")]
     property succeeded : Int32 | Nil
 
     def initialize(*, @active : Int32 | Nil = nil, @completion_time : Time | Nil = nil, @conditions : Array | Nil = nil, @failed : Int32 | Nil = nil, @start_time : Time | Nil = nil, @succeeded : Int32 | Nil = nil)

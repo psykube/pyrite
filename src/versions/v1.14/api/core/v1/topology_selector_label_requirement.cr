@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # The label key that the selector applies to.
-    @[JSON::Field(key: "key")]
-    @[YAML::Field(key: "key")]
+    @[::JSON::Field(key: "key")]
+    @[::YAML::Field(key: "key")]
     property key : String
 
     # An array of string values. One value must match the label to be selected. Each entry in Values is ORed.
-    @[JSON::Field(key: "values")]
-    @[YAML::Field(key: "values")]
+    @[::JSON::Field(key: "values")]
+    @[::YAML::Field(key: "values")]
     property values : Array(String)
 
     def initialize(*, @key : String, @values : Array)

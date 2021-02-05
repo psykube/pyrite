@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # `name` is the name of the priority level configuration being referenced Required.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @name : String)

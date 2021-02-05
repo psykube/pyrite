@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # A node selector term, associated with the corresponding weight.
-    @[JSON::Field(key: "preference")]
-    @[YAML::Field(key: "preference")]
+    @[::JSON::Field(key: "preference")]
+    @[::YAML::Field(key: "preference")]
     property preference : Api::Core::V1::NodeSelectorTerm
 
     # Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100.
-    @[JSON::Field(key: "weight")]
-    @[YAML::Field(key: "weight")]
+    @[::JSON::Field(key: "weight")]
+    @[::YAML::Field(key: "weight")]
     property weight : Int32
 
     def initialize(*, @preference : Api::Core::V1::NodeSelectorTerm, @weight : Int32)

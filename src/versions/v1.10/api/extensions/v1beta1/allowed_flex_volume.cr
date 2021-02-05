@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Driver is the name of the Flexvolume driver.
-    @[JSON::Field(key: "driver")]
-    @[YAML::Field(key: "driver")]
+    @[::JSON::Field(key: "driver")]
+    @[::YAML::Field(key: "driver")]
     property driver : String
 
     def initialize(*, @driver : String)

@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name is the name of the service
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String | Nil
 
     # Namespace is the namespace of the service
-    @[JSON::Field(key: "namespace")]
-    @[YAML::Field(key: "namespace")]
+    @[::JSON::Field(key: "namespace")]
+    @[::YAML::Field(key: "namespace")]
     property namespace : String | Nil
 
     def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)

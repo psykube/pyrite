@@ -16,13 +16,13 @@ module Pyrite
     #             ACV(l) = ceil( SCL * ACS(l) / ( sum[priority levels k] ACS(k) ) )
     #
     # bigger numbers of ACS mean more reserved concurrent requests (at the expense of every other PL). This field has a default value of 30.
-    @[JSON::Field(key: "assuredConcurrencyShares")]
-    @[YAML::Field(key: "assuredConcurrencyShares")]
+    @[::JSON::Field(key: "assuredConcurrencyShares")]
+    @[::YAML::Field(key: "assuredConcurrencyShares")]
     property assured_concurrency_shares : Int32 | Nil
 
     # `limitResponse` indicates what to do with requests that can not be executed right now
-    @[JSON::Field(key: "limitResponse")]
-    @[YAML::Field(key: "limitResponse")]
+    @[::JSON::Field(key: "limitResponse")]
+    @[::YAML::Field(key: "limitResponse")]
     property limit_response : Api::Flowcontrol::V1beta1::LimitResponse | Nil
 
     def initialize(*, @assured_concurrency_shares : Int32 | Nil = nil, @limit_response : Api::Flowcontrol::V1beta1::LimitResponse | Nil = nil)

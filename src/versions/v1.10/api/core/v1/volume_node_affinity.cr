@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Required specifies hard node constraints that must be met.
-    @[JSON::Field(key: "required")]
-    @[YAML::Field(key: "required")]
+    @[::JSON::Field(key: "required")]
+    @[::YAML::Field(key: "required")]
     property required : Api::Core::V1::NodeSelector | Nil
 
     def initialize(*, @required : Api::Core::V1::NodeSelector | Nil = nil)

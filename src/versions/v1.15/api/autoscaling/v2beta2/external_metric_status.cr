@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # current contains the current value for the given metric
-    @[JSON::Field(key: "current")]
-    @[YAML::Field(key: "current")]
+    @[::JSON::Field(key: "current")]
+    @[::YAML::Field(key: "current")]
     property current : Api::Autoscaling::V2beta2::MetricValueStatus
 
     # metric identifies the target metric by name and selector
-    @[JSON::Field(key: "metric")]
-    @[YAML::Field(key: "metric")]
+    @[::JSON::Field(key: "metric")]
+    @[::YAML::Field(key: "metric")]
     property metric : Api::Autoscaling::V2beta2::MetricIdentifier
 
     def initialize(*, @current : Api::Autoscaling::V2beta2::MetricValueStatus, @metric : Api::Autoscaling::V2beta2::MetricIdentifier)

@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # The ConfigMap to select from
-    @[JSON::Field(key: "configMapRef")]
-    @[YAML::Field(key: "configMapRef")]
+    @[::JSON::Field(key: "configMapRef")]
+    @[::YAML::Field(key: "configMapRef")]
     property config_map_ref : Api::Core::V1::ConfigMapEnvSource | Nil
 
     # An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
-    @[JSON::Field(key: "prefix")]
-    @[YAML::Field(key: "prefix")]
+    @[::JSON::Field(key: "prefix")]
+    @[::YAML::Field(key: "prefix")]
     property prefix : String | Nil
 
     # The Secret to select from
-    @[JSON::Field(key: "secretRef")]
-    @[YAML::Field(key: "secretRef")]
+    @[::JSON::Field(key: "secretRef")]
+    @[::YAML::Field(key: "secretRef")]
     property secret_ref : Api::Core::V1::SecretEnvSource | Nil
 
     def initialize(*, @config_map_ref : Api::Core::V1::ConfigMapEnvSource | Nil = nil, @prefix : String | Nil = nil, @secret_ref : Api::Core::V1::SecretEnvSource | Nil = nil)

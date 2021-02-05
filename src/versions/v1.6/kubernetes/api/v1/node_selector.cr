@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Required. A list of node selector terms. The terms are ORed.
-    @[JSON::Field(key: "nodeSelectorTerms")]
-    @[YAML::Field(key: "nodeSelectorTerms")]
+    @[::JSON::Field(key: "nodeSelectorTerms")]
+    @[::YAML::Field(key: "nodeSelectorTerms")]
     property node_selector_terms : Array(Kubernetes::Api::V1::NodeSelectorTerm)
 
     def initialize(*, @node_selector_terms : Array)

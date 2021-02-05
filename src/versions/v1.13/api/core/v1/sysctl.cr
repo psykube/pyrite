@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name of a property to set
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # Value of a property to set
-    @[JSON::Field(key: "value")]
-    @[YAML::Field(key: "value")]
+    @[::JSON::Field(key: "value")]
+    @[::YAML::Field(key: "value")]
     property value : String
 
     def initialize(*, @name : String, @value : String)

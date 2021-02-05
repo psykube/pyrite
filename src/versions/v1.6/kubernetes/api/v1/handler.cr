@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # One and only one of the following should be specified. Exec specifies the action to take.
-    @[JSON::Field(key: "exec")]
-    @[YAML::Field(key: "exec")]
+    @[::JSON::Field(key: "exec")]
+    @[::YAML::Field(key: "exec")]
     property exec : Kubernetes::Api::V1::ExecAction | Nil
 
     # HTTPGet specifies the http request to perform.
-    @[JSON::Field(key: "httpGet")]
-    @[YAML::Field(key: "httpGet")]
+    @[::JSON::Field(key: "httpGet")]
+    @[::YAML::Field(key: "httpGet")]
     property http_get : Kubernetes::Api::V1::HTTPGetAction | Nil
 
     # TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
-    @[JSON::Field(key: "tcpSocket")]
-    @[YAML::Field(key: "tcpSocket")]
+    @[::JSON::Field(key: "tcpSocket")]
+    @[::YAML::Field(key: "tcpSocket")]
     property tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil
 
     def initialize(*, @exec : Kubernetes::Api::V1::ExecAction | Nil = nil, @http_get : Kubernetes::Api::V1::HTTPGetAction | Nil = nil, @tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil = nil)

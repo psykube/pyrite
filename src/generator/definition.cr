@@ -296,8 +296,8 @@ class Generator::Definition
     file.puts ""
 
     if is_resource?
-      file.puts "@[JSON::Field(key: \"apiVersion\")]"
-      file.puts "@[YAML::Field(key: \"apiVersion\")]"
+      file.puts "@[::JSON::Field(key: \"apiVersion\")]"
+      file.puts "@[::YAML::Field(key: \"apiVersion\")]"
       file.puts "# The API and version we are accessing."
       file.puts "getter api_version : String = #{api_version_name.inspect}"
       file.puts ""
@@ -317,8 +317,8 @@ class Generator::Definition
       # Print property descriptions
       generate_description property.description
 
-      file.puts "@[JSON::Field(key: #{name.inspect})]"
-      file.puts "@[YAML::Field(key: #{name.inspect})]"
+      file.puts "@[::JSON::Field(key: #{name.inspect})]"
+      file.puts "@[::YAML::Field(key: #{name.inspect})]"
       file.puts "property #{crystal_name} : #{convert_type(property, required.includes?(name))}"
       file.puts ""
     end

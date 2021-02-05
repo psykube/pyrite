@@ -9,25 +9,25 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "authentication/v1beta1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "TokenReview"
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Spec holds information about the request being evaluated
-    @[JSON::Field(key: "spec")]
-    @[YAML::Field(key: "spec")]
+    @[::JSON::Field(key: "spec")]
+    @[::YAML::Field(key: "spec")]
     property spec : Api::Authentication::V1beta1::TokenReviewSpec
 
     # Status is filled in by the server and indicates whether the request can be authenticated.
-    @[JSON::Field(key: "status")]
-    @[YAML::Field(key: "status")]
+    @[::JSON::Field(key: "status")]
+    @[::YAML::Field(key: "status")]
     property status : Api::Authentication::V1beta1::TokenReviewStatus | Nil
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Authentication::V1beta1::TokenReviewSpec, @status : Api::Authentication::V1beta1::TokenReviewStatus | Nil = nil)

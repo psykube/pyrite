@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Number of occurrences in this series up to the last heartbeat time
-    @[JSON::Field(key: "count")]
-    @[YAML::Field(key: "count")]
+    @[::JSON::Field(key: "count")]
+    @[::YAML::Field(key: "count")]
     property count : Int32
 
     # Time when last Event from the series was seen before last heartbeat.
-    @[JSON::Field(key: "lastObservedTime")]
-    @[YAML::Field(key: "lastObservedTime")]
+    @[::JSON::Field(key: "lastObservedTime")]
+    @[::YAML::Field(key: "lastObservedTime")]
     property last_observed_time : Time
 
     # Information whether this series is ongoing or finished. Deprecated. Planned removal for 1.18
-    @[JSON::Field(key: "state")]
-    @[YAML::Field(key: "state")]
+    @[::JSON::Field(key: "state")]
+    @[::YAML::Field(key: "state")]
     property state : String
 
     def initialize(*, @count : Int32, @last_observed_time : Time, @state : String)

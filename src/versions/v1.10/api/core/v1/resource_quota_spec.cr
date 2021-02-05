@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Hard is the set of desired hard limits for each named resource. More info: [https://kubernetes.io/docs/concepts/policy/resource-quotas/](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
-    @[JSON::Field(key: "hard")]
-    @[YAML::Field(key: "hard")]
+    @[::JSON::Field(key: "hard")]
+    @[::YAML::Field(key: "hard")]
     property hard : Hash(String, String) | Nil
 
     # A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
-    @[JSON::Field(key: "scopes")]
-    @[YAML::Field(key: "scopes")]
+    @[::JSON::Field(key: "scopes")]
+    @[::YAML::Field(key: "scopes")]
     property scopes : Array(String) | Nil
 
     def initialize(*, @hard : Hash(String, String) | Nil = nil, @scopes : Array | Nil = nil)

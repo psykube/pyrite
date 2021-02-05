@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # clientIP contains the configurations of Client IP based session affinity.
-    @[JSON::Field(key: "clientIP")]
-    @[YAML::Field(key: "clientIP")]
+    @[::JSON::Field(key: "clientIP")]
+    @[::YAML::Field(key: "clientIP")]
     property client_ip : Api::Core::V1::ClientIPConfig | Nil
 
     def initialize(*, @client_ip : Api::Core::V1::ClientIPConfig | Nil = nil)

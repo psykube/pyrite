@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # metricName is the name of the metric in question
-    @[JSON::Field(key: "metricName")]
-    @[YAML::Field(key: "metricName")]
+    @[::JSON::Field(key: "metricName")]
+    @[::YAML::Field(key: "metricName")]
     property metric_name : String
 
     # targetAverageValue is the target value of the average of the metric across all relevant pods (as a quantity)
-    @[JSON::Field(key: "targetAverageValue")]
-    @[YAML::Field(key: "targetAverageValue")]
+    @[::JSON::Field(key: "targetAverageValue")]
+    @[::YAML::Field(key: "targetAverageValue")]
     property target_average_value : Int32
 
     def initialize(*, @metric_name : String, @target_average_value : Int32)

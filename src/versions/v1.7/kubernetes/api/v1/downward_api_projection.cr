@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Items is a list of DownwardAPIVolume file
-    @[JSON::Field(key: "items")]
-    @[YAML::Field(key: "items")]
+    @[::JSON::Field(key: "items")]
+    @[::YAML::Field(key: "items")]
     property items : Array(Kubernetes::Api::V1::DownwardAPIVolumeFile) | Nil
 
     def initialize(*, @items : Array | Nil = nil)

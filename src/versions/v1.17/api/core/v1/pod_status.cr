@@ -10,38 +10,38 @@ module Pyrite
     include ::YAML::Serializable
 
     # Current service state of pod. More info: [https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions)
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Api::Core::V1::PodCondition) | Nil
 
     # The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: [https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status)
-    @[JSON::Field(key: "containerStatuses")]
-    @[YAML::Field(key: "containerStatuses")]
+    @[::JSON::Field(key: "containerStatuses")]
+    @[::YAML::Field(key: "containerStatuses")]
     property container_statuses : Array(Api::Core::V1::ContainerStatus) | Nil
 
     # Status for any ephemeral containers that have run in this pod. This field is alpha-level and is only populated by servers that enable the EphemeralContainers feature.
-    @[JSON::Field(key: "ephemeralContainerStatuses")]
-    @[YAML::Field(key: "ephemeralContainerStatuses")]
+    @[::JSON::Field(key: "ephemeralContainerStatuses")]
+    @[::YAML::Field(key: "ephemeralContainerStatuses")]
     property ephemeral_container_statuses : Array(Api::Core::V1::ContainerStatus) | Nil
 
     # IP address of the host to which the pod is assigned. Empty if not yet scheduled.
-    @[JSON::Field(key: "hostIP")]
-    @[YAML::Field(key: "hostIP")]
+    @[::JSON::Field(key: "hostIP")]
+    @[::YAML::Field(key: "hostIP")]
     property host_ip : String | Nil
 
     # The list has one entry per init container in the manifest. The most recent successful init container will have ready = true, the most recently started container will have startTime set. More info: [https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status)
-    @[JSON::Field(key: "initContainerStatuses")]
-    @[YAML::Field(key: "initContainerStatuses")]
+    @[::JSON::Field(key: "initContainerStatuses")]
+    @[::YAML::Field(key: "initContainerStatuses")]
     property init_container_statuses : Array(Api::Core::V1::ContainerStatus) | Nil
 
     # A human readable message indicating details about why the pod is in this condition.
-    @[JSON::Field(key: "message")]
-    @[YAML::Field(key: "message")]
+    @[::JSON::Field(key: "message")]
+    @[::YAML::Field(key: "message")]
     property message : String | Nil
 
     # nominatedNodeName is set only when this pod preempts other pods on the node, but it cannot be scheduled right away as preemption victims receive their graceful termination periods. This field does not guarantee that the pod will be scheduled on this node. Scheduler may decide to place the pod elsewhere if other nodes become available sooner. Scheduler may also decide to give the resources on this node to a higher priority pod that is created after preemption. As a result, this field may be different than PodSpec.nodeName when the pod is scheduled.
-    @[JSON::Field(key: "nominatedNodeName")]
-    @[YAML::Field(key: "nominatedNodeName")]
+    @[::JSON::Field(key: "nominatedNodeName")]
+    @[::YAML::Field(key: "nominatedNodeName")]
     property nominated_node_name : String | Nil
 
     # The phase of a Pod is a simple, high-level summary of where the Pod is in its lifecycle. The conditions array, the reason and message fields, and the individual container status arrays contain more detail about the pod's status. There are five possible phase values:
@@ -49,33 +49,33 @@ module Pyrite
     # Pending: The pod has been accepted by the Kubernetes system, but one or more of the container images has not been created. This includes time before being scheduled as well as time spent downloading images over the network, which could take a while. Running: The pod has been bound to a node, and all of the containers have been created. At least one container is still running, or is in the process of starting or restarting. Succeeded: All containers in the pod have terminated in success, and will not be restarted. Failed: All containers in the pod have terminated, and at least one container has terminated in failure. The container either exited with non-zero status or was terminated by the system. Unknown: For some reason the state of the pod could not be obtained, typically due to an error in communicating with the host of the pod.
     #
     # More info: [https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-phase)
-    @[JSON::Field(key: "phase")]
-    @[YAML::Field(key: "phase")]
+    @[::JSON::Field(key: "phase")]
+    @[::YAML::Field(key: "phase")]
     property phase : String | Nil
 
     # IP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.
-    @[JSON::Field(key: "podIP")]
-    @[YAML::Field(key: "podIP")]
+    @[::JSON::Field(key: "podIP")]
+    @[::YAML::Field(key: "podIP")]
     property pod_ip : String | Nil
 
     # podIPs holds the IP addresses allocated to the pod. If this field is specified, the 0th entry must match the podIP field. Pods may be allocated at most 1 value for each of IPv4 and IPv6. This list is empty if no IPs have been allocated yet.
-    @[JSON::Field(key: "podIPs")]
-    @[YAML::Field(key: "podIPs")]
+    @[::JSON::Field(key: "podIPs")]
+    @[::YAML::Field(key: "podIPs")]
     property pod_ips : Array(Api::Core::V1::PodIP) | Nil
 
     # The Quality of Service (QOS) classification assigned to the pod based on resource requirements See PodQOSClass type for available QOS classes More info: [https://git.k8s.io/community/contributors/design-proposals/node/resource-qos.md](https://git.k8s.io/community/contributors/design-proposals/node/resource-qos.md)
-    @[JSON::Field(key: "qosClass")]
-    @[YAML::Field(key: "qosClass")]
+    @[::JSON::Field(key: "qosClass")]
+    @[::YAML::Field(key: "qosClass")]
     property qos_class : String | Nil
 
     # A brief CamelCase message indicating details about why the pod is in this state. e.g. 'Evicted'
-    @[JSON::Field(key: "reason")]
-    @[YAML::Field(key: "reason")]
+    @[::JSON::Field(key: "reason")]
+    @[::YAML::Field(key: "reason")]
     property reason : String | Nil
 
     # RFC 3339 date and time at which the object was acknowledged by the Kubelet. This is before the Kubelet pulled the container image(s) for the pod.
-    @[JSON::Field(key: "startTime")]
-    @[YAML::Field(key: "startTime")]
+    @[::JSON::Field(key: "startTime")]
+    @[::YAML::Field(key: "startTime")]
     property start_time : Time | Nil
 
     def initialize(*, @conditions : Array | Nil = nil, @container_statuses : Array | Nil = nil, @ephemeral_container_statuses : Array | Nil = nil, @host_ip : String | Nil = nil, @init_container_statuses : Array | Nil = nil, @message : String | Nil = nil, @nominated_node_name : String | Nil = nil, @phase : String | Nil = nil, @pod_ip : String | Nil = nil, @pod_ips : Array | Nil = nil, @qos_class : String | Nil = nil, @reason : String | Nil = nil, @start_time : Time | Nil = nil)

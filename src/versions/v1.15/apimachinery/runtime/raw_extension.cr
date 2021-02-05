@@ -37,8 +37,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Raw is the underlying serialization of this object.
-    @[JSON::Field(key: "Raw")]
-    @[YAML::Field(key: "Raw")]
+    @[::JSON::Field(key: "Raw")]
+    @[::YAML::Field(key: "Raw")]
     property raw : String
 
     def initialize(*, @raw : String)

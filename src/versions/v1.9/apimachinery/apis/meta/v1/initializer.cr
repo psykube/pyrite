@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # name of the process that is responsible for initializing this object.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @name : String)

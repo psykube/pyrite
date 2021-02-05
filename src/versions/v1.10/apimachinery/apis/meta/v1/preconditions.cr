@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Specifies the target UID.
-    @[JSON::Field(key: "uid")]
-    @[YAML::Field(key: "uid")]
+    @[::JSON::Field(key: "uid")]
+    @[::YAML::Field(key: "uid")]
     property uid : String | Nil
 
     def initialize(*, @uid : String | Nil = nil)

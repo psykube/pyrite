@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: [http://kubernetes.io/docs/user-guide/volumes#emptydir](http://kubernetes.io/docs/user-guide/volumes#emptydir)
-    @[JSON::Field(key: "medium")]
-    @[YAML::Field(key: "medium")]
+    @[::JSON::Field(key: "medium")]
+    @[::YAML::Field(key: "medium")]
     property medium : String | Nil
 
     def initialize(*, @medium : String | Nil = nil)

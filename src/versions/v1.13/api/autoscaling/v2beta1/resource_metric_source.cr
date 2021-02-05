@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # name is the name of the resource in question.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # targetAverageUtilization is the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods.
-    @[JSON::Field(key: "targetAverageUtilization")]
-    @[YAML::Field(key: "targetAverageUtilization")]
+    @[::JSON::Field(key: "targetAverageUtilization")]
+    @[::YAML::Field(key: "targetAverageUtilization")]
     property target_average_utilization : Int32 | Nil
 
     # targetAverageValue is the target value of the average of the resource metric across all relevant pods, as a raw value (instead of as a percentage of the request), similar to the "pods" metric source type.
-    @[JSON::Field(key: "targetAverageValue")]
-    @[YAML::Field(key: "targetAverageValue")]
+    @[::JSON::Field(key: "targetAverageValue")]
+    @[::YAML::Field(key: "targetAverageValue")]
     property target_average_value : Int32 | Nil
 
     def initialize(*, @name : String, @target_average_utilization : Int32 | Nil = nil, @target_average_value : Int32 | Nil = nil)

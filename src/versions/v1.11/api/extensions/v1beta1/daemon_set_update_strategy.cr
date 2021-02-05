@@ -9,13 +9,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Rolling update config params. Present only if type = "RollingUpdate".
-    @[JSON::Field(key: "rollingUpdate")]
-    @[YAML::Field(key: "rollingUpdate")]
+    @[::JSON::Field(key: "rollingUpdate")]
+    @[::YAML::Field(key: "rollingUpdate")]
     property rolling_update : Api::Extensions::V1beta1::RollingUpdateDaemonSet | Nil
 
     # Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is OnDelete.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String | Nil
 
     def initialize(*, @rolling_update : Api::Extensions::V1beta1::RollingUpdateDaemonSet | Nil = nil, @type : String | Nil = nil)

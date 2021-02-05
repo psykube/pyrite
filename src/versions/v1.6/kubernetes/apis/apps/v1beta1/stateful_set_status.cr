@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # most recent generation observed by this StatefulSet.
-    @[JSON::Field(key: "observedGeneration")]
-    @[YAML::Field(key: "observedGeneration")]
+    @[::JSON::Field(key: "observedGeneration")]
+    @[::YAML::Field(key: "observedGeneration")]
     property observed_generation : Int32 | Nil
 
     # Replicas is the number of actual replicas.
-    @[JSON::Field(key: "replicas")]
-    @[YAML::Field(key: "replicas")]
+    @[::JSON::Field(key: "replicas")]
+    @[::YAML::Field(key: "replicas")]
     property replicas : Int32
 
     def initialize(*, @observed_generation : Int32 | Nil = nil, @replicas : Int32)

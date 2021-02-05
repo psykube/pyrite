@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # A collection of paths that map requests to backends.
-    @[JSON::Field(key: "paths")]
-    @[YAML::Field(key: "paths")]
+    @[::JSON::Field(key: "paths")]
+    @[::YAML::Field(key: "paths")]
     property paths : Array(Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath)
 
     def initialize(*, @paths : Array)

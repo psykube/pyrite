@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # LoadBalancer contains the current status of the load-balancer, if one is present.
-    @[JSON::Field(key: "loadBalancer")]
-    @[YAML::Field(key: "loadBalancer")]
+    @[::JSON::Field(key: "loadBalancer")]
+    @[::YAML::Field(key: "loadBalancer")]
     property load_balancer : Api::Core::V1::LoadBalancerStatus | Nil
 
     def initialize(*, @load_balancer : Api::Core::V1::LoadBalancerStatus | Nil = nil)

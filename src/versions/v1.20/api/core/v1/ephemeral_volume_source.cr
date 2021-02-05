@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Specifies a read-only configuration for the volume. Defaults to false [(read/write).]((read/write).)
-    @[JSON::Field(key: "readOnly")]
-    @[YAML::Field(key: "readOnly")]
+    @[::JSON::Field(key: "readOnly")]
+    @[::YAML::Field(key: "readOnly")]
     property read_only : Bool | Nil
 
     # Will be used to create a stand-alone PVC to provision the volume. The pod in which this EphemeralVolumeSource is embedded will be the owner of the PVC, i.e. the PVC will be deleted together with the pod.  The name of the PVC will be `<pod name>-<volume name>` where `<volume name>` is the name from the `PodSpec.Volumes` array entry. Pod validation will reject the pod if the concatenated name is not valid for a PVC (for example, too long).
@@ -21,8 +21,8 @@ module Pyrite
     # This field is read-only and no changes will be made by Kubernetes to the PVC after it has been created.
     #
     # Required, must not be nil.
-    @[JSON::Field(key: "volumeClaimTemplate")]
-    @[YAML::Field(key: "volumeClaimTemplate")]
+    @[::JSON::Field(key: "volumeClaimTemplate")]
+    @[::YAML::Field(key: "volumeClaimTemplate")]
     property volume_claim_template : Api::Core::V1::PersistentVolumeClaimTemplate | Nil
 
     def initialize(*, @read_only : Bool | Nil = nil, @volume_claim_template : Api::Core::V1::PersistentVolumeClaimTemplate | Nil = nil)

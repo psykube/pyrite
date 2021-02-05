@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # ClientConfig holds the connection parameters for the webhook required
-    @[JSON::Field(key: "clientConfig")]
-    @[YAML::Field(key: "clientConfig")]
+    @[::JSON::Field(key: "clientConfig")]
+    @[::YAML::Field(key: "clientConfig")]
     property client_config : Api::Auditregistration::V1alpha1::WebhookClientConfig
 
     # Throttle holds the options for throttling the webhook
-    @[JSON::Field(key: "throttle")]
-    @[YAML::Field(key: "throttle")]
+    @[::JSON::Field(key: "throttle")]
+    @[::YAML::Field(key: "throttle")]
     property throttle : Api::Auditregistration::V1alpha1::WebhookThrottleConfig | Nil
 
     def initialize(*, @client_config : Api::Auditregistration::V1alpha1::WebhookClientConfig, @throttle : Api::Auditregistration::V1alpha1::WebhookThrottleConfig | Nil = nil)

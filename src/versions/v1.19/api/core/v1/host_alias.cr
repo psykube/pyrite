@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Hostnames for the above IP address.
-    @[JSON::Field(key: "hostnames")]
-    @[YAML::Field(key: "hostnames")]
+    @[::JSON::Field(key: "hostnames")]
+    @[::YAML::Field(key: "hostnames")]
     property hostnames : Array(String) | Nil
 
     # IP address of the host file entry.
-    @[JSON::Field(key: "ip")]
-    @[YAML::Field(key: "ip")]
+    @[::JSON::Field(key: "ip")]
+    @[::YAML::Field(key: "ip")]
     property ip : String | Nil
 
     def initialize(*, @hostnames : Array | Nil = nil, @ip : String | Nil = nil)

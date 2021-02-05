@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Endpoint on which Kubelet is listening.
-    @[JSON::Field(key: "kubeletEndpoint")]
-    @[YAML::Field(key: "kubeletEndpoint")]
+    @[::JSON::Field(key: "kubeletEndpoint")]
+    @[::YAML::Field(key: "kubeletEndpoint")]
     property kubelet_endpoint : Kubernetes::Api::V1::DaemonEndpoint | Nil
 
     def initialize(*, @kubelet_endpoint : Kubernetes::Api::V1::DaemonEndpoint | Nil = nil)

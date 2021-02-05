@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # currentAverageValue is the current value of the average of the metric across all relevant pods (as a quantity)
-    @[JSON::Field(key: "currentAverageValue")]
-    @[YAML::Field(key: "currentAverageValue")]
+    @[::JSON::Field(key: "currentAverageValue")]
+    @[::YAML::Field(key: "currentAverageValue")]
     property current_average_value : Int32
 
     # metricName is the name of the metric in question
-    @[JSON::Field(key: "metricName")]
-    @[YAML::Field(key: "metricName")]
+    @[::JSON::Field(key: "metricName")]
+    @[::YAML::Field(key: "metricName")]
     property metric_name : String
 
     def initialize(*, @current_average_value : Int32, @metric_name : String)

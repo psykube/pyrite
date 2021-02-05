@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-    @[JSON::Field(key: "fsType")]
-    @[YAML::Field(key: "fsType")]
+    @[::JSON::Field(key: "fsType")]
+    @[::YAML::Field(key: "fsType")]
     property fs_type : String | Nil
 
     # Path that identifies vSphere volume vmdk
-    @[JSON::Field(key: "volumePath")]
-    @[YAML::Field(key: "volumePath")]
+    @[::JSON::Field(key: "volumePath")]
+    @[::YAML::Field(key: "volumePath")]
     property volume_path : String
 
     def initialize(*, @fs_type : String | Nil = nil, @volume_path : String)

@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name of the persistent volume to attach.
-    @[JSON::Field(key: "persistentVolumeName")]
-    @[YAML::Field(key: "persistentVolumeName")]
+    @[::JSON::Field(key: "persistentVolumeName")]
+    @[::YAML::Field(key: "persistentVolumeName")]
     property persistent_volume_name : String | Nil
 
     def initialize(*, @persistent_volume_name : String | Nil = nil)

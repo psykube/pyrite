@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Container name: required for volumes, optional for env vars
-    @[JSON::Field(key: "containerName")]
-    @[YAML::Field(key: "containerName")]
+    @[::JSON::Field(key: "containerName")]
+    @[::YAML::Field(key: "containerName")]
     property container_name : String | Nil
 
     # Specifies the output format of the exposed resources, defaults to "1"
-    @[JSON::Field(key: "divisor")]
-    @[YAML::Field(key: "divisor")]
+    @[::JSON::Field(key: "divisor")]
+    @[::YAML::Field(key: "divisor")]
     property divisor : Int32 | Nil
 
     # Required: resource to select
-    @[JSON::Field(key: "resource")]
-    @[YAML::Field(key: "resource")]
+    @[::JSON::Field(key: "resource")]
+    @[::YAML::Field(key: "resource")]
     property resource : String
 
     def initialize(*, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil, @resource : String)

@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # max is the end of the range, inclusive.
-    @[JSON::Field(key: "max")]
-    @[YAML::Field(key: "max")]
+    @[::JSON::Field(key: "max")]
+    @[::YAML::Field(key: "max")]
     property max : Int32
 
     # min is the start of the range, inclusive.
-    @[JSON::Field(key: "min")]
-    @[YAML::Field(key: "min")]
+    @[::JSON::Field(key: "min")]
+    @[::YAML::Field(key: "min")]
     property min : Int32
 
     def initialize(*, @max : Int32, @min : Int32)

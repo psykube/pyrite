@@ -9,31 +9,31 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "scheduling/v1alpha1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "PriorityClass"
     # description is an arbitrary string that usually provides guidelines on when this priority class should be used.
-    @[JSON::Field(key: "description")]
-    @[YAML::Field(key: "description")]
+    @[::JSON::Field(key: "description")]
+    @[::YAML::Field(key: "description")]
     property description : String | Nil
 
     # globalDefault specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class.
-    @[JSON::Field(key: "globalDefault")]
-    @[YAML::Field(key: "globalDefault")]
+    @[::JSON::Field(key: "globalDefault")]
+    @[::YAML::Field(key: "globalDefault")]
     property global_default : Bool | Nil
 
     # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
-    @[JSON::Field(key: "value")]
-    @[YAML::Field(key: "value")]
+    @[::JSON::Field(key: "value")]
+    @[::YAML::Field(key: "value")]
     property value : Int32
 
     def initialize(*, @description : String | Nil = nil, @global_default : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @value : Int32)

@@ -10,23 +10,23 @@ module Pyrite
     include ::YAML::Serializable
 
     # object refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object).
-    @[JSON::Field(key: "object")]
-    @[YAML::Field(key: "object")]
+    @[::JSON::Field(key: "object")]
+    @[::YAML::Field(key: "object")]
     property object : Api::Autoscaling::V2beta1::ObjectMetricStatus | Nil
 
     # pods refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second).  The values will be averaged together before being compared to the target value.
-    @[JSON::Field(key: "pods")]
-    @[YAML::Field(key: "pods")]
+    @[::JSON::Field(key: "pods")]
+    @[::YAML::Field(key: "pods")]
     property pods : Api::Autoscaling::V2beta1::PodsMetricStatus | Nil
 
     # resource refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.
-    @[JSON::Field(key: "resource")]
-    @[YAML::Field(key: "resource")]
+    @[::JSON::Field(key: "resource")]
+    @[::YAML::Field(key: "resource")]
     property resource : Api::Autoscaling::V2beta1::ResourceMetricStatus | Nil
 
     # type is the type of metric source.  It will match one of the fields below.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String
 
     def initialize(*, @object : Api::Autoscaling::V2beta1::ObjectMetricStatus | Nil = nil, @pods : Api::Autoscaling::V2beta1::PodsMetricStatus | Nil = nil, @resource : Api::Autoscaling::V2beta1::ResourceMetricStatus | Nil = nil, @type : String)

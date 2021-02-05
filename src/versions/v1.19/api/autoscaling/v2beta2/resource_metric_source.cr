@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # name is the name of the resource in question.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # target specifies the target value for the given metric
-    @[JSON::Field(key: "target")]
-    @[YAML::Field(key: "target")]
+    @[::JSON::Field(key: "target")]
+    @[::YAML::Field(key: "target")]
     property target : Api::Autoscaling::V2beta2::MetricTarget
 
     def initialize(*, @name : String, @target : Api::Autoscaling::V2beta2::MetricTarget)

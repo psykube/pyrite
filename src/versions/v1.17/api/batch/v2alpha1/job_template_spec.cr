@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Standard object's metadata of the jobs created from this template. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Specification of the desired behavior of the job. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status)
-    @[JSON::Field(key: "spec")]
-    @[YAML::Field(key: "spec")]
+    @[::JSON::Field(key: "spec")]
+    @[::YAML::Field(key: "spec")]
     property spec : Api::Batch::V1::JobSpec | Nil
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Batch::V1::JobSpec | Nil = nil)

@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name of this version (e.g. 'v1').
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String | Nil
 
     def initialize(*, @name : String | Nil = nil)

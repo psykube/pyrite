@@ -9,12 +9,12 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "Allows")]
-    @[YAML::Field(key: "Allows")]
+    @[::JSON::Field(key: "Allows")]
+    @[::YAML::Field(key: "Allows")]
     property allows : Bool
 
-    @[JSON::Field(key: "Schema")]
-    @[YAML::Field(key: "Schema")]
+    @[::JSON::Field(key: "Schema")]
+    @[::YAML::Field(key: "Schema")]
     property schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps
 
     def initialize(*, @allows : Bool, @schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)

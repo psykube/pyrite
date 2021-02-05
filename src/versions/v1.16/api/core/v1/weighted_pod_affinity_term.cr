@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Required. A pod affinity term, associated with the corresponding weight.
-    @[JSON::Field(key: "podAffinityTerm")]
-    @[YAML::Field(key: "podAffinityTerm")]
+    @[::JSON::Field(key: "podAffinityTerm")]
+    @[::YAML::Field(key: "podAffinityTerm")]
     property pod_affinity_term : Api::Core::V1::PodAffinityTerm
 
     # weight associated with matching the corresponding podAffinityTerm, in the range 1-100.
-    @[JSON::Field(key: "weight")]
-    @[YAML::Field(key: "weight")]
+    @[::JSON::Field(key: "weight")]
+    @[::YAML::Field(key: "weight")]
     property weight : Int32
 
     def initialize(*, @pod_affinity_term : Api::Core::V1::PodAffinityTerm, @weight : Int32)

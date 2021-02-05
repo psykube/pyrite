@@ -9,8 +9,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # The revision to rollback to. If set to 0, rollbck to the last revision.
-    @[JSON::Field(key: "revision")]
-    @[YAML::Field(key: "revision")]
+    @[::JSON::Field(key: "revision")]
+    @[::YAML::Field(key: "revision")]
     property revision : Int32 | Nil
 
     def initialize(*, @revision : Int32 | Nil = nil)

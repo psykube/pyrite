@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # timeoutSeconds specifies the seconds of ClientIP type session sticky time. The value must be >0 && <=86400(for 1 day) if ServiceAffinity == "ClientIP". Default value is 10800(for 3 hours).
-    @[JSON::Field(key: "timeoutSeconds")]
-    @[YAML::Field(key: "timeoutSeconds")]
+    @[::JSON::Field(key: "timeoutSeconds")]
+    @[::YAML::Field(key: "timeoutSeconds")]
     property timeout_seconds : Int32 | Nil
 
     def initialize(*, @timeout_seconds : Int32 | Nil = nil)

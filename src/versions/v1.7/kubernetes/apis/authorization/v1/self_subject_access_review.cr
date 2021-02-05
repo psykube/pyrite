@@ -9,25 +9,25 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "authorization/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "SelfSubjectAccessReview"
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Spec holds information about the request being evaluated.  user and groups must be empty
-    @[JSON::Field(key: "spec")]
-    @[YAML::Field(key: "spec")]
+    @[::JSON::Field(key: "spec")]
+    @[::YAML::Field(key: "spec")]
     property spec : Kubernetes::Apis::Authorization::V1::SelfSubjectAccessReviewSpec
 
     # Status is filled in by the server and indicates whether the request is allowed or not
-    @[JSON::Field(key: "status")]
-    @[YAML::Field(key: "status")]
+    @[::JSON::Field(key: "status")]
+    @[::YAML::Field(key: "status")]
     property status : Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus | Nil
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Authorization::V1::SelfSubjectAccessReviewSpec, @status : Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus | Nil = nil)

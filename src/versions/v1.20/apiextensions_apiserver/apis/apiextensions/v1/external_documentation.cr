@@ -9,12 +9,12 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "description")]
-    @[YAML::Field(key: "description")]
+    @[::JSON::Field(key: "description")]
+    @[::YAML::Field(key: "description")]
     property description : String | Nil
 
-    @[JSON::Field(key: "url")]
-    @[YAML::Field(key: "url")]
+    @[::JSON::Field(key: "url")]
+    @[::YAML::Field(key: "url")]
     property url : String | Nil
 
     def initialize(*, @description : String | Nil = nil, @url : String | Nil = nil)

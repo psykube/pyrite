@@ -11,26 +11,26 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "storage/v1beta1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "StorageClass"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Parameters holds the parameters for the provisioner that should create volumes of this storage class.
-    @[JSON::Field(key: "parameters")]
-    @[YAML::Field(key: "parameters")]
+    @[::JSON::Field(key: "parameters")]
+    @[::YAML::Field(key: "parameters")]
     property parameters : Hash(String, String) | Nil
 
     # Provisioner indicates the type of the provisioner.
-    @[JSON::Field(key: "provisioner")]
-    @[YAML::Field(key: "provisioner")]
+    @[::JSON::Field(key: "provisioner")]
+    @[::YAML::Field(key: "provisioner")]
     property provisioner : String
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String)

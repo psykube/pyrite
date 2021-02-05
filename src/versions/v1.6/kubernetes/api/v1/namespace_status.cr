@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Phase is the current lifecycle phase of the namespace. More info: [http://releases.k8s.io/HEAD/docs/design/namespaces.md#phases](http://releases.k8s.io/HEAD/docs/design/namespaces.md#phases)
-    @[JSON::Field(key: "phase")]
-    @[YAML::Field(key: "phase")]
+    @[::JSON::Field(key: "phase")]
+    @[::YAML::Field(key: "phase")]
     property phase : String | Nil
 
     def initialize(*, @phase : String | Nil = nil)

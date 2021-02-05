@@ -10,23 +10,23 @@ module Pyrite
     include ::YAML::Serializable
 
     # AdmissionReviewVersions is an ordered list of preferred `AdmissionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, validation will fail for this object. If a persisted webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail and be subject to the failure policy. Default to `['v1beta1']`.
-    @[JSON::Field(key: "admissionReviewVersions")]
-    @[YAML::Field(key: "admissionReviewVersions")]
+    @[::JSON::Field(key: "admissionReviewVersions")]
+    @[::YAML::Field(key: "admissionReviewVersions")]
     property admission_review_versions : Array(String) | Nil
 
     # ClientConfig defines how to communicate with the hook. Required
-    @[JSON::Field(key: "clientConfig")]
-    @[YAML::Field(key: "clientConfig")]
+    @[::JSON::Field(key: "clientConfig")]
+    @[::YAML::Field(key: "clientConfig")]
     property client_config : Api::Admissionregistration::V1beta1::WebhookClientConfig
 
     # FailurePolicy defines how unrecognized errors from the admission endpoint are handled - allowed values are Ignore or Fail. Defaults to Ignore.
-    @[JSON::Field(key: "failurePolicy")]
-    @[YAML::Field(key: "failurePolicy")]
+    @[::JSON::Field(key: "failurePolicy")]
+    @[::YAML::Field(key: "failurePolicy")]
     property failure_policy : String | Nil
 
     # The name of the admission webhook. Name should be fully qualified, e.g., imagepolicy.kubernetes.io, where "imagepolicy" is the name of the webhook, and kubernetes.io is the name of the organization. Required.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # NamespaceSelector decides whether to run the webhook on an object based on whether the namespace for that object matches the selector. If the object itself is a namespace, the matching is performed on object.metadata.labels. If the object is another cluster scoped resource, it never skips the webhook.
@@ -60,23 +60,23 @@ module Pyrite
     # See [https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/ for more examples of label selectors.](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/ for more examples of label selectors.)
     #
     # Default to the empty LabelSelector, which matches everything.
-    @[JSON::Field(key: "namespaceSelector")]
-    @[YAML::Field(key: "namespaceSelector")]
+    @[::JSON::Field(key: "namespaceSelector")]
+    @[::YAML::Field(key: "namespaceSelector")]
     property namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
     # Rules describes what operations on what [resources/subresources the webhook cares about. The webhook cares about an operation if it matches _any_ Rule. However, in order to prevent ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks from putting the cluster in a state which cannot be recovered from without completely disabling the plugin, ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks are never called on admission requests for ValidatingWebhookConfiguration and MutatingWebhookConfiguration objects.](resources/subresources the webhook cares about. The webhook cares about an operation if it matches _any_ Rule. However, in order to prevent ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks from putting the cluster in a state which cannot be recovered from without completely disabling the plugin, ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks are never called on admission requests for ValidatingWebhookConfiguration and MutatingWebhookConfiguration objects.)
-    @[JSON::Field(key: "rules")]
-    @[YAML::Field(key: "rules")]
+    @[::JSON::Field(key: "rules")]
+    @[::YAML::Field(key: "rules")]
     property rules : Array(Api::Admissionregistration::V1beta1::RuleWithOperations) | Nil
 
     # SideEffects states whether this webhookk has side effects. Acceptable values are: Unknown, None, Some, NoneOnDryRun Webhooks with side effects MUST implement a reconciliation system, since a request may be rejected by a future step in the admission change and the side effects therefore need to be undone. Requests with the dryRun attribute will be auto-rejected if they match a webhook with sideEffects == Unknown or Some. Defaults to Unknown.
-    @[JSON::Field(key: "sideEffects")]
-    @[YAML::Field(key: "sideEffects")]
+    @[::JSON::Field(key: "sideEffects")]
+    @[::YAML::Field(key: "sideEffects")]
     property side_effects : String | Nil
 
     # TimeoutSeconds specifies the timeout for this webhook. After the timeout passes, the webhook call will be ignored or the API call will fail based on the failure policy. The timeout value must be between 1 and 30 seconds. Default to 30 seconds.
-    @[JSON::Field(key: "timeoutSeconds")]
-    @[YAML::Field(key: "timeoutSeconds")]
+    @[::JSON::Field(key: "timeoutSeconds")]
+    @[::YAML::Field(key: "timeoutSeconds")]
     property timeout_seconds : Int32 | Nil
 
     def initialize(*, @admission_review_versions : Array | Nil = nil, @client_config : Api::Admissionregistration::V1beta1::WebhookClientConfig, @failure_policy : String | Nil = nil, @name : String, @namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @rules : Array | Nil = nil, @side_effects : String | Nil = nil, @timeout_seconds : Int32 | Nil = nil)

@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # The name of this port.  This must match the 'name' field in the corresponding ServicePort. Must be a DNS_LABEL. Optional only if one port is defined.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String | Nil
 
     # The port number of the endpoint.
-    @[JSON::Field(key: "port")]
-    @[YAML::Field(key: "port")]
+    @[::JSON::Field(key: "port")]
+    @[::YAML::Field(key: "port")]
     property port : Int32
 
     # The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
-    @[JSON::Field(key: "protocol")]
-    @[YAML::Field(key: "protocol")]
+    @[::JSON::Field(key: "protocol")]
+    @[::YAML::Field(key: "protocol")]
     property protocol : String | Nil
 
     def initialize(*, @name : String | Nil = nil, @port : Int32, @protocol : String | Nil = nil)

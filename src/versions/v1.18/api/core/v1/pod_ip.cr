@@ -11,8 +11,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # ip is an IP address (IPv4 or IPv6) assigned to the pod
-    @[JSON::Field(key: "ip")]
-    @[YAML::Field(key: "ip")]
+    @[::JSON::Field(key: "ip")]
+    @[::YAML::Field(key: "ip")]
     property ip : String | Nil
 
     def initialize(*, @ip : String | Nil = nil)

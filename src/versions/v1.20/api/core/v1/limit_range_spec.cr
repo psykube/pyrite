@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Limits is the list of LimitRangeItem objects that are enforced.
-    @[JSON::Field(key: "limits")]
-    @[YAML::Field(key: "limits")]
+    @[::JSON::Field(key: "limits")]
+    @[::YAML::Field(key: "limits")]
     property limits : Array(Api::Core::V1::LimitRangeItem)
 
     def initialize(*, @limits : Array)

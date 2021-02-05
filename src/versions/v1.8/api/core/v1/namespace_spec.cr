@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: [https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers](https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers)
-    @[JSON::Field(key: "finalizers")]
-    @[YAML::Field(key: "finalizers")]
+    @[::JSON::Field(key: "finalizers")]
+    @[::YAML::Field(key: "finalizers")]
     property finalizers : Array(String) | Nil
 
     def initialize(*, @finalizers : Array | Nil = nil)

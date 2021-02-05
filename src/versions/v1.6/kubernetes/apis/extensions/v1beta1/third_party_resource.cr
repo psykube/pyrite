@@ -9,26 +9,26 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "extensions/v1beta1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "ThirdPartyResource"
     # Description is the description of this object.
-    @[JSON::Field(key: "description")]
-    @[YAML::Field(key: "description")]
+    @[::JSON::Field(key: "description")]
+    @[::YAML::Field(key: "description")]
     property description : String | Nil
 
     # Standard object metadata
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Versions are versions for this third party object
-    @[JSON::Field(key: "versions")]
-    @[YAML::Field(key: "versions")]
+    @[::JSON::Field(key: "versions")]
+    @[::YAML::Field(key: "versions")]
     property versions : Array(Kubernetes::Apis::Extensions::V1beta1::APIVersion) | Nil
 
     def initialize(*, @description : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @versions : Array | Nil = nil)

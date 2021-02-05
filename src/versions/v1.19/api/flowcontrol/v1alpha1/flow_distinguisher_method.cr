@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # `type` is the type of flow distinguisher method The supported types are "ByUser" and "ByNamespace". Required.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String
 
     def initialize(*, @type : String)

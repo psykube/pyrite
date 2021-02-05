@@ -9,26 +9,26 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "apps/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "ControllerRevision"
     # Data is the serialized representation of the state.
-    @[JSON::Field(key: "data")]
-    @[YAML::Field(key: "data")]
+    @[::JSON::Field(key: "data")]
+    @[::YAML::Field(key: "data")]
     property data : Apimachinery::Runtime::RawExtension | Nil
 
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Revision indicates the revision of the state represented by Data.
-    @[JSON::Field(key: "revision")]
-    @[YAML::Field(key: "revision")]
+    @[::JSON::Field(key: "revision")]
+    @[::YAML::Field(key: "revision")]
     property revision : Int32
 
     def initialize(*, @data : Apimachinery::Runtime::RawExtension | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @revision : Int32)

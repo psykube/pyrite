@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name of the environment variable. Must be a C_IDENTIFIER.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to "".
-    @[JSON::Field(key: "value")]
-    @[YAML::Field(key: "value")]
+    @[::JSON::Field(key: "value")]
+    @[::YAML::Field(key: "value")]
     property value : String | Nil
 
     # Source for the environment variable's value. Cannot be used if value is not empty.
-    @[JSON::Field(key: "valueFrom")]
-    @[YAML::Field(key: "valueFrom")]
+    @[::JSON::Field(key: "valueFrom")]
+    @[::YAML::Field(key: "valueFrom")]
     property value_from : Kubernetes::Api::V1::EnvVarSource | Nil
 
     def initialize(*, @name : String, @value : String | Nil = nil, @value_from : Kubernetes::Api::V1::EnvVarSource | Nil = nil)

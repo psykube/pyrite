@@ -9,13 +9,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # If request was approved, the controller will place the issued certificate here.
-    @[JSON::Field(key: "certificate")]
-    @[YAML::Field(key: "certificate")]
+    @[::JSON::Field(key: "certificate")]
+    @[::YAML::Field(key: "certificate")]
     property certificate : String | Nil
 
     # Conditions applied to the request, such as approval or denial.
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequestCondition) | Nil
 
     def initialize(*, @certificate : String | Nil = nil, @conditions : Array | Nil = nil)

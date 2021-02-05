@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # currentAverageUtilization is the current value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods.  It will only be present if `targetAverageValue` was set in the corresponding metric specification.
-    @[JSON::Field(key: "currentAverageUtilization")]
-    @[YAML::Field(key: "currentAverageUtilization")]
+    @[::JSON::Field(key: "currentAverageUtilization")]
+    @[::YAML::Field(key: "currentAverageUtilization")]
     property current_average_utilization : Int32 | Nil
 
     # currentAverageValue is the the current value of the average of the resource metric across all relevant pods, as a raw value (instead of as a percentage of the request), similar to the "pods" metric source type. It will always be set, regardless of the corresponding metric specification.
-    @[JSON::Field(key: "currentAverageValue")]
-    @[YAML::Field(key: "currentAverageValue")]
+    @[::JSON::Field(key: "currentAverageValue")]
+    @[::YAML::Field(key: "currentAverageValue")]
     property current_average_value : Int32
 
     # name is the name of the resource in question.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @current_average_utilization : Int32 | Nil = nil, @current_average_value : Int32, @name : String)

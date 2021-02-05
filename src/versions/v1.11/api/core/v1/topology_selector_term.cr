@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # A list of topology selector requirements by labels.
-    @[JSON::Field(key: "matchLabelExpressions")]
-    @[YAML::Field(key: "matchLabelExpressions")]
+    @[::JSON::Field(key: "matchLabelExpressions")]
+    @[::YAML::Field(key: "matchLabelExpressions")]
     property match_label_expressions : Array(Api::Core::V1::TopologySelectorLabelRequirement) | Nil
 
     def initialize(*, @match_label_expressions : Array | Nil = nil)

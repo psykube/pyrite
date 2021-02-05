@@ -9,8 +9,8 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "Raw")]
-    @[YAML::Field(key: "Raw")]
+    @[::JSON::Field(key: "Raw")]
+    @[::YAML::Field(key: "Raw")]
     property raw : String
 
     def initialize(*, @raw : String)

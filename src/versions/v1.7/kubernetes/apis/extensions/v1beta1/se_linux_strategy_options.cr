@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # type is the strategy that will dictate the allowable labels that may be set.
-    @[JSON::Field(key: "rule")]
-    @[YAML::Field(key: "rule")]
+    @[::JSON::Field(key: "rule")]
+    @[::YAML::Field(key: "rule")]
     property rule : String
 
     # seLinuxOptions required to run as; required for MustRunAs More info: [https://git.k8s.io/community/contributors/design-proposals/security_context.md](https://git.k8s.io/community/contributors/design-proposals/security_context.md)
-    @[JSON::Field(key: "seLinuxOptions")]
-    @[YAML::Field(key: "seLinuxOptions")]
+    @[::JSON::Field(key: "seLinuxOptions")]
+    @[::YAML::Field(key: "seLinuxOptions")]
     property se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil
 
     def initialize(*, @rule : String, @se_linux_options : Kubernetes::Api::V1::SELinuxOptions | Nil = nil)

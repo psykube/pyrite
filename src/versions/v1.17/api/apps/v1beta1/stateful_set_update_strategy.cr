@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType.
-    @[JSON::Field(key: "rollingUpdate")]
-    @[YAML::Field(key: "rollingUpdate")]
+    @[::JSON::Field(key: "rollingUpdate")]
+    @[::YAML::Field(key: "rollingUpdate")]
     property rolling_update : Api::Apps::V1beta1::RollingUpdateStatefulSetStrategy | Nil
 
     # Type indicates the type of the StatefulSetUpdateStrategy.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String | Nil
 
     def initialize(*, @rolling_update : Api::Apps::V1beta1::RollingUpdateStatefulSetStrategy | Nil = nil, @type : String | Nil = nil)

@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Component from which the event is generated.
-    @[JSON::Field(key: "component")]
-    @[YAML::Field(key: "component")]
+    @[::JSON::Field(key: "component")]
+    @[::YAML::Field(key: "component")]
     property component : String | Nil
 
     # Node name on which the event is generated.
-    @[JSON::Field(key: "host")]
-    @[YAML::Field(key: "host")]
+    @[::JSON::Field(key: "host")]
+    @[::YAML::Field(key: "host")]
     property host : String | Nil
 
     def initialize(*, @component : String | Nil = nil, @host : String | Nil = nil)

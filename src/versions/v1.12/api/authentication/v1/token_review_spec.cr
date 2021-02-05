@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Token is the opaque bearer token.
-    @[JSON::Field(key: "token")]
-    @[YAML::Field(key: "token")]
+    @[::JSON::Field(key: "token")]
+    @[::YAML::Field(key: "token")]
     property token : String | Nil
 
     def initialize(*, @token : String | Nil = nil)

@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Details about a running container
-    @[JSON::Field(key: "running")]
-    @[YAML::Field(key: "running")]
+    @[::JSON::Field(key: "running")]
+    @[::YAML::Field(key: "running")]
     property running : Kubernetes::Api::V1::ContainerStateRunning | Nil
 
     # Details about a terminated container
-    @[JSON::Field(key: "terminated")]
-    @[YAML::Field(key: "terminated")]
+    @[::JSON::Field(key: "terminated")]
+    @[::YAML::Field(key: "terminated")]
     property terminated : Kubernetes::Api::V1::ContainerStateTerminated | Nil
 
     # Details about a waiting container
-    @[JSON::Field(key: "waiting")]
-    @[YAML::Field(key: "waiting")]
+    @[::JSON::Field(key: "waiting")]
+    @[::YAML::Field(key: "waiting")]
     property waiting : Kubernetes::Api::V1::ContainerStateWaiting | Nil
 
     def initialize(*, @running : Kubernetes::Api::V1::ContainerStateRunning | Nil = nil, @terminated : Kubernetes::Api::V1::ContainerStateTerminated | Nil = nil, @waiting : Kubernetes::Api::V1::ContainerStateWaiting | Nil = nil)

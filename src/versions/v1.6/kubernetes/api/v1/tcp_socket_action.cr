@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
-    @[JSON::Field(key: "port")]
-    @[YAML::Field(key: "port")]
+    @[::JSON::Field(key: "port")]
+    @[::YAML::Field(key: "port")]
     property port : Int32 | String
 
     def initialize(*, @port : Int32 | String)

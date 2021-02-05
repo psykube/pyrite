@@ -9,21 +9,21 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "policy/v1beta1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "Eviction"
     # DeleteOptions may be provided
-    @[JSON::Field(key: "deleteOptions")]
-    @[YAML::Field(key: "deleteOptions")]
+    @[::JSON::Field(key: "deleteOptions")]
+    @[::YAML::Field(key: "deleteOptions")]
     property delete_options : Apimachinery::Apis::Meta::V1::DeleteOptions | Nil
 
     # ObjectMeta describes the pod that is being evicted.
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     def initialize(*, @delete_options : Apimachinery::Apis::Meta::V1::DeleteOptions | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)

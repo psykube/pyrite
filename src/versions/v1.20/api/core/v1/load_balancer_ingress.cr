@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
-    @[JSON::Field(key: "hostname")]
-    @[YAML::Field(key: "hostname")]
+    @[::JSON::Field(key: "hostname")]
+    @[::YAML::Field(key: "hostname")]
     property hostname : String | Nil
 
     # IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)
-    @[JSON::Field(key: "ip")]
-    @[YAML::Field(key: "ip")]
+    @[::JSON::Field(key: "ip")]
+    @[::YAML::Field(key: "ip")]
     property ip : String | Nil
 
     # Ports is a list of records of service ports If used, every port defined in the service should have an entry in it
-    @[JSON::Field(key: "ports")]
-    @[YAML::Field(key: "ports")]
+    @[::JSON::Field(key: "ports")]
+    @[::YAML::Field(key: "ports")]
     property ports : Array(Api::Core::V1::PortStatus) | Nil
 
     def initialize(*, @hostname : String | Nil = nil, @ip : String | Nil = nil, @ports : Array | Nil = nil)

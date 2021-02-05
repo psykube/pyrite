@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # The full path to the volume on the node For alpha, this path must be a directory Once block as a source is supported, then this path can point to a block device
-    @[JSON::Field(key: "path")]
-    @[YAML::Field(key: "path")]
+    @[::JSON::Field(key: "path")]
+    @[::YAML::Field(key: "path")]
     property path : String
 
     def initialize(*, @path : String)

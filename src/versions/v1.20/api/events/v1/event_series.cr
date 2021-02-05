@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # count is the number of occurrences in this series up to the last heartbeat time.
-    @[JSON::Field(key: "count")]
-    @[YAML::Field(key: "count")]
+    @[::JSON::Field(key: "count")]
+    @[::YAML::Field(key: "count")]
     property count : Int32
 
     # lastObservedTime is the time when last Event from the series was seen before last heartbeat.
-    @[JSON::Field(key: "lastObservedTime")]
-    @[YAML::Field(key: "lastObservedTime")]
+    @[::JSON::Field(key: "lastObservedTime")]
+    @[::YAML::Field(key: "lastObservedTime")]
     property last_observed_time : Time
 
     def initialize(*, @count : Int32, @last_observed_time : Time)

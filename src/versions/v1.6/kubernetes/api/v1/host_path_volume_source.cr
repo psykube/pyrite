@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Path of the directory on the host. More info: [http://kubernetes.io/docs/user-guide/volumes#hostpath](http://kubernetes.io/docs/user-guide/volumes#hostpath)
-    @[JSON::Field(key: "path")]
-    @[YAML::Field(key: "path")]
+    @[::JSON::Field(key: "path")]
+    @[::YAML::Field(key: "path")]
     property path : String
 
     def initialize(*, @path : String)

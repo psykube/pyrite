@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # IPBlock defines policy on a particular IPBlock
-    @[JSON::Field(key: "ipBlock")]
-    @[YAML::Field(key: "ipBlock")]
+    @[::JSON::Field(key: "ipBlock")]
+    @[::YAML::Field(key: "ipBlock")]
     property ip_block : Api::Extensions::V1beta1::IPBlock | Nil
 
     # Selects Namespaces using cluster scoped-labels.  This matches all pods in all namespaces selected by this label selector. This field follows standard label selector semantics. If present but empty, this selector selects all namespaces.
-    @[JSON::Field(key: "namespaceSelector")]
-    @[YAML::Field(key: "namespaceSelector")]
+    @[::JSON::Field(key: "namespaceSelector")]
+    @[::YAML::Field(key: "namespaceSelector")]
     property namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
     # This is a label selector which selects Pods in this namespace. This field follows standard label selector semantics. If present but empty, this selector selects all pods in this namespace.
-    @[JSON::Field(key: "podSelector")]
-    @[YAML::Field(key: "podSelector")]
+    @[::JSON::Field(key: "podSelector")]
+    @[::YAML::Field(key: "podSelector")]
     property pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
     def initialize(*, @ip_block : Api::Extensions::V1beta1::IPBlock | Nil = nil, @namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)

@@ -15,25 +15,25 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "certificates/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "CertificateSigningRequest"
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # spec contains the certificate request, and is immutable after creation. Only the request, signerName, and usages fields can be set on creation. Other fields are derived by Kubernetes and cannot be modified by users.
-    @[JSON::Field(key: "spec")]
-    @[YAML::Field(key: "spec")]
+    @[::JSON::Field(key: "spec")]
+    @[::YAML::Field(key: "spec")]
     property spec : Api::Certificates::V1::CertificateSigningRequestSpec
 
     # status contains information about whether the request is approved or denied, and the certificate issued by the signer, or the failure condition indicating signer failure.
-    @[JSON::Field(key: "status")]
-    @[YAML::Field(key: "status")]
+    @[::JSON::Field(key: "status")]
+    @[::YAML::Field(key: "status")]
     property status : Api::Certificates::V1::CertificateSigningRequestStatus | Nil
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Certificates::V1::CertificateSigningRequestSpec, @status : Api::Certificates::V1::CertificateSigningRequestStatus | Nil = nil)

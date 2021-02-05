@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # `name` is the name of matching ServiceAccount objects, or "*" to match regardless of name. Required.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     # `namespace` is the namespace of matching ServiceAccount objects. Required.
-    @[JSON::Field(key: "namespace")]
-    @[YAML::Field(key: "namespace")]
+    @[::JSON::Field(key: "namespace")]
+    @[::YAML::Field(key: "namespace")]
     property namespace : String
 
     def initialize(*, @name : String, @namespace : String)

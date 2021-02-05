@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # PodFixed represents the fixed resource overhead associated with running a pod.
-    @[JSON::Field(key: "podFixed")]
-    @[YAML::Field(key: "podFixed")]
+    @[::JSON::Field(key: "podFixed")]
+    @[::YAML::Field(key: "podFixed")]
     property pod_fixed : Hash(String, String) | Nil
 
     def initialize(*, @pod_fixed : Hash(String, String) | Nil = nil)

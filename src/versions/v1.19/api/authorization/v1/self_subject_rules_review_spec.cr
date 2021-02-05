@@ -9,8 +9,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Namespace to evaluate rules for. Required.
-    @[JSON::Field(key: "namespace")]
-    @[YAML::Field(key: "namespace")]
+    @[::JSON::Field(key: "namespace")]
+    @[::YAML::Field(key: "namespace")]
     property namespace : String | Nil
 
     def initialize(*, @namespace : String | Nil = nil)

@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String | Nil
 
     def initialize(*, @name : String | Nil = nil)

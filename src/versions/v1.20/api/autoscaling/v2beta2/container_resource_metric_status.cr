@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Container is the name of the container in the pods of the scaling target
-    @[JSON::Field(key: "container")]
-    @[YAML::Field(key: "container")]
+    @[::JSON::Field(key: "container")]
+    @[::YAML::Field(key: "container")]
     property container : String
 
     # current contains the current value for the given metric
-    @[JSON::Field(key: "current")]
-    @[YAML::Field(key: "current")]
+    @[::JSON::Field(key: "current")]
+    @[::YAML::Field(key: "current")]
     property current : Api::Autoscaling::V2beta2::MetricValueStatus
 
     # Name is the name of the resource in question.
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @container : String, @current : Api::Autoscaling::V2beta2::MetricValueStatus, @name : String)

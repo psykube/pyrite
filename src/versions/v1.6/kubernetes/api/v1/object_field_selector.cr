@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Version of the schema the FieldPath is written in terms of, defaults to "v1".
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     property api_version : String | Nil
 
     # Path of the field to select in the specified API version.
-    @[JSON::Field(key: "fieldPath")]
-    @[YAML::Field(key: "fieldPath")]
+    @[::JSON::Field(key: "fieldPath")]
+    @[::YAML::Field(key: "fieldPath")]
     property field_path : String
 
     def initialize(*, @api_version : String | Nil = nil, @field_path : String)

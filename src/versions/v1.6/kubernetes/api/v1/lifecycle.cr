@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # PostStart is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: [http://kubernetes.io/docs/user-guide/container-environment#hook-details](http://kubernetes.io/docs/user-guide/container-environment#hook-details)
-    @[JSON::Field(key: "postStart")]
-    @[YAML::Field(key: "postStart")]
+    @[::JSON::Field(key: "postStart")]
+    @[::YAML::Field(key: "postStart")]
     property post_start : Kubernetes::Api::V1::Handler | Nil
 
     # PreStop is called immediately before a container is terminated. The container is terminated after the handler completes. The reason for termination is passed to the handler. Regardless of the outcome of the handler, the container is eventually terminated. Other management of the container blocks until the hook completes. More info: [http://kubernetes.io/docs/user-guide/container-environment#hook-details](http://kubernetes.io/docs/user-guide/container-environment#hook-details)
-    @[JSON::Field(key: "preStop")]
-    @[YAML::Field(key: "preStop")]
+    @[::JSON::Field(key: "preStop")]
+    @[::YAML::Field(key: "preStop")]
     property pre_stop : Kubernetes::Api::V1::Handler | Nil
 
     def initialize(*, @post_start : Kubernetes::Api::V1::Handler | Nil = nil, @pre_stop : Kubernetes::Api::V1::Handler | Nil = nil)

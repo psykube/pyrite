@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # `conditions` is the current state of "request-priority".
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationCondition) | Nil
 
     def initialize(*, @conditions : Array | Nil = nil)

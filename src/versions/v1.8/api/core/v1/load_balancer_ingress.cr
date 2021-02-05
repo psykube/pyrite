@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
-    @[JSON::Field(key: "hostname")]
-    @[YAML::Field(key: "hostname")]
+    @[::JSON::Field(key: "hostname")]
+    @[::YAML::Field(key: "hostname")]
     property hostname : String | Nil
 
     # IP is set for load-balancer ingress points that are IP based (typically GCE or OpenStack load-balancers)
-    @[JSON::Field(key: "ip")]
-    @[YAML::Field(key: "ip")]
+    @[::JSON::Field(key: "ip")]
+    @[::YAML::Field(key: "ip")]
     property ip : String | Nil
 
     def initialize(*, @hostname : String | Nil = nil, @ip : String | Nil = nil)

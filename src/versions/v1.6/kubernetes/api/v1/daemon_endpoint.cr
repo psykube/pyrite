@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Port number of the given endpoint.
-    @[JSON::Field(key: "Port")]
-    @[YAML::Field(key: "Port")]
+    @[::JSON::Field(key: "Port")]
+    @[::YAML::Field(key: "Port")]
     property port : Int32
 
     def initialize(*, @port : Int32)

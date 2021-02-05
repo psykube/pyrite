@@ -10,28 +10,28 @@ module Pyrite
     include ::YAML::Serializable
 
     # The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
-    @[JSON::Field(key: "causes")]
-    @[YAML::Field(key: "causes")]
+    @[::JSON::Field(key: "causes")]
+    @[::YAML::Field(key: "causes")]
     property causes : Array(Apimachinery::Apis::Meta::V1::StatusCause) | Nil
 
     # The group attribute of the resource associated with the status StatusReason.
-    @[JSON::Field(key: "group")]
-    @[YAML::Field(key: "group")]
+    @[::JSON::Field(key: "group")]
+    @[::YAML::Field(key: "group")]
     property group : String | Nil
 
     # The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#types-kinds)
-    @[JSON::Field(key: "kind")]
-    @[YAML::Field(key: "kind")]
+    @[::JSON::Field(key: "kind")]
+    @[::YAML::Field(key: "kind")]
     property kind : String | Nil
 
     # The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String | Nil
 
     # If specified, the time in seconds before the operation should be retried.
-    @[JSON::Field(key: "retryAfterSeconds")]
-    @[YAML::Field(key: "retryAfterSeconds")]
+    @[::JSON::Field(key: "retryAfterSeconds")]
+    @[::YAML::Field(key: "retryAfterSeconds")]
     property retry_after_seconds : Int32 | Nil
 
     def initialize(*, @causes : Array | Nil = nil, @group : String | Nil = nil, @kind : String | Nil = nil, @name : String | Nil = nil, @retry_after_seconds : Int32 | Nil = nil)

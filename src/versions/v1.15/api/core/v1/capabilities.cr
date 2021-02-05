@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Added capabilities
-    @[JSON::Field(key: "add")]
-    @[YAML::Field(key: "add")]
+    @[::JSON::Field(key: "add")]
+    @[::YAML::Field(key: "add")]
     property add : Array(String) | Nil
 
     # Removed capabilities
-    @[JSON::Field(key: "drop")]
-    @[YAML::Field(key: "drop")]
+    @[::JSON::Field(key: "drop")]
+    @[::YAML::Field(key: "drop")]
     property drop : Array(String) | Nil
 
     def initialize(*, @add : Array | Nil = nil, @drop : Array | Nil = nil)

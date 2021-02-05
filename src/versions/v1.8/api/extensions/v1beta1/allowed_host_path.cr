@@ -12,8 +12,8 @@ module Pyrite
     # is the path prefix that the host volume must match. It does not support `*`. Trailing slashes are trimmed when validating the path prefix with a host path.
     #
     # Examples: [`/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`](`/foo` would allow `/foo`, `/foo/` and `/foo/bar` `/foo` would not allow `/food` or `/etc/foo`)
-    @[JSON::Field(key: "pathPrefix")]
-    @[YAML::Field(key: "pathPrefix")]
+    @[::JSON::Field(key: "pathPrefix")]
+    @[::YAML::Field(key: "pathPrefix")]
     property path_prefix : String | Nil
 
     def initialize(*, @path_prefix : String | Nil = nil)

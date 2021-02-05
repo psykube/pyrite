@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Partition indicates the ordinal at which the StatefulSet should be partitioned.
-    @[JSON::Field(key: "partition")]
-    @[YAML::Field(key: "partition")]
+    @[::JSON::Field(key: "partition")]
+    @[::YAML::Field(key: "partition")]
     property partition : Int32 | Nil
 
     def initialize(*, @partition : Int32 | Nil = nil)

@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate.
-    @[JSON::Field(key: "rollingUpdate")]
-    @[YAML::Field(key: "rollingUpdate")]
+    @[::JSON::Field(key: "rollingUpdate")]
+    @[::YAML::Field(key: "rollingUpdate")]
     property rolling_update : Api::Extensions::V1beta1::RollingUpdateDeployment | Nil
 
     # Type of deployment. Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
-    @[JSON::Field(key: "type")]
-    @[YAML::Field(key: "type")]
+    @[::JSON::Field(key: "type")]
+    @[::YAML::Field(key: "type")]
     property type : String | Nil
 
     def initialize(*, @rolling_update : Api::Extensions::V1beta1::RollingUpdateDeployment | Nil = nil, @type : String | Nil = nil)

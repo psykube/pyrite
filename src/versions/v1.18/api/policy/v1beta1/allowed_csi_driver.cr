@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # Name is the registered name of the CSI driver
-    @[JSON::Field(key: "name")]
-    @[YAML::Field(key: "name")]
+    @[::JSON::Field(key: "name")]
+    @[::YAML::Field(key: "name")]
     property name : String
 
     def initialize(*, @name : String)

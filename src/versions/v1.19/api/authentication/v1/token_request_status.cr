@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # ExpirationTimestamp is the time of expiration of the returned token.
-    @[JSON::Field(key: "expirationTimestamp")]
-    @[YAML::Field(key: "expirationTimestamp")]
+    @[::JSON::Field(key: "expirationTimestamp")]
+    @[::YAML::Field(key: "expirationTimestamp")]
     property expiration_timestamp : Time
 
     # Token is the opaque bearer token.
-    @[JSON::Field(key: "token")]
-    @[YAML::Field(key: "token")]
+    @[::JSON::Field(key: "token")]
+    @[::YAML::Field(key: "token")]
     property token : String
 
     def initialize(*, @expiration_timestamp : Time, @token : String)

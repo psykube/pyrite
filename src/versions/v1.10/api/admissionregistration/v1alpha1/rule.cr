@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # APIGroups is the API groups the resources belong to. '*' is all groups. If '*' is present, the length of the slice must be one. Required.
-    @[JSON::Field(key: "apiGroups")]
-    @[YAML::Field(key: "apiGroups")]
+    @[::JSON::Field(key: "apiGroups")]
+    @[::YAML::Field(key: "apiGroups")]
     property api_groups : Array(String) | Nil
 
     # APIVersions is the API versions the resources belong to. '*' is all versions. If '*' is present, the length of the slice must be one. Required.
-    @[JSON::Field(key: "apiVersions")]
-    @[YAML::Field(key: "apiVersions")]
+    @[::JSON::Field(key: "apiVersions")]
+    @[::YAML::Field(key: "apiVersions")]
     property api_versions : Array(String) | Nil
 
     # Resources is a list of resources this rule applies to.
@@ -26,8 +26,8 @@ module Pyrite
     # If wildcard is present, the validation rule will ensure resources do not overlap with each other.
     #
     # Depending on the enclosing object, subresources might not be allowed. Required.
-    @[JSON::Field(key: "resources")]
-    @[YAML::Field(key: "resources")]
+    @[::JSON::Field(key: "resources")]
+    @[::YAML::Field(key: "resources")]
     property resources : Array(String) | Nil
 
     def initialize(*, @api_groups : Array | Nil = nil, @api_versions : Array | Nil = nil, @resources : Array | Nil = nil)

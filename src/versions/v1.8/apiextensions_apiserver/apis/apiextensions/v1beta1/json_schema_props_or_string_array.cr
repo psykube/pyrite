@@ -9,12 +9,12 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "Property")]
-    @[YAML::Field(key: "Property")]
+    @[::JSON::Field(key: "Property")]
+    @[::YAML::Field(key: "Property")]
     property property : Array(String)
 
-    @[JSON::Field(key: "Schema")]
-    @[YAML::Field(key: "Schema")]
+    @[::JSON::Field(key: "Schema")]
+    @[::YAML::Field(key: "Schema")]
     property schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps
 
     def initialize(*, @property : Array, @schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)

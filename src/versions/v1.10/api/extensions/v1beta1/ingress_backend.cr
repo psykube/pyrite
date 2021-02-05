@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # Specifies the name of the referenced service.
-    @[JSON::Field(key: "serviceName")]
-    @[YAML::Field(key: "serviceName")]
+    @[::JSON::Field(key: "serviceName")]
+    @[::YAML::Field(key: "serviceName")]
     property service_name : String
 
     # Specifies the port of the referenced service.
-    @[JSON::Field(key: "servicePort")]
-    @[YAML::Field(key: "servicePort")]
+    @[::JSON::Field(key: "servicePort")]
+    @[::YAML::Field(key: "servicePort")]
     property service_port : Int32 | String
 
     def initialize(*, @service_name : String, @service_port : Int32 | String)

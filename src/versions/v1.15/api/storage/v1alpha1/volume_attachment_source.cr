@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # inlineVolumeSpec contains all the information necessary to attach a persistent volume defined by a pod's inline VolumeSource. This field is populated only for the CSIMigration feature. It contains translated fields from a pod's inline VolumeSource to a PersistentVolumeSpec. This field is alpha-level and is only honored by servers that enabled the CSIMigration feature.
-    @[JSON::Field(key: "inlineVolumeSpec")]
-    @[YAML::Field(key: "inlineVolumeSpec")]
+    @[::JSON::Field(key: "inlineVolumeSpec")]
+    @[::YAML::Field(key: "inlineVolumeSpec")]
     property inline_volume_spec : Api::Core::V1::PersistentVolumeSpec | Nil
 
     # Name of the persistent volume to attach.
-    @[JSON::Field(key: "persistentVolumeName")]
-    @[YAML::Field(key: "persistentVolumeName")]
+    @[::JSON::Field(key: "persistentVolumeName")]
+    @[::YAML::Field(key: "persistentVolumeName")]
     property persistent_volume_name : String | Nil
 
     def initialize(*, @inline_volume_spec : Api::Core::V1::PersistentVolumeSpec | Nil = nil, @persistent_volume_name : String | Nil = nil)

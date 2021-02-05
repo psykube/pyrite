@@ -9,26 +9,26 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[JSON::Field(key: "apiVersion")]
-    @[YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "rbac.authorization.k8s.io/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "ClusterRole"
     # AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.
-    @[JSON::Field(key: "aggregationRule")]
-    @[YAML::Field(key: "aggregationRule")]
+    @[::JSON::Field(key: "aggregationRule")]
+    @[::YAML::Field(key: "aggregationRule")]
     property aggregation_rule : Api::Rbac::V1::AggregationRule | Nil
 
     # Standard object's metadata.
-    @[JSON::Field(key: "metadata")]
-    @[YAML::Field(key: "metadata")]
+    @[::JSON::Field(key: "metadata")]
+    @[::YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Rules holds all the PolicyRules for this ClusterRole
-    @[JSON::Field(key: "rules")]
-    @[YAML::Field(key: "rules")]
+    @[::JSON::Field(key: "rules")]
+    @[::YAML::Field(key: "rules")]
     property rules : Array(Api::Rbac::V1::PolicyRule)
 
     def initialize(*, @aggregation_rule : Api::Rbac::V1::AggregationRule | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @rules : Array)

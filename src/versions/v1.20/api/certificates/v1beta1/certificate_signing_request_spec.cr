@@ -10,18 +10,18 @@ module Pyrite
     include ::YAML::Serializable
 
     # Extra information about the requesting user. See user.Info interface for details.
-    @[JSON::Field(key: "extra")]
-    @[YAML::Field(key: "extra")]
+    @[::JSON::Field(key: "extra")]
+    @[::YAML::Field(key: "extra")]
     property extra : Hash(String, String) | Nil
 
     # Group information about the requesting user. See user.Info interface for details.
-    @[JSON::Field(key: "groups")]
-    @[YAML::Field(key: "groups")]
+    @[::JSON::Field(key: "groups")]
+    @[::YAML::Field(key: "groups")]
     property groups : Array(String) | Nil
 
     # Base64-encoded PKCS#10 CSR data
-    @[JSON::Field(key: "request")]
-    @[YAML::Field(key: "request")]
+    @[::JSON::Field(key: "request")]
+    @[::YAML::Field(key: "request")]
     property request : String
 
     # Requested signer for the request. It is a qualified name in the form: [`scope-hostname.io/name`. If empty, it will be defaulted:](`scope-hostname.io/name`. If empty, it will be defaulted:)
@@ -31,13 +31,13 @@ module Pyrite
     #     ["kubernetes.io/kubelet-serving".]("kubernetes.io/kubelet-serving".)
     #  3. Otherwise, it is assigned ["kubernetes.io/legacy-unknown".]("kubernetes.io/legacy-unknown".)
     # Distribution of trust for signers happens out of band. You can select on this field using `spec.signerName`.
-    @[JSON::Field(key: "signerName")]
-    @[YAML::Field(key: "signerName")]
+    @[::JSON::Field(key: "signerName")]
+    @[::YAML::Field(key: "signerName")]
     property signer_name : String | Nil
 
     # UID information about the requesting user. See user.Info interface for details.
-    @[JSON::Field(key: "uid")]
-    @[YAML::Field(key: "uid")]
+    @[::JSON::Field(key: "uid")]
+    @[::YAML::Field(key: "uid")]
     property uid : String | Nil
 
     # allowedUsages specifies a set of usage contexts the key will be valid for. See: [https://tools.ietf.org/html/rfc5280#section-4.2.1.3](https://tools.ietf.org/html/rfc5280#section-4.2.1.3)
@@ -66,13 +66,13 @@ module Pyrite
     #  "ocsp signing",
     #  "microsoft sgc",
     #  "netscape sgc"
-    @[JSON::Field(key: "usages")]
-    @[YAML::Field(key: "usages")]
+    @[::JSON::Field(key: "usages")]
+    @[::YAML::Field(key: "usages")]
     property usages : Array(String) | Nil
 
     # Information about the requesting user. See user.Info interface for details.
-    @[JSON::Field(key: "username")]
-    @[YAML::Field(key: "username")]
+    @[::JSON::Field(key: "username")]
+    @[::YAML::Field(key: "username")]
     property username : String | Nil
 
     def initialize(*, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @request : String, @signer_name : String | Nil = nil, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)

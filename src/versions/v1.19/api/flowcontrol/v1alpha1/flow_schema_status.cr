@@ -10,8 +10,8 @@ module Pyrite
     include ::YAML::Serializable
 
     # `conditions` is a list of the current states of FlowSchema.
-    @[JSON::Field(key: "conditions")]
-    @[YAML::Field(key: "conditions")]
+    @[::JSON::Field(key: "conditions")]
+    @[::YAML::Field(key: "conditions")]
     property conditions : Array(Api::Flowcontrol::V1alpha1::FlowSchemaCondition) | Nil
 
     def initialize(*, @conditions : Array | Nil = nil)

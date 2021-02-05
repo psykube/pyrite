@@ -10,13 +10,13 @@ module Pyrite
     include ::YAML::Serializable
 
     # The Level that all requests are recorded at. available options: None, Metadata, Request, RequestResponse required
-    @[JSON::Field(key: "level")]
-    @[YAML::Field(key: "level")]
+    @[::JSON::Field(key: "level")]
+    @[::YAML::Field(key: "level")]
     property level : String
 
     # Stages is a list of stages for which events are created.
-    @[JSON::Field(key: "stages")]
-    @[YAML::Field(key: "stages")]
+    @[::JSON::Field(key: "stages")]
+    @[::YAML::Field(key: "stages")]
     property stages : Array(String) | Nil
 
     def initialize(*, @level : String, @stages : Array | Nil = nil)
