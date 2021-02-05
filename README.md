@@ -1,6 +1,6 @@
 # Pyrite
 
-A Kubernetes Client for Crystal-lang
+A Kubernetes Resource Mappings for the Crystal Language.
 
 ## Installation
 
@@ -19,7 +19,7 @@ pyrite, you will want to include the VERSION that best maps to your k8s api vers
 Requiring more than one version at this time will result in an error.
 
 ```crystal
-require "pyrite/versions/v1.7"
+require "pyrite/versions/v1.15"
 ```
 
 ## Contributing
