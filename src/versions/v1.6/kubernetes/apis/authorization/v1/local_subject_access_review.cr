@@ -17,18 +17,18 @@ module Pyrite
     # The resource kind withing the given apiVersion.
     getter kind : String = "LocalSubjectAccessReview"
 
-    def self.new(pull : JSON::PullParser)
+    def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "authorization/v1" && instance.kind == "LocalSubjectAccessReview"
-          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+          raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
     end
 
-    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+    def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
         unless instance.api_version == "authorization/v1" && instance.kind == "LocalSubjectAccessReview"
-          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+          raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end
     end
