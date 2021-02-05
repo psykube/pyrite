@@ -64,7 +64,7 @@ class Generator
             class Error < Exception
             end
 
-            def intialize(@match : String)
+            def initialize(@match : String)
             end
 
             def from_json(pull : JSON::PullParser) : String
