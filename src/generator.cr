@@ -71,12 +71,20 @@ class Generator
               check(pull.read_string)
             end
 
+            def to_json(value : String, json : JSON::Builder)
+              json.string(value)
+            end
+
             def from_yaml(ctx : YAML::ParseContext, node : YAML::Nodes::Node) : String
               unless node.is_a?(YAML::Nodes::Scalar)
                 node.raise "Expected scalar, not \#{node.class}"
               end
           
               check(node.value)
+            end
+
+            def to_yaml(value : String, yaml : YAML::Nodes::Builder)
+              yaml.scalar value
             end
 
             private def check(string : String) : String
