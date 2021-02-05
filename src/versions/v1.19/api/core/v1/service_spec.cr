@@ -6,86 +6,83 @@ require "json"
 module Pyrite
   # ServiceSpec describes the attributes that a user creates on a service.
   class Api::Core::V1::ServiceSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # clusterIP is the IP address of the service and is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. This field can not be changed through updates. Valid values are "None", empty string (""), or a valid IP address. "None" can be specified for headless services when proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: [https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies](https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies)
+    @[JSON::Field(key: "clusterIP")]
+    @[YAML::Field(key: "clusterIP")]
     property cluster_ip : String | Nil
 
     # externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service.  These IPs are not managed by Kubernetes.  The user is responsible for ensuring that traffic arrives at a node with this IP.  A common example is external load-balancers that are not part of the Kubernetes system.
+    @[JSON::Field(key: "externalIPs")]
+    @[YAML::Field(key: "externalIPs")]
     property external_ips : Array(String) | Nil
 
     # externalName is the external reference that kubedns or equivalent will return as a CNAME record for this service. No proxying will be involved. Must be a valid RFC-1123 hostname ([https://tools.ietf.org/html/rfc1123) and requires Type to be ExternalName.](https://tools.ietf.org/html/rfc1123) and requires Type to be ExternalName.)
+    @[JSON::Field(key: "externalName")]
+    @[YAML::Field(key: "externalName")]
     property external_name : String | Nil
 
     # externalTrafficPolicy denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints. "Local" preserves the client source IP and avoids a second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced traffic spreading. "Cluster" obscures the client source IP and may cause a second hop to another node, but should have good overall load-spreading.
+    @[JSON::Field(key: "externalTrafficPolicy")]
+    @[YAML::Field(key: "externalTrafficPolicy")]
     property external_traffic_policy : String | Nil
 
     # healthCheckNodePort specifies the healthcheck nodePort for the service. If not specified, HealthCheckNodePort is created by the service api backend with the allocated nodePort. Will use user-specified nodePort value if specified by the client. Only effects when Type is set to LoadBalancer and ExternalTrafficPolicy is set to Local.
+    @[JSON::Field(key: "healthCheckNodePort")]
+    @[YAML::Field(key: "healthCheckNodePort")]
     property health_check_node_port : Int32 | Nil
 
     # ipFamily specifies whether this Service has a preference for a particular IP family (e.g. IPv4 vs. IPv6) when the IPv6DualStack feature gate is enabled. In a dual-stack cluster, you can specify ipFamily when creating a ClusterIP Service to determine whether the controller will allocate an IPv4 or IPv6 IP for it, and you can specify ipFamily when creating a headless Service to determine whether it will have IPv4 or IPv6 Endpoints. In either case, if you do not specify an ipFamily explicitly, it will default to the cluster's primary IP family. This field is part of an alpha feature, and you should not make any assumptions about its semantics other than those described above. In particular, you should not assume that it can (or cannot) be changed after creation time; that it can only have the values "IPv4" and "IPv6"; or that its current value on a given Service correctly reflects the current state of that Service. (For ClusterIP Services, look at clusterIP to see if the Service is IPv4 or IPv6. For headless Services, look at the endpoints, which may be dual-stack in the future. For ExternalName Services, ipFamily has no meaning, but it may be set to an irrelevant value anyway.)
+    @[JSON::Field(key: "ipFamily")]
+    @[YAML::Field(key: "ipFamily")]
     property ip_family : String | Nil
 
     # Only applies to Service Type: LoadBalancer LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.
+    @[JSON::Field(key: "loadBalancerIP")]
+    @[YAML::Field(key: "loadBalancerIP")]
     property load_balancer_ip : String | Nil
 
     # If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature." More info: [https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/](https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/)
+    @[JSON::Field(key: "loadBalancerSourceRanges")]
+    @[YAML::Field(key: "loadBalancerSourceRanges")]
     property load_balancer_source_ranges : Array(String) | Nil
 
     # The list of ports that are exposed by this service. More info: [https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies](https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies)
+    @[JSON::Field(key: "ports")]
+    @[YAML::Field(key: "ports")]
     property ports : Array(Api::Core::V1::ServicePort) | Nil
 
     # publishNotReadyAddresses indicates that any agent which deals with endpoints for this Service should disregard any indications of [ready/not-ready. The primary use case for setting this field is for a StatefulSet's Headless Service to propagate SRV DNS records for its Pods for the purpose of peer discovery. The Kubernetes controllers that generate Endpoints and EndpointSlice resources for Services interpret this to mean that all endpoints are considered "ready" even if the Pods themselves are not. Agents which consume only Kubernetes generated endpoints through the Endpoints or EndpointSlice resources can safely assume this behavior.](ready/not-ready. The primary use case for setting this field is for a StatefulSet's Headless Service to propagate SRV DNS records for its Pods for the purpose of peer discovery. The Kubernetes controllers that generate Endpoints and EndpointSlice resources for Services interpret this to mean that all endpoints are considered "ready" even if the Pods themselves are not. Agents which consume only Kubernetes generated endpoints through the Endpoints or EndpointSlice resources can safely assume this behavior.)
+    @[JSON::Field(key: "publishNotReadyAddresses")]
+    @[YAML::Field(key: "publishNotReadyAddresses")]
     property publish_not_ready_addresses : Bool | Nil
 
     # Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)
+    @[JSON::Field(key: "selector")]
+    @[YAML::Field(key: "selector")]
     property selector : Hash(String, String) | Nil
 
     # Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: [https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies](https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies)
+    @[JSON::Field(key: "sessionAffinity")]
+    @[YAML::Field(key: "sessionAffinity")]
     property session_affinity : String | Nil
 
     # sessionAffinityConfig contains the configurations of session affinity.
+    @[JSON::Field(key: "sessionAffinityConfig")]
+    @[YAML::Field(key: "sessionAffinityConfig")]
     property session_affinity_config : Api::Core::V1::SessionAffinityConfig | Nil
 
     # topologyKeys is a preference-order list of topology keys which implementations of services should use to preferentially sort endpoints when accessing this Service, it can not be used at the same time as externalTrafficPolicy=Local. Topology keys must be valid label keys and at most 16 keys may be specified. Endpoints are chosen based on the first topology key with available backends. If this field is specified and all entries have no backends that match the topology of the client, the service has no backends for that client and connections should fail. The special value "*" may be used to mean "any topology". This catch-all value, if used, only makes sense as the last value in the list. If this is not specified or empty, no topology constraints will be applied.
+    @[JSON::Field(key: "topologyKeys")]
+    @[YAML::Field(key: "topologyKeys")]
     property topology_keys : Array(String) | Nil
 
     # type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ExternalName" maps to the specified externalName. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a stable IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the clusterIP. More info: [https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+    @[JSON::Field(key: "type")]
+    @[YAML::Field(key: "type")]
     property type : String | Nil
-
-    ::YAML.mapping({
-      cluster_ip:                  {type: String, nilable: true, key: "clusterIP", getter: false, setter: false},
-      external_ips:                {type: Array(String), nilable: true, key: "externalIPs", getter: false, setter: false},
-      external_name:               {type: String, nilable: true, key: "externalName", getter: false, setter: false},
-      external_traffic_policy:     {type: String, nilable: true, key: "externalTrafficPolicy", getter: false, setter: false},
-      health_check_node_port:      {type: Int32, nilable: true, key: "healthCheckNodePort", getter: false, setter: false},
-      ip_family:                   {type: String, nilable: true, key: "ipFamily", getter: false, setter: false},
-      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP", getter: false, setter: false},
-      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges", getter: false, setter: false},
-      ports:                       {type: Array(Api::Core::V1::ServicePort), nilable: true, key: "ports", getter: false, setter: false},
-      publish_not_ready_addresses: {type: Bool, nilable: true, key: "publishNotReadyAddresses", getter: false, setter: false},
-      selector:                    {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
-      session_affinity:            {type: String, nilable: true, key: "sessionAffinity", getter: false, setter: false},
-      session_affinity_config:     {type: Api::Core::V1::SessionAffinityConfig, nilable: true, key: "sessionAffinityConfig", getter: false, setter: false},
-      topology_keys:               {type: Array(String), nilable: true, key: "topologyKeys", getter: false, setter: false},
-      type:                        {type: String, nilable: true, key: "type", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      cluster_ip:                  {type: String, nilable: true, key: "clusterIP", getter: false, setter: false},
-      external_ips:                {type: Array(String), nilable: true, key: "externalIPs", getter: false, setter: false},
-      external_name:               {type: String, nilable: true, key: "externalName", getter: false, setter: false},
-      external_traffic_policy:     {type: String, nilable: true, key: "externalTrafficPolicy", getter: false, setter: false},
-      health_check_node_port:      {type: Int32, nilable: true, key: "healthCheckNodePort", getter: false, setter: false},
-      ip_family:                   {type: String, nilable: true, key: "ipFamily", getter: false, setter: false},
-      load_balancer_ip:            {type: String, nilable: true, key: "loadBalancerIP", getter: false, setter: false},
-      load_balancer_source_ranges: {type: Array(String), nilable: true, key: "loadBalancerSourceRanges", getter: false, setter: false},
-      ports:                       {type: Array(Api::Core::V1::ServicePort), nilable: true, key: "ports", getter: false, setter: false},
-      publish_not_ready_addresses: {type: Bool, nilable: true, key: "publishNotReadyAddresses", getter: false, setter: false},
-      selector:                    {type: Hash(String, String), nilable: true, key: "selector", getter: false, setter: false},
-      session_affinity:            {type: String, nilable: true, key: "sessionAffinity", getter: false, setter: false},
-      session_affinity_config:     {type: Api::Core::V1::SessionAffinityConfig, nilable: true, key: "sessionAffinityConfig", getter: false, setter: false},
-      topology_keys:               {type: Array(String), nilable: true, key: "topologyKeys", getter: false, setter: false},
-      type:                        {type: String, nilable: true, key: "type", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @cluster_ip : String | Nil = nil, @external_ips : Array | Nil = nil, @external_name : String | Nil = nil, @external_traffic_policy : String | Nil = nil, @health_check_node_port : Int32 | Nil = nil, @ip_family : String | Nil = nil, @load_balancer_ip : String | Nil = nil, @load_balancer_source_ranges : Array | Nil = nil, @ports : Array | Nil = nil, @publish_not_ready_addresses : Bool | Nil = nil, @selector : Hash(String, String) | Nil = nil, @session_affinity : String | Nil = nil, @session_affinity_config : Api::Core::V1::SessionAffinityConfig | Nil = nil, @topology_keys : Array | Nil = nil, @type : String | Nil = nil)
     end

@@ -6,26 +6,23 @@ require "json"
 module Pyrite
   # TokenReviewStatus is the result of the token authentication request.
   class Api::Authentication::V1beta1::TokenReviewStatus
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Authenticated indicates that the token was associated with a known user.
+    @[JSON::Field(key: "authenticated")]
+    @[YAML::Field(key: "authenticated")]
     property authenticated : Bool | Nil
 
     # Error indicates that the token couldn't be checked
+    @[JSON::Field(key: "error")]
+    @[YAML::Field(key: "error")]
     property error : String | Nil
 
     # User is the UserInfo associated with the provided token.
+    @[JSON::Field(key: "user")]
+    @[YAML::Field(key: "user")]
     property user : Api::Authentication::V1beta1::UserInfo | Nil
-
-    ::YAML.mapping({
-      authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
-      error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
-      user:          {type: Api::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      authenticated: {type: Bool, nilable: true, key: "authenticated", getter: false, setter: false},
-      error:         {type: String, nilable: true, key: "error", getter: false, setter: false},
-      user:          {type: Api::Authentication::V1beta1::UserInfo, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @authenticated : Bool | Nil = nil, @error : String | Nil = nil, @user : Api::Authentication::V1beta1::UserInfo | Nil = nil)
     end

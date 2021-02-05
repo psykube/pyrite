@@ -5,16 +5,13 @@ require "json"
 
 module Pyrite
   class Kubernetes::Apis::Extensions::V1beta1::RollbackConfig
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # The revision to rollback to. If set to 0, rollbck to the last revision.
+    @[JSON::Field(key: "revision")]
+    @[YAML::Field(key: "revision")]
     property revision : Int32 | Nil
-
-    ::YAML.mapping({
-      revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      revision: {type: Int32, nilable: true, key: "revision", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @revision : Int32 | Nil = nil)
     end

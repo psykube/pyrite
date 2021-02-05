@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # VolumeError captures an error encountered during a volume operation.
   class Api::Storage::V1beta1::VolumeError
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # String detailing the error encountered during Attach or Detach operation. This string may be logged, so it should not contain sensitive information.
+    @[JSON::Field(key: "message")]
+    @[YAML::Field(key: "message")]
     property message : String | Nil
 
     # Time the error was encountered.
+    @[JSON::Field(key: "time")]
+    @[YAML::Field(key: "time")]
     property time : Time | Nil
-
-    ::YAML.mapping({
-      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
-      time:    {type: Time, nilable: true, key: "time", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      message: {type: String, nilable: true, key: "message", getter: false, setter: false},
-      time:    {type: Time, nilable: true, key: "time", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @message : String | Nil = nil, @time : Time | Nil = nil)
     end

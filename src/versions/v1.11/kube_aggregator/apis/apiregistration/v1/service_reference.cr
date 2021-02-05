@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # ServiceReference holds a reference to Service.legacy.k8s.io
   class KubeAggregator::Apis::Apiregistration::V1::ServiceReference
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Name is the name of the service
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String | Nil
 
     # Namespace is the namespace of the service
+    @[JSON::Field(key: "namespace")]
+    @[YAML::Field(key: "namespace")]
     property namespace : String | Nil
-
-    ::YAML.mapping({
-      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)
     end

@@ -6,38 +6,35 @@ require "json"
 module Pyrite
   # CustomResourceDefinitionSpec describes how a user wants their resource to appear
   class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Group is the group this resource belongs in
+    @[JSON::Field(key: "group")]
+    @[YAML::Field(key: "group")]
     property group : String
 
     # Names are the names used to describe this custom resource
+    @[JSON::Field(key: "names")]
+    @[YAML::Field(key: "names")]
     property names : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames
 
     # Scope indicates whether this resource is cluster or namespace scoped.  Default is namespaced
+    @[JSON::Field(key: "scope")]
+    @[YAML::Field(key: "scope")]
     property scope : String
 
     # Validation describes the validation methods for CustomResources
+    @[JSON::Field(key: "validation")]
+    @[YAML::Field(key: "validation")]
     property validation : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation | Nil
 
     # Version is the version this resource belongs in
+    @[JSON::Field(key: "version")]
+    @[YAML::Field(key: "version")]
     property version : String
 
-    ::YAML.mapping({
-      group:      {type: String, nilable: false, key: "group", getter: false, setter: false},
-      names:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "names", getter: false, setter: false},
-      scope:      {type: String, nilable: false, key: "scope", getter: false, setter: false},
-      validation: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation, nilable: true, key: "validation", getter: false, setter: false},
-      version:    {type: String, nilable: false, key: "version", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      group:      {type: String, nilable: false, key: "group", getter: false, setter: false},
-      names:      {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, nilable: false, key: "names", getter: false, setter: false},
-      scope:      {type: String, nilable: false, key: "scope", getter: false, setter: false},
-      validation: {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation, nilable: true, key: "validation", getter: false, setter: false},
-      version:    {type: String, nilable: false, key: "version", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @group : String, @names : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, @scope : String, @version : String, @validation : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation | Nil = nil)
+    def initialize(*, @group : String, @names : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames, @scope : String, @validation : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation | Nil = nil, @version : String)
     end
   end
 end

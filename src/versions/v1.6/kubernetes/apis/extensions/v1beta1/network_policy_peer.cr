@@ -5,21 +5,18 @@ require "json"
 
 module Pyrite
   class Kubernetes::Apis::Extensions::V1beta1::NetworkPolicyPeer
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Selects Namespaces using cluster scoped-labels.  This matches all pods in all namespaces selected by this label selector. This field follows standard label selector semantics. If omitted, this selector selects no namespaces. If present but empty, this selector selects all namespaces.
+    @[JSON::Field(key: "namespaceSelector")]
+    @[YAML::Field(key: "namespaceSelector")]
     property namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
 
     # This is a label selector which selects Pods in this namespace. This field follows standard label selector semantics. If not provided, this selector selects no pods. If present but empty, this selector selects all pods in this namespace.
+    @[JSON::Field(key: "podSelector")]
+    @[YAML::Field(key: "podSelector")]
     property pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil
-
-    ::YAML.mapping({
-      namespace_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "namespaceSelector", getter: false, setter: false},
-      pod_selector:       {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "podSelector", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      namespace_selector: {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "namespaceSelector", getter: false, setter: false},
-      pod_selector:       {type: Apimachinery::Apis::Meta::V1::LabelSelector, nilable: true, key: "podSelector", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil, @pod_selector : Apimachinery::Apis::Meta::V1::LabelSelector | Nil = nil)
     end

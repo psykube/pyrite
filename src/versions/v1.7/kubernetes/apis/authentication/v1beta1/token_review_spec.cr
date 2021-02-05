@@ -6,16 +6,13 @@ require "json"
 module Pyrite
   # TokenReviewSpec is a description of the token authentication request.
   class Kubernetes::Apis::Authentication::V1beta1::TokenReviewSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Token is the opaque bearer token.
+    @[JSON::Field(key: "token")]
+    @[YAML::Field(key: "token")]
     property token : String | Nil
-
-    ::YAML.mapping({
-      token: {type: String, nilable: true, key: "token", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      token: {type: String, nilable: true, key: "token", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @token : String | Nil = nil)
     end

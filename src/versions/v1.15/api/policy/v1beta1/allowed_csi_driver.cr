@@ -6,16 +6,13 @@ require "json"
 module Pyrite
   # AllowedCSIDriver represents a single inline CSI Driver that is allowed to be used.
   class Api::Policy::V1beta1::AllowedCSIDriver
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Name is the registered name of the CSI driver
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String
-
-    ::YAML.mapping({
-      name: {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      name: {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @name : String)
     end

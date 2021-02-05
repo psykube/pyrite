@@ -6,16 +6,13 @@ require "json"
 module Pyrite
   # LimitRangeSpec defines a [min/max usage limit for resources that match on kind.](min/max usage limit for resources that match on kind.)
   class Api::Core::V1::LimitRangeSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Limits is the list of LimitRangeItem objects that are enforced.
+    @[JSON::Field(key: "limits")]
+    @[YAML::Field(key: "limits")]
     property limits : Array(Api::Core::V1::LimitRangeItem)
-
-    ::YAML.mapping({
-      limits: {type: Array(Api::Core::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      limits: {type: Array(Api::Core::V1::LimitRangeItem), nilable: false, key: "limits", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @limits : Array)
     end

@@ -5,21 +5,18 @@ require "json"
 
 module Pyrite
   class Api::Certificates::V1beta1::CertificateSigningRequestStatus
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # If request was approved, the controller will place the issued certificate here.
+    @[JSON::Field(key: "certificate")]
+    @[YAML::Field(key: "certificate")]
     property certificate : String | Nil
 
     # Conditions applied to the request, such as approval or denial.
+    @[JSON::Field(key: "conditions")]
+    @[YAML::Field(key: "conditions")]
     property conditions : Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition) | Nil
-
-    ::YAML.mapping({
-      certificate: {type: String, nilable: true, key: "certificate", getter: false, setter: false},
-      conditions:  {type: Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition), nilable: true, key: "conditions", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      certificate: {type: String, nilable: true, key: "certificate", getter: false, setter: false},
-      conditions:  {type: Array(Api::Certificates::V1beta1::CertificateSigningRequestCondition), nilable: true, key: "conditions", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @certificate : String | Nil = nil, @conditions : Array | Nil = nil)
     end

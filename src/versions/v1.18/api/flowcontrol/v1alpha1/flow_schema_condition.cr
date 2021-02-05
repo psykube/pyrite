@@ -6,36 +6,33 @@ require "json"
 module Pyrite
   # FlowSchemaCondition describes conditions for a FlowSchema.
   class Api::Flowcontrol::V1alpha1::FlowSchemaCondition
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # `lastTransitionTime` is the last time the condition transitioned from one status to another.
+    @[JSON::Field(key: "lastTransitionTime")]
+    @[YAML::Field(key: "lastTransitionTime")]
     property last_transition_time : Time | Nil
 
     # `message` is a human-readable message indicating details about last transition.
+    @[JSON::Field(key: "message")]
+    @[YAML::Field(key: "message")]
     property message : String | Nil
 
     # `reason` is a unique, one-word, CamelCase reason for the condition's last transition.
+    @[JSON::Field(key: "reason")]
+    @[YAML::Field(key: "reason")]
     property reason : String | Nil
 
     # `status` is the status of the condition. Can be True, False, Unknown. Required.
+    @[JSON::Field(key: "status")]
+    @[YAML::Field(key: "status")]
     property status : String | Nil
 
     # `type` is the type of the condition. Required.
+    @[JSON::Field(key: "type")]
+    @[YAML::Field(key: "type")]
     property type : String | Nil
-
-    ::YAML.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
-      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
-      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
-      status:               {type: String, nilable: true, key: "status", getter: false, setter: false},
-      type:                 {type: String, nilable: true, key: "type", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
-      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
-      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
-      status:               {type: String, nilable: true, key: "status", getter: false, setter: false},
-      type:                 {type: String, nilable: true, key: "type", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @status : String | Nil = nil, @type : String | Nil = nil)
     end

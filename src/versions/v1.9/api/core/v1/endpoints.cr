@@ -17,57 +17,27 @@ module Pyrite
   #     },
   #  ]
   class Api::Core::V1::Endpoints
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "Endpoints"
     # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # The set of all endpoints is the union of all subsets. Addresses are placed into subsets according to the IPs they share. A single address with multiple ports, some of which are ready and some of which are not (because they come from different containers) will result in the address being displayed in different subsets for the different ports. No address will appear in both Addresses and NotReadyAddresses in the same subset. Sets of addresses and ports that comprise a service.
+    @[JSON::Field(key: "subsets")]
+    @[YAML::Field(key: "subsets")]
     property subsets : Array(Api::Core::V1::EndpointSubset)
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      subsets:     {type: Array(Api::Core::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "Endpoints", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      subsets:     {type: Array(Api::Core::V1::EndpointSubset), nilable: false, key: "subsets", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @subsets : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
-    end
-
-    # create Endpoints
-    def create(context : String | Nil = nil)
-    end
-
-    # list or watch objects of kind Endpoints
-    def self.list(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # delete collection of Endpoints
-    def self.delete(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # read the specified Endpoints
-    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # replace the specified Endpoints
-    def replace(context : String | Nil = nil)
-    end
-
-    # partially update the specified Endpoints
-    def patch(context : String | Nil = nil)
-    end
-
-    # delete Endpoints
-    def delete(api_version : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, kind : String | Nil = nil, orphan_dependents : Bool | Nil = nil, preconditions : Apimachinery::Apis::Meta::V1::Preconditions | Nil = nil, propagation_policy : String | Nil = nil, context : String | Nil = nil)
+    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @subsets : Array)
     end
   end
 

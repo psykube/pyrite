@@ -6,16 +6,13 @@ require "json"
 module Pyrite
   # ScaleSpec describes the attributes of a scale subresource
   class Api::Apps::V1beta1::ScaleSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # desired number of instances for the scaled object.
+    @[JSON::Field(key: "replicas")]
+    @[YAML::Field(key: "replicas")]
     property replicas : Int32 | Nil
-
-    ::YAML.mapping({
-      replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      replicas: {type: Int32, nilable: true, key: "replicas", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @replicas : Int32 | Nil = nil)
     end

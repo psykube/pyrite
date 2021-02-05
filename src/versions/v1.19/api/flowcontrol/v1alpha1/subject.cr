@@ -6,30 +6,27 @@ require "json"
 module Pyrite
   # Subject matches the originator of a request, as identified by the request authentication system. There are three ways of matching an originator; by user, group, or service account.
   class Api::Flowcontrol::V1alpha1::Subject
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "group")]
+    @[YAML::Field(key: "group")]
     property group : Api::Flowcontrol::V1alpha1::GroupSubject | Nil
 
     # Required
+    @[JSON::Field(key: "kind")]
+    @[YAML::Field(key: "kind")]
     property kind : String
 
+    @[JSON::Field(key: "serviceAccount")]
+    @[YAML::Field(key: "serviceAccount")]
     property service_account : Api::Flowcontrol::V1alpha1::ServiceAccountSubject | Nil
 
+    @[JSON::Field(key: "user")]
+    @[YAML::Field(key: "user")]
     property user : Api::Flowcontrol::V1alpha1::UserSubject | Nil
 
-    ::YAML.mapping({
-      group:           {type: Api::Flowcontrol::V1alpha1::GroupSubject, nilable: true, key: "group", getter: false, setter: false},
-      kind:            {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      service_account: {type: Api::Flowcontrol::V1alpha1::ServiceAccountSubject, nilable: true, key: "serviceAccount", getter: false, setter: false},
-      user:            {type: Api::Flowcontrol::V1alpha1::UserSubject, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      group:           {type: Api::Flowcontrol::V1alpha1::GroupSubject, nilable: true, key: "group", getter: false, setter: false},
-      kind:            {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      service_account: {type: Api::Flowcontrol::V1alpha1::ServiceAccountSubject, nilable: true, key: "serviceAccount", getter: false, setter: false},
-      user:            {type: Api::Flowcontrol::V1alpha1::UserSubject, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @kind : String, @group : Api::Flowcontrol::V1alpha1::GroupSubject | Nil = nil, @service_account : Api::Flowcontrol::V1alpha1::ServiceAccountSubject | Nil = nil, @user : Api::Flowcontrol::V1alpha1::UserSubject | Nil = nil)
+    def initialize(*, @group : Api::Flowcontrol::V1alpha1::GroupSubject | Nil = nil, @kind : String, @service_account : Api::Flowcontrol::V1alpha1::ServiceAccountSubject | Nil = nil, @user : Api::Flowcontrol::V1alpha1::UserSubject | Nil = nil)
     end
   end
 end

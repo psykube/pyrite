@@ -6,41 +6,27 @@ require "json"
 module Pyrite
   # ClusterRoleBindingList is a collection of ClusterRoleBindings
   class Api::Rbac::V1beta1::ClusterRoleBindingList
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "List"
     # Items is a list of ClusterRoleBindings
+    @[JSON::Field(key: "items")]
+    @[YAML::Field(key: "items")]
     property items : Array(Api::Rbac::V1beta1::ClusterRoleBinding)
 
     # Standard object's metadata.
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(Api::Rbac::V1beta1::ClusterRoleBinding), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(Api::Rbac::V1beta1::ClusterRoleBinding), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
-    end
-
-    # create a ClusterRoleBinding
-    def create_rbac_authorization_v1beta1_cluster_role_binding(role_ref : Api::Rbac::V1beta1::RoleRef, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, subjects : Array | Nil = nil, context : String | Nil = nil)
-    end
-
-    # list or watch objects of kind ClusterRoleBinding
-    def self.list_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
-    end
-
-    # delete collection of ClusterRoleBinding
-    def self.delete_rbac_authorization_v1beta1_cluster_role_binding(context : String | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
     end
   end
 end

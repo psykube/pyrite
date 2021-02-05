@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
   class Kubernetes::Apis::Authorization::V1::NonResourceAttributes
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Path is the URL path of the request
+    @[JSON::Field(key: "path")]
+    @[YAML::Field(key: "path")]
     property path : String | Nil
 
     # Verb is the standard HTTP verb
+    @[JSON::Field(key: "verb")]
+    @[YAML::Field(key: "verb")]
     property verb : String | Nil
-
-    ::YAML.mapping({
-      path: {type: String, nilable: true, key: "path", getter: false, setter: false},
-      verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      path: {type: String, nilable: true, key: "path", getter: false, setter: false},
-      verb: {type: String, nilable: true, key: "verb", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @path : String | Nil = nil, @verb : String | Nil = nil)
     end

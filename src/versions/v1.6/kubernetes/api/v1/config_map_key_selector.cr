@@ -6,26 +6,23 @@ require "json"
 module Pyrite
   # Selects a key from a ConfigMap.
   class Kubernetes::Api::V1::ConfigMapKeySelector
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # The key to select.
+    @[JSON::Field(key: "key")]
+    @[YAML::Field(key: "key")]
     property key : String
 
     # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String | Nil
 
     # Specify whether the ConfigMap or it's key must be defined
+    @[JSON::Field(key: "optional")]
+    @[YAML::Field(key: "optional")]
     property optional : Bool | Nil
-
-    ::YAML.mapping({
-      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
-      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
-      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      key:      {type: String, nilable: false, key: "key", getter: false, setter: false},
-      name:     {type: String, nilable: true, key: "name", getter: false, setter: false},
-      optional: {type: Bool, nilable: true, key: "optional", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @key : String, @name : String | Nil = nil, @optional : Bool | Nil = nil)
     end

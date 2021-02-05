@@ -6,74 +6,32 @@ require "json"
 module Pyrite
   # configuration of a horizontal pod autoscaler.
   class Api::Autoscaling::V1::HorizontalPodAutoscaler
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "autoscaling/v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "HorizontalPodAutoscaler"
     # Standard object metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # behaviour of autoscaler. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.](https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.)
+    @[JSON::Field(key: "spec")]
+    @[YAML::Field(key: "spec")]
     property spec : Api::Autoscaling::V1::HorizontalPodAutoscalerSpec | Nil
 
     # current information about the autoscaler.
+    @[JSON::Field(key: "status")]
+    @[YAML::Field(key: "status")]
     property status : Api::Autoscaling::V1::HorizontalPodAutoscalerStatus | Nil
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "autoscaling/v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "HorizontalPodAutoscaler", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      spec:        {type: Api::Autoscaling::V1::HorizontalPodAutoscalerSpec, nilable: true, key: "spec", getter: false, setter: false},
-      status:      {type: Api::Autoscaling::V1::HorizontalPodAutoscalerStatus, nilable: true, key: "status", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "autoscaling/v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "HorizontalPodAutoscaler", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      spec:        {type: Api::Autoscaling::V1::HorizontalPodAutoscalerSpec, nilable: true, key: "spec", getter: false, setter: false},
-      status:      {type: Api::Autoscaling::V1::HorizontalPodAutoscalerStatus, nilable: true, key: "status", getter: false, setter: false},
-    }, true)
-
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Autoscaling::V1::HorizontalPodAutoscalerSpec | Nil = nil, @status : Api::Autoscaling::V1::HorizontalPodAutoscalerStatus | Nil = nil)
-    end
-
-    # create a HorizontalPodAutoscaler
-    def create(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, dry_run : String | Nil = nil)
-    end
-
-    # list or watch objects of kind HorizontalPodAutoscaler
-    def self.list(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # delete collection of HorizontalPodAutoscaler
-    def self.delete(context : String | Nil = nil, include_uninitialized : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # read the specified HorizontalPodAutoscaler
-    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # replace the specified HorizontalPodAutoscaler
-    def replace(context : String | Nil = nil, dry_run : String | Nil = nil)
-    end
-
-    # partially update the specified HorizontalPodAutoscaler
-    def patch(context : String | Nil = nil, dry_run : String | Nil = nil)
-    end
-
-    # delete a HorizontalPodAutoscaler
-    def delete(context : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, orphan_dependents : Bool | Nil = nil, propagation_policy : String | Nil = nil)
-    end
-
-    # read status of the specified HorizontalPodAutoscaler
-    def self.read_status(name : String, context : String | Nil = nil, namespace : String = "default")
-    end
-
-    # replace status of the specified HorizontalPodAutoscaler
-    def replace_status(context : String | Nil = nil, dry_run : String | Nil = nil)
-    end
-
-    # partially update status of the specified HorizontalPodAutoscaler
-    def patch_status(context : String | Nil = nil, dry_run : String | Nil = nil)
     end
   end
 

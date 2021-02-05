@@ -6,23 +6,20 @@ require "json"
 module Pyrite
   # Run A sUser Strategy Options defines the strategy type and any options used to create the strategy.
   class Api::Extensions::V1beta1::RunAsUserStrategyOptions
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Ranges are the allowed ranges of uids that may be used.
+    @[JSON::Field(key: "ranges")]
+    @[YAML::Field(key: "ranges")]
     property ranges : Array(Api::Extensions::V1beta1::IDRange) | Nil
 
     # Rule is the strategy that will dictate the allowable RunAsUser values that may be set.
+    @[JSON::Field(key: "rule")]
+    @[YAML::Field(key: "rule")]
     property rule : String
 
-    ::YAML.mapping({
-      ranges: {type: Array(Api::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
-      rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      ranges: {type: Array(Api::Extensions::V1beta1::IDRange), nilable: true, key: "ranges", getter: false, setter: false},
-      rule:   {type: String, nilable: false, key: "rule", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @rule : String, @ranges : Array | Nil = nil)
+    def initialize(*, @ranges : Array | Nil = nil, @rule : String)
     end
   end
 end

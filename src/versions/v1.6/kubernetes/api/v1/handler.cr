@@ -6,26 +6,23 @@ require "json"
 module Pyrite
   # Handler defines a specific action that should be taken
   class Kubernetes::Api::V1::Handler
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # One and only one of the following should be specified. Exec specifies the action to take.
+    @[JSON::Field(key: "exec")]
+    @[YAML::Field(key: "exec")]
     property exec : Kubernetes::Api::V1::ExecAction | Nil
 
     # HTTPGet specifies the http request to perform.
+    @[JSON::Field(key: "httpGet")]
+    @[YAML::Field(key: "httpGet")]
     property http_get : Kubernetes::Api::V1::HTTPGetAction | Nil
 
     # TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
+    @[JSON::Field(key: "tcpSocket")]
+    @[YAML::Field(key: "tcpSocket")]
     property tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil
-
-    ::YAML.mapping({
-      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
-      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
-      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      exec:       {type: Kubernetes::Api::V1::ExecAction, nilable: true, key: "exec", getter: false, setter: false},
-      http_get:   {type: Kubernetes::Api::V1::HTTPGetAction, nilable: true, key: "httpGet", getter: false, setter: false},
-      tcp_socket: {type: Kubernetes::Api::V1::TCPSocketAction, nilable: true, key: "tcpSocket", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @exec : Kubernetes::Api::V1::ExecAction | Nil = nil, @http_get : Kubernetes::Api::V1::HTTPGetAction | Nil = nil, @tcp_socket : Kubernetes::Api::V1::TCPSocketAction | Nil = nil)
     end

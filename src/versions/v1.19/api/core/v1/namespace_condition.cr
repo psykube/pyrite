@@ -6,35 +6,32 @@ require "json"
 module Pyrite
   # NamespaceCondition contains details about state of namespace.
   class Api::Core::V1::NamespaceCondition
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "lastTransitionTime")]
+    @[YAML::Field(key: "lastTransitionTime")]
     property last_transition_time : Time | Nil
 
+    @[JSON::Field(key: "message")]
+    @[YAML::Field(key: "message")]
     property message : String | Nil
 
+    @[JSON::Field(key: "reason")]
+    @[YAML::Field(key: "reason")]
     property reason : String | Nil
 
     # Status of the condition, one of True, False, Unknown.
+    @[JSON::Field(key: "status")]
+    @[YAML::Field(key: "status")]
     property status : String
 
     # Type of namespace controller condition.
+    @[JSON::Field(key: "type")]
+    @[YAML::Field(key: "type")]
     property type : String
 
-    ::YAML.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
-      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
-      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
-      status:               {type: String, nilable: false, key: "status", getter: false, setter: false},
-      type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      last_transition_time: {type: Time, nilable: true, key: "lastTransitionTime", getter: false, setter: false},
-      message:              {type: String, nilable: true, key: "message", getter: false, setter: false},
-      reason:               {type: String, nilable: true, key: "reason", getter: false, setter: false},
-      status:               {type: String, nilable: false, key: "status", getter: false, setter: false},
-      type:                 {type: String, nilable: false, key: "type", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @status : String, @type : String, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil)
+    def initialize(*, @last_transition_time : Time | Nil = nil, @message : String | Nil = nil, @reason : String | Nil = nil, @status : String, @type : String)
     end
   end
 end

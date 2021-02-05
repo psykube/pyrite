@@ -6,38 +6,35 @@ require "json"
 module Pyrite
   # Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
   class Kubernetes::Api::V1::QuobyteVolumeSource
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Group to map volume access to Default is no group
+    @[JSON::Field(key: "group")]
+    @[YAML::Field(key: "group")]
     property group : String | Nil
 
     # ReadOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
+    @[JSON::Field(key: "readOnly")]
+    @[YAML::Field(key: "readOnly")]
     property read_only : Bool | Nil
 
     # Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
+    @[JSON::Field(key: "registry")]
+    @[YAML::Field(key: "registry")]
     property registry : String
 
     # User to map volume access to Defaults to serivceaccount user
+    @[JSON::Field(key: "user")]
+    @[YAML::Field(key: "user")]
     property user : String | Nil
 
     # Volume is a string that references an already created Quobyte volume by name.
+    @[JSON::Field(key: "volume")]
+    @[YAML::Field(key: "volume")]
     property volume : String
 
-    ::YAML.mapping({
-      group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
-      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
-      registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},
-      user:      {type: String, nilable: true, key: "user", getter: false, setter: false},
-      volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      group:     {type: String, nilable: true, key: "group", getter: false, setter: false},
-      read_only: {type: Bool, nilable: true, key: "readOnly", getter: false, setter: false},
-      registry:  {type: String, nilable: false, key: "registry", getter: false, setter: false},
-      user:      {type: String, nilable: true, key: "user", getter: false, setter: false},
-      volume:    {type: String, nilable: false, key: "volume", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @registry : String, @volume : String, @group : String | Nil = nil, @read_only : Bool | Nil = nil, @user : String | Nil = nil)
+    def initialize(*, @group : String | Nil = nil, @read_only : Bool | Nil = nil, @registry : String, @user : String | Nil = nil, @volume : String)
     end
   end
 end

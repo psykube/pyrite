@@ -6,28 +6,25 @@ require "json"
 module Pyrite
   # CrossVersionObjectReference contains enough information to let you identify the referred resource.
   class Api::Autoscaling::V2beta2::CrossVersionObjectReference
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # API version of the referent
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
     property api_version : String | Nil
 
     # Kind of the referent; More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"](https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds")
+    @[JSON::Field(key: "kind")]
+    @[YAML::Field(key: "kind")]
     property kind : String
 
     # Name of the referent; More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String
 
-    ::YAML.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
-      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, nilable: true, key: "apiVersion", getter: false, setter: false},
-      kind:        {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      name:        {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @kind : String, @name : String, @api_version : String | Nil = nil)
+    def initialize(*, @api_version : String | Nil = nil, @kind : String, @name : String)
     end
   end
 end

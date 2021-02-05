@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # Sysctl defines a kernel parameter to be set
   class Api::Core::V1::Sysctl
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Name of a property to set
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String
 
     # Value of a property to set
+    @[JSON::Field(key: "value")]
+    @[YAML::Field(key: "value")]
     property value : String
-
-    ::YAML.mapping({
-      name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
-      value: {type: String, nilable: false, key: "value", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
-      value: {type: String, nilable: false, key: "value", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @name : String, @value : String)
     end

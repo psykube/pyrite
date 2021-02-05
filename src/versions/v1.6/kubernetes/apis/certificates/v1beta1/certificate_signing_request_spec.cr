@@ -6,44 +6,41 @@ require "json"
 module Pyrite
   # This information is immutable after the request is created. Only the Request and Usages fields can be set on creation, other fields are derived by Kubernetes and cannot be modified by users.
   class Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequestSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Extra information about the requesting user. See user.Info interface for details.
+    @[JSON::Field(key: "extra")]
+    @[YAML::Field(key: "extra")]
     property extra : Hash(String, String) | Nil
 
     # Group information about the requesting user. See user.Info interface for details.
+    @[JSON::Field(key: "groups")]
+    @[YAML::Field(key: "groups")]
     property groups : Array(String) | Nil
 
     # Base64-encoded PKCS#10 CSR data
+    @[JSON::Field(key: "request")]
+    @[YAML::Field(key: "request")]
     property request : String
 
     # UID information about the requesting user. See user.Info interface for details.
+    @[JSON::Field(key: "uid")]
+    @[YAML::Field(key: "uid")]
     property uid : String | Nil
 
     # allowedUsages specifies a set of usage contexts the key will be valid for. See: [https://tools.ietf.org/html/rfc5280#section-4.2.1.3](https://tools.ietf.org/html/rfc5280#section-4.2.1.3)
     #      [https://tools.ietf.org/html/rfc5280#section-4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)
+    @[JSON::Field(key: "usages")]
+    @[YAML::Field(key: "usages")]
     property usages : Array(String) | Nil
 
     # Information about the requesting user. See user.Info interface for details.
+    @[JSON::Field(key: "username")]
+    @[YAML::Field(key: "username")]
     property username : String | Nil
 
-    ::YAML.mapping({
-      extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
-      groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
-      request:  {type: String, nilable: false, key: "request", getter: false, setter: false},
-      uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},
-      usages:   {type: Array(String), nilable: true, key: "usages", getter: false, setter: false},
-      username: {type: String, nilable: true, key: "username", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      extra:    {type: Hash(String, String), nilable: true, key: "extra", getter: false, setter: false},
-      groups:   {type: Array(String), nilable: true, key: "groups", getter: false, setter: false},
-      request:  {type: String, nilable: false, key: "request", getter: false, setter: false},
-      uid:      {type: String, nilable: true, key: "uid", getter: false, setter: false},
-      usages:   {type: Array(String), nilable: true, key: "usages", getter: false, setter: false},
-      username: {type: String, nilable: true, key: "username", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @request : String, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)
+    def initialize(*, @extra : Hash(String, String) | Nil = nil, @groups : Array | Nil = nil, @request : String, @uid : String | Nil = nil, @usages : Array | Nil = nil, @username : String | Nil = nil)
     end
   end
 end

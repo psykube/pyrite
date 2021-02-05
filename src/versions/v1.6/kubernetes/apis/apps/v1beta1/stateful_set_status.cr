@@ -6,23 +6,20 @@ require "json"
 module Pyrite
   # StatefulSetStatus represents the current state of a StatefulSet.
   class Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # most recent generation observed by this StatefulSet.
+    @[JSON::Field(key: "observedGeneration")]
+    @[YAML::Field(key: "observedGeneration")]
     property observed_generation : Int32 | Nil
 
     # Replicas is the number of actual replicas.
+    @[JSON::Field(key: "replicas")]
+    @[YAML::Field(key: "replicas")]
     property replicas : Int32
 
-    ::YAML.mapping({
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
-      replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      observed_generation: {type: Int32, nilable: true, key: "observedGeneration", getter: false, setter: false},
-      replicas:            {type: Int32, nilable: false, key: "replicas", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @replicas : Int32, @observed_generation : Int32 | Nil = nil)
+    def initialize(*, @observed_generation : Int32 | Nil = nil, @replicas : Int32)
     end
   end
 end

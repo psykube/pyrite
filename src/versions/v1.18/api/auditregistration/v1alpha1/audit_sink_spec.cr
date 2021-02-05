@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # AuditSinkSpec holds the spec for the audit sink
   class Api::Auditregistration::V1alpha1::AuditSinkSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Policy defines the policy for selecting which events should be sent to the webhook required
+    @[JSON::Field(key: "policy")]
+    @[YAML::Field(key: "policy")]
     property policy : Api::Auditregistration::V1alpha1::Policy
 
     # Webhook to send events required
+    @[JSON::Field(key: "webhook")]
+    @[YAML::Field(key: "webhook")]
     property webhook : Api::Auditregistration::V1alpha1::Webhook
-
-    ::YAML.mapping({
-      policy:  {type: Api::Auditregistration::V1alpha1::Policy, nilable: false, key: "policy", getter: false, setter: false},
-      webhook: {type: Api::Auditregistration::V1alpha1::Webhook, nilable: false, key: "webhook", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      policy:  {type: Api::Auditregistration::V1alpha1::Policy, nilable: false, key: "policy", getter: false, setter: false},
-      webhook: {type: Api::Auditregistration::V1alpha1::Webhook, nilable: false, key: "webhook", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @policy : Api::Auditregistration::V1alpha1::Policy, @webhook : Api::Auditregistration::V1alpha1::Webhook)
     end

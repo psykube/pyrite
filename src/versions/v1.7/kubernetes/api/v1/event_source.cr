@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # EventSource contains information for an event.
   class Kubernetes::Api::V1::EventSource
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Component from which the event is generated.
+    @[JSON::Field(key: "component")]
+    @[YAML::Field(key: "component")]
     property component : String | Nil
 
     # Node name on which the event is generated.
+    @[JSON::Field(key: "host")]
+    @[YAML::Field(key: "host")]
     property host : String | Nil
-
-    ::YAML.mapping({
-      component: {type: String, nilable: true, key: "component", getter: false, setter: false},
-      host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      component: {type: String, nilable: true, key: "component", getter: false, setter: false},
-      host:      {type: String, nilable: true, key: "host", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @component : String | Nil = nil, @host : String | Nil = nil)
     end

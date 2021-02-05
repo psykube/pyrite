@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # ID Range provides a [min/max of an allowed range of IDs.](min/max of an allowed range of IDs.)
   class Api::Policy::V1beta1::IDRange
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Max is the end of the range, inclusive.
+    @[JSON::Field(key: "max")]
+    @[YAML::Field(key: "max")]
     property max : Int32
 
     # Min is the start of the range, inclusive.
+    @[JSON::Field(key: "min")]
+    @[YAML::Field(key: "min")]
     property min : Int32
-
-    ::YAML.mapping({
-      max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
-      min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
-      min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @max : Int32, @min : Int32)
     end

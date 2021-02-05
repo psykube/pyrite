@@ -6,67 +6,37 @@ require "json"
 module Pyrite
   # EndpointSlice represents a subset of the endpoints that implement a service. For a given service there may be multiple EndpointSlice objects, selected by labels, which must be joined to produce the full set of endpoints.
   class Api::Discovery::V1alpha1::EndpointSlice
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "discovery/v1alpha1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "EndpointSlice"
     # addressType specifies the type of address carried by this EndpointSlice. All addresses in this slice must be the same type. Default is IP
+    @[JSON::Field(key: "addressType")]
+    @[YAML::Field(key: "addressType")]
     property address_type : String | Nil
 
     # endpoints is a list of unique endpoints in this slice. Each slice may include a maximum of 1000 endpoints.
+    @[JSON::Field(key: "endpoints")]
+    @[YAML::Field(key: "endpoints")]
     property endpoints : Array(Api::Discovery::V1alpha1::Endpoint)
 
     # Standard object's metadata.
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # ports specifies the list of network ports exposed by each endpoint in this slice. Each port must have a unique name. When ports is empty, it indicates that there are no defined ports. When a port is defined with a nil port value, it indicates "all ports". Each slice may include a maximum of 100 ports.
+    @[JSON::Field(key: "ports")]
+    @[YAML::Field(key: "ports")]
     property ports : Array(Api::Discovery::V1alpha1::EndpointPort) | Nil
 
-    ::YAML.mapping({
-      api_version:  {type: String, default: "discovery/v1alpha1", key: "apiVersion", setter: false},
-      kind:         {type: String, default: "EndpointSlice", key: "kind", setter: false},
-      address_type: {type: String, nilable: true, key: "addressType", getter: false, setter: false},
-      endpoints:    {type: Array(Api::Discovery::V1alpha1::Endpoint), nilable: false, key: "endpoints", getter: false, setter: false},
-      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      ports:        {type: Array(Api::Discovery::V1alpha1::EndpointPort), nilable: true, key: "ports", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version:  {type: String, default: "discovery/v1alpha1", key: "apiVersion", setter: false},
-      kind:         {type: String, default: "EndpointSlice", key: "kind", setter: false},
-      address_type: {type: String, nilable: true, key: "addressType", getter: false, setter: false},
-      endpoints:    {type: Array(Api::Discovery::V1alpha1::Endpoint), nilable: false, key: "endpoints", getter: false, setter: false},
-      metadata:     {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      ports:        {type: Array(Api::Discovery::V1alpha1::EndpointPort), nilable: true, key: "ports", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @endpoints : Array, @address_type : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @ports : Array | Nil = nil)
-    end
-
-    # create an EndpointSlice
-    def create(context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil)
-    end
-
-    # list or watch objects of kind EndpointSlice
-    def self.list(context : String | Nil = nil, allow_watch_bookmarks : Bool | Nil = nil, continue : String | Nil = nil, field_selector : String | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # delete collection of EndpointSlice
-    def self.delete(context : String | Nil = nil, allow_watch_bookmarks : Bool | Nil = nil, continue : String | Nil = nil, dry_run : String | Nil = nil, field_selector : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, label_selector : String | Nil = nil, limit : Int32 | Nil = nil, orphan_dependents : Bool | Nil = nil, propagation_policy : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # read the specified EndpointSlice
-    def self.read(name : String, context : String | Nil = nil, exact : Bool | Nil = nil, export : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # replace the specified EndpointSlice
-    def replace(context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil)
-    end
-
-    # partially update the specified EndpointSlice
-    def patch(context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil, force : Bool | Nil = nil)
-    end
-
-    # delete an EndpointSlice
-    def delete(context : String | Nil = nil, dry_run : String | Nil = nil, grace_period_seconds : Int32 | Nil = nil, orphan_dependents : Bool | Nil = nil, propagation_policy : String | Nil = nil)
+    def initialize(*, @address_type : String | Nil = nil, @endpoints : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @ports : Array | Nil = nil)
     end
   end
 

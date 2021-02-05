@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # HTTPHeader describes a custom header to be used in HTTP probes
   class Api::Core::V1::HTTPHeader
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # The header field name
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String
 
     # The header field value
+    @[JSON::Field(key: "value")]
+    @[YAML::Field(key: "value")]
     property value : String
-
-    ::YAML.mapping({
-      name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
-      value: {type: String, nilable: false, key: "value", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      name:  {type: String, nilable: false, key: "name", getter: false, setter: false},
-      value: {type: String, nilable: false, key: "value", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @name : String, @value : String)
     end

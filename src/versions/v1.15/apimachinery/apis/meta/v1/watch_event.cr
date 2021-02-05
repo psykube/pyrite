@@ -6,24 +6,21 @@ require "json"
 module Pyrite
   # Event represents a single event to a watched resource.
   class Apimachinery::Apis::Meta::V1::WatchEvent
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Object is:
     #  * If Type is Added or Modified: the new state of the object.
     #  * If Type is Deleted: the state of the object immediately before deletion.
     #  * If Type is Error: *Status is recommended; other types may make sense
     #    depending on context.
+    @[JSON::Field(key: "object")]
+    @[YAML::Field(key: "object")]
     property object : Apimachinery::Runtime::RawExtension
 
+    @[JSON::Field(key: "type")]
+    @[YAML::Field(key: "type")]
     property type : String
-
-    ::YAML.mapping({
-      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
-      type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      object: {type: Apimachinery::Runtime::RawExtension, nilable: false, key: "object", getter: false, setter: false},
-      type:   {type: String, nilable: false, key: "type", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @object : Apimachinery::Runtime::RawExtension, @type : String)
     end

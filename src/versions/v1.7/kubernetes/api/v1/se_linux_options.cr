@@ -6,31 +6,28 @@ require "json"
 module Pyrite
   # SELinuxOptions are the labels to be applied to the container
   class Kubernetes::Api::V1::SELinuxOptions
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Level is SELinux level label that applies to the container.
+    @[JSON::Field(key: "level")]
+    @[YAML::Field(key: "level")]
     property level : String | Nil
 
     # Role is a SELinux role label that applies to the container.
+    @[JSON::Field(key: "role")]
+    @[YAML::Field(key: "role")]
     property role : String | Nil
 
     # Type is a SELinux type label that applies to the container.
+    @[JSON::Field(key: "type")]
+    @[YAML::Field(key: "type")]
     property type : String | Nil
 
     # User is a SELinux user label that applies to the container.
+    @[JSON::Field(key: "user")]
+    @[YAML::Field(key: "user")]
     property user : String | Nil
-
-    ::YAML.mapping({
-      level: {type: String, nilable: true, key: "level", getter: false, setter: false},
-      role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
-      type:  {type: String, nilable: true, key: "type", getter: false, setter: false},
-      user:  {type: String, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      level: {type: String, nilable: true, key: "level", getter: false, setter: false},
-      role:  {type: String, nilable: true, key: "role", getter: false, setter: false},
-      type:  {type: String, nilable: true, key: "type", getter: false, setter: false},
-      user:  {type: String, nilable: true, key: "user", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @level : String | Nil = nil, @role : String | Nil = nil, @type : String | Nil = nil, @user : String | Nil = nil)
     end

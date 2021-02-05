@@ -5,16 +5,13 @@ require "json"
 
 module Pyrite
   class Api::Authorization::V1beta1::SelfSubjectRulesReviewSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Namespace to evaluate rules for. Required.
+    @[JSON::Field(key: "namespace")]
+    @[YAML::Field(key: "namespace")]
     property namespace : String | Nil
-
-    ::YAML.mapping({
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @namespace : String | Nil = nil)
     end

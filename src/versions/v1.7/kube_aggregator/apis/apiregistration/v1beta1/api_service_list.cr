@@ -6,39 +6,25 @@ require "json"
 module Pyrite
   # APIServiceList is a list of APIService objects.
   class KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceList
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "List"
+    @[JSON::Field(key: "items")]
+    @[YAML::Field(key: "items")]
     property items : Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIService)
 
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIService), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(KubeAggregator::Apis::Apiregistration::V1beta1::APIService), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
-    end
-
-    # create an APIService
-    def create(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, spec : KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceSpec | Nil = nil, status : KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceStatus | Nil = nil, context : String | Nil = nil)
-    end
-
-    # list or watch objects of kind APIService
-    def self.list(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
-    end
-
-    # delete collection of APIService
-    def self.delete(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
     end
   end
 end

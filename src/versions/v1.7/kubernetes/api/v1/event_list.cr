@@ -6,45 +6,27 @@ require "json"
 module Pyrite
   # EventList is a list of events.
   class Kubernetes::Api::V1::EventList
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "List"
     # List of events
+    @[JSON::Field(key: "items")]
+    @[YAML::Field(key: "items")]
     property items : Array(Kubernetes::Api::V1::Event)
 
     # Standard list metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds](https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds)
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(Kubernetes::Api::V1::Event), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "List", key: "kind", setter: false},
-      items:       {type: Array(Kubernetes::Api::V1::Event), nilable: false, key: "items", getter: false, setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ListMeta, nilable: true, key: "metadata", getter: false, setter: false},
-    }, true)
-
     def initialize(*, @items : Array, @metadata : Apimachinery::Apis::Meta::V1::ListMeta | Nil = nil)
-    end
-
-    # list or watch objects of kind Event
-    def self.list_for_all_namespaces(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil)
-    end
-
-    # create an Event
-    def create(involved_object : Kubernetes::Api::V1::ObjectReference, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta, count : Int32 | Nil = nil, first_timestamp : Time | Nil = nil, last_timestamp : Time | Nil = nil, message : String | Nil = nil, reason : String | Nil = nil, source : Kubernetes::Api::V1::EventSource | Nil = nil, type : String | Nil = nil, context : String | Nil = nil)
-    end
-
-    # list or watch objects of kind Event
-    def self.list(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
-    end
-
-    # delete collection of Event
-    def self.delete(context : String | Nil = nil, field_selector : String | Nil = nil, include_uninitialized : Bool | Nil = nil, label_selector : String | Nil = nil, resource_version : String | Nil = nil, timeout_seconds : Int32 | Nil = nil, watch : Bool | Nil = nil, namespace : String = "default")
     end
   end
 end

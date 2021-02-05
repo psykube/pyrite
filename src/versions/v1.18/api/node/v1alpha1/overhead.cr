@@ -6,16 +6,13 @@ require "json"
 module Pyrite
   # Overhead structure represents the resource overhead associated with running a pod.
   class Api::Node::V1alpha1::Overhead
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # PodFixed represents the fixed resource overhead associated with running a pod.
+    @[JSON::Field(key: "podFixed")]
+    @[YAML::Field(key: "podFixed")]
     property pod_fixed : Hash(String, String) | Nil
-
-    ::YAML.mapping({
-      pod_fixed: {type: Hash(String, String), nilable: true, key: "podFixed", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      pod_fixed: {type: Hash(String, String), nilable: true, key: "podFixed", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @pod_fixed : Hash(String, String) | Nil = nil)
     end

@@ -6,26 +6,23 @@ require "json"
 module Pyrite
   # ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
   class Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # metricName is the name of the metric in question.
+    @[JSON::Field(key: "metricName")]
+    @[YAML::Field(key: "metricName")]
     property metric_name : String
 
     # target is the described Kubernetes object.
+    @[JSON::Field(key: "target")]
+    @[YAML::Field(key: "target")]
     property target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference
 
     # targetValue is the target value of the metric (as a quantity).
+    @[JSON::Field(key: "targetValue")]
+    @[YAML::Field(key: "targetValue")]
     property target_value : Int32
-
-    ::YAML.mapping({
-      metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
-      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
-      target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      metric_name:  {type: String, nilable: false, key: "metricName", getter: false, setter: false},
-      target:       {type: Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, nilable: false, key: "target", getter: false, setter: false},
-      target_value: {type: Int32, nilable: false, key: "targetValue", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @metric_name : String, @target : Kubernetes::Apis::Autoscaling::V2alpha1::CrossVersionObjectReference, @target_value : Int32)
     end

@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # HostPortRange defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined.
   class Api::Policy::V1beta1::HostPortRange
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # max is the end of the range, inclusive.
+    @[JSON::Field(key: "max")]
+    @[YAML::Field(key: "max")]
     property max : Int32
 
     # min is the start of the range, inclusive.
+    @[JSON::Field(key: "min")]
+    @[YAML::Field(key: "min")]
     property min : Int32
-
-    ::YAML.mapping({
-      max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
-      min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      max: {type: Int32, nilable: false, key: "max", getter: false, setter: false},
-      min: {type: Int32, nilable: false, key: "min", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @max : Int32, @min : Int32)
     end

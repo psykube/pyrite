@@ -6,28 +6,25 @@ require "json"
 module Pyrite
   # ResourceFieldSelector represents container resources (cpu, memory) and their output format
   class Api::Core::V1::ResourceFieldSelector
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Container name: required for volumes, optional for env vars
+    @[JSON::Field(key: "containerName")]
+    @[YAML::Field(key: "containerName")]
     property container_name : String | Nil
 
     # Specifies the output format of the exposed resources, defaults to "1"
+    @[JSON::Field(key: "divisor")]
+    @[YAML::Field(key: "divisor")]
     property divisor : Int32 | Nil
 
     # Required: resource to select
+    @[JSON::Field(key: "resource")]
+    @[YAML::Field(key: "resource")]
     property resource : String
 
-    ::YAML.mapping({
-      container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
-      divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
-      resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      container_name: {type: String, nilable: true, key: "containerName", getter: false, setter: false},
-      divisor:        {type: Int32, nilable: true, key: "divisor", getter: false, setter: false},
-      resource:       {type: String, nilable: false, key: "resource", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @resource : String, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil)
+    def initialize(*, @container_name : String | Nil = nil, @divisor : Int32 | Nil = nil, @resource : String)
     end
   end
 end

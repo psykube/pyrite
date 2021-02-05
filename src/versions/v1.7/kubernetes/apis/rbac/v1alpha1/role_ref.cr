@@ -6,26 +6,23 @@ require "json"
 module Pyrite
   # RoleRef contains information that points to the role being used
   class Kubernetes::Apis::Rbac::V1alpha1::RoleRef
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # APIGroup is the group for the resource being referenced
+    @[JSON::Field(key: "apiGroup")]
+    @[YAML::Field(key: "apiGroup")]
     property api_group : String
 
     # Kind is the type of resource being referenced
+    @[JSON::Field(key: "kind")]
+    @[YAML::Field(key: "kind")]
     property kind : String
 
     # Name is the name of resource being referenced
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String
-
-    ::YAML.mapping({
-      api_group: {type: String, nilable: false, key: "apiGroup", getter: false, setter: false},
-      kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_group: {type: String, nilable: false, key: "apiGroup", getter: false, setter: false},
-      kind:      {type: String, nilable: false, key: "kind", getter: false, setter: false},
-      name:      {type: String, nilable: false, key: "name", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @api_group : String, @kind : String, @name : String)
     end

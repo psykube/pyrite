@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
   class Api::Core::V1::SecretReference
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Name is unique within a namespace to reference a secret resource.
+    @[JSON::Field(key: "name")]
+    @[YAML::Field(key: "name")]
     property name : String | Nil
 
     # Namespace defines the space within which the secret name must be unique.
+    @[JSON::Field(key: "namespace")]
+    @[YAML::Field(key: "namespace")]
     property namespace : String | Nil
-
-    ::YAML.mapping({
-      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      name:      {type: String, nilable: true, key: "name", getter: false, setter: false},
-      namespace: {type: String, nilable: true, key: "namespace", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @name : String | Nil = nil, @namespace : String | Nil = nil)
     end

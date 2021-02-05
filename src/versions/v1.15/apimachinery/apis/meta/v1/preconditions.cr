@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
   class Apimachinery::Apis::Meta::V1::Preconditions
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Specifies the target ResourceVersion
+    @[JSON::Field(key: "resourceVersion")]
+    @[YAML::Field(key: "resourceVersion")]
     property resource_version : String | Nil
 
     # Specifies the target UID.
+    @[JSON::Field(key: "uid")]
+    @[YAML::Field(key: "uid")]
     property uid : String | Nil
-
-    ::YAML.mapping({
-      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
-      uid:              {type: String, nilable: true, key: "uid", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      resource_version: {type: String, nilable: true, key: "resourceVersion", getter: false, setter: false},
-      uid:              {type: String, nilable: true, key: "uid", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @resource_version : String | Nil = nil, @uid : String | Nil = nil)
     end

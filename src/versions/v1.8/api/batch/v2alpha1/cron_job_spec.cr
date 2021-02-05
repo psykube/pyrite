@@ -6,48 +6,45 @@ require "json"
 module Pyrite
   # CronJobSpec describes how the job execution will look like and when it will actually run.
   class Api::Batch::V2alpha1::CronJobSpec
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # Specifies how to treat concurrent executions of a Job. Defaults to Allow.
+    @[JSON::Field(key: "concurrencyPolicy")]
+    @[YAML::Field(key: "concurrencyPolicy")]
     property concurrency_policy : String | Nil
 
     # The number of failed finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified.
+    @[JSON::Field(key: "failedJobsHistoryLimit")]
+    @[YAML::Field(key: "failedJobsHistoryLimit")]
     property failed_jobs_history_limit : Int32 | Nil
 
     # Specifies the job that will be created when executing a CronJob.
+    @[JSON::Field(key: "jobTemplate")]
+    @[YAML::Field(key: "jobTemplate")]
     property job_template : Api::Batch::V2alpha1::JobTemplateSpec
 
     # The schedule in Cron format, see [https://en.wikipedia.org/wiki/Cron.](https://en.wikipedia.org/wiki/Cron.)
+    @[JSON::Field(key: "schedule")]
+    @[YAML::Field(key: "schedule")]
     property schedule : String
 
     # Optional deadline in seconds for starting the job if it misses scheduled time for any reason.  Missed jobs executions will be counted as failed ones.
+    @[JSON::Field(key: "startingDeadlineSeconds")]
+    @[YAML::Field(key: "startingDeadlineSeconds")]
     property starting_deadline_seconds : Int32 | Nil
 
     # The number of successful finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified.
+    @[JSON::Field(key: "successfulJobsHistoryLimit")]
+    @[YAML::Field(key: "successfulJobsHistoryLimit")]
     property successful_jobs_history_limit : Int32 | Nil
 
     # This flag tells the controller to suspend subsequent executions, it does not apply to already started executions.  Defaults to false.
+    @[JSON::Field(key: "suspend")]
+    @[YAML::Field(key: "suspend")]
     property suspend : Bool | Nil
 
-    ::YAML.mapping({
-      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
-      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
-      job_template:                  {type: Api::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},
-      schedule:                      {type: String, nilable: false, key: "schedule", getter: false, setter: false},
-      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds", getter: false, setter: false},
-      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit", getter: false, setter: false},
-      suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      concurrency_policy:            {type: String, nilable: true, key: "concurrencyPolicy", getter: false, setter: false},
-      failed_jobs_history_limit:     {type: Int32, nilable: true, key: "failedJobsHistoryLimit", getter: false, setter: false},
-      job_template:                  {type: Api::Batch::V2alpha1::JobTemplateSpec, nilable: false, key: "jobTemplate", getter: false, setter: false},
-      schedule:                      {type: String, nilable: false, key: "schedule", getter: false, setter: false},
-      starting_deadline_seconds:     {type: Int32, nilable: true, key: "startingDeadlineSeconds", getter: false, setter: false},
-      successful_jobs_history_limit: {type: Int32, nilable: true, key: "successfulJobsHistoryLimit", getter: false, setter: false},
-      suspend:                       {type: Bool, nilable: true, key: "suspend", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @job_template : Api::Batch::V2alpha1::JobTemplateSpec, @schedule : String, @concurrency_policy : String | Nil = nil, @failed_jobs_history_limit : Int32 | Nil = nil, @starting_deadline_seconds : Int32 | Nil = nil, @successful_jobs_history_limit : Int32 | Nil = nil, @suspend : Bool | Nil = nil)
+    def initialize(*, @concurrency_policy : String | Nil = nil, @failed_jobs_history_limit : Int32 | Nil = nil, @job_template : Api::Batch::V2alpha1::JobTemplateSpec, @schedule : String, @starting_deadline_seconds : Int32 | Nil = nil, @successful_jobs_history_limit : Int32 | Nil = nil, @suspend : Bool | Nil = nil)
     end
   end
 end

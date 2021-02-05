@@ -6,15 +6,12 @@ require "json"
 module Pyrite
   # JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil.
   class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSON
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "Raw")]
+    @[YAML::Field(key: "Raw")]
     property raw : String
-
-    ::YAML.mapping({
-      raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      raw: {type: String, nilable: false, key: "Raw", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @raw : String)
     end

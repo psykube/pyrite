@@ -6,19 +6,16 @@ require "json"
 module Pyrite
   # JSONSchemaPropsOrArray represents a value that can either be a JSONSchemaProps or an array of JSONSchemaProps. Mainly here for serialization purposes.
   class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrArray
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "JSONSchemas")]
+    @[YAML::Field(key: "JSONSchemas")]
     property json_schemas : Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)
 
+    @[JSON::Field(key: "Schema")]
+    @[YAML::Field(key: "Schema")]
     property schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps
-
-    ::YAML.mapping({
-      json_schemas: {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: false, key: "JSONSchemas", getter: false, setter: false},
-      schema:       {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: false, key: "Schema", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      json_schemas: {type: Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps), nilable: false, key: "JSONSchemas", getter: false, setter: false},
-      schema:       {type: ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps, nilable: false, key: "Schema", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @json_schemas : Array, @schema : ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)
     end

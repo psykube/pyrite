@@ -6,21 +6,18 @@ require "json"
 module Pyrite
   # Webhook holds the configuration of the webhook
   class Api::Auditregistration::V1alpha1::Webhook
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
     # ClientConfig holds the connection parameters for the webhook required
+    @[JSON::Field(key: "clientConfig")]
+    @[YAML::Field(key: "clientConfig")]
     property client_config : Api::Auditregistration::V1alpha1::WebhookClientConfig
 
     # Throttle holds the options for throttling the webhook
+    @[JSON::Field(key: "throttle")]
+    @[YAML::Field(key: "throttle")]
     property throttle : Api::Auditregistration::V1alpha1::WebhookThrottleConfig | Nil
-
-    ::YAML.mapping({
-      client_config: {type: Api::Auditregistration::V1alpha1::WebhookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
-      throttle:      {type: Api::Auditregistration::V1alpha1::WebhookThrottleConfig, nilable: true, key: "throttle", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      client_config: {type: Api::Auditregistration::V1alpha1::WebhookClientConfig, nilable: false, key: "clientConfig", getter: false, setter: false},
-      throttle:      {type: Api::Auditregistration::V1alpha1::WebhookThrottleConfig, nilable: true, key: "throttle", getter: false, setter: false},
-    }, true)
 
     def initialize(*, @client_config : Api::Auditregistration::V1alpha1::WebhookClientConfig, @throttle : Api::Auditregistration::V1alpha1::WebhookThrottleConfig | Nil = nil)
     end

@@ -6,37 +6,31 @@ require "json"
 module Pyrite
   # SubjectAccessReview checks whether or not a user or group can perform an action.
   class Api::Authorization::V1::SubjectAccessReview
+    include ::JSON::Serializable
+    include ::YAML::Serializable
+
+    @[JSON::Field(key: "apiVersion")]
+    @[YAML::Field(key: "apiVersion")]
+    # The API and version we are accessing.
     getter api_version : String = "authorization/v1"
+
+    # The resource kind withing the given apiVersion.
     getter kind : String = "SubjectAccessReview"
+    @[JSON::Field(key: "metadata")]
+    @[YAML::Field(key: "metadata")]
     property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Spec holds information about the request being evaluated
+    @[JSON::Field(key: "spec")]
+    @[YAML::Field(key: "spec")]
     property spec : Api::Authorization::V1::SubjectAccessReviewSpec
 
     # Status is filled in by the server and indicates whether the request is allowed or not
+    @[JSON::Field(key: "status")]
+    @[YAML::Field(key: "status")]
     property status : Api::Authorization::V1::SubjectAccessReviewStatus | Nil
 
-    ::YAML.mapping({
-      api_version: {type: String, default: "authorization/v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "SubjectAccessReview", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      spec:        {type: Api::Authorization::V1::SubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
-      status:      {type: Api::Authorization::V1::SubjectAccessReviewStatus, nilable: true, key: "status", getter: false, setter: false},
-    }, true)
-
-    ::JSON.mapping({
-      api_version: {type: String, default: "authorization/v1", key: "apiVersion", setter: false},
-      kind:        {type: String, default: "SubjectAccessReview", key: "kind", setter: false},
-      metadata:    {type: Apimachinery::Apis::Meta::V1::ObjectMeta, nilable: true, key: "metadata", getter: false, setter: false},
-      spec:        {type: Api::Authorization::V1::SubjectAccessReviewSpec, nilable: false, key: "spec", getter: false, setter: false},
-      status:      {type: Api::Authorization::V1::SubjectAccessReviewStatus, nilable: true, key: "status", getter: false, setter: false},
-    }, true)
-
-    def initialize(*, @spec : Api::Authorization::V1::SubjectAccessReviewSpec, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @status : Api::Authorization::V1::SubjectAccessReviewStatus | Nil = nil)
-    end
-
-    # create a SubjectAccessReview
-    def create(context : String | Nil = nil, dry_run : String | Nil = nil, field_manager : String | Nil = nil)
+    def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Authorization::V1::SubjectAccessReviewSpec, @status : Api::Authorization::V1::SubjectAccessReviewStatus | Nil = nil)
     end
   end
 
