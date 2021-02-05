@@ -9,13 +9,30 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("scheduling/v1"))]
-    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("scheduling/v1"))]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "scheduling/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "PriorityClass"
+
+    def self.new(pull : JSON::PullParser)
+      previous_def(pull).tap do |instance|
+        unless instance.api_version == "scheduling/v1" && instance.kind == "PriorityClass"
+          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+        end
+      end
+    end
+
+    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+      previous_def(ctx, node).tap do |instance|
+        unless instance.api_version == "scheduling/v1" && instance.kind == "PriorityClass"
+          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+        end
+      end
+    end
+
     # description is an arbitrary string that usually provides guidelines on when this priority class should be used.
     @[::JSON::Field(key: "description")]
     @[::YAML::Field(key: "description")]

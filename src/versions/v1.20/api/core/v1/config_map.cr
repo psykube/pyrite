@@ -9,13 +9,30 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("v1"))]
-    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("v1"))]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "ConfigMap"
+
+    def self.new(pull : JSON::PullParser)
+      previous_def(pull).tap do |instance|
+        unless instance.api_version == "v1" && instance.kind == "ConfigMap"
+          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+        end
+      end
+    end
+
+    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+      previous_def(ctx, node).tap do |instance|
+        unless instance.api_version == "v1" && instance.kind == "ConfigMap"
+          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+        end
+      end
+    end
+
     # BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
     @[::JSON::Field(key: "binaryData")]
     @[::YAML::Field(key: "binaryData")]

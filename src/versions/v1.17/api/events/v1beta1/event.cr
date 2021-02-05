@@ -9,13 +9,30 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("events/v1beta1"))]
-    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("events/v1beta1"))]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "events/v1beta1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "Event"
+
+    def self.new(pull : JSON::PullParser)
+      previous_def(pull).tap do |instance|
+        unless instance.api_version == "events/v1beta1" && instance.kind == "Event"
+          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+        end
+      end
+    end
+
+    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+      previous_def(ctx, node).tap do |instance|
+        unless instance.api_version == "events/v1beta1" && instance.kind == "Event"
+          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+        end
+      end
+    end
+
     # What action was [taken/failed regarding to the regarding object.](taken/failed regarding to the regarding object.)
     @[::JSON::Field(key: "action")]
     @[::YAML::Field(key: "action")]

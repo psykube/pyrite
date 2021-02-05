@@ -9,13 +9,30 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("storage/v1"))]
-    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("storage/v1"))]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "storage/v1"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "CSIDriver"
+
+    def self.new(pull : JSON::PullParser)
+      previous_def(pull).tap do |instance|
+        unless instance.api_version == "storage/v1" && instance.kind == "CSIDriver"
+          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+        end
+      end
+    end
+
+    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+      previous_def(ctx, node).tap do |instance|
+        unless instance.api_version == "storage/v1" && instance.kind == "CSIDriver"
+          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+        end
+      end
+    end
+
     # Standard object metadata. metadata.Name indicates the name of the CSI driver that this object refers to; it MUST be the same name returned by the CSI GetPluginName() call for that driver. The driver name must be 63 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), dots (.), and alphanumerics between. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
     @[::JSON::Field(key: "metadata")]
     @[::YAML::Field(key: "metadata")]

@@ -9,13 +9,30 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("apps/v1beta2"))]
-    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("apps/v1beta2"))]
+    @[::JSON::Field(key: "apiVersion")]
+    @[::YAML::Field(key: "apiVersion")]
     # The API and version we are accessing.
     getter api_version : String = "apps/v1beta2"
 
     # The resource kind withing the given apiVersion.
     getter kind : String = "ControllerRevision"
+
+    def self.new(pull : JSON::PullParser)
+      previous_def(pull).tap do |instance|
+        unless instance.api_version == "apps/v1beta2" && instance.kind == "ControllerRevision"
+          raise JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
+        end
+      end
+    end
+
+    def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+      previous_def(ctx, node).tap do |instance|
+        unless instance.api_version == "apps/v1beta2" && instance.kind == "ControllerRevision"
+          raise YAML::ParseException.new("Couldn't parse #{self}", *node.location)
+        end
+      end
+    end
+
     # Data is the serialized representation of the state.
     @[::JSON::Field(key: "data")]
     @[::YAML::Field(key: "data")]

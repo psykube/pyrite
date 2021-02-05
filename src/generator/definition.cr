@@ -296,13 +296,33 @@ class Generator::Definition
     file.puts ""
 
     if is_resource?
-      file.puts "@[::JSON::Field(key: \"apiVersion\", converter: ::#{base_class}::StringChecker.new(#{api_version_name.inspect}))]"
-      file.puts "@[::YAML::Field(key: \"apiVersion\", converter: ::#{base_class}::StringChecker.new(#{api_version_name.inspect}))]"
+      file.puts "@[::JSON::Field(key: \"apiVersion\")]"
+      file.puts "@[::YAML::Field(key: \"apiVersion\")]"
       file.puts "# The API and version we are accessing."
       file.puts "getter api_version : String = #{api_version_name.inspect}"
       file.puts ""
       file.puts "# The resource kind withing the given apiVersion."
       file.puts "getter kind : String = #{kind.inspect}"
+
+      file.puts <<-crystal
+
+        def self.new(pull : JSON::PullParser)
+          previous_def(pull).tap do |instance|
+            unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
+              raise JSON::ParseException.new("Couldn't parse \#{self} from \#{pull.read_raw}", *pull.location)
+            end
+          end
+        end
+
+        def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+          previous_def(ctx, node).tap do |instance|
+            unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
+              raise YAML::ParseException.new("Couldn't parse \#{self}", *node.location)
+            end
+          end
+        end
+
+      crystal
     end
     properties.each do |name, property|
       next if is_resource? && resource_property?(name)

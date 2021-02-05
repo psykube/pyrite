@@ -1,6 +1,5 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
-require "./v1.14/string_checker"
 require "./v1.14/api/admissionregistration/v1beta1/mutating_webhook_configuration.cr"
 require "./v1.14/api/admissionregistration/v1beta1/mutating_webhook_configuration_list.cr"
 require "./v1.14/api/admissionregistration/v1beta1/rule_with_operations.cr"

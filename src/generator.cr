@@ -53,54 +53,10 @@ class Generator
     Dir.cd(File.join(File.join(".", VERSIONS_DIR))) do
       File.open(filename, "w+") do |file|
         file.puts "# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC", ""
-        file.puts "require \"./#{version}/string_checker\""
         definitions.map(&.filename).each { |r| file.puts "require \"#{r.sub(base_dir, "./#{version}")}\"" }
         file.puts "require \"./#{version}/kubernetes\""
       end
       resource_classes = definitions.select(&.is_resource?).reject(&.is_list?).map { |r| "#{r.resource_alias}::#{r.kind}" }
-      File.open(File.join(version, "string_checker.cr"), "w+") do |file|
-        file.puts <<-crystal
-          struct #{base_class}::StringChecker
-            class Error < Exception
-            end
-
-            def initialize(@match : String)
-            end
-
-            def from_json(pull : JSON::PullParser) : String
-              check(pull.read_string)
-            end
-
-            def to_json(value : String, json : JSON::Builder)
-              json.string(value)
-            end
-
-            def from_yaml(ctx : YAML::ParseContext, node : YAML::Nodes::Node) : String
-              unless node.is_a?(YAML::Nodes::Scalar)
-                node.raise "Expected scalar, not \#{node.class}"
-              end
-          
-              check(node.value)
-            end
-
-            def to_yaml(value : String, yaml : YAML::Nodes::Builder)
-              yaml.scalar value
-            end
-
-            private def check(string : String) : String
-              if string == @match
-                return string
-              else
-                raise Error.new("\#{string} does not match \#{@match}")
-              end
-            end
-
-            private def check(match) 
-              raise Error.new("\#{match} is not a string`")
-            end
-          end
-        crystal
-      end
 
       File.open(File.join(version, "kubernetes.cr"), "w+") do |file|
         file.puts <<-crystal
