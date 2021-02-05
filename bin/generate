@@ -36,6 +36,9 @@ major = 1
 minor = 6
 
 FileUtils.rm_rf File.join(".", Generator::VERSIONS_DIR)
+FileUtils.rm_rf File.join(".", "docs")
+FileUtils.mkdir_p File.join(".", "docs")
+File.write(File.join(".", "docs", "index.html"), "<h1>Pyrite Documentation</h1>\n")
 
 loop do
   prefix = "v#{major}.#{minor}"
@@ -44,6 +47,7 @@ loop do
   if last_res && patch
     version = "#{prefix}.#{patch}"
     Generator.generate(last_res, version)
+    File.write(File.join(".", "docs", "index.html"), "<a href=\"./#{prefix}/index.html\">Docs for Kubernetes #{prefix}</a>\n", mode: "a")
     minor += 1
   else
     break
