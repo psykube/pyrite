@@ -2,8 +2,7 @@ require "json"
 require "../schema"
 
 class Swagger::Path::Action::Response
-  JSON.mapping({
-    description: String?,
-    schema:      Schema?,
-  })
+  include JSON::Serializable
+  property description : String?
+  property schema : Schema?
 end

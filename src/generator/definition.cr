@@ -95,9 +95,8 @@ class Generator::Definition
   private def define_class
     open_class
     define_properties
-    define_mappings
     define_initializer
-    define_actions
+    # define_actions
     _end
   end
 
@@ -210,9 +209,9 @@ class Generator::Definition
     end
   end
 
-  private def define_function(*, name : String, args : Hash(String, FunctionArgument), toplevel : Bool = false, named_args : Bool = false)
-    file.print "def #{"self." if toplevel}#{name}("
-    file.print "*, " if named_args && !args.empty?
+  private def define_function(*, name : String, args : Hash(String, FunctionArgument) = {} of String => FunctionArgument, toplevel : Bool = false, named_args : Hash(String, FunctionArgument) = {} of String => FunctionArgument)
+    file.print "def #{"self." if toplevel}#{name}"
+    file.print '(' unless named_args.empty? && args.empty?
     arg_list = (args.values.select(&.first_value?) + args.values.reject(&.first_value?)).map do |a|
       arg = a.name
       arg += " : #{convert_type(a)}"
@@ -220,18 +219,29 @@ class Generator::Definition
       arg
     end
     file.print arg_list.join(", ")
-    file.puts ")"
+    file.print ", " unless args.empty?
+    file.print "*, " unless named_args.empty?
+    named_arg_list = (named_args.values).map do |a|
+      arg = a.name
+      arg += " : #{convert_type(a)}"
+      arg += " = #{a.default.inspect}" if !a.required? || a.default
+      arg
+    end
+    file.print named_arg_list.join(", ")
+    file.print ")" unless named_args.empty? && args.empty?
+    file.puts ""
     yield
     file.puts "end"
     file.puts
   end
 
   private def define_operations(path_name : String, path : Swagger::Path)
-    path.action_map.each do |verb, action|
+    path.action_map.each do |verb, action_mapping|
+      action, has_body = action_mapping
       next unless action
       generate_description(action.description)
 
-      function_name = action.operationId
+      function_name = action.operation_id
         .sub("Namespaced", "")
         .sub("List", "")
         .sub("Collection", "")
@@ -244,21 +254,26 @@ class Generator::Definition
       path_params = path_name.scan(/{([a-z]+)}/).map(&.[1]).map { |str| Swagger::Path::Parameter.new(str) }
       toplevel = params.map(&.name).includes?("labelSelector")
       toplevel ||= path_params.map(&.name).includes?("name") && verb == :get
+      toplevel ||= verb == :post
       params += path_params if toplevel
 
       args = {} of String => FunctionArgument
+      named_args = {} of String => FunctionArgument
       params_to_refs(body).reject(&.== @definition).each do |ref|
         ref.properties.reject { |name, _| is_resource?(ref) && resource_property?(name) }.each do |name, prop|
-          args[name] = FunctionArgument.new(name, prop, ref)
+          named_args[name] = FunctionArgument.new(name, prop, ref)
         end
       end
-      args["context"] = FunctionArgument.new("context", "string")
-      params.each { |param| args[param.name] = FunctionArgument.new(param) }
-      args["namespace"].default = "default" if args["namespace"]?
+      named_args["context"] = FunctionArgument.new("context", "string")
+      params.each { |param| named_args[param.name] = FunctionArgument.new(param) }
+      path_name = path_name.gsub(/\/(?<param>\{name(space)?\})/, "/#\\k<param>")
+      named_args["name"] = FunctionArgument.new("name", "string") if path_name.includes?("\#{name}")
+      named_args["namespace"] = FunctionArgument.new("namespace", "string") if path_name.includes?("\#{namespace}")
+      named_args["namespace"].default = "default" if named_args["namespace"]?
       args.delete("pretty")
-      define_function(name: function_name, args: args, toplevel: toplevel) do
-        puts "body = nil"
-        puts "Pyrite.client.#{verb}(#{path_name}, Pyrite.headers, body)"
+      args["manifest"] = FunctionArgument.new("manifest", class_name) if toplevel
+      define_function(name: function_name, args: args, named_args: named_args, toplevel: toplevel) do
+        file.puts "Pyrite.client.#{verb}(\"#{path_name}\", Pyrite.headers#{has_body ? ", #{toplevel ? "manifest.to_json" : "to_json"}" : ""})"
       end
     end
   end
@@ -276,12 +291,17 @@ class Generator::Definition
   end
 
   private def define_properties
-    if properties.empty?
-      file.puts "include ::JSON::Serializable"
-      file.puts "include ::YAML::Serializable"
-    end
+    file.puts "include ::JSON::Serializable"
+    file.puts "include ::YAML::Serializable"
+    file.puts ""
+
     if is_resource?
+      file.puts "@[JSON::Field(key: \"apiVersion\")]"
+      file.puts "@[YAML::Field(key: \"apiVersion\")]"
+      file.puts "# The API and version we are accessing."
       file.puts "getter api_version : String = #{api_version_name.inspect}"
+      file.puts ""
+      file.puts "# The resource kind withing the given apiVersion."
       file.puts "getter kind : String = #{kind.inspect}"
     end
     properties.each do |name, property|
@@ -297,6 +317,8 @@ class Generator::Definition
       # Print property descriptions
       generate_description property.description
 
+      file.puts "@[JSON::Field(key: #{name.inspect})]"
+      file.puts "@[YAML::Field(key: #{name.inspect})]"
       file.puts "property #{crystal_name} : #{convert_type(property, required.includes?(name))}"
       file.puts ""
     end
@@ -307,13 +329,7 @@ class Generator::Definition
       next if is_resource? && resource_property?(name)
       memo["@" + name] = FunctionArgument.new(name, prop, definition, ivar: true)
     end
-    # arg_map["name"] = FunctionArgument.new("name", arg_map["@spec"].required) if is_resource? && arg_map["@spec"]
-
-    define_function(name: "initialize", args: args, named_args: true) do
-      # if arg_map["name"]
-      #   "@spec = if name"
-      # end
-    end
+    define_function(name: "initialize", named_args: args) { }
   end
 
   def api_version
@@ -335,26 +351,5 @@ class Generator::Definition
 
   def kind
     is_list? ? "List" : self.name.split(".")[-1]
-  end
-
-  private def define_mappings
-    {"YAML", "JSON"}.each do |t|
-      file.puts "::#{t}.mapping({ "
-      first_arg = true
-      if is_resource?
-        file.puts %(api_version: { type: String, default: #{api_version_name.inspect}, key: "apiVersion", setter: false },)
-        file.print %(kind: { type: String, default: #{kind.inspect}, key: "kind", setter: false })
-        first_arg = false
-      end
-      properties.each do |name, property|
-        next if is_resource? && resource_property?(name)
-        crystal_name = crystalize_name(name)
-        file.puts "," unless first_arg
-        file.print "#{crystal_name}: { type: #{convert_type(property)}, nilable: #{!required.includes?(name)}, key: #{name.inspect}, getter: false, setter: false }"
-        first_arg = false
-      end
-      file.puts "", "}, true)"
-      file.puts
-    end unless properties.empty?
   end
 end

@@ -1,11 +1,11 @@
 require "json"
 
 class Swagger
-  JSON.mapping({
-    info:        Info,
-    paths:       Hash(String, Path),
-    definitions: Hash(String, Definition),
-  })
+  include JSON::Serializable
+
+  property info : Info
+  property paths : Hash(String, Path)
+  property definitions : Hash(String, Definition)
 end
 
 require "./swagger/*"

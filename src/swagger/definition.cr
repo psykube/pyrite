@@ -1,15 +1,14 @@
 require "json"
 
 class Swagger::Definition
-  @required = [] of String
-  @properties = {} of String => Property
+  include JSON::Serializable
 
-  JSON.mapping({
-    description: String?,
-    required:    {type: Array(String), default: [] of String},
-    properties:  {type: Hash(String, Property), default: {} of String => Property},
-    _ref:        {type: String, nilable: true, key: "$ref"},
-  })
+  property description : String?
+  property required : Array(String) = [] of String
+  property properties : Hash(String, Property) = {} of String => Swagger::Definition::Property
+
+  @[JSON::Field(key: "$ref")]
+  property _ref : String? = nil
 
   def initialize
   end
