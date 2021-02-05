@@ -106,7 +106,7 @@ class Generator::Definition
 
   private def define_alias
     file.puts "module #{resource_alias}"
-    file.puts "alias #{kind} = ::Pyrite::#{class_name.lchop("::")}"
+    file.puts "alias #{kind} = ::#{base_class}::#{class_name.lchop("::")}"
     _end
   end
 
@@ -273,7 +273,7 @@ class Generator::Definition
       args.delete("pretty")
       args["manifest"] = FunctionArgument.new("manifest", class_name) if toplevel
       define_function(name: function_name, args: args, named_args: named_args, toplevel: toplevel) do
-        file.puts "Pyrite.client.#{verb}(\"#{path_name}\", Pyrite.headers#{has_body ? ", #{toplevel ? "manifest.to_json" : "to_json"}" : ""})"
+        file.puts "#{base_class}.client.#{verb}(\"#{path_name}\", #{base_class}.headers#{has_body ? ", #{toplevel ? "manifest.to_json" : "to_json"}" : ""})"
       end
     end
   end
@@ -296,8 +296,8 @@ class Generator::Definition
     file.puts ""
 
     if is_resource?
-      file.puts "@[::JSON::Field(key: \"apiVersion\")]"
-      file.puts "@[::YAML::Field(key: \"apiVersion\")]"
+      file.puts "@[::JSON::Field(key: \"apiVersion\", converter: ::#{base_class}::StringChecker.new(#{api_version_name.inspect}))]"
+      file.puts "@[::YAML::Field(key: \"apiVersion\", converter: ::#{base_class}::StringChecker.new(#{api_version_name.inspect}))]"
       file.puts "# The API and version we are accessing."
       file.puts "getter api_version : String = #{api_version_name.inspect}"
       file.puts ""

@@ -9,8 +9,8 @@ module Pyrite
     include ::JSON::Serializable
     include ::YAML::Serializable
 
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
+    @[::JSON::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("flowcontrol/v1alpha1"))]
+    @[::YAML::Field(key: "apiVersion", converter: ::Pyrite::StringChecker.new("flowcontrol/v1alpha1"))]
     # The API and version we are accessing.
     getter api_version : String = "flowcontrol/v1alpha1"
 
