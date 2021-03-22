@@ -1,3 +1,4 @@
 name: pyrite
+crystal: ">= 0.35.1"
 description: Kubernetes Object Mappings for Crystal
 version: 1.2.2
