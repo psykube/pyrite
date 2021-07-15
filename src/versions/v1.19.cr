@@ -1,10 +1,7 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
 require "./v1.19/kubernetes"
-require "./v1.19/kubernetes/spec"
-require "./v1.19/kubernetes/resource"
-require "./v1.19/kubernetes/object"
-require "./v1.19/kubernetes/list"
+require "../pyrite/kubernetes/*"
 require "./v1.19/api/admissionregistration/v1/mutating_webhook.cr"
 require "./v1.19/api/admissionregistration/v1/mutating_webhook_configuration.cr"
 require "./v1.19/api/admissionregistration/v1/mutating_webhook_configuration_list.cr"

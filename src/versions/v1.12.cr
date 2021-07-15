@@ -1,10 +1,7 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
 require "./v1.12/kubernetes"
-require "./v1.12/kubernetes/spec"
-require "./v1.12/kubernetes/resource"
-require "./v1.12/kubernetes/object"
-require "./v1.12/kubernetes/list"
+require "../pyrite/kubernetes/*"
 require "./v1.12/api/admissionregistration/v1alpha1/initializer.cr"
 require "./v1.12/api/admissionregistration/v1alpha1/initializer_configuration.cr"
 require "./v1.12/api/admissionregistration/v1alpha1/initializer_configuration_list.cr"

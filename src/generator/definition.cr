@@ -6,7 +6,7 @@ class Generator::Definition
   URL_REGEX = /(?<url>((http[s]?):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?)/
   include Helpers
 
-  delegate schema, definitions, base, base_dir, base_class, to: @generator
+  delegate schema, definitions, base, base_dir, to: @generator
 
   getter class_name : String
   getter name : String
@@ -46,7 +46,7 @@ class Generator::Definition
       file.puts ""
     end
     load_requires
-    file.puts "module #{base_class.lchop("::")}"
+    file.puts "module Pyrite"
     define_class
     _end
     file.close if filename
@@ -203,7 +203,7 @@ class Generator::Definition
       args.delete("pretty")
       args["manifest"] = FunctionArgument.new("manifest", class_name) if toplevel
       define_function(name: function_name, args: args, named_args: named_args, toplevel: toplevel) do
-        file.puts "#{base_class}.client.#{verb}(\"#{path_name}\", #{base_class}.headers#{has_body ? ", #{toplevel ? "manifest.to_json" : "to_json"}" : ""})"
+        file.puts "Pyrite.client.#{verb}(\"#{path_name}\", Pyrite.headers#{has_body ? ", #{toplevel ? "manifest.to_json" : "to_json"}" : ""})"
       end
     end
   end

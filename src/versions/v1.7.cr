@@ -1,10 +1,7 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
 require "./v1.7/kubernetes"
-require "./v1.7/kubernetes/spec"
-require "./v1.7/kubernetes/resource"
-require "./v1.7/kubernetes/object"
-require "./v1.7/kubernetes/list"
+require "../pyrite/kubernetes/*"
 require "./v1.7/apimachinery/apis/meta/v1/api_group.cr"
 require "./v1.7/apimachinery/apis/meta/v1/api_group_list.cr"
 require "./v1.7/apimachinery/apis/meta/v1/api_resource.cr"
