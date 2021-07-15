@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DownwardAPIVolumeFile represents information to create the file containing the pod field
-  class Kubernetes::Api::V1::DownwardAPIVolumeFile
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::DownwardAPIVolumeFile < Kubernetes::Spec
     # Required: Selects a field of the pod: only annotations, labels, name and namespace are supported.
     @[::JSON::Field(key: "fieldRef")]
     @[::YAML::Field(key: "fieldRef")]

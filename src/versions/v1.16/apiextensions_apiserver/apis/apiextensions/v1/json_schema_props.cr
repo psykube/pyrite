@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JSONSchemaProps is a JSON-Schema following Specification Draft 4 (http://json-schema.org/).
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaProps
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaProps < Kubernetes::Spec
     @[::JSON::Field(key: "$ref")]
     @[::YAML::Field(key: "$ref")]
     property ref : String | Nil

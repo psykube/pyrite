@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HTTPHeader describes a custom header to be used in HTTP probes
-  class Api::Core::V1::HTTPHeader
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::HTTPHeader < Kubernetes::Spec
     # The header field name
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

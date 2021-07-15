@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
-  class Api::Apps::V1::DaemonSetUpdateStrategy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1::DaemonSetUpdateStrategy < Kubernetes::Spec
     # Rolling update config params. Present only if type = "RollingUpdate".
     @[::JSON::Field(key: "rollingUpdate")]
     @[::YAML::Field(key: "rollingUpdate")]

@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Certificates::V1beta1::CertificateSigningRequestStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Certificates::V1beta1::CertificateSigningRequestStatus < Kubernetes::Spec
     # If request was approved, the controller will place the issued certificate here.
     @[::JSON::Field(key: "certificate")]
     @[::YAML::Field(key: "certificate")]

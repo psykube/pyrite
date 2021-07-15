@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Overhead structure represents the resource overhead associated with running a pod.
-  class Api::Node::V1beta1::Overhead
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Node::V1beta1::Overhead < Kubernetes::Spec
     # PodFixed represents the fixed resource overhead associated with running a pod.
     @[::JSON::Field(key: "podFixed")]
     @[::YAML::Field(key: "podFixed")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # TokenReviewStatus is the result of the token authentication request.
-  class Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Authentication::V1beta1::TokenReviewStatus < Kubernetes::Spec
     # Authenticated indicates that the token was associated with a known user.
     @[::JSON::Field(key: "authenticated")]
     @[::YAML::Field(key: "authenticated")]

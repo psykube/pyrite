@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourceQuotaStatus defines the enforced hard limits and observed use.
-  class Kubernetes::Api::V1::ResourceQuotaStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ResourceQuotaStatus < Kubernetes::Spec
     # Hard is the set of enforced hard limits for each named resource. More info: [http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota](http://releases.k8s.io/HEAD/docs/design/admission_control_resource_quota.md#admissioncontrol-plugin-resourcequota)
     @[::JSON::Field(key: "hard")]
     @[::YAML::Field(key: "hard")]

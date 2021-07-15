@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Describe a container image
-  class Kubernetes::Api::V1::ContainerImage
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ContainerImage < Kubernetes::Spec
     # Names by which this image is known. e.g. [["gcr.io/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]](["gcr.io/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"])
     @[::JSON::Field(key: "names")]
     @[::YAML::Field(key: "names")]

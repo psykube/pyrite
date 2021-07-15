@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # LeaseSpec is a specification of a Lease.
-  class Api::Coordination::V1beta1::LeaseSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Coordination::V1beta1::LeaseSpec < Kubernetes::Spec
     # acquireTime is a time when the current lease was acquired.
     @[::JSON::Field(key: "acquireTime")]
     @[::YAML::Field(key: "acquireTime")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PriorityLevelConfigurationSpec specifies the configuration of a priority level.
-  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationSpec < Kubernetes::Spec
     # `limited` specifies how requests are handled for a Limited priority level. This field must be non-empty if and only if `type` is `"Limited"`.
     @[::JSON::Field(key: "limited")]
     @[::YAML::Field(key: "limited")]

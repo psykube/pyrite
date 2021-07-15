@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CronJobStatus represents the current state of a cron job.
-  class Kubernetes::Apis::Batch::V2alpha1::CronJobStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Batch::V2alpha1::CronJobStatus < Kubernetes::Spec
     # Active holds pointers to currently running jobs.
     @[::JSON::Field(key: "active")]
     @[::YAML::Field(key: "active")]

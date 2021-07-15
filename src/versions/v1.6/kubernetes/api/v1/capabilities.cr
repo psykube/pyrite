@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Adds and removes POSIX capabilities from running containers.
-  class Kubernetes::Api::V1::Capabilities
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::Capabilities < Kubernetes::Spec
     # Added capabilities
     @[::JSON::Field(key: "add")]
     @[::YAML::Field(key: "add")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SupplementalGroupsStrategyOptions defines the strategy type and options used to create the strategy.
-  class Api::Policy::V1beta1::SupplementalGroupsStrategyOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::SupplementalGroupsStrategyOptions < Kubernetes::Spec
     # Ranges are the allowed ranges of supplemental groups.  If you would like to force a single supplemental group then supply a single range with the same start and end.
     @[::JSON::Field(key: "ranges")]
     @[::YAML::Field(key: "ranges")]

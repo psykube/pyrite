@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JSONSchemaPropsOrStringArray represents a JSONSchemaProps or a string array.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaPropsOrStringArray
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaPropsOrStringArray < Kubernetes::Spec
     def initialize
     end
   end

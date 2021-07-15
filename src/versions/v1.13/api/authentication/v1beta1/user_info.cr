@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # UserInfo holds the information about the user needed to implement the user.Info interface.
-  class Api::Authentication::V1beta1::UserInfo
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Authentication::V1beta1::UserInfo < Kubernetes::Spec
     # Any additional information provided by the authenticator.
     @[::JSON::Field(key: "extra")]
     @[::YAML::Field(key: "extra")]

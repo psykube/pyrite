@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ServiceBackendPort is the service port being referenced.
-  class Api::Networking::V1::ServiceBackendPort
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1::ServiceBackendPort < Kubernetes::Spec
     # Name is the name of the port on the Service. This is a mutually exclusive setting with "Number".
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

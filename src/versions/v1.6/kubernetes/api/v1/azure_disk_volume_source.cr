@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
-  class Kubernetes::Api::V1::AzureDiskVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::AzureDiskVolumeSource < Kubernetes::Spec
     # Host Caching mode: None, Read Only, Read Write.
     @[::JSON::Field(key: "cachingMode")]
     @[::YAML::Field(key: "cachingMode")]

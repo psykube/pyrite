@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
-  class Api::Core::V1::PodSecurityContext
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PodSecurityContext < Kubernetes::Spec
     # A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod:
     #
     # 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw----

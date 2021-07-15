@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # WebhookConversion describes how to call a conversion webhook
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::WebhookConversion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::WebhookConversion < Kubernetes::Spec
     # clientConfig is the instructions for how to call the webhook if strategy is `Webhook`.
     @[::JSON::Field(key: "clientConfig")]
     @[::YAML::Field(key: "clientConfig")]

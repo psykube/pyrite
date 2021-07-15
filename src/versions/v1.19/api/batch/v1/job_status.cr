@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JobStatus represents the current state of a Job.
-  class Api::Batch::V1::JobStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Batch::V1::JobStatus < Kubernetes::Spec
     # The number of actively running pods.
     @[::JSON::Field(key: "active")]
     @[::YAML::Field(key: "active")]

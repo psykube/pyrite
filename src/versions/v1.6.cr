@@ -1,5 +1,10 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
+require "./v1.6/kubernetes"
+require "./v1.6/kubernetes/spec"
+require "./v1.6/kubernetes/resource"
+require "./v1.6/kubernetes/object"
+require "./v1.6/kubernetes/list"
 require "./v1.6/apimachinery/apis/meta/v1/api_group.cr"
 require "./v1.6/apimachinery/apis/meta/v1/api_group_list.cr"
 require "./v1.6/apimachinery/apis/meta/v1/api_resource.cr"
@@ -327,4 +332,3 @@ require "./v1.6/kubernetes/apis/storage/v1/storage_class_list.cr"
 require "./v1.6/kubernetes/apis/storage/v1beta1/storage_class.cr"
 require "./v1.6/kubernetes/apis/storage/v1beta1/storage_class_list.cr"
 require "./v1.6/kubernetes/api/v1/list.cr"
-require "./v1.6/kubernetes"

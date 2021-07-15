@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeStatus is information about the current status of a node.
-  class Kubernetes::Api::V1::NodeStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NodeStatus < Kubernetes::Spec
     # List of addresses reachable to the node. Queried from cloud provider, if available. More info: [http://releases.k8s.io/HEAD/docs/admin/node.md#node-addresses](http://releases.k8s.io/HEAD/docs/admin/node.md#node-addresses)
     @[::JSON::Field(key: "addresses")]
     @[::YAML::Field(key: "addresses")]

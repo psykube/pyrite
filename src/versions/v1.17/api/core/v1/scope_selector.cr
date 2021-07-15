@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
-  class Api::Core::V1::ScopeSelector
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ScopeSelector < Kubernetes::Spec
     # A list of scope selector requirements by scope of the resources.
     @[::JSON::Field(key: "matchExpressions")]
     @[::YAML::Field(key: "matchExpressions")]

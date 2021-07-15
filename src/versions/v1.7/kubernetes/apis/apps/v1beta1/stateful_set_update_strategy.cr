@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
-  class Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::StatefulSetUpdateStrategy < Kubernetes::Spec
     # RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType.
     @[::JSON::Field(key: "rollingUpdate")]
     @[::YAML::Field(key: "rollingUpdate")]

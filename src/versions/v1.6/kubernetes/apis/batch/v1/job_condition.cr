@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JobCondition describes current state of a job.
-  class Kubernetes::Apis::Batch::V1::JobCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Batch::V1::JobCondition < Kubernetes::Spec
     # Last time the condition was checked.
     @[::JSON::Field(key: "lastProbeTime")]
     @[::YAML::Field(key: "lastProbeTime")]

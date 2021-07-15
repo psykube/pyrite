@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceColumnDefinition specifies a column for server side printing.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceColumnDefinition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceColumnDefinition < Kubernetes::Spec
     # JSONPath is a simple JSON path (i.e. with array notation) which is evaluated against each custom resource to produce the value for this column.
     @[::JSON::Field(key: "JSONPath")]
     @[::YAML::Field(key: "JSONPath")]

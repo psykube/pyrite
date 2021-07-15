@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EventSeries contain information on series of events, i.e. thing that [was/is happening continously for some time.](was/is happening continously for some time.)
-  class Api::Core::V1::EventSeries
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::EventSeries < Kubernetes::Spec
     # Number of occurrences in this series up to the last heartbeat time
     @[::JSON::Field(key: "count")]
     @[::YAML::Field(key: "count")]

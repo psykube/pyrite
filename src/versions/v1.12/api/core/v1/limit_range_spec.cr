@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # LimitRangeSpec defines a [min/max usage limit for resources that match on kind.](min/max usage limit for resources that match on kind.)
-  class Api::Core::V1::LimitRangeSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::LimitRangeSpec < Kubernetes::Spec
     # Limits is the list of LimitRangeItem objects that are enforced.
     @[::JSON::Field(key: "limits")]
     @[::YAML::Field(key: "limits")]

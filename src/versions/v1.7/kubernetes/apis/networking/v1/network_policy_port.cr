@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NetworkPolicyPort describes a port to allow traffic on
-  class Kubernetes::Apis::Networking::V1::NetworkPolicyPort
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Networking::V1::NetworkPolicyPort < Kubernetes::Spec
     # The port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers.
     @[::JSON::Field(key: "port")]
     @[::YAML::Field(key: "port")]

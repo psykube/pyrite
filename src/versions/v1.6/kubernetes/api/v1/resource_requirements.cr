@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourceRequirements describes the compute resource requirements.
-  class Kubernetes::Api::V1::ResourceRequirements
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ResourceRequirements < Kubernetes::Spec
     # Limits describes the maximum amount of compute resources allowed. More info: [http://kubernetes.io/docs/user-guide/compute-resources/](http://kubernetes.io/docs/user-guide/compute-resources/)
     @[::JSON::Field(key: "limits")]
     @[::YAML::Field(key: "limits")]

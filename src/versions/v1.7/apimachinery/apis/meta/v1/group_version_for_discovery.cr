@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # GroupVersion contains the ["group/version" and "version" string of a version. It is made a struct to keep extensibility.]("group/version" and "version" string of a version. It is made a struct to keep extensibility.)
-  class Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::GroupVersionForDiscovery < Kubernetes::Spec
     # groupVersion specifies the API group and version in the form ["group/version"]("group/version")
     @[::JSON::Field(key: "groupVersion")]
     @[::YAML::Field(key: "groupVersion")]

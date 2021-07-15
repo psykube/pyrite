@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeSystemInfo is a set of [ids/uuids to uniquely identify the node.](ids/uuids to uniquely identify the node.)
-  class Kubernetes::Api::V1::NodeSystemInfo
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NodeSystemInfo < Kubernetes::Spec
     # The Architecture reported by the node
     @[::JSON::Field(key: "architecture")]
     @[::YAML::Field(key: "architecture")]

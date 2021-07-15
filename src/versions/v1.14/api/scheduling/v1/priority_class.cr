@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
-  class Api::Scheduling::V1::PriorityClass
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "scheduling/v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "PriorityClass"
-
+  class Api::Scheduling::V1::PriorityClass < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "scheduling/v1" && instance.kind == "PriorityClass"
@@ -43,11 +32,6 @@ module Pyrite
     @[::YAML::Field(key: "globalDefault")]
     property global_default : Bool | Nil
 
-    # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
     @[::JSON::Field(key: "value")]
     @[::YAML::Field(key: "value")]
@@ -55,9 +39,5 @@ module Pyrite
 
     def initialize(*, @description : String | Nil = nil, @global_default : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @value : Int32)
     end
-  end
-
-  module Resources::Scheduling::V1
-    alias PriorityClass = ::Pyrite::Api::Scheduling::V1::PriorityClass
   end
 end

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ExternalAdmissionHook describes an external admission webhook and the resources and operations it applies to.
-  class Kubernetes::Apis::Admissionregistration::V1alpha1::ExternalAdmissionHook
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Admissionregistration::V1alpha1::ExternalAdmissionHook < Kubernetes::Spec
     # ClientConfig defines how to communicate with the hook. Required
     @[::JSON::Field(key: "clientConfig")]
     @[::YAML::Field(key: "clientConfig")]

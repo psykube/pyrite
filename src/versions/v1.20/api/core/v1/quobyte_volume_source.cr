@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
-  class Api::Core::V1::QuobyteVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::QuobyteVolumeSource < Kubernetes::Spec
     # Group to map volume access to Default is no group
     @[::JSON::Field(key: "group")]
     @[::YAML::Field(key: "group")]

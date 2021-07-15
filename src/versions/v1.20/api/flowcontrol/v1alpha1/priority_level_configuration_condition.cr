@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PriorityLevelConfigurationCondition defines the condition of priority level.
-  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationCondition < Kubernetes::Spec
     # `lastTransitionTime` is the last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

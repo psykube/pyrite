@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlowSchemaStatus represents the current state of a FlowSchema.
-  class Api::Flowcontrol::V1alpha1::FlowSchemaStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::FlowSchemaStatus < Kubernetes::Spec
     # `conditions` is a list of the current states of FlowSchema.
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

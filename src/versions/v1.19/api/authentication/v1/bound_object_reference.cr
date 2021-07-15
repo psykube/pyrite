@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # BoundObjectReference is a reference to an object that a token is bound to.
-  class Api::Authentication::V1::BoundObjectReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Authentication::V1::BoundObjectReference < Kubernetes::Spec
     # API version of the referent.
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

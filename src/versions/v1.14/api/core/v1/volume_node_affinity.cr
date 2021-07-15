@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
-  class Api::Core::V1::VolumeNodeAffinity
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::VolumeNodeAffinity < Kubernetes::Spec
     # Required specifies hard node constraints that must be met.
     @[::JSON::Field(key: "required")]
     @[::YAML::Field(key: "required")]

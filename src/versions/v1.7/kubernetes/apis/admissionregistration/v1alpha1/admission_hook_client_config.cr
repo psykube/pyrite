@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AdmissionHookClientConfig contains the information to make a TLS connection with the webhook
-  class Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Admissionregistration::V1alpha1::AdmissionHookClientConfig < Kubernetes::Spec
     # CABundle is a PEM encoded CA bundle which will be used to validate webhook's server certificate. Required
     @[::JSON::Field(key: "caBundle")]
     @[::YAML::Field(key: "caBundle")]

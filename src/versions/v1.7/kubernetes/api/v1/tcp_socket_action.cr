@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # TCPSocketAction describes an action based on opening a socket
-  class Kubernetes::Api::V1::TCPSocketAction
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::TCPSocketAction < Kubernetes::Spec
     # Optional: Host name to connect to, defaults to the pod IP.
     @[::JSON::Field(key: "host")]
     @[::YAML::Field(key: "host")]

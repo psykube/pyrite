@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
-  class Api::Core::V1::TypedLocalObjectReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::TypedLocalObjectReference < Kubernetes::Spec
     # APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
     @[::JSON::Field(key: "apiGroup")]
     @[::YAML::Field(key: "apiGroup")]

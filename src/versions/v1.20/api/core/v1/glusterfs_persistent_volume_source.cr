@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
-  class Api::Core::V1::GlusterfsPersistentVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::GlusterfsPersistentVolumeSource < Kubernetes::Spec
     # EndpointsName is the endpoint name that details Glusterfs topology. More info: [https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod](https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod)
     @[::JSON::Field(key: "endpoints")]
     @[::YAML::Field(key: "endpoints")]

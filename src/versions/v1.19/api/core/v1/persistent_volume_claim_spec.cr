@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
-  class Api::Core::V1::PersistentVolumeClaimSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PersistentVolumeClaimSpec < Kubernetes::Spec
     # AccessModes contains the desired access modes the volume should have. More info: [https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1](https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1)
     @[::JSON::Field(key: "accessModes")]
     @[::YAML::Field(key: "accessModes")]

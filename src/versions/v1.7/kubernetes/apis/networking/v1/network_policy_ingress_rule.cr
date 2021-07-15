@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NetworkPolicyIngressRule describes a particular set of traffic that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and from.
-  class Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Networking::V1::NetworkPolicyIngressRule < Kubernetes::Spec
     # List of sources which should be able to access the pods selected for this rule. Items in this list are combined using a logical OR operation. If this field is empty or missing, this rule matches all sources (traffic not restricted by source). If this field is present and contains at least on item, this rule allows traffic only if the traffic matches at least one item in the from list.
     @[::JSON::Field(key: "from")]
     @[::YAML::Field(key: "from")]

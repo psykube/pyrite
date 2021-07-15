@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SecretKeySelector selects a key of a Secret.
-  class Kubernetes::Api::V1::SecretKeySelector
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::SecretKeySelector < Kubernetes::Spec
     # The key of the secret to select from.  Must be a valid secret key.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

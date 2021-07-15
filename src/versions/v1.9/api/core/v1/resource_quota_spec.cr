@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
-  class Api::Core::V1::ResourceQuotaSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ResourceQuotaSpec < Kubernetes::Spec
     # Hard is the set of desired hard limits for each named resource. More info: [https://kubernetes.io/docs/concepts/policy/resource-quotas/](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
     @[::JSON::Field(key: "hard")]
     @[::YAML::Field(key: "hard")]

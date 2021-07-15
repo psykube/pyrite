@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CertificateSigningRequestSpec contains the certificate request.
-  class Api::Certificates::V1::CertificateSigningRequestSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Certificates::V1::CertificateSigningRequestSpec < Kubernetes::Spec
     # extra contains extra attributes of the user that created the CertificateSigningRequest. Populated by the API server on creation and immutable.
     @[::JSON::Field(key: "extra")]
     @[::YAML::Field(key: "extra")]

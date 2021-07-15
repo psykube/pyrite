@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # CSIDriver captures information about a Container Storage Interface (CSI) volume driver deployed on the cluster. Kubernetes attach detach controller uses this object to determine whether attach is required. Kubelet uses this object to determine whether pod information needs to be passed on mount. CSIDriver objects are non-namespaced.
-  class Api::Storage::V1::CSIDriver
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "storage/v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "CSIDriver"
-
+  class Api::Storage::V1::CSIDriver < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "storage/v1" && instance.kind == "CSIDriver"
@@ -33,11 +22,6 @@ module Pyrite
       end
     end
 
-    # Standard object metadata. metadata.Name indicates the name of the CSI driver that this object refers to; it MUST be the same name returned by the CSI GetPluginName() call for that driver. The driver name must be 63 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), dots (.), and alphanumerics between. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Specification of the CSI Driver.
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -45,9 +29,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Storage::V1::CSIDriverSpec)
     end
-  end
-
-  module Resources::Storage::V1
-    alias CSIDriver = ::Pyrite::Api::Storage::V1::CSIDriver
   end
 end

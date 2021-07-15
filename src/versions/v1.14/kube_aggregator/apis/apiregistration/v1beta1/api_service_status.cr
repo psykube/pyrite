@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # APIServiceStatus contains derived information about an API server
-  class KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class KubeAggregator::Apis::Apiregistration::V1beta1::APIServiceStatus < Kubernetes::Spec
     # Current service state of apiService.
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

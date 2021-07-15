@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.
-  class Kubernetes::Api::V1::SecurityContext
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::SecurityContext < Kubernetes::Spec
     # The capabilities to [add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime.](add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime.)
     @[::JSON::Field(key: "capabilities")]
     @[::YAML::Field(key: "capabilities")]

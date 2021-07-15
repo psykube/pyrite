@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Local represents directly-attached storage with node affinity
-  class Kubernetes::Api::V1::LocalVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::LocalVolumeSource < Kubernetes::Spec
     # The full path to the volume on the node For alpha, this path must be a directory Once block as a source is supported, then this path can point to a block device
     @[::JSON::Field(key: "path")]
     @[::YAML::Field(key: "path")]

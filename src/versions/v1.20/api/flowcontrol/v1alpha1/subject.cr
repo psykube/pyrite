@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Subject matches the originator of a request, as identified by the request authentication system. There are three ways of matching an originator; by user, group, or service account.
-  class Api::Flowcontrol::V1alpha1::Subject
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::Subject < Kubernetes::Spec
     @[::JSON::Field(key: "group")]
     @[::YAML::Field(key: "group")]
     property group : Api::Flowcontrol::V1alpha1::GroupSubject | Nil

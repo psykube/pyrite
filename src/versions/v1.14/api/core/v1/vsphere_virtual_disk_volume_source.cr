@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a vSphere volume resource.
-  class Api::Core::V1::VsphereVirtualDiskVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::VsphereVirtualDiskVolumeSource < Kubernetes::Spec
     # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
     @[::JSON::Field(key: "fsType")]
     @[::YAML::Field(key: "fsType")]

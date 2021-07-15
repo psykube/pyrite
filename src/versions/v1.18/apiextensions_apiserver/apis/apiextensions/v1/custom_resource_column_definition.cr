@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceColumnDefinition specifies a column for server side printing.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceColumnDefinition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceColumnDefinition < Kubernetes::Spec
     # description is a human readable description of this column.
     @[::JSON::Field(key: "description")]
     @[::YAML::Field(key: "description")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # specification of a horizontal pod autoscaler.
-  class Api::Autoscaling::V1::HorizontalPodAutoscalerSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V1::HorizontalPodAutoscalerSpec < Kubernetes::Spec
     # upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas.
     @[::JSON::Field(key: "maxReplicas")]
     @[::YAML::Field(key: "maxReplicas")]

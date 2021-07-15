@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).
-  class Api::Autoscaling::V2beta2::ExternalMetricSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::ExternalMetricSource < Kubernetes::Spec
     # metric identifies the target metric by name and selector
     @[::JSON::Field(key: "metric")]
     @[::YAML::Field(key: "metric")]

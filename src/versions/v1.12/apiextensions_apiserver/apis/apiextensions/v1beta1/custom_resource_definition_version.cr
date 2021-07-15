@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionVersion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionVersion < Kubernetes::Spec
     # Name is the version name, e.g. “v1”, “v2beta1”, etc.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

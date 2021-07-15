@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Certificates::V1beta1::CertificateSigningRequestCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Certificates::V1beta1::CertificateSigningRequestCondition < Kubernetes::Spec
     # timestamp for the last update to this condition
     @[::JSON::Field(key: "lastUpdateTime")]
     @[::YAML::Field(key: "lastUpdateTime")]

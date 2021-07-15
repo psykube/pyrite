@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Maps a string key to a path within a volume.
-  class Api::Core::V1::KeyToPath
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::KeyToPath < Kubernetes::Spec
     # The key to project.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

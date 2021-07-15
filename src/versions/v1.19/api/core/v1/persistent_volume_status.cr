@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeStatus is the current status of a persistent volume.
-  class Api::Core::V1::PersistentVolumeStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PersistentVolumeStatus < Kubernetes::Spec
     # A human-readable message indicating details about why the volume is in this state.
     @[::JSON::Field(key: "message")]
     @[::YAML::Field(key: "message")]

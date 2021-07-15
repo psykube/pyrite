@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NamespaceSpec describes the attributes on a Namespace.
-  class Kubernetes::Api::V1::NamespaceSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NamespaceSpec < Kubernetes::Spec
     # Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: [https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers](https://git.k8s.io/community/contributors/design-proposals/namespaces.md#finalizers)
     @[::JSON::Field(key: "finalizers")]
     @[::YAML::Field(key: "finalizers")]

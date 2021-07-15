@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeleteOptions may be provided when deleting an API object.
-  class Apimachinery::Apis::Meta::V1::DeleteOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::DeleteOptions < Kubernetes::Spec
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources)
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

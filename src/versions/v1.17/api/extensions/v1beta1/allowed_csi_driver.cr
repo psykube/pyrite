@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AllowedCSIDriver represents a single inline CSI Driver that is allowed to be used.
-  class Api::Extensions::V1beta1::AllowedCSIDriver
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::AllowedCSIDriver < Kubernetes::Spec
     # Name is the registered name of the CSI driver
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
-  class Kubernetes::Api::V1::WeightedPodAffinityTerm
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::WeightedPodAffinityTerm < Kubernetes::Spec
     # Required. A pod affinity term, associated with the corresponding weight.
     @[::JSON::Field(key: "podAffinityTerm")]
     @[::YAML::Field(key: "podAffinityTerm")]

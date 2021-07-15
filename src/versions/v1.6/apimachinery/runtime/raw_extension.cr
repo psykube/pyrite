@@ -32,10 +32,7 @@ module Pyrite
   # }
   #
   # So what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using [pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)](pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.))
-  class Apimachinery::Runtime::RawExtension
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Runtime::RawExtension < Kubernetes::Spec
     # Raw is the underlying serialization of this object.
     @[::JSON::Field(key: "Raw")]
     @[::YAML::Field(key: "Raw")]

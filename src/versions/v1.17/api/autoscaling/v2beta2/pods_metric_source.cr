@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
-  class Api::Autoscaling::V2beta2::PodsMetricSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::PodsMetricSource < Kubernetes::Spec
     # metric identifies the target metric by name and selector
     @[::JSON::Field(key: "metric")]
     @[::YAML::Field(key: "metric")]

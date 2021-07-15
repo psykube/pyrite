@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeploymentRollback stores the information required to rollback a deployment.
-  class Kubernetes::Apis::Apps::V1beta1::DeploymentRollback
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::DeploymentRollback < Kubernetes::Spec
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources)
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

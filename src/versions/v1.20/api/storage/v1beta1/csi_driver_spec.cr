@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CSIDriverSpec is the specification of a CSIDriver.
-  class Api::Storage::V1beta1::CSIDriverSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1beta1::CSIDriverSpec < Kubernetes::Spec
     # attachRequired indicates this CSI volume driver requires an attach operation (because it implements the CSI ControllerPublishVolume() method), and that the Kubernetes attach detach controller should call the attach volume interface which checks the volumeattachment status and waits until the volume is attached before proceeding to mounting. The CSI external-attacher coordinates with CSI volume driver and updates the volumeattachment status when the attach operation is complete. If the CSIDriverRegistry feature gate is enabled and the value is specified to false, the attach operation will be skipped. Otherwise the attach operation will be called.
     @[::JSON::Field(key: "attachRequired")]
     @[::YAML::Field(key: "attachRequired")]

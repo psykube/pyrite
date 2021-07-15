@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
-  class Apimachinery::Apis::Meta::V1::StatusCause
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::StatusCause < Kubernetes::Spec
     # The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed.  Fields may appear more than once in an array of causes due to fields having multiple errors. Optional.
     #
     # Examples:

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
-  class Api::Core::V1::PodDNSConfig
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PodDNSConfig < Kubernetes::Spec
     # A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
     @[::JSON::Field(key: "nameservers")]
     @[::YAML::Field(key: "nameservers")]

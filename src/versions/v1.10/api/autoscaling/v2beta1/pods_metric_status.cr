@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodsMetricStatus indicates the current value of a metric describing each pod in the current scale target (for example, transactions-processed-per-second).
-  class Api::Autoscaling::V2beta1::PodsMetricStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta1::PodsMetricStatus < Kubernetes::Spec
     # currentAverageValue is the current value of the average of the metric across all relevant pods (as a quantity)
     @[::JSON::Field(key: "currentAverageValue")]
     @[::YAML::Field(key: "currentAverageValue")]

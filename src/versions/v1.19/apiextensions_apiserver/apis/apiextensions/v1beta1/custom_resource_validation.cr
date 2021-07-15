@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceValidation is a list of validation methods for CustomResources.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceValidation < Kubernetes::Spec
     # openAPIV3Schema is the OpenAPI v3 schema to use for validation and pruning.
     @[::JSON::Field(key: "openAPIV3Schema")]
     @[::YAML::Field(key: "openAPIV3Schema")]

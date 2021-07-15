@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # VolumeAttachmentStatus is the status of a VolumeAttachment request.
-  class Api::Storage::V1::VolumeAttachmentStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1::VolumeAttachmentStatus < Kubernetes::Spec
     # The last error encountered during attach operation, if any. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
     @[::JSON::Field(key: "attachError")]
     @[::YAML::Field(key: "attachError")]

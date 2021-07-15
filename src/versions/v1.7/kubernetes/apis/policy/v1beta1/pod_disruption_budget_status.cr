@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodDisruptionBudgetStatus represents information about the status of a PodDisruptionBudget. Status may trail the actual state of a system.
-  class Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudgetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Policy::V1beta1::PodDisruptionBudgetStatus < Kubernetes::Spec
     # current number of healthy pods
     @[::JSON::Field(key: "currentHealthy")]
     @[::YAML::Field(key: "currentHealthy")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
-  class Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricSource < Kubernetes::Spec
     # metricName is the name of the metric in question.
     @[::JSON::Field(key: "metricName")]
     @[::YAML::Field(key: "metricName")]

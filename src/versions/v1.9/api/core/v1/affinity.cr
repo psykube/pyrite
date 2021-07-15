@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Affinity is a group of affinity scheduling rules.
-  class Api::Core::V1::Affinity
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::Affinity < Kubernetes::Spec
     # Describes node affinity scheduling rules for the pod.
     @[::JSON::Field(key: "nodeAffinity")]
     @[::YAML::Field(key: "nodeAffinity")]

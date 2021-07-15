@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodPresetSpec is a description of a pod injection policy.
-  class Kubernetes::Apis::Settings::V1alpha1::PodPresetSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Settings::V1alpha1::PodPresetSpec < Kubernetes::Spec
     # Env defines the collection of EnvVar to inject into containers.
     @[::JSON::Field(key: "env")]
     @[::YAML::Field(key: "env")]

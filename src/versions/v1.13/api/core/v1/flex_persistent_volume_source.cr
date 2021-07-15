@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlexPersistentVolumeSource represents a generic persistent volume resource that is [provisioned/attached using an exec based plugin.](provisioned/attached using an exec based plugin.)
-  class Api::Core::V1::FlexPersistentVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::FlexPersistentVolumeSource < Kubernetes::Spec
     # Driver is the name of the driver to use for this volume.
     @[::JSON::Field(key: "driver")]
     @[::YAML::Field(key: "driver")]

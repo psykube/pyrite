@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Extensions::V1beta1::NetworkPolicyPeer
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::NetworkPolicyPeer < Kubernetes::Spec
     # IPBlock defines policy on a particular IPBlock
     @[::JSON::Field(key: "ipBlock")]
     @[::YAML::Field(key: "ipBlock")]

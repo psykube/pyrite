@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HTTPIngressPath associates a path regex with a backend. Incoming urls matching the path are forwarded to the backend.
-  class Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Extensions::V1beta1::HTTPIngressPath < Kubernetes::Spec
     # Backend defines the referenced service endpoint to which the traffic will be forwarded to.
     @[::JSON::Field(key: "backend")]
     @[::YAML::Field(key: "backend")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CSINodeDriver holds information about the specification of one CSI driver installed on a node
-  class Api::Storage::V1beta1::CSINodeDriver
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1beta1::CSINodeDriver < Kubernetes::Spec
     # This is the name of the CSI driver that this object refers to. This MUST be the same name returned by the CSI GetPluginName() call for that driver.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

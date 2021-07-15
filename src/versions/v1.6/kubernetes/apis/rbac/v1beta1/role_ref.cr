@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # RoleRef contains information that points to the role being used
-  class Kubernetes::Apis::Rbac::V1beta1::RoleRef
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Rbac::V1beta1::RoleRef < Kubernetes::Spec
     # APIGroup is the group for the resource being referenced
     @[::JSON::Field(key: "apiGroup")]
     @[::YAML::Field(key: "apiGroup")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EndpointAddress is a tuple that describes single IP address.
-  class Api::Core::V1::EndpointAddress
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::EndpointAddress < Kubernetes::Spec
     # The Hostname of this endpoint
     @[::JSON::Field(key: "hostname")]
     @[::YAML::Field(key: "hostname")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # volumeDevice describes a mapping of a raw block device within a container.
-  class Api::Core::V1::VolumeDevice
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::VolumeDevice < Kubernetes::Spec
     # devicePath is the path inside of the container that the device will be mapped to.
     @[::JSON::Field(key: "devicePath")]
     @[::YAML::Field(key: "devicePath")]

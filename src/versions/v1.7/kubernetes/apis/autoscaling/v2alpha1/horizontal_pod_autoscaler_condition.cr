@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HorizontalPodAutoscalerCondition describes the state of a HorizontalPodAutoscaler at a certain point.
-  class Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerCondition < Kubernetes::Spec
     # lastTransitionTime is the last time the condition transitioned from one status to another
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

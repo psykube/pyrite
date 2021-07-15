@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatefulSetStatus represents the current state of a StatefulSet.
-  class Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus < Kubernetes::Spec
     # currentReplicas is the number of Pods created by the StatefulSet controller from the StatefulSet version indicated by currentRevision.
     @[::JSON::Field(key: "currentReplicas")]
     @[::YAML::Field(key: "currentReplicas")]

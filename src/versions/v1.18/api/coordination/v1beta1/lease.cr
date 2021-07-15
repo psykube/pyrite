@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # Lease defines a lease concept.
-  class Api::Coordination::V1beta1::Lease
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "coordination/v1beta1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "Lease"
-
+  class Api::Coordination::V1beta1::Lease < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "coordination/v1beta1" && instance.kind == "Lease"
@@ -33,11 +22,6 @@ module Pyrite
       end
     end
 
-    # More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Specification of the Lease. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status)
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -45,9 +29,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Coordination::V1beta1::LeaseSpec | Nil = nil)
     end
-  end
-
-  module Resources::Coordination::V1beta1
-    alias Lease = ::Pyrite::Api::Coordination::V1beta1::Lease
   end
 end

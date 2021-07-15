@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatefulSetStatus represents the current state of a StatefulSet.
-  class Api::Apps::V1::StatefulSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1::StatefulSetStatus < Kubernetes::Spec
     # collisionCount is the count of hash collisions for the StatefulSet. The StatefulSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.
     @[::JSON::Field(key: "collisionCount")]
     @[::YAML::Field(key: "collisionCount")]

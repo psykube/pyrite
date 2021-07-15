@@ -7,10 +7,7 @@ module Pyrite
   # SecretEnvSource selects a Secret to populate the environment variables with.
   #
   # The contents of the target Secret's Data field will represent the key-value pairs as environment variables.
-  class Kubernetes::Api::V1::SecretEnvSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::SecretEnvSource < Kubernetes::Spec
     # Name of the referent. More info: [https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names)
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

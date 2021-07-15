@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Authorization::V1beta1::SelfSubjectRulesReviewSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Authorization::V1beta1::SelfSubjectRulesReviewSpec < Kubernetes::Spec
     # Namespace to evaluate rules for. Required.
     @[::JSON::Field(key: "namespace")]
     @[::YAML::Field(key: "namespace")]

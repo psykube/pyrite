@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeClaimCondition contails details about state of pvc
-  class Api::Core::V1::PersistentVolumeClaimCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PersistentVolumeClaimCondition < Kubernetes::Spec
     # Last time we probed the condition.
     @[::JSON::Field(key: "lastProbeTime")]
     @[::YAML::Field(key: "lastProbeTime")]

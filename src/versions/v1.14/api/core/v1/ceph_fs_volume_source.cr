@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
-  class Api::Core::V1::CephFSVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::CephFSVolumeSource < Kubernetes::Spec
     # Required: Monitors is a collection of Ceph monitors More info: [https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it](https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it)
     @[::JSON::Field(key: "monitors")]
     @[::YAML::Field(key: "monitors")]

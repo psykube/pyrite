@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ReplicationControllerStatus represents the current status of a replication controller.
-  class Kubernetes::Api::V1::ReplicationControllerStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ReplicationControllerStatus < Kubernetes::Spec
     # The number of available replicas (ready for at least minReadySeconds) for this replication controller.
     @[::JSON::Field(key: "availableReplicas")]
     @[::YAML::Field(key: "availableReplicas")]

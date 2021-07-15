@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # MetricIdentifier defines the name and optionally selector for a metric
-  class Api::Autoscaling::V2beta2::MetricIdentifier
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::MetricIdentifier < Kubernetes::Spec
     # name is the name of the given metric
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

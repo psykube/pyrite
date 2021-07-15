@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
-  class Api::Autoscaling::V2beta1::MetricSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta1::MetricSpec < Kubernetes::Spec
     # object refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object).
     @[::JSON::Field(key: "object")]
     @[::YAML::Field(key: "object")]

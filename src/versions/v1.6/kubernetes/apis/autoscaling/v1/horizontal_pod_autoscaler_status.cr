@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # current status of a horizontal pod autoscaler
-  class Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerStatus < Kubernetes::Spec
     # current average CPU utilization over all pods, represented as a percentage of requested CPU, e.g. 70 means that an average pod is using now 70% of its requested CPU.
     @[::JSON::Field(key: "currentCPUUtilizationPercentage")]
     @[::YAML::Field(key: "currentCPUUtilizationPercentage")]

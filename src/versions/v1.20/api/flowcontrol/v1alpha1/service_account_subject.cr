@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ServiceAccountSubject holds detailed information for service-account-kind subject.
-  class Api::Flowcontrol::V1alpha1::ServiceAccountSubject
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::ServiceAccountSubject < Kubernetes::Spec
     # `name` is the name of matching ServiceAccount objects, or "*" to match regardless of name. Required.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

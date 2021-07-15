@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # IngressServiceBackend references a Kubernetes Service as a Backend.
-  class Api::Networking::V1::IngressServiceBackend
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1::IngressServiceBackend < Kubernetes::Spec
     # Name is the referenced service. The service must exist in the same namespace as the Ingress object.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

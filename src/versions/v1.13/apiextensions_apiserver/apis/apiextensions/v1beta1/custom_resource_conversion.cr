@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceConversion describes how to convert different versions of a CR.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceConversion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceConversion < Kubernetes::Spec
     # `strategy` specifies the conversion strategy. Allowed values are: - `None`: The converter only change the apiVersion and would not touch any other field in the CR. - `Webhook`: API Server will call to an external webhook to do the conversion. Additional information is needed for this option.
     @[::JSON::Field(key: "strategy")]
     @[::YAML::Field(key: "strategy")]

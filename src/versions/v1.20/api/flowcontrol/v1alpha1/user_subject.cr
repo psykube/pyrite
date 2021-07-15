@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # UserSubject holds detailed information for user-kind subject.
-  class Api::Flowcontrol::V1alpha1::UserSubject
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::UserSubject < Kubernetes::Spec
     # `name` is the username that matches, or "*" to match all usernames. Required.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

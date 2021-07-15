@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ContainerStateRunning is a running state of a container.
-  class Kubernetes::Api::V1::ContainerStateRunning
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ContainerStateRunning < Kubernetes::Spec
     # Time at which the container was last (re-)started
     @[::JSON::Field(key: "startedAt")]
     @[::YAML::Field(key: "startedAt")]

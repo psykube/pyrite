@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeStatus is information about the current status of a node.
-  class Api::Core::V1::NodeStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NodeStatus < Kubernetes::Spec
     # List of addresses reachable to the node. Queried from cloud provider, if available. More info: [https://kubernetes.io/docs/concepts/nodes/node/#addresses Note: This field is declared as mergeable, but the merge key is not sufficiently unique, which can cause data corruption when it is merged. Callers should instead use a full-replacement patch. See http://pr.k8s.io/79391 for an example.](https://kubernetes.io/docs/concepts/nodes/node/#addresses Note: This field is declared as mergeable, but the merge key is not sufficiently unique, which can cause data corruption when it is merged. Callers should instead use a full-replacement patch. See http://pr.k8s.io/79391 for an example.)
     @[::JSON::Field(key: "addresses")]
     @[::YAML::Field(key: "addresses")]

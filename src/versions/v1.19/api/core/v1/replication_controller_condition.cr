@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ReplicationControllerCondition describes the state of a replication controller at a certain point.
-  class Api::Core::V1::ReplicationControllerCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ReplicationControllerCondition < Kubernetes::Spec
     # The last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

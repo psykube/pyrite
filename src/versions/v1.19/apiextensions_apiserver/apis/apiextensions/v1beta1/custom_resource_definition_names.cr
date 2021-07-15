@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames < Kubernetes::Spec
     # categories is a list of grouped resources this custom resource belongs to (e.g. 'all'). This is published in API discovery documents, and used by clients to support invocations like `kubectl get all`.
     @[::JSON::Field(key: "categories")]
     @[::YAML::Field(key: "categories")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionSpec describes how a user wants their resource to appear
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec < Kubernetes::Spec
     # Group is the group this resource belongs in
     @[::JSON::Field(key: "group")]
     @[::YAML::Field(key: "group")]

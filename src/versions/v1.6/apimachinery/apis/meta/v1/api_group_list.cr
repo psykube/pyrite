@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
-  class Apimachinery::Apis::Meta::V1::APIGroupList
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::APIGroupList < Kubernetes::Spec
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#resources)
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

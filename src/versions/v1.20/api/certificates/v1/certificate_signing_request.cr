@@ -11,18 +11,7 @@ module Pyrite
   #  2. serving certificates for TLS endpoints kube-apiserver can connect to securely (with the ["kubernetes.io/kubelet-serving" signerName).]("kubernetes.io/kubelet-serving" signerName).)
   #
   # This API can be used to request client certificates to authenticate to kube-apiserver (with the ["kubernetes.io/kube-apiserver-client" signerName), or to obtain certificates from custom non-Kubernetes signers.]("kubernetes.io/kube-apiserver-client" signerName), or to obtain certificates from custom non-Kubernetes signers.)
-  class Api::Certificates::V1::CertificateSigningRequest
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "certificates/v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "CertificateSigningRequest"
-
+  class Api::Certificates::V1::CertificateSigningRequest < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "certificates/v1" && instance.kind == "CertificateSigningRequest"
@@ -39,10 +28,6 @@ module Pyrite
       end
     end
 
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # spec contains the certificate request, and is immutable after creation. Only the request, signerName, and usages fields can be set on creation. Other fields are derived by Kubernetes and cannot be modified by users.
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -55,9 +40,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Certificates::V1::CertificateSigningRequestSpec, @status : Api::Certificates::V1::CertificateSigningRequestStatus | Nil = nil)
     end
-  end
-
-  module Resources::Certificates::V1
-    alias CertificateSigningRequest = ::Pyrite::Api::Certificates::V1::CertificateSigningRequest
   end
 end

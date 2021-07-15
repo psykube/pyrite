@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NamespaceCondition contains details about state of namespace.
-  class Api::Core::V1::NamespaceCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NamespaceCondition < Kubernetes::Spec
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]
     property last_transition_time : Time | Nil

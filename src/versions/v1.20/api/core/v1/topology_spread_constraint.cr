@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # TopologySpreadConstraint specifies how to spread matching pods among the given topology.
-  class Api::Core::V1::TopologySpreadConstraint
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::TopologySpreadConstraint < Kubernetes::Spec
     # LabelSelector is used to find matching pods. Pods that match this label selector are counted to determine the number of pods in their corresponding topology domain.
     @[::JSON::Field(key: "labelSelector")]
     @[::YAML::Field(key: "labelSelector")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeploymentStatus is the most recently observed status of the Deployment.
-  class Api::Apps::V1beta2::DeploymentStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta2::DeploymentStatus < Kubernetes::Spec
     # Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.
     @[::JSON::Field(key: "availableReplicas")]
     @[::YAML::Field(key: "availableReplicas")]

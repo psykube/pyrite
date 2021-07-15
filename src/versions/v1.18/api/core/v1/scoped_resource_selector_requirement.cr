@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.
-  class Api::Core::V1::ScopedResourceSelectorRequirement
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ScopedResourceSelectorRequirement < Kubernetes::Spec
     # Represents a scope's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist.
     @[::JSON::Field(key: "operator")]
     @[::YAML::Field(key: "operator")]

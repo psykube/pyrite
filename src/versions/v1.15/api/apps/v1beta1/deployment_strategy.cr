@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeploymentStrategy describes how to replace existing pods with new ones.
-  class Api::Apps::V1beta1::DeploymentStrategy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta1::DeploymentStrategy < Kubernetes::Spec
     # Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate.
     @[::JSON::Field(key: "rollingUpdate")]
     @[::YAML::Field(key: "rollingUpdate")]

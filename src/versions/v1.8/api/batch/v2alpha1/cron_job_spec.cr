@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CronJobSpec describes how the job execution will look like and when it will actually run.
-  class Api::Batch::V2alpha1::CronJobSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Batch::V2alpha1::CronJobSpec < Kubernetes::Spec
     # Specifies how to treat concurrent executions of a Job. Defaults to Allow.
     @[::JSON::Field(key: "concurrencyPolicy")]
     @[::YAML::Field(key: "concurrencyPolicy")]

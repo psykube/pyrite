@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FSGroupStrategyOptions defines the strategy type and options used to create the strategy.
-  class Api::Policy::V1beta1::FSGroupStrategyOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::FSGroupStrategyOptions < Kubernetes::Spec
     # ranges are the allowed ranges of fs groups.  If you would like to force a single fs group then supply a single range with the same start and end. Required for MustRunAs.
     @[::JSON::Field(key: "ranges")]
     @[::YAML::Field(key: "ranges")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ReplicaSetCondition describes the state of a replica set at a certain point.
-  class Api::Extensions::V1beta1::ReplicaSetCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::ReplicaSetCondition < Kubernetes::Spec
     # The last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

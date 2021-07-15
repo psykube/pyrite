@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # IngressSpec describes the Ingress the user wishes to exist.
-  class Api::Networking::V1beta1::IngressSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1beta1::IngressSpec < Kubernetes::Spec
     # A default backend capable of servicing requests that don't match any rule. At least one of 'backend' or 'rules' must be specified. This field is optional to allow the loadbalancer controller or defaulting logic to specify a global default.
     @[::JSON::Field(key: "backend")]
     @[::YAML::Field(key: "backend")]

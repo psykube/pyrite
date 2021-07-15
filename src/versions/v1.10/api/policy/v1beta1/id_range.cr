@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ID Range provides a [min/max of an allowed range of IDs.](min/max of an allowed range of IDs.)
-  class Api::Policy::V1beta1::IDRange
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::IDRange < Kubernetes::Spec
     # Max is the end of the range, inclusive.
     @[::JSON::Field(key: "max")]
     @[::YAML::Field(key: "max")]

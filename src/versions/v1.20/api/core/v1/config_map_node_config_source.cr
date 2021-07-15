@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node.
-  class Api::Core::V1::ConfigMapNodeConfigSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ConfigMapNodeConfigSource < Kubernetes::Spec
     # KubeletConfigKey declares which key of the referenced ConfigMap corresponds to the KubeletConfiguration structure This field is required in all cases.
     @[::JSON::Field(key: "kubeletConfigKey")]
     @[::YAML::Field(key: "kubeletConfigKey")]

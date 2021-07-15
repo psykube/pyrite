@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # Event is a report of an event somewhere in the cluster.
-  class Kubernetes::Api::V1::Event
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "Event"
-
+  class Kubernetes::Api::V1::Event < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Event"
@@ -58,11 +47,6 @@ module Pyrite
     @[::YAML::Field(key: "message")]
     property message : String | Nil
 
-    # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta
-
     # This should be a short, machine understandable string that gives the reason for the transition into the object's current status.
     @[::JSON::Field(key: "reason")]
     @[::YAML::Field(key: "reason")]
@@ -80,9 +64,5 @@ module Pyrite
 
     def initialize(*, @count : Int32 | Nil = nil, @first_timestamp : Time | Nil = nil, @involved_object : Kubernetes::Api::V1::ObjectReference, @last_timestamp : Time | Nil = nil, @message : String | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta, @reason : String | Nil = nil, @source : Kubernetes::Api::V1::EventSource | Nil = nil, @type : String | Nil = nil)
     end
-  end
-
-  module Resources::V1
-    alias Event = ::Pyrite::Kubernetes::Api::V1::Event
   end
 end

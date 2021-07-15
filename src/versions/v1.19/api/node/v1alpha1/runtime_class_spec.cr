@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # RuntimeClassSpec is a specification of a RuntimeClass. It contains parameters that are required to describe the RuntimeClass to the Container Runtime Interface (CRI) implementation, as well as any other components that need to understand how the pod will be run. The RuntimeClassSpec is immutable.
-  class Api::Node::V1alpha1::RuntimeClassSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Node::V1alpha1::RuntimeClassSpec < Kubernetes::Spec
     # Overhead represents the resource overhead associated with running a pod for a given RuntimeClass. For more details, see [https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md This field is alpha-level as of Kubernetes v1.15, and is only honored by servers that enable the PodOverhead feature.](https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md This field is alpha-level as of Kubernetes v1.15, and is only honored by servers that enable the PodOverhead feature.)
     @[::JSON::Field(key: "overhead")]
     @[::YAML::Field(key: "overhead")]

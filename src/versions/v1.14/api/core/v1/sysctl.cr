@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Sysctl defines a kernel parameter to be set
-  class Api::Core::V1::Sysctl
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::Sysctl < Kubernetes::Spec
     # Name of a property to set
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

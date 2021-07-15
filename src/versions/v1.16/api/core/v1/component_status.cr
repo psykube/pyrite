@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # ComponentStatus (and ComponentStatusList) holds the cluster validation info.
-  class Api::Core::V1::ComponentStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "ComponentStatus"
-
+  class Api::Core::V1::ComponentStatus < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "ComponentStatus"
@@ -38,16 +27,7 @@ module Pyrite
     @[::YAML::Field(key: "conditions")]
     property conditions : Array(Api::Core::V1::ComponentCondition) | Nil
 
-    # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     def initialize(*, @conditions : Array | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil)
     end
-  end
-
-  module Resources::V1
-    alias ComponentStatus = ::Pyrite::Api::Core::V1::ComponentStatus
   end
 end

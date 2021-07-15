@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
-  class Api::Core::V1::PersistentVolumeClaimTemplate
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PersistentVolumeClaimTemplate < Kubernetes::Spec
     # May contain labels and annotations that will be copied into the PVC when creating it. No other fields are allowed and will be rejected during validation.
     @[::JSON::Field(key: "metadata")]
     @[::YAML::Field(key: "metadata")]

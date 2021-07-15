@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NamespaceStatus is information about the current status of a Namespace.
-  class Api::Core::V1::NamespaceStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NamespaceStatus < Kubernetes::Spec
     # Represents the latest available observations of a namespace's current state.
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

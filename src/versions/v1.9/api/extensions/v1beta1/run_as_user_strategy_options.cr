@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Run A sUser Strategy Options defines the strategy type and any options used to create the strategy.
-  class Api::Extensions::V1beta1::RunAsUserStrategyOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::RunAsUserStrategyOptions < Kubernetes::Spec
     # Ranges are the allowed ranges of uids that may be used.
     @[::JSON::Field(key: "ranges")]
     @[::YAML::Field(key: "ranges")]

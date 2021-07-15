@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Initializer is information about an initializer that has not yet completed.
-  class Apimachinery::Apis::Meta::V1::Initializer
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::Initializer < Kubernetes::Spec
     # name of the process that is responsible for initializing this object.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

@@ -7,18 +7,7 @@ module Pyrite
   # StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
   #
   # StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
-  class Api::Storage::V1beta1::StorageClass
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "storage/v1beta1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "StorageClass"
-
+  class Api::Storage::V1beta1::StorageClass < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "storage/v1beta1" && instance.kind == "StorageClass"
@@ -39,11 +28,6 @@ module Pyrite
     @[::JSON::Field(key: "allowVolumeExpansion")]
     @[::YAML::Field(key: "allowVolumeExpansion")]
     property allow_volume_expansion : Bool | Nil
-
-    # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
 
     # Dynamically provisioned PersistentVolumes of this storage class are created with these mountOptions, e.g. ["ro", "soft"]. Not validated - mount of the PVs will simply fail if one is invalid.
     @[::JSON::Field(key: "mountOptions")]
@@ -72,9 +56,5 @@ module Pyrite
 
     def initialize(*, @allow_volume_expansion : Bool | Nil = nil, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @mount_options : Array | Nil = nil, @parameters : Hash(String, String) | Nil = nil, @provisioner : String, @reclaim_policy : String | Nil = nil, @volume_binding_mode : String | Nil = nil)
     end
-  end
-
-  module Resources::Storage::V1beta1
-    alias StorageClass = ::Pyrite::Api::Storage::V1beta1::StorageClass
   end
 end

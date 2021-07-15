@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
-  class Api::Core::V1::ScaleIOPersistentVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ScaleIOPersistentVolumeSource < Kubernetes::Spec
     # Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
     @[::JSON::Field(key: "fsType")]
     @[::YAML::Field(key: "fsType")]

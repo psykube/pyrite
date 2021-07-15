@@ -1,5 +1,10 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
+require "./v1.20/kubernetes"
+require "./v1.20/kubernetes/spec"
+require "./v1.20/kubernetes/resource"
+require "./v1.20/kubernetes/object"
+require "./v1.20/kubernetes/list"
 require "./v1.20/api/admissionregistration/v1/mutating_webhook.cr"
 require "./v1.20/api/admissionregistration/v1/mutating_webhook_configuration.cr"
 require "./v1.20/api/admissionregistration/v1/mutating_webhook_configuration_list.cr"
@@ -651,4 +656,3 @@ require "./v1.20/kube_aggregator/apis/apiregistration/v1beta1/api_service_spec.c
 require "./v1.20/kube_aggregator/apis/apiregistration/v1beta1/api_service_status.cr"
 require "./v1.20/kube_aggregator/apis/apiregistration/v1beta1/service_reference.cr"
 require "./v1.20/api/core/v1/list.cr"
-require "./v1.20/kubernetes"

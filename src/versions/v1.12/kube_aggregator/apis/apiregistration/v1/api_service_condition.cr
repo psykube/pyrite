@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class KubeAggregator::Apis::Apiregistration::V1::APIServiceCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class KubeAggregator::Apis::Apiregistration::V1::APIServiceCondition < Kubernetes::Spec
     # Last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

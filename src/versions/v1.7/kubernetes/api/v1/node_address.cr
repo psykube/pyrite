@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeAddress contains information for the node's address.
-  class Kubernetes::Api::V1::NodeAddress
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NodeAddress < Kubernetes::Spec
     # The node address.
     @[::JSON::Field(key: "address")]
     @[::YAML::Field(key: "address")]

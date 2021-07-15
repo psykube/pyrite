@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ServiceSpec describes the attributes that a user creates on a service.
-  class Api::Core::V1::ServiceSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ServiceSpec < Kubernetes::Spec
     # allocateLoadBalancerNodePorts defines if NodePorts will be automatically allocated for services with type LoadBalancer.  Default is "true". It may be set to "false" if the cluster load-balancer does not rely on NodePorts. allocateLoadBalancerNodePorts may only be set for services with type LoadBalancer and will be cleared if the type is changed to any other type. This field is alpha-level and is only honored by servers that enable the ServiceLBNodePortControl feature.
     @[::JSON::Field(key: "allocateLoadBalancerNodePorts")]
     @[::YAML::Field(key: "allocateLoadBalancerNodePorts")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # IngressStatus describe the current state of the Ingress.
-  class Api::Networking::V1beta1::IngressStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1beta1::IngressStatus < Kubernetes::Spec
     # LoadBalancer contains the current status of the load-balancer.
     @[::JSON::Field(key: "loadBalancer")]
     @[::YAML::Field(key: "loadBalancer")]

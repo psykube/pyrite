@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeploymentCondition describes the state of a deployment at a certain point.
-  class Api::Apps::V1::DeploymentCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1::DeploymentCondition < Kubernetes::Spec
     # Last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

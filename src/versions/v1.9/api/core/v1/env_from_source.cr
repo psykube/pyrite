@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EnvFromSource represents the source of a set of ConfigMaps
-  class Api::Core::V1::EnvFromSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::EnvFromSource < Kubernetes::Spec
     # The ConfigMap to select from
     @[::JSON::Field(key: "configMapRef")]
     @[::YAML::Field(key: "configMapRef")]

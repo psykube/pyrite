@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SELinuxOptions are the labels to be applied to the container
-  class Api::Core::V1::SELinuxOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::SELinuxOptions < Kubernetes::Spec
     # Level is SELinux level label that applies to the container.
     @[::JSON::Field(key: "level")]
     @[::YAML::Field(key: "level")]

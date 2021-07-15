@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
-  class Kubernetes::Api::V1::PreferredSchedulingTerm
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::PreferredSchedulingTerm < Kubernetes::Spec
     # A node selector term, associated with the corresponding weight.
     @[::JSON::Field(key: "preference")]
     @[::YAML::Field(key: "preference")]

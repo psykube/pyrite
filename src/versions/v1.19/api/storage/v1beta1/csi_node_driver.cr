@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CSINodeDriver holds information about the specification of one CSI driver installed on a node
-  class Api::Storage::V1beta1::CSINodeDriver
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1beta1::CSINodeDriver < Kubernetes::Spec
     # allocatable represents the volume resources of a node that are available for scheduling.
     @[::JSON::Field(key: "allocatable")]
     @[::YAML::Field(key: "allocatable")]

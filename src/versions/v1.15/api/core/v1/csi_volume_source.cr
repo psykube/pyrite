@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a source location of a volume to mount, managed by an external CSI driver
-  class Api::Core::V1::CSIVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::CSIVolumeSource < Kubernetes::Spec
     # Driver is the name of the CSI driver that handles this volume. Consult with your admin for the correct name as registered in the cluster.
     @[::JSON::Field(key: "driver")]
     @[::YAML::Field(key: "driver")]

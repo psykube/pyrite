@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # EndpointSlice represents a subset of the endpoints that implement a service. For a given service there may be multiple EndpointSlice objects, selected by labels, which must be joined to produce the full set of endpoints.
-  class Api::Discovery::V1alpha1::EndpointSlice
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "discovery/v1alpha1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "EndpointSlice"
-
+  class Api::Discovery::V1alpha1::EndpointSlice < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "discovery/v1alpha1" && instance.kind == "EndpointSlice"
@@ -43,11 +32,6 @@ module Pyrite
     @[::YAML::Field(key: "endpoints")]
     property endpoints : Array(Api::Discovery::V1alpha1::Endpoint)
 
-    # Standard object's metadata.
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # ports specifies the list of network ports exposed by each endpoint in this slice. Each port must have a unique name. When ports is empty, it indicates that there are no defined ports. When a port is defined with a nil port value, it indicates "all ports". Each slice may include a maximum of 100 ports.
     @[::JSON::Field(key: "ports")]
     @[::YAML::Field(key: "ports")]
@@ -55,9 +39,5 @@ module Pyrite
 
     def initialize(*, @address_type : String | Nil = nil, @endpoints : Array, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @ports : Array | Nil = nil)
     end
-  end
-
-  module Resources::Discovery::V1alpha1
-    alias EndpointSlice = ::Pyrite::Api::Discovery::V1alpha1::EndpointSlice
   end
 end

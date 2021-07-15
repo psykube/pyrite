@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NetworkPolicyPeer describes a peer to allow traffic from. Exactly one of its fields must be specified.
-  class Kubernetes::Apis::Networking::V1::NetworkPolicyPeer
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Networking::V1::NetworkPolicyPeer < Kubernetes::Spec
     # Selects Namespaces using cluster scoped-labels. This matches all pods in all namespaces selected by this label selector. This field follows standard label selector semantics. If present but empty, this selector selects all namespaces.
     @[::JSON::Field(key: "namespaceSelector")]
     @[::YAML::Field(key: "namespaceSelector")]

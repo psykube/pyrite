@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames < Kubernetes::Spec
     # Categories is a list of grouped resources custom resources belong to (e.g. 'all')
     @[::JSON::Field(key: "categories")]
     @[::YAML::Field(key: "categories")]

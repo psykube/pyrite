@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourcePolicyRule is a predicate that matches some resource requests, testing the request's verb and the target resource. A ResourcePolicyRule matches a resource request if and only if: (a) at least one member of verbs matches the request, (b) at least one member of apiGroups matches the request, (c) at least one member of resources matches the request, and (d) least one member of namespaces matches the request.
-  class Api::Flowcontrol::V1alpha1::ResourcePolicyRule
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::ResourcePolicyRule < Kubernetes::Spec
     # `apiGroups` is a list of matching API groups and may not be empty. "*" matches all API groups and, if present, must be the only entry. Required.
     @[::JSON::Field(key: "apiGroups")]
     @[::YAML::Field(key: "apiGroups")]

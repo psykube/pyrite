@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AuditSinkSpec holds the spec for the audit sink
-  class Api::Auditregistration::V1alpha1::AuditSinkSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Auditregistration::V1alpha1::AuditSinkSpec < Kubernetes::Spec
     # Policy defines the policy for selecting which events should be sent to the webhook required
     @[::JSON::Field(key: "policy")]
     @[::YAML::Field(key: "policy")]

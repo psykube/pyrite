@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Webhook holds the configuration of the webhook
-  class Api::Auditregistration::V1alpha1::Webhook
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Auditregistration::V1alpha1::Webhook < Kubernetes::Spec
     # ClientConfig holds the connection parameters for the webhook required
     @[::JSON::Field(key: "clientConfig")]
     @[::YAML::Field(key: "clientConfig")]

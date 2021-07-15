@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HPAScalingPolicy is a single policy which must hold true for a specified past interval.
-  class Api::Autoscaling::V2beta2::HPAScalingPolicy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::HPAScalingPolicy < Kubernetes::Spec
     # PeriodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min).
     @[::JSON::Field(key: "periodSeconds")]
     @[::YAML::Field(key: "periodSeconds")]

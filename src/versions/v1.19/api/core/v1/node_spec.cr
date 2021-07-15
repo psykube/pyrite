@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeSpec describes the attributes that a node is created with.
-  class Api::Core::V1::NodeSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NodeSpec < Kubernetes::Spec
     # If specified, the source to get node configuration from The DynamicKubeletConfig feature gate must be enabled for the Kubelet to use this field
     @[::JSON::Field(key: "configSource")]
     @[::YAML::Field(key: "configSource")]

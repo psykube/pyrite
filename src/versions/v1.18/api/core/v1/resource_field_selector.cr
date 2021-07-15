@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourceFieldSelector represents container resources (cpu, memory) and their output format
-  class Api::Core::V1::ResourceFieldSelector
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ResourceFieldSelector < Kubernetes::Spec
     # Container name: required for volumes, optional for env vars
     @[::JSON::Field(key: "containerName")]
     @[::YAML::Field(key: "containerName")]

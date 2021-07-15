@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as [read/write once. ISCSI volumes support ownership management and SELinux relabeling.](read/write once. ISCSI volumes support ownership management and SELinux relabeling.)
-  class Api::Core::V1::ISCSIPersistentVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ISCSIPersistentVolumeSource < Kubernetes::Spec
     # whether support iSCSI Discovery CHAP authentication
     @[::JSON::Field(key: "chapAuthDiscovery")]
     @[::YAML::Field(key: "chapAuthDiscovery")]

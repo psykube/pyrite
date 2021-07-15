@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodSpec is a description of a pod.
-  class Api::Core::V1::PodSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PodSpec < Kubernetes::Spec
     # Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
     @[::JSON::Field(key: "activeDeadlineSeconds")]
     @[::YAML::Field(key: "activeDeadlineSeconds")]

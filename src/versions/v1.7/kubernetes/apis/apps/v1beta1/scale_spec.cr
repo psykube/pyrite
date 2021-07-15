@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ScaleSpec describes the attributes of a scale subresource
-  class Kubernetes::Apis::Apps::V1beta1::ScaleSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::ScaleSpec < Kubernetes::Spec
     # desired number of instances for the scaled object.
     @[::JSON::Field(key: "replicas")]
     @[::YAML::Field(key: "replicas")]

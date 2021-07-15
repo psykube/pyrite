@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-  class Apimachinery::Apis::Meta::V1::ListMeta
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::ListMeta < Kubernetes::Spec
     # String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency](https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency)
     @[::JSON::Field(key: "resourceVersion")]
     @[::YAML::Field(key: "resourceVersion")]

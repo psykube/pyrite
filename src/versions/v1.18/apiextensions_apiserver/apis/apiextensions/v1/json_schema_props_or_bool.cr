@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JSONSchemaPropsOrBool represents JSONSchemaProps or a boolean value. Defaults to true for the boolean property.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaPropsOrBool
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::JSONSchemaPropsOrBool < Kubernetes::Spec
     def initialize
     end
   end

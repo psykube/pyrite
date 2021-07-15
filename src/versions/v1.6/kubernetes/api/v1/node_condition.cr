@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeCondition contains condition information for a node.
-  class Kubernetes::Api::V1::NodeCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NodeCondition < Kubernetes::Spec
     # Last time we got an update on a given condition.
     @[::JSON::Field(key: "lastHeartbeatTime")]
     @[::YAML::Field(key: "lastHeartbeatTime")]

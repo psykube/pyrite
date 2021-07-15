@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
-  class Api::Core::V1::NodeConfigStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NodeConfigStatus < Kubernetes::Spec
     # Active reports the checkpointed config the node is actively using. Active will represent either the current version of the Assigned config, or the current LastKnownGood config, depending on whether attempting to use the Assigned config results in an error.
     @[::JSON::Field(key: "active")]
     @[::YAML::Field(key: "active")]

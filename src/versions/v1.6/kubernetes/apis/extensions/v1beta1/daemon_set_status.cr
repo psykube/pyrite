@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonSetStatus represents the current status of a daemon set.
-  class Kubernetes::Apis::Extensions::V1beta1::DaemonSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Extensions::V1beta1::DaemonSetStatus < Kubernetes::Spec
     # The number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod. More info: [http://releases.k8s.io/HEAD/docs/admin/daemons.md](http://releases.k8s.io/HEAD/docs/admin/daemons.md)
     @[::JSON::Field(key: "currentNumberScheduled")]
     @[::YAML::Field(key: "currentNumberScheduled")]

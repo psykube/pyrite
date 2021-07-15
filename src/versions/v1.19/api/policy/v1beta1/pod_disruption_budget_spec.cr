@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.
-  class Api::Policy::V1beta1::PodDisruptionBudgetSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::PodDisruptionBudgetSpec < Kubernetes::Spec
     # An eviction is allowed if at most "maxUnavailable" pods selected by "selector" are unavailable after the eviction, i.e. even in absence of the evicted pod. For example, one can prevent all voluntary evictions by specifying 0. This is a mutually exclusive setting with "minAvailable".
     @[::JSON::Field(key: "maxUnavailable")]
     @[::YAML::Field(key: "maxUnavailable")]

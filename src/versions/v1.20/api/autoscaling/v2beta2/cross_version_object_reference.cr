@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CrossVersionObjectReference contains enough information to let you identify the referred resource.
-  class Api::Autoscaling::V2beta2::CrossVersionObjectReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::CrossVersionObjectReference < Kubernetes::Spec
     # API version of the referent
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

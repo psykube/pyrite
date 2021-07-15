@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PolicyRulesWithSubjects prescribes a test that applies to a request to an apiserver. The test considers the subject making the request, the verb being requested, and the resource to be acted upon. This PolicyRulesWithSubjects matches a request if and only if both (a) at least one member of subjects matches the request and (b) at least one member of resourceRules or nonResourceRules matches the request.
-  class Api::Flowcontrol::V1alpha1::PolicyRulesWithSubjects
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::PolicyRulesWithSubjects < Kubernetes::Spec
     # `nonResourceRules` is a list of NonResourcePolicyRules that identify matching requests according to their verb and the target non-resource URL.
     @[::JSON::Field(key: "nonResourceRules")]
     @[::YAML::Field(key: "nonResourceRules")]

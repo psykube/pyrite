@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionSpec describes how a user wants their resource to appear
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionSpec < Kubernetes::Spec
     # AdditionalPrinterColumns are additional columns shown e.g. in kubectl next to the name. Defaults to a created-at column.
     @[::JSON::Field(key: "additionalPrinterColumns")]
     @[::YAML::Field(key: "additionalPrinterColumns")]

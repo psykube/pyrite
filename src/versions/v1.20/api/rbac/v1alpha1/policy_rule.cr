@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
-  class Api::Rbac::V1alpha1::PolicyRule
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Rbac::V1alpha1::PolicyRule < Kubernetes::Spec
     # APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
     @[::JSON::Field(key: "apiGroups")]
     @[::YAML::Field(key: "apiGroups")]

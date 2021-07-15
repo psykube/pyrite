@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SELinuxStrategyOptions defines the strategy type and any options used to create the strategy.
-  class Api::Policy::V1beta1::SELinuxStrategyOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::SELinuxStrategyOptions < Kubernetes::Spec
     # rule is the strategy that will dictate the allowable labels that may be set.
     @[::JSON::Field(key: "rule")]
     @[::YAML::Field(key: "rule")]

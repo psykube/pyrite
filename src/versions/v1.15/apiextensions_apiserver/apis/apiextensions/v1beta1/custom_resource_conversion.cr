@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceConversion describes how to convert different versions of a CR.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceConversion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceConversion < Kubernetes::Spec
     # ConversionReviewVersions is an ordered list of preferred `ConversionReview` versions the Webhook expects. API server will try to use first version in the list which it supports. If none of the versions specified in this list supported by API server, conversion will fail for this object. If a persisted Webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail. Default to `['v1beta1']`.
     @[::JSON::Field(key: "conversionReviewVersions")]
     @[::YAML::Field(key: "conversionReviewVersions")]

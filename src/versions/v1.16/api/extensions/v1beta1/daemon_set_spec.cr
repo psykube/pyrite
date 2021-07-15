@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonSetSpec is the specification of a daemon set.
-  class Api::Extensions::V1beta1::DaemonSetSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::DaemonSetSpec < Kubernetes::Spec
     # The minimum number of seconds for which a newly created DaemonSet pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready).
     @[::JSON::Field(key: "minReadySeconds")]
     @[::YAML::Field(key: "minReadySeconds")]

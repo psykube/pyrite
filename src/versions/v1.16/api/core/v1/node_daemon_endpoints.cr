@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NodeDaemonEndpoints lists ports opened by daemons running on the Node.
-  class Api::Core::V1::NodeDaemonEndpoints
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NodeDaemonEndpoints < Kubernetes::Spec
     # Endpoint on which Kubelet is listening.
     @[::JSON::Field(key: "kubeletEndpoint")]
     @[::YAML::Field(key: "kubeletEndpoint")]

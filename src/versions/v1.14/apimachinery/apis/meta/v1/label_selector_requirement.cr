@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
-  class Apimachinery::Apis::Meta::V1::LabelSelectorRequirement
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::LabelSelectorRequirement < Kubernetes::Spec
     # key is the label key that the selector applies to.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

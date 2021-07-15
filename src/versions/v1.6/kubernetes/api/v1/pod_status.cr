@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodStatus represents information about the status of a pod. Status may trail the actual state of a system.
-  class Kubernetes::Api::V1::PodStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::PodStatus < Kubernetes::Spec
     # Current service state of pod. More info: [http://kubernetes.io/docs/user-guide/pod-states#pod-conditions](http://kubernetes.io/docs/user-guide/pod-states#pod-conditions)
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

@@ -7,18 +7,7 @@ module Pyrite
   # VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)
   #
   # VolumeAttachment objects are non-namespaced.
-  class Api::Storage::V1alpha1::VolumeAttachment
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "storage/v1alpha1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "VolumeAttachment"
-
+  class Api::Storage::V1alpha1::VolumeAttachment < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "storage/v1alpha1" && instance.kind == "VolumeAttachment"
@@ -35,11 +24,6 @@ module Pyrite
       end
     end
 
-    # Standard object metadata. More info: [https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Specification of the desired [attach/detach volume behavior. Populated by the Kubernetes system.](attach/detach volume behavior. Populated by the Kubernetes system.)
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -52,9 +36,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Api::Storage::V1alpha1::VolumeAttachmentSpec, @status : Api::Storage::V1alpha1::VolumeAttachmentStatus | Nil = nil)
     end
-  end
-
-  module Resources::Storage::V1alpha1
-    alias VolumeAttachment = ::Pyrite::Api::Storage::V1alpha1::VolumeAttachment
   end
 end

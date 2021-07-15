@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Info contains versioning information. how we'll want to distribute that information.
-  class Apimachinery::Version::Info
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Version::Info < Kubernetes::Spec
     @[::JSON::Field(key: "buildDate")]
     @[::YAML::Field(key: "buildDate")]
     property build_date : String

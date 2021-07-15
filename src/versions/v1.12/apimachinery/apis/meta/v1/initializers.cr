@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Initializers tracks the progress of initialization.
-  class Apimachinery::Apis::Meta::V1::Initializers
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::Initializers < Kubernetes::Spec
     # Pending is a list of initializers that must execute in order before this object is visible. When the last pending initializer is removed, and no failing result is set, the initializers struct will be set to nil and the object is considered as initialized and visible to all clients.
     @[::JSON::Field(key: "pending")]
     @[::YAML::Field(key: "pending")]

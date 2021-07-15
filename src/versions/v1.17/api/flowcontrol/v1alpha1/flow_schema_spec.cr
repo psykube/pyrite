@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlowSchemaSpec describes how the FlowSchema's specification looks like.
-  class Api::Flowcontrol::V1alpha1::FlowSchemaSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::FlowSchemaSpec < Kubernetes::Spec
     # `distinguisherMethod` defines how to compute the flow distinguisher for requests that match this schema. `nil` specifies that the distinguisher is disabled and thus will always be the empty string.
     @[::JSON::Field(key: "distinguisherMethod")]
     @[::YAML::Field(key: "distinguisherMethod")]

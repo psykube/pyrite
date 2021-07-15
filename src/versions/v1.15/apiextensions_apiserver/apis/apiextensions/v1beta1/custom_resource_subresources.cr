@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceSubresources defines the status and scale subresources for CustomResources.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceSubresources
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceSubresources < Kubernetes::Spec
     # Scale denotes the scale subresource for CustomResources
     @[::JSON::Field(key: "scale")]
     @[::YAML::Field(key: "scale")]

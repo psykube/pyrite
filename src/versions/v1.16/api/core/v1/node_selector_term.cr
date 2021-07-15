@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
-  class Api::Core::V1::NodeSelectorTerm
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::NodeSelectorTerm < Kubernetes::Spec
     # A list of node selector requirements by node's labels.
     @[::JSON::Field(key: "matchExpressions")]
     @[::YAML::Field(key: "matchExpressions")]

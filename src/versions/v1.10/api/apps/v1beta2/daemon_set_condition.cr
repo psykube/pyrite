@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonSetCondition describes the state of a DaemonSet at a certain point.
-  class Api::Apps::V1beta2::DaemonSetCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta2::DaemonSetCondition < Kubernetes::Spec
     # Last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

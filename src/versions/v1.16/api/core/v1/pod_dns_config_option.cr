@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodDNSConfigOption defines DNS resolver options of a pod.
-  class Api::Core::V1::PodDNSConfigOption
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PodDNSConfigOption < Kubernetes::Spec
     # Required.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

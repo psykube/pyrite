@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
-  class Api::Rbac::V1alpha1::AggregationRule
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Rbac::V1alpha1::AggregationRule < Kubernetes::Spec
     # ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added
     @[::JSON::Field(key: "clusterRoleSelectors")]
     @[::YAML::Field(key: "clusterRoleSelectors")]

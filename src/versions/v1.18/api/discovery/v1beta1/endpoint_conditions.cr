@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EndpointConditions represents the current condition of an endpoint.
-  class Api::Discovery::V1beta1::EndpointConditions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Discovery::V1beta1::EndpointConditions < Kubernetes::Spec
     # ready indicates that this endpoint is prepared to receive traffic, according to whatever system is managing the endpoint. A nil value indicates an unknown state. In most cases consumers should interpret this unknown state as ready.
     @[::JSON::Field(key: "ready")]
     @[::YAML::Field(key: "ready")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ReplicationControllerSpec is the specification of a replication controller.
-  class Kubernetes::Api::V1::ReplicationControllerSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ReplicationControllerSpec < Kubernetes::Spec
     # Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
     @[::JSON::Field(key: "minReadySeconds")]
     @[::YAML::Field(key: "minReadySeconds")]

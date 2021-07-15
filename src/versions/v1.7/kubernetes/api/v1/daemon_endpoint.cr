@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonEndpoint contains information about a single Daemon endpoint.
-  class Kubernetes::Api::V1::DaemonEndpoint
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::DaemonEndpoint < Kubernetes::Spec
     # Port number of the given endpoint.
     @[::JSON::Field(key: "Port")]
     @[::YAML::Field(key: "Port")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-  class Api::Core::V1::SecretReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::SecretReference < Kubernetes::Spec
     # Name is unique within a namespace to reference a secret resource.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

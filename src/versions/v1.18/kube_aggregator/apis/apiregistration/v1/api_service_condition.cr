@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # APIServiceCondition describes the state of an APIService at a particular point
-  class KubeAggregator::Apis::Apiregistration::V1::APIServiceCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class KubeAggregator::Apis::Apiregistration::V1::APIServiceCondition < Kubernetes::Spec
     # Last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

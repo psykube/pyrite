@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # MetricValueStatus holds the current value for a metric
-  class Api::Autoscaling::V2beta2::MetricValueStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::MetricValueStatus < Kubernetes::Spec
     # currentAverageUtilization is the current value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods.
     @[::JSON::Field(key: "averageUtilization")]
     @[::YAML::Field(key: "averageUtilization")]

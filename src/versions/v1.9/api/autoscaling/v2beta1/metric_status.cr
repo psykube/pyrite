@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # MetricStatus describes the last-read state of a single metric.
-  class Api::Autoscaling::V2beta1::MetricStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta1::MetricStatus < Kubernetes::Spec
     # object refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object).
     @[::JSON::Field(key: "object")]
     @[::YAML::Field(key: "object")]

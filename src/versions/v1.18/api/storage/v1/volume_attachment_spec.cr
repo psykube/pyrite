@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # VolumeAttachmentSpec is the specification of a VolumeAttachment request.
-  class Api::Storage::V1::VolumeAttachmentSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1::VolumeAttachmentSpec < Kubernetes::Spec
     # Attacher indicates the name of the volume driver that MUST handle this request. This is the name returned by GetPluginName().
     @[::JSON::Field(key: "attacher")]
     @[::YAML::Field(key: "attacher")]

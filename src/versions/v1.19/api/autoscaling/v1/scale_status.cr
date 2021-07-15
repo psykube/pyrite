@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ScaleStatus represents the current status of a scale subresource.
-  class Api::Autoscaling::V1::ScaleStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V1::ScaleStatus < Kubernetes::Spec
     # actual number of observed instances of the scaled object.
     @[::JSON::Field(key: "replicas")]
     @[::YAML::Field(key: "replicas")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ContainerStatus contains details for the current status of this container.
-  class Kubernetes::Api::V1::ContainerStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ContainerStatus < Kubernetes::Spec
     # Container's ID in the format 'docker://<container_id>'. More info: [http://kubernetes.io/docs/user-guide/container-environment#container-information](http://kubernetes.io/docs/user-guide/container-environment#container-information)
     @[::JSON::Field(key: "containerID")]
     @[::YAML::Field(key: "containerID")]

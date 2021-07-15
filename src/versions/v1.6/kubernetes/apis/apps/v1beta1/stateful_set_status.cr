@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatefulSetStatus represents the current state of a StatefulSet.
-  class Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::StatefulSetStatus < Kubernetes::Spec
     # most recent generation observed by this StatefulSet.
     @[::JSON::Field(key: "observedGeneration")]
     @[::YAML::Field(key: "observedGeneration")]

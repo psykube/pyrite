@@ -1,46 +1,17 @@
 require "file_utils"
-
-private def crystalize_name(name : String)
-  name.gsub(/JSON/, "Json").gsub(/UUID/, "Uuid").gsub(/APIV3/, "Apiv3")
-    .gsub(/CIDR/, "Cidr").gsub(/CPU/, "Cpu").gsub(/CSI/, "Csi").gsub(/TLS/, "Tls")
-    .gsub(/[A-Z]{2,3}/, &.capitalize).underscore.lchop("_").lchop("$")
-    .gsub('-', '_')
-end
+require "./helpers"
+require "./function_argument"
 
 class Generator::Definition
   URL_REGEX = /(?<url>((http[s]?):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?)/
-
-  class FunctionArgument
-    getter name : String
-    getter type : String?
-    getter ref : String? = nil
-    getter? required : Bool = false
-    property default : String? = nil
-
-    def initialize(name : String, prop : Swagger::Definition::Property, definition : Swagger::Definition, *, ivar = false)
-      initialize name, required: definition.required.includes?(name), type: prop.type.to_s, ref: prop._ref, ivar: ivar
-    end
-
-    def initialize(param : Swagger::Path::Parameter)
-      initialize name: param.name, required: param.required, type: param.type, ref: param.schema.try(&._ref)
-    end
-
-    def initialize(name : String, @type : String?, @required : Bool = false, @default : String? = nil, @ref : String? = nil, *, ivar = false)
-      name = crystalize_name(name)
-      @name = ivar ? "@#{name}" : name
-    end
-
-    def first_value?
-      required? && !default
-    end
-  end
+  include Helpers
 
   delegate schema, definitions, base, base_dir, base_class, to: @generator
 
   getter class_name : String
   getter name : String
-  getter file : IO::FileDescriptor
-  getter filename : String
+  getter file : IO
+  getter filename : String? = nil
   getter definition : Swagger::Definition
 
   delegate required, properties, to: definition
@@ -53,25 +24,32 @@ class Generator::Definition
     new(*args).generate
   end
 
-  def initialize(@generator : Generator, @name : String)
+  def initialize(@generator : Generator, @name : String, io : Nil = nil)
     @class_name = generator.definitions[name]
     @definition = generator.schema.definitions[name]
     path = @class_name.split("::").map(&.underscore).join("/")
-    @filename = File.join(base_dir, path) + ".cr"
-    FileUtils.mkdir_p(File.dirname(@filename))
-    @file = File.open(@filename, "w+")
+    filename = File.join(base_dir, path) + ".cr"
+    FileUtils.mkdir_p(File.dirname(filename))
+    @file = File.open(filename, "w+")
+    @filename = filename
+  end
+
+  def initialize(@generator : Generator, @name : String, @file : IO)
+    @class_name = generator.definitions[name]
+    @definition = generator.schema.definitions[name]
   end
 
   def generate
-    STDOUT.puts "Writing: #{filename}"
-    file.puts "# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC"
-    file.puts ""
+    if filename
+      Generator.log "Writing: #{filename}"
+      file.puts "# THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC"
+      file.puts ""
+    end
     load_requires
     file.puts "module #{base_class.lchop("::")}"
     define_class
-    define_alias if !is_list? && is_resource?
     _end
-    file.close
+    file.close if filename
     self
   end
 
@@ -89,7 +67,7 @@ class Generator::Definition
     generate_description definition.description
 
     # Open the class
-    file.puts "class #{class_name.lchop("::")}"
+    file.puts "class #{class_name.lchop("::")} < #{is_list? ? "Kubernetes::List(#{list_type})" : is_resource? ? "Kubernetes::Object" : "Kubernetes::Spec"}"
   end
 
   private def define_class
@@ -97,16 +75,6 @@ class Generator::Definition
     define_properties
     define_initializer
     # define_actions
-    _end
-  end
-
-  def resource_alias
-    "Resources::#{api_module}"
-  end
-
-  private def define_alias
-    file.puts "module #{resource_alias}"
-    file.puts "alias #{kind} = ::#{base_class}::#{class_name.lchop("::")}"
     _end
   end
 
@@ -119,49 +87,6 @@ class Generator::Definition
     when "path"
       schema.paths[name]
     end
-  end
-
-  private def convert_type(kind : String, required = false)
-    t = case kind
-        when "object"
-          "Hash(String, String)"
-        when "boolean"
-          "Bool"
-        when "integer", "number"
-          "Int32"
-        when "resource"
-          "Kubernetes::Resource"
-        else
-          kind.to_s.camelcase
-        end
-    t += " | Nil" unless required
-    t
-  end
-
-  private def convert_type(arg : FunctionArgument)
-    t = definition_ref(arg.ref) ||
-        convert_type(arg.type.to_s, true)
-    t += " | Nil" unless arg.required?
-    t
-  end
-
-  private def convert_type(param : Swagger::Path::Parameter)
-    t = definition_ref(param.schema.try(&._ref)) ||
-        convert_type(param.type.to_s, true)
-    t += " | Nil" unless param.required
-    t
-  end
-
-  private def convert_type(property : Swagger::Definition::Property, required : Bool = true)
-    t = if ref = definition_ref(property._ref)
-          ref
-        elsif property.type.to_s == "array"
-          "Array(#{convert_type(property.items.as(Swagger::Definition::Property))})"
-        else
-          convert_type(property.type.to_s, true)
-        end
-    t += " | Nil" unless required
-    t
   end
 
   private def generate_description(description : String?)
@@ -180,7 +105,12 @@ class Generator::Definition
   end
 
   def is_list?
-    name.ends_with? "List"
+    is_resource? && definition.properties.has_key?("items")
+  end
+
+  def list_type
+    return unless is_list?
+    convert_type(definition.properties["items"].items.as(Swagger::Definition::Property))
   end
 
   private def is_resource?(definition : Swagger::Definition)
@@ -291,19 +221,7 @@ class Generator::Definition
   end
 
   private def define_properties
-    file.puts "include ::JSON::Serializable"
-    file.puts "include ::YAML::Serializable"
-    file.puts ""
-
-    if is_resource?
-      file.puts "@[::JSON::Field(key: \"apiVersion\")]"
-      file.puts "@[::YAML::Field(key: \"apiVersion\")]"
-      file.puts "# The API and version we are accessing."
-      file.puts "getter api_version : String = #{api_version_name.inspect}"
-      file.puts ""
-      file.puts "# The resource kind withing the given apiVersion."
-      file.puts "getter kind : String = #{kind.inspect}"
-
+    if is_resource? && !is_list?
       file.puts <<-crystal
 
         def self.new(pull : ::JSON::PullParser)
@@ -326,6 +244,8 @@ class Generator::Definition
     end
     properties.each do |name, property|
       next if is_resource? && resource_property?(name)
+      next if is_resource? && name == "metadata"
+      next if is_list? && name == "items"
       crystal_name = crystalize_name(name)
       prop_type = property.type
       prop_ref = property._ref
@@ -345,6 +265,7 @@ class Generator::Definition
   end
 
   private def define_initializer
+    return if is_list?
     args = properties.each_with_object({} of String => FunctionArgument) do |(name, prop), memo|
       next if is_resource? && resource_property?(name)
       memo["@" + name] = FunctionArgument.new(name, prop, definition, ivar: true)

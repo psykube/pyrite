@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodCondition contains details for the current condition of this pod.
-  class Api::Core::V1::PodCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PodCondition < Kubernetes::Spec
     # Last time we probed the condition.
     @[::JSON::Field(key: "lastProbeTime")]
     @[::YAML::Field(key: "lastProbeTime")]

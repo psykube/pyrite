@@ -7,10 +7,7 @@ module Pyrite
   # ConfigMapEnvSource selects a ConfigMap to populate the environment variables with.
   #
   # The contents of the target ConfigMap's Data field will represent the key-value pairs as environment variables.
-  class Kubernetes::Api::V1::ConfigMapEnvSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ConfigMapEnvSource < Kubernetes::Spec
     # Name of the referent. More info: [http://kubernetes.io/docs/user-guide/identifiers#names](http://kubernetes.io/docs/user-guide/identifiers#names)
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

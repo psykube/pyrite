@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
-  class Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Authorization::V1beta1::ResourceAttributes < Kubernetes::Spec
     # Group is the API Group of the Resource.  "*" means all.
     @[::JSON::Field(key: "group")]
     @[::YAML::Field(key: "group")]

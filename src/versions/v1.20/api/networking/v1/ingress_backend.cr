@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # IngressBackend describes all endpoints for a given service and port.
-  class Api::Networking::V1::IngressBackend
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1::IngressBackend < Kubernetes::Spec
     # Resource is an ObjectRef to another Kubernetes resource in the namespace of the Ingress object. If resource is specified, a service.Name and service.Port must not be specified. This is a mutually exclusive setting with "Service".
     @[::JSON::Field(key: "resource")]
     @[::YAML::Field(key: "resource")]

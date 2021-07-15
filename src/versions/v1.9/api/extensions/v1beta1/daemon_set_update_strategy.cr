@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Extensions::V1beta1::DaemonSetUpdateStrategy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::DaemonSetUpdateStrategy < Kubernetes::Spec
     # Rolling update config params. Present only if type = "RollingUpdate".
     @[::JSON::Field(key: "rollingUpdate")]
     @[::YAML::Field(key: "rollingUpdate")]

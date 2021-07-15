@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HPAScalingRules configures the scaling behavior for one direction. These Rules are applied after calculating DesiredReplicas from metrics for the HPA. They can limit the scaling velocity by specifying scaling policies. They can prevent flapping by specifying the stabilization window, so that the number of replicas is not set instantly, instead, the safest value from the stabilization window is chosen.
-  class Api::Autoscaling::V2beta2::HPAScalingRules
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::HPAScalingRules < Kubernetes::Spec
     # policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the HPAScalingRules will be discarded as invalid
     @[::JSON::Field(key: "policies")]
     @[::YAML::Field(key: "policies")]

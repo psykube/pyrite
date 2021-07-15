@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # An APIVersion represents a single concrete version of an object model.
-  class Kubernetes::Apis::Extensions::V1beta1::APIVersion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Extensions::V1beta1::APIVersion < Kubernetes::Spec
     # Name of this version (e.g. 'v1').
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

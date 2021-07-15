@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AttachedVolume describes a volume attached to a node
-  class Api::Core::V1::AttachedVolume
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::AttachedVolume < Kubernetes::Spec
     # DevicePath represents the device path where the volume should be available
     @[::JSON::Field(key: "devicePath")]
     @[::YAML::Field(key: "devicePath")]

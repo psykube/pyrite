@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlowSchemaCondition describes conditions for a FlowSchema.
-  class Api::Flowcontrol::V1alpha1::FlowSchemaCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::FlowSchemaCondition < Kubernetes::Spec
     # `lastTransitionTime` is the last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ServiceReference holds a reference to Service.legacy.k8s.io
-  class KubeAggregator::Apis::Apiregistration::V1::ServiceReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class KubeAggregator::Apis::Apiregistration::V1::ServiceReference < Kubernetes::Spec
     # Name is the name of the service
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

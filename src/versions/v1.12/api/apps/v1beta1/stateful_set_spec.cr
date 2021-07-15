@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A StatefulSetSpec is the specification of a StatefulSet.
-  class Api::Apps::V1beta1::StatefulSetSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta1::StatefulSetSpec < Kubernetes::Spec
     # podManagementPolicy controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down. The default policy is `OrderedReady`, where pods are created in increasing order (pod-0, then pod-1, etc) and the controller will wait until each pod is ready before continuing. When scaling down, the pods are removed in the opposite order. The alternative policy is `Parallel` which will create pods in parallel to match the desired scale without waiting, and on scale down will delete all pods at once.
     @[::JSON::Field(key: "podManagementPolicy")]
     @[::YAML::Field(key: "podManagementPolicy")]

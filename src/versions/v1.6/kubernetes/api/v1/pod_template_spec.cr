@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodTemplateSpec describes the data a pod should have when created from a template
-  class Kubernetes::Api::V1::PodTemplateSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::PodTemplateSpec < Kubernetes::Spec
     # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
     @[::JSON::Field(key: "metadata")]
     @[::YAML::Field(key: "metadata")]

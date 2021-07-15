@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # VolumeError captures an error encountered during a volume operation.
-  class Api::Storage::V1::VolumeError
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Storage::V1::VolumeError < Kubernetes::Spec
     # String detailing the error encountered during Attach or Detach operation. This string may be logged, so it should not contain sensitive information.
     @[::JSON::Field(key: "message")]
     @[::YAML::Field(key: "message")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SessionAffinityConfig represents the configurations of session affinity.
-  class Api::Core::V1::SessionAffinityConfig
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::SessionAffinityConfig < Kubernetes::Spec
     # clientIP contains the configurations of Client IP based session affinity.
     @[::JSON::Field(key: "clientIP")]
     @[::YAML::Field(key: "clientIP")]

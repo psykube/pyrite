@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
-  class Api::Authorization::V1::SelfSubjectAccessReviewSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Authorization::V1::SelfSubjectAccessReviewSpec < Kubernetes::Spec
     # NonResourceAttributes describes information for a non-resource access request
     @[::JSON::Field(key: "nonResourceAttributes")]
     @[::YAML::Field(key: "nonResourceAttributes")]

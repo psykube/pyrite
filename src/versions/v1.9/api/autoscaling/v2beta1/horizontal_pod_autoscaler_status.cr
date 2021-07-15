@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HorizontalPodAutoscalerStatus describes the current status of a horizontal pod autoscaler.
-  class Api::Autoscaling::V2beta1::HorizontalPodAutoscalerStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta1::HorizontalPodAutoscalerStatus < Kubernetes::Spec
     # conditions is the set of conditions required for this autoscaler to scale its target, and indicates whether or not those conditions are met.
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

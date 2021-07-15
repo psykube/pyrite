@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # WindowsSecurityContextOptions contain Windows-specific options and credentials.
-  class Api::Core::V1::WindowsSecurityContextOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::WindowsSecurityContextOptions < Kubernetes::Spec
     # GMSACredentialSpec is where the GMSA admission webhook ([https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSACredentialSpecName field. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.](https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSACredentialSpecName field. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.)
     @[::JSON::Field(key: "gmsaCredentialSpec")]
     @[::YAML::Field(key: "gmsaCredentialSpec")]

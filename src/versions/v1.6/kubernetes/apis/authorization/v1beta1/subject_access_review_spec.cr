@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
-  class Kubernetes::Apis::Authorization::V1beta1::SubjectAccessReviewSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Authorization::V1beta1::SubjectAccessReviewSpec < Kubernetes::Spec
     # Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
     @[::JSON::Field(key: "extra")]
     @[::YAML::Field(key: "extra")]

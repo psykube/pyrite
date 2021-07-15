@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionCondition contains details for the current condition of this pod.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionCondition < Kubernetes::Spec
     # lastTransitionTime last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

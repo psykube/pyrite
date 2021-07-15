@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # VolumeMount describes a mounting of a Volume within a container.
-  class Kubernetes::Api::V1::VolumeMount
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::VolumeMount < Kubernetes::Spec
     # Path within the container at which the volume should be mounted.  Must not contain ':'.
     @[::JSON::Field(key: "mountPath")]
     @[::YAML::Field(key: "mountPath")]

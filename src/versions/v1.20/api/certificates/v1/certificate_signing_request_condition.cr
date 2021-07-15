@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CertificateSigningRequestCondition describes a condition of a CertificateSigningRequest object
-  class Api::Certificates::V1::CertificateSigningRequestCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Certificates::V1::CertificateSigningRequestCondition < Kubernetes::Spec
     # lastTransitionTime is the time the condition last transitioned from one status to another. If unset, when a new condition type is added or an existing condition's status is changed, the server defaults this to the current time.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EnvVar represents an environment variable present in a Container.
-  class Api::Core::V1::EnvVar
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::EnvVar < Kubernetes::Spec
     # Name of the environment variable. Must be a C_IDENTIFIER.
     @[::JSON::Field(key: "name")]
     @[::YAML::Field(key: "name")]

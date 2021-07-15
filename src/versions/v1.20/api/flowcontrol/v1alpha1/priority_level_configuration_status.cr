@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PriorityLevelConfigurationStatus represents the current state of a "request-priority".
-  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::PriorityLevelConfigurationStatus < Kubernetes::Spec
     # `conditions` is the current state of "request-priority".
     @[::JSON::Field(key: "conditions")]
     @[::YAML::Field(key: "conditions")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DeploymentSpec is the specification of the desired behavior of the Deployment.
-  class Kubernetes::Apis::Apps::V1beta1::DeploymentSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::DeploymentSpec < Kubernetes::Spec
     # Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
     @[::JSON::Field(key: "minReadySeconds")]
     @[::YAML::Field(key: "minReadySeconds")]

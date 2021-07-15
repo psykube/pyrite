@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ExternalMetricStatus indicates the current value of a global metric not associated with any Kubernetes object.
-  class Api::Autoscaling::V2beta1::ExternalMetricStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta1::ExternalMetricStatus < Kubernetes::Spec
     # currentAverageValue is the current value of metric averaged over autoscaled pods.
     @[::JSON::Field(key: "currentAverageValue")]
     @[::YAML::Field(key: "currentAverageValue")]

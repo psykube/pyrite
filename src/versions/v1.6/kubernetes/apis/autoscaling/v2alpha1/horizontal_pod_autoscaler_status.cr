@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HorizontalPodAutoscalerStatus describes the current status of a horizontal pod autoscaler.
-  class Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Autoscaling::V2alpha1::HorizontalPodAutoscalerStatus < Kubernetes::Spec
     # currentMetrics is the last read state of the metrics used by this autoscaler.
     @[::JSON::Field(key: "currentMetrics")]
     @[::YAML::Field(key: "currentMetrics")]

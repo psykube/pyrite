@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
-  class Api::Core::V1::AzureFilePersistentVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::AzureFilePersistentVolumeSource < Kubernetes::Spec
     # Defaults to false [(read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.]((read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.)
     @[::JSON::Field(key: "readOnly")]
     @[::YAML::Field(key: "readOnly")]

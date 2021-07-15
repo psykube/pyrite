@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Projection that may be projected along with other supported volume types
-  class Kubernetes::Api::V1::VolumeProjection
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::VolumeProjection < Kubernetes::Spec
     # information about the configMap data to project
     @[::JSON::Field(key: "configMap")]
     @[::YAML::Field(key: "configMap")]

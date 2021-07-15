@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DEPRECATED 1.9 - This group version of NetworkPolicyPeer is deprecated by [networking/v1/NetworkPolicyPeer.](networking/v1/NetworkPolicyPeer.)
-  class Api::Extensions::V1beta1::NetworkPolicyPeer
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::NetworkPolicyPeer < Kubernetes::Spec
     # IPBlock defines policy on a particular IPBlock. If this field is set then neither of the other fields can be.
     @[::JSON::Field(key: "ipBlock")]
     @[::YAML::Field(key: "ipBlock")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EnvVarSource represents a source for the value of an EnvVar.
-  class Kubernetes::Api::V1::EnvVarSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::EnvVarSource < Kubernetes::Spec
     # Selects a key of a ConfigMap.
     @[::JSON::Field(key: "configMapKeyRef")]
     @[::YAML::Field(key: "configMapKeyRef")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EventSource contains information for an event.
-  class Kubernetes::Api::V1::EventSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::EventSource < Kubernetes::Spec
     # Component from which the event is generated.
     @[::JSON::Field(key: "component")]
     @[::YAML::Field(key: "component")]

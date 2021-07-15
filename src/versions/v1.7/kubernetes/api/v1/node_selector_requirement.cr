@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
-  class Kubernetes::Api::V1::NodeSelectorRequirement
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NodeSelectorRequirement < Kubernetes::Spec
     # The label key that the selector applies to.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

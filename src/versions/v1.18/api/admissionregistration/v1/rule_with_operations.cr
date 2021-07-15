@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # RuleWithOperations is a tuple of Operations and Resources. It is recommended to make sure that all the tuple expansions are valid.
-  class Api::Admissionregistration::V1::RuleWithOperations
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Admissionregistration::V1::RuleWithOperations < Kubernetes::Spec
     # APIGroups is the API groups the resources belong to. '*' is all groups. If '*' is present, the length of the slice must be one. Required.
     @[::JSON::Field(key: "apiGroups")]
     @[::YAML::Field(key: "apiGroups")]

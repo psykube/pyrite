@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionSpec describes how a user wants their resource to appear
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionSpec < Kubernetes::Spec
     # conversion defines conversion settings for the CRD.
     @[::JSON::Field(key: "conversion")]
     @[::YAML::Field(key: "conversion")]

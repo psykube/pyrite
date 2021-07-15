@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A StatefulSetSpec is the specification of a StatefulSet.
-  class Kubernetes::Apis::Apps::V1beta1::StatefulSetSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::StatefulSetSpec < Kubernetes::Spec
     # Replicas is the desired number of replicas of the given Template. These are replicas in the sense that they are instantiations of the same Template, but individual replicas also have a consistent identity. If unspecified, defaults to 1.
     @[::JSON::Field(key: "replicas")]
     @[::YAML::Field(key: "replicas")]

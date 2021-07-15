@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Host Port Range defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined.
-  class Api::Extensions::V1beta1::HostPortRange
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::HostPortRange < Kubernetes::Spec
     # max is the end of the range, inclusive.
     @[::JSON::Field(key: "max")]
     @[::YAML::Field(key: "max")]

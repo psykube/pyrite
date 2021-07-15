@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
-  class Api::Core::V1::Toleration
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::Toleration < Kubernetes::Spec
     # Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
     @[::JSON::Field(key: "effect")]
     @[::YAML::Field(key: "effect")]

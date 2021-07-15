@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HTTPGetAction describes an action based on HTTP Get requests.
-  class Kubernetes::Api::V1::HTTPGetAction
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::HTTPGetAction < Kubernetes::Spec
     # Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
     @[::JSON::Field(key: "host")]
     @[::YAML::Field(key: "host")]

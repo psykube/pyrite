@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ObjectMetricStatus indicates the current value of a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
-  class Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Autoscaling::V2alpha1::ObjectMetricStatus < Kubernetes::Spec
     # currentValue is the current value of the metric (as a quantity).
     @[::JSON::Field(key: "currentValue")]
     @[::YAML::Field(key: "currentValue")]

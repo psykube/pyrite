@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents an ISCSI disk. ISCSI volumes can only be mounted as [read/write once. ISCSI volumes support ownership management and SELinux relabeling.](read/write once. ISCSI volumes support ownership management and SELinux relabeling.)
-  class Kubernetes::Api::V1::ISCSIVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ISCSIVolumeSource < Kubernetes::Spec
     # whether support iSCSI Discovery CHAP authentication
     @[::JSON::Field(key: "chapAuthDiscovery")]
     @[::YAML::Field(key: "chapAuthDiscovery")]

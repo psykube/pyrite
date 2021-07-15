@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Selects a key from a ConfigMap.
-  class Kubernetes::Api::V1::ConfigMapKeySelector
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ConfigMapKeySelector < Kubernetes::Spec
     # The key to select.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

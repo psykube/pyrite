@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionVersion describes a version for CRD.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionVersion
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1::CustomResourceDefinitionVersion < Kubernetes::Spec
     # additionalPrinterColumns specifies additional columns returned in Table output. See [https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables for details. If no columns are specified, a single column displaying the age of the custom resource is used.](https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables for details. If no columns are specified, a single column displaying the age of the custom resource is used.)
     @[::JSON::Field(key: "additionalPrinterColumns")]
     @[::YAML::Field(key: "additionalPrinterColumns")]

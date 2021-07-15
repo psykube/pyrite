@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PodSecurityPolicySpec defines the policy enforced. Deprecated: use PodSecurityPolicySpec from policy API Group instead.
-  class Api::Extensions::V1beta1::PodSecurityPolicySpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::PodSecurityPolicySpec < Kubernetes::Spec
     # allowPrivilegeEscalation determines if a pod can request to allow privilege escalation. If unspecified, defaults to true.
     @[::JSON::Field(key: "allowPrivilegeEscalation")]
     @[::YAML::Field(key: "allowPrivilegeEscalation")]

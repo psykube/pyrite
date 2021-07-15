@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # IngressBackend describes all endpoints for a given service and port.
-  class Api::Extensions::V1beta1::IngressBackend
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::IngressBackend < Kubernetes::Spec
     # Specifies the name of the referenced service.
     @[::JSON::Field(key: "serviceName")]
     @[::YAML::Field(key: "serviceName")]

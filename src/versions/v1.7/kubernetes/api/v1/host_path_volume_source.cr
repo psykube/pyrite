@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
-  class Kubernetes::Api::V1::HostPathVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::HostPathVolumeSource < Kubernetes::Spec
     # Path of the directory on the host. More info: [https://kubernetes.io/docs/concepts/storage/volumes#hostpath](https://kubernetes.io/docs/concepts/storage/volumes#hostpath)
     @[::JSON::Field(key: "path")]
     @[::YAML::Field(key: "path")]

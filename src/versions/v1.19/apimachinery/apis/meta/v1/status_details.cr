@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
-  class Apimachinery::Apis::Meta::V1::StatusDetails
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::StatusDetails < Kubernetes::Spec
     # The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
     @[::JSON::Field(key: "causes")]
     @[::YAML::Field(key: "causes")]

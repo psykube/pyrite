@@ -1,5 +1,10 @@
 # THIS FILE WAS AUTO GENERATED FROM THE K8S SWAGGER SPEC
 
+require "./v1.11/kubernetes"
+require "./v1.11/kubernetes/spec"
+require "./v1.11/kubernetes/resource"
+require "./v1.11/kubernetes/object"
+require "./v1.11/kubernetes/list"
 require "./v1.11/api/admissionregistration/v1alpha1/initializer.cr"
 require "./v1.11/api/admissionregistration/v1alpha1/initializer_configuration.cr"
 require "./v1.11/api/admissionregistration/v1alpha1/initializer_configuration_list.cr"
@@ -538,4 +543,3 @@ require "./v1.11/kube_aggregator/apis/apiregistration/v1beta1/api_service_spec.c
 require "./v1.11/kube_aggregator/apis/apiregistration/v1beta1/api_service_status.cr"
 require "./v1.11/kube_aggregator/apis/apiregistration/v1beta1/service_reference.cr"
 require "./v1.11/api/core/v1/list.cr"
-require "./v1.11/kubernetes"

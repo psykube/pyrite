@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ContainerStateTerminated is a terminated state of a container.
-  class Api::Core::V1::ContainerStateTerminated
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ContainerStateTerminated < Kubernetes::Spec
     # Container's ID in the format 'docker://<container_id>'
     @[::JSON::Field(key: "containerID")]
     @[::YAML::Field(key: "containerID")]

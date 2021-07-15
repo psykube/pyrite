@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlowDistinguisherMethod specifies the method of a flow distinguisher.
-  class Api::Flowcontrol::V1alpha1::FlowDistinguisherMethod
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::FlowDistinguisherMethod < Kubernetes::Spec
     # `type` is the type of flow distinguisher method The supported types are "ByUser" and "ByNamespace". Required.
     @[::JSON::Field(key: "type")]
     @[::YAML::Field(key: "type")]

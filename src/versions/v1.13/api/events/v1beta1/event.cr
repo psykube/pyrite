@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system.
-  class Api::Events::V1beta1::Event
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "events/v1beta1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "Event"
-
+  class Api::Events::V1beta1::Event < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "events/v1beta1" && instance.kind == "Event"
@@ -63,10 +52,6 @@ module Pyrite
     @[::YAML::Field(key: "eventTime")]
     property event_time : Time
 
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Optional. A human-readable description of the status of this operation. Maximal length of the note is 1kB, but libraries should be prepared to handle values up to 64kB.
     @[::JSON::Field(key: "note")]
     @[::YAML::Field(key: "note")]
@@ -109,9 +94,5 @@ module Pyrite
 
     def initialize(*, @action : String | Nil = nil, @deprecated_count : Int32 | Nil = nil, @deprecated_first_timestamp : Time | Nil = nil, @deprecated_last_timestamp : Time | Nil = nil, @deprecated_source : Api::Core::V1::EventSource | Nil = nil, @event_time : Time, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @note : String | Nil = nil, @reason : String | Nil = nil, @regarding : Api::Core::V1::ObjectReference | Nil = nil, @related : Api::Core::V1::ObjectReference | Nil = nil, @reporting_controller : String | Nil = nil, @reporting_instance : String | Nil = nil, @series : Api::Events::V1beta1::EventSeries | Nil = nil, @type : String | Nil = nil)
     end
-  end
-
-  module Resources::Events::V1beta1
-    alias Event = ::Pyrite::Api::Events::V1beta1::Event
   end
 end

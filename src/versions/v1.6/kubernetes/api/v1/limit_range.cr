@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # LimitRange sets resource usage limits for each kind of resource in a Namespace.
-  class Kubernetes::Api::V1::LimitRange
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "LimitRange"
-
+  class Kubernetes::Api::V1::LimitRange < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "LimitRange"
@@ -33,11 +22,6 @@ module Pyrite
       end
     end
 
-    # Standard object's metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Spec defines the limits enforced. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status)
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -45,9 +29,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Api::V1::LimitRangeSpec | Nil = nil)
     end
-  end
-
-  module Resources::V1
-    alias LimitRange = ::Pyrite::Kubernetes::Api::V1::LimitRange
   end
 end

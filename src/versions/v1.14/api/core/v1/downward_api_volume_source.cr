@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DownwardAPIVolumeSource represents a volume containing downward API info. Downward API volumes support ownership management and SELinux relabeling.
-  class Api::Core::V1::DownwardAPIVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::DownwardAPIVolumeSource < Kubernetes::Spec
     # Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
     @[::JSON::Field(key: "defaultMode")]
     @[::YAML::Field(key: "defaultMode")]

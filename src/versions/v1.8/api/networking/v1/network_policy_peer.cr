@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # NetworkPolicyPeer describes a peer to allow traffic from. Exactly one of its fields must be specified.
-  class Api::Networking::V1::NetworkPolicyPeer
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Networking::V1::NetworkPolicyPeer < Kubernetes::Spec
     # IPBlock defines policy on a particular IPBlock
     @[::JSON::Field(key: "ipBlock")]
     @[::YAML::Field(key: "ipBlock")]

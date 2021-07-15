@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionStatus indicates the state of the CustomResourceDefinition
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionStatus < Kubernetes::Spec
     # acceptedNames are the names that are actually being used to serve discovery. They may be different than the names in spec.
     @[::JSON::Field(key: "acceptedNames")]
     @[::YAML::Field(key: "acceptedNames")]

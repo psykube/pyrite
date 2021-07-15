@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # SubjectAccessReviewStatus
-  class Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Authorization::V1::SubjectAccessReviewStatus < Kubernetes::Spec
     # Allowed is required.  True if the action would be allowed, false otherwise.
     @[::JSON::Field(key: "allowed")]
     @[::YAML::Field(key: "allowed")]

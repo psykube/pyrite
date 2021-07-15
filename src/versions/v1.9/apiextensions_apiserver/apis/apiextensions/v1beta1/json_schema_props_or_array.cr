@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JSONSchemaPropsOrArray represents a value that can either be a JSONSchemaProps or an array of JSONSchemaProps. Mainly here for serialization purposes.
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrArray
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaPropsOrArray < Kubernetes::Spec
     @[::JSON::Field(key: "JSONSchemas")]
     @[::YAML::Field(key: "JSONSchemas")]
     property json_schemas : Array(ApiextensionsApiserver::Apis::Apiextensions::V1beta1::JSONSchemaProps)

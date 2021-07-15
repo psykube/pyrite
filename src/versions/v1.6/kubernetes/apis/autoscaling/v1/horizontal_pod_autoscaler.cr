@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # configuration of a horizontal pod autoscaler.
-  class Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "autoscaling/v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "HorizontalPodAutoscaler"
-
+  class Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "autoscaling/v1" && instance.kind == "HorizontalPodAutoscaler"
@@ -33,11 +22,6 @@ module Pyrite
       end
     end
 
-    # Standard object metadata. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # behaviour of autoscaler. More info: [http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.](http://releases.k8s.io/HEAD/docs/devel/api-conventions.md#spec-and-status.)
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -50,9 +34,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerSpec | Nil = nil, @status : Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscalerStatus | Nil = nil)
     end
-  end
-
-  module Resources::Autoscaling::V1
-    alias HorizontalPodAutoscaler = ::Pyrite::Kubernetes::Apis::Autoscaling::V1::HorizontalPodAutoscaler
   end
 end

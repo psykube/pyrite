@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # LimitResponse defines how to handle requests that can not be executed right now.
-  class Api::Flowcontrol::V1alpha1::LimitResponse
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Flowcontrol::V1alpha1::LimitResponse < Kubernetes::Spec
     # `queuing` holds the configuration parameters for queuing. This field may be non-empty only if `type` is `"Queue"`.
     @[::JSON::Field(key: "queuing")]
     @[::YAML::Field(key: "queuing")]

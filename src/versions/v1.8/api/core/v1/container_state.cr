@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ContainerState holds a possible state of container. Only one of its members may be specified. If none of them is specified, the default one is ContainerStateWaiting.
-  class Api::Core::V1::ContainerState
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ContainerState < Kubernetes::Spec
     # Details about a running container
     @[::JSON::Field(key: "running")]
     @[::YAML::Field(key: "running")]

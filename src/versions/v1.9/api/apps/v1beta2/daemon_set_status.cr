@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # DaemonSetStatus represents the current status of a daemon set.
-  class Api::Apps::V1beta2::DaemonSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta2::DaemonSetStatus < Kubernetes::Spec
     # Count of hash collisions for the DaemonSet. The DaemonSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.
     @[::JSON::Field(key: "collisionCount")]
     @[::YAML::Field(key: "collisionCount")]

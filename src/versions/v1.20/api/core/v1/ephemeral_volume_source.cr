@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents an ephemeral volume that is handled by a normal storage driver.
-  class Api::Core::V1::EphemeralVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::EphemeralVolumeSource < Kubernetes::Spec
     # Specifies a read-only configuration for the volume. Defaults to false [(read/write).]((read/write).)
     @[::JSON::Field(key: "readOnly")]
     @[::YAML::Field(key: "readOnly")]

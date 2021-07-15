@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeSpec is the specification of a persistent volume.
-  class Kubernetes::Api::V1::PersistentVolumeSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::PersistentVolumeSpec < Kubernetes::Spec
     # AccessModes contains all ways the volume can be mounted. More info: [http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes](http://kubernetes.io/docs/user-guide/persistent-volumes#access-modes)
     @[::JSON::Field(key: "accessModes")]
     @[::YAML::Field(key: "accessModes")]

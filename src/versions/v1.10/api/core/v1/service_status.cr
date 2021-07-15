@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ServiceStatus represents the current status of a service.
-  class Api::Core::V1::ServiceStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ServiceStatus < Kubernetes::Spec
     # LoadBalancer contains the current status of the load-balancer, if one is present.
     @[::JSON::Field(key: "loadBalancer")]
     @[::YAML::Field(key: "loadBalancer")]

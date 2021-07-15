@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # EndpointPort represents a Port used by an EndpointSlice
-  class Api::Discovery::V1beta1::EndpointPort
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Discovery::V1beta1::EndpointPort < Kubernetes::Spec
     # The application protocol for this port. This field follows standard Kubernetes label syntax. Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and [http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol.](http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol.)
     @[::JSON::Field(key: "appProtocol")]
     @[::YAML::Field(key: "appProtocol")]

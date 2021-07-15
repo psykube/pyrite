@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # FlexVolume represents a generic volume resource that is [provisioned/attached using an exec based plugin. This is an alpha feature and may change in future.](provisioned/attached using an exec based plugin. This is an alpha feature and may change in future.)
-  class Api::Core::V1::FlexVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::FlexVolumeSource < Kubernetes::Spec
     # Driver is the name of the driver to use for this volume.
     @[::JSON::Field(key: "driver")]
     @[::YAML::Field(key: "driver")]

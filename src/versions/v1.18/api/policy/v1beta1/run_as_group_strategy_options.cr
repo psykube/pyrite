@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # RunAsGroupStrategyOptions defines the strategy type and any options used to create the strategy.
-  class Api::Policy::V1beta1::RunAsGroupStrategyOptions
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Policy::V1beta1::RunAsGroupStrategyOptions < Kubernetes::Spec
     # ranges are the allowed ranges of gids that may be used. If you would like to force a single gid then supply a single range with the same start and end. Required for MustRunAs.
     @[::JSON::Field(key: "ranges")]
     @[::YAML::Field(key: "ranges")]

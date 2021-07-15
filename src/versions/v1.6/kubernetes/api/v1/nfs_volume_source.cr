@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
-  class Kubernetes::Api::V1::NFSVolumeSource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::NFSVolumeSource < Kubernetes::Spec
     # Path that is exported by the NFS server. More info: [http://kubernetes.io/docs/user-guide/volumes#nfs](http://kubernetes.io/docs/user-guide/volumes#nfs)
     @[::JSON::Field(key: "path")]
     @[::YAML::Field(key: "path")]

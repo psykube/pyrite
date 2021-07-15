@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Information about the condition of a component.
-  class Api::Core::V1::ComponentCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ComponentCondition < Kubernetes::Spec
     # Condition error code for a component. For example, a health check error code.
     @[::JSON::Field(key: "error")]
     @[::YAML::Field(key: "error")]

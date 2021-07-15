@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
-  class Api::Core::V1::HostAlias
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::HostAlias < Kubernetes::Spec
     # Hostnames for the above IP address.
     @[::JSON::Field(key: "hostnames")]
     @[::YAML::Field(key: "hostnames")]

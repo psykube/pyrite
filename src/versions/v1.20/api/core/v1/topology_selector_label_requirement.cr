@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # A topology selector requirement is a selector that matches given label. This is an alpha feature and may change in the future.
-  class Api::Core::V1::TopologySelectorLabelRequirement
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::TopologySelectorLabelRequirement < Kubernetes::Spec
     # The label key that the selector applies to.
     @[::JSON::Field(key: "key")]
     @[::YAML::Field(key: "key")]

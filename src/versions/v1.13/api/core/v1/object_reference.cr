@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ObjectReference contains enough information to let you inspect or modify the referred object.
-  class Api::Core::V1::ObjectReference
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::ObjectReference < Kubernetes::Spec
     # API version of the referent.
     @[::JSON::Field(key: "apiVersion")]
     @[::YAML::Field(key: "apiVersion")]

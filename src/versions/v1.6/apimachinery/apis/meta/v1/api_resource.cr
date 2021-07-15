@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # APIResource specifies the name of a resource and whether it is namespaced.
-  class Apimachinery::Apis::Meta::V1::APIResource
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Apimachinery::Apis::Meta::V1::APIResource < Kubernetes::Spec
     # kind is the kind for the resource (e.g. 'Foo' is the kind for a resource 'foo')
     @[::JSON::Field(key: "kind")]
     @[::YAML::Field(key: "kind")]

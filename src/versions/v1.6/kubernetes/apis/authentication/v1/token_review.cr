@@ -5,18 +5,7 @@ require "json"
 
 module Pyrite
   # TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
-  class Kubernetes::Apis::Authentication::V1::TokenReview
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
-    @[::JSON::Field(key: "apiVersion")]
-    @[::YAML::Field(key: "apiVersion")]
-    # The API and version we are accessing.
-    getter api_version : String = "authentication/v1"
-
-    # The resource kind withing the given apiVersion.
-    getter kind : String = "TokenReview"
-
+  class Kubernetes::Apis::Authentication::V1::TokenReview < Kubernetes::Object
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
         unless instance.api_version == "authentication/v1" && instance.kind == "TokenReview"
@@ -33,10 +22,6 @@ module Pyrite
       end
     end
 
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
-
     # Spec holds information about the request being evaluated
     @[::JSON::Field(key: "spec")]
     @[::YAML::Field(key: "spec")]
@@ -49,9 +34,5 @@ module Pyrite
 
     def initialize(*, @metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil = nil, @spec : Kubernetes::Apis::Authentication::V1::TokenReviewSpec, @status : Kubernetes::Apis::Authentication::V1::TokenReviewStatus | Nil = nil)
     end
-  end
-
-  module Resources::Authentication::V1
-    alias TokenReview = ::Pyrite::Kubernetes::Apis::Authentication::V1::TokenReview
   end
 end

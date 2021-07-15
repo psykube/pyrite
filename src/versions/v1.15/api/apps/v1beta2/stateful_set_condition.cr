@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # StatefulSetCondition describes the state of a statefulset at a certain point.
-  class Api::Apps::V1beta2::StatefulSetCondition
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta2::StatefulSetCondition < Kubernetes::Spec
     # Last time the condition transitioned from one status to another.
     @[::JSON::Field(key: "lastTransitionTime")]
     @[::YAML::Field(key: "lastTransitionTime")]

@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ReplicaSetStatus represents the current status of a ReplicaSet.
-  class Api::Apps::V1beta2::ReplicaSetStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Apps::V1beta2::ReplicaSetStatus < Kubernetes::Spec
     # The number of available replicas (ready for at least minReadySeconds) for this replica set.
     @[::JSON::Field(key: "availableReplicas")]
     @[::YAML::Field(key: "availableReplicas")]

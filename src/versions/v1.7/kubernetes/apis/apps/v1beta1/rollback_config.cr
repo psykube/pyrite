@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Kubernetes::Apis::Apps::V1beta1::RollbackConfig
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::RollbackConfig < Kubernetes::Spec
     # The revision to rollback to. If set to 0, rollback to the last revision.
     @[::JSON::Field(key: "revision")]
     @[::YAML::Field(key: "revision")]

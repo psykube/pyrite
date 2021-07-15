@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Represents downward API info for projecting into a projected volume. Note that this is identical to a downwardAPI volume source without the default mode.
-  class Api::Core::V1::DownwardAPIProjection
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::DownwardAPIProjection < Kubernetes::Spec
     # Items is a list of DownwardAPIVolume file
     @[::JSON::Field(key: "items")]
     @[::YAML::Field(key: "items")]

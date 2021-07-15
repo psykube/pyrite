@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # Webhook describes an admission webhook and the resources and operations it applies to.
-  class Api::Admissionregistration::V1beta1::Webhook
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Admissionregistration::V1beta1::Webhook < Kubernetes::Spec
     # ClientConfig defines how to communicate with the hook. Required
     @[::JSON::Field(key: "clientConfig")]
     @[::YAML::Field(key: "clientConfig")]

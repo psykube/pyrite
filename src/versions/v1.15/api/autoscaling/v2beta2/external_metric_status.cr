@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ExternalMetricStatus indicates the current value of a global metric not associated with any Kubernetes object.
-  class Api::Autoscaling::V2beta2::ExternalMetricStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Autoscaling::V2beta2::ExternalMetricStatus < Kubernetes::Spec
     # current contains the current value for the given metric
     @[::JSON::Field(key: "current")]
     @[::YAML::Field(key: "current")]

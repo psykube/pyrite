@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
-  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinitionNames < Kubernetes::Spec
     # Kind is the serialized kind of the resource.  It is normally CamelCase and singular.
     @[::JSON::Field(key: "kind")]
     @[::YAML::Field(key: "kind")]

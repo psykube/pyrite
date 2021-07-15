@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # PersistentVolumeClaimStatus is the current status of a persistent volume claim.
-  class Api::Core::V1::PersistentVolumeClaimStatus
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Core::V1::PersistentVolumeClaimStatus < Kubernetes::Spec
     # AccessModes contains the actual access modes the volume backing the PVC has. More info: [https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1](https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1)
     @[::JSON::Field(key: "accessModes")]
     @[::YAML::Field(key: "accessModes")]

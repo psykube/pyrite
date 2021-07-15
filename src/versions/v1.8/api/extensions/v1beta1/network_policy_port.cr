@@ -4,10 +4,7 @@ require "yaml"
 require "json"
 
 module Pyrite
-  class Api::Extensions::V1beta1::NetworkPolicyPort
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Extensions::V1beta1::NetworkPolicyPort < Kubernetes::Spec
     # If specified, the port on the given protocol.  This can either be a numerical or named port on a pod.  If this field is not provided, this matches all port names and numbers. If present, only traffic on the specified protocol AND port will be matched.
     @[::JSON::Field(key: "port")]
     @[::YAML::Field(key: "port")]

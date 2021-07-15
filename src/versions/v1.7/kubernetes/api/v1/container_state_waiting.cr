@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # ContainerStateWaiting is a waiting state of a container.
-  class Kubernetes::Api::V1::ContainerStateWaiting
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Api::V1::ContainerStateWaiting < Kubernetes::Spec
     # Message regarding why the container is not yet running.
     @[::JSON::Field(key: "message")]
     @[::YAML::Field(key: "message")]

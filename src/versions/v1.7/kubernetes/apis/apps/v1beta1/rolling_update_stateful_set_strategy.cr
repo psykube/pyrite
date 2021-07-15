@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
-  class Kubernetes::Apis::Apps::V1beta1::RollingUpdateStatefulSetStrategy
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Kubernetes::Apis::Apps::V1beta1::RollingUpdateStatefulSetStrategy < Kubernetes::Spec
     # Partition indicates the ordinal at which the StatefulSet should be partitioned.
     @[::JSON::Field(key: "partition")]
     @[::YAML::Field(key: "partition")]

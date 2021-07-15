@@ -5,10 +5,7 @@ require "json"
 
 module Pyrite
   # JobSpec describes how the job execution will look like.
-  class Api::Batch::V1::JobSpec
-    include ::JSON::Serializable
-    include ::YAML::Serializable
-
+  class Api::Batch::V1::JobSpec < Kubernetes::Spec
     # Specifies the duration in seconds relative to the startTime that the job may be active before the system tries to terminate it; value must be positive integer
     @[::JSON::Field(key: "activeDeadlineSeconds")]
     @[::YAML::Field(key: "activeDeadlineSeconds")]
