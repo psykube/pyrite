@@ -167,7 +167,7 @@ class Generator
   def generate_definitions(io : IO? = nil)
     @definitions.reject do |_, klass|
       (["Int32", "Time", "String"] & klass.split("|").map(&.strip)).first?
-    end.map do |key, value|
+    end.map do |key, _|
       Definition.generate(self, key, io)
     end
   end
@@ -179,7 +179,7 @@ class Generator
 
     module #{base_class}::Kubernetes
       VERSION = #{version.lchop("v").inspect}
-      
+
       def self.from_yaml(*args, **params)
         Resource.from_yaml(*args, **params)
       end
@@ -192,7 +192,7 @@ class Generator
     end
 
   def spec_class
-    <<-crystal    
+    <<-crystal
     module #{base_class}::Kubernetes
       abstract class #{base_class}::Kubernetes::Spec
         include ::JSON::Serializable
@@ -201,11 +201,11 @@ class Generator
     end
     crystal
   end
-  
+
   def resource_class
     <<-crystal
     module #{base_class}::Kubernetes
-      abstract class Resource < Spec
+      abstract class Resource
         @[::JSON::Field(key: "apiVersion")]
         @[::YAML::Field(key: "apiVersion")]
         # The API and version we are accessing.
@@ -223,7 +223,7 @@ class Generator
   def object_class
     <<-crystal
     module #{base_class}::Kubernetes
-      abstract class Object < Resource
+      abstract class Object
         # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
         @[::JSON::Field(key: "metadata")]
         @[::YAML::Field(key: "metadata")]
@@ -236,7 +236,7 @@ class Generator
   def list_class
     <<-crystal
     module #{base_class}::Kubernetes
-      abstract class List(T) < Resource
+      abstract class List(T)
         # Standard list metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds)
         @[::JSON::Field(key: "metadata")]
         @[::YAML::Field(key: "metadata")]

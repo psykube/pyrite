@@ -119,7 +119,7 @@ class Generator::Definition
   end
 
   private def define_actions
-    paths = schema.paths.select do |path_name, path|
+    paths = schema.paths.select do |_, path|
       next true if path.parameters.any? { |val| definition_ref(val.schema.try(&._ref)) == class_name }
       next true if path.actions.any?(&.parameters.any? { |val| definition_ref(val.schema.try(&._ref)) == class_name })
       next true if path.actions.any?(&.responses.values.any? { |val| definition_ref(val.schema.try(&._ref)) == class_name })
