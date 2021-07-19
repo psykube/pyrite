@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # IngressClass represents the class of the Ingress, referenced by the Ingress Spec. The [`ingressclass.kubernetes.io/is-default-class` annotation can be used to indicate that an IngressClass should be considered default. When a single IngressClass resource has this annotation set to true, new Ingress resources without a class specified will be assigned this default class.](`ingressclass.kubernetes.io/is-default-class` annotation can be used to indicate that an IngressClass should be considered default. When a single IngressClass resource has this annotation set to true, new Ingress resources without a class specified will be assigned this default class.)
   class Api::Networking::V1beta1::IngressClass < Kubernetes::Object
+    @api_version = "networking/v1beta1"
+    @kind = "IngressClass"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "networking/v1beta1" && instance.kind == "IngressClass"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "networking/v1beta1" && instance.kind == "IngressClass"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

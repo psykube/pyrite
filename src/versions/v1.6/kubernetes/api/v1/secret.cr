@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
   class Kubernetes::Api::V1::Secret < Kubernetes::Object
+    @api_version = "v1"
+    @kind = "Secret"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Secret"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Secret"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Scale represents a scaling request for a resource.
   class Api::Apps::V1beta1::Scale < Kubernetes::Object
+    @api_version = "apps/v1beta1"
+    @kind = "Scale"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "apps/v1beta1" && instance.kind == "Scale"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "apps/v1beta1" && instance.kind == "Scale"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Describes a certificate signing request
   class Kubernetes::Apis::Certificates::V1beta1::CertificateSigningRequest < Kubernetes::Object
+    @api_version = "certificates/v1beta1"
+    @kind = "CertificateSigningRequest"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "certificates/v1beta1" && instance.kind == "CertificateSigningRequest"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "certificates/v1beta1" && instance.kind == "CertificateSigningRequest"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

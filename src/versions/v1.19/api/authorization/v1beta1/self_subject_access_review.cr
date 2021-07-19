@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
   class Api::Authorization::V1beta1::SelfSubjectAccessReview < Kubernetes::Object
+    @api_version = "authorization/v1beta1"
+    @kind = "SelfSubjectAccessReview"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "authorization/v1beta1" && instance.kind == "SelfSubjectAccessReview"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "authorization/v1beta1" && instance.kind == "SelfSubjectAccessReview"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

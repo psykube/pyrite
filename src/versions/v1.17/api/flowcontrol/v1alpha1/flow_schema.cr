@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with similar attributes and is identified by a pair of strings: the name of the FlowSchema and a "flow distinguisher".
   class Api::Flowcontrol::V1alpha1::FlowSchema < Kubernetes::Object
+    @api_version = "flowcontrol/v1alpha1"
+    @kind = "FlowSchema"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "flowcontrol/v1alpha1" && instance.kind == "FlowSchema"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "flowcontrol/v1alpha1" && instance.kind == "FlowSchema"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

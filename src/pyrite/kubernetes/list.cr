@@ -1,7 +1,10 @@
 require "./resource"
 
 module Pyrite::Kubernetes
-  abstract class List(T) < Resource
+  class List(T) < Resource
+    @api_version = "v1"
+    @kind = "List"
+
     # Standard list metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds)
     @[::JSON::Field(key: "metadata")]
     @[::YAML::Field(key: "metadata")]

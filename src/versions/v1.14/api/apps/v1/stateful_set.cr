@@ -9,8 +9,11 @@ module Pyrite
   #  - Storage: As many VolumeClaims as requested.
   # The StatefulSet guarantees that a given network identity will always map to the same storage identity.
   class Api::Apps::V1::StatefulSet < Kubernetes::Object
+    @api_version = "apps/v1"
+    @kind = "StatefulSet"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "apps/v1" && instance.kind == "StatefulSet"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -18,7 +21,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "apps/v1" && instance.kind == "StatefulSet"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

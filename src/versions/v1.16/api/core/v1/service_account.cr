@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
   class Api::Core::V1::ServiceAccount < Kubernetes::Object
+    @api_version = "v1"
+    @kind = "ServiceAccount"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "ServiceAccount"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "ServiceAccount"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

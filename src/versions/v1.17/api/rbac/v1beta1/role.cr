@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding. Deprecated in v1.17 in favor of [rbac.authorization.k8s.io/v1 Role, and will no longer be served in v1.20.](rbac.authorization.k8s.io/v1 Role, and will no longer be served in v1.20.)
   class Api::Rbac::V1beta1::Role < Kubernetes::Object
+    @api_version = "rbac/v1beta1"
+    @kind = "Role"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "rbac.authorization.k8s.io/v1beta1" && instance.kind == "Role"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "rbac.authorization.k8s.io/v1beta1" && instance.kind == "Role"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

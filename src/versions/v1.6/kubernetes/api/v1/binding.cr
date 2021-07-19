@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Binding ties one object to another. For example, a pod is bound to a node by a scheduler.
   class Kubernetes::Api::V1::Binding < Kubernetes::Object
+    @api_version = "v1"
+    @kind = "Binding"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Binding"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Binding"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

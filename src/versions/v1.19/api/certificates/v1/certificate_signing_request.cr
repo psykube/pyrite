@@ -12,8 +12,11 @@ module Pyrite
   #
   # This API can be used to request client certificates to authenticate to kube-apiserver (with the ["kubernetes.io/kube-apiserver-client" signerName), or to obtain certificates from custom non-Kubernetes signers.]("kubernetes.io/kube-apiserver-client" signerName), or to obtain certificates from custom non-Kubernetes signers.)
   class Api::Certificates::V1::CertificateSigningRequest < Kubernetes::Object
+    @api_version = "certificates/v1"
+    @kind = "CertificateSigningRequest"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "certificates/v1" && instance.kind == "CertificateSigningRequest"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -21,7 +24,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "certificates/v1" && instance.kind == "CertificateSigningRequest"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

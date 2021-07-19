@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # DEPRECATED - This group version of ReplicaSet is deprecated by [apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.](apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.)
   class Api::Extensions::V1beta1::ReplicaSet < Kubernetes::Object
+    @api_version = "extensions/v1beta1"
+    @kind = "ReplicaSet"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "ReplicaSet"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "ReplicaSet"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

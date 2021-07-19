@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
   class Kubernetes::Api::V1::Service < Kubernetes::Object
+    @api_version = "v1"
+    @kind = "Service"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Service"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "Service"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

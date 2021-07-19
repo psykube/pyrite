@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # ReplicaSet represents the configuration of a ReplicaSet.
   class Kubernetes::Apis::Extensions::V1beta1::ReplicaSet < Kubernetes::Object
+    @api_version = "extensions/v1beta1"
+    @kind = "ReplicaSet"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "ReplicaSet"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "ReplicaSet"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

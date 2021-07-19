@@ -14,8 +14,11 @@ module Pyrite
   #
   # They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature gate is enabled there and a CSI driver opts into capacity-aware scheduling with CSIDriver.StorageCapacity.
   class Api::Storage::V1beta1::CSIStorageCapacity < Kubernetes::Object
+    @api_version = "storage/v1beta1"
+    @kind = "CSIStorageCapacity"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "storage/v1beta1" && instance.kind == "CSIStorageCapacity"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -23,7 +26,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "storage/v1beta1" && instance.kind == "CSIStorageCapacity"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

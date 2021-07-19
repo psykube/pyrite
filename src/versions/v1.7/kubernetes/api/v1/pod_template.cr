@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # PodTemplate describes a template for creating copies of a predefined pod.
   class Kubernetes::Api::V1::PodTemplate < Kubernetes::Object
+    @api_version = "v1"
+    @kind = "PodTemplate"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "PodTemplate"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "v1" && instance.kind == "PodTemplate"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

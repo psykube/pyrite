@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
   class Api::Authorization::V1beta1::LocalSubjectAccessReview < Kubernetes::Object
+    @api_version = "authorization/v1beta1"
+    @kind = "LocalSubjectAccessReview"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "authorization/v1beta1" && instance.kind == "LocalSubjectAccessReview"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "authorization/v1beta1" && instance.kind == "LocalSubjectAccessReview"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

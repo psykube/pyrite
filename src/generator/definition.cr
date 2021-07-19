@@ -223,9 +223,11 @@ class Generator::Definition
   private def define_properties
     if is_resource? && !is_list?
       file.puts <<-crystal
+        @api_version = #{api_version.inspect}
+        @kind = #{kind.inspect}
 
         def self.new(pull : ::JSON::PullParser)
-          previous_def(pull).tap do |instance|
+          super(pull).tap do |instance|
             unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
               raise ::JSON::ParseException.new("Couldn't parse \#{self} from \#{pull.read_raw}", *pull.location)
             end
@@ -233,7 +235,7 @@ class Generator::Definition
         end
 
         def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-          previous_def(ctx, node).tap do |instance|
+          super(ctx, node).tap do |instance|
             unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
               raise ::YAML::ParseException.new("Couldn't parse \#{self}", *node.location)
             end

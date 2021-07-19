@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods
   class Api::Policy::V1::PodDisruptionBudget < Kubernetes::Object
+    @api_version = "policy/v1"
+    @kind = "PodDisruptionBudget"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "policy/v1" && instance.kind == "PodDisruptionBudget"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "policy/v1" && instance.kind == "PodDisruptionBudget"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

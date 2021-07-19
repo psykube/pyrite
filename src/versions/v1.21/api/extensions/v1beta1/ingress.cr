@@ -6,8 +6,11 @@ require "json"
 module Pyrite
   # Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc. DEPRECATED - This group version of Ingress is deprecated by [networking.k8s.io/v1beta1 Ingress. See the release notes for more information.](networking.k8s.io/v1beta1 Ingress. See the release notes for more information.)
   class Api::Extensions::V1beta1::Ingress < Kubernetes::Object
+    @api_version = "extensions/v1beta1"
+    @kind = "Ingress"
+
     def self.new(pull : ::JSON::PullParser)
-      previous_def(pull).tap do |instance|
+      super(pull).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "Ingress"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -15,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      previous_def(ctx, node).tap do |instance|
+      super(ctx, node).tap do |instance|
         unless instance.api_version == "extensions/v1beta1" && instance.kind == "Ingress"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
