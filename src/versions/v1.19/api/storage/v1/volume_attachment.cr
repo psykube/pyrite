@@ -8,12 +8,12 @@ module Pyrite
   #
   # VolumeAttachment objects are non-namespaced.
   class Api::Storage::V1::VolumeAttachment < Kubernetes::Object
-    @api_version = "storage/v1"
+    @api_version = "storage.k8s.io/v1"
     @kind = "VolumeAttachment"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "storage/v1" && instance.kind == "VolumeAttachment"
+        unless instance.api_version == "storage.k8s.io/v1" && instance.kind == "VolumeAttachment"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -21,7 +21,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "storage/v1" && instance.kind == "VolumeAttachment"
+        unless instance.api_version == "storage.k8s.io/v1" && instance.kind == "VolumeAttachment"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

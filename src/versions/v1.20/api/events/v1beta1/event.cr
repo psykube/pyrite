@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system. Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
   class Api::Events::V1beta1::Event < Kubernetes::Object
-    @api_version = "events/v1beta1"
+    @api_version = "events.k8s.io/v1beta1"
     @kind = "Event"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "events/v1beta1" && instance.kind == "Event"
+        unless instance.api_version == "events.k8s.io/v1beta1" && instance.kind == "Event"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "events/v1beta1" && instance.kind == "Event"
+        unless instance.api_version == "events.k8s.io/v1beta1" && instance.kind == "Event"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

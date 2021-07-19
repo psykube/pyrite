@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
   class Api::Rbac::V1beta1::ClusterRole < Kubernetes::Object
-    @api_version = "rbac/v1beta1"
+    @api_version = "rbac.authorization.k8s.io/v1beta1"
     @kind = "ClusterRole"
 
     def self.new(pull : ::JSON::PullParser)

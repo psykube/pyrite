@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # PriorityLevelConfiguration represents the configuration of a priority level.
   class Api::Flowcontrol::V1alpha1::PriorityLevelConfiguration < Kubernetes::Object
-    @api_version = "flowcontrol/v1alpha1"
+    @api_version = "flowcontrol.apiserver.k8s.io/v1alpha1"
     @kind = "PriorityLevelConfiguration"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "flowcontrol/v1alpha1" && instance.kind == "PriorityLevelConfiguration"
+        unless instance.api_version == "flowcontrol.apiserver.k8s.io/v1alpha1" && instance.kind == "PriorityLevelConfiguration"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "flowcontrol/v1alpha1" && instance.kind == "PriorityLevelConfiguration"
+        unless instance.api_version == "flowcontrol.apiserver.k8s.io/v1alpha1" && instance.kind == "PriorityLevelConfiguration"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

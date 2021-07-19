@@ -10,7 +10,14 @@ class Swagger::Definition
   @[JSON::Field(key: "$ref")]
   property _ref : String? = nil
 
+  @[JSON::Field(key: "x-kubernetes-group-version-kind")]
+  getter group_version_kinds : Array(GroupVersionKind) = [] of GroupVersionKind
+
   def initialize
+  end
+
+  def group_version_kind
+    group_version_kinds.first?
   end
 end
 

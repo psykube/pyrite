@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # ValidatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and object without changing it.
   class Api::Admissionregistration::V1::ValidatingWebhookConfiguration < Kubernetes::Object
-    @api_version = "admissionregistration/v1"
+    @api_version = "admissionregistration.k8s.io/v1"
     @kind = "ValidatingWebhookConfiguration"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "admissionregistration/v1" && instance.kind == "ValidatingWebhookConfiguration"
+        unless instance.api_version == "admissionregistration.k8s.io/v1" && instance.kind == "ValidatingWebhookConfiguration"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "admissionregistration/v1" && instance.kind == "ValidatingWebhookConfiguration"
+        unless instance.api_version == "admissionregistration.k8s.io/v1" && instance.kind == "ValidatingWebhookConfiguration"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

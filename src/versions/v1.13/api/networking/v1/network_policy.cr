@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # NetworkPolicy describes what network traffic is allowed for a set of Pods
   class Api::Networking::V1::NetworkPolicy < Kubernetes::Object
-    @api_version = "networking/v1"
+    @api_version = "networking.k8s.io/v1"
     @kind = "NetworkPolicy"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "networking/v1" && instance.kind == "NetworkPolicy"
+        unless instance.api_version == "networking.k8s.io/v1" && instance.kind == "NetworkPolicy"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "networking/v1" && instance.kind == "NetworkPolicy"
+        unless instance.api_version == "networking.k8s.io/v1" && instance.kind == "NetworkPolicy"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # CSIDriver captures information about a Container Storage Interface (CSI) volume driver deployed on the cluster. Kubernetes attach detach controller uses this object to determine whether attach is required. Kubelet uses this object to determine whether pod information needs to be passed on mount. CSIDriver objects are non-namespaced.
   class Api::Storage::V1::CSIDriver < Kubernetes::Object
-    @api_version = "storage/v1"
+    @api_version = "storage.k8s.io/v1"
     @kind = "CSIDriver"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "storage/v1" && instance.kind == "CSIDriver"
+        unless instance.api_version == "storage.k8s.io/v1" && instance.kind == "CSIDriver"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "storage/v1" && instance.kind == "CSIDriver"
+        unless instance.api_version == "storage.k8s.io/v1" && instance.kind == "CSIDriver"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # EndpointSlice represents a subset of the endpoints that implement a service. For a given service there may be multiple EndpointSlice objects, selected by labels, which must be joined to produce the full set of endpoints.
   class Api::Discovery::V1alpha1::EndpointSlice < Kubernetes::Object
-    @api_version = "discovery/v1alpha1"
+    @api_version = "discovery.k8s.io/v1alpha1"
     @kind = "EndpointSlice"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "discovery/v1alpha1" && instance.kind == "EndpointSlice"
+        unless instance.api_version == "discovery.k8s.io/v1alpha1" && instance.kind == "EndpointSlice"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "discovery/v1alpha1" && instance.kind == "EndpointSlice"
+        unless instance.api_version == "discovery.k8s.io/v1alpha1" && instance.kind == "EndpointSlice"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

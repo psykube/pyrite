@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
   class Api::Scheduling::V1alpha1::PriorityClass < Kubernetes::Object
-    @api_version = "scheduling/v1alpha1"
+    @api_version = "scheduling.k8s.io/v1alpha1"
     @kind = "PriorityClass"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "scheduling/v1alpha1" && instance.kind == "PriorityClass"
+        unless instance.api_version == "scheduling.k8s.io/v1alpha1" && instance.kind == "PriorityClass"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "scheduling/v1alpha1" && instance.kind == "PriorityClass"
+        unless instance.api_version == "scheduling.k8s.io/v1alpha1" && instance.kind == "PriorityClass"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

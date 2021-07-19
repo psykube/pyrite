@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # Lease defines a lease concept.
   class Api::Coordination::V1::Lease < Kubernetes::Object
-    @api_version = "coordination/v1"
+    @api_version = "coordination.k8s.io/v1"
     @kind = "Lease"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "coordination/v1" && instance.kind == "Lease"
+        unless instance.api_version == "coordination.k8s.io/v1" && instance.kind == "Lease"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "coordination/v1" && instance.kind == "Lease"
+        unless instance.api_version == "coordination.k8s.io/v1" && instance.kind == "Lease"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

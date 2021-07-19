@@ -26,11 +26,6 @@ require "pyrite/versions/v1.21"
 
 Each version of kubernetes has its own generated types. The docs for each are listed below:
 
-* [1.6](https://psykube.github.io/pyrite/versions/v1.6)
-* [1.7](https://psykube.github.io/pyrite/versions/v1.7)
-* [1.8](https://psykube.github.io/pyrite/versions/v1.8)
-* [1.9](https://psykube.github.io/pyrite/versions/v1.9)
-* [1.10](https://psykube.github.io/pyrite/versions/v1.10)
 * [1.11](https://psykube.github.io/pyrite/versions/v1.11)
 * [1.12](https://psykube.github.io/pyrite/versions/v1.12)
 * [1.13](https://psykube.github.io/pyrite/versions/v1.13)

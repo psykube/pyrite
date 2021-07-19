@@ -13,7 +13,7 @@ class Swagger::Path
   property parameters : Array(Parameter) = [] of Swagger::Path::Parameter
 
   def actions
-    action_map.values.map(&.[0]).reject(&.nil?).map(&.as Action)
+    action_map.values.map(&.[0]).reject(Nil).map(&.as Action)
   end
 
   def action_map

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
   class Api::Rbac::V1alpha1::Role < Kubernetes::Object
-    @api_version = "rbac/v1alpha1"
+    @api_version = "rbac.authorization.k8s.io/v1alpha1"
     @kind = "Role"
 
     def self.new(pull : ::JSON::PullParser)

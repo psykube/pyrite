@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # CustomResourceDefinition represents a resource that should be exposed on the API server.  Its name MUST be in the format <.spec.name>.<.spec.group>. Deprecated in v1.16, planned for removal in v1.19. Use [apiextensions.k8s.io/v1 CustomResourceDefinition instead.](apiextensions.k8s.io/v1 CustomResourceDefinition instead.)
   class ApiextensionsApiserver::Apis::Apiextensions::V1beta1::CustomResourceDefinition < Kubernetes::Object
-    @api_version = "apiextensions/v1beta1"
+    @api_version = "apiextensions.k8s.io/v1beta1"
     @kind = "CustomResourceDefinition"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "apiextensions/v1beta1" && instance.kind == "CustomResourceDefinition"
+        unless instance.api_version == "apiextensions.k8s.io/v1beta1" && instance.kind == "CustomResourceDefinition"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "apiextensions/v1beta1" && instance.kind == "CustomResourceDefinition"
+        unless instance.api_version == "apiextensions.k8s.io/v1beta1" && instance.kind == "CustomResourceDefinition"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

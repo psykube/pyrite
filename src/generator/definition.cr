@@ -228,7 +228,7 @@ class Generator::Definition
 
         def self.new(pull : ::JSON::PullParser)
           previous_def(pull).tap do |instance|
-            unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
+            unless instance.api_version == #{api_version.inspect} && instance.kind == #{kind.inspect}
               raise ::JSON::ParseException.new("Couldn't parse \#{self} from \#{pull.read_raw}", *pull.location)
             end
           end
@@ -236,7 +236,7 @@ class Generator::Definition
 
         def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
           previous_def(ctx, node).tap do |instance|
-            unless instance.api_version == #{api_version_name.inspect} && instance.kind == #{kind.inspect}
+            unless instance.api_version == #{api_version.inspect} && instance.kind == #{kind.inspect}
               raise ::YAML::ParseException.new("Couldn't parse \#{self}", *node.location)
             end
           end
@@ -276,15 +276,8 @@ class Generator::Definition
   end
 
   def api_version
-    is_list? ? "v1" : name.sub(/^io\.k8s(\.[-a-z]+\.pkg)?\.apis?(\.core)?\./, "").split(".")[0..-2].join("/")
-  end
-
-  def api_version_name
-    case api_version
-    when .starts_with? "rbac/v1"
-      api_version.sub(/^rbac\/v1/, "rbac.authorization.k8s.io/v1")
-    else
-      api_version
+    if (gvk = definition.group_version_kind)
+      [gvk.group, gvk.version].compact.reject(&.empty?).join("/")
     end
   end
 
@@ -293,6 +286,6 @@ class Generator::Definition
   end
 
   def kind
-    is_list? ? "List" : self.name.split(".")[-1]
+    definition.group_version_kind.try(&.kind)
   end
 end

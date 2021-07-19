@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # RuntimeClass defines a class of container runtime supported in the cluster. The RuntimeClass is used to determine which container runtime is used to run all containers in a pod. RuntimeClasses are manually defined by a user or cluster provisioner, and referenced in the PodSpec. The Kubelet is responsible for resolving the RuntimeClassName reference before running the pod.  For more details, see [https://kubernetes.io/docs/concepts/containers/runtime-class/](https://kubernetes.io/docs/concepts/containers/runtime-class/)
   class Api::Node::V1::RuntimeClass < Kubernetes::Object
-    @api_version = "node/v1"
+    @api_version = "node.k8s.io/v1"
     @kind = "RuntimeClass"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "node/v1" && instance.kind == "RuntimeClass"
+        unless instance.api_version == "node.k8s.io/v1" && instance.kind == "RuntimeClass"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "node/v1" && instance.kind == "RuntimeClass"
+        unless instance.api_version == "node.k8s.io/v1" && instance.kind == "RuntimeClass"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end

@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
   class Api::Rbac::V1::RoleBinding < Kubernetes::Object
-    @api_version = "rbac/v1"
+    @api_version = "rbac.authorization.k8s.io/v1"
     @kind = "RoleBinding"
 
     def self.new(pull : ::JSON::PullParser)

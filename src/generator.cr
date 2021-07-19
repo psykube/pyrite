@@ -52,7 +52,7 @@ class Generator
     HTTP::Client.get(url)
   end
 
-  def self.generate_all(major = 1, minor = 6)
+  def self.generate_all(major = 1, minor = 11)
     FileUtils.rm_rf File.join(".", Generator::VERSIONS_DIR)
     FileUtils.rm_rf File.join(".", "docs")
     loop do

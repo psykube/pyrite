@@ -6,7 +6,7 @@ require "json"
 module Pyrite
   # ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
   class Api::Rbac::V1alpha1::ClusterRoleBinding < Kubernetes::Object
-    @api_version = "rbac/v1alpha1"
+    @api_version = "rbac.authorization.k8s.io/v1alpha1"
     @kind = "ClusterRoleBinding"
 
     def self.new(pull : ::JSON::PullParser)

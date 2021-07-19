@@ -6,12 +6,12 @@ require "json"
 module Pyrite
   # SubjectAccessReview checks whether or not a user or group can perform an action.
   class Api::Authorization::V1beta1::SubjectAccessReview < Kubernetes::Object
-    @api_version = "authorization/v1beta1"
+    @api_version = "authorization.k8s.io/v1beta1"
     @kind = "SubjectAccessReview"
 
     def self.new(pull : ::JSON::PullParser)
       previous_def(pull).tap do |instance|
-        unless instance.api_version == "authorization/v1beta1" && instance.kind == "SubjectAccessReview"
+        unless instance.api_version == "authorization.k8s.io/v1beta1" && instance.kind == "SubjectAccessReview"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
       end
@@ -19,7 +19,7 @@ module Pyrite
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
       previous_def(ctx, node).tap do |instance|
-        unless instance.api_version == "authorization/v1beta1" && instance.kind == "SubjectAccessReview"
+        unless instance.api_version == "authorization.k8s.io/v1beta1" && instance.kind == "SubjectAccessReview"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
       end
