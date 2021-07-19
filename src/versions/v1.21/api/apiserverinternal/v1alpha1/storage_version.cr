@@ -11,7 +11,7 @@ module Pyrite
     @kind = "StorageVersion"
 
     def self.new(pull : ::JSON::PullParser)
-      super(pull).tap do |instance|
+      previous_def(pull).tap do |instance|
         unless instance.api_version == "apiserverinternal/v1alpha1" && instance.kind == "StorageVersion"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -19,7 +19,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      super(ctx, node).tap do |instance|
+      previous_def(ctx, node).tap do |instance|
         unless instance.api_version == "apiserverinternal/v1alpha1" && instance.kind == "StorageVersion"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end

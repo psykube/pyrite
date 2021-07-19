@@ -10,7 +10,7 @@ module Pyrite
     @kind = "ClusterRole"
 
     def self.new(pull : ::JSON::PullParser)
-      super(pull).tap do |instance|
+      previous_def(pull).tap do |instance|
         unless instance.api_version == "rbac.authorization.k8s.io/v1beta1" && instance.kind == "ClusterRole"
           raise ::JSON::ParseException.new("Couldn't parse #{self} from #{pull.read_raw}", *pull.location)
         end
@@ -18,7 +18,7 @@ module Pyrite
     end
 
     def self.new(ctx : ::YAML::ParseContext, node : ::YAML::Nodes::Node)
-      super(ctx, node).tap do |instance|
+      previous_def(ctx, node).tap do |instance|
         unless instance.api_version == "rbac.authorization.k8s.io/v1beta1" && instance.kind == "ClusterRole"
           raise ::YAML::ParseException.new("Couldn't parse #{self}", *node.location)
         end
