@@ -18,6 +18,17 @@ module Pyrite::Kubernetes
         {% end %}
         raise JSON::ParseException.new("Couldn't parse #{self} from #{string}", *location)
       end
+
+      def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+        {% for subtype in @type.subclasses %}
+          begin
+            return {{subtype}}.new(ctx, node)
+          rescue YAML::ParseException
+            # Ignore
+          end
+        {% end %}
+        node.raise "Couldn't parse #{self}"
+      end
     end
   end
 end
