@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4076,6 +4076,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4134,7 +4139,7 @@
     Overview
   </h2>
 
-  <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://&lt;host>/&lt;path>?&lt;searchpart> -> backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
+  <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://<host>/<path>?<searchpart> -&gt; backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
 
 
 
@@ -4179,21 +4184,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>HTTPIngressRuleValue is a list of http selectors pointing to backends.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>HTTPIngressRuleValue is a list of http selectors pointing to backends.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,paths:Array)-class-method" class="signature"><strong>.new</strong>(*, paths : Array)</a>
+        <a href="#new%28%2A%2Cpaths%3AArray%29-class-method" class="signature"><strong>.new</strong>(*, paths : Array)</a>
         
       </li>
     
@@ -4214,12 +4219,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#paths:Array(Api::Extensions::V1beta1::HTTPIngressPath)-instance-method" class="signature"><strong>#paths</strong> : Array(Api::Extensions::V1beta1::HTTPIngressPath)</a>
+        <a href="#paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHTTPIngressPath%29-instance-method" class="signature"><strong>#paths</strong> : Array(Api::Extensions::V1beta1::HTTPIngressPath)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#paths=(paths:Array(Api::Extensions::V1beta1::HTTPIngressPath))-instance-method" class="signature"><strong>#paths=</strong>(paths : Array(Api::Extensions::V1beta1::HTTPIngressPath))</a>
+        <a href="#paths%3D%28paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHTTPIngressPath%29%29-instance-method" class="signature"><strong>#paths=</strong>(paths : Array(Api::Extensions::V1beta1::HTTPIngressPath))</a>
         
       </li>
     
@@ -4239,7 +4244,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4307,12 +4312,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://&lt;host>/&lt;path>?&lt;searchpart> -> backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
+          <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://<host>/<path>?<searchpart> -&gt; backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
         </div>
       
       <br/>
@@ -4326,12 +4331,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://&lt;host>/&lt;path>?&lt;searchpart> -> backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
+          <p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://<host>/<path>?<searchpart> -&gt; backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
         </div>
       
       <br/>
@@ -4345,7 +4350,7 @@
         
         def self.<strong>new</strong>(*, paths : Array)
 
-        <a class="method-permalink" href="#new(*,paths:Array)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cpaths%3AArray%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4373,7 +4378,7 @@
         
         def <strong>paths</strong> : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/HTTPIngressPath.html">Api::Extensions::V1beta1::HTTPIngressPath</a>)
 
-        <a class="method-permalink" href="#paths:Array(Api::Extensions::V1beta1::HTTPIngressPath)-instance-method">#</a>
+        <a class="method-permalink" href="#paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHTTPIngressPath%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4387,7 +4392,7 @@
         
         def <strong>paths=</strong>(paths : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/HTTPIngressPath.html">Api::Extensions::V1beta1::HTTPIngressPath</a>))
 
-        <a class="method-permalink" href="#paths=(paths:Array(Api::Extensions::V1beta1::HTTPIngressPath))-instance-method">#</a>
+        <a class="method-permalink" href="#paths%3D%28paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHTTPIngressPath%29%29-instance-method">#</a>
       </div>
       
       <br/>

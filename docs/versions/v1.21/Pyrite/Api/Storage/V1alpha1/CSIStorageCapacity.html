@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4076,6 +4076,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4135,13 +4140,9 @@
   </h2>
 
   <p>CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.</p>
-
-<p>For example this can express things like: - StorageClass "standard" has "1234 GiB" available in <a href=""topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"">"topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"</a></p>
-
+<p>For example this can express things like: - StorageClass &quot;standard&quot; has &quot;1234 GiB&quot; available in [&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;](&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;)</p>
 <p>The following three cases all imply that no capacity is available for a certain combination: - no object exists with suitable topology and storage class name - such an object exists, but the capacity is unset - such an object exists, but the capacity is zero</p>
-
 <p>The producer of these objects can decide which approach is more suitable.</p>
-
 <p>They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature gate is enabled there and a CSI driver opts into capacity-aware scheduling with CSIDriver.StorageCapacity.</p>
 
 
@@ -4187,21 +4188,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>CSIStorageCapacity stores the result of one CSI GetCapacity call.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>CSIStorageCapacity stores the result of one CSI GetCapacity call.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,capacity:Int32?=nil,maximum_volume_size:Int32?=nil,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,storage_class_name:String)-class-method" class="signature"><strong>.new</strong>(*, capacity : Int32? = <span class="n">nil</span>, maximum_volume_size : Int32? = <span class="n">nil</span>, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, node_topology : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, storage_class_name : String)</a>
+        <a href="#new%28%2A%2Ccapacity%3AInt32%3F%3Dnil%2Cmaximum_volume_size%3AInt32%3F%3Dnil%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cnode_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cstorage_class_name%3AString%29-class-method" class="signature"><strong>.new</strong>(*, capacity : Int32? = <span class="n">nil</span>, maximum_volume_size : Int32? = <span class="n">nil</span>, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, node_topology : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, storage_class_name : String)</a>
         
       </li>
     
@@ -4222,42 +4223,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#capacity:Int32?-instance-method" class="signature"><strong>#capacity</strong> : Int32?</a>
+        <a href="#capacity%3AInt32%3F-instance-method" class="signature"><strong>#capacity</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#capacity=(capacity:Int32?)-instance-method" class="signature"><strong>#capacity=</strong>(capacity : Int32?)</a>
+        <a href="#capacity%3D%28capacity%3AInt32%3F%29-instance-method" class="signature"><strong>#capacity=</strong>(capacity : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#maximum_volume_size:Int32?-instance-method" class="signature"><strong>#maximum_volume_size</strong> : Int32?</a>
+        <a href="#maximum_volume_size%3AInt32%3F-instance-method" class="signature"><strong>#maximum_volume_size</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#maximum_volume_size=(maximum_volume_size:Int32?)-instance-method" class="signature"><strong>#maximum_volume_size=</strong>(maximum_volume_size : Int32?)</a>
+        <a href="#maximum_volume_size%3D%28maximum_volume_size%3AInt32%3F%29-instance-method" class="signature"><strong>#maximum_volume_size=</strong>(maximum_volume_size : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method" class="signature"><strong>#node_topology</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
+        <a href="#node_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method" class="signature"><strong>#node_topology</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_topology=(node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method" class="signature"><strong>#node_topology=</strong>(node_topology : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
+        <a href="#node_topology%3D%28node_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method" class="signature"><strong>#node_topology=</strong>(node_topology : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storage_class_name:String-instance-method" class="signature"><strong>#storage_class_name</strong> : String</a>
+        <a href="#storage_class_name%3AString-instance-method" class="signature"><strong>#storage_class_name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storage_class_name=(storage_class_name:String)-instance-method" class="signature"><strong>#storage_class_name=</strong>(storage_class_name : String)</a>
+        <a href="#storage_class_name%3D%28storage_class_name%3AString%29-instance-method" class="signature"><strong>#storage_class_name=</strong>(storage_class_name : String)</a>
         
       </li>
     
@@ -4274,12 +4275,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F-instance-method" class="tooltip">
       <span>metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?</span>
     metadata</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata=(metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?)-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3D%28metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%29-instance-method" class="tooltip">
       <span>metadata=(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?)</span>
     metadata=</a>
     
@@ -4291,7 +4292,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4307,12 +4308,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version%3AString-instance-method" class="tooltip">
       <span>api_version : String</span>
     api_version</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind%3AString-instance-method" class="tooltip">
       <span>kind : String</span>
     kind</a>
     
@@ -4324,7 +4325,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4343,7 +4344,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4411,19 +4412,15 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.</p>
-
-<p>For example this can express things like: - StorageClass "standard" has "1234 GiB" available in <a href=""topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"">"topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"</a></p>
-
+<p>For example this can express things like: - StorageClass &quot;standard&quot; has &quot;1234 GiB&quot; available in [&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;](&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;)</p>
 <p>The following three cases all imply that no capacity is available for a certain combination: - no object exists with suitable topology and storage class name - such an object exists, but the capacity is unset - such an object exists, but the capacity is zero</p>
-
 <p>The producer of these objects can decide which approach is more suitable.</p>
-
 <p>They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature gate is enabled there and a CSI driver opts into capacity-aware scheduling with CSIDriver.StorageCapacity.</p>
         </div>
       
@@ -4438,19 +4435,15 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>CSIStorageCapacity stores the result of one CSI GetCapacity call. For a given StorageClass, this describes the available capacity in a particular topology segment.  This can be used when considering where to instantiate new PersistentVolumes.</p>
-
-<p>For example this can express things like: - StorageClass "standard" has "1234 GiB" available in <a href=""topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"">"topology.kubernetes.io/zone=us-east1" - StorageClass "localssd" has "10 GiB" available in "kubernetes.io/hostname=knode-abc123"</a></p>
-
+<p>For example this can express things like: - StorageClass &quot;standard&quot; has &quot;1234 GiB&quot; available in [&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;](&quot;topology.kubernetes.io/zone=us-east1&quot; - StorageClass &quot;localssd&quot; has &quot;10 GiB&quot; available in &quot;kubernetes.io/hostname=knode-abc123&quot;)</p>
 <p>The following three cases all imply that no capacity is available for a certain combination: - no object exists with suitable topology and storage class name - such an object exists, but the capacity is unset - such an object exists, but the capacity is zero</p>
-
 <p>The producer of these objects can decide which approach is more suitable.</p>
-
 <p>They are consumed by the kube-scheduler if the CSIStorageCapacity beta feature gate is enabled there and a CSI driver opts into capacity-aware scheduling with CSIDriver.StorageCapacity.</p>
         </div>
       
@@ -4465,7 +4458,7 @@
         
         def self.<strong>new</strong>(*, capacity : Int32? = <span class="n">nil</span>, maximum_volume_size : Int32? = <span class="n">nil</span>, metadata : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/ObjectMeta.html">Apimachinery::Apis::Meta::V1::ObjectMeta</a>? = <span class="n">nil</span>, node_topology : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>? = <span class="n">nil</span>, storage_class_name : String)
 
-        <a class="method-permalink" href="#new(*,capacity:Int32?=nil,maximum_volume_size:Int32?=nil,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,storage_class_name:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Ccapacity%3AInt32%3F%3Dnil%2Cmaximum_volume_size%3AInt32%3F%3Dnil%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cnode_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cstorage_class_name%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4493,7 +4486,7 @@
         
         def <strong>capacity</strong> : Int32?
 
-        <a class="method-permalink" href="#capacity:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#capacity%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4507,7 +4500,7 @@
         
         def <strong>capacity=</strong>(capacity : Int32?)
 
-        <a class="method-permalink" href="#capacity=(capacity:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#capacity%3D%28capacity%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4521,7 +4514,7 @@
         
         def <strong>maximum_volume_size</strong> : Int32?
 
-        <a class="method-permalink" href="#maximum_volume_size:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#maximum_volume_size%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4535,7 +4528,7 @@
         
         def <strong>maximum_volume_size=</strong>(maximum_volume_size : Int32?)
 
-        <a class="method-permalink" href="#maximum_volume_size=(maximum_volume_size:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#maximum_volume_size%3D%28maximum_volume_size%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4549,7 +4542,7 @@
         
         def <strong>node_topology</strong> : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?
 
-        <a class="method-permalink" href="#node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method">#</a>
+        <a class="method-permalink" href="#node_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4563,7 +4556,7 @@
         
         def <strong>node_topology=</strong>(node_topology : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?)
 
-        <a class="method-permalink" href="#node_topology=(node_topology:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method">#</a>
+        <a class="method-permalink" href="#node_topology%3D%28node_topology%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4577,7 +4570,7 @@
         
         def <strong>storage_class_name</strong> : String
 
-        <a class="method-permalink" href="#storage_class_name:String-instance-method">#</a>
+        <a class="method-permalink" href="#storage_class_name%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -4591,7 +4584,7 @@
         
         def <strong>storage_class_name=</strong>(storage_class_name : String)
 
-        <a class="method-permalink" href="#storage_class_name=(storage_class_name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#storage_class_name%3D%28storage_class_name%3AString%29-instance-method">#</a>
       </div>
       
       <br/>

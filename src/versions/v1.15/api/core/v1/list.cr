@@ -5,6 +5,6 @@ require "json"
 
 module Pyrite
   # List is a generic list of resources
-  class Api::Core::V1::List < Kubernetes::List(Kubernetes::Object)
+  class Api::Core::V1::List < Kubernetes::List(Kubernetes::Resource)
   end
 end

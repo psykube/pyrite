@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4076,6 +4076,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4134,7 +4139,7 @@
     Overview
   </h2>
 
-  <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key &lt;topologyKey> matches that of any node on which a pod of the set of pods is running</p>
+  <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running</p>
 
 
 
@@ -4179,21 +4184,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
-          <div class="summary"><p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key &lt;topologyKey> matches that of any node on which a pod of the set of pods is running</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-          <div class="summary"><p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key &lt;topologyKey> matches that of any node on which a pod of the set of pods is running</p></div>
+          <div class="summary"><p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,namespaces:Array?=nil,topology_key:String)-class-method" class="signature"><strong>.new</strong>(*, label_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, namespaces : Array? = <span class="n">nil</span>, topology_key : String)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+          <div class="summary"><p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Clabel_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cnamespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cnamespaces%3AArray%3F%3Dnil%2Ctopology_key%3AString%29-class-method" class="signature"><strong>.new</strong>(*, label_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, namespaces : Array? = <span class="n">nil</span>, topology_key : String)</a>
         
       </li>
     
@@ -4214,42 +4219,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method" class="signature"><strong>#label_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
+        <a href="#label_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method" class="signature"><strong>#label_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#label_selector=(label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method" class="signature"><strong>#label_selector=</strong>(label_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
+        <a href="#label_selector%3D%28label_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method" class="signature"><strong>#label_selector=</strong>(label_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method" class="signature"><strong>#namespace_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
+        <a href="#namespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method" class="signature"><strong>#namespace_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#namespace_selector=(namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method" class="signature"><strong>#namespace_selector=</strong>(namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
+        <a href="#namespace_selector%3D%28namespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method" class="signature"><strong>#namespace_selector=</strong>(namespace_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#namespaces:Array(String)?-instance-method" class="signature"><strong>#namespaces</strong> : Array(String)?</a>
+        <a href="#namespaces%3AArray%28String%29%3F-instance-method" class="signature"><strong>#namespaces</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#namespaces=(namespaces:Array(String)?)-instance-method" class="signature"><strong>#namespaces=</strong>(namespaces : Array(String)?)</a>
+        <a href="#namespaces%3D%28namespaces%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#namespaces=</strong>(namespaces : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#topology_key:String-instance-method" class="signature"><strong>#topology_key</strong> : String</a>
+        <a href="#topology_key%3AString-instance-method" class="signature"><strong>#topology_key</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#topology_key=(topology_key:String)-instance-method" class="signature"><strong>#topology_key=</strong>(topology_key : String)</a>
+        <a href="#topology_key%3D%28topology_key%3AString%29-instance-method" class="signature"><strong>#topology_key=</strong>(topology_key : String)</a>
         
       </li>
     
@@ -4269,7 +4274,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4337,12 +4342,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key &lt;topologyKey> matches that of any node on which a pod of the set of pods is running</p>
+          <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running</p>
         </div>
       
       <br/>
@@ -4356,12 +4361,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key &lt;topologyKey> matches that of any node on which a pod of the set of pods is running</p>
+          <p>Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running</p>
         </div>
       
       <br/>
@@ -4375,7 +4380,7 @@
         
         def self.<strong>new</strong>(*, label_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>? = <span class="n">nil</span>, namespace_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>? = <span class="n">nil</span>, namespaces : Array? = <span class="n">nil</span>, topology_key : String)
 
-        <a class="method-permalink" href="#new(*,label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,namespaces:Array?=nil,topology_key:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Clabel_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cnamespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Cnamespaces%3AArray%3F%3Dnil%2Ctopology_key%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4403,7 +4408,7 @@
         
         def <strong>label_selector</strong> : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?
 
-        <a class="method-permalink" href="#label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method">#</a>
+        <a class="method-permalink" href="#label_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4417,7 +4422,7 @@
         
         def <strong>label_selector=</strong>(label_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?)
 
-        <a class="method-permalink" href="#label_selector=(label_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method">#</a>
+        <a class="method-permalink" href="#label_selector%3D%28label_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4431,7 +4436,7 @@
         
         def <strong>namespace_selector</strong> : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?
 
-        <a class="method-permalink" href="#namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method">#</a>
+        <a class="method-permalink" href="#namespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4445,7 +4450,7 @@
         
         def <strong>namespace_selector=</strong>(namespace_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?)
 
-        <a class="method-permalink" href="#namespace_selector=(namespace_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method">#</a>
+        <a class="method-permalink" href="#namespace_selector%3D%28namespace_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4459,7 +4464,7 @@
         
         def <strong>namespaces</strong> : Array(String)?
 
-        <a class="method-permalink" href="#namespaces:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#namespaces%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4473,7 +4478,7 @@
         
         def <strong>namespaces=</strong>(namespaces : Array(String)?)
 
-        <a class="method-permalink" href="#namespaces=(namespaces:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#namespaces%3D%28namespaces%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4487,7 +4492,7 @@
         
         def <strong>topology_key</strong> : String
 
-        <a class="method-permalink" href="#topology_key:String-instance-method">#</a>
+        <a class="method-permalink" href="#topology_key%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -4501,7 +4506,7 @@
         
         def <strong>topology_key=</strong>(topology_key : String)
 
-        <a class="method-permalink" href="#topology_key=(topology_key:String)-instance-method">#</a>
+        <a class="method-permalink" href="#topology_key%3D%28topology_key%3AString%29-instance-method">#</a>
       </div>
       
       <br/>

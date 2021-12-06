@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -3881,6 +3881,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -3939,8 +3944,7 @@
     Overview
   </h2>
 
-  <p>VolumeAttachment captures the intent to attach or detach the specified volume <a href="to/from the specified node.">to/from the specified node.</a></p>
-
+  <p>VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)</p>
 <p>VolumeAttachment objects are non-namespaced.</p>
 
 
@@ -3986,21 +3990,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
-          <div class="summary"><p>VolumeAttachment captures the intent to attach or detach the specified volume <a href="to/from the specified node.">to/from the specified node.</a></p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-          <div class="summary"><p>VolumeAttachment captures the intent to attach or detach the specified volume <a href="to/from the specified node.">to/from the specified node.</a></p></div>
+          <div class="summary"><p>VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,spec:Api::Storage::V1::VolumeAttachmentSpec,status:Api::Storage::V1::VolumeAttachmentStatus?=nil)-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, spec : Api::Storage::V1::VolumeAttachmentSpec, status : Api::Storage::V1::VolumeAttachmentStatus? = <span class="n">nil</span>)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+          <div class="summary"><p>VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cspec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec%2Cstatus%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, spec : Api::Storage::V1::VolumeAttachmentSpec, status : Api::Storage::V1::VolumeAttachmentStatus? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -4021,22 +4025,22 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#spec:Api::Storage::V1::VolumeAttachmentSpec-instance-method" class="signature"><strong>#spec</strong> : Api::Storage::V1::VolumeAttachmentSpec</a>
+        <a href="#spec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec-instance-method" class="signature"><strong>#spec</strong> : Api::Storage::V1::VolumeAttachmentSpec</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#spec=(spec:Api::Storage::V1::VolumeAttachmentSpec)-instance-method" class="signature"><strong>#spec=</strong>(spec : Api::Storage::V1::VolumeAttachmentSpec)</a>
+        <a href="#spec%3D%28spec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec%29-instance-method" class="signature"><strong>#spec=</strong>(spec : Api::Storage::V1::VolumeAttachmentSpec)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#status:Api::Storage::V1::VolumeAttachmentStatus?-instance-method" class="signature"><strong>#status</strong> : Api::Storage::V1::VolumeAttachmentStatus?</a>
+        <a href="#status%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F-instance-method" class="signature"><strong>#status</strong> : Api::Storage::V1::VolumeAttachmentStatus?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#status=(status:Api::Storage::V1::VolumeAttachmentStatus?)-instance-method" class="signature"><strong>#status=</strong>(status : Api::Storage::V1::VolumeAttachmentStatus?)</a>
+        <a href="#status%3D%28status%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F%29-instance-method" class="signature"><strong>#status=</strong>(status : Api::Storage::V1::VolumeAttachmentStatus?)</a>
         
       </li>
     
@@ -4053,12 +4057,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F-instance-method" class="tooltip">
       <span>metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?</span>
     metadata</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata=(metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?)-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3D%28metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%29-instance-method" class="tooltip">
       <span>metadata=(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?)</span>
     metadata=</a>
     
@@ -4070,7 +4074,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4086,12 +4090,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version%3AString-instance-method" class="tooltip">
       <span>api_version : String</span>
     api_version</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind%3AString-instance-method" class="tooltip">
       <span>kind : String</span>
     kind</a>
     
@@ -4103,7 +4107,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4122,7 +4126,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4190,13 +4194,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>VolumeAttachment captures the intent to attach or detach the specified volume <a href="to/from the specified node.">to/from the specified node.</a></p>
-
+          <p>VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)</p>
 <p>VolumeAttachment objects are non-namespaced.</p>
         </div>
       
@@ -4211,13 +4214,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>VolumeAttachment captures the intent to attach or detach the specified volume <a href="to/from the specified node.">to/from the specified node.</a></p>
-
+          <p>VolumeAttachment captures the intent to attach or detach the specified volume [to/from the specified node.](to/from the specified node.)</p>
 <p>VolumeAttachment objects are non-namespaced.</p>
         </div>
       
@@ -4232,7 +4234,7 @@
         
         def self.<strong>new</strong>(*, metadata : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/ObjectMeta.html">Apimachinery::Apis::Meta::V1::ObjectMeta</a>? = <span class="n">nil</span>, spec : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentSpec.html">Api::Storage::V1::VolumeAttachmentSpec</a>, status : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentStatus.html">Api::Storage::V1::VolumeAttachmentStatus</a>? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,spec:Api::Storage::V1::VolumeAttachmentSpec,status:Api::Storage::V1::VolumeAttachmentStatus?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cspec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec%2Cstatus%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4260,7 +4262,7 @@
         
         def <strong>spec</strong> : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentSpec.html">Api::Storage::V1::VolumeAttachmentSpec</a>
 
-        <a class="method-permalink" href="#spec:Api::Storage::V1::VolumeAttachmentSpec-instance-method">#</a>
+        <a class="method-permalink" href="#spec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec-instance-method">#</a>
       </div>
       
       <br/>
@@ -4274,7 +4276,7 @@
         
         def <strong>spec=</strong>(spec : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentSpec.html">Api::Storage::V1::VolumeAttachmentSpec</a>)
 
-        <a class="method-permalink" href="#spec=(spec:Api::Storage::V1::VolumeAttachmentSpec)-instance-method">#</a>
+        <a class="method-permalink" href="#spec%3D%28spec%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentSpec%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4288,7 +4290,7 @@
         
         def <strong>status</strong> : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentStatus.html">Api::Storage::V1::VolumeAttachmentStatus</a>?
 
-        <a class="method-permalink" href="#status:Api::Storage::V1::VolumeAttachmentStatus?-instance-method">#</a>
+        <a class="method-permalink" href="#status%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4302,7 +4304,7 @@
         
         def <strong>status=</strong>(status : <a href="../../../../Pyrite/Api/Storage/V1/VolumeAttachmentStatus.html">Api::Storage::V1::VolumeAttachmentStatus</a>?)
 
-        <a class="method-permalink" href="#status=(status:Api::Storage::V1::VolumeAttachmentStatus?)-instance-method">#</a>
+        <a class="method-permalink" href="#status%3D%28status%3AApi%3A%3AStorage%3A%3AV1%3A%3AVolumeAttachmentStatus%3F%29-instance-method">#</a>
       </div>
       
       <br/>

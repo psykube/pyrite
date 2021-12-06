@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -3626,6 +3626,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -3684,10 +3689,12 @@
     Overview
   </h2>
 
-  <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by <a href="apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:">apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:</a></p>
-
-<ul><li>Network: A single stable DNS and hostname.</li><li>Storage: As many VolumeClaims as requested.
-The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li></ul>
+  <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by [apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:](apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:)</p>
+<ul>
+<li>Network: A single stable DNS and hostname.</li>
+<li>Storage: As many VolumeClaims as requested.
+The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li>
+</ul>
 
 
 
@@ -3732,21 +3739,21 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by [apps/v1beta2/StatefulSet.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by [apps/v1beta2/StatefulSet.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,spec:Api::Apps::V1beta1::StatefulSetSpec?=nil,status:Api::Apps::V1beta1::StatefulSetStatus?=nil)-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, spec : Api::Apps::V1beta1::StatefulSetSpec? = <span class="n">nil</span>, status : Api::Apps::V1beta1::StatefulSetStatus? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cspec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F%3Dnil%2Cstatus%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, spec : Api::Apps::V1beta1::StatefulSetSpec? = <span class="n">nil</span>, status : Api::Apps::V1beta1::StatefulSetStatus? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -3767,22 +3774,22 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#spec:Api::Apps::V1beta1::StatefulSetSpec?-instance-method" class="signature"><strong>#spec</strong> : Api::Apps::V1beta1::StatefulSetSpec?</a>
+        <a href="#spec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F-instance-method" class="signature"><strong>#spec</strong> : Api::Apps::V1beta1::StatefulSetSpec?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#spec=(spec:Api::Apps::V1beta1::StatefulSetSpec?)-instance-method" class="signature"><strong>#spec=</strong>(spec : Api::Apps::V1beta1::StatefulSetSpec?)</a>
+        <a href="#spec%3D%28spec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F%29-instance-method" class="signature"><strong>#spec=</strong>(spec : Api::Apps::V1beta1::StatefulSetSpec?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#status:Api::Apps::V1beta1::StatefulSetStatus?-instance-method" class="signature"><strong>#status</strong> : Api::Apps::V1beta1::StatefulSetStatus?</a>
+        <a href="#status%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F-instance-method" class="signature"><strong>#status</strong> : Api::Apps::V1beta1::StatefulSetStatus?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#status=(status:Api::Apps::V1beta1::StatefulSetStatus?)-instance-method" class="signature"><strong>#status=</strong>(status : Api::Apps::V1beta1::StatefulSetStatus?)</a>
+        <a href="#status%3D%28status%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F%29-instance-method" class="signature"><strong>#status=</strong>(status : Api::Apps::V1beta1::StatefulSetStatus?)</a>
         
       </li>
     
@@ -3799,12 +3806,12 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F-instance-method" class="tooltip">
       <span>metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?</span>
     metadata</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata=(metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?)-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3D%28metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%29-instance-method" class="tooltip">
       <span>metadata=(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?)</span>
     metadata=</a>
     
@@ -3816,7 +3823,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3832,12 +3839,12 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version%3AString-instance-method" class="tooltip">
       <span>api_version : String</span>
     api_version</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind%3AString-instance-method" class="tooltip">
       <span>kind : String</span>
     kind</a>
     
@@ -3849,7 +3856,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3868,7 +3875,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3936,15 +3943,17 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by <a href="apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:">apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:</a></p>
-
-<ul><li>Network: A single stable DNS and hostname.</li><li>Storage: As many VolumeClaims as requested.
-The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li></ul>
+          <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by [apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:](apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:)</p>
+<ul>
+<li>Network: A single stable DNS and hostname.</li>
+<li>Storage: As many VolumeClaims as requested.
+The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li>
+</ul>
         </div>
       
       <br/>
@@ -3958,15 +3967,17 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by <a href="apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:">apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:</a></p>
-
-<ul><li>Network: A single stable DNS and hostname.</li><li>Storage: As many VolumeClaims as requested.
-The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li></ul>
+          <p><span class="flag red">DEPRECATED</span>  - This group version of StatefulSet is deprecated by [apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:](apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:)</p>
+<ul>
+<li>Network: A single stable DNS and hostname.</li>
+<li>Storage: As many VolumeClaims as requested.
+The StatefulSet guarantees that a given network identity will always map to the same storage identity.</li>
+</ul>
         </div>
       
       <br/>
@@ -3980,7 +3991,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def self.<strong>new</strong>(*, metadata : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/ObjectMeta.html">Apimachinery::Apis::Meta::V1::ObjectMeta</a>? = <span class="n">nil</span>, spec : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetSpec.html">Api::Apps::V1beta1::StatefulSetSpec</a>? = <span class="n">nil</span>, status : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetStatus.html">Api::Apps::V1beta1::StatefulSetStatus</a>? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,spec:Api::Apps::V1beta1::StatefulSetSpec?=nil,status:Api::Apps::V1beta1::StatefulSetStatus?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cspec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F%3Dnil%2Cstatus%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4008,7 +4019,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def <strong>spec</strong> : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetSpec.html">Api::Apps::V1beta1::StatefulSetSpec</a>?
 
-        <a class="method-permalink" href="#spec:Api::Apps::V1beta1::StatefulSetSpec?-instance-method">#</a>
+        <a class="method-permalink" href="#spec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4022,7 +4033,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def <strong>spec=</strong>(spec : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetSpec.html">Api::Apps::V1beta1::StatefulSetSpec</a>?)
 
-        <a class="method-permalink" href="#spec=(spec:Api::Apps::V1beta1::StatefulSetSpec?)-instance-method">#</a>
+        <a class="method-permalink" href="#spec%3D%28spec%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetSpec%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4036,7 +4047,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def <strong>status</strong> : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetStatus.html">Api::Apps::V1beta1::StatefulSetStatus</a>?
 
-        <a class="method-permalink" href="#status:Api::Apps::V1beta1::StatefulSetStatus?-instance-method">#</a>
+        <a class="method-permalink" href="#status%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4050,7 +4061,7 @@ The StatefulSet guarantees that a given network identity will always map to the 
         
         def <strong>status=</strong>(status : <a href="../../../../Pyrite/Api/Apps/V1beta1/StatefulSetStatus.html">Api::Apps::V1beta1::StatefulSetStatus</a>?)
 
-        <a class="method-permalink" href="#status=(status:Api::Apps::V1beta1::StatefulSetStatus?)-instance-method">#</a>
+        <a class="method-permalink" href="#status%3D%28status%3AApi%3A%3AApps%3A%3AV1beta1%3A%3AStatefulSetStatus%3F%29-instance-method">#</a>
       </div>
       
       <br/>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -3811,6 +3811,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -3914,21 +3919,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>PersistentVolumeSpec is the specification of a persistent volume.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>PersistentVolumeSpec is the specification of a persistent volume.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,access_modes:Array?=nil,aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?=nil,azure_disk:Api::Core::V1::AzureDiskVolumeSource?=nil,azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?=nil,capacity:Hash(String,String)?=nil,cephfs:Api::Core::V1::CephFSPersistentVolumeSource?=nil,cinder:Api::Core::V1::CinderPersistentVolumeSource?=nil,claim_ref:Api::Core::V1::ObjectReference?=nil,csi:Api::Core::V1::CSIPersistentVolumeSource?=nil,fc:Api::Core::V1::FCVolumeSource?=nil,flex_volume:Api::Core::V1::FlexPersistentVolumeSource?=nil,flocker:Api::Core::V1::FlockerVolumeSource?=nil,gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?=nil,glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?=nil,host_path:Api::Core::V1::HostPathVolumeSource?=nil,iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?=nil,local:Api::Core::V1::LocalVolumeSource?=nil,mount_options:Array?=nil,nfs:Api::Core::V1::NFSVolumeSource?=nil,node_affinity:Api::Core::V1::VolumeNodeAffinity?=nil,persistent_volume_reclaim_policy:String?=nil,photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?=nil,portworx_volume:Api::Core::V1::PortworxVolumeSource?=nil,quobyte:Api::Core::V1::QuobyteVolumeSource?=nil,rbd:Api::Core::V1::RBDPersistentVolumeSource?=nil,scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?=nil,storage_class_name:String?=nil,storageos:Api::Core::V1::StorageOSPersistentVolumeSource?=nil,volume_mode:String?=nil,vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?=nil)-class-method" class="signature"><strong>.new</strong>(*, access_modes : Array? = <span class="n">nil</span>, aws_elastic_block_store : Api::Core::V1::AWSElasticBlockStoreVolumeSource? = <span class="n">nil</span>, azure_disk : Api::Core::V1::AzureDiskVolumeSource? = <span class="n">nil</span>, azure_file : Api::Core::V1::AzureFilePersistentVolumeSource? = <span class="n">nil</span>, capacity : Hash(String, String)? = <span class="n">nil</span>, cephfs : Api::Core::V1::CephFSPersistentVolumeSource? = <span class="n">nil</span>, cinder : Api::Core::V1::CinderPersistentVolumeSource? = <span class="n">nil</span>, claim_ref : Api::Core::V1::ObjectReference? = <span class="n">nil</span>, csi : Api::Core::V1::CSIPersistentVolumeSource? = <span class="n">nil</span>, fc : Api::Core::V1::FCVolumeSource? = <span class="n">nil</span>, flex_volume : Api::Core::V1::FlexPersistentVolumeSource? = <span class="n">nil</span>, flocker : Api::Core::V1::FlockerVolumeSource? = <span class="n">nil</span>, gce_persistent_disk : Api::Core::V1::GCEPersistentDiskVolumeSource? = <span class="n">nil</span>, glusterfs : Api::Core::V1::GlusterfsPersistentVolumeSource? = <span class="n">nil</span>, host_path : Api::Core::V1::HostPathVolumeSource? = <span class="n">nil</span>, iscsi : Api::Core::V1::ISCSIPersistentVolumeSource? = <span class="n">nil</span>, local : Api::Core::V1::LocalVolumeSource? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, nfs : Api::Core::V1::NFSVolumeSource? = <span class="n">nil</span>, node_affinity : Api::Core::V1::VolumeNodeAffinity? = <span class="n">nil</span>, persistent_volume_reclaim_policy : String? = <span class="n">nil</span>, photon_persistent_disk : Api::Core::V1::PhotonPersistentDiskVolumeSource? = <span class="n">nil</span>, portworx_volume : Api::Core::V1::PortworxVolumeSource? = <span class="n">nil</span>, quobyte : Api::Core::V1::QuobyteVolumeSource? = <span class="n">nil</span>, rbd : Api::Core::V1::RBDPersistentVolumeSource? = <span class="n">nil</span>, scale_io : Api::Core::V1::ScaleIOPersistentVolumeSource? = <span class="n">nil</span>, storage_class_name : String? = <span class="n">nil</span>, storageos : Api::Core::V1::StorageOSPersistentVolumeSource? = <span class="n">nil</span>, volume_mode : String? = <span class="n">nil</span>, vsphere_volume : Api::Core::V1::VsphereVirtualDiskVolumeSource? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Caccess_modes%3AArray%3F%3Dnil%2Caws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F%3Dnil%2Cazure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F%3Dnil%2Cazure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F%3Dnil%2Ccapacity%3AHash%28String%2CString%29%3F%3Dnil%2Ccephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F%3Dnil%2Ccinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F%3Dnil%2Cclaim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F%3Dnil%2Ccsi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F%3Dnil%2Cfc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F%3Dnil%2Cflex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F%3Dnil%2Cflocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F%3Dnil%2Cgce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F%3Dnil%2Cglusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F%3Dnil%2Chost_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F%3Dnil%2Ciscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F%3Dnil%2Clocal%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F%3Dnil%2Cmount_options%3AArray%3F%3Dnil%2Cnfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F%3Dnil%2Cnode_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F%3Dnil%2Cpersistent_volume_reclaim_policy%3AString%3F%3Dnil%2Cphoton_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F%3Dnil%2Cportworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F%3Dnil%2Cquobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F%3Dnil%2Crbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F%3Dnil%2Cscale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F%3Dnil%2Cstorage_class_name%3AString%3F%3Dnil%2Cstorageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F%3Dnil%2Cvolume_mode%3AString%3F%3Dnil%2Cvsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, access_modes : Array? = <span class="n">nil</span>, aws_elastic_block_store : Api::Core::V1::AWSElasticBlockStoreVolumeSource? = <span class="n">nil</span>, azure_disk : Api::Core::V1::AzureDiskVolumeSource? = <span class="n">nil</span>, azure_file : Api::Core::V1::AzureFilePersistentVolumeSource? = <span class="n">nil</span>, capacity : Hash(String, String)? = <span class="n">nil</span>, cephfs : Api::Core::V1::CephFSPersistentVolumeSource? = <span class="n">nil</span>, cinder : Api::Core::V1::CinderPersistentVolumeSource? = <span class="n">nil</span>, claim_ref : Api::Core::V1::ObjectReference? = <span class="n">nil</span>, csi : Api::Core::V1::CSIPersistentVolumeSource? = <span class="n">nil</span>, fc : Api::Core::V1::FCVolumeSource? = <span class="n">nil</span>, flex_volume : Api::Core::V1::FlexPersistentVolumeSource? = <span class="n">nil</span>, flocker : Api::Core::V1::FlockerVolumeSource? = <span class="n">nil</span>, gce_persistent_disk : Api::Core::V1::GCEPersistentDiskVolumeSource? = <span class="n">nil</span>, glusterfs : Api::Core::V1::GlusterfsPersistentVolumeSource? = <span class="n">nil</span>, host_path : Api::Core::V1::HostPathVolumeSource? = <span class="n">nil</span>, iscsi : Api::Core::V1::ISCSIPersistentVolumeSource? = <span class="n">nil</span>, local : Api::Core::V1::LocalVolumeSource? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, nfs : Api::Core::V1::NFSVolumeSource? = <span class="n">nil</span>, node_affinity : Api::Core::V1::VolumeNodeAffinity? = <span class="n">nil</span>, persistent_volume_reclaim_policy : String? = <span class="n">nil</span>, photon_persistent_disk : Api::Core::V1::PhotonPersistentDiskVolumeSource? = <span class="n">nil</span>, portworx_volume : Api::Core::V1::PortworxVolumeSource? = <span class="n">nil</span>, quobyte : Api::Core::V1::QuobyteVolumeSource? = <span class="n">nil</span>, rbd : Api::Core::V1::RBDPersistentVolumeSource? = <span class="n">nil</span>, scale_io : Api::Core::V1::ScaleIOPersistentVolumeSource? = <span class="n">nil</span>, storage_class_name : String? = <span class="n">nil</span>, storageos : Api::Core::V1::StorageOSPersistentVolumeSource? = <span class="n">nil</span>, volume_mode : String? = <span class="n">nil</span>, vsphere_volume : Api::Core::V1::VsphereVirtualDiskVolumeSource? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -3949,302 +3954,302 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#access_modes:Array(String)?-instance-method" class="signature"><strong>#access_modes</strong> : Array(String)?</a>
+        <a href="#access_modes%3AArray%28String%29%3F-instance-method" class="signature"><strong>#access_modes</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#access_modes=(access_modes:Array(String)?)-instance-method" class="signature"><strong>#access_modes=</strong>(access_modes : Array(String)?)</a>
+        <a href="#access_modes%3D%28access_modes%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#access_modes=</strong>(access_modes : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?-instance-method" class="signature"><strong>#aws_elastic_block_store</strong> : Api::Core::V1::AWSElasticBlockStoreVolumeSource?</a>
+        <a href="#aws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F-instance-method" class="signature"><strong>#aws_elastic_block_store</strong> : Api::Core::V1::AWSElasticBlockStoreVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#aws_elastic_block_store=(aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?)-instance-method" class="signature"><strong>#aws_elastic_block_store=</strong>(aws_elastic_block_store : Api::Core::V1::AWSElasticBlockStoreVolumeSource?)</a>
+        <a href="#aws_elastic_block_store%3D%28aws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F%29-instance-method" class="signature"><strong>#aws_elastic_block_store=</strong>(aws_elastic_block_store : Api::Core::V1::AWSElasticBlockStoreVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#azure_disk:Api::Core::V1::AzureDiskVolumeSource?-instance-method" class="signature"><strong>#azure_disk</strong> : Api::Core::V1::AzureDiskVolumeSource?</a>
+        <a href="#azure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F-instance-method" class="signature"><strong>#azure_disk</strong> : Api::Core::V1::AzureDiskVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#azure_disk=(azure_disk:Api::Core::V1::AzureDiskVolumeSource?)-instance-method" class="signature"><strong>#azure_disk=</strong>(azure_disk : Api::Core::V1::AzureDiskVolumeSource?)</a>
+        <a href="#azure_disk%3D%28azure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F%29-instance-method" class="signature"><strong>#azure_disk=</strong>(azure_disk : Api::Core::V1::AzureDiskVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?-instance-method" class="signature"><strong>#azure_file</strong> : Api::Core::V1::AzureFilePersistentVolumeSource?</a>
+        <a href="#azure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F-instance-method" class="signature"><strong>#azure_file</strong> : Api::Core::V1::AzureFilePersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#azure_file=(azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?)-instance-method" class="signature"><strong>#azure_file=</strong>(azure_file : Api::Core::V1::AzureFilePersistentVolumeSource?)</a>
+        <a href="#azure_file%3D%28azure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#azure_file=</strong>(azure_file : Api::Core::V1::AzureFilePersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#capacity:Hash(String,String)?-instance-method" class="signature"><strong>#capacity</strong> : Hash(String, String)?</a>
+        <a href="#capacity%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#capacity</strong> : Hash(String, String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#capacity=(capacity:Hash(String,String)?)-instance-method" class="signature"><strong>#capacity=</strong>(capacity : Hash(String, String)?)</a>
+        <a href="#capacity%3D%28capacity%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#capacity=</strong>(capacity : Hash(String, String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cephfs:Api::Core::V1::CephFSPersistentVolumeSource?-instance-method" class="signature"><strong>#cephfs</strong> : Api::Core::V1::CephFSPersistentVolumeSource?</a>
+        <a href="#cephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F-instance-method" class="signature"><strong>#cephfs</strong> : Api::Core::V1::CephFSPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cephfs=(cephfs:Api::Core::V1::CephFSPersistentVolumeSource?)-instance-method" class="signature"><strong>#cephfs=</strong>(cephfs : Api::Core::V1::CephFSPersistentVolumeSource?)</a>
+        <a href="#cephfs%3D%28cephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#cephfs=</strong>(cephfs : Api::Core::V1::CephFSPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cinder:Api::Core::V1::CinderPersistentVolumeSource?-instance-method" class="signature"><strong>#cinder</strong> : Api::Core::V1::CinderPersistentVolumeSource?</a>
+        <a href="#cinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F-instance-method" class="signature"><strong>#cinder</strong> : Api::Core::V1::CinderPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cinder=(cinder:Api::Core::V1::CinderPersistentVolumeSource?)-instance-method" class="signature"><strong>#cinder=</strong>(cinder : Api::Core::V1::CinderPersistentVolumeSource?)</a>
+        <a href="#cinder%3D%28cinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#cinder=</strong>(cinder : Api::Core::V1::CinderPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#claim_ref:Api::Core::V1::ObjectReference?-instance-method" class="signature"><strong>#claim_ref</strong> : Api::Core::V1::ObjectReference?</a>
+        <a href="#claim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F-instance-method" class="signature"><strong>#claim_ref</strong> : Api::Core::V1::ObjectReference?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#claim_ref=(claim_ref:Api::Core::V1::ObjectReference?)-instance-method" class="signature"><strong>#claim_ref=</strong>(claim_ref : Api::Core::V1::ObjectReference?)</a>
+        <a href="#claim_ref%3D%28claim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F%29-instance-method" class="signature"><strong>#claim_ref=</strong>(claim_ref : Api::Core::V1::ObjectReference?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#csi:Api::Core::V1::CSIPersistentVolumeSource?-instance-method" class="signature"><strong>#csi</strong> : Api::Core::V1::CSIPersistentVolumeSource?</a>
+        <a href="#csi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F-instance-method" class="signature"><strong>#csi</strong> : Api::Core::V1::CSIPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#csi=(csi:Api::Core::V1::CSIPersistentVolumeSource?)-instance-method" class="signature"><strong>#csi=</strong>(csi : Api::Core::V1::CSIPersistentVolumeSource?)</a>
+        <a href="#csi%3D%28csi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#csi=</strong>(csi : Api::Core::V1::CSIPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fc:Api::Core::V1::FCVolumeSource?-instance-method" class="signature"><strong>#fc</strong> : Api::Core::V1::FCVolumeSource?</a>
+        <a href="#fc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F-instance-method" class="signature"><strong>#fc</strong> : Api::Core::V1::FCVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fc=(fc:Api::Core::V1::FCVolumeSource?)-instance-method" class="signature"><strong>#fc=</strong>(fc : Api::Core::V1::FCVolumeSource?)</a>
+        <a href="#fc%3D%28fc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F%29-instance-method" class="signature"><strong>#fc=</strong>(fc : Api::Core::V1::FCVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flex_volume:Api::Core::V1::FlexPersistentVolumeSource?-instance-method" class="signature"><strong>#flex_volume</strong> : Api::Core::V1::FlexPersistentVolumeSource?</a>
+        <a href="#flex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F-instance-method" class="signature"><strong>#flex_volume</strong> : Api::Core::V1::FlexPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flex_volume=(flex_volume:Api::Core::V1::FlexPersistentVolumeSource?)-instance-method" class="signature"><strong>#flex_volume=</strong>(flex_volume : Api::Core::V1::FlexPersistentVolumeSource?)</a>
+        <a href="#flex_volume%3D%28flex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#flex_volume=</strong>(flex_volume : Api::Core::V1::FlexPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flocker:Api::Core::V1::FlockerVolumeSource?-instance-method" class="signature"><strong>#flocker</strong> : Api::Core::V1::FlockerVolumeSource?</a>
+        <a href="#flocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F-instance-method" class="signature"><strong>#flocker</strong> : Api::Core::V1::FlockerVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#flocker=(flocker:Api::Core::V1::FlockerVolumeSource?)-instance-method" class="signature"><strong>#flocker=</strong>(flocker : Api::Core::V1::FlockerVolumeSource?)</a>
+        <a href="#flocker%3D%28flocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F%29-instance-method" class="signature"><strong>#flocker=</strong>(flocker : Api::Core::V1::FlockerVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?-instance-method" class="signature"><strong>#gce_persistent_disk</strong> : Api::Core::V1::GCEPersistentDiskVolumeSource?</a>
+        <a href="#gce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F-instance-method" class="signature"><strong>#gce_persistent_disk</strong> : Api::Core::V1::GCEPersistentDiskVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#gce_persistent_disk=(gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?)-instance-method" class="signature"><strong>#gce_persistent_disk=</strong>(gce_persistent_disk : Api::Core::V1::GCEPersistentDiskVolumeSource?)</a>
+        <a href="#gce_persistent_disk%3D%28gce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F%29-instance-method" class="signature"><strong>#gce_persistent_disk=</strong>(gce_persistent_disk : Api::Core::V1::GCEPersistentDiskVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?-instance-method" class="signature"><strong>#glusterfs</strong> : Api::Core::V1::GlusterfsPersistentVolumeSource?</a>
+        <a href="#glusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F-instance-method" class="signature"><strong>#glusterfs</strong> : Api::Core::V1::GlusterfsPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#glusterfs=(glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?)-instance-method" class="signature"><strong>#glusterfs=</strong>(glusterfs : Api::Core::V1::GlusterfsPersistentVolumeSource?)</a>
+        <a href="#glusterfs%3D%28glusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#glusterfs=</strong>(glusterfs : Api::Core::V1::GlusterfsPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_path:Api::Core::V1::HostPathVolumeSource?-instance-method" class="signature"><strong>#host_path</strong> : Api::Core::V1::HostPathVolumeSource?</a>
+        <a href="#host_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F-instance-method" class="signature"><strong>#host_path</strong> : Api::Core::V1::HostPathVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_path=(host_path:Api::Core::V1::HostPathVolumeSource?)-instance-method" class="signature"><strong>#host_path=</strong>(host_path : Api::Core::V1::HostPathVolumeSource?)</a>
+        <a href="#host_path%3D%28host_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F%29-instance-method" class="signature"><strong>#host_path=</strong>(host_path : Api::Core::V1::HostPathVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?-instance-method" class="signature"><strong>#iscsi</strong> : Api::Core::V1::ISCSIPersistentVolumeSource?</a>
+        <a href="#iscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F-instance-method" class="signature"><strong>#iscsi</strong> : Api::Core::V1::ISCSIPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#iscsi=(iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?)-instance-method" class="signature"><strong>#iscsi=</strong>(iscsi : Api::Core::V1::ISCSIPersistentVolumeSource?)</a>
+        <a href="#iscsi%3D%28iscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#iscsi=</strong>(iscsi : Api::Core::V1::ISCSIPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local:Api::Core::V1::LocalVolumeSource?-instance-method" class="signature"><strong>#local</strong> : Api::Core::V1::LocalVolumeSource?</a>
+        <a href="#local%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F-instance-method" class="signature"><strong>#local</strong> : Api::Core::V1::LocalVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#local=(local:Api::Core::V1::LocalVolumeSource?)-instance-method" class="signature"><strong>#local=</strong>(local : Api::Core::V1::LocalVolumeSource?)</a>
+        <a href="#local%3D%28local%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F%29-instance-method" class="signature"><strong>#local=</strong>(local : Api::Core::V1::LocalVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mount_options:Array(String)?-instance-method" class="signature"><strong>#mount_options</strong> : Array(String)?</a>
+        <a href="#mount_options%3AArray%28String%29%3F-instance-method" class="signature"><strong>#mount_options</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mount_options=(mount_options:Array(String)?)-instance-method" class="signature"><strong>#mount_options=</strong>(mount_options : Array(String)?)</a>
+        <a href="#mount_options%3D%28mount_options%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#mount_options=</strong>(mount_options : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nfs:Api::Core::V1::NFSVolumeSource?-instance-method" class="signature"><strong>#nfs</strong> : Api::Core::V1::NFSVolumeSource?</a>
+        <a href="#nfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F-instance-method" class="signature"><strong>#nfs</strong> : Api::Core::V1::NFSVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#nfs=(nfs:Api::Core::V1::NFSVolumeSource?)-instance-method" class="signature"><strong>#nfs=</strong>(nfs : Api::Core::V1::NFSVolumeSource?)</a>
+        <a href="#nfs%3D%28nfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F%29-instance-method" class="signature"><strong>#nfs=</strong>(nfs : Api::Core::V1::NFSVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_affinity:Api::Core::V1::VolumeNodeAffinity?-instance-method" class="signature"><strong>#node_affinity</strong> : Api::Core::V1::VolumeNodeAffinity?</a>
+        <a href="#node_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F-instance-method" class="signature"><strong>#node_affinity</strong> : Api::Core::V1::VolumeNodeAffinity?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_affinity=(node_affinity:Api::Core::V1::VolumeNodeAffinity?)-instance-method" class="signature"><strong>#node_affinity=</strong>(node_affinity : Api::Core::V1::VolumeNodeAffinity?)</a>
+        <a href="#node_affinity%3D%28node_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F%29-instance-method" class="signature"><strong>#node_affinity=</strong>(node_affinity : Api::Core::V1::VolumeNodeAffinity?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#persistent_volume_reclaim_policy:String?-instance-method" class="signature"><strong>#persistent_volume_reclaim_policy</strong> : String?</a>
+        <a href="#persistent_volume_reclaim_policy%3AString%3F-instance-method" class="signature"><strong>#persistent_volume_reclaim_policy</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#persistent_volume_reclaim_policy=(persistent_volume_reclaim_policy:String?)-instance-method" class="signature"><strong>#persistent_volume_reclaim_policy=</strong>(persistent_volume_reclaim_policy : String?)</a>
+        <a href="#persistent_volume_reclaim_policy%3D%28persistent_volume_reclaim_policy%3AString%3F%29-instance-method" class="signature"><strong>#persistent_volume_reclaim_policy=</strong>(persistent_volume_reclaim_policy : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?-instance-method" class="signature"><strong>#photon_persistent_disk</strong> : Api::Core::V1::PhotonPersistentDiskVolumeSource?</a>
+        <a href="#photon_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F-instance-method" class="signature"><strong>#photon_persistent_disk</strong> : Api::Core::V1::PhotonPersistentDiskVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#photon_persistent_disk=(photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?)-instance-method" class="signature"><strong>#photon_persistent_disk=</strong>(photon_persistent_disk : Api::Core::V1::PhotonPersistentDiskVolumeSource?)</a>
+        <a href="#photon_persistent_disk%3D%28photon_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F%29-instance-method" class="signature"><strong>#photon_persistent_disk=</strong>(photon_persistent_disk : Api::Core::V1::PhotonPersistentDiskVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#portworx_volume:Api::Core::V1::PortworxVolumeSource?-instance-method" class="signature"><strong>#portworx_volume</strong> : Api::Core::V1::PortworxVolumeSource?</a>
+        <a href="#portworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F-instance-method" class="signature"><strong>#portworx_volume</strong> : Api::Core::V1::PortworxVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#portworx_volume=(portworx_volume:Api::Core::V1::PortworxVolumeSource?)-instance-method" class="signature"><strong>#portworx_volume=</strong>(portworx_volume : Api::Core::V1::PortworxVolumeSource?)</a>
+        <a href="#portworx_volume%3D%28portworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F%29-instance-method" class="signature"><strong>#portworx_volume=</strong>(portworx_volume : Api::Core::V1::PortworxVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quobyte:Api::Core::V1::QuobyteVolumeSource?-instance-method" class="signature"><strong>#quobyte</strong> : Api::Core::V1::QuobyteVolumeSource?</a>
+        <a href="#quobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F-instance-method" class="signature"><strong>#quobyte</strong> : Api::Core::V1::QuobyteVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#quobyte=(quobyte:Api::Core::V1::QuobyteVolumeSource?)-instance-method" class="signature"><strong>#quobyte=</strong>(quobyte : Api::Core::V1::QuobyteVolumeSource?)</a>
+        <a href="#quobyte%3D%28quobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F%29-instance-method" class="signature"><strong>#quobyte=</strong>(quobyte : Api::Core::V1::QuobyteVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rbd:Api::Core::V1::RBDPersistentVolumeSource?-instance-method" class="signature"><strong>#rbd</strong> : Api::Core::V1::RBDPersistentVolumeSource?</a>
+        <a href="#rbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F-instance-method" class="signature"><strong>#rbd</strong> : Api::Core::V1::RBDPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rbd=(rbd:Api::Core::V1::RBDPersistentVolumeSource?)-instance-method" class="signature"><strong>#rbd=</strong>(rbd : Api::Core::V1::RBDPersistentVolumeSource?)</a>
+        <a href="#rbd%3D%28rbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#rbd=</strong>(rbd : Api::Core::V1::RBDPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?-instance-method" class="signature"><strong>#scale_io</strong> : Api::Core::V1::ScaleIOPersistentVolumeSource?</a>
+        <a href="#scale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F-instance-method" class="signature"><strong>#scale_io</strong> : Api::Core::V1::ScaleIOPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scale_io=(scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?)-instance-method" class="signature"><strong>#scale_io=</strong>(scale_io : Api::Core::V1::ScaleIOPersistentVolumeSource?)</a>
+        <a href="#scale_io%3D%28scale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#scale_io=</strong>(scale_io : Api::Core::V1::ScaleIOPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storage_class_name:String?-instance-method" class="signature"><strong>#storage_class_name</strong> : String?</a>
+        <a href="#storage_class_name%3AString%3F-instance-method" class="signature"><strong>#storage_class_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storage_class_name=(storage_class_name:String?)-instance-method" class="signature"><strong>#storage_class_name=</strong>(storage_class_name : String?)</a>
+        <a href="#storage_class_name%3D%28storage_class_name%3AString%3F%29-instance-method" class="signature"><strong>#storage_class_name=</strong>(storage_class_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storageos:Api::Core::V1::StorageOSPersistentVolumeSource?-instance-method" class="signature"><strong>#storageos</strong> : Api::Core::V1::StorageOSPersistentVolumeSource?</a>
+        <a href="#storageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F-instance-method" class="signature"><strong>#storageos</strong> : Api::Core::V1::StorageOSPersistentVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#storageos=(storageos:Api::Core::V1::StorageOSPersistentVolumeSource?)-instance-method" class="signature"><strong>#storageos=</strong>(storageos : Api::Core::V1::StorageOSPersistentVolumeSource?)</a>
+        <a href="#storageos%3D%28storageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F%29-instance-method" class="signature"><strong>#storageos=</strong>(storageos : Api::Core::V1::StorageOSPersistentVolumeSource?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volume_mode:String?-instance-method" class="signature"><strong>#volume_mode</strong> : String?</a>
+        <a href="#volume_mode%3AString%3F-instance-method" class="signature"><strong>#volume_mode</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volume_mode=(volume_mode:String?)-instance-method" class="signature"><strong>#volume_mode=</strong>(volume_mode : String?)</a>
+        <a href="#volume_mode%3D%28volume_mode%3AString%3F%29-instance-method" class="signature"><strong>#volume_mode=</strong>(volume_mode : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?-instance-method" class="signature"><strong>#vsphere_volume</strong> : Api::Core::V1::VsphereVirtualDiskVolumeSource?</a>
+        <a href="#vsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F-instance-method" class="signature"><strong>#vsphere_volume</strong> : Api::Core::V1::VsphereVirtualDiskVolumeSource?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#vsphere_volume=(vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?)-instance-method" class="signature"><strong>#vsphere_volume=</strong>(vsphere_volume : Api::Core::V1::VsphereVirtualDiskVolumeSource?)</a>
+        <a href="#vsphere_volume%3D%28vsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F%29-instance-method" class="signature"><strong>#vsphere_volume=</strong>(vsphere_volume : Api::Core::V1::VsphereVirtualDiskVolumeSource?)</a>
         
       </li>
     
@@ -4264,7 +4269,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4332,7 +4337,7 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4351,7 +4356,7 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4370,7 +4375,7 @@
         
         def self.<strong>new</strong>(*, access_modes : Array? = <span class="n">nil</span>, aws_elastic_block_store : <a href="../../../../Pyrite/Api/Core/V1/AWSElasticBlockStoreVolumeSource.html">Api::Core::V1::AWSElasticBlockStoreVolumeSource</a>? = <span class="n">nil</span>, azure_disk : <a href="../../../../Pyrite/Api/Core/V1/AzureDiskVolumeSource.html">Api::Core::V1::AzureDiskVolumeSource</a>? = <span class="n">nil</span>, azure_file : <a href="../../../../Pyrite/Api/Core/V1/AzureFilePersistentVolumeSource.html">Api::Core::V1::AzureFilePersistentVolumeSource</a>? = <span class="n">nil</span>, capacity : Hash(String, String)? = <span class="n">nil</span>, cephfs : <a href="../../../../Pyrite/Api/Core/V1/CephFSPersistentVolumeSource.html">Api::Core::V1::CephFSPersistentVolumeSource</a>? = <span class="n">nil</span>, cinder : <a href="../../../../Pyrite/Api/Core/V1/CinderPersistentVolumeSource.html">Api::Core::V1::CinderPersistentVolumeSource</a>? = <span class="n">nil</span>, claim_ref : <a href="../../../../Pyrite/Api/Core/V1/ObjectReference.html">Api::Core::V1::ObjectReference</a>? = <span class="n">nil</span>, csi : <a href="../../../../Pyrite/Api/Core/V1/CSIPersistentVolumeSource.html">Api::Core::V1::CSIPersistentVolumeSource</a>? = <span class="n">nil</span>, fc : <a href="../../../../Pyrite/Api/Core/V1/FCVolumeSource.html">Api::Core::V1::FCVolumeSource</a>? = <span class="n">nil</span>, flex_volume : <a href="../../../../Pyrite/Api/Core/V1/FlexPersistentVolumeSource.html">Api::Core::V1::FlexPersistentVolumeSource</a>? = <span class="n">nil</span>, flocker : <a href="../../../../Pyrite/Api/Core/V1/FlockerVolumeSource.html">Api::Core::V1::FlockerVolumeSource</a>? = <span class="n">nil</span>, gce_persistent_disk : <a href="../../../../Pyrite/Api/Core/V1/GCEPersistentDiskVolumeSource.html">Api::Core::V1::GCEPersistentDiskVolumeSource</a>? = <span class="n">nil</span>, glusterfs : <a href="../../../../Pyrite/Api/Core/V1/GlusterfsPersistentVolumeSource.html">Api::Core::V1::GlusterfsPersistentVolumeSource</a>? = <span class="n">nil</span>, host_path : <a href="../../../../Pyrite/Api/Core/V1/HostPathVolumeSource.html">Api::Core::V1::HostPathVolumeSource</a>? = <span class="n">nil</span>, iscsi : <a href="../../../../Pyrite/Api/Core/V1/ISCSIPersistentVolumeSource.html">Api::Core::V1::ISCSIPersistentVolumeSource</a>? = <span class="n">nil</span>, local : <a href="../../../../Pyrite/Api/Core/V1/LocalVolumeSource.html">Api::Core::V1::LocalVolumeSource</a>? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, nfs : <a href="../../../../Pyrite/Api/Core/V1/NFSVolumeSource.html">Api::Core::V1::NFSVolumeSource</a>? = <span class="n">nil</span>, node_affinity : <a href="../../../../Pyrite/Api/Core/V1/VolumeNodeAffinity.html">Api::Core::V1::VolumeNodeAffinity</a>? = <span class="n">nil</span>, persistent_volume_reclaim_policy : String? = <span class="n">nil</span>, photon_persistent_disk : <a href="../../../../Pyrite/Api/Core/V1/PhotonPersistentDiskVolumeSource.html">Api::Core::V1::PhotonPersistentDiskVolumeSource</a>? = <span class="n">nil</span>, portworx_volume : <a href="../../../../Pyrite/Api/Core/V1/PortworxVolumeSource.html">Api::Core::V1::PortworxVolumeSource</a>? = <span class="n">nil</span>, quobyte : <a href="../../../../Pyrite/Api/Core/V1/QuobyteVolumeSource.html">Api::Core::V1::QuobyteVolumeSource</a>? = <span class="n">nil</span>, rbd : <a href="../../../../Pyrite/Api/Core/V1/RBDPersistentVolumeSource.html">Api::Core::V1::RBDPersistentVolumeSource</a>? = <span class="n">nil</span>, scale_io : <a href="../../../../Pyrite/Api/Core/V1/ScaleIOPersistentVolumeSource.html">Api::Core::V1::ScaleIOPersistentVolumeSource</a>? = <span class="n">nil</span>, storage_class_name : String? = <span class="n">nil</span>, storageos : <a href="../../../../Pyrite/Api/Core/V1/StorageOSPersistentVolumeSource.html">Api::Core::V1::StorageOSPersistentVolumeSource</a>? = <span class="n">nil</span>, volume_mode : String? = <span class="n">nil</span>, vsphere_volume : <a href="../../../../Pyrite/Api/Core/V1/VsphereVirtualDiskVolumeSource.html">Api::Core::V1::VsphereVirtualDiskVolumeSource</a>? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,access_modes:Array?=nil,aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?=nil,azure_disk:Api::Core::V1::AzureDiskVolumeSource?=nil,azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?=nil,capacity:Hash(String,String)?=nil,cephfs:Api::Core::V1::CephFSPersistentVolumeSource?=nil,cinder:Api::Core::V1::CinderPersistentVolumeSource?=nil,claim_ref:Api::Core::V1::ObjectReference?=nil,csi:Api::Core::V1::CSIPersistentVolumeSource?=nil,fc:Api::Core::V1::FCVolumeSource?=nil,flex_volume:Api::Core::V1::FlexPersistentVolumeSource?=nil,flocker:Api::Core::V1::FlockerVolumeSource?=nil,gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?=nil,glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?=nil,host_path:Api::Core::V1::HostPathVolumeSource?=nil,iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?=nil,local:Api::Core::V1::LocalVolumeSource?=nil,mount_options:Array?=nil,nfs:Api::Core::V1::NFSVolumeSource?=nil,node_affinity:Api::Core::V1::VolumeNodeAffinity?=nil,persistent_volume_reclaim_policy:String?=nil,photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?=nil,portworx_volume:Api::Core::V1::PortworxVolumeSource?=nil,quobyte:Api::Core::V1::QuobyteVolumeSource?=nil,rbd:Api::Core::V1::RBDPersistentVolumeSource?=nil,scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?=nil,storage_class_name:String?=nil,storageos:Api::Core::V1::StorageOSPersistentVolumeSource?=nil,volume_mode:String?=nil,vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Caccess_modes%3AArray%3F%3Dnil%2Caws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F%3Dnil%2Cazure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F%3Dnil%2Cazure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F%3Dnil%2Ccapacity%3AHash%28String%2CString%29%3F%3Dnil%2Ccephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F%3Dnil%2Ccinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F%3Dnil%2Cclaim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F%3Dnil%2Ccsi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F%3Dnil%2Cfc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F%3Dnil%2Cflex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F%3Dnil%2Cflocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F%3Dnil%2Cgce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F%3Dnil%2Cglusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F%3Dnil%2Chost_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F%3Dnil%2Ciscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F%3Dnil%2Clocal%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F%3Dnil%2Cmount_options%3AArray%3F%3Dnil%2Cnfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F%3Dnil%2Cnode_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F%3Dnil%2Cpersistent_volume_reclaim_policy%3AString%3F%3Dnil%2Cphoton_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F%3Dnil%2Cportworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F%3Dnil%2Cquobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F%3Dnil%2Crbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F%3Dnil%2Cscale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F%3Dnil%2Cstorage_class_name%3AString%3F%3Dnil%2Cstorageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F%3Dnil%2Cvolume_mode%3AString%3F%3Dnil%2Cvsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4398,7 +4403,7 @@
         
         def <strong>access_modes</strong> : Array(String)?
 
-        <a class="method-permalink" href="#access_modes:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#access_modes%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4412,7 +4417,7 @@
         
         def <strong>access_modes=</strong>(access_modes : Array(String)?)
 
-        <a class="method-permalink" href="#access_modes=(access_modes:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#access_modes%3D%28access_modes%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4426,7 +4431,7 @@
         
         def <strong>aws_elastic_block_store</strong> : <a href="../../../../Pyrite/Api/Core/V1/AWSElasticBlockStoreVolumeSource.html">Api::Core::V1::AWSElasticBlockStoreVolumeSource</a>?
 
-        <a class="method-permalink" href="#aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#aws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4440,7 +4445,7 @@
         
         def <strong>aws_elastic_block_store=</strong>(aws_elastic_block_store : <a href="../../../../Pyrite/Api/Core/V1/AWSElasticBlockStoreVolumeSource.html">Api::Core::V1::AWSElasticBlockStoreVolumeSource</a>?)
 
-        <a class="method-permalink" href="#aws_elastic_block_store=(aws_elastic_block_store:Api::Core::V1::AWSElasticBlockStoreVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#aws_elastic_block_store%3D%28aws_elastic_block_store%3AApi%3A%3ACore%3A%3AV1%3A%3AAWSElasticBlockStoreVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4454,7 +4459,7 @@
         
         def <strong>azure_disk</strong> : <a href="../../../../Pyrite/Api/Core/V1/AzureDiskVolumeSource.html">Api::Core::V1::AzureDiskVolumeSource</a>?
 
-        <a class="method-permalink" href="#azure_disk:Api::Core::V1::AzureDiskVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#azure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4468,7 +4473,7 @@
         
         def <strong>azure_disk=</strong>(azure_disk : <a href="../../../../Pyrite/Api/Core/V1/AzureDiskVolumeSource.html">Api::Core::V1::AzureDiskVolumeSource</a>?)
 
-        <a class="method-permalink" href="#azure_disk=(azure_disk:Api::Core::V1::AzureDiskVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#azure_disk%3D%28azure_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureDiskVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4482,7 +4487,7 @@
         
         def <strong>azure_file</strong> : <a href="../../../../Pyrite/Api/Core/V1/AzureFilePersistentVolumeSource.html">Api::Core::V1::AzureFilePersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#azure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4496,7 +4501,7 @@
         
         def <strong>azure_file=</strong>(azure_file : <a href="../../../../Pyrite/Api/Core/V1/AzureFilePersistentVolumeSource.html">Api::Core::V1::AzureFilePersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#azure_file=(azure_file:Api::Core::V1::AzureFilePersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#azure_file%3D%28azure_file%3AApi%3A%3ACore%3A%3AV1%3A%3AAzureFilePersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4510,7 +4515,7 @@
         
         def <strong>capacity</strong> : Hash(String, String)?
 
-        <a class="method-permalink" href="#capacity:Hash(String,String)?-instance-method">#</a>
+        <a class="method-permalink" href="#capacity%3AHash%28String%2CString%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4524,7 +4529,7 @@
         
         def <strong>capacity=</strong>(capacity : Hash(String, String)?)
 
-        <a class="method-permalink" href="#capacity=(capacity:Hash(String,String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#capacity%3D%28capacity%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4538,7 +4543,7 @@
         
         def <strong>cephfs</strong> : <a href="../../../../Pyrite/Api/Core/V1/CephFSPersistentVolumeSource.html">Api::Core::V1::CephFSPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#cephfs:Api::Core::V1::CephFSPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#cephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4552,7 +4557,7 @@
         
         def <strong>cephfs=</strong>(cephfs : <a href="../../../../Pyrite/Api/Core/V1/CephFSPersistentVolumeSource.html">Api::Core::V1::CephFSPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#cephfs=(cephfs:Api::Core::V1::CephFSPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#cephfs%3D%28cephfs%3AApi%3A%3ACore%3A%3AV1%3A%3ACephFSPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4566,7 +4571,7 @@
         
         def <strong>cinder</strong> : <a href="../../../../Pyrite/Api/Core/V1/CinderPersistentVolumeSource.html">Api::Core::V1::CinderPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#cinder:Api::Core::V1::CinderPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#cinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4580,7 +4585,7 @@
         
         def <strong>cinder=</strong>(cinder : <a href="../../../../Pyrite/Api/Core/V1/CinderPersistentVolumeSource.html">Api::Core::V1::CinderPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#cinder=(cinder:Api::Core::V1::CinderPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#cinder%3D%28cinder%3AApi%3A%3ACore%3A%3AV1%3A%3ACinderPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4594,7 +4599,7 @@
         
         def <strong>claim_ref</strong> : <a href="../../../../Pyrite/Api/Core/V1/ObjectReference.html">Api::Core::V1::ObjectReference</a>?
 
-        <a class="method-permalink" href="#claim_ref:Api::Core::V1::ObjectReference?-instance-method">#</a>
+        <a class="method-permalink" href="#claim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4608,7 +4613,7 @@
         
         def <strong>claim_ref=</strong>(claim_ref : <a href="../../../../Pyrite/Api/Core/V1/ObjectReference.html">Api::Core::V1::ObjectReference</a>?)
 
-        <a class="method-permalink" href="#claim_ref=(claim_ref:Api::Core::V1::ObjectReference?)-instance-method">#</a>
+        <a class="method-permalink" href="#claim_ref%3D%28claim_ref%3AApi%3A%3ACore%3A%3AV1%3A%3AObjectReference%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4622,7 +4627,7 @@
         
         def <strong>csi</strong> : <a href="../../../../Pyrite/Api/Core/V1/CSIPersistentVolumeSource.html">Api::Core::V1::CSIPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#csi:Api::Core::V1::CSIPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#csi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4636,7 +4641,7 @@
         
         def <strong>csi=</strong>(csi : <a href="../../../../Pyrite/Api/Core/V1/CSIPersistentVolumeSource.html">Api::Core::V1::CSIPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#csi=(csi:Api::Core::V1::CSIPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#csi%3D%28csi%3AApi%3A%3ACore%3A%3AV1%3A%3ACSIPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4650,7 +4655,7 @@
         
         def <strong>fc</strong> : <a href="../../../../Pyrite/Api/Core/V1/FCVolumeSource.html">Api::Core::V1::FCVolumeSource</a>?
 
-        <a class="method-permalink" href="#fc:Api::Core::V1::FCVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#fc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4664,7 +4669,7 @@
         
         def <strong>fc=</strong>(fc : <a href="../../../../Pyrite/Api/Core/V1/FCVolumeSource.html">Api::Core::V1::FCVolumeSource</a>?)
 
-        <a class="method-permalink" href="#fc=(fc:Api::Core::V1::FCVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#fc%3D%28fc%3AApi%3A%3ACore%3A%3AV1%3A%3AFCVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4678,7 +4683,7 @@
         
         def <strong>flex_volume</strong> : <a href="../../../../Pyrite/Api/Core/V1/FlexPersistentVolumeSource.html">Api::Core::V1::FlexPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#flex_volume:Api::Core::V1::FlexPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#flex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4692,7 +4697,7 @@
         
         def <strong>flex_volume=</strong>(flex_volume : <a href="../../../../Pyrite/Api/Core/V1/FlexPersistentVolumeSource.html">Api::Core::V1::FlexPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#flex_volume=(flex_volume:Api::Core::V1::FlexPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#flex_volume%3D%28flex_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AFlexPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4706,7 +4711,7 @@
         
         def <strong>flocker</strong> : <a href="../../../../Pyrite/Api/Core/V1/FlockerVolumeSource.html">Api::Core::V1::FlockerVolumeSource</a>?
 
-        <a class="method-permalink" href="#flocker:Api::Core::V1::FlockerVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#flocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4720,7 +4725,7 @@
         
         def <strong>flocker=</strong>(flocker : <a href="../../../../Pyrite/Api/Core/V1/FlockerVolumeSource.html">Api::Core::V1::FlockerVolumeSource</a>?)
 
-        <a class="method-permalink" href="#flocker=(flocker:Api::Core::V1::FlockerVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#flocker%3D%28flocker%3AApi%3A%3ACore%3A%3AV1%3A%3AFlockerVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4734,7 +4739,7 @@
         
         def <strong>gce_persistent_disk</strong> : <a href="../../../../Pyrite/Api/Core/V1/GCEPersistentDiskVolumeSource.html">Api::Core::V1::GCEPersistentDiskVolumeSource</a>?
 
-        <a class="method-permalink" href="#gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#gce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4748,7 +4753,7 @@
         
         def <strong>gce_persistent_disk=</strong>(gce_persistent_disk : <a href="../../../../Pyrite/Api/Core/V1/GCEPersistentDiskVolumeSource.html">Api::Core::V1::GCEPersistentDiskVolumeSource</a>?)
 
-        <a class="method-permalink" href="#gce_persistent_disk=(gce_persistent_disk:Api::Core::V1::GCEPersistentDiskVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#gce_persistent_disk%3D%28gce_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3AGCEPersistentDiskVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4762,7 +4767,7 @@
         
         def <strong>glusterfs</strong> : <a href="../../../../Pyrite/Api/Core/V1/GlusterfsPersistentVolumeSource.html">Api::Core::V1::GlusterfsPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#glusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4776,7 +4781,7 @@
         
         def <strong>glusterfs=</strong>(glusterfs : <a href="../../../../Pyrite/Api/Core/V1/GlusterfsPersistentVolumeSource.html">Api::Core::V1::GlusterfsPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#glusterfs=(glusterfs:Api::Core::V1::GlusterfsPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#glusterfs%3D%28glusterfs%3AApi%3A%3ACore%3A%3AV1%3A%3AGlusterfsPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4790,7 +4795,7 @@
         
         def <strong>host_path</strong> : <a href="../../../../Pyrite/Api/Core/V1/HostPathVolumeSource.html">Api::Core::V1::HostPathVolumeSource</a>?
 
-        <a class="method-permalink" href="#host_path:Api::Core::V1::HostPathVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#host_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4804,7 +4809,7 @@
         
         def <strong>host_path=</strong>(host_path : <a href="../../../../Pyrite/Api/Core/V1/HostPathVolumeSource.html">Api::Core::V1::HostPathVolumeSource</a>?)
 
-        <a class="method-permalink" href="#host_path=(host_path:Api::Core::V1::HostPathVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_path%3D%28host_path%3AApi%3A%3ACore%3A%3AV1%3A%3AHostPathVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4818,7 +4823,7 @@
         
         def <strong>iscsi</strong> : <a href="../../../../Pyrite/Api/Core/V1/ISCSIPersistentVolumeSource.html">Api::Core::V1::ISCSIPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#iscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4832,7 +4837,7 @@
         
         def <strong>iscsi=</strong>(iscsi : <a href="../../../../Pyrite/Api/Core/V1/ISCSIPersistentVolumeSource.html">Api::Core::V1::ISCSIPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#iscsi=(iscsi:Api::Core::V1::ISCSIPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#iscsi%3D%28iscsi%3AApi%3A%3ACore%3A%3AV1%3A%3AISCSIPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4846,7 +4851,7 @@
         
         def <strong>local</strong> : <a href="../../../../Pyrite/Api/Core/V1/LocalVolumeSource.html">Api::Core::V1::LocalVolumeSource</a>?
 
-        <a class="method-permalink" href="#local:Api::Core::V1::LocalVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#local%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4860,7 +4865,7 @@
         
         def <strong>local=</strong>(local : <a href="../../../../Pyrite/Api/Core/V1/LocalVolumeSource.html">Api::Core::V1::LocalVolumeSource</a>?)
 
-        <a class="method-permalink" href="#local=(local:Api::Core::V1::LocalVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#local%3D%28local%3AApi%3A%3ACore%3A%3AV1%3A%3ALocalVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4874,7 +4879,7 @@
         
         def <strong>mount_options</strong> : Array(String)?
 
-        <a class="method-permalink" href="#mount_options:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#mount_options%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4888,7 +4893,7 @@
         
         def <strong>mount_options=</strong>(mount_options : Array(String)?)
 
-        <a class="method-permalink" href="#mount_options=(mount_options:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#mount_options%3D%28mount_options%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4902,7 +4907,7 @@
         
         def <strong>nfs</strong> : <a href="../../../../Pyrite/Api/Core/V1/NFSVolumeSource.html">Api::Core::V1::NFSVolumeSource</a>?
 
-        <a class="method-permalink" href="#nfs:Api::Core::V1::NFSVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#nfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4916,7 +4921,7 @@
         
         def <strong>nfs=</strong>(nfs : <a href="../../../../Pyrite/Api/Core/V1/NFSVolumeSource.html">Api::Core::V1::NFSVolumeSource</a>?)
 
-        <a class="method-permalink" href="#nfs=(nfs:Api::Core::V1::NFSVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#nfs%3D%28nfs%3AApi%3A%3ACore%3A%3AV1%3A%3ANFSVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4930,7 +4935,7 @@
         
         def <strong>node_affinity</strong> : <a href="../../../../Pyrite/Api/Core/V1/VolumeNodeAffinity.html">Api::Core::V1::VolumeNodeAffinity</a>?
 
-        <a class="method-permalink" href="#node_affinity:Api::Core::V1::VolumeNodeAffinity?-instance-method">#</a>
+        <a class="method-permalink" href="#node_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4944,7 +4949,7 @@
         
         def <strong>node_affinity=</strong>(node_affinity : <a href="../../../../Pyrite/Api/Core/V1/VolumeNodeAffinity.html">Api::Core::V1::VolumeNodeAffinity</a>?)
 
-        <a class="method-permalink" href="#node_affinity=(node_affinity:Api::Core::V1::VolumeNodeAffinity?)-instance-method">#</a>
+        <a class="method-permalink" href="#node_affinity%3D%28node_affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AVolumeNodeAffinity%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4958,7 +4963,7 @@
         
         def <strong>persistent_volume_reclaim_policy</strong> : String?
 
-        <a class="method-permalink" href="#persistent_volume_reclaim_policy:String?-instance-method">#</a>
+        <a class="method-permalink" href="#persistent_volume_reclaim_policy%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4972,7 +4977,7 @@
         
         def <strong>persistent_volume_reclaim_policy=</strong>(persistent_volume_reclaim_policy : String?)
 
-        <a class="method-permalink" href="#persistent_volume_reclaim_policy=(persistent_volume_reclaim_policy:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#persistent_volume_reclaim_policy%3D%28persistent_volume_reclaim_policy%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4986,7 +4991,7 @@
         
         def <strong>photon_persistent_disk</strong> : <a href="../../../../Pyrite/Api/Core/V1/PhotonPersistentDiskVolumeSource.html">Api::Core::V1::PhotonPersistentDiskVolumeSource</a>?
 
-        <a class="method-permalink" href="#photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#photon_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5000,7 +5005,7 @@
         
         def <strong>photon_persistent_disk=</strong>(photon_persistent_disk : <a href="../../../../Pyrite/Api/Core/V1/PhotonPersistentDiskVolumeSource.html">Api::Core::V1::PhotonPersistentDiskVolumeSource</a>?)
 
-        <a class="method-permalink" href="#photon_persistent_disk=(photon_persistent_disk:Api::Core::V1::PhotonPersistentDiskVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#photon_persistent_disk%3D%28photon_persistent_disk%3AApi%3A%3ACore%3A%3AV1%3A%3APhotonPersistentDiskVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5014,7 +5019,7 @@
         
         def <strong>portworx_volume</strong> : <a href="../../../../Pyrite/Api/Core/V1/PortworxVolumeSource.html">Api::Core::V1::PortworxVolumeSource</a>?
 
-        <a class="method-permalink" href="#portworx_volume:Api::Core::V1::PortworxVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#portworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5028,7 +5033,7 @@
         
         def <strong>portworx_volume=</strong>(portworx_volume : <a href="../../../../Pyrite/Api/Core/V1/PortworxVolumeSource.html">Api::Core::V1::PortworxVolumeSource</a>?)
 
-        <a class="method-permalink" href="#portworx_volume=(portworx_volume:Api::Core::V1::PortworxVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#portworx_volume%3D%28portworx_volume%3AApi%3A%3ACore%3A%3AV1%3A%3APortworxVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5042,7 +5047,7 @@
         
         def <strong>quobyte</strong> : <a href="../../../../Pyrite/Api/Core/V1/QuobyteVolumeSource.html">Api::Core::V1::QuobyteVolumeSource</a>?
 
-        <a class="method-permalink" href="#quobyte:Api::Core::V1::QuobyteVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#quobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5056,7 +5061,7 @@
         
         def <strong>quobyte=</strong>(quobyte : <a href="../../../../Pyrite/Api/Core/V1/QuobyteVolumeSource.html">Api::Core::V1::QuobyteVolumeSource</a>?)
 
-        <a class="method-permalink" href="#quobyte=(quobyte:Api::Core::V1::QuobyteVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#quobyte%3D%28quobyte%3AApi%3A%3ACore%3A%3AV1%3A%3AQuobyteVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5070,7 +5075,7 @@
         
         def <strong>rbd</strong> : <a href="../../../../Pyrite/Api/Core/V1/RBDPersistentVolumeSource.html">Api::Core::V1::RBDPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#rbd:Api::Core::V1::RBDPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#rbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5084,7 +5089,7 @@
         
         def <strong>rbd=</strong>(rbd : <a href="../../../../Pyrite/Api/Core/V1/RBDPersistentVolumeSource.html">Api::Core::V1::RBDPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#rbd=(rbd:Api::Core::V1::RBDPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#rbd%3D%28rbd%3AApi%3A%3ACore%3A%3AV1%3A%3ARBDPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5098,7 +5103,7 @@
         
         def <strong>scale_io</strong> : <a href="../../../../Pyrite/Api/Core/V1/ScaleIOPersistentVolumeSource.html">Api::Core::V1::ScaleIOPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#scale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5112,7 +5117,7 @@
         
         def <strong>scale_io=</strong>(scale_io : <a href="../../../../Pyrite/Api/Core/V1/ScaleIOPersistentVolumeSource.html">Api::Core::V1::ScaleIOPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#scale_io=(scale_io:Api::Core::V1::ScaleIOPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#scale_io%3D%28scale_io%3AApi%3A%3ACore%3A%3AV1%3A%3AScaleIOPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5126,7 +5131,7 @@
         
         def <strong>storage_class_name</strong> : String?
 
-        <a class="method-permalink" href="#storage_class_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#storage_class_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5140,7 +5145,7 @@
         
         def <strong>storage_class_name=</strong>(storage_class_name : String?)
 
-        <a class="method-permalink" href="#storage_class_name=(storage_class_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#storage_class_name%3D%28storage_class_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5154,7 +5159,7 @@
         
         def <strong>storageos</strong> : <a href="../../../../Pyrite/Api/Core/V1/StorageOSPersistentVolumeSource.html">Api::Core::V1::StorageOSPersistentVolumeSource</a>?
 
-        <a class="method-permalink" href="#storageos:Api::Core::V1::StorageOSPersistentVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#storageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5168,7 +5173,7 @@
         
         def <strong>storageos=</strong>(storageos : <a href="../../../../Pyrite/Api/Core/V1/StorageOSPersistentVolumeSource.html">Api::Core::V1::StorageOSPersistentVolumeSource</a>?)
 
-        <a class="method-permalink" href="#storageos=(storageos:Api::Core::V1::StorageOSPersistentVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#storageos%3D%28storageos%3AApi%3A%3ACore%3A%3AV1%3A%3AStorageOSPersistentVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5182,7 +5187,7 @@
         
         def <strong>volume_mode</strong> : String?
 
-        <a class="method-permalink" href="#volume_mode:String?-instance-method">#</a>
+        <a class="method-permalink" href="#volume_mode%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5196,7 +5201,7 @@
         
         def <strong>volume_mode=</strong>(volume_mode : String?)
 
-        <a class="method-permalink" href="#volume_mode=(volume_mode:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#volume_mode%3D%28volume_mode%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5210,7 +5215,7 @@
         
         def <strong>vsphere_volume</strong> : <a href="../../../../Pyrite/Api/Core/V1/VsphereVirtualDiskVolumeSource.html">Api::Core::V1::VsphereVirtualDiskVolumeSource</a>?
 
-        <a class="method-permalink" href="#vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?-instance-method">#</a>
+        <a class="method-permalink" href="#vsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5224,7 +5229,7 @@
         
         def <strong>vsphere_volume=</strong>(vsphere_volume : <a href="../../../../Pyrite/Api/Core/V1/VsphereVirtualDiskVolumeSource.html">Api::Core::V1::VsphereVirtualDiskVolumeSource</a>?)
 
-        <a class="method-permalink" href="#vsphere_volume=(vsphere_volume:Api::Core::V1::VsphereVirtualDiskVolumeSource?)-instance-method">#</a>
+        <a class="method-permalink" href="#vsphere_volume%3D%28vsphere_volume%3AApi%3A%3ACore%3A%3AV1%3A%3AVsphereVirtualDiskVolumeSource%3F%29-instance-method">#</a>
       </div>
       
       <br/>

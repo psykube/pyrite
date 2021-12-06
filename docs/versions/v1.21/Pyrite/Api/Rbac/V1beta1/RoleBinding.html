@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4076,6 +4076,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4134,7 +4139,7 @@
     Overview
   </h2>
 
-  <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of <a href="rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.">rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.</a></p>
+  <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of [rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.](rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.)</p>
 
 
 
@@ -4179,21 +4184,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>RoleBinding references a role, but does not contain it.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>RoleBinding references a role, but does not contain it.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,role_ref:Api::Rbac::V1beta1::RoleRef,subjects:Array?=nil)-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, role_ref : Api::Rbac::V1beta1::RoleRef, subjects : Array? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Crole_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef%2Csubjects%3AArray%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, role_ref : Api::Rbac::V1beta1::RoleRef, subjects : Array? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -4214,22 +4219,22 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#role_ref:Api::Rbac::V1beta1::RoleRef-instance-method" class="signature"><strong>#role_ref</strong> : Api::Rbac::V1beta1::RoleRef</a>
+        <a href="#role_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef-instance-method" class="signature"><strong>#role_ref</strong> : Api::Rbac::V1beta1::RoleRef</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#role_ref=(role_ref:Api::Rbac::V1beta1::RoleRef)-instance-method" class="signature"><strong>#role_ref=</strong>(role_ref : Api::Rbac::V1beta1::RoleRef)</a>
+        <a href="#role_ref%3D%28role_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef%29-instance-method" class="signature"><strong>#role_ref=</strong>(role_ref : Api::Rbac::V1beta1::RoleRef)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subjects:Array(Api::Rbac::V1beta1::Subject)?-instance-method" class="signature"><strong>#subjects</strong> : Array(Api::Rbac::V1beta1::Subject)?</a>
+        <a href="#subjects%3AArray%28Api%3A%3ARbac%3A%3AV1beta1%3A%3ASubject%29%3F-instance-method" class="signature"><strong>#subjects</strong> : Array(Api::Rbac::V1beta1::Subject)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subjects=(subjects:Array(Api::Rbac::V1beta1::Subject)?)-instance-method" class="signature"><strong>#subjects=</strong>(subjects : Array(Api::Rbac::V1beta1::Subject)?)</a>
+        <a href="#subjects%3D%28subjects%3AArray%28Api%3A%3ARbac%3A%3AV1beta1%3A%3ASubject%29%3F%29-instance-method" class="signature"><strong>#subjects=</strong>(subjects : Array(Api::Rbac::V1beta1::Subject)?)</a>
         
       </li>
     
@@ -4246,12 +4251,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F-instance-method" class="tooltip">
       <span>metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?</span>
     metadata</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata=(metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?)-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3D%28metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%29-instance-method" class="tooltip">
       <span>metadata=(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?)</span>
     metadata=</a>
     
@@ -4263,7 +4268,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4279,12 +4284,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version%3AString-instance-method" class="tooltip">
       <span>api_version : String</span>
     api_version</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind%3AString-instance-method" class="tooltip">
       <span>kind : String</span>
     kind</a>
     
@@ -4296,7 +4301,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4315,7 +4320,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4383,12 +4388,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of <a href="rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.">rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.</a></p>
+          <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of [rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.](rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.)</p>
         </div>
       
       <br/>
@@ -4402,12 +4407,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of <a href="rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.">rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.</a></p>
+          <p>RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace. Deprecated in v1.17 in favor of [rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.](rbac.authorization.k8s.io/v1 RoleBinding, and will no longer be served in v1.22.)</p>
         </div>
       
       <br/>
@@ -4421,7 +4426,7 @@
         
         def self.<strong>new</strong>(*, metadata : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/ObjectMeta.html">Apimachinery::Apis::Meta::V1::ObjectMeta</a>? = <span class="n">nil</span>, role_ref : <a href="../../../../Pyrite/Api/Rbac/V1beta1/RoleRef.html">Api::Rbac::V1beta1::RoleRef</a>, subjects : Array? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,role_ref:Api::Rbac::V1beta1::RoleRef,subjects:Array?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Crole_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef%2Csubjects%3AArray%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4449,7 +4454,7 @@
         
         def <strong>role_ref</strong> : <a href="../../../../Pyrite/Api/Rbac/V1beta1/RoleRef.html">Api::Rbac::V1beta1::RoleRef</a>
 
-        <a class="method-permalink" href="#role_ref:Api::Rbac::V1beta1::RoleRef-instance-method">#</a>
+        <a class="method-permalink" href="#role_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef-instance-method">#</a>
       </div>
       
       <br/>
@@ -4463,7 +4468,7 @@
         
         def <strong>role_ref=</strong>(role_ref : <a href="../../../../Pyrite/Api/Rbac/V1beta1/RoleRef.html">Api::Rbac::V1beta1::RoleRef</a>)
 
-        <a class="method-permalink" href="#role_ref=(role_ref:Api::Rbac::V1beta1::RoleRef)-instance-method">#</a>
+        <a class="method-permalink" href="#role_ref%3D%28role_ref%3AApi%3A%3ARbac%3A%3AV1beta1%3A%3ARoleRef%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4477,7 +4482,7 @@
         
         def <strong>subjects</strong> : Array(<a href="../../../../Pyrite/Api/Rbac/V1beta1/Subject.html">Api::Rbac::V1beta1::Subject</a>)?
 
-        <a class="method-permalink" href="#subjects:Array(Api::Rbac::V1beta1::Subject)?-instance-method">#</a>
+        <a class="method-permalink" href="#subjects%3AArray%28Api%3A%3ARbac%3A%3AV1beta1%3A%3ASubject%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4491,7 +4496,7 @@
         
         def <strong>subjects=</strong>(subjects : Array(<a href="../../../../Pyrite/Api/Rbac/V1beta1/Subject.html">Api::Rbac::V1beta1::Subject</a>)?)
 
-        <a class="method-permalink" href="#subjects=(subjects:Array(Api::Rbac::V1beta1::Subject)?)-instance-method">#</a>
+        <a class="method-permalink" href="#subjects%3D%28subjects%3AArray%28Api%3A%3ARbac%3A%3AV1beta1%3A%3ASubject%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>

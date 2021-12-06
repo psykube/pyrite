@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4261,6 +4261,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4364,21 +4369,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>PodSecurityPolicySpec defines the policy enforced.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>PodSecurityPolicySpec defines the policy enforced.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,allow_privilege_escalation:Bool?=nil,allowed_csi_drivers:Array?=nil,allowed_capabilities:Array?=nil,allowed_flex_volumes:Array?=nil,allowed_host_paths:Array?=nil,allowed_proc_mount_types:Array?=nil,allowed_unsafe_sysctls:Array?=nil,default_add_capabilities:Array?=nil,default_allow_privilege_escalation:Bool?=nil,forbidden_sysctls:Array?=nil,fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions,host_ipc:Bool?=nil,host_network:Bool?=nil,host_pid:Bool?=nil,host_ports:Array?=nil,privileged:Bool?=nil,read_only_root_filesystem:Bool?=nil,required_drop_capabilities:Array?=nil,run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?=nil,run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions,runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?=nil,se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions,supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions,volumes:Array?=nil)-class-method" class="signature"><strong>.new</strong>(*, allow_privilege_escalation : Bool? = <span class="n">nil</span>, allowed_csi_drivers : Array? = <span class="n">nil</span>, allowed_capabilities : Array? = <span class="n">nil</span>, allowed_flex_volumes : Array? = <span class="n">nil</span>, allowed_host_paths : Array? = <span class="n">nil</span>, allowed_proc_mount_types : Array? = <span class="n">nil</span>, allowed_unsafe_sysctls : Array? = <span class="n">nil</span>, default_add_capabilities : Array? = <span class="n">nil</span>, default_allow_privilege_escalation : Bool? = <span class="n">nil</span>, forbidden_sysctls : Array? = <span class="n">nil</span>, fs_group : Api::Extensions::V1beta1::FSGroupStrategyOptions, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, host_ports : Array? = <span class="n">nil</span>, privileged : Bool? = <span class="n">nil</span>, read_only_root_filesystem : Bool? = <span class="n">nil</span>, required_drop_capabilities : Array? = <span class="n">nil</span>, run_as_group : Api::Extensions::V1beta1::RunAsGroupStrategyOptions? = <span class="n">nil</span>, run_as_user : Api::Extensions::V1beta1::RunAsUserStrategyOptions, runtime_class : Api::Extensions::V1beta1::RuntimeClassStrategyOptions? = <span class="n">nil</span>, se_linux : Api::Extensions::V1beta1::SELinuxStrategyOptions, supplemental_groups : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions, volumes : Array? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Callow_privilege_escalation%3ABool%3F%3Dnil%2Callowed_csi_drivers%3AArray%3F%3Dnil%2Callowed_capabilities%3AArray%3F%3Dnil%2Callowed_flex_volumes%3AArray%3F%3Dnil%2Callowed_host_paths%3AArray%3F%3Dnil%2Callowed_proc_mount_types%3AArray%3F%3Dnil%2Callowed_unsafe_sysctls%3AArray%3F%3Dnil%2Cdefault_add_capabilities%3AArray%3F%3Dnil%2Cdefault_allow_privilege_escalation%3ABool%3F%3Dnil%2Cforbidden_sysctls%3AArray%3F%3Dnil%2Cfs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions%2Chost_ipc%3ABool%3F%3Dnil%2Chost_network%3ABool%3F%3Dnil%2Chost_pid%3ABool%3F%3Dnil%2Chost_ports%3AArray%3F%3Dnil%2Cprivileged%3ABool%3F%3Dnil%2Cread_only_root_filesystem%3ABool%3F%3Dnil%2Crequired_drop_capabilities%3AArray%3F%3Dnil%2Crun_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F%3Dnil%2Crun_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions%2Cruntime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F%3Dnil%2Cse_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions%2Csupplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions%2Cvolumes%3AArray%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, allow_privilege_escalation : Bool? = <span class="n">nil</span>, allowed_csi_drivers : Array? = <span class="n">nil</span>, allowed_capabilities : Array? = <span class="n">nil</span>, allowed_flex_volumes : Array? = <span class="n">nil</span>, allowed_host_paths : Array? = <span class="n">nil</span>, allowed_proc_mount_types : Array? = <span class="n">nil</span>, allowed_unsafe_sysctls : Array? = <span class="n">nil</span>, default_add_capabilities : Array? = <span class="n">nil</span>, default_allow_privilege_escalation : Bool? = <span class="n">nil</span>, forbidden_sysctls : Array? = <span class="n">nil</span>, fs_group : Api::Extensions::V1beta1::FSGroupStrategyOptions, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, host_ports : Array? = <span class="n">nil</span>, privileged : Bool? = <span class="n">nil</span>, read_only_root_filesystem : Bool? = <span class="n">nil</span>, required_drop_capabilities : Array? = <span class="n">nil</span>, run_as_group : Api::Extensions::V1beta1::RunAsGroupStrategyOptions? = <span class="n">nil</span>, run_as_user : Api::Extensions::V1beta1::RunAsUserStrategyOptions, runtime_class : Api::Extensions::V1beta1::RuntimeClassStrategyOptions? = <span class="n">nil</span>, se_linux : Api::Extensions::V1beta1::SELinuxStrategyOptions, supplemental_groups : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions, volumes : Array? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -4399,242 +4404,242 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#allow_privilege_escalation:Bool?-instance-method" class="signature"><strong>#allow_privilege_escalation</strong> : Bool?</a>
+        <a href="#allow_privilege_escalation%3ABool%3F-instance-method" class="signature"><strong>#allow_privilege_escalation</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allow_privilege_escalation=(allow_privilege_escalation:Bool?)-instance-method" class="signature"><strong>#allow_privilege_escalation=</strong>(allow_privilege_escalation : Bool?)</a>
+        <a href="#allow_privilege_escalation%3D%28allow_privilege_escalation%3ABool%3F%29-instance-method" class="signature"><strong>#allow_privilege_escalation=</strong>(allow_privilege_escalation : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_capabilities:Array(String)?-instance-method" class="signature"><strong>#allowed_capabilities</strong> : Array(String)?</a>
+        <a href="#allowed_capabilities%3AArray%28String%29%3F-instance-method" class="signature"><strong>#allowed_capabilities</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_capabilities=(allowed_capabilities:Array(String)?)-instance-method" class="signature"><strong>#allowed_capabilities=</strong>(allowed_capabilities : Array(String)?)</a>
+        <a href="#allowed_capabilities%3D%28allowed_capabilities%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#allowed_capabilities=</strong>(allowed_capabilities : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_csi_drivers:Array(Api::Extensions::V1beta1::AllowedCSIDriver)?-instance-method" class="signature"><strong>#allowed_csi_drivers</strong> : Array(Api::Extensions::V1beta1::AllowedCSIDriver)?</a>
+        <a href="#allowed_csi_drivers%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedCSIDriver%29%3F-instance-method" class="signature"><strong>#allowed_csi_drivers</strong> : Array(Api::Extensions::V1beta1::AllowedCSIDriver)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_csi_drivers=(allowed_csi_drivers:Array(Api::Extensions::V1beta1::AllowedCSIDriver)?)-instance-method" class="signature"><strong>#allowed_csi_drivers=</strong>(allowed_csi_drivers : Array(Api::Extensions::V1beta1::AllowedCSIDriver)?)</a>
+        <a href="#allowed_csi_drivers%3D%28allowed_csi_drivers%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedCSIDriver%29%3F%29-instance-method" class="signature"><strong>#allowed_csi_drivers=</strong>(allowed_csi_drivers : Array(Api::Extensions::V1beta1::AllowedCSIDriver)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_flex_volumes:Array(Api::Extensions::V1beta1::AllowedFlexVolume)?-instance-method" class="signature"><strong>#allowed_flex_volumes</strong> : Array(Api::Extensions::V1beta1::AllowedFlexVolume)?</a>
+        <a href="#allowed_flex_volumes%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedFlexVolume%29%3F-instance-method" class="signature"><strong>#allowed_flex_volumes</strong> : Array(Api::Extensions::V1beta1::AllowedFlexVolume)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_flex_volumes=(allowed_flex_volumes:Array(Api::Extensions::V1beta1::AllowedFlexVolume)?)-instance-method" class="signature"><strong>#allowed_flex_volumes=</strong>(allowed_flex_volumes : Array(Api::Extensions::V1beta1::AllowedFlexVolume)?)</a>
+        <a href="#allowed_flex_volumes%3D%28allowed_flex_volumes%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedFlexVolume%29%3F%29-instance-method" class="signature"><strong>#allowed_flex_volumes=</strong>(allowed_flex_volumes : Array(Api::Extensions::V1beta1::AllowedFlexVolume)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_host_paths:Array(Api::Extensions::V1beta1::AllowedHostPath)?-instance-method" class="signature"><strong>#allowed_host_paths</strong> : Array(Api::Extensions::V1beta1::AllowedHostPath)?</a>
+        <a href="#allowed_host_paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedHostPath%29%3F-instance-method" class="signature"><strong>#allowed_host_paths</strong> : Array(Api::Extensions::V1beta1::AllowedHostPath)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_host_paths=(allowed_host_paths:Array(Api::Extensions::V1beta1::AllowedHostPath)?)-instance-method" class="signature"><strong>#allowed_host_paths=</strong>(allowed_host_paths : Array(Api::Extensions::V1beta1::AllowedHostPath)?)</a>
+        <a href="#allowed_host_paths%3D%28allowed_host_paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedHostPath%29%3F%29-instance-method" class="signature"><strong>#allowed_host_paths=</strong>(allowed_host_paths : Array(Api::Extensions::V1beta1::AllowedHostPath)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_proc_mount_types:Array(String)?-instance-method" class="signature"><strong>#allowed_proc_mount_types</strong> : Array(String)?</a>
+        <a href="#allowed_proc_mount_types%3AArray%28String%29%3F-instance-method" class="signature"><strong>#allowed_proc_mount_types</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_proc_mount_types=(allowed_proc_mount_types:Array(String)?)-instance-method" class="signature"><strong>#allowed_proc_mount_types=</strong>(allowed_proc_mount_types : Array(String)?)</a>
+        <a href="#allowed_proc_mount_types%3D%28allowed_proc_mount_types%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#allowed_proc_mount_types=</strong>(allowed_proc_mount_types : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_unsafe_sysctls:Array(String)?-instance-method" class="signature"><strong>#allowed_unsafe_sysctls</strong> : Array(String)?</a>
+        <a href="#allowed_unsafe_sysctls%3AArray%28String%29%3F-instance-method" class="signature"><strong>#allowed_unsafe_sysctls</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_unsafe_sysctls=(allowed_unsafe_sysctls:Array(String)?)-instance-method" class="signature"><strong>#allowed_unsafe_sysctls=</strong>(allowed_unsafe_sysctls : Array(String)?)</a>
+        <a href="#allowed_unsafe_sysctls%3D%28allowed_unsafe_sysctls%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#allowed_unsafe_sysctls=</strong>(allowed_unsafe_sysctls : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_add_capabilities:Array(String)?-instance-method" class="signature"><strong>#default_add_capabilities</strong> : Array(String)?</a>
+        <a href="#default_add_capabilities%3AArray%28String%29%3F-instance-method" class="signature"><strong>#default_add_capabilities</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_add_capabilities=(default_add_capabilities:Array(String)?)-instance-method" class="signature"><strong>#default_add_capabilities=</strong>(default_add_capabilities : Array(String)?)</a>
+        <a href="#default_add_capabilities%3D%28default_add_capabilities%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#default_add_capabilities=</strong>(default_add_capabilities : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_allow_privilege_escalation:Bool?-instance-method" class="signature"><strong>#default_allow_privilege_escalation</strong> : Bool?</a>
+        <a href="#default_allow_privilege_escalation%3ABool%3F-instance-method" class="signature"><strong>#default_allow_privilege_escalation</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_allow_privilege_escalation=(default_allow_privilege_escalation:Bool?)-instance-method" class="signature"><strong>#default_allow_privilege_escalation=</strong>(default_allow_privilege_escalation : Bool?)</a>
+        <a href="#default_allow_privilege_escalation%3D%28default_allow_privilege_escalation%3ABool%3F%29-instance-method" class="signature"><strong>#default_allow_privilege_escalation=</strong>(default_allow_privilege_escalation : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#forbidden_sysctls:Array(String)?-instance-method" class="signature"><strong>#forbidden_sysctls</strong> : Array(String)?</a>
+        <a href="#forbidden_sysctls%3AArray%28String%29%3F-instance-method" class="signature"><strong>#forbidden_sysctls</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#forbidden_sysctls=(forbidden_sysctls:Array(String)?)-instance-method" class="signature"><strong>#forbidden_sysctls=</strong>(forbidden_sysctls : Array(String)?)</a>
+        <a href="#forbidden_sysctls%3D%28forbidden_sysctls%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#forbidden_sysctls=</strong>(forbidden_sysctls : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions-instance-method" class="signature"><strong>#fs_group</strong> : Api::Extensions::V1beta1::FSGroupStrategyOptions</a>
+        <a href="#fs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions-instance-method" class="signature"><strong>#fs_group</strong> : Api::Extensions::V1beta1::FSGroupStrategyOptions</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fs_group=(fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions)-instance-method" class="signature"><strong>#fs_group=</strong>(fs_group : Api::Extensions::V1beta1::FSGroupStrategyOptions)</a>
+        <a href="#fs_group%3D%28fs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions%29-instance-method" class="signature"><strong>#fs_group=</strong>(fs_group : Api::Extensions::V1beta1::FSGroupStrategyOptions)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ipc:Bool?-instance-method" class="signature"><strong>#host_ipc</strong> : Bool?</a>
+        <a href="#host_ipc%3ABool%3F-instance-method" class="signature"><strong>#host_ipc</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ipc=(host_ipc:Bool?)-instance-method" class="signature"><strong>#host_ipc=</strong>(host_ipc : Bool?)</a>
+        <a href="#host_ipc%3D%28host_ipc%3ABool%3F%29-instance-method" class="signature"><strong>#host_ipc=</strong>(host_ipc : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_network:Bool?-instance-method" class="signature"><strong>#host_network</strong> : Bool?</a>
+        <a href="#host_network%3ABool%3F-instance-method" class="signature"><strong>#host_network</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_network=(host_network:Bool?)-instance-method" class="signature"><strong>#host_network=</strong>(host_network : Bool?)</a>
+        <a href="#host_network%3D%28host_network%3ABool%3F%29-instance-method" class="signature"><strong>#host_network=</strong>(host_network : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_pid:Bool?-instance-method" class="signature"><strong>#host_pid</strong> : Bool?</a>
+        <a href="#host_pid%3ABool%3F-instance-method" class="signature"><strong>#host_pid</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_pid=(host_pid:Bool?)-instance-method" class="signature"><strong>#host_pid=</strong>(host_pid : Bool?)</a>
+        <a href="#host_pid%3D%28host_pid%3ABool%3F%29-instance-method" class="signature"><strong>#host_pid=</strong>(host_pid : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ports:Array(Api::Extensions::V1beta1::HostPortRange)?-instance-method" class="signature"><strong>#host_ports</strong> : Array(Api::Extensions::V1beta1::HostPortRange)?</a>
+        <a href="#host_ports%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHostPortRange%29%3F-instance-method" class="signature"><strong>#host_ports</strong> : Array(Api::Extensions::V1beta1::HostPortRange)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ports=(host_ports:Array(Api::Extensions::V1beta1::HostPortRange)?)-instance-method" class="signature"><strong>#host_ports=</strong>(host_ports : Array(Api::Extensions::V1beta1::HostPortRange)?)</a>
+        <a href="#host_ports%3D%28host_ports%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHostPortRange%29%3F%29-instance-method" class="signature"><strong>#host_ports=</strong>(host_ports : Array(Api::Extensions::V1beta1::HostPortRange)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#privileged:Bool?-instance-method" class="signature"><strong>#privileged</strong> : Bool?</a>
+        <a href="#privileged%3ABool%3F-instance-method" class="signature"><strong>#privileged</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#privileged=(privileged:Bool?)-instance-method" class="signature"><strong>#privileged=</strong>(privileged : Bool?)</a>
+        <a href="#privileged%3D%28privileged%3ABool%3F%29-instance-method" class="signature"><strong>#privileged=</strong>(privileged : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read_only_root_filesystem:Bool?-instance-method" class="signature"><strong>#read_only_root_filesystem</strong> : Bool?</a>
+        <a href="#read_only_root_filesystem%3ABool%3F-instance-method" class="signature"><strong>#read_only_root_filesystem</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read_only_root_filesystem=(read_only_root_filesystem:Bool?)-instance-method" class="signature"><strong>#read_only_root_filesystem=</strong>(read_only_root_filesystem : Bool?)</a>
+        <a href="#read_only_root_filesystem%3D%28read_only_root_filesystem%3ABool%3F%29-instance-method" class="signature"><strong>#read_only_root_filesystem=</strong>(read_only_root_filesystem : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#required_drop_capabilities:Array(String)?-instance-method" class="signature"><strong>#required_drop_capabilities</strong> : Array(String)?</a>
+        <a href="#required_drop_capabilities%3AArray%28String%29%3F-instance-method" class="signature"><strong>#required_drop_capabilities</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#required_drop_capabilities=(required_drop_capabilities:Array(String)?)-instance-method" class="signature"><strong>#required_drop_capabilities=</strong>(required_drop_capabilities : Array(String)?)</a>
+        <a href="#required_drop_capabilities%3D%28required_drop_capabilities%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#required_drop_capabilities=</strong>(required_drop_capabilities : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?-instance-method" class="signature"><strong>#run_as_group</strong> : Api::Extensions::V1beta1::RunAsGroupStrategyOptions?</a>
+        <a href="#run_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F-instance-method" class="signature"><strong>#run_as_group</strong> : Api::Extensions::V1beta1::RunAsGroupStrategyOptions?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#run_as_group=(run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?)-instance-method" class="signature"><strong>#run_as_group=</strong>(run_as_group : Api::Extensions::V1beta1::RunAsGroupStrategyOptions?)</a>
+        <a href="#run_as_group%3D%28run_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F%29-instance-method" class="signature"><strong>#run_as_group=</strong>(run_as_group : Api::Extensions::V1beta1::RunAsGroupStrategyOptions?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions-instance-method" class="signature"><strong>#run_as_user</strong> : Api::Extensions::V1beta1::RunAsUserStrategyOptions</a>
+        <a href="#run_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions-instance-method" class="signature"><strong>#run_as_user</strong> : Api::Extensions::V1beta1::RunAsUserStrategyOptions</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#run_as_user=(run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions)-instance-method" class="signature"><strong>#run_as_user=</strong>(run_as_user : Api::Extensions::V1beta1::RunAsUserStrategyOptions)</a>
+        <a href="#run_as_user%3D%28run_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions%29-instance-method" class="signature"><strong>#run_as_user=</strong>(run_as_user : Api::Extensions::V1beta1::RunAsUserStrategyOptions)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?-instance-method" class="signature"><strong>#runtime_class</strong> : Api::Extensions::V1beta1::RuntimeClassStrategyOptions?</a>
+        <a href="#runtime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F-instance-method" class="signature"><strong>#runtime_class</strong> : Api::Extensions::V1beta1::RuntimeClassStrategyOptions?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#runtime_class=(runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?)-instance-method" class="signature"><strong>#runtime_class=</strong>(runtime_class : Api::Extensions::V1beta1::RuntimeClassStrategyOptions?)</a>
+        <a href="#runtime_class%3D%28runtime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F%29-instance-method" class="signature"><strong>#runtime_class=</strong>(runtime_class : Api::Extensions::V1beta1::RuntimeClassStrategyOptions?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions-instance-method" class="signature"><strong>#se_linux</strong> : Api::Extensions::V1beta1::SELinuxStrategyOptions</a>
+        <a href="#se_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions-instance-method" class="signature"><strong>#se_linux</strong> : Api::Extensions::V1beta1::SELinuxStrategyOptions</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#se_linux=(se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions)-instance-method" class="signature"><strong>#se_linux=</strong>(se_linux : Api::Extensions::V1beta1::SELinuxStrategyOptions)</a>
+        <a href="#se_linux%3D%28se_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions%29-instance-method" class="signature"><strong>#se_linux=</strong>(se_linux : Api::Extensions::V1beta1::SELinuxStrategyOptions)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions-instance-method" class="signature"><strong>#supplemental_groups</strong> : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions</a>
+        <a href="#supplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions-instance-method" class="signature"><strong>#supplemental_groups</strong> : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#supplemental_groups=(supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions)-instance-method" class="signature"><strong>#supplemental_groups=</strong>(supplemental_groups : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions)</a>
+        <a href="#supplemental_groups%3D%28supplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions%29-instance-method" class="signature"><strong>#supplemental_groups=</strong>(supplemental_groups : Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volumes:Array(String)?-instance-method" class="signature"><strong>#volumes</strong> : Array(String)?</a>
+        <a href="#volumes%3AArray%28String%29%3F-instance-method" class="signature"><strong>#volumes</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volumes=(volumes:Array(String)?)-instance-method" class="signature"><strong>#volumes=</strong>(volumes : Array(String)?)</a>
+        <a href="#volumes%3D%28volumes%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#volumes=</strong>(volumes : Array(String)?)</a>
         
       </li>
     
@@ -4654,7 +4659,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4722,7 +4727,7 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4741,7 +4746,7 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4760,7 +4765,7 @@
         
         def self.<strong>new</strong>(*, allow_privilege_escalation : Bool? = <span class="n">nil</span>, allowed_csi_drivers : Array? = <span class="n">nil</span>, allowed_capabilities : Array? = <span class="n">nil</span>, allowed_flex_volumes : Array? = <span class="n">nil</span>, allowed_host_paths : Array? = <span class="n">nil</span>, allowed_proc_mount_types : Array? = <span class="n">nil</span>, allowed_unsafe_sysctls : Array? = <span class="n">nil</span>, default_add_capabilities : Array? = <span class="n">nil</span>, default_allow_privilege_escalation : Bool? = <span class="n">nil</span>, forbidden_sysctls : Array? = <span class="n">nil</span>, fs_group : <a href="../../../../Pyrite/Api/Extensions/V1beta1/FSGroupStrategyOptions.html">Api::Extensions::V1beta1::FSGroupStrategyOptions</a>, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, host_ports : Array? = <span class="n">nil</span>, privileged : Bool? = <span class="n">nil</span>, read_only_root_filesystem : Bool? = <span class="n">nil</span>, required_drop_capabilities : Array? = <span class="n">nil</span>, run_as_group : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsGroupStrategyOptions.html">Api::Extensions::V1beta1::RunAsGroupStrategyOptions</a>? = <span class="n">nil</span>, run_as_user : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsUserStrategyOptions.html">Api::Extensions::V1beta1::RunAsUserStrategyOptions</a>, runtime_class : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RuntimeClassStrategyOptions.html">Api::Extensions::V1beta1::RuntimeClassStrategyOptions</a>? = <span class="n">nil</span>, se_linux : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SELinuxStrategyOptions.html">Api::Extensions::V1beta1::SELinuxStrategyOptions</a>, supplemental_groups : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SupplementalGroupsStrategyOptions.html">Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions</a>, volumes : Array? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,allow_privilege_escalation:Bool?=nil,allowed_csi_drivers:Array?=nil,allowed_capabilities:Array?=nil,allowed_flex_volumes:Array?=nil,allowed_host_paths:Array?=nil,allowed_proc_mount_types:Array?=nil,allowed_unsafe_sysctls:Array?=nil,default_add_capabilities:Array?=nil,default_allow_privilege_escalation:Bool?=nil,forbidden_sysctls:Array?=nil,fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions,host_ipc:Bool?=nil,host_network:Bool?=nil,host_pid:Bool?=nil,host_ports:Array?=nil,privileged:Bool?=nil,read_only_root_filesystem:Bool?=nil,required_drop_capabilities:Array?=nil,run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?=nil,run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions,runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?=nil,se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions,supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions,volumes:Array?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Callow_privilege_escalation%3ABool%3F%3Dnil%2Callowed_csi_drivers%3AArray%3F%3Dnil%2Callowed_capabilities%3AArray%3F%3Dnil%2Callowed_flex_volumes%3AArray%3F%3Dnil%2Callowed_host_paths%3AArray%3F%3Dnil%2Callowed_proc_mount_types%3AArray%3F%3Dnil%2Callowed_unsafe_sysctls%3AArray%3F%3Dnil%2Cdefault_add_capabilities%3AArray%3F%3Dnil%2Cdefault_allow_privilege_escalation%3ABool%3F%3Dnil%2Cforbidden_sysctls%3AArray%3F%3Dnil%2Cfs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions%2Chost_ipc%3ABool%3F%3Dnil%2Chost_network%3ABool%3F%3Dnil%2Chost_pid%3ABool%3F%3Dnil%2Chost_ports%3AArray%3F%3Dnil%2Cprivileged%3ABool%3F%3Dnil%2Cread_only_root_filesystem%3ABool%3F%3Dnil%2Crequired_drop_capabilities%3AArray%3F%3Dnil%2Crun_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F%3Dnil%2Crun_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions%2Cruntime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F%3Dnil%2Cse_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions%2Csupplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions%2Cvolumes%3AArray%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4788,7 +4793,7 @@
         
         def <strong>allow_privilege_escalation</strong> : Bool?
 
-        <a class="method-permalink" href="#allow_privilege_escalation:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#allow_privilege_escalation%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4802,7 +4807,7 @@
         
         def <strong>allow_privilege_escalation=</strong>(allow_privilege_escalation : Bool?)
 
-        <a class="method-permalink" href="#allow_privilege_escalation=(allow_privilege_escalation:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#allow_privilege_escalation%3D%28allow_privilege_escalation%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4816,7 +4821,7 @@
         
         def <strong>allowed_capabilities</strong> : Array(String)?
 
-        <a class="method-permalink" href="#allowed_capabilities:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_capabilities%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4830,7 +4835,7 @@
         
         def <strong>allowed_capabilities=</strong>(allowed_capabilities : Array(String)?)
 
-        <a class="method-permalink" href="#allowed_capabilities=(allowed_capabilities:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_capabilities%3D%28allowed_capabilities%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4844,7 +4849,7 @@
         
         def <strong>allowed_csi_drivers</strong> : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedCSIDriver.html">Api::Extensions::V1beta1::AllowedCSIDriver</a>)?
 
-        <a class="method-permalink" href="#allowed_csi_drivers:Array(Api::Extensions::V1beta1::AllowedCSIDriver)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_csi_drivers%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedCSIDriver%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4858,7 +4863,7 @@
         
         def <strong>allowed_csi_drivers=</strong>(allowed_csi_drivers : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedCSIDriver.html">Api::Extensions::V1beta1::AllowedCSIDriver</a>)?)
 
-        <a class="method-permalink" href="#allowed_csi_drivers=(allowed_csi_drivers:Array(Api::Extensions::V1beta1::AllowedCSIDriver)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_csi_drivers%3D%28allowed_csi_drivers%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedCSIDriver%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4872,7 +4877,7 @@
         
         def <strong>allowed_flex_volumes</strong> : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedFlexVolume.html">Api::Extensions::V1beta1::AllowedFlexVolume</a>)?
 
-        <a class="method-permalink" href="#allowed_flex_volumes:Array(Api::Extensions::V1beta1::AllowedFlexVolume)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_flex_volumes%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedFlexVolume%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4886,7 +4891,7 @@
         
         def <strong>allowed_flex_volumes=</strong>(allowed_flex_volumes : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedFlexVolume.html">Api::Extensions::V1beta1::AllowedFlexVolume</a>)?)
 
-        <a class="method-permalink" href="#allowed_flex_volumes=(allowed_flex_volumes:Array(Api::Extensions::V1beta1::AllowedFlexVolume)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_flex_volumes%3D%28allowed_flex_volumes%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedFlexVolume%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4900,7 +4905,7 @@
         
         def <strong>allowed_host_paths</strong> : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedHostPath.html">Api::Extensions::V1beta1::AllowedHostPath</a>)?
 
-        <a class="method-permalink" href="#allowed_host_paths:Array(Api::Extensions::V1beta1::AllowedHostPath)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_host_paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedHostPath%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4914,7 +4919,7 @@
         
         def <strong>allowed_host_paths=</strong>(allowed_host_paths : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/AllowedHostPath.html">Api::Extensions::V1beta1::AllowedHostPath</a>)?)
 
-        <a class="method-permalink" href="#allowed_host_paths=(allowed_host_paths:Array(Api::Extensions::V1beta1::AllowedHostPath)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_host_paths%3D%28allowed_host_paths%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AAllowedHostPath%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4928,7 +4933,7 @@
         
         def <strong>allowed_proc_mount_types</strong> : Array(String)?
 
-        <a class="method-permalink" href="#allowed_proc_mount_types:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_proc_mount_types%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4942,7 +4947,7 @@
         
         def <strong>allowed_proc_mount_types=</strong>(allowed_proc_mount_types : Array(String)?)
 
-        <a class="method-permalink" href="#allowed_proc_mount_types=(allowed_proc_mount_types:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_proc_mount_types%3D%28allowed_proc_mount_types%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4956,7 +4961,7 @@
         
         def <strong>allowed_unsafe_sysctls</strong> : Array(String)?
 
-        <a class="method-permalink" href="#allowed_unsafe_sysctls:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_unsafe_sysctls%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4970,7 +4975,7 @@
         
         def <strong>allowed_unsafe_sysctls=</strong>(allowed_unsafe_sysctls : Array(String)?)
 
-        <a class="method-permalink" href="#allowed_unsafe_sysctls=(allowed_unsafe_sysctls:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_unsafe_sysctls%3D%28allowed_unsafe_sysctls%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4984,7 +4989,7 @@
         
         def <strong>default_add_capabilities</strong> : Array(String)?
 
-        <a class="method-permalink" href="#default_add_capabilities:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#default_add_capabilities%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4998,7 +5003,7 @@
         
         def <strong>default_add_capabilities=</strong>(default_add_capabilities : Array(String)?)
 
-        <a class="method-permalink" href="#default_add_capabilities=(default_add_capabilities:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#default_add_capabilities%3D%28default_add_capabilities%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5012,7 +5017,7 @@
         
         def <strong>default_allow_privilege_escalation</strong> : Bool?
 
-        <a class="method-permalink" href="#default_allow_privilege_escalation:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#default_allow_privilege_escalation%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5026,7 +5031,7 @@
         
         def <strong>default_allow_privilege_escalation=</strong>(default_allow_privilege_escalation : Bool?)
 
-        <a class="method-permalink" href="#default_allow_privilege_escalation=(default_allow_privilege_escalation:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#default_allow_privilege_escalation%3D%28default_allow_privilege_escalation%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5040,7 +5045,7 @@
         
         def <strong>forbidden_sysctls</strong> : Array(String)?
 
-        <a class="method-permalink" href="#forbidden_sysctls:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#forbidden_sysctls%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5054,7 +5059,7 @@
         
         def <strong>forbidden_sysctls=</strong>(forbidden_sysctls : Array(String)?)
 
-        <a class="method-permalink" href="#forbidden_sysctls=(forbidden_sysctls:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#forbidden_sysctls%3D%28forbidden_sysctls%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5068,7 +5073,7 @@
         
         def <strong>fs_group</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/FSGroupStrategyOptions.html">Api::Extensions::V1beta1::FSGroupStrategyOptions</a>
 
-        <a class="method-permalink" href="#fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions-instance-method">#</a>
+        <a class="method-permalink" href="#fs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions-instance-method">#</a>
       </div>
       
       <br/>
@@ -5082,7 +5087,7 @@
         
         def <strong>fs_group=</strong>(fs_group : <a href="../../../../Pyrite/Api/Extensions/V1beta1/FSGroupStrategyOptions.html">Api::Extensions::V1beta1::FSGroupStrategyOptions</a>)
 
-        <a class="method-permalink" href="#fs_group=(fs_group:Api::Extensions::V1beta1::FSGroupStrategyOptions)-instance-method">#</a>
+        <a class="method-permalink" href="#fs_group%3D%28fs_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3AFSGroupStrategyOptions%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5096,7 +5101,7 @@
         
         def <strong>host_ipc</strong> : Bool?
 
-        <a class="method-permalink" href="#host_ipc:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_ipc%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5110,7 +5115,7 @@
         
         def <strong>host_ipc=</strong>(host_ipc : Bool?)
 
-        <a class="method-permalink" href="#host_ipc=(host_ipc:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_ipc%3D%28host_ipc%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5124,7 +5129,7 @@
         
         def <strong>host_network</strong> : Bool?
 
-        <a class="method-permalink" href="#host_network:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_network%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5138,7 +5143,7 @@
         
         def <strong>host_network=</strong>(host_network : Bool?)
 
-        <a class="method-permalink" href="#host_network=(host_network:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_network%3D%28host_network%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5152,7 +5157,7 @@
         
         def <strong>host_pid</strong> : Bool?
 
-        <a class="method-permalink" href="#host_pid:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_pid%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5166,7 +5171,7 @@
         
         def <strong>host_pid=</strong>(host_pid : Bool?)
 
-        <a class="method-permalink" href="#host_pid=(host_pid:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_pid%3D%28host_pid%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5180,7 +5185,7 @@
         
         def <strong>host_ports</strong> : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/HostPortRange.html">Api::Extensions::V1beta1::HostPortRange</a>)?
 
-        <a class="method-permalink" href="#host_ports:Array(Api::Extensions::V1beta1::HostPortRange)?-instance-method">#</a>
+        <a class="method-permalink" href="#host_ports%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHostPortRange%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5194,7 +5199,7 @@
         
         def <strong>host_ports=</strong>(host_ports : Array(<a href="../../../../Pyrite/Api/Extensions/V1beta1/HostPortRange.html">Api::Extensions::V1beta1::HostPortRange</a>)?)
 
-        <a class="method-permalink" href="#host_ports=(host_ports:Array(Api::Extensions::V1beta1::HostPortRange)?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_ports%3D%28host_ports%3AArray%28Api%3A%3AExtensions%3A%3AV1beta1%3A%3AHostPortRange%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5208,7 +5213,7 @@
         
         def <strong>privileged</strong> : Bool?
 
-        <a class="method-permalink" href="#privileged:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#privileged%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5222,7 +5227,7 @@
         
         def <strong>privileged=</strong>(privileged : Bool?)
 
-        <a class="method-permalink" href="#privileged=(privileged:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#privileged%3D%28privileged%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5236,7 +5241,7 @@
         
         def <strong>read_only_root_filesystem</strong> : Bool?
 
-        <a class="method-permalink" href="#read_only_root_filesystem:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#read_only_root_filesystem%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5250,7 +5255,7 @@
         
         def <strong>read_only_root_filesystem=</strong>(read_only_root_filesystem : Bool?)
 
-        <a class="method-permalink" href="#read_only_root_filesystem=(read_only_root_filesystem:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#read_only_root_filesystem%3D%28read_only_root_filesystem%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5264,7 +5269,7 @@
         
         def <strong>required_drop_capabilities</strong> : Array(String)?
 
-        <a class="method-permalink" href="#required_drop_capabilities:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#required_drop_capabilities%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5278,7 +5283,7 @@
         
         def <strong>required_drop_capabilities=</strong>(required_drop_capabilities : Array(String)?)
 
-        <a class="method-permalink" href="#required_drop_capabilities=(required_drop_capabilities:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#required_drop_capabilities%3D%28required_drop_capabilities%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5292,7 +5297,7 @@
         
         def <strong>run_as_group</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsGroupStrategyOptions.html">Api::Extensions::V1beta1::RunAsGroupStrategyOptions</a>?
 
-        <a class="method-permalink" href="#run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?-instance-method">#</a>
+        <a class="method-permalink" href="#run_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5306,7 +5311,7 @@
         
         def <strong>run_as_group=</strong>(run_as_group : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsGroupStrategyOptions.html">Api::Extensions::V1beta1::RunAsGroupStrategyOptions</a>?)
 
-        <a class="method-permalink" href="#run_as_group=(run_as_group:Api::Extensions::V1beta1::RunAsGroupStrategyOptions?)-instance-method">#</a>
+        <a class="method-permalink" href="#run_as_group%3D%28run_as_group%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsGroupStrategyOptions%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5320,7 +5325,7 @@
         
         def <strong>run_as_user</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsUserStrategyOptions.html">Api::Extensions::V1beta1::RunAsUserStrategyOptions</a>
 
-        <a class="method-permalink" href="#run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions-instance-method">#</a>
+        <a class="method-permalink" href="#run_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions-instance-method">#</a>
       </div>
       
       <br/>
@@ -5334,7 +5339,7 @@
         
         def <strong>run_as_user=</strong>(run_as_user : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RunAsUserStrategyOptions.html">Api::Extensions::V1beta1::RunAsUserStrategyOptions</a>)
 
-        <a class="method-permalink" href="#run_as_user=(run_as_user:Api::Extensions::V1beta1::RunAsUserStrategyOptions)-instance-method">#</a>
+        <a class="method-permalink" href="#run_as_user%3D%28run_as_user%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARunAsUserStrategyOptions%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5348,7 +5353,7 @@
         
         def <strong>runtime_class</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RuntimeClassStrategyOptions.html">Api::Extensions::V1beta1::RuntimeClassStrategyOptions</a>?
 
-        <a class="method-permalink" href="#runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?-instance-method">#</a>
+        <a class="method-permalink" href="#runtime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5362,7 +5367,7 @@
         
         def <strong>runtime_class=</strong>(runtime_class : <a href="../../../../Pyrite/Api/Extensions/V1beta1/RuntimeClassStrategyOptions.html">Api::Extensions::V1beta1::RuntimeClassStrategyOptions</a>?)
 
-        <a class="method-permalink" href="#runtime_class=(runtime_class:Api::Extensions::V1beta1::RuntimeClassStrategyOptions?)-instance-method">#</a>
+        <a class="method-permalink" href="#runtime_class%3D%28runtime_class%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ARuntimeClassStrategyOptions%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5376,7 +5381,7 @@
         
         def <strong>se_linux</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SELinuxStrategyOptions.html">Api::Extensions::V1beta1::SELinuxStrategyOptions</a>
 
-        <a class="method-permalink" href="#se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions-instance-method">#</a>
+        <a class="method-permalink" href="#se_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions-instance-method">#</a>
       </div>
       
       <br/>
@@ -5390,7 +5395,7 @@
         
         def <strong>se_linux=</strong>(se_linux : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SELinuxStrategyOptions.html">Api::Extensions::V1beta1::SELinuxStrategyOptions</a>)
 
-        <a class="method-permalink" href="#se_linux=(se_linux:Api::Extensions::V1beta1::SELinuxStrategyOptions)-instance-method">#</a>
+        <a class="method-permalink" href="#se_linux%3D%28se_linux%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASELinuxStrategyOptions%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5404,7 +5409,7 @@
         
         def <strong>supplemental_groups</strong> : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SupplementalGroupsStrategyOptions.html">Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions</a>
 
-        <a class="method-permalink" href="#supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions-instance-method">#</a>
+        <a class="method-permalink" href="#supplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions-instance-method">#</a>
       </div>
       
       <br/>
@@ -5418,7 +5423,7 @@
         
         def <strong>supplemental_groups=</strong>(supplemental_groups : <a href="../../../../Pyrite/Api/Extensions/V1beta1/SupplementalGroupsStrategyOptions.html">Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions</a>)
 
-        <a class="method-permalink" href="#supplemental_groups=(supplemental_groups:Api::Extensions::V1beta1::SupplementalGroupsStrategyOptions)-instance-method">#</a>
+        <a class="method-permalink" href="#supplemental_groups%3D%28supplemental_groups%3AApi%3A%3AExtensions%3A%3AV1beta1%3A%3ASupplementalGroupsStrategyOptions%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5432,7 +5437,7 @@
         
         def <strong>volumes</strong> : Array(String)?
 
-        <a class="method-permalink" href="#volumes:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#volumes%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5446,7 +5451,7 @@
         
         def <strong>volumes=</strong>(volumes : Array(String)?)
 
-        <a class="method-permalink" href="#volumes=(volumes:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#volumes%3D%28volumes%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -3626,6 +3626,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -3685,7 +3690,6 @@
   </h2>
 
   <p>StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.</p>
-
 <p>StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.</p>
 
 
@@ -3731,21 +3735,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,allow_volume_expansion:Bool?=nil,allowed_topologies:Array?=nil,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,mount_options:Array?=nil,parameters:Hash(String,String)?=nil,provisioner:String,reclaim_policy:String?=nil,volume_binding_mode:String?=nil)-class-method" class="signature"><strong>.new</strong>(*, allow_volume_expansion : Bool? = <span class="n">nil</span>, allowed_topologies : Array? = <span class="n">nil</span>, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, parameters : Hash(String, String)? = <span class="n">nil</span>, provisioner : String, reclaim_policy : String? = <span class="n">nil</span>, volume_binding_mode : String? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Callow_volume_expansion%3ABool%3F%3Dnil%2Callowed_topologies%3AArray%3F%3Dnil%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cmount_options%3AArray%3F%3Dnil%2Cparameters%3AHash%28String%2CString%29%3F%3Dnil%2Cprovisioner%3AString%2Creclaim_policy%3AString%3F%3Dnil%2Cvolume_binding_mode%3AString%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, allow_volume_expansion : Bool? = <span class="n">nil</span>, allowed_topologies : Array? = <span class="n">nil</span>, metadata : Apimachinery::Apis::Meta::V1::ObjectMeta? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, parameters : Hash(String, String)? = <span class="n">nil</span>, provisioner : String, reclaim_policy : String? = <span class="n">nil</span>, volume_binding_mode : String? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -3766,72 +3770,72 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#allow_volume_expansion:Bool?-instance-method" class="signature"><strong>#allow_volume_expansion</strong> : Bool?</a>
+        <a href="#allow_volume_expansion%3ABool%3F-instance-method" class="signature"><strong>#allow_volume_expansion</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allow_volume_expansion=(allow_volume_expansion:Bool?)-instance-method" class="signature"><strong>#allow_volume_expansion=</strong>(allow_volume_expansion : Bool?)</a>
+        <a href="#allow_volume_expansion%3D%28allow_volume_expansion%3ABool%3F%29-instance-method" class="signature"><strong>#allow_volume_expansion=</strong>(allow_volume_expansion : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_topologies:Array(Api::Core::V1::TopologySelectorTerm)?-instance-method" class="signature"><strong>#allowed_topologies</strong> : Array(Api::Core::V1::TopologySelectorTerm)?</a>
+        <a href="#allowed_topologies%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySelectorTerm%29%3F-instance-method" class="signature"><strong>#allowed_topologies</strong> : Array(Api::Core::V1::TopologySelectorTerm)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#allowed_topologies=(allowed_topologies:Array(Api::Core::V1::TopologySelectorTerm)?)-instance-method" class="signature"><strong>#allowed_topologies=</strong>(allowed_topologies : Array(Api::Core::V1::TopologySelectorTerm)?)</a>
+        <a href="#allowed_topologies%3D%28allowed_topologies%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySelectorTerm%29%3F%29-instance-method" class="signature"><strong>#allowed_topologies=</strong>(allowed_topologies : Array(Api::Core::V1::TopologySelectorTerm)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mount_options:Array(String)?-instance-method" class="signature"><strong>#mount_options</strong> : Array(String)?</a>
+        <a href="#mount_options%3AArray%28String%29%3F-instance-method" class="signature"><strong>#mount_options</strong> : Array(String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#mount_options=(mount_options:Array(String)?)-instance-method" class="signature"><strong>#mount_options=</strong>(mount_options : Array(String)?)</a>
+        <a href="#mount_options%3D%28mount_options%3AArray%28String%29%3F%29-instance-method" class="signature"><strong>#mount_options=</strong>(mount_options : Array(String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parameters:Hash(String,String)?-instance-method" class="signature"><strong>#parameters</strong> : Hash(String, String)?</a>
+        <a href="#parameters%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#parameters</strong> : Hash(String, String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parameters=(parameters:Hash(String,String)?)-instance-method" class="signature"><strong>#parameters=</strong>(parameters : Hash(String, String)?)</a>
+        <a href="#parameters%3D%28parameters%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#parameters=</strong>(parameters : Hash(String, String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provisioner:String-instance-method" class="signature"><strong>#provisioner</strong> : String</a>
+        <a href="#provisioner%3AString-instance-method" class="signature"><strong>#provisioner</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#provisioner=(provisioner:String)-instance-method" class="signature"><strong>#provisioner=</strong>(provisioner : String)</a>
+        <a href="#provisioner%3D%28provisioner%3AString%29-instance-method" class="signature"><strong>#provisioner=</strong>(provisioner : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reclaim_policy:String?-instance-method" class="signature"><strong>#reclaim_policy</strong> : String?</a>
+        <a href="#reclaim_policy%3AString%3F-instance-method" class="signature"><strong>#reclaim_policy</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reclaim_policy=(reclaim_policy:String?)-instance-method" class="signature"><strong>#reclaim_policy=</strong>(reclaim_policy : String?)</a>
+        <a href="#reclaim_policy%3D%28reclaim_policy%3AString%3F%29-instance-method" class="signature"><strong>#reclaim_policy=</strong>(reclaim_policy : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volume_binding_mode:String?-instance-method" class="signature"><strong>#volume_binding_mode</strong> : String?</a>
+        <a href="#volume_binding_mode%3AString%3F-instance-method" class="signature"><strong>#volume_binding_mode</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volume_binding_mode=(volume_binding_mode:String?)-instance-method" class="signature"><strong>#volume_binding_mode=</strong>(volume_binding_mode : String?)</a>
+        <a href="#volume_binding_mode%3D%28volume_binding_mode%3AString%3F%29-instance-method" class="signature"><strong>#volume_binding_mode=</strong>(volume_binding_mode : String?)</a>
         
       </li>
     
@@ -3848,12 +3852,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F-instance-method" class="tooltip">
       <span>metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?</span>
     metadata</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata=(metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?)-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#metadata%3D%28metadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%29-instance-method" class="tooltip">
       <span>metadata=(metadata : Apimachinery::Apis::Meta::V1::ObjectMeta?)</span>
     metadata=</a>
     
@@ -3865,7 +3869,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Object.html">Pyrite::Kubernetes::Object</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Object.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Object.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3881,12 +3885,12 @@
   <h3>Instance methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#api_version%3AString-instance-method" class="tooltip">
       <span>api_version : String</span>
     api_version</a>, 
     
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind:String-instance-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#kind%3AString-instance-method" class="tooltip">
       <span>kind : String</span>
     kind</a>
     
@@ -3898,7 +3902,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Resource.html">Pyrite::Kubernetes::Resource</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Resource.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Resource.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3917,7 +3921,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -3985,13 +3989,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.</p>
-
 <p>StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.</p>
         </div>
       
@@ -4006,13 +4009,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.</p>
-
 <p>StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.</p>
         </div>
       
@@ -4027,7 +4029,7 @@
         
         def self.<strong>new</strong>(*, allow_volume_expansion : Bool? = <span class="n">nil</span>, allowed_topologies : Array? = <span class="n">nil</span>, metadata : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/ObjectMeta.html">Apimachinery::Apis::Meta::V1::ObjectMeta</a>? = <span class="n">nil</span>, mount_options : Array? = <span class="n">nil</span>, parameters : Hash(String, String)? = <span class="n">nil</span>, provisioner : String, reclaim_policy : String? = <span class="n">nil</span>, volume_binding_mode : String? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,allow_volume_expansion:Bool?=nil,allowed_topologies:Array?=nil,metadata:Apimachinery::Apis::Meta::V1::ObjectMeta?=nil,mount_options:Array?=nil,parameters:Hash(String,String)?=nil,provisioner:String,reclaim_policy:String?=nil,volume_binding_mode:String?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Callow_volume_expansion%3ABool%3F%3Dnil%2Callowed_topologies%3AArray%3F%3Dnil%2Cmetadata%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3AObjectMeta%3F%3Dnil%2Cmount_options%3AArray%3F%3Dnil%2Cparameters%3AHash%28String%2CString%29%3F%3Dnil%2Cprovisioner%3AString%2Creclaim_policy%3AString%3F%3Dnil%2Cvolume_binding_mode%3AString%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4055,7 +4057,7 @@
         
         def <strong>allow_volume_expansion</strong> : Bool?
 
-        <a class="method-permalink" href="#allow_volume_expansion:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#allow_volume_expansion%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4069,7 +4071,7 @@
         
         def <strong>allow_volume_expansion=</strong>(allow_volume_expansion : Bool?)
 
-        <a class="method-permalink" href="#allow_volume_expansion=(allow_volume_expansion:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#allow_volume_expansion%3D%28allow_volume_expansion%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4083,7 +4085,7 @@
         
         def <strong>allowed_topologies</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/TopologySelectorTerm.html">Api::Core::V1::TopologySelectorTerm</a>)?
 
-        <a class="method-permalink" href="#allowed_topologies:Array(Api::Core::V1::TopologySelectorTerm)?-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_topologies%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySelectorTerm%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4097,7 +4099,7 @@
         
         def <strong>allowed_topologies=</strong>(allowed_topologies : Array(<a href="../../../../Pyrite/Api/Core/V1/TopologySelectorTerm.html">Api::Core::V1::TopologySelectorTerm</a>)?)
 
-        <a class="method-permalink" href="#allowed_topologies=(allowed_topologies:Array(Api::Core::V1::TopologySelectorTerm)?)-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_topologies%3D%28allowed_topologies%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySelectorTerm%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4111,7 +4113,7 @@
         
         def <strong>mount_options</strong> : Array(String)?
 
-        <a class="method-permalink" href="#mount_options:Array(String)?-instance-method">#</a>
+        <a class="method-permalink" href="#mount_options%3AArray%28String%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4125,7 +4127,7 @@
         
         def <strong>mount_options=</strong>(mount_options : Array(String)?)
 
-        <a class="method-permalink" href="#mount_options=(mount_options:Array(String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#mount_options%3D%28mount_options%3AArray%28String%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4139,7 +4141,7 @@
         
         def <strong>parameters</strong> : Hash(String, String)?
 
-        <a class="method-permalink" href="#parameters:Hash(String,String)?-instance-method">#</a>
+        <a class="method-permalink" href="#parameters%3AHash%28String%2CString%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4153,7 +4155,7 @@
         
         def <strong>parameters=</strong>(parameters : Hash(String, String)?)
 
-        <a class="method-permalink" href="#parameters=(parameters:Hash(String,String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#parameters%3D%28parameters%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4167,7 +4169,7 @@
         
         def <strong>provisioner</strong> : String
 
-        <a class="method-permalink" href="#provisioner:String-instance-method">#</a>
+        <a class="method-permalink" href="#provisioner%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -4181,7 +4183,7 @@
         
         def <strong>provisioner=</strong>(provisioner : String)
 
-        <a class="method-permalink" href="#provisioner=(provisioner:String)-instance-method">#</a>
+        <a class="method-permalink" href="#provisioner%3D%28provisioner%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4195,7 +4197,7 @@
         
         def <strong>reclaim_policy</strong> : String?
 
-        <a class="method-permalink" href="#reclaim_policy:String?-instance-method">#</a>
+        <a class="method-permalink" href="#reclaim_policy%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4209,7 +4211,7 @@
         
         def <strong>reclaim_policy=</strong>(reclaim_policy : String?)
 
-        <a class="method-permalink" href="#reclaim_policy=(reclaim_policy:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#reclaim_policy%3D%28reclaim_policy%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4223,7 +4225,7 @@
         
         def <strong>volume_binding_mode</strong> : String?
 
-        <a class="method-permalink" href="#volume_binding_mode:String?-instance-method">#</a>
+        <a class="method-permalink" href="#volume_binding_mode%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4237,7 +4239,7 @@
         
         def <strong>volume_binding_mode=</strong>(volume_binding_mode : String?)
 
-        <a class="method-permalink" href="#volume_binding_mode=(volume_binding_mode:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#volume_binding_mode%3D%28volume_binding_mode%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>

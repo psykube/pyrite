@@ -15,7 +15,7 @@ module Generator::Helpers
         when "integer", "number"
           "Int32"
         when "resource"
-          "Kubernetes::Object"
+          "Kubernetes::Resource"
         else
           kind.to_s.camelcase
         end

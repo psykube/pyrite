@@ -1,10 +1,23 @@
 require "./resource"
+require "./object_metadata"
 
 module Pyrite::Kubernetes
-  abstract class Object < Resource
-    # Standard object's metadata. More info: [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata)
-    @[::JSON::Field(key: "metadata")]
-    @[::YAML::Field(key: "metadata")]
-    property metadata : Apimachinery::Apis::Meta::V1::ObjectMeta | Nil
+  class Object < Resource
+    include ObjectMetadata
+
+    macro finished
+      def self.new(pull : JSON::PullParser)
+        location = pull.location
+        string = pull.read_raw
+        {% for subtype in @type.subclasses %}
+          begin
+            return {{subtype}}.from_json(string)
+          rescue JSON::ParseException
+            # Ignore
+          end
+        {% end %}
+        raise JSON::ParseException.new("Couldn't parse #{self} from #{string}", *location)
+      end
+    end
   end
 end

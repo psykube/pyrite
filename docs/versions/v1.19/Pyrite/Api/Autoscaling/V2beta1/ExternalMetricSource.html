@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -3881,6 +3881,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -3939,7 +3944,7 @@
     Overview
   </h2>
 
-  <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one "target" type should be set.</p>
+  <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one &quot;target&quot; type should be set.</p>
 
 
 
@@ -3984,21 +3989,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,metric_name:String,metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,target_average_value:Int32?=nil,target_value:Int32?=nil)-class-method" class="signature"><strong>.new</strong>(*, metric_name : String, metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, target_average_value : Int32? = <span class="n">nil</span>, target_value : Int32? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Cmetric_name%3AString%2Cmetric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Ctarget_average_value%3AInt32%3F%3Dnil%2Ctarget_value%3AInt32%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, metric_name : String, metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector? = <span class="n">nil</span>, target_average_value : Int32? = <span class="n">nil</span>, target_value : Int32? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -4019,42 +4024,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#metric_name:String-instance-method" class="signature"><strong>#metric_name</strong> : String</a>
+        <a href="#metric_name%3AString-instance-method" class="signature"><strong>#metric_name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#metric_name=(metric_name:String)-instance-method" class="signature"><strong>#metric_name=</strong>(metric_name : String)</a>
+        <a href="#metric_name%3D%28metric_name%3AString%29-instance-method" class="signature"><strong>#metric_name=</strong>(metric_name : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method" class="signature"><strong>#metric_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
+        <a href="#metric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method" class="signature"><strong>#metric_selector</strong> : Apimachinery::Apis::Meta::V1::LabelSelector?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#metric_selector=(metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method" class="signature"><strong>#metric_selector=</strong>(metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
+        <a href="#metric_selector%3D%28metric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method" class="signature"><strong>#metric_selector=</strong>(metric_selector : Apimachinery::Apis::Meta::V1::LabelSelector?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#target_average_value:Int32?-instance-method" class="signature"><strong>#target_average_value</strong> : Int32?</a>
+        <a href="#target_average_value%3AInt32%3F-instance-method" class="signature"><strong>#target_average_value</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#target_average_value=(target_average_value:Int32?)-instance-method" class="signature"><strong>#target_average_value=</strong>(target_average_value : Int32?)</a>
+        <a href="#target_average_value%3D%28target_average_value%3AInt32%3F%29-instance-method" class="signature"><strong>#target_average_value=</strong>(target_average_value : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#target_value:Int32?-instance-method" class="signature"><strong>#target_value</strong> : Int32?</a>
+        <a href="#target_value%3AInt32%3F-instance-method" class="signature"><strong>#target_value</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#target_value=(target_value:Int32?)-instance-method" class="signature"><strong>#target_value=</strong>(target_value : Int32?)</a>
+        <a href="#target_value%3D%28target_value%3AInt32%3F%29-instance-method" class="signature"><strong>#target_value=</strong>(target_value : Int32?)</a>
         
       </li>
     
@@ -4074,7 +4079,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4142,12 +4147,12 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one "target" type should be set.</p>
+          <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one &quot;target&quot; type should be set.</p>
         </div>
       
       <br/>
@@ -4161,12 +4166,12 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one "target" type should be set.</p>
+          <p>ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one &quot;target&quot; type should be set.</p>
         </div>
       
       <br/>
@@ -4180,7 +4185,7 @@
         
         def self.<strong>new</strong>(*, metric_name : String, metric_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>? = <span class="n">nil</span>, target_average_value : Int32? = <span class="n">nil</span>, target_value : Int32? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,metric_name:String,metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?=nil,target_average_value:Int32?=nil,target_value:Int32?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cmetric_name%3AString%2Cmetric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%3Dnil%2Ctarget_average_value%3AInt32%3F%3Dnil%2Ctarget_value%3AInt32%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4208,7 +4213,7 @@
         
         def <strong>metric_name</strong> : String
 
-        <a class="method-permalink" href="#metric_name:String-instance-method">#</a>
+        <a class="method-permalink" href="#metric_name%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -4222,7 +4227,7 @@
         
         def <strong>metric_name=</strong>(metric_name : String)
 
-        <a class="method-permalink" href="#metric_name=(metric_name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#metric_name%3D%28metric_name%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4236,7 +4241,7 @@
         
         def <strong>metric_selector</strong> : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?
 
-        <a class="method-permalink" href="#metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?-instance-method">#</a>
+        <a class="method-permalink" href="#metric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4250,7 +4255,7 @@
         
         def <strong>metric_selector=</strong>(metric_selector : <a href="../../../../Pyrite/Apimachinery/Apis/Meta/V1/LabelSelector.html">Apimachinery::Apis::Meta::V1::LabelSelector</a>?)
 
-        <a class="method-permalink" href="#metric_selector=(metric_selector:Apimachinery::Apis::Meta::V1::LabelSelector?)-instance-method">#</a>
+        <a class="method-permalink" href="#metric_selector%3D%28metric_selector%3AApimachinery%3A%3AApis%3A%3AMeta%3A%3AV1%3A%3ALabelSelector%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4264,7 +4269,7 @@
         
         def <strong>target_average_value</strong> : Int32?
 
-        <a class="method-permalink" href="#target_average_value:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#target_average_value%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4278,7 +4283,7 @@
         
         def <strong>target_average_value=</strong>(target_average_value : Int32?)
 
-        <a class="method-permalink" href="#target_average_value=(target_average_value:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#target_average_value%3D%28target_average_value%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4292,7 +4297,7 @@
         
         def <strong>target_value</strong> : Int32?
 
-        <a class="method-permalink" href="#target_value:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#target_value%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4306,7 +4311,7 @@
         
         def <strong>target_value=</strong>(target_value : Int32?)
 
-        <a class="method-permalink" href="#target_value=(target_value:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#target_value%3D%28target_value%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>

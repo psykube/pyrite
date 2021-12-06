@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="pyrite">
 
@@ -4076,6 +4076,11 @@
       
         <ul>
   
+  <li class=" " data-id="pyrite/Pyrite/Kubernetes/CustomObject" data-name="pyrite::kubernetes::customobject">
+      <a href="../../../../Pyrite/Kubernetes/CustomObject.html">CustomObject</a>
+      
+    </li>
+  
   <li class=" " data-id="pyrite/Pyrite/Kubernetes/List" data-name="pyrite::kubernetes::list(t)">
       <a href="../../../../Pyrite/Kubernetes/List.html">List</a>
       
@@ -4179,21 +4184,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
         
           <div class="summary"><p>PodSpec is a description of a pod.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
           <div class="summary"><p>PodSpec is a description of a pod.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*,active_deadline_seconds:Int32?=nil,affinity:Api::Core::V1::Affinity?=nil,automount_service_account_token:Bool?=nil,containers:Array,dns_config:Api::Core::V1::PodDNSConfig?=nil,dns_policy:String?=nil,enable_service_links:Bool?=nil,ephemeral_containers:Array?=nil,host_aliases:Array?=nil,host_ipc:Bool?=nil,host_network:Bool?=nil,host_pid:Bool?=nil,hostname:String?=nil,image_pull_secrets:Array?=nil,init_containers:Array?=nil,node_name:String?=nil,node_selector:Hash(String,String)?=nil,overhead:Hash(String,String)?=nil,preemption_policy:String?=nil,priority:Int32?=nil,priority_class_name:String?=nil,readiness_gates:Array?=nil,restart_policy:String?=nil,runtime_class_name:String?=nil,scheduler_name:String?=nil,security_context:Api::Core::V1::PodSecurityContext?=nil,service_account:String?=nil,service_account_name:String?=nil,set_hostname_as_fqd_n:Bool?=nil,share_process_namespace:Bool?=nil,subdomain:String?=nil,termination_grace_period_seconds:Int32?=nil,tolerations:Array?=nil,topology_spread_constraints:Array?=nil,volumes:Array?=nil)-class-method" class="signature"><strong>.new</strong>(*, active_deadline_seconds : Int32? = <span class="n">nil</span>, affinity : Api::Core::V1::Affinity? = <span class="n">nil</span>, automount_service_account_token : Bool? = <span class="n">nil</span>, containers : Array, dns_config : Api::Core::V1::PodDNSConfig? = <span class="n">nil</span>, dns_policy : String? = <span class="n">nil</span>, enable_service_links : Bool? = <span class="n">nil</span>, ephemeral_containers : Array? = <span class="n">nil</span>, host_aliases : Array? = <span class="n">nil</span>, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, hostname : String? = <span class="n">nil</span>, image_pull_secrets : Array? = <span class="n">nil</span>, init_containers : Array? = <span class="n">nil</span>, node_name : String? = <span class="n">nil</span>, node_selector : Hash(String, String)? = <span class="n">nil</span>, overhead : Hash(String, String)? = <span class="n">nil</span>, preemption_policy : String? = <span class="n">nil</span>, priority : Int32? = <span class="n">nil</span>, priority_class_name : String? = <span class="n">nil</span>, readiness_gates : Array? = <span class="n">nil</span>, restart_policy : String? = <span class="n">nil</span>, runtime_class_name : String? = <span class="n">nil</span>, scheduler_name : String? = <span class="n">nil</span>, security_context : Api::Core::V1::PodSecurityContext? = <span class="n">nil</span>, service_account : String? = <span class="n">nil</span>, service_account_name : String? = <span class="n">nil</span>, set_hostname_as_fqd_n : Bool? = <span class="n">nil</span>, share_process_namespace : Bool? = <span class="n">nil</span>, subdomain : String? = <span class="n">nil</span>, termination_grace_period_seconds : Int32? = <span class="n">nil</span>, tolerations : Array? = <span class="n">nil</span>, topology_spread_constraints : Array? = <span class="n">nil</span>, volumes : Array? = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Cactive_deadline_seconds%3AInt32%3F%3Dnil%2Caffinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F%3Dnil%2Cautomount_service_account_token%3ABool%3F%3Dnil%2Ccontainers%3AArray%2Cdns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F%3Dnil%2Cdns_policy%3AString%3F%3Dnil%2Cenable_service_links%3ABool%3F%3Dnil%2Cephemeral_containers%3AArray%3F%3Dnil%2Chost_aliases%3AArray%3F%3Dnil%2Chost_ipc%3ABool%3F%3Dnil%2Chost_network%3ABool%3F%3Dnil%2Chost_pid%3ABool%3F%3Dnil%2Chostname%3AString%3F%3Dnil%2Cimage_pull_secrets%3AArray%3F%3Dnil%2Cinit_containers%3AArray%3F%3Dnil%2Cnode_name%3AString%3F%3Dnil%2Cnode_selector%3AHash%28String%2CString%29%3F%3Dnil%2Coverhead%3AHash%28String%2CString%29%3F%3Dnil%2Cpreemption_policy%3AString%3F%3Dnil%2Cpriority%3AInt32%3F%3Dnil%2Cpriority_class_name%3AString%3F%3Dnil%2Creadiness_gates%3AArray%3F%3Dnil%2Crestart_policy%3AString%3F%3Dnil%2Cruntime_class_name%3AString%3F%3Dnil%2Cscheduler_name%3AString%3F%3Dnil%2Csecurity_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F%3Dnil%2Cservice_account%3AString%3F%3Dnil%2Cservice_account_name%3AString%3F%3Dnil%2Cset_hostname_as_fqd_n%3ABool%3F%3Dnil%2Cshare_process_namespace%3ABool%3F%3Dnil%2Csubdomain%3AString%3F%3Dnil%2Ctermination_grace_period_seconds%3AInt32%3F%3Dnil%2Ctolerations%3AArray%3F%3Dnil%2Ctopology_spread_constraints%3AArray%3F%3Dnil%2Cvolumes%3AArray%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, active_deadline_seconds : Int32? = <span class="n">nil</span>, affinity : Api::Core::V1::Affinity? = <span class="n">nil</span>, automount_service_account_token : Bool? = <span class="n">nil</span>, containers : Array, dns_config : Api::Core::V1::PodDNSConfig? = <span class="n">nil</span>, dns_policy : String? = <span class="n">nil</span>, enable_service_links : Bool? = <span class="n">nil</span>, ephemeral_containers : Array? = <span class="n">nil</span>, host_aliases : Array? = <span class="n">nil</span>, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, hostname : String? = <span class="n">nil</span>, image_pull_secrets : Array? = <span class="n">nil</span>, init_containers : Array? = <span class="n">nil</span>, node_name : String? = <span class="n">nil</span>, node_selector : Hash(String, String)? = <span class="n">nil</span>, overhead : Hash(String, String)? = <span class="n">nil</span>, preemption_policy : String? = <span class="n">nil</span>, priority : Int32? = <span class="n">nil</span>, priority_class_name : String? = <span class="n">nil</span>, readiness_gates : Array? = <span class="n">nil</span>, restart_policy : String? = <span class="n">nil</span>, runtime_class_name : String? = <span class="n">nil</span>, scheduler_name : String? = <span class="n">nil</span>, security_context : Api::Core::V1::PodSecurityContext? = <span class="n">nil</span>, service_account : String? = <span class="n">nil</span>, service_account_name : String? = <span class="n">nil</span>, set_hostname_as_fqd_n : Bool? = <span class="n">nil</span>, share_process_namespace : Bool? = <span class="n">nil</span>, subdomain : String? = <span class="n">nil</span>, termination_grace_period_seconds : Int32? = <span class="n">nil</span>, tolerations : Array? = <span class="n">nil</span>, topology_spread_constraints : Array? = <span class="n">nil</span>, volumes : Array? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -4214,352 +4219,352 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#active_deadline_seconds:Int32?-instance-method" class="signature"><strong>#active_deadline_seconds</strong> : Int32?</a>
+        <a href="#active_deadline_seconds%3AInt32%3F-instance-method" class="signature"><strong>#active_deadline_seconds</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#active_deadline_seconds=(active_deadline_seconds:Int32?)-instance-method" class="signature"><strong>#active_deadline_seconds=</strong>(active_deadline_seconds : Int32?)</a>
+        <a href="#active_deadline_seconds%3D%28active_deadline_seconds%3AInt32%3F%29-instance-method" class="signature"><strong>#active_deadline_seconds=</strong>(active_deadline_seconds : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#affinity:Api::Core::V1::Affinity?-instance-method" class="signature"><strong>#affinity</strong> : Api::Core::V1::Affinity?</a>
+        <a href="#affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F-instance-method" class="signature"><strong>#affinity</strong> : Api::Core::V1::Affinity?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#affinity=(affinity:Api::Core::V1::Affinity?)-instance-method" class="signature"><strong>#affinity=</strong>(affinity : Api::Core::V1::Affinity?)</a>
+        <a href="#affinity%3D%28affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F%29-instance-method" class="signature"><strong>#affinity=</strong>(affinity : Api::Core::V1::Affinity?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#automount_service_account_token:Bool?-instance-method" class="signature"><strong>#automount_service_account_token</strong> : Bool?</a>
+        <a href="#automount_service_account_token%3ABool%3F-instance-method" class="signature"><strong>#automount_service_account_token</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#automount_service_account_token=(automount_service_account_token:Bool?)-instance-method" class="signature"><strong>#automount_service_account_token=</strong>(automount_service_account_token : Bool?)</a>
+        <a href="#automount_service_account_token%3D%28automount_service_account_token%3ABool%3F%29-instance-method" class="signature"><strong>#automount_service_account_token=</strong>(automount_service_account_token : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#containers:Array(Api::Core::V1::Container)-instance-method" class="signature"><strong>#containers</strong> : Array(Api::Core::V1::Container)</a>
+        <a href="#containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29-instance-method" class="signature"><strong>#containers</strong> : Array(Api::Core::V1::Container)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#containers=(containers:Array(Api::Core::V1::Container))-instance-method" class="signature"><strong>#containers=</strong>(containers : Array(Api::Core::V1::Container))</a>
+        <a href="#containers%3D%28containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%29-instance-method" class="signature"><strong>#containers=</strong>(containers : Array(Api::Core::V1::Container))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dns_config:Api::Core::V1::PodDNSConfig?-instance-method" class="signature"><strong>#dns_config</strong> : Api::Core::V1::PodDNSConfig?</a>
+        <a href="#dns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F-instance-method" class="signature"><strong>#dns_config</strong> : Api::Core::V1::PodDNSConfig?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dns_config=(dns_config:Api::Core::V1::PodDNSConfig?)-instance-method" class="signature"><strong>#dns_config=</strong>(dns_config : Api::Core::V1::PodDNSConfig?)</a>
+        <a href="#dns_config%3D%28dns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F%29-instance-method" class="signature"><strong>#dns_config=</strong>(dns_config : Api::Core::V1::PodDNSConfig?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dns_policy:String?-instance-method" class="signature"><strong>#dns_policy</strong> : String?</a>
+        <a href="#dns_policy%3AString%3F-instance-method" class="signature"><strong>#dns_policy</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dns_policy=(dns_policy:String?)-instance-method" class="signature"><strong>#dns_policy=</strong>(dns_policy : String?)</a>
+        <a href="#dns_policy%3D%28dns_policy%3AString%3F%29-instance-method" class="signature"><strong>#dns_policy=</strong>(dns_policy : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enable_service_links:Bool?-instance-method" class="signature"><strong>#enable_service_links</strong> : Bool?</a>
+        <a href="#enable_service_links%3ABool%3F-instance-method" class="signature"><strong>#enable_service_links</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enable_service_links=(enable_service_links:Bool?)-instance-method" class="signature"><strong>#enable_service_links=</strong>(enable_service_links : Bool?)</a>
+        <a href="#enable_service_links%3D%28enable_service_links%3ABool%3F%29-instance-method" class="signature"><strong>#enable_service_links=</strong>(enable_service_links : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ephemeral_containers:Array(Api::Core::V1::EphemeralContainer)?-instance-method" class="signature"><strong>#ephemeral_containers</strong> : Array(Api::Core::V1::EphemeralContainer)?</a>
+        <a href="#ephemeral_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AEphemeralContainer%29%3F-instance-method" class="signature"><strong>#ephemeral_containers</strong> : Array(Api::Core::V1::EphemeralContainer)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ephemeral_containers=(ephemeral_containers:Array(Api::Core::V1::EphemeralContainer)?)-instance-method" class="signature"><strong>#ephemeral_containers=</strong>(ephemeral_containers : Array(Api::Core::V1::EphemeralContainer)?)</a>
+        <a href="#ephemeral_containers%3D%28ephemeral_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AEphemeralContainer%29%3F%29-instance-method" class="signature"><strong>#ephemeral_containers=</strong>(ephemeral_containers : Array(Api::Core::V1::EphemeralContainer)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_aliases:Array(Api::Core::V1::HostAlias)?-instance-method" class="signature"><strong>#host_aliases</strong> : Array(Api::Core::V1::HostAlias)?</a>
+        <a href="#host_aliases%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AHostAlias%29%3F-instance-method" class="signature"><strong>#host_aliases</strong> : Array(Api::Core::V1::HostAlias)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_aliases=(host_aliases:Array(Api::Core::V1::HostAlias)?)-instance-method" class="signature"><strong>#host_aliases=</strong>(host_aliases : Array(Api::Core::V1::HostAlias)?)</a>
+        <a href="#host_aliases%3D%28host_aliases%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AHostAlias%29%3F%29-instance-method" class="signature"><strong>#host_aliases=</strong>(host_aliases : Array(Api::Core::V1::HostAlias)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ipc:Bool?-instance-method" class="signature"><strong>#host_ipc</strong> : Bool?</a>
+        <a href="#host_ipc%3ABool%3F-instance-method" class="signature"><strong>#host_ipc</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_ipc=(host_ipc:Bool?)-instance-method" class="signature"><strong>#host_ipc=</strong>(host_ipc : Bool?)</a>
+        <a href="#host_ipc%3D%28host_ipc%3ABool%3F%29-instance-method" class="signature"><strong>#host_ipc=</strong>(host_ipc : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_network:Bool?-instance-method" class="signature"><strong>#host_network</strong> : Bool?</a>
+        <a href="#host_network%3ABool%3F-instance-method" class="signature"><strong>#host_network</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_network=(host_network:Bool?)-instance-method" class="signature"><strong>#host_network=</strong>(host_network : Bool?)</a>
+        <a href="#host_network%3D%28host_network%3ABool%3F%29-instance-method" class="signature"><strong>#host_network=</strong>(host_network : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_pid:Bool?-instance-method" class="signature"><strong>#host_pid</strong> : Bool?</a>
+        <a href="#host_pid%3ABool%3F-instance-method" class="signature"><strong>#host_pid</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#host_pid=(host_pid:Bool?)-instance-method" class="signature"><strong>#host_pid=</strong>(host_pid : Bool?)</a>
+        <a href="#host_pid%3D%28host_pid%3ABool%3F%29-instance-method" class="signature"><strong>#host_pid=</strong>(host_pid : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hostname:String?-instance-method" class="signature"><strong>#hostname</strong> : String?</a>
+        <a href="#hostname%3AString%3F-instance-method" class="signature"><strong>#hostname</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hostname=(hostname:String?)-instance-method" class="signature"><strong>#hostname=</strong>(hostname : String?)</a>
+        <a href="#hostname%3D%28hostname%3AString%3F%29-instance-method" class="signature"><strong>#hostname=</strong>(hostname : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image_pull_secrets:Array(Api::Core::V1::LocalObjectReference)?-instance-method" class="signature"><strong>#image_pull_secrets</strong> : Array(Api::Core::V1::LocalObjectReference)?</a>
+        <a href="#image_pull_secrets%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ALocalObjectReference%29%3F-instance-method" class="signature"><strong>#image_pull_secrets</strong> : Array(Api::Core::V1::LocalObjectReference)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#image_pull_secrets=(image_pull_secrets:Array(Api::Core::V1::LocalObjectReference)?)-instance-method" class="signature"><strong>#image_pull_secrets=</strong>(image_pull_secrets : Array(Api::Core::V1::LocalObjectReference)?)</a>
+        <a href="#image_pull_secrets%3D%28image_pull_secrets%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ALocalObjectReference%29%3F%29-instance-method" class="signature"><strong>#image_pull_secrets=</strong>(image_pull_secrets : Array(Api::Core::V1::LocalObjectReference)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#init_containers:Array(Api::Core::V1::Container)?-instance-method" class="signature"><strong>#init_containers</strong> : Array(Api::Core::V1::Container)?</a>
+        <a href="#init_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%3F-instance-method" class="signature"><strong>#init_containers</strong> : Array(Api::Core::V1::Container)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#init_containers=(init_containers:Array(Api::Core::V1::Container)?)-instance-method" class="signature"><strong>#init_containers=</strong>(init_containers : Array(Api::Core::V1::Container)?)</a>
+        <a href="#init_containers%3D%28init_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%3F%29-instance-method" class="signature"><strong>#init_containers=</strong>(init_containers : Array(Api::Core::V1::Container)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_name:String?-instance-method" class="signature"><strong>#node_name</strong> : String?</a>
+        <a href="#node_name%3AString%3F-instance-method" class="signature"><strong>#node_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_name=(node_name:String?)-instance-method" class="signature"><strong>#node_name=</strong>(node_name : String?)</a>
+        <a href="#node_name%3D%28node_name%3AString%3F%29-instance-method" class="signature"><strong>#node_name=</strong>(node_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_selector:Hash(String,String)?-instance-method" class="signature"><strong>#node_selector</strong> : Hash(String, String)?</a>
+        <a href="#node_selector%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#node_selector</strong> : Hash(String, String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#node_selector=(node_selector:Hash(String,String)?)-instance-method" class="signature"><strong>#node_selector=</strong>(node_selector : Hash(String, String)?)</a>
+        <a href="#node_selector%3D%28node_selector%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#node_selector=</strong>(node_selector : Hash(String, String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#overhead:Hash(String,String)?-instance-method" class="signature"><strong>#overhead</strong> : Hash(String, String)?</a>
+        <a href="#overhead%3AHash%28String%2CString%29%3F-instance-method" class="signature"><strong>#overhead</strong> : Hash(String, String)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#overhead=(overhead:Hash(String,String)?)-instance-method" class="signature"><strong>#overhead=</strong>(overhead : Hash(String, String)?)</a>
+        <a href="#overhead%3D%28overhead%3AHash%28String%2CString%29%3F%29-instance-method" class="signature"><strong>#overhead=</strong>(overhead : Hash(String, String)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#preemption_policy:String?-instance-method" class="signature"><strong>#preemption_policy</strong> : String?</a>
+        <a href="#preemption_policy%3AString%3F-instance-method" class="signature"><strong>#preemption_policy</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#preemption_policy=(preemption_policy:String?)-instance-method" class="signature"><strong>#preemption_policy=</strong>(preemption_policy : String?)</a>
+        <a href="#preemption_policy%3D%28preemption_policy%3AString%3F%29-instance-method" class="signature"><strong>#preemption_policy=</strong>(preemption_policy : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#priority:Int32?-instance-method" class="signature"><strong>#priority</strong> : Int32?</a>
+        <a href="#priority%3AInt32%3F-instance-method" class="signature"><strong>#priority</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#priority=(priority:Int32?)-instance-method" class="signature"><strong>#priority=</strong>(priority : Int32?)</a>
+        <a href="#priority%3D%28priority%3AInt32%3F%29-instance-method" class="signature"><strong>#priority=</strong>(priority : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#priority_class_name:String?-instance-method" class="signature"><strong>#priority_class_name</strong> : String?</a>
+        <a href="#priority_class_name%3AString%3F-instance-method" class="signature"><strong>#priority_class_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#priority_class_name=(priority_class_name:String?)-instance-method" class="signature"><strong>#priority_class_name=</strong>(priority_class_name : String?)</a>
+        <a href="#priority_class_name%3D%28priority_class_name%3AString%3F%29-instance-method" class="signature"><strong>#priority_class_name=</strong>(priority_class_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#readiness_gates:Array(Api::Core::V1::PodReadinessGate)?-instance-method" class="signature"><strong>#readiness_gates</strong> : Array(Api::Core::V1::PodReadinessGate)?</a>
+        <a href="#readiness_gates%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3APodReadinessGate%29%3F-instance-method" class="signature"><strong>#readiness_gates</strong> : Array(Api::Core::V1::PodReadinessGate)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#readiness_gates=(readiness_gates:Array(Api::Core::V1::PodReadinessGate)?)-instance-method" class="signature"><strong>#readiness_gates=</strong>(readiness_gates : Array(Api::Core::V1::PodReadinessGate)?)</a>
+        <a href="#readiness_gates%3D%28readiness_gates%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3APodReadinessGate%29%3F%29-instance-method" class="signature"><strong>#readiness_gates=</strong>(readiness_gates : Array(Api::Core::V1::PodReadinessGate)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#restart_policy:String?-instance-method" class="signature"><strong>#restart_policy</strong> : String?</a>
+        <a href="#restart_policy%3AString%3F-instance-method" class="signature"><strong>#restart_policy</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#restart_policy=(restart_policy:String?)-instance-method" class="signature"><strong>#restart_policy=</strong>(restart_policy : String?)</a>
+        <a href="#restart_policy%3D%28restart_policy%3AString%3F%29-instance-method" class="signature"><strong>#restart_policy=</strong>(restart_policy : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#runtime_class_name:String?-instance-method" class="signature"><strong>#runtime_class_name</strong> : String?</a>
+        <a href="#runtime_class_name%3AString%3F-instance-method" class="signature"><strong>#runtime_class_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#runtime_class_name=(runtime_class_name:String?)-instance-method" class="signature"><strong>#runtime_class_name=</strong>(runtime_class_name : String?)</a>
+        <a href="#runtime_class_name%3D%28runtime_class_name%3AString%3F%29-instance-method" class="signature"><strong>#runtime_class_name=</strong>(runtime_class_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scheduler_name:String?-instance-method" class="signature"><strong>#scheduler_name</strong> : String?</a>
+        <a href="#scheduler_name%3AString%3F-instance-method" class="signature"><strong>#scheduler_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#scheduler_name=(scheduler_name:String?)-instance-method" class="signature"><strong>#scheduler_name=</strong>(scheduler_name : String?)</a>
+        <a href="#scheduler_name%3D%28scheduler_name%3AString%3F%29-instance-method" class="signature"><strong>#scheduler_name=</strong>(scheduler_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#security_context:Api::Core::V1::PodSecurityContext?-instance-method" class="signature"><strong>#security_context</strong> : Api::Core::V1::PodSecurityContext?</a>
+        <a href="#security_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F-instance-method" class="signature"><strong>#security_context</strong> : Api::Core::V1::PodSecurityContext?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#security_context=(security_context:Api::Core::V1::PodSecurityContext?)-instance-method" class="signature"><strong>#security_context=</strong>(security_context : Api::Core::V1::PodSecurityContext?)</a>
+        <a href="#security_context%3D%28security_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F%29-instance-method" class="signature"><strong>#security_context=</strong>(security_context : Api::Core::V1::PodSecurityContext?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#service_account:String?-instance-method" class="signature"><strong>#service_account</strong> : String?</a>
+        <a href="#service_account%3AString%3F-instance-method" class="signature"><strong>#service_account</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#service_account=(service_account:String?)-instance-method" class="signature"><strong>#service_account=</strong>(service_account : String?)</a>
+        <a href="#service_account%3D%28service_account%3AString%3F%29-instance-method" class="signature"><strong>#service_account=</strong>(service_account : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#service_account_name:String?-instance-method" class="signature"><strong>#service_account_name</strong> : String?</a>
+        <a href="#service_account_name%3AString%3F-instance-method" class="signature"><strong>#service_account_name</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#service_account_name=(service_account_name:String?)-instance-method" class="signature"><strong>#service_account_name=</strong>(service_account_name : String?)</a>
+        <a href="#service_account_name%3D%28service_account_name%3AString%3F%29-instance-method" class="signature"><strong>#service_account_name=</strong>(service_account_name : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_hostname_as_fqd_n:Bool?-instance-method" class="signature"><strong>#set_hostname_as_fqd_n</strong> : Bool?</a>
+        <a href="#set_hostname_as_fqd_n%3ABool%3F-instance-method" class="signature"><strong>#set_hostname_as_fqd_n</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_hostname_as_fqd_n=(set_hostname_as_fqd_n:Bool?)-instance-method" class="signature"><strong>#set_hostname_as_fqd_n=</strong>(set_hostname_as_fqd_n : Bool?)</a>
+        <a href="#set_hostname_as_fqd_n%3D%28set_hostname_as_fqd_n%3ABool%3F%29-instance-method" class="signature"><strong>#set_hostname_as_fqd_n=</strong>(set_hostname_as_fqd_n : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#share_process_namespace:Bool?-instance-method" class="signature"><strong>#share_process_namespace</strong> : Bool?</a>
+        <a href="#share_process_namespace%3ABool%3F-instance-method" class="signature"><strong>#share_process_namespace</strong> : Bool?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#share_process_namespace=(share_process_namespace:Bool?)-instance-method" class="signature"><strong>#share_process_namespace=</strong>(share_process_namespace : Bool?)</a>
+        <a href="#share_process_namespace%3D%28share_process_namespace%3ABool%3F%29-instance-method" class="signature"><strong>#share_process_namespace=</strong>(share_process_namespace : Bool?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subdomain:String?-instance-method" class="signature"><strong>#subdomain</strong> : String?</a>
+        <a href="#subdomain%3AString%3F-instance-method" class="signature"><strong>#subdomain</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subdomain=(subdomain:String?)-instance-method" class="signature"><strong>#subdomain=</strong>(subdomain : String?)</a>
+        <a href="#subdomain%3D%28subdomain%3AString%3F%29-instance-method" class="signature"><strong>#subdomain=</strong>(subdomain : String?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#termination_grace_period_seconds:Int32?-instance-method" class="signature"><strong>#termination_grace_period_seconds</strong> : Int32?</a>
+        <a href="#termination_grace_period_seconds%3AInt32%3F-instance-method" class="signature"><strong>#termination_grace_period_seconds</strong> : Int32?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#termination_grace_period_seconds=(termination_grace_period_seconds:Int32?)-instance-method" class="signature"><strong>#termination_grace_period_seconds=</strong>(termination_grace_period_seconds : Int32?)</a>
+        <a href="#termination_grace_period_seconds%3D%28termination_grace_period_seconds%3AInt32%3F%29-instance-method" class="signature"><strong>#termination_grace_period_seconds=</strong>(termination_grace_period_seconds : Int32?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tolerations:Array(Api::Core::V1::Toleration)?-instance-method" class="signature"><strong>#tolerations</strong> : Array(Api::Core::V1::Toleration)?</a>
+        <a href="#tolerations%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AToleration%29%3F-instance-method" class="signature"><strong>#tolerations</strong> : Array(Api::Core::V1::Toleration)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tolerations=(tolerations:Array(Api::Core::V1::Toleration)?)-instance-method" class="signature"><strong>#tolerations=</strong>(tolerations : Array(Api::Core::V1::Toleration)?)</a>
+        <a href="#tolerations%3D%28tolerations%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AToleration%29%3F%29-instance-method" class="signature"><strong>#tolerations=</strong>(tolerations : Array(Api::Core::V1::Toleration)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#topology_spread_constraints:Array(Api::Core::V1::TopologySpreadConstraint)?-instance-method" class="signature"><strong>#topology_spread_constraints</strong> : Array(Api::Core::V1::TopologySpreadConstraint)?</a>
+        <a href="#topology_spread_constraints%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySpreadConstraint%29%3F-instance-method" class="signature"><strong>#topology_spread_constraints</strong> : Array(Api::Core::V1::TopologySpreadConstraint)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#topology_spread_constraints=(topology_spread_constraints:Array(Api::Core::V1::TopologySpreadConstraint)?)-instance-method" class="signature"><strong>#topology_spread_constraints=</strong>(topology_spread_constraints : Array(Api::Core::V1::TopologySpreadConstraint)?)</a>
+        <a href="#topology_spread_constraints%3D%28topology_spread_constraints%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySpreadConstraint%29%3F%29-instance-method" class="signature"><strong>#topology_spread_constraints=</strong>(topology_spread_constraints : Array(Api::Core::V1::TopologySpreadConstraint)?)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volumes:Array(Api::Core::V1::Volume)?-instance-method" class="signature"><strong>#volumes</strong> : Array(Api::Core::V1::Volume)?</a>
+        <a href="#volumes%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AVolume%29%3F-instance-method" class="signature"><strong>#volumes</strong> : Array(Api::Core::V1::Volume)?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#volumes=(volumes:Array(Api::Core::V1::Volume)?)-instance-method" class="signature"><strong>#volumes=</strong>(volumes : Array(Api::Core::V1::Volume)?)</a>
+        <a href="#volumes%3D%28volumes%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AVolume%29%3F%29-instance-method" class="signature"><strong>#volumes=</strong>(volumes : Array(Api::Core::V1::Volume)?)</a>
         
       </li>
     
@@ -4579,7 +4584,7 @@
   <h3>Constructor methods inherited from class <code><a href="../../../../Pyrite/Kubernetes/Spec.html">Pyrite::Kubernetes::Spec</a></code></h3>
   
   
-    <a href="../../../../Pyrite/Kubernetes/Spec.html#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method" class="tooltip">
+    <a href="../../../../Pyrite/Kubernetes/Spec.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="tooltip">
       <span>new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)<br/>new(pull : JSON::PullParser)</span>
     new</a>
     
@@ -4647,7 +4652,7 @@
         
         def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
 
-        <a class="method-permalink" href="#new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">#</a>
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4666,7 +4671,7 @@
         
         def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -4685,7 +4690,7 @@
         
         def self.<strong>new</strong>(*, active_deadline_seconds : Int32? = <span class="n">nil</span>, affinity : <a href="../../../../Pyrite/Api/Core/V1/Affinity.html">Api::Core::V1::Affinity</a>? = <span class="n">nil</span>, automount_service_account_token : Bool? = <span class="n">nil</span>, containers : Array, dns_config : <a href="../../../../Pyrite/Api/Core/V1/PodDNSConfig.html">Api::Core::V1::PodDNSConfig</a>? = <span class="n">nil</span>, dns_policy : String? = <span class="n">nil</span>, enable_service_links : Bool? = <span class="n">nil</span>, ephemeral_containers : Array? = <span class="n">nil</span>, host_aliases : Array? = <span class="n">nil</span>, host_ipc : Bool? = <span class="n">nil</span>, host_network : Bool? = <span class="n">nil</span>, host_pid : Bool? = <span class="n">nil</span>, hostname : String? = <span class="n">nil</span>, image_pull_secrets : Array? = <span class="n">nil</span>, init_containers : Array? = <span class="n">nil</span>, node_name : String? = <span class="n">nil</span>, node_selector : Hash(String, String)? = <span class="n">nil</span>, overhead : Hash(String, String)? = <span class="n">nil</span>, preemption_policy : String? = <span class="n">nil</span>, priority : Int32? = <span class="n">nil</span>, priority_class_name : String? = <span class="n">nil</span>, readiness_gates : Array? = <span class="n">nil</span>, restart_policy : String? = <span class="n">nil</span>, runtime_class_name : String? = <span class="n">nil</span>, scheduler_name : String? = <span class="n">nil</span>, security_context : <a href="../../../../Pyrite/Api/Core/V1/PodSecurityContext.html">Api::Core::V1::PodSecurityContext</a>? = <span class="n">nil</span>, service_account : String? = <span class="n">nil</span>, service_account_name : String? = <span class="n">nil</span>, set_hostname_as_fqd_n : Bool? = <span class="n">nil</span>, share_process_namespace : Bool? = <span class="n">nil</span>, subdomain : String? = <span class="n">nil</span>, termination_grace_period_seconds : Int32? = <span class="n">nil</span>, tolerations : Array? = <span class="n">nil</span>, topology_spread_constraints : Array? = <span class="n">nil</span>, volumes : Array? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(*,active_deadline_seconds:Int32?=nil,affinity:Api::Core::V1::Affinity?=nil,automount_service_account_token:Bool?=nil,containers:Array,dns_config:Api::Core::V1::PodDNSConfig?=nil,dns_policy:String?=nil,enable_service_links:Bool?=nil,ephemeral_containers:Array?=nil,host_aliases:Array?=nil,host_ipc:Bool?=nil,host_network:Bool?=nil,host_pid:Bool?=nil,hostname:String?=nil,image_pull_secrets:Array?=nil,init_containers:Array?=nil,node_name:String?=nil,node_selector:Hash(String,String)?=nil,overhead:Hash(String,String)?=nil,preemption_policy:String?=nil,priority:Int32?=nil,priority_class_name:String?=nil,readiness_gates:Array?=nil,restart_policy:String?=nil,runtime_class_name:String?=nil,scheduler_name:String?=nil,security_context:Api::Core::V1::PodSecurityContext?=nil,service_account:String?=nil,service_account_name:String?=nil,set_hostname_as_fqd_n:Bool?=nil,share_process_namespace:Bool?=nil,subdomain:String?=nil,termination_grace_period_seconds:Int32?=nil,tolerations:Array?=nil,topology_spread_constraints:Array?=nil,volumes:Array?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cactive_deadline_seconds%3AInt32%3F%3Dnil%2Caffinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F%3Dnil%2Cautomount_service_account_token%3ABool%3F%3Dnil%2Ccontainers%3AArray%2Cdns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F%3Dnil%2Cdns_policy%3AString%3F%3Dnil%2Cenable_service_links%3ABool%3F%3Dnil%2Cephemeral_containers%3AArray%3F%3Dnil%2Chost_aliases%3AArray%3F%3Dnil%2Chost_ipc%3ABool%3F%3Dnil%2Chost_network%3ABool%3F%3Dnil%2Chost_pid%3ABool%3F%3Dnil%2Chostname%3AString%3F%3Dnil%2Cimage_pull_secrets%3AArray%3F%3Dnil%2Cinit_containers%3AArray%3F%3Dnil%2Cnode_name%3AString%3F%3Dnil%2Cnode_selector%3AHash%28String%2CString%29%3F%3Dnil%2Coverhead%3AHash%28String%2CString%29%3F%3Dnil%2Cpreemption_policy%3AString%3F%3Dnil%2Cpriority%3AInt32%3F%3Dnil%2Cpriority_class_name%3AString%3F%3Dnil%2Creadiness_gates%3AArray%3F%3Dnil%2Crestart_policy%3AString%3F%3Dnil%2Cruntime_class_name%3AString%3F%3Dnil%2Cscheduler_name%3AString%3F%3Dnil%2Csecurity_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F%3Dnil%2Cservice_account%3AString%3F%3Dnil%2Cservice_account_name%3AString%3F%3Dnil%2Cset_hostname_as_fqd_n%3ABool%3F%3Dnil%2Cshare_process_namespace%3ABool%3F%3Dnil%2Csubdomain%3AString%3F%3Dnil%2Ctermination_grace_period_seconds%3AInt32%3F%3Dnil%2Ctolerations%3AArray%3F%3Dnil%2Ctopology_spread_constraints%3AArray%3F%3Dnil%2Cvolumes%3AArray%3F%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -4713,7 +4718,7 @@
         
         def <strong>active_deadline_seconds</strong> : Int32?
 
-        <a class="method-permalink" href="#active_deadline_seconds:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#active_deadline_seconds%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4727,7 +4732,7 @@
         
         def <strong>active_deadline_seconds=</strong>(active_deadline_seconds : Int32?)
 
-        <a class="method-permalink" href="#active_deadline_seconds=(active_deadline_seconds:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#active_deadline_seconds%3D%28active_deadline_seconds%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4741,7 +4746,7 @@
         
         def <strong>affinity</strong> : <a href="../../../../Pyrite/Api/Core/V1/Affinity.html">Api::Core::V1::Affinity</a>?
 
-        <a class="method-permalink" href="#affinity:Api::Core::V1::Affinity?-instance-method">#</a>
+        <a class="method-permalink" href="#affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4755,7 +4760,7 @@
         
         def <strong>affinity=</strong>(affinity : <a href="../../../../Pyrite/Api/Core/V1/Affinity.html">Api::Core::V1::Affinity</a>?)
 
-        <a class="method-permalink" href="#affinity=(affinity:Api::Core::V1::Affinity?)-instance-method">#</a>
+        <a class="method-permalink" href="#affinity%3D%28affinity%3AApi%3A%3ACore%3A%3AV1%3A%3AAffinity%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4769,7 +4774,7 @@
         
         def <strong>automount_service_account_token</strong> : Bool?
 
-        <a class="method-permalink" href="#automount_service_account_token:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#automount_service_account_token%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4783,7 +4788,7 @@
         
         def <strong>automount_service_account_token=</strong>(automount_service_account_token : Bool?)
 
-        <a class="method-permalink" href="#automount_service_account_token=(automount_service_account_token:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#automount_service_account_token%3D%28automount_service_account_token%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4797,7 +4802,7 @@
         
         def <strong>containers</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/Container.html">Api::Core::V1::Container</a>)
 
-        <a class="method-permalink" href="#containers:Array(Api::Core::V1::Container)-instance-method">#</a>
+        <a class="method-permalink" href="#containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4811,7 +4816,7 @@
         
         def <strong>containers=</strong>(containers : Array(<a href="../../../../Pyrite/Api/Core/V1/Container.html">Api::Core::V1::Container</a>))
 
-        <a class="method-permalink" href="#containers=(containers:Array(Api::Core::V1::Container))-instance-method">#</a>
+        <a class="method-permalink" href="#containers%3D%28containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4825,7 +4830,7 @@
         
         def <strong>dns_config</strong> : <a href="../../../../Pyrite/Api/Core/V1/PodDNSConfig.html">Api::Core::V1::PodDNSConfig</a>?
 
-        <a class="method-permalink" href="#dns_config:Api::Core::V1::PodDNSConfig?-instance-method">#</a>
+        <a class="method-permalink" href="#dns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4839,7 +4844,7 @@
         
         def <strong>dns_config=</strong>(dns_config : <a href="../../../../Pyrite/Api/Core/V1/PodDNSConfig.html">Api::Core::V1::PodDNSConfig</a>?)
 
-        <a class="method-permalink" href="#dns_config=(dns_config:Api::Core::V1::PodDNSConfig?)-instance-method">#</a>
+        <a class="method-permalink" href="#dns_config%3D%28dns_config%3AApi%3A%3ACore%3A%3AV1%3A%3APodDNSConfig%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4853,7 +4858,7 @@
         
         def <strong>dns_policy</strong> : String?
 
-        <a class="method-permalink" href="#dns_policy:String?-instance-method">#</a>
+        <a class="method-permalink" href="#dns_policy%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4867,7 +4872,7 @@
         
         def <strong>dns_policy=</strong>(dns_policy : String?)
 
-        <a class="method-permalink" href="#dns_policy=(dns_policy:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#dns_policy%3D%28dns_policy%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4881,7 +4886,7 @@
         
         def <strong>enable_service_links</strong> : Bool?
 
-        <a class="method-permalink" href="#enable_service_links:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#enable_service_links%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4895,7 +4900,7 @@
         
         def <strong>enable_service_links=</strong>(enable_service_links : Bool?)
 
-        <a class="method-permalink" href="#enable_service_links=(enable_service_links:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#enable_service_links%3D%28enable_service_links%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4909,7 +4914,7 @@
         
         def <strong>ephemeral_containers</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/EphemeralContainer.html">Api::Core::V1::EphemeralContainer</a>)?
 
-        <a class="method-permalink" href="#ephemeral_containers:Array(Api::Core::V1::EphemeralContainer)?-instance-method">#</a>
+        <a class="method-permalink" href="#ephemeral_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AEphemeralContainer%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4923,7 +4928,7 @@
         
         def <strong>ephemeral_containers=</strong>(ephemeral_containers : Array(<a href="../../../../Pyrite/Api/Core/V1/EphemeralContainer.html">Api::Core::V1::EphemeralContainer</a>)?)
 
-        <a class="method-permalink" href="#ephemeral_containers=(ephemeral_containers:Array(Api::Core::V1::EphemeralContainer)?)-instance-method">#</a>
+        <a class="method-permalink" href="#ephemeral_containers%3D%28ephemeral_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AEphemeralContainer%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4937,7 +4942,7 @@
         
         def <strong>host_aliases</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/HostAlias.html">Api::Core::V1::HostAlias</a>)?
 
-        <a class="method-permalink" href="#host_aliases:Array(Api::Core::V1::HostAlias)?-instance-method">#</a>
+        <a class="method-permalink" href="#host_aliases%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AHostAlias%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4951,7 +4956,7 @@
         
         def <strong>host_aliases=</strong>(host_aliases : Array(<a href="../../../../Pyrite/Api/Core/V1/HostAlias.html">Api::Core::V1::HostAlias</a>)?)
 
-        <a class="method-permalink" href="#host_aliases=(host_aliases:Array(Api::Core::V1::HostAlias)?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_aliases%3D%28host_aliases%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AHostAlias%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4965,7 +4970,7 @@
         
         def <strong>host_ipc</strong> : Bool?
 
-        <a class="method-permalink" href="#host_ipc:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_ipc%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -4979,7 +4984,7 @@
         
         def <strong>host_ipc=</strong>(host_ipc : Bool?)
 
-        <a class="method-permalink" href="#host_ipc=(host_ipc:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_ipc%3D%28host_ipc%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4993,7 +4998,7 @@
         
         def <strong>host_network</strong> : Bool?
 
-        <a class="method-permalink" href="#host_network:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_network%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5007,7 +5012,7 @@
         
         def <strong>host_network=</strong>(host_network : Bool?)
 
-        <a class="method-permalink" href="#host_network=(host_network:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_network%3D%28host_network%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5021,7 +5026,7 @@
         
         def <strong>host_pid</strong> : Bool?
 
-        <a class="method-permalink" href="#host_pid:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#host_pid%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5035,7 +5040,7 @@
         
         def <strong>host_pid=</strong>(host_pid : Bool?)
 
-        <a class="method-permalink" href="#host_pid=(host_pid:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#host_pid%3D%28host_pid%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5049,7 +5054,7 @@
         
         def <strong>hostname</strong> : String?
 
-        <a class="method-permalink" href="#hostname:String?-instance-method">#</a>
+        <a class="method-permalink" href="#hostname%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5063,7 +5068,7 @@
         
         def <strong>hostname=</strong>(hostname : String?)
 
-        <a class="method-permalink" href="#hostname=(hostname:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#hostname%3D%28hostname%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5077,7 +5082,7 @@
         
         def <strong>image_pull_secrets</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/LocalObjectReference.html">Api::Core::V1::LocalObjectReference</a>)?
 
-        <a class="method-permalink" href="#image_pull_secrets:Array(Api::Core::V1::LocalObjectReference)?-instance-method">#</a>
+        <a class="method-permalink" href="#image_pull_secrets%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ALocalObjectReference%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5091,7 +5096,7 @@
         
         def <strong>image_pull_secrets=</strong>(image_pull_secrets : Array(<a href="../../../../Pyrite/Api/Core/V1/LocalObjectReference.html">Api::Core::V1::LocalObjectReference</a>)?)
 
-        <a class="method-permalink" href="#image_pull_secrets=(image_pull_secrets:Array(Api::Core::V1::LocalObjectReference)?)-instance-method">#</a>
+        <a class="method-permalink" href="#image_pull_secrets%3D%28image_pull_secrets%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ALocalObjectReference%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5105,7 +5110,7 @@
         
         def <strong>init_containers</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/Container.html">Api::Core::V1::Container</a>)?
 
-        <a class="method-permalink" href="#init_containers:Array(Api::Core::V1::Container)?-instance-method">#</a>
+        <a class="method-permalink" href="#init_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5119,7 +5124,7 @@
         
         def <strong>init_containers=</strong>(init_containers : Array(<a href="../../../../Pyrite/Api/Core/V1/Container.html">Api::Core::V1::Container</a>)?)
 
-        <a class="method-permalink" href="#init_containers=(init_containers:Array(Api::Core::V1::Container)?)-instance-method">#</a>
+        <a class="method-permalink" href="#init_containers%3D%28init_containers%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AContainer%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5133,7 +5138,7 @@
         
         def <strong>node_name</strong> : String?
 
-        <a class="method-permalink" href="#node_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#node_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5147,7 +5152,7 @@
         
         def <strong>node_name=</strong>(node_name : String?)
 
-        <a class="method-permalink" href="#node_name=(node_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#node_name%3D%28node_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5161,7 +5166,7 @@
         
         def <strong>node_selector</strong> : Hash(String, String)?
 
-        <a class="method-permalink" href="#node_selector:Hash(String,String)?-instance-method">#</a>
+        <a class="method-permalink" href="#node_selector%3AHash%28String%2CString%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5175,7 +5180,7 @@
         
         def <strong>node_selector=</strong>(node_selector : Hash(String, String)?)
 
-        <a class="method-permalink" href="#node_selector=(node_selector:Hash(String,String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#node_selector%3D%28node_selector%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5189,7 +5194,7 @@
         
         def <strong>overhead</strong> : Hash(String, String)?
 
-        <a class="method-permalink" href="#overhead:Hash(String,String)?-instance-method">#</a>
+        <a class="method-permalink" href="#overhead%3AHash%28String%2CString%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5203,7 +5208,7 @@
         
         def <strong>overhead=</strong>(overhead : Hash(String, String)?)
 
-        <a class="method-permalink" href="#overhead=(overhead:Hash(String,String)?)-instance-method">#</a>
+        <a class="method-permalink" href="#overhead%3D%28overhead%3AHash%28String%2CString%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5217,7 +5222,7 @@
         
         def <strong>preemption_policy</strong> : String?
 
-        <a class="method-permalink" href="#preemption_policy:String?-instance-method">#</a>
+        <a class="method-permalink" href="#preemption_policy%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5231,7 +5236,7 @@
         
         def <strong>preemption_policy=</strong>(preemption_policy : String?)
 
-        <a class="method-permalink" href="#preemption_policy=(preemption_policy:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#preemption_policy%3D%28preemption_policy%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5245,7 +5250,7 @@
         
         def <strong>priority</strong> : Int32?
 
-        <a class="method-permalink" href="#priority:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#priority%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5259,7 +5264,7 @@
         
         def <strong>priority=</strong>(priority : Int32?)
 
-        <a class="method-permalink" href="#priority=(priority:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#priority%3D%28priority%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5273,7 +5278,7 @@
         
         def <strong>priority_class_name</strong> : String?
 
-        <a class="method-permalink" href="#priority_class_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#priority_class_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5287,7 +5292,7 @@
         
         def <strong>priority_class_name=</strong>(priority_class_name : String?)
 
-        <a class="method-permalink" href="#priority_class_name=(priority_class_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#priority_class_name%3D%28priority_class_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5301,7 +5306,7 @@
         
         def <strong>readiness_gates</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/PodReadinessGate.html">Api::Core::V1::PodReadinessGate</a>)?
 
-        <a class="method-permalink" href="#readiness_gates:Array(Api::Core::V1::PodReadinessGate)?-instance-method">#</a>
+        <a class="method-permalink" href="#readiness_gates%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3APodReadinessGate%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5315,7 +5320,7 @@
         
         def <strong>readiness_gates=</strong>(readiness_gates : Array(<a href="../../../../Pyrite/Api/Core/V1/PodReadinessGate.html">Api::Core::V1::PodReadinessGate</a>)?)
 
-        <a class="method-permalink" href="#readiness_gates=(readiness_gates:Array(Api::Core::V1::PodReadinessGate)?)-instance-method">#</a>
+        <a class="method-permalink" href="#readiness_gates%3D%28readiness_gates%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3APodReadinessGate%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5329,7 +5334,7 @@
         
         def <strong>restart_policy</strong> : String?
 
-        <a class="method-permalink" href="#restart_policy:String?-instance-method">#</a>
+        <a class="method-permalink" href="#restart_policy%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5343,7 +5348,7 @@
         
         def <strong>restart_policy=</strong>(restart_policy : String?)
 
-        <a class="method-permalink" href="#restart_policy=(restart_policy:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#restart_policy%3D%28restart_policy%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5357,7 +5362,7 @@
         
         def <strong>runtime_class_name</strong> : String?
 
-        <a class="method-permalink" href="#runtime_class_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#runtime_class_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5371,7 +5376,7 @@
         
         def <strong>runtime_class_name=</strong>(runtime_class_name : String?)
 
-        <a class="method-permalink" href="#runtime_class_name=(runtime_class_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#runtime_class_name%3D%28runtime_class_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5385,7 +5390,7 @@
         
         def <strong>scheduler_name</strong> : String?
 
-        <a class="method-permalink" href="#scheduler_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#scheduler_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5399,7 +5404,7 @@
         
         def <strong>scheduler_name=</strong>(scheduler_name : String?)
 
-        <a class="method-permalink" href="#scheduler_name=(scheduler_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#scheduler_name%3D%28scheduler_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5413,7 +5418,7 @@
         
         def <strong>security_context</strong> : <a href="../../../../Pyrite/Api/Core/V1/PodSecurityContext.html">Api::Core::V1::PodSecurityContext</a>?
 
-        <a class="method-permalink" href="#security_context:Api::Core::V1::PodSecurityContext?-instance-method">#</a>
+        <a class="method-permalink" href="#security_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5427,7 +5432,7 @@
         
         def <strong>security_context=</strong>(security_context : <a href="../../../../Pyrite/Api/Core/V1/PodSecurityContext.html">Api::Core::V1::PodSecurityContext</a>?)
 
-        <a class="method-permalink" href="#security_context=(security_context:Api::Core::V1::PodSecurityContext?)-instance-method">#</a>
+        <a class="method-permalink" href="#security_context%3D%28security_context%3AApi%3A%3ACore%3A%3AV1%3A%3APodSecurityContext%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5441,7 +5446,7 @@
         
         def <strong>service_account</strong> : String?
 
-        <a class="method-permalink" href="#service_account:String?-instance-method">#</a>
+        <a class="method-permalink" href="#service_account%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5455,7 +5460,7 @@
         
         def <strong>service_account=</strong>(service_account : String?)
 
-        <a class="method-permalink" href="#service_account=(service_account:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#service_account%3D%28service_account%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5469,7 +5474,7 @@
         
         def <strong>service_account_name</strong> : String?
 
-        <a class="method-permalink" href="#service_account_name:String?-instance-method">#</a>
+        <a class="method-permalink" href="#service_account_name%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5483,7 +5488,7 @@
         
         def <strong>service_account_name=</strong>(service_account_name : String?)
 
-        <a class="method-permalink" href="#service_account_name=(service_account_name:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#service_account_name%3D%28service_account_name%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5497,7 +5502,7 @@
         
         def <strong>set_hostname_as_fqd_n</strong> : Bool?
 
-        <a class="method-permalink" href="#set_hostname_as_fqd_n:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#set_hostname_as_fqd_n%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5511,7 +5516,7 @@
         
         def <strong>set_hostname_as_fqd_n=</strong>(set_hostname_as_fqd_n : Bool?)
 
-        <a class="method-permalink" href="#set_hostname_as_fqd_n=(set_hostname_as_fqd_n:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#set_hostname_as_fqd_n%3D%28set_hostname_as_fqd_n%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5525,7 +5530,7 @@
         
         def <strong>share_process_namespace</strong> : Bool?
 
-        <a class="method-permalink" href="#share_process_namespace:Bool?-instance-method">#</a>
+        <a class="method-permalink" href="#share_process_namespace%3ABool%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5539,7 +5544,7 @@
         
         def <strong>share_process_namespace=</strong>(share_process_namespace : Bool?)
 
-        <a class="method-permalink" href="#share_process_namespace=(share_process_namespace:Bool?)-instance-method">#</a>
+        <a class="method-permalink" href="#share_process_namespace%3D%28share_process_namespace%3ABool%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5553,7 +5558,7 @@
         
         def <strong>subdomain</strong> : String?
 
-        <a class="method-permalink" href="#subdomain:String?-instance-method">#</a>
+        <a class="method-permalink" href="#subdomain%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5567,7 +5572,7 @@
         
         def <strong>subdomain=</strong>(subdomain : String?)
 
-        <a class="method-permalink" href="#subdomain=(subdomain:String?)-instance-method">#</a>
+        <a class="method-permalink" href="#subdomain%3D%28subdomain%3AString%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5581,7 +5586,7 @@
         
         def <strong>termination_grace_period_seconds</strong> : Int32?
 
-        <a class="method-permalink" href="#termination_grace_period_seconds:Int32?-instance-method">#</a>
+        <a class="method-permalink" href="#termination_grace_period_seconds%3AInt32%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5595,7 +5600,7 @@
         
         def <strong>termination_grace_period_seconds=</strong>(termination_grace_period_seconds : Int32?)
 
-        <a class="method-permalink" href="#termination_grace_period_seconds=(termination_grace_period_seconds:Int32?)-instance-method">#</a>
+        <a class="method-permalink" href="#termination_grace_period_seconds%3D%28termination_grace_period_seconds%3AInt32%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5609,7 +5614,7 @@
         
         def <strong>tolerations</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/Toleration.html">Api::Core::V1::Toleration</a>)?
 
-        <a class="method-permalink" href="#tolerations:Array(Api::Core::V1::Toleration)?-instance-method">#</a>
+        <a class="method-permalink" href="#tolerations%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AToleration%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5623,7 +5628,7 @@
         
         def <strong>tolerations=</strong>(tolerations : Array(<a href="../../../../Pyrite/Api/Core/V1/Toleration.html">Api::Core::V1::Toleration</a>)?)
 
-        <a class="method-permalink" href="#tolerations=(tolerations:Array(Api::Core::V1::Toleration)?)-instance-method">#</a>
+        <a class="method-permalink" href="#tolerations%3D%28tolerations%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AToleration%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5637,7 +5642,7 @@
         
         def <strong>topology_spread_constraints</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/TopologySpreadConstraint.html">Api::Core::V1::TopologySpreadConstraint</a>)?
 
-        <a class="method-permalink" href="#topology_spread_constraints:Array(Api::Core::V1::TopologySpreadConstraint)?-instance-method">#</a>
+        <a class="method-permalink" href="#topology_spread_constraints%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySpreadConstraint%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5651,7 +5656,7 @@
         
         def <strong>topology_spread_constraints=</strong>(topology_spread_constraints : Array(<a href="../../../../Pyrite/Api/Core/V1/TopologySpreadConstraint.html">Api::Core::V1::TopologySpreadConstraint</a>)?)
 
-        <a class="method-permalink" href="#topology_spread_constraints=(topology_spread_constraints:Array(Api::Core::V1::TopologySpreadConstraint)?)-instance-method">#</a>
+        <a class="method-permalink" href="#topology_spread_constraints%3D%28topology_spread_constraints%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3ATopologySpreadConstraint%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -5665,7 +5670,7 @@
         
         def <strong>volumes</strong> : Array(<a href="../../../../Pyrite/Api/Core/V1/Volume.html">Api::Core::V1::Volume</a>)?
 
-        <a class="method-permalink" href="#volumes:Array(Api::Core::V1::Volume)?-instance-method">#</a>
+        <a class="method-permalink" href="#volumes%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AVolume%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -5679,7 +5684,7 @@
         
         def <strong>volumes=</strong>(volumes : Array(<a href="../../../../Pyrite/Api/Core/V1/Volume.html">Api::Core::V1::Volume</a>)?)
 
-        <a class="method-permalink" href="#volumes=(volumes:Array(Api::Core::V1::Volume)?)-instance-method">#</a>
+        <a class="method-permalink" href="#volumes%3D%28volumes%3AArray%28Api%3A%3ACore%3A%3AV1%3A%3AVolume%29%3F%29-instance-method">#</a>
       </div>
       
       <br/>
