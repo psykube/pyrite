@@ -1,4 +1,3 @@
-
 module Pyrite::Kubernetes
   module ObjectMetadata
     macro included
