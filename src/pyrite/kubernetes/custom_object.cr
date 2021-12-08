@@ -10,7 +10,10 @@ module Pyrite::Kubernetes
     property unmapped = Hash(String, YAML::Any | JSON::Any).new
 
     protected def on_unknown_yaml_attribute(ctx, key, key_node, value_node)
-      unmapped[key] = YAML::Any.new(ctx, value_node)
+      raw_string = YAML.build do |builder|
+        value_node.to_yaml(builder)
+      end
+      unmapped[key] = YAML.parse(raw_string)
     end
 
     protected def on_unknown_json_attribute(pull, key, key_location)
@@ -30,7 +33,9 @@ module Pyrite::Kubernetes
 
     protected def on_to_json(json)
       unmapped.each do |key, value|
-        json.field(key) { value.to_json(json) }
+        json.field(key) do
+          value.to_json(json)
+        end
       end
     end
   end
